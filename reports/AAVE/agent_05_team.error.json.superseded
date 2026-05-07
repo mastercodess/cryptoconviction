@@ -1,0 +1,19 @@
+{
+  "error": "8 validation errors for TeamOutput\nfounder_credibility_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nvc_overhang_risk\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nalignment_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nlegal_exposure_flag\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntrust_tier\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndoxxed\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrationale\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncomposite_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+  "raw": {
+    "error": "max_iters_reached",
+    "agent": "05_team::AAVE",
+    "iters": 10,
+    "schema_keys": [
+      "token_symbol",
+      "founder_credibility_score",
+      "vc_overhang_risk",
+      "alignment_score",
+      "legal_exposure_flag",
+      "trust_tier",
+      "doxxed",
+      "rationale",
+      "composite_score"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "token_symbol": "AAVE",
+  "fdv_risk_rating": 9,
+  "inflation_pressure_score": 10,
+  "value_accrual_verdict": "NEUTRAL",
+  "concentration_risk_flag": true,
+  "top10_holding_pct": 0.0,
+  "unlock_pressure_next_90d_pct": 0.0,
+  "next_unlock_date": null,
+  "next_unlock_pct_of_supply": null,
+  "rationale": "RLM did not converge (forced_offline_fallback); fallback applied. FDV score 9/10 derived from circulating/max-supply ratio (0.96 if known). 90-day unlock pressure: 0.0% of supply. Top-10 concentration unknown (free-tier holder data unavailable); concentration_risk_flag set to True conservatively.",
+  "composite_score": 70
+}

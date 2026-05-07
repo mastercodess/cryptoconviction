@@ -1,0 +1,15 @@
+{
+  "symbol": "AVNT",
+  "funding_rate_8h": 0.00019,
+  "open_interest_usd": 71000000,
+  "btc_correlation_30d": 0.69,
+  "eth_correlation_30d": 0.72,
+  "nasdaq_correlation_30d": 0.37,
+  "leverage_warning": false,
+  "rationale": "Avantis derivatives protocol with emerging perp market; positive funding with moderate OI suggests growing trader interest in derivatives-on-derivatives infrastructure.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coinglass.com/FundingRate/AVNT",
+    "https://www.coinglass.com/currencies/AVNT/futures"
+  ]
+}

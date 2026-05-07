@@ -1,0 +1,50 @@
+{
+  "symbol": "OGN",
+  "annualized_revenue_usd": 13200000,
+  "annualized_fees_usd": 13200000,
+  "tvl_usd": 71000000,
+  "p_s_ratio": 1.17,
+  "p_tvl_ratio": 0.218,
+  "real_yield_apr_pct": 40.0,
+  "inflationary_yield_apr_pct": 0.0,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Strong performance in late 2025 with record revenue in September 2025 ($2M+), moderation in Q4, recovery in early 2026 with launch of Automated Redemption Manager (ARM). Revenue scales with Ethereum staking yields and stablecoin collateral utilization.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "FRAX",
+      "metric": "p_s_ratio",
+      "self_value": 1.17,
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "LQTY",
+      "metric": "buyback_model",
+      "self_value": 100,
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "YEARN",
+      "metric": "protocol_revenue_model",
+      "self_value": "Buyback-funded yield",
+      "peer_value": "Direct governance revenue"
+    },
+    {
+      "peer_symbol": "PENDLE",
+      "metric": "tvl_ratio",
+      "self_value": 0.218,
+      "peer_value": null
+    }
+  ],
+  "rationale": "Origin Protocol demonstrates an extreme valuation discount (P/S 1.17x) relative to peers and DeFi benchmarks, despite executing a clean 100% revenue-to-buyback model. Monthly revenue has ranged $710K-$2M+ across 2025-2026, implying $8.5M-$24M annualized depending on product mix. Conservative estimate of $13.2M annualized reflects Sep 2025 peak ($2M/mo), Oct decline ($1M), Nov floor ($710K), and Feb 2026 recovery trajectory. The xOGN staking APR of 40% (max lock, ~1.4x multiplier over 1yr) represents TRUE YIELD: 100% of protocol revenue flows to buybacks on open market, distributed to xOGN stakers with ZERO token emissions. This is structurally superior to inflationary governance tokens. TVL of $71M spans OETH (liquid staking), OUSD (yield stablecoin), Super OETH (Base/Optimism LST aggregator), and primeETH. 50% of circulating supply (662M OGN) is currently staked. The extreme P/S discount likely reflects: (1) small market cap ($15.5M) with limited liquidity, (2) perception of being a 'yield infrastructure' play rather than narrative-driven governance token, (3) concentration in Ethereum ecosystem. Compared to Yearn (governance + fees), Frax (algorithmic + buyback), and Liquity (protocol revenue share), OGN's pure buyback model is uniquely clean but heavily discounted.",
+  "data_quality": "PARTIAL",
+  "as_of_date": "2026-04-30",
+  "sources": [
+    "https://coinmarketcap.com/currencies/origin-protocol/",
+    "https://coinmarketcap.com/cmc-ai/origin-protocol/latest-updates/",
+    "https://governance.originprotocol.com/t/allocate-100-of-protocol-revenue-to-ogn-buybacks-for-xogn-distribution/157",
+    "https://www.originprotocol.com/blog/token-holder-update-february-2026",
+    "https://www.originprotocol.com/ogn-staking-guide",
+    "https://messari.io/project/origin-protocol",
+    "https://www.originprotocol.com/blog/september-2025-token-holder-update"
+  ]
+}

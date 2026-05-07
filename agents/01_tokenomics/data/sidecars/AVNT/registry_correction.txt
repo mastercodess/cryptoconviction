@@ -1,0 +1,21 @@
+# Update shared/tokens.py REGISTRY entry for AVNT:
+
+"AVNT": Token(
+    symbol="AVNT",
+    name="Avantis",
+    chain="Base",
+    coingecko_id="avantis",
+    contract_address="0x696F9436B67233384889472Cd7cD58A6fB5DF4f1",
+    defillama_protocol=None,
+    category="DeFi - Perpetuals DEX",
+),
+
+# Notes:
+# - AVNT = Avantis, a decentralized perpetuals (perps) DEX built on Base
+# - Launched September 2025
+# - Total supply: 1 billion (fixed cap)
+# - Circulating: 319.96M (~32%), Locked: 680M (~68%) vesting through 2029
+# - Market cap: $47.4M (April 2026), rank #497
+# - Deflationary: 30% of trading fees allocated to buyback-and-burn (every 6h), upgrading to 50% by Q2 2026
+# - Vesting: Team/Advisors 12mo cliff + 30mo linear; Early Backers same schedule
+# - No DefiLlama protocol slug found; could add if available

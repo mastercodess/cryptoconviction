@@ -1,0 +1,157 @@
+{
+  "protocol": "Aerodrome Finance",
+  "token": "AERO",
+  "chain": "Base",
+  "research_date": "2026-04-30",
+  "data_sources": "Free sources only (DefiLlama, CoinGecko, BaseScan, Token Terminal, CoinMarketCap, Bitget, Medium, GitHub)",
+  "executive_summary": {
+    "conviction_metric": "veAERO holders with 3.99-year average lock period; 5000+ veAERO voters with 4-year max lock enabling highest conviction. However, voting power is concentrated among larger holders (top-heavy distribution). Critical tension: massive trading volume ($2.84B/epoch, 57% of Base DEX volume) raises wash-trade concerns vs. genuine incentive alignment.",
+    "key_findings": [
+      "Aerodrome is the dominant liquidity hub on Base with 52% of Base DeFi TVL ($1.24B of $2.38B) and 68% of 30-day DEX volume",
+      "veAERO lock concentration and bot-wash trading activity suggest mixed conviction signals requiring deeper smart money analysis",
+      "Bribes-to-emissions ratio of approximately $1.50 returned per dollar emitted indicates external protocol value proposition is healthy",
+      "Recent smart money flows: Hypersphere Ventures deployed $680K in late April 2026, driving 50.77% surge in smart money balances and off-exchange accumulation"
+    ]
+  },
+  "dau_metrics": {
+    "status": "Trackable",
+    "description": "Daily active users = unique swappers/LPs/voters on Aerodrome per day",
+    "sources": [
+      "Token Terminal tracks Aerodrome DAU metrics",
+      "DefiLlama provides active address metrics"
+    ],
+    "data_point": {
+      "monthly_active_wallets_28d": "156,000 (as of Dec 2025)",
+      "monthly_active_wallets_growth": "+12% month-over-month",
+      "daily_volume": "140M (as of Dec 2025)",
+      "note": "Real-time DAU tracking available via Token Terminal and DefiLlama; specific daily snapshot requires live dashboard access"
+    }
+  },
+  "veaero_lock_distribution": {
+    "description": "Conviction metric: % of circulating AERO locked as veAERO; 4-year locks = highest conviction",
+    "total_aero_supply": 1884864776,
+    "circulating_supply": 930000000,
+    "locked_in_veasero": {
+      "estimate": "20+ million AERO locked as of April 2026",
+      "percentage_of_circulating": "2.15% (minimum estimate)",
+      "trend": "Growing - Public Goods Fund executed buyback of 624K AERO and max-locked them"
+    },
+    "holder_metrics": {
+      "total_aero_holders": 732666,
+      "veasero_voters": 5000,
+      "average_lock_period_years": 3.99,
+      "max_lock_period_years": 4,
+      "voter_concentration": "Top-heavy distribution - voting power concentrated among larger holders"
+    },
+    "lock_mechanics": {
+      "max_lock_duration_years": 4,
+      "voting_power_decay": "Powers decay when not auto-max-locked",
+      "auto_max_lock_feature": "Available to prevent decay for committed participants",
+      "unlock_mechanics": "Users can unlock after expiration; balance restored with locktime extended to max 4 years"
+    },
+    "conviction_assessment": "MIXED - While 5000 veAERO voters with 3.99-year average is moderately strong, only ~2% of circulating supply locked suggests weak conviction. Top-heavy holder distribution indicates concentration risk. Auto-max-lock feature shows retention mechanisms, but specific turnover rate data unavailable."
+  },
+  "trading_volume_and_wash_trade_risk": {
+    "weekly_volume_usd": 2840000000,
+    "epoch_volume": "2.84B (57% of Base DEX volume)",
+    "base_dex_market_share": "68% over prior 30 days",
+    "wash_trade_concerns": {
+      "risk_flagged": true,
+      "evidence": "Programmatic bot identified exclusively trading ETH/USDC pool on Aerodrome's own balance sheet",
+      "assessment": "Bot may represent internal fund circulation, but inflated volume metrics are a concern for real activity valuation",
+      "tvl_stability": "AERO price remains stable despite volume concerns, suggesting some fundamental support"
+    },
+    "incentive_farming": {
+      "emissions_efficiency": "$1.50 returned per $1 emitted (11% annualized inflation)",
+      "net_of_locks": "8% net inflation of locks with ATH volume per dollar emitted",
+      "mechanism": "Weekly emissions distributed via veAERO voting to pools; bribes from external protocols supplement",
+      "inflation_mitigation": "Dynamic emissions adjustment based on total supply and veAERO participation; team AERO max-locked for 4 years creates structural alignment"
+    },
+    "volume_quality": "QUESTIONABLE - Strong on-chain signatures of volume inflation via wash-trading bot activity; real vs. fabricated volume requires deeper transaction-level analysis"
+  },
+  "bribes_emissions_ratio": {
+    "bribes_to_emissions_ratio": 1.5,
+    "interpretation": "Healthy ratio - $1.50 returned per $1 emitted indicates external protocols VALUE veAERO votes",
+    "mechanism": {
+      "description": "Three-sided market: LPs want emissions, veAERO holders vote on allocation, external protocols pay bribes for favorable votes",
+      "external_protocol_participation": "Protocols deposit external incentives as bribes to attract veAERO votes for their liquidity pools",
+      "veaero_voter_rewards": "100% of protocol trading fees + bribes from voted pools"
+    },
+    "economic_health": "STRONG - Healthy bribes economy indicates market confidence in veAERO governance; external protocol demand validates voting mechanism value",
+    "fee_distribution": "100% of protocol trading fees distributed to veAERO holders, creating direct cash flows differentiating AERO from competitor DEX tokens"
+  },
+  "exchange_flows": {
+    "chain": "Base (non-Ethereum)",
+    "bridge_flows": {
+      "status": "Relevant for AERO circulation",
+      "note": "Base bridge inflows/outflows to Ethereum not detailed in free sources; requires bridge-level analytics"
+    },
+    "cex_flows": {
+      "cbbtc_cbeth_pairs": "Coinbase synthetic assets (cbBTC, cbETH) trade on Aerodrome with 80% of cbBTC volume occurring on Aerodrome",
+      "arbitrage_flow": "Fungibility between Coinbase CEX and on-chain derivatives drives CEX-to-DEX arbitrage flows",
+      "coinbase_integration": "Coinbase app integrated Aerodrome for DEX trading access to millions of users; expansion expected for cbSOL, cbDOGE, cbPEPE pairs"
+    },
+    "smart_money_recent": {
+      "actor": "Hypersphere Ventures",
+      "deployment_date": "Late April 2026",
+      "deployment_size_usd": 680000,
+      "impact": "50.77% surge in smart money balances; tokens moving off exchanges",
+      "signal": "BULLISH - Recent institutional-grade capital deployment coupled with off-exchange accumulation"
+    },
+    "whale_activity": {
+      "base_ecosystem_actors": "Coinbase wallets, base.eth ecosystem participants",
+      "note": "Specific whale address clusters require on-chain dashboard access (Nansen, Glassnode); not available in free sources"
+    }
+  },
+  "retention_and_lock_turnover": {
+    "veaero_turnover": "Data NOT AVAILABLE in free sources",
+    "unlocking_mechanics": "Users can unlock after 4-year lock expiration, with balance restored and locktime extended to maximum if desired",
+    "retention_proxy": "Average lock period of 3.99 years (out of 4-year max) suggests strong retention on initial cohort; however, turnover at expiration cliff NOT tracked in available sources",
+    "retention_risk": "UNKNOWN - Specific turnover rate at 4-year unlock dates unknown; could represent significant conviction test if large veAERO cohort reaches unlock eligibility simultaneously",
+    "research_gap": "Public unlock calendar and cohort aging analysis require direct smart contract analysis or Nansen-grade whale tracking"
+  },
+  "data_gaps_and_limitations": {
+    "free_source_constraints": [
+      "Real-time veAERO holder count and distribution data requires BaseScan/Etherscan token tracker (available but snapshot-dependent)",
+      "Specific daily DAU numbers require Token Terminal premium or DefiLlama live dashboard",
+      "Smart money whale accumulation requires Nansen/Glassnode paid analytics",
+      "Bridge and CEX flow data requires Glassnode, CryptoQuant, or exchange-level APIs",
+      "Lock cohort turnover and unlock cliff analysis requires smart contract forensics or whale-tracking tools",
+      "Wash-trade volume attribution requires transaction-level block explorer analysis"
+    ],
+    "recommendations_for_deeper_analysis": [
+      "Monitor Token Terminal DAU trends weekly to assess user base retention",
+      "Track BaseScan veAERO holder distribution weekly for concentration shifts",
+      "Analyze unlock calendar for major veAERO cohorts approaching 4-year maturity",
+      "Deep-dive transaction-level volume audit on cbBTC and ETH/USDC pairs for wash-trade signature detection",
+      "Monitor Hypersphere Ventures and similar smart money via on-chain trackers for conviction shifts"
+    ]
+  },
+  "summary_locked_vs_unlocked_behavior": {
+    "line_1": "Locked conviction (veAERO): Only 2.15% of circulating supply locked; 5000 voters with 3.99-year average suggests emerging retention, but heavily concentrated among large holders with weak distributed conviction.",
+    "line_2": "Unlocking risk: 4-year lock cliff approaching for initial cohort (launched Aug 2023); turnover behavior at expiration unknown; represents key conviction test in late 2027.",
+    "line_3": "Behavioral signal: Recent smart money accumulation ($680K Hypersphere, off-exchange flows) contradicts weak lock metrics, suggesting external conviction in veAERO governance value despite low participation rates."
+  },
+  "research_methodology_notes": {
+    "sources_used": [
+      "DefiLlama.com protocol analytics",
+      "CoinMarketCap token data and CMC AI",
+      "CoinGecko on-chain metrics",
+      "BaseScan block explorer token tracker",
+      "Token Terminal analytics platform",
+      "Aerodrome Finance GitHub specification",
+      "Medium articles (Aerodrome official, Greythorn, Lehran Brothers analysis)",
+      "Bitget Academy and news",
+      "Tokenomist.ai tokenomics data",
+      "X/Twitter on-chain researcher threads"
+    ],
+    "data_freshness": "As of April 30, 2026; most recent snapshot data from December 2025 - April 2026",
+    "confidence_levels": {
+      "tvl_and_volume": "HIGH - Corroborated across multiple sources",
+      "holder_counts": "MEDIUM - BaseScan data is current but holder distribution requires transaction analysis",
+      "dau_and_retention": "MEDIUM - Available via Token Terminal but requires dashboard access for daily snapshots",
+      "smart_money_flows": "MEDIUM - Limited to public disclosures and whale tracking via free sources",
+      "wash_trade_assessment": "LOW-MEDIUM - Bot activity identified but requires deeper transaction-level forensics"
+    }
+  }
+}

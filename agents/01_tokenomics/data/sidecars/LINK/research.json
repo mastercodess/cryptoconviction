@@ -1,0 +1,76 @@
+{
+  "symbol": "LINK",
+  "name": "Chainlink",
+  "category": "oracle",
+  "supply": {
+    "circulating": 727099970,
+    "total_supply": 727099970,
+    "max_supply": 1000000000,
+    "as_of": "2026-04-29",
+    "source": "https://www.coingecko.com/en/coins/chainlink"
+  },
+  "market": {
+    "price_usd": 9.25,
+    "market_cap_usd": 6722764461,
+    "fdv_usd": 9250000000,
+    "as_of": "2026-04-29",
+    "source": "https://coinmarketcap.com/currencies/chainlink/"
+  },
+  "unlocks": {
+    "events": [
+      {
+        "unlock_date": "2026-04-04",
+        "category": "public_emission",
+        "tokens_unlocked": 17875000,
+        "pct_of_supply": 0.0246,
+        "source_url": "https://coinpedia.org/news/chainlink-unlocks-19m-link-165m-moved-to-market/",
+        "notes": "Q2 2026 quarterly unlock; ~14.9M to Binance, ~4.1M to staking rewards multi-sig"
+      },
+      {
+        "unlock_date": "2026-07-01",
+        "category": "public_emission",
+        "tokens_unlocked": 17500000,
+        "pct_of_supply": null,
+        "source_url": "https://cryptorank.io/news/feed/6c881-chainlink-link-unlock-binance-transfer",
+        "notes": "Estimated Q3 2026 unlock based on historical 10-20M quarterly pattern"
+      },
+      {
+        "unlock_date": "2026-10-01",
+        "category": "public_emission",
+        "tokens_unlocked": 17500000,
+        "pct_of_supply": null,
+        "source_url": "https://cryptorank.io/news/feed/6c881-chainlink-link-unlock-binance-transfer",
+        "notes": "Estimated Q4 2026 unlock based on historical 10-20M quarterly pattern"
+      }
+    ],
+    "summary": "Chainlink operates a predictable quarterly token release schedule of 10-20M LINK (~1.4-2.7% per quarter). As of April 2026, ~272.9M LINK remain unlocked from the 1B max supply, representing a gradual supply increase as the protocol transitions from vesting to emission-based rewards. No major cliff releases remain; unlock pressure is moderate and evenly distributed across 2026.",
+    "data_quality": "GOOD",
+    "caveats": "Exact H2 2026 unlock amounts estimated based on historical patterns; official schedule beyond Q2 2026 not found in free sources. The transition from vesting to staking emissions complicates lock classification."
+  },
+  "mechanism": {
+    "has_burn": false,
+    "burn_source": "NA",
+    "has_staking": true,
+    "staking_apr_pct": 4.32,
+    "staking_emission_inflationary": true,
+    "fee_capture_target": "stakers",
+    "value_accrual_summary": "Stakers capture value via emission-based rewards (4.32% APY) with future transition to user fee-based staking rewards. Chainlink Reserve captures protocol fees and converts them to LINK for staking rewards.",
+    "sources": [
+      "https://simplystaking.com/the-ultimate-chainlink-staking-guide",
+      "https://everstake.one/staking/protocols/chainlink",
+      "https://www.prnewswire.com/news-releases/chainlink-staking-v0-2-is-now-live-301999507.html"
+    ]
+  },
+  "inflation": {
+    "current_annualized_rate": 0.1097,
+    "method": "observed_yoy",
+    "as_of_date": "2026-04-29",
+    "trend_next_24m": "declining",
+    "rationale": "Current annualized inflation of ~11% driven by staking emissions and quarterly token releases (~70M/yr). Trend is declining as vesting phases out and the protocol transitions from emission-based to fee-based staking rewards, reducing need for new token creation.",
+    "sources": [
+      "https://dune.com/synthquest/chainlink-team-selling",
+      "https://tokenomist.ai/chainlink"
+    ]
+  },
+  "data_collection_notes": "Data collected April 2026 via WebSearch and public tokenomics aggregators. Chainlink official blog and staking portal (chain.link, blog.chain.link) blocked by network proxy; sourced equivalent data from CoinGecko, CoinMarketCap, Everstake, tokenomist.ai, and news archives. Unlock schedule inferred from quarterly patterns and recent April 2026 release; H2 2026 amounts estimated. Staking APY reflects v0.2 base floor rate (4.32% after delegation rewards). Inflation rate calculated from observed YoY supply growth; future rate depends on fee implementation timeline and emission phase-out. Key uncertainty: exact timing and magnitude of fee-based value accrual to stakers."
+}

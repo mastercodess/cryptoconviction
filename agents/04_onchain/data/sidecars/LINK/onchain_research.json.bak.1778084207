@@ -1,0 +1,44 @@
+{
+  "symbol": "LINK",
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2026-04-30"
+  },
+  "exchange_flows_30d": {
+    "total_inflow_usd": 142500000,
+    "total_outflow_usd": 151450000,
+    "net_usd": -8950000,
+    "trend": "Distribution/withdrawal trend dominated April 2026, with sustained negative exchange flows as holders pulled 970,430 LINK ($8.95M) in the largest single-day outflow of the year on April 27; exchange reserves fell from 141.5M to 130.9M tokens in 25 days, signaling accumulation into cold storage."
+  },
+  "holder_cohort": {
+    "lth_supply_pct": 0.65,
+    "sth_supply_pct": 0.35,
+    "smart_money_stance": "ACCUMULATING",
+    "top_holders_concentration": "Top 1% of addresses control 81% of circulating supply; top 10 holders control 33.16%; 125 whale wallets holding 1M+ LINK (25% growth YoY). Mid-tier holders (1K+ LINK) reached 25,420 wallets, highest since December 2025, indicating broad accumulation across scales."
+  },
+  "wash_trade_assessment": "LINK shows strong organic liquidity signals: daily spot volume exceeds $850M, total daily volume $1.51B across major exchanges. High transaction diversity and deep order books on regulated venues (Coinbase, Kraken, Binance) suggest genuine trading activity rather than wash-trade farming. Volume-to-price impact ratios appear healthy; no red flags of repetitive bot orders or artificial spikes. Tighter spread patterns and institutional ETF inflows ($111.5M cumulative) support organic demand thesis.",
+  "retention_health": "A",
+  "growth_authenticity": "STRONG",
+  "rationale": "Chainlink exhibits robust on-chain health markers: sustained oracle/CCIP network growth (CCIP volume $18B+ monthly, up 62% MoM in March; 260% weekly surge in April; 78% QoQ, 319% YoY growth through Q1 2026), deep whale accumulation at stable prices ($9-10 range since Feb), and staking participation of ~35-42% of circulating supply ($180-220M tokens). Exchange outflows indicate conviction despite sideways price action, and institutional adoption accelerates (Amundi's tokenized fund launch, 2,000+ price feeds live, 50 blockchains on CCIP). Risks: high holder concentration (81% in top 1%) and price stagnation may compress short-term momentum.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.newsbtc.com/news/chainlink/chainlink-outflows-970430-link-largest-2026/",
+    "https://crypto.news/link-outflow-hits-2026-high-at-970000-tokens/",
+    "https://www.coinreporter.io/2026/03/chainlinks-ccip-cross-chain-transfers-top-18-billion-monthly-volume/",
+    "https://blog.chain.link/quarterly-review-q1-2026/",
+    "https://sqmagazine.co.uk/chainlink-statistics/",
+    "https://cointelegraph.com/news/more-than-80-of-link-is-controlled-by-125-wallets",
+    "https://insights.glassnode.com/an-on-chain-distribution-analysis-of-chainlink-link/",
+    "https://etherscan.io/token/tokenholderchart/0x514910771af9ca656af840dff83e8264ecf986ca",
+    "https://www.coincarp.com/currencies/chainlink/richlist/",
+    "https://cryptorank.io/news/feed/41139-chainlink-wallets-hit-2026-high-as-link-price-stays-flat",
+    "https://www.nasdaq.com/articles/chainlink-smart-money-might-be-pulling-link-tokens-off-exchanges-to-stake-them",
+    "https://www.coindesk.com/business/2026/04/02/doj-sting-exposes-crypto-wash-trading-continues-to-be-far-more-common-than-expected",
+    "https://nansen.ai/post/how-to-monitor-crypto-wallet-activity-track-smart-money"
+  ]
+}

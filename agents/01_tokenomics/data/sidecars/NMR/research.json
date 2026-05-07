@@ -1,0 +1,70 @@
+{
+  "symbol": "NMR",
+  "name": "Numeraire",
+  "category": "data-science-tournament",
+  "supply": {
+    "total_supply_cap": 11000000,
+    "total_supply_cap_notes": "Originally 21M, reduced to 11M in July 2019. All 11M minted; no new minting possible. Contract burned/immutable.",
+    "circulating_supply": 7042000,
+    "circulating_supply_timestamp": "2026-04-29",
+    "circulating_supply_sources": ["CoinGecko: 7M", "CoinMarketCap: 7.497M", "Gate.io: 7.04M"],
+    "non_circulating_locked": 3000000,
+    "locked_tokens_release": "2028",
+    "locked_tokens_mechanism": "Staked on dummy tournament round with 2028 resolve date; cryptographically locked in staking contract. Numerai cannot access until 2028.",
+    "locked_tokens_notes": "Released as reward incentive for tournament participants over time starting 2028"
+  },
+  "market": {
+    "price_usd_current": 8.98,
+    "price_timestamp": "2026-04-29",
+    "market_cap_usd": 63206866,
+    "market_cap_notes": "Variation across sources: $63.2M-$69.7M. Rank: #319-#331 by market cap.",
+    "exchanges": ["Coinbase", "Kraken", "Gate.io", "MEXC", "Binance", "others"],
+    "aum_hedge_fund": 550000000,
+    "aum_timestamp": "2025-11",
+    "aum_notes": "Numerai hedge fund AUM grew from $60M to $550M in 3 years. JPMorgan secured $500M capacity August 2025. Target: $1B+ AUM."
+  },
+  "unlocks": {
+    "schedule": "2028",
+    "schedule_notes": "3M NMR locked until 2028. Released gradually as tournament reward incentives. No traditional investor vesting.",
+    "concentration_risk": "HIGH",
+    "concentration_notes": "Numerai treasury holds ~3M locked NMR (27% of total supply). Upon 2028 unlock, phased release to participants could create supply pressure if not absorbed by tournament participation demand."
+  },
+  "mechanism": {
+    "type": "Staking-and-burn deflationary",
+    "description": "Data scientists stake NMR as collateral on predictive AI models in weekly Numerai tournaments. Successful predictions earn NMR rewards from treasury. Failed predictions burn staked NMR permanently.",
+    "staking_participants": "Global network of data scientists competing in prediction tournaments",
+    "staking_amount_2025": "7000000",
+    "staking_amount_notes": "$7M worth of NMR staked (May 2025 ~$5.5M; grew to $7M+ by late 2025)",
+    "weekly_cycle": "Predictions resolved and rewards/burns distributed weekly",
+    "burn_mechanism": "Weekly burns occur on all unsuccessful model predictions. Removes tokens permanently from supply.",
+    "reward_mechanism": "Weekly rewards from Numerai treasury fund successful predictions. Treasury depletion risk acknowledged by Numerai; triggered $1M buyback July 2025.",
+    "protocol": "Erasure Protocol (Ethereum-based smart contracts)"
+  },
+  "inflation": {
+    "status": "No new minting",
+    "minting_rule": "All 11M tokens minted; contract immutable. Zero new issuance.",
+    "net_direction": "Deflationary (burns exceed new emissions after 2028)",
+    "net_direction_notes": "Weekly burns from failed predictions reduce circulating supply. Reward emissions offset by buybacks and natural burn pressure. Net effect: deflationary long-term.",
+    "emission_source": "Tournament rewards distributed from locked treasury (3M pool until 2028)",
+    "burn_data_2025": "Weekly burns confirmed but granular weekly burn rates not publicly disclosed. Treasury drawdown evident from $1M buyback initiated July 2025.",
+    "buyback_2025": {
+      "amount_usd": 1000000,
+      "timing": "July 2025",
+      "purpose": "Replenish treasury rewards pool; maintain economic stability; gradual market purchase via Coinbase Institutional",
+      "notes": "Suggests ongoing tournament rewards outpaced available treasury. Buyback commits to long-term token sustainability."
+    }
+  },
+  "data_collection_notes": "Research conducted April 29, 2026 using public sources: CoinGecko, CoinMarketCap, Coinbase, Kraken, Gate.io, Numerai official blog and announcements. No private/API data. Numerai docs (docs.numer.ai) network-blocked; data sourced from published announcements and third-party aggregators. Supply figures vary <1% across exchanges due to real-time tracking. Treasury concentration (3M locked + Numerai holdings of recent buyback) represents significant governance risk; 2028 unlock timing creates future supply event. Weekly burn data not granularly published; burn mechanism confirmed operational but exact weekly volumes require on-chain verification or tournament metrics access.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/numeraire",
+    "https://coinmarketcap.com/currencies/numeraire/",
+    "https://www.coinbase.com/price/numeraire",
+    "https://blog.numer.ai/numerai-raises-30m-series-c-at-500m-valuation/",
+    "https://blog.numer.ai/jpmorgan-secures-500m-capacity/",
+    "https://blog.numer.ai/numerai-kicks-off-strategic-nmr-buyback/",
+    "https://medium.com/numerai/numerais-new-token-supply-7c34636929c",
+    "https://onekey.so/blog/ecosystem/nmr-deep-dive-token-fundamentals-recent-developments-and-possible-future-trajectories/",
+    "https://phemex.com/academy/what-is-numeraire-nmr",
+    "https://blog.binance.us/all-about-numeraire-nmr/"
+  ]
+}

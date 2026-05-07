@@ -1,0 +1,182 @@
+{
+  "token": "SUI",
+  "chain": "Sui L1",
+  "audits": [
+    {
+      "auditor": "Zellic",
+      "scope": "Sui Move bytecode verifier, core consensus logic",
+      "status": "Completed",
+      "date": "2023-03",
+      "finding": "Critical bug in move-binary-format crate relating to bytecode control flow verification discovered pre-mainnet; silently fixed March 30, 2023. Zellic report titled 'The Billion Dollar Bug'",
+      "severity": "Critical",
+      "impact": "Bytecode verifier vulnerability posed potential billions in risk"
+    },
+    {
+      "auditor": "OtterSec",
+      "scope": "Sui ecosystem and Move language security assessments",
+      "status": "Ongoing",
+      "date": "2023-12 onwards",
+      "finding": "Partnership announced December 2023; conducting multiple audits of Sui projects and core modules",
+      "severity": "N/A",
+      "impact": "Ecosystem-wide security enhancement"
+    },
+    {
+      "auditor": "Zellic",
+      "scope": "Sui Bridge v1 security assessment",
+      "status": "Completed",
+      "date": "2024-03",
+      "finding": "Security assessment of bridge infrastructure",
+      "severity": "Medium",
+      "impact": "Cross-chain bridge security"
+    },
+    {
+      "auditor": "OtterSec",
+      "scope": "Sui Bridge v1 security assessment",
+      "status": "Completed",
+      "date": "2024-03",
+      "finding": "Security assessment of bridge infrastructure",
+      "severity": "Medium",
+      "impact": "Cross-chain bridge security"
+    }
+  ],
+  "exploit_history": [
+    {
+      "name": "Cetus Protocol Exploit (Sui Ecosystem)",
+      "date": "2025-05-22",
+      "loss_usd": 223000000,
+      "root_cause": "Arithmetic overflow in third-party math library (integer-mate) used for liquidity calculations; faulty overflow check in u256 checked_shlw function allowed attacker to pass validation but trigger overflow during computation",
+      "vector": "Spoof token attack: attacker created spoofed tokens mimicking legitimate assets (e.g., BULLA) and extracted ~$223M via liquidity pool exploitation",
+      "affected_asset": "Cetus DEX liquidity pools (primarily SUI/USDC)",
+      "fund_recovery": "Sui validators froze ~$162M on-chain; ~$61M bridged to Ethereum before freezing. Protocol restarted with $30M Sui Foundation loan; recovered ~85% of initial liquidity value",
+      "impact_on_l1": "Ecosystem exploit, NOT L1 vulnerability; Sui consensus and core protocol functioned correctly during attack",
+      "notes": "Largest DeFi exploit on Sui to date; demonstrates need for stronger auditing of ecosystem dependencies"
+    },
+    {
+      "name": "Aftermath Finance Exploit (Sui Ecosystem)",
+      "date": "2025-Q1",
+      "loss_usd": 1100000,
+      "root_cause": "Vulnerability in perpetual contracts protocol",
+      "vector": "Direct contract exploitation",
+      "affected_asset": "USDC in perpetual contracts",
+      "impact_on_l1": "Ecosystem exploit, NOT L1 vulnerability",
+      "notes": "Smaller scope than Cetus; specific perpetual contracts module vulnerability"
+    },
+    {
+      "name": "Scallop Protocol Exploit (Sui Ecosystem)",
+      "date": "2025-04-26",
+      "loss_usd": "~450000 (150K SUI at ~$3/SUI)",
+      "root_cause": "Vulnerability in deprecated contract module",
+      "vector": "Side module exploit",
+      "affected_asset": "SUI tokens",
+      "impact_on_l1": "Ecosystem exploit in deprecated module, NOT L1 vulnerability",
+      "notes": "Targeted deprecated/side module rather than core infrastructure"
+    },
+    {
+      "name": "Volo Protocol Issue (Sui Ecosystem)",
+      "date": "2025-Q1",
+      "loss_usd": 3500000,
+      "root_cause": "Admin key compromise",
+      "vector": "Unauthorized admin access",
+      "affected_asset": "Protocol funds",
+      "impact_on_l1": "Operational issue, NOT L1 vulnerability",
+      "notes": "Admin key management issue rather than protocol flaw"
+    }
+  ],
+  "code_health": {
+    "repository": "https://github.com/MystenLabs/sui",
+    "language": "Rust",
+    "license": "Apache 2.0",
+    "stars": 12000,
+    "forks": 7600,
+    "commit_cadence": "High frequency; main branch receives continuous updates",
+    "contributors": "Large active team; multiple branches (main, devnet, testnet, mainnet)",
+    "code_review_process": "GitHub PR-based; appears to have standard review workflow",
+    "formal_verification": "Move bytecode verifier underwent formal scrutiny; no evidence of formal verification for consensus protocol",
+    "testing_framework": "Standard Rust testing; crates structure suggests modular approach",
+    "decentralization": "100 active validators with on-chain governance; Sui Foundation initially stakes across entire set; validator set voting power >2/3 required for consensus (Byzantine Fault Tolerance)",
+    "upgrade_mechanism": "On-chain governance via SUI token holder voting; validators propose and approve protocol upgrades through consensus-based voting",
+    "note": "Critical pre-mainnet bug (Move bytecode) was fixed silently; this highlights importance of pre-launch audits"
+  },
+  "dependencies": [
+    {
+      "name": "integer-mate",
+      "type": "third-party math library",
+      "status": "Used by ecosystem (notably Cetus Protocol)",
+      "risk": "Cetus exploit traced to faulty overflow check in this library; not core L1 dependency but impacts ecosystem security",
+      "note": "External dependency risk in Move ecosystem"
+    }
+  ],
+  "rationale": {
+    "assessment": "Sui L1 demonstrates solid security posture for core protocol. Pre-mainnet Zellic audit of Move bytecode verifier caught critical bug, showing strong pre-launch security discipline. Active partnerships with OtterSec and Zellic provide ongoing ecosystem security. No known L1-level exploits or consensus failures; all major exploits (Cetus $223M, Aftermath $1.1M, Scallop $450K) were ecosystem contract bugs, not core protocol vulnerabilities. Validator set of ~100 with >2/3 BFT threshold provides reasonable decentralization. On-chain governance allows community-driven upgrades. Primary security risk lies in Move ecosystem dependency quality (e.g., integer-mate library), not L1 consensus or bytecode verifier.",
+    "gaps": "No public evidence of formal verification for Mysticeti consensus protocol. Validator set composition and decentralization metrics could be stronger (100 validators is moderate; some chains target 150+). Limited public detail on network-level security testing or fuzzing campaigns.",
+    "confidence": "High for L1 security posture; High for ecosystem risk assessment given Cetus incident data; Medium for detailed validator decentralization metrics"
+  },
+  "data_quality": {
+    "sources": "Free public sources; official Sui documentation, GitHub, OtterSec/Zellic public statements, Immunefi, news reports",
+    "completeness": "Comprehensive for major audits and exploits; limited detail on all historical patches/vulnerabilities",
+    "recency": "Data through April 2025 (Scallop exploit) and current as of April 2026; Cetus exploit details from May 2025",
+    "verification": "Cross-referenced across multiple sources; Cetus incident well-documented by Cyfrin, Elliptic, Halborn"
+  },
+  "sources": [
+    {
+      "title": "The Billion Dollar Bug: Move Bytecode Verifier Audit",
+      "url": "https://www.zellic.io/blog/the-billion-dollar-move-bug/",
+      "source_type": "Zellic Security Research"
+    },
+    {
+      "title": "Sui Partners With Leading Web3 Audit Firms OtterSec and Zellic",
+      "url": "https://www.businesswire.com/news/home/20231201752148/en/Sui-Partners-With-Leading-Web3-Audit-Firms-OtterSec-and-Zellic-to-Secure-Ecosystem",
+      "source_type": "Official Announcement"
+    },
+    {
+      "title": "Inside The $223M Cetus Exploit: Root Cause And Impact Analysis",
+      "url": "https://www.cyfrin.io/blog/inside-the-223m-cetus-exploit-root-cause-and-impact-analysis",
+      "source_type": "Cyfrin Security Analysis"
+    },
+    {
+      "title": "Cetus Protocol Hack: Overflow Bug Leads to $223M Loss",
+      "url": "https://quillaudits.medium.com/cetus-protocol-hack-overflow-bug-leads-to-223m-loss-0bafd07d83e9",
+      "source_type": "Quill Audits Analysis"
+    },
+    {
+      "title": "How $220M was stolen in minutes: Understanding the Cetus DEX exploit on Sui",
+      "url": "https://cointelegraph.com/explained/how-220m-was-stolen-in-minutes-understanding-the-cetus-dex-exploit-on-sui",
+      "source_type": "Cointelegraph Explainer"
+    },
+    {
+      "title": "Sui Foundation Bug Bounty Program with Immunefi",
+      "url": "https://blog.sui.io/sui-foundation-partnering-with-immunefi-for-bug-bounty-program/",
+      "source_type": "Sui Foundation Blog"
+    },
+    {
+      "title": "Sui Immunefi Bug Bounty Program",
+      "url": "https://www.sui.io/bug-bounty-program",
+      "source_type": "Official Sui Resource"
+    },
+    {
+      "title": "Sui Network Validators",
+      "url": "https://www.sui.io/validators",
+      "source_type": "Official Sui Documentation"
+    },
+    {
+      "title": "Sui Consensus Architecture",
+      "url": "https://docs.sui.io/develop/sui-architecture/consensus",
+      "source_type": "Official Sui Documentation"
+    },
+    {
+      "title": "GitHub MystenLabs/sui Repository",
+      "url": "https://github.com/MystenLabs/sui",
+      "source_type": "Open Source Repository"
+    },
+    {
+      "title": "Sui Aftermath Finance Exploit Report",
+      "url": "https://phemex.com/news/article/aftermath-finance-loses-11m-usdc-in-sui-network-exploit-77259",
+      "source_type": "Phemex News"
+    },
+    {
+      "title": "Sui Security Audits Page",
+      "url": "https://www.sui.io/security",
+      "source_type": "Official Sui Security Resources"
+    }
+  ]
+}

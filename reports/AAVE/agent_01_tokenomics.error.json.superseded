@@ -1,0 +1,21 @@
+{
+  "error": "ValidationError: 8 validation errors for TokenomicsOutput\nfdv_risk_rating\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ninflation_pressure_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nvalue_accrual_verdict\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconcentration_risk_flag\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntop10_holding_pct\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nunlock_pressure_next_90d_pct\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrationale\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncomposite_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+  "raw_output": {
+    "error": "max_iters_reached",
+    "agent": "01_tokenomics::AAVE",
+    "iters": 14,
+    "schema_keys": [
+      "token_symbol",
+      "fdv_risk_rating",
+      "inflation_pressure_score",
+      "value_accrual_verdict",
+      "concentration_risk_flag",
+      "top10_holding_pct",
+      "unlock_pressure_next_90d_pct",
+      "next_unlock_date",
+      "next_unlock_pct_of_supply",
+      "rationale",
+      "composite_score"
+    ]
+  }
+}

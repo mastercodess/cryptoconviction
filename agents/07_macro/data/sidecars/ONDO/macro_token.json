@@ -1,0 +1,15 @@
+{
+  "symbol": "ONDO",
+  "funding_rate_8h": 0.00012,
+  "open_interest_usd": 95000000,
+  "btc_correlation_30d": 0.72,
+  "eth_correlation_30d": 0.68,
+  "nasdaq_correlation_30d": 0.40,
+  "leverage_warning": false,
+  "rationale": "Real-world assets/staking token with thinner derivatives market; moderate funding indicates balanced long/short positioning on tier-1 venues.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coinglass.com/funding/ONDO",
+    "https://www.coinglass.com/currencies/ONDO/futures"
+  ]
+}

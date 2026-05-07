@@ -1,0 +1,117 @@
+{
+  "symbol": "OGN",
+  "name": "Origin Protocol",
+  "category": "lst-aggregator",
+  "supply": {
+    "max_supply": 1409664846,
+    "total_supply": 1409664846,
+    "circulating_supply": 660000000,
+    "circulating_supply_pct": 46.8,
+    "notes": "Total supply inflated above 1B max in early years but effective circulating capped at 660M. Most team/advisor vesting complete (4-year schedules). Foundation & Ecosystem allocations releasing through 2025-2026 but kept out of circulation."
+  },
+  "market": {
+    "current_price_usd": 0.0234,
+    "market_cap_usd": 15822035,
+    "fully_diluted_valuation_usd": 33662857,
+    "fdv_mc_ratio": 2.13,
+    "data_date": "2026-04-29",
+    "notes": "Market cap: ~$15.8M (660M × $0.0234). FDV: ~$33.7M (1.41B × $0.0234). Small cap, mature project with focus on value accrual vs growth metrics."
+  },
+  "unlocks": {
+    "remaining_locked": 749664846,
+    "pct_locked": 53.2,
+    "major_unlock_events": "Foundation & Ecosystem allocations released July-October 2025 (~6.3M OGN, 650K OGN). Team vesting 4yr schedule complete for most. No major unlocks anticipated post-2025.",
+    "supply_pressure": "minimal",
+    "notes": "Unlocked tokens do NOT automatically circulate—many stakeholders voluntarily lock tokens as xOGN to earn buyback yield. Effective circulating supply stable despite unlock events."
+  },
+  "mechanism": {
+    "governance_token": "xOGN",
+    "vote_escrow": true,
+    "lock_period_min_days": 30,
+    "lock_period_max_days": 365,
+    "multiplier_model": "time-weighted: longer locks earn higher xOGN multiplier (up to 1x for 1-year lock)",
+    "early_exit": true,
+    "early_exit_mechanism": "unstake fee based on remaining lock time",
+    "voting_rights": "xOGN holders vote on governance proposals, parameter settings, revenue allocation",
+    "revenue_capture": "100% of protocol revenue flows to xOGN holders via OGN buybacks (approved June 2025)",
+    "current_xogn_staked_pct": 50,
+    "current_staking_apy": "~40%",
+    "max_lock_apy": "37.5-40%",
+    "notes": "Vote-escrow model creates alignment between governance power & economic stake. No new token emissions—all yield funded by protocol revenue buybacks. Rewards accrue continuously, claimable without unlocking position."
+  },
+  "inflation": {
+    "annual_new_emissions": 0,
+    "emission_schedule": "none",
+    "deflationary_mechanism": true,
+    "deflationary_mechanism_type": "OGN buyback & distribution",
+    "buyback_history": {
+      "total_bought_back_cumulative": 83000000,
+      "pct_of_circulating": 12.5,
+      "ytd_2026_bought": 23000000,
+      "weekly_pace_usd": 200000,
+      "monthly_revenue_target_usd": 833333,
+      "annual_revenue_target_usd": 10000000,
+      "buyback_approval_date": "June 2025",
+      "aggressive_blitz_start_date": "July 21, 2025",
+      "dao_treasury_for_buybacks_usd": 3000000,
+      "notes": "100% protocol revenue (OETH, OUSD, Super OETH, OS, ARM) → OGN buybacks. $480K+ bought back June 30-Aug 4, 2025 (from both revenue + DAO treasury). On pace for ~90M OGN buybacks in 2026 alone—nearly doubling all prior years combined."
+    },
+    "burn_mechanism": false,
+    "burn_notes": "No dedicated burn. Bought OGN distributed to xOGN stakers, reducing supply pressure via holder concentration rather than destruction.",
+    "net_inflation": "deflationary",
+    "inflation_risk": "very-low"
+  },
+  "product_ecosystem": {
+    "main_products": [
+      {
+        "name": "OETH",
+        "type": "Liquid Staking Token (LST)",
+        "revenue_source": "redemption fees, slippage capture",
+        "nov_2025_update": "eliminated third-party oracle reliance for validator balance verification"
+      },
+      {
+        "name": "OUSD",
+        "type": "Yield-bearing Stablecoin",
+        "revenue_source": "yield accrual from underlying collateral",
+        "launched": "2020",
+        "note": "first yield-bearing stablecoin"
+      },
+      {
+        "name": "Super OETH",
+        "type": "Enhanced LST",
+        "revenue_source": "strategy fees"
+      },
+      {
+        "name": "primeETH",
+        "type": "LST/Strategy",
+        "deployed_on": "Base"
+      },
+      {
+        "name": "Origin Vault (with Levva)",
+        "type": "Diversified ETH Yield Strategy",
+        "launched": "August 2025",
+        "apy_offered": "~23%",
+        "revenue_source": "strategy fees"
+      },
+      {
+        "name": "ARM",
+        "type": "Automated Redemption Manager",
+        "function": "seamless LST ↔ ETH swaps with zero slippage",
+        "revenue_source": "swap fees"
+      }
+    ],
+    "multichain_expansion": "Base blockchain (Morpho markets integration for OETH/OUSD)",
+    "target_annual_revenue_usd": 10000000
+  },
+  "data_collection_notes": "Gathered from Origin Protocol official site, governance forums, and token holder updates (Apr-Nov 2025 period). Supply: 1.41B max, 660M circulating (~47%). Market: ~$15.8M cap at $0.0234. xOGN vote-escrow model with ~40% staking APY from buyback revenue. Buyback program (100% revenue allocation since June 2025) has repurchased 83M OGN (12.5% of supply) to date, with 23M+ bought in 2026 YTD. No new emissions, minimal remaining unlock pressure. Mature project pivoted from NFT → LST aggregator/yield platform. Deflationary via buyback-funded staking yield, not token destruction.",
+  "sources": [
+    "https://www.originprotocol.com/blog/ogn-tokenomics-proposal?lang=en",
+    "https://governance.originprotocol.com/t/allocate-100-of-protocol-revenue-to-ogn-buybacks-for-xogn-distribution/157",
+    "https://docs.originprotocol.com/ogn/staking-xogn",
+    "https://www.originprotocol.com/ogn-buyback-upgrades",
+    "https://tokeninsight.com/en/coins/origin-protocol/tokenomics",
+    "https://coinmarketcap.com/currencies/origin-protocol/",
+    "https://www.originprotocol.com/blog/april-2025-token-holder-update",
+    "https://governance.originprotocol.com/t/tldr-of-origin-s-community-call-04-06-2026/219"
+  ]
+}

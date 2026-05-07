@@ -1,0 +1,113 @@
+{
+  "token_symbol": "NMR",
+  "token_name": "Numeraire",
+  "project_name": "Numerai",
+  "date_collected": "2026-04-30",
+  "data_collection_note": "All data from free public sources (web search, CoinMarketCap, CoinGecko, Numerai official blog, Messari, exchanges)",
+
+  "project_overview": {
+    "business_model": "AI-powered hedge fund using crowdsourced machine learning models from global data scientists",
+    "token_mechanic": "Staking-on-predictions model: data scientists stake NMR on weekly tournament predictions; winning predictions earn rewards, losing predictions result in stake burns. Rewards come from Numerai's treasury (NMR), not new mints.",
+    "key_distinction": "NMR is closer to an equity-like claim on a real hedge fund business than a typical DeFi protocol token. The hedge fund (Numerai business) is the revenue generator; NMR holders participate via staking rewards, not direct fund revenue share."
+  },
+
+  "valuation_metrics": {
+    "market_cap_usd": 67576978,
+    "market_cap_source": "CoinMarketCap (2026-04-29)",
+    "alternative_mc_usd": 63290000,
+    "alternative_mc_source": "CoinGecko (2026-04-29)",
+    "current_price_usd": 9.56,
+    "price_note": "Ranges $8.89-$9.56 across major exchanges late April 2026",
+    "circulating_supply": 7040000,
+    "circulating_supply_unit": "NMR",
+    "max_supply": 11000000,
+    "max_supply_unit": "NMR",
+    "supply_note": "All 11M tokens already minted; supply gradually decreases via token burns on failed predictions"
+  },
+
+  "revenue_model": {
+    "annualized_revenue_usd": null,
+    "revenue_note": "NMR is not a protocol with direct protocol revenue. Numerai (the hedge fund business) generates revenue from AUM and performance, but this does NOT flow directly to NMR token holders.",
+    "related_business_metric": "Numerai hedge fund AUM",
+    "numerai_aum_usd": 550000000,
+    "numerai_aum_growth": "From ~$60M to $550M over past 3 years; targeting $1B+ AUM",
+    "numerai_aum_note": "JPMorgan Asset Management committed $500M in capacity (Aug 2025); Series C raised $30M at $500M company valuation (Nov 2025)",
+    "hedge_fund_performance_2024": {
+      "net_return_pct": 25.45,
+      "sharpe_ratio": 2.75,
+      "notes": "Best year in firm history; only 1 down month out of 12"
+    },
+    "hedge_fund_performance_2025_ytd": {
+      "net_return_pct": 8.0,
+      "comparison": "Outperformed PivotalPath Equity Quant Index (3%)"
+    }
+  },
+
+  "tvl_and_staking": {
+    "total_nmr_staked": 1000000,
+    "total_nmr_staked_unit": "NMR minimum estimate",
+    "total_nmr_staked_note": "Over 1M NMR staked daily; this is the most current public figure. Earlier 2025 estimates cited ~$7M+ of NMR staked (in USD value at that time). Supply is fixed at 11M, so ~9% of max supply is currently in active staking.",
+    "tvl_usd_estimated": 9560000,
+    "tvl_usd_calc_note": "Estimated from 1M staked NMR × ~$9.56 price (April 2026), order of magnitude only",
+    "staking_mechanism": "Weekly tournament: data scientists submit predictive models, stake NMR, earn rewards for correct predictions or lose stake (burn) for incorrect ones",
+    "burn_mechanics": "Max burn/payout per round capped at ±5%. Losing predictions result in proportional NMR burns; successful predictions earn treasury-funded NMR rewards."
+  },
+
+  "yield_metrics": {
+    "inflationary_yield_apr_pct": null,
+    "yield_note": "Not inflationary: supply is immutable at 11M. Rewards come from Numerai treasury redistribution, not new token mints. Therefore 'yield' is zero at the protocol level; stakers get gross rewards offset by burn risk and opportunity cost.",
+    "gross_staking_apr_observed": 34.13,
+    "gross_staking_apr_note": "Average across 4 staking platforms (8 total options), as of 2025. Rates vary widely (e.g., Gate.io quoted 131.84% but likely includes platform incentives). Actual net APR is much lower after accounting for burns and prediction risk.",
+    "net_staking_apr_estimated": null,
+    "net_apr_note": "Literature suggests gross 20-40% reward rates, but net APR is substantially lower after weekly burns on failed predictions. No single authoritative net APR figure available; depends on individual prediction accuracy.",
+    "yield_source": "Numerai treasury distribution (not inflationary)"
+  },
+
+  "peer_comparison": {
+    "category": "Intelligence/AI tokens (speculative)",
+    "peers": [
+      {
+        "symbol": "TAO",
+        "name": "Bittensor",
+        "mechanic": "Decentralized peer-to-peer machine learning network. Subnet ecosystem for AI model training; contributors earn rewards.",
+        "market_cap_billions_approx": 4.0,
+        "rank_notes": "Top 30 crypto by market cap; far larger than NMR"
+      },
+      {
+        "symbol": "FET",
+        "name": "Fetch.ai (now Artificial Superintelligence Alliance)",
+        "mechanic": "Autonomous AI agents for supply chain, logistics, energy. Merged with SingularityNET and Ocean Protocol (2024).",
+        "market_cap_billions_approx": null,
+        "rank_notes": "Part of ASI merger; competes with Bittensor"
+      },
+      {
+        "symbol": "OCEAN",
+        "name": "Ocean Protocol",
+        "mechanic": "Secure data sharing and monetization tools.",
+        "rank_notes": "Part of ASI merger"
+      }
+    ],
+    "comparison_note": "NMR is fundamentally different: it's a staking token for a specific hedge fund, not an open protocol or infrastructure layer. TAO, FET, OCEAN operate as utility tokens on decentralized networks. NMR is closer to equity in Numerai the company than to a DAO token."
+  },
+
+  "key_risks_and_notes": [
+    "NMR has a capped supply (11M) and no new minting; rewards come from treasury reallocation, not inflation.",
+    "Token burns occur weekly on failed predictions; circulating supply will gradually decrease over time.",
+    "Staking returns are highly dependent on individual data scientist accuracy; there is genuine risk of loss.",
+    "Numerai's hedge fund AUM and performance are the primary value drivers for the business, but do not directly accrue to NMR holders beyond staking rewards.",
+    "JPMorgan's $500M capacity commitment and Series C funding signal institutional confidence but do not guarantee continued growth.",
+    "NMR is not a revenue-generating token in the traditional sense; it is a claim on staking rewards from a real business (Numerai hedge fund)."
+  ],
+
+  "sources": [
+    "https://coinmarketcap.com/currencies/numeraire/",
+    "https://www.coingecko.com/en/coins/numeraire",
+    "https://blog.numer.ai/jpmorgan-secures-500m-capacity/",
+    "https://ventureburn.com/numerai-raises-30m/",
+    "https://www.okx.com/en-us/learn/numerai-numeraire-crowdsourced-hedge-fund",
+    "https://docs.numer.ai/numerai-tournament/staking",
+    "https://www.stakingrewards.com/asset/numeraire",
+    "https://linity.com/projects/bittensor-tao-review",
+    "https://messari.io/project/numerai"
+  ]
+}

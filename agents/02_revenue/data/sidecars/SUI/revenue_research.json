@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "token": "SUI",
+    "token_name": "Sui",
+    "type": "L1_blockchain",
+    "research_date": "2026-04-30",
+    "data_sources": "DefiLlama, Messari, CoinMarketCap, CoinGecko, Sui Documentation, Staking Rewards",
+    "note": "Sui is a Move-based L1 with low absolute fee revenue. Revenue model = gas fees + storage fees → validators. Most staker APR is inflationary subsidy, minimal real yield from fees."
+  },
+  "current_valuation": {
+    "market_cap_usd": 3682062783,
+    "price_usd": 0.931369,
+    "circulating_supply": 4000000000,
+    "max_supply": 10000000000,
+    "marketcap_rank": 26,
+    "timestamp": "2026-04-30"
+  },
+  "revenue_metrics": {
+    "q4_2024": {
+      "total_fees_usd": 5400000,
+      "total_fees_sui": 1800000,
+      "period_days": 90,
+      "avg_daily_fees_usd": 60000,
+      "qoq_growth_percent": 613.6,
+      "yoy_growth_percent": 1063.8,
+      "notes": "Q4 2024 marked ATH for quarterly fees, driven by surge in SUI price (131.5% QoQ) and real fee volume growth (127.9% QoQ in SUI terms)"
+    },
+    "q1_2025": {
+      "avg_transaction_fee_sui": 0.0025,
+      "avg_transaction_fee_usd": 0.0087,
+      "period_days": 90,
+      "notes": "Transaction fee decreased 13.1% QoQ from Q4 2024. Market cap declined 40.3% QoQ to $7.2B (price weakness)"
+    },
+    "q3_2025": {
+      "avg_transaction_fee_sui": 0.0025,
+      "avg_transaction_fee_usd": 0.0088,
+      "period_days": 90,
+      "qoq_change_percent": -17.3,
+      "notes": "Fee decreased further QoQ; extremely low per-transaction fees are Sui's competitive advantage"
+    },
+    "all_time_fees_usd": 8840000,
+    "revenue_model": "gas_fees + storage_fees → validators; no protocol treasury revenue",
+    "fee_breakdown": {
+      "computation_gas": "Units-based pricing per operation; variable by transaction type",
+      "storage_gas": "Fixed at 76 MIST per storage unit; ~100 units per byte",
+      "storage_rebate": "99% of storage fee refunded on data deletion; 1% non-refundable"
+    }
+  },
+  "staking_and_yield": {
+    "current_staking_metrics": {
+      "percent_staked": 0.75,
+      "staking_note": "~75% of SUI supply staked across 100+ validators",
+      "validator_count": 100,
+      "typical_validator_commission_percent": 7.5,
+      "validator_commission_range": "2-10%"
+    },
+    "staker_apr_metrics": {
+      "gross_apr_percent": 2.0,
+      "apr_range": "1.8-3.25%",
+      "net_apr_after_commission": 1.8,
+      "net_apr_range": "1.6-3.0%"
+    },
+    "reward_composition": {
+      "subsidy_share_percent": 92.0,
+      "real_fees_share_percent": 8.0,
+      "subsidy_ratio_note": "Estimated: ~92% of rewards from inflationary subsidy, ~8% from actual gas fees (highly inflationary)",
+      "subsidy_source": "10% token allocation (1B SUI tokens) for stake rewards",
+      "subsidy_schedule": "Decreases 10% per epoch cycle, repeats for ~10 epochs before stepping down further",
+      "subsidy_depletion": "Subsidies are temporary; long-term staking yield will be 100% gas fees only"
+    },
+    "inflation_impact": {
+      "daily_issuance_sui": 1111111,
+      "inflation_note": "Network prints ~1.1M SUI daily (~406M/year) during subsidy phase until cap reached",
+      "long_term_note": "Maximum supply 10B SUI; current circulation ~4B; subsidies designed to deplete before supply cap"
+    },
+    "real_yield_assessment": {
+      "current_real_yield_percent": 0.16,
+      "real_yield_note": "At 2% gross APR with 92% subsidy composition, real yield from fees ≈ 0.16% APR (8% of 2%)",
+      "maturity_yield_outlook": "As subsidy depletes, real yield approaches zero unless transaction volume & fees surge"
+    }
+  },
+  "tvl_and_defi": {
+    "current_tvl_usd": 2600000000,
+    "tvl_ath_usd": 2600000000,
+    "tvl_milestone_jan_2025": 2000000000,
+    "tvl_milestone_dip_july_2025": 1400000000,
+    "tvl_note": "Hit $1B in Q4 2024, reached $2B by Jan 2025, peaked at $2.6B in Oct 2025, dipped to $1.4B in July amid market weakness",
+    "major_protocols": [
+      {
+        "protocol": "Suilend",
+        "tvl_usd": 745000000,
+        "rank": 1
+      },
+      {
+        "protocol": "Navi",
+        "tvl_usd": 723000000,
+        "rank": 2
+      }
+    ],
+    "tvl_p_ratio": {
+      "tvl_to_market_cap": 0.706,
+      "note": "TVL/MC = $2.6B / $3.68B = 0.71 (healthy for L1; suggests reasonable collateralization)"
+    }
+  },
+  "peer_comparison": {
+    "network_type": "L1_blockchain",
+    "peers": [
+      {
+        "name": "Solana",
+        "ticker": "SOL",
+        "tvl_usd": 10000000000,
+        "tvl_note": "TVL recently surpassed $10B; ~3.8x larger than Sui",
+        "fee_model": "Per-transaction variable; much higher than Sui on average"
+      },
+      {
+        "name": "Aptos",
+        "ticker": "APT",
+        "tvl_usd": null,
+        "tvl_note": "Fastest-growing L1 in RWA segment; specific TVL not captured but shows strong RWA traction"
+      },
+      {
+        "name": "Avalanche",
+        "ticker": "AVAX",
+        "tvl_usd": null,
+        "tvl_note": "Established L1; data less recent"
+      },
+      {
+        "name": "Sei",
+        "ticker": "SEI",
+        "tvl_usd": null,
+        "tvl_note": "Emerging L1; lower TVL than Sui"
+      },
+      {
+        "name": "Near",
+        "ticker": "NEAR",
+        "tvl_usd": null,
+        "tvl_note": "Sharding L1; comparable to Sui in scale"
+      }
+    ],
+    "sui_competitive_position": {
+      "tvl_rank_vs_peers": "Below Solana, above Sei/Near/Aptos in TVL magnitude",
+      "fee_advantage": "Lowest per-transaction fees among peers; Sui ~$0.009 vs Solana ~$0.00025 (Solana lower but variable)",
+      "staking_differentiation": "Sui has high staking ratio (75%) but mostly inflationary; Solana & Aptos have lower subsidy % of rewards"
+    }
+  },
+  "valuation_metrics": {
+    "p_s_ratio_notes": "Cannot compute traditional P/S due to ultra-low revenue. Q4 2024 fees annualized (~$21.6M) gives P/S = 170x (extremely high)",
+    "p_tvl_ratio": 1.41,
+    "p_tvl_ratio_analysis": "MC/TVL = $3.68B / $2.6B = 1.41x; healthy for L1; Ethereum ~0.5x, Solana ~1.7x for reference",
+    "valuation_assessment": "Sui is priced for growth. Real fee revenue is negligible (~0.16% staker APR). Token value driven by expectations of: (a) TVL growth, (b) future transaction volume surge, (c) speculative demand for L1 ecosystem."
+  },
+  "risk_factors": {
+    "inflationary_subsidy_risk": "92% of staker rewards are inflationary; massive dilution if holders stake expecting real yield",
+    "fee_revenue_cliff": "When subsidies deplete (2-4 years), staking APR will collapse to ~0.16% unless transaction fees surge 100x+",
+    "tvl_volatility": "TVL swung from $2.6B (Oct 2025) to $1.4B (July 2025); ecosystem remains volatile",
+    "security_incidents": "Scallop DeFi exploit ($150K on Apr 27, 2026) shows early-stage protocol risks",
+    "token_unlock_risk": "42.62M SUI (~$40.4M) scheduled unlock May 1, 2026; further dilution ahead"
+  },
+  "summary": {
+    "revenue_character": "Sui generates minimal absolute fee revenue ($5.4M in Q4 2024 ATH). Model: users pay gas/storage fees → validators get fees + subsidy. Real yield from fees is ~0.16% APR for stakers.",
+    "subsidy_vs_real_split": "Current staker APR (~2%) composed of ~92% inflationary subsidy (1B SUI over 2-4 year window) + ~8% actual gas fees. Subsidy is temporary; long-term yield depends entirely on transaction volume spike.",
+    "valuation_implication": "P/S ratio ~170x based on annualized Q4 fees; P/TVL ratio 1.41x (reasonable). Token value is speculative bet on TVL/fee growth, not cash-flow yield. Investors are pricing in 10-100x fee growth to justify current valuation."
+  }
+}

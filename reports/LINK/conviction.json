@@ -1,0 +1,23 @@
+{
+  "token_symbol": "LINK",
+  "weighted_conviction": 58,
+  "final_verdict": "CONDITIONAL",
+  "bull_case": [
+    "[run with ANTHROPIC_API_KEY set to generate]"
+  ],
+  "bear_case": [
+    "[same \u2014 Sonnet narrative requires API key]"
+  ],
+  "invalidation_conditions": [
+    "[same]"
+  ],
+  "recommended_position_pct": 0.8,
+  "monitoring_checklist": [
+    "[same]"
+  ],
+  "category_scorecard": {
+    "tokenomics": 58
+  },
+  "auto_reject_triggered": false,
+  "auto_reject_reason": null
+}

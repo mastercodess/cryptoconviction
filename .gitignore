@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.db-journal
+.DS_Store
+agents/*/data/*.db
+agents/*/data/raw/
+reports/*.json
+reports/*.md
+!reports/.gitkeep
+.venv/
+venv/
+*.egg-info/

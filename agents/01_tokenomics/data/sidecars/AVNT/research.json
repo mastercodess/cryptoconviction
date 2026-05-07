@@ -1,0 +1,125 @@
+{
+  "symbol": "AVNT",
+  "name": "Avantis",
+  "category": "DeFi - Perpetuals DEX",
+  "supply": {
+    "total": 1000000000,
+    "circulating": 319958479,
+    "circulating_percentage": 32.0,
+    "max": 1000000000,
+    "max_equals_total": true,
+    "locked_percentage": 68.0,
+    "inflation_rate": "Deflationary (buyback-and-burn)",
+    "notes": "Fixed supply of 1B tokens. ~32% unlocked as of April 2026; remaining 68% under vesting."
+  },
+  "market": {
+    "market_cap_usd": 47381387,
+    "market_cap_rank": 497,
+    "price_usd": 0.1557,
+    "price_usd_24h_range_low": null,
+    "price_usd_24h_range_high": null,
+    "volume_24h_usd": 18081915,
+    "ath_usd": 2.66,
+    "ath_date": "2025-09-22",
+    "ath_change_percent": -94.15,
+    "data_source": "CoinGecko, CoinMarketCap, Binance, Kraken",
+    "timestamp": "2026-04-29"
+  },
+  "unlocks": {
+    "vesting_structure": "Cliff-and-linear",
+    "unlock_schedule": [
+      {
+        "allocation": "Team & Advisors (13.3%)",
+        "cliff_months": 12,
+        "linear_vesting_months": 30,
+        "total_vesting_months": 42,
+        "notes": "12-month cliff, then linear vesting over 30 months from September 2025 launch"
+      },
+      {
+        "allocation": "Early Backers / Investors (26.61%)",
+        "cliff_months": 12,
+        "linear_vesting_months": 30,
+        "total_vesting_months": 42,
+        "notes": "Same vesting as Team & Advisors"
+      },
+      {
+        "allocation": "Onchain Incentives (28.6%)",
+        "structure": "Linear vesting / streamed over time",
+        "notes": "Released through XP seasons and onchain activity rewards"
+      },
+      {
+        "allocation": "Airdrop 1 (12.5%)",
+        "structure": "Already distributed",
+        "notes": "Distributed to early protocol activity (Feb 2024 onwards), community contributors, influencers"
+      },
+      {
+        "allocation": "Builder/Ecosystem Grants (9%)",
+        "structure": "Vesting with milestones",
+        "notes": "Released to fund SDK applications, Telegram bots, AI agents"
+      },
+      {
+        "allocation": "Treasury (4%)",
+        "structure": "Strategic release",
+        "notes": "Reserved for strategic funding"
+      },
+      {
+        "allocation": "Liquidity Reserve (6%)",
+        "structure": "As-needed",
+        "notes": "For exchange marketing and market-making partnerships"
+      }
+    ],
+    "full_unlock_date": "2029",
+    "notes": "Full unlock schedule extends into 2029. Most allocations subject to cliff mechanism."
+  },
+  "mechanism": {
+    "deflationary": true,
+    "buyback_burn": {
+      "active": true,
+      "start_date": "2026-03-11",
+      "current_allocation_percent": 30,
+      "frequency": "Every 6 hours",
+      "revenue_sources": "30% of daily opening, closing, and win fees",
+      "exclusions": "Margin fees (→ LPs) and clearing fees (→ treasury) excluded",
+      "planned_upgrade": {
+        "timing": "End of Q2 2026",
+        "new_allocation_percent": 50,
+        "projected_annual_buyback_usd": 90000000,
+        "projected_burn_percent_of_supply": 11.4
+      },
+      "notes": "Systematic, revenue-linked buyback-and-burn program. Goal: net deflationary token after capital efficiency upgrades."
+    },
+    "governance": "AVNT holders participate in governance",
+    "staking": "AVNT can be staked for protocol rewards and fee discounts",
+    "utility": [
+      "Governance voting",
+      "Staking for rewards and fee discounts",
+      "XP boost multipliers for loyalty programs"
+    ]
+  },
+  "inflation": {
+    "current_state": "Post-launch vesting phase; deflationary via buyback-burn",
+    "phase": "Tokenomics 1.0: 30% daily fee allocation to buyback-burn; planned upgrade to 50% by end Q2 2026",
+    "vesting_inflation": "Approximately 68% of supply still vesting; gradual unlock through 2029",
+    "buyback_deflation": "30% of fee revenue burned every 6 hours; rising to 50% after protocol upgrade",
+    "net_inflation_direction": "Deflationary once certain protocol upgrades (capital efficiency, risk management) complete"
+  },
+  "allocation_breakdown": {
+    "community": 50.1,
+    "team_investors_foundation": 49.9,
+    "details": {
+      "airdrop_1": 12.5,
+      "onchain_incentives": 28.6,
+      "early_backers": 26.61,
+      "team_advisors": 13.3,
+      "builder_ecosystem_grants": 9.0,
+      "treasury": 4.0,
+      "liquidity_reserve": 6.0
+    },
+    "notes": "Community-first allocation: ~50% for community (airdrops, incentives, grants) vs ~50% for team/investors/foundation."
+  },
+  "chain": "Base",
+  "contract_address": "0x696F9436B67233384889472Cd7cD58A6fB5DF4f1",
+  "contract_standard": "ERC-20",
+  "launch_date": "2025-09",
+  "data_collection_notes": "RESOLVED AS: Avantis (AVNT) — a decentralized perpetual futures DEX on Base with up to 500x leverage across crypto and RWAs. High confidence: all 9 major data aggregators (CoinGecko, CoinMarketCap, Binance, Kraken, Coinbase, Messari, CryptoRank, Bybit, Crypto.com) list identical AVNT = Avantis. Launched Sept 2025 on Base. As of April 2026: $47.4M market cap, $0.1557 price, 1B fixed supply (32% circulating, 68% vesting). Key differentiator: systematic buyback-and-burn (30% of trading fees → burn every 6h, upgrading to 50% by Q2 2026). Team/advisor vesting 12mo cliff + 30mo linear from launch."
+}

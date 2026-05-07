@@ -1,0 +1,132 @@
+{
+  "protocol": "Aerodrome Finance",
+  "token": "AERO",
+  "network": "Base (L2 Ethereum)",
+  "as_of_date": "2026-04-30",
+  "annualized_revenue_usd": 180000000,
+  "annualized_fees_usd": 180000000,
+  "tvl_usd": 480000000,
+  "market_cap_usd": 456452053,
+  "circulating_supply": 925859948,
+  "price_usd": 0.493,
+  "p_s_ratio": 2.54,
+  "p_tvl_ratio": 0.95,
+  "real_yield_apr_pct": {
+    "veAERO_locked_4yr": 35,
+    "veAERO_conservative_strategy": 20,
+    "veAERO_aggressive_strategy": 40,
+    "note": "100% of trading fees go to veAERO lockers; yields vary by voting strategy and bribe capture"
+  },
+  "inflationary_yield_apr_pct": {
+    "unlocked_AERO_holders": -11,
+    "basis": "11% annualized inflation from weekly emissions; unlocked holders diluted without yield capture",
+    "note": "Unlocked holders get no protocol fees, only experience token dilution from new emissions"
+  },
+  "growth_trend": "Accelerating pre-merger",
+  "growth_drivers": [
+    "Integration with Velodrome (Q2 2026 Aero merger)",
+    "Expansion to Ethereum mainnet and Circle's Arc",
+    "Cross-chain liquidity hub positioning",
+    "Weekly bribe marketplace growth"
+  ],
+  "seasonality": "Weekly yield volatility; higher bribe rates during LP incentive campaigns",
+  "peer_comparisons": [
+    {
+      "protocol": "Velodrome (VELO)",
+      "network": "Optimism",
+      "model": "ve(3,3) fork (parent protocol to Aerodrome)",
+      "fee_distribution": "100% to veVELO holders",
+      "status": "Merging into Aero; VELO holders get 5.5% of new Aero token supply"
+    },
+    {
+      "protocol": "Uniswap v4 (Base)",
+      "network": "Base",
+      "model": "AMM with programmable hooks",
+      "fee_distribution": "100% to LPs",
+      "distinction": "Direct LP value capture; no vote-lock mechanism"
+    },
+    {
+      "protocol": "Curve (Ethereum & sidechains)",
+      "network": "Multi-chain",
+      "model": "Stableswap AMM with ve(3,3)",
+      "fee_distribution": "50% to LPs, 50% to veCRV holders",
+      "distinction": "Hybrid fee split; significantly lower trading volumes than Aerodrome on Base"
+    },
+    {
+      "protocol": "PancakeSwap (Binance Smart Chain & multi-chain)",
+      "network": "Multi-chain",
+      "model": "AMM with auto-compounding rewards",
+      "fee_distribution": "Variable",
+      "distinction": "Higher volume but more centralized incentive structure"
+    }
+  ],
+  "critical_distinction": "BIFURCATED YIELD STRUCTURE: veAERO lockers capture 100% of protocol fees (20-40% APR from real yield + bribes). Unlocked AERO holders experience -11% annual dilution with zero fee participation. This creates two entirely different value propositions within the same token.",
+  "rationale": {
+    "revenue_model": "Aerodrome captures 100% of Base's DEX trading volume through a ve(3,3) mechanism, distributing all fees to veAERO lockers. Weekly emissions dilute unlocked holders but can be mitigated through locking.",
+    "tvl_stability": "TVL has stabilized around $480M post-launch, reflecting the protocol's role as Base's primary DEX. Merger with Velodrome in Q2 2026 expected to significantly increase TVL through cross-chain liquidity.",
+    "valuation_context": "P/S ratio of 2.54x indicates moderate valuation relative to annual protocol revenue. P/TVL ratio of 0.95x suggests market cap below locked value, typical for mature DEX protocols.",
+    "yield_sustainability": "Real yield for veAERO holders is protocol-fee-dependent and sustainable as long as trading volume remains strong. However, yield varies significantly based on bribe competition and lock-up strategies.",
+    "inflation_impact": "11% annualized inflation is a concern for unlocked holders but is offset for veAERO lockers who receive weekly rebases to maintain voting power parity. The distinction between locked and unlocked holder value is critical.",
+    "merger_catalysts": "Aero consolidation (planned Q2 2026) combines Aerodrome's Base dominance with Velodrome's Optimism presence, targeting Ethereum mainnet and Circle's Arc. This positions the unified protocol as a cross-chain liquidity hub.",
+    "risk_factors": [
+      "Unlimited supply cap creates ongoing dilution pressure on unlocked holders",
+      "Yield dependent on sustained trading volume and bribe availability",
+      "Merger execution risk; token swaps may create selling pressure",
+      "Base network concentration risk; diversification to other chains is in progress"
+    ]
+  },
+  "data_quality": "Good",
+  "data_quality_notes": "Market cap, price, and circulating supply from CoinMarketCap (April 30, 2026). Revenue ($180M annually) and TVL ($480M) from DeFi Llama search results. Weekly fees of $3.56M annualized to $185M (aligned with stated $180M annual). Inflation rate of 11% from tokenomics sources. APR ranges for veAERO from Bankless and ecosystem sources. Merger details from CryptoBriefing, CoinDesk, and KuCoin news. No access to live dashboard, so weekly fee figures extrapolated from recent data.",
+  "sources": [
+    {
+      "title": "Aerodrome TVL, Fees, Revenue & Volume",
+      "url": "https://defillama.com/protocol/aerodrome",
+      "type": "DeFi analytics"
+    },
+    {
+      "title": "Aerodrome Finance (AERO) Price - CoinMarketCap",
+      "url": "https://coinmarketcap.com/currencies/aerodrome-finance/",
+      "type": "Price/market cap data"
+    },
+    {
+      "title": "What Is Aerodrome Finance? Ultimate Guide to Base's Principal DEX",
+      "url": "https://www.coingecko.com/learn/what-is-aerodrome-finance-aero-base",
+      "type": "Educational overview"
+    },
+    {
+      "title": "Aerodrome Tokenomics: How AERO Accrues 100% of Protocol Fees",
+      "url": "https://tokenomics.com/articles/aerodrome-tokenomics-how-aero-captures-100-of-protocol-fees",
+      "type": "Tokenomics analysis"
+    },
+    {
+      "title": "How to Earn with veAERO on Bankless",
+      "url": "https://www.bankless.com/how-to-earn-with-veaero-on-aerodrome",
+      "type": "Yield strategy guide"
+    },
+    {
+      "title": "Aerodrome and Velodrome merge into Aero, expanding to Ethereum and Circle's Arc",
+      "url": "https://cryptobriefing.com/aero-dex-merger-ethereum-expansion/",
+      "type": "Merger news"
+    },
+    {
+      "title": "Dromos Labs Merges Aerodrome and Velodrome into New DEX Aero",
+      "url": "https://thedefiant.io/news/defi/dromos-labs-merges-aerodrome-and-velodrome-into-new-dex-aero",
+      "type": "Merger announcement"
+    },
+    {
+      "title": "Aerodrome Finance Growth: Base's Leading DEX Explained",
+      "url": "https://www.dwf-labs.com/research/has-aerodrome-finance-become-the-leading-defi-protocol-on-base",
+      "type": "Protocol analysis"
+    },
+    {
+      "title": "Aerodrome (AERO) For Beginners: The Ultimate 2024 Guide",
+      "url": "https://www.tastycrypto.com/blog/aerodrome-guide/",
+      "type": "Educational guide"
+    },
+    {
+      "title": "AERO Price Guide: Trading Aerodrome Finance & Tokenomics Analysis",
+      "url": "https://www.bitget.com/academy/aero-price-guide",
+      "type": "Academy/analysis"
+    }
+  ]
+}

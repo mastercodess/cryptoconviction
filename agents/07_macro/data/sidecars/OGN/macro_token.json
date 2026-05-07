@@ -1,0 +1,15 @@
+{
+  "symbol": "OGN",
+  "funding_rate_8h": 0.00011,
+  "open_interest_usd": 38000000,
+  "btc_correlation_30d": 0.71,
+  "eth_correlation_30d": 0.69,
+  "nasdaq_correlation_30d": 0.34,
+  "leverage_warning": false,
+  "rationale": "Origin Protocol e-commerce token with limited perp liquidity; low OI reflects niche use-case and modest derivatives trading interest.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coinglass.com/funding/OGN",
+    "https://www.coinglass.com/currencies/OGN"
+  ]
+}

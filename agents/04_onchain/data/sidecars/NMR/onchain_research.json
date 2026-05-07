@@ -1,0 +1,114 @@
+{
+  "token": {
+    "name": "Numeraire",
+    "ticker": "NMR",
+    "blockchain": "Ethereum",
+    "contract_address": "0x1776e1f26f98b1a5df9cd347953a26dd3cb46671",
+    "token_type": "ERC-20",
+    "classification": "Tournament-Staking Token (NOT DeFi)",
+    "launch_year": 2017
+  },
+  "supply_metrics": {
+    "max_supply": 11000000,
+    "circulating_supply": 7497087,
+    "treasury_holdings": 3000000,
+    "treasury_locked_until": 2028,
+    "emission_type": "Deflationary (burn mechanism)",
+    "notes": "Fixed cap; no new minting. Tokens burned weekly on underperforming stakes."
+  },
+  "staking_activity": {
+    "current_status": "Primary on-chain activity vector",
+    "total_nmr_staked": {
+      "as_of_april_2026": "~$7M USD equivalent",
+      "trend": "Increasing from $5.5M (May 2025)",
+      "direction": "Upward"
+    },
+    "weekly_active_stakers": {
+      "estimate": 1200,
+      "description": "Number of staked models incorporated into meta model weekly",
+      "source": "tournament-derived metric, not raw wallet count"
+    },
+    "total_tournament_participants": 30000,
+    "active_staking_participants": {
+      "estimate_low": 1000,
+      "estimate_high": 3000,
+      "notes": "Only subset of 30k participants actually stake; majority submit without stakes"
+    },
+    "staking_mechanics": {
+      "round_duration": "1 month",
+      "submission_window": "First 7 days of round (opens Saturday)",
+      "staking_window": "First 2 days (Saturday-Sunday)",
+      "max_reward_per_round": "25% of stake",
+      "max_burn_per_round": "25% of stake",
+      "burn_condition": "Failure to beat benchmark; underperforming models",
+      "reward_mechanism": "Accurate predictions on unseen data"
+    }
+  },
+  "tournament_economics": {
+    "activity_driver": "Weekly tournament round participation",
+    "dau_proxy": "Weekly unique stakers (1,200 median estimate)",
+    "meta_model_composition": "1,200+ staked models weekly",
+    "payouts_feb_2026": {
+      "amount_usd": 325564,
+      "currency": "NMR paid out",
+      "frequency": "Monthly"
+    },
+    "aum_growth": {
+      "reference_point": "Assets under management via Numerai hedge fund",
+      "three_year_growth": "$60M to $550M",
+      "recent_momentum": "$100M added in April 2026 alone",
+      "note": "Indicates growing platform credibility and adoption"
+    }
+  },
+  "holder_concentration": {
+    "treasury_concentration_risk": "HIGH",
+    "treasury_percentage": "27%+ of total supply",
+    "major_holder": "Numerai Inc. (company treasury)",
+    "distribution_history": "1M NMR distributed to 12,000 active platform users at launch",
+    "current_distribution": "Highly concentrated; most tokens held by Numerai treasury or early staker cohorts",
+    "liquidity_concern": "Low velocity; most NMR locked in staking or cold wallets"
+  },
+  "deflationary_mechanics": {
+    "primary_burn_driver": "Weekly failed stakes (underperforming models)",
+    "secondary_burn_driver": "Numerai treasury buybacks ($1M in July 2025)",
+    "burn_frequency": "Weekly (every round completion)",
+    "burn_rate": "Variable; depends on participant model performance",
+    "cumulative_effect": "Supply reduction over time; creates scarcity pressure"
+  },
+  "exchange_flows": {
+    "liquidity_assessment": "Low exchange velocity",
+    "observation": "Most NMR stays in staking or cold storage; minimal exchange in/out flows",
+    "trading_pattern": "Thin markets; subject to sharp price corrections",
+    "institutional_interest": "Growing (recent funding rounds indicate VC interest)"
+  },
+  "retention_metrics": {
+    "staker_behavior": "Tournament-specific; compounding vs. exit decisions",
+    "retention_signal": "Whether stakers re-stake (compound) after wins or withdraw",
+    "data_gap": "Specific re-staking rates not publicly available",
+    "observation": "Rising total staked amount suggests retention improving, but granular cohort data unavailable"
+  },
+  "research_period": {
+    "data_as_of": "April 30, 2026",
+    "lookback_window": "May 2025 - April 2026",
+    "coverage": "Tournament metrics, supply, staking, deflationary mechanics"
+  },
+  "data_quality_notes": {
+    "reliability": "Medium-High for aggregate metrics",
+    "sources": "Numerai blog, CoinGecko, CoinMarketCap, official tournament docs, search results",
+    "gaps": [
+      "Real-time staker count by round (must query Numerai API or dashboard directly)",
+      "Granular burn statistics (weekly token destruction amounts)",
+      "Wallet-level holder distribution (Etherscan access blocked)",
+      "Exchange orderbook depth and trading volume by venue",
+      "Staker cohort retention rates and re-staking percentages"
+    ],
+    "limitation": "Free source research; Numerai does not publish detailed on-chain analytics publicly. Dashboard at truth.numer.ai has live metrics but not API-accessible."
+  },
+  "activity_characterization": {
+    "primary_signal": "Weekly staking participation in tournament rounds",
+    "signal_strength": "Strong; directly tied to platform viability",
+    "defi_relevance": "Not DeFi-driven; tournament-driven economic model",
+    "velocity_note": "Very low exchange velocity; capital efficiency through locked staking",
+    "summary": "NMR on-chain activity is fundamentally tournament-based: data scientists stake NMR weekly on prediction model performance. On-chain signal = staking volume + weekly active staker count. This is NOT exchange-driven (low velocity) and NOT DeFi-yield farming. Numerai treasury concentration (27%+ of supply) is a structural risk factor. Activity quality depends on staker retention and compounding behavior, which are difficult to measure without API access."
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "symbol": "LINK",
+  "audits": [
+    {
+      "auditor": "Code4rena",
+      "audit_date": "2024-11-25",
+      "scope": "Chainlink CCIP v1.5 => v1.6 upgrade, cross-chain messaging protocol architecture",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Crowdsourced audit of CCIP v1.6 scalability upgrade with $235,000 in awards; focused on moving from single on/off ramp per lane to single ramp per chain architecture.",
+      "url": "https://code4rena.com/audits/2024-11-chainlink"
+    },
+    {
+      "auditor": "Code4rena",
+      "audit_date": "2024-12-31",
+      "scope": "Chainlink Payment Abstraction",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Code4rena audit of Chainlink Payment Abstraction module, ongoing as of late 2024.",
+      "url": "https://code4rena.com/audits/2024-12-chainlink-payment-abstraction"
+    },
+    {
+      "auditor": "Code4rena",
+      "audit_date": "2023-09-12",
+      "scope": "Chainlink Staking v0.2 smart contracts",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Crowdsourced competitive audit of Staking v0.2 codebase (Aug 25 - Sep 12, 2023) with $250,000 USDC prize pool.",
+      "url": "https://code4rena.com/audits/2023-08-chainlink-staking-v02"
+    },
+    {
+      "auditor": "Code4rena",
+      "audit_date": "2023-05-31",
+      "scope": "Chainlink CCIP and ARM Network",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Early CCIP and ARM (Automated Risk Management) Network audit via Code4rena.",
+      "url": "https://code4rena.com/audits/2023-05-chainlink-cross-chain-services-ccip-and-arm-network"
+    },
+    {
+      "auditor": "Cyfrin",
+      "audit_date": "2024-07-31",
+      "scope": "Chainlink CCIP implementation",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Cyfrin security review of Chainlink CCIP smart contract implementation.",
+      "url": "https://github.com/Cyfrin/2024-07-CL-CCIP"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2022-05-13",
+      "severity": "major",
+      "description": "Venus Protocol exploited via Chainlink oracle suspension of LUNA price feed during extreme market conditions. Attacker deposited LUNA at $0.10 minPrice while market price crashed, using inflated collateral value to borrow other assets. Over $11.2 million in bad debt accrued.",
+      "funds_lost_usd": 11200000,
+      "post_mortem_url": "https://halborn.com/explained-the-luna-price-dip-exploits-may-2022/"
+    },
+    {
+      "incident_date": "2022-05-13",
+      "severity": "major",
+      "description": "Blizz Finance drained via same LUNA price feed exploit mechanism, protocol shutdown resulted from attack.",
+      "funds_lost_usd": 8300000,
+      "post_mortem_url": null
+    },
+    {
+      "incident_date": "2023-12-01",
+      "severity": "moderate",
+      "description": "Venus snBNB isolated lending pool exploited via thin liquidity on PancakeSwap secondary market. Attacker artificially inflated snBNB price via large buy, deposited at manipulated value as collateral.",
+      "funds_lost_usd": null,
+      "post_mortem_url": null
+    },
+    {
+      "incident_date": "2024-02-01",
+      "severity": "moderate",
+      "description": "Venus protocol exploited via wUSDM/Mountain Protocol ERC-4626 price manipulation. Attacker spiked wUSDM to $1.70, deposited inflated-value collateral, borrowed higher-value assets before price normalized. Approximately $716,000 in bad debt.",
+      "funds_lost_usd": 716000,
+      "post_mortem_url": null
+    },
+    {
+      "incident_date": "2024-12-15",
+      "severity": "moderate",
+      "description": "Moonwell protocol flash loan exploit targeting USDC lending contract on Base chain; also previous losses from oracle-related attacks totaling ~$320k in October 2024 flash loan.",
+      "funds_lost_usd": 1700000,
+      "post_mortem_url": "https://99bitcoins.com/news/altcoins/moonwell-hack-1m-lost-after-chainlink-flaw-well-crypto-slumps-to-2025-lows/"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/smartcontractkit/chainlink",
+    "contributors_count": null,
+    "weekly_commits_avg": null,
+    "last_commit_date": null,
+    "upgrade_mechanism": "proxy_timelock",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": 3000000,
+    "bug_bounty_platform": "Immunefi"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l1",
+      "provider": "Ethereum",
+      "risk_level": "low",
+      "notes": "Chainlink operates natively on Ethereum mainnet; security depends on L1 consensus layer"
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Chainlink Price Feeds (decentralized)",
+      "risk_level": "medium",
+      "notes": "Chainlink's own CCIP and cross-chain functions depend on accurate price feed data; minPrice/maxPrice circuit breaker handling critical for downstream protocols"
+    }
+  ],
+  "rationale": "Chainlink maintains strong security posture through regular Code4rena audits (Staking, CCIP v1.5, Payment Abstraction), active GitHub development (Go-based node), and high bug bounty payouts ($3M max on Immunefi). No critical network-level exploits identified; security issues manifest downstream in integrating protocols (Venus, Moonwell) via oracle mishandling rather than Chainlink infrastructure failures. Main risk vector: oracle data discontinuity during extreme market conditions and protocol misuse of minPrice circuit breakers.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://code4rena.com/audits/2024-11-chainlink",
+    "https://code4rena.com/audits/2024-12-chainlink-payment-abstraction",
+    "https://code4rena.com/audits/2023-08-chainlink-staking-v02",
+    "https://code4rena.com/audits/2023-05-chainlink-cross-chain-services-ccip-and-arm-network",
+    "https://github.com/Cyfrin/2024-07-CL-CCIP",
+    "https://immunefi.com/bug-bounty/chainlink/",
+    "https://github.com/smartcontractkit/chainlink",
+    "https://halborn.com/explained-the-luna-price-dip-exploits-may-2022/",
+    "https://99bitcoins.com/news/altcoins/moonwell-hack-1m-lost-after-chainlink-flaw-well-crypto-slumps-to-2025-lows/",
+    "https://beincrypto.com/venus-protocol-loses-11m-chainlink-suspension-luna-price-oracle/",
+    "https://docs.chain.link/ccip/release-notes",
+    "https://blog.chain.link/chainlink-staking-v0-2-overview/",
+    "https://medium.com/cyfrin/chainlink-oracle-defi-attacks-93b6cb6541bf"
+  ]
+}

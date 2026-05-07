@@ -1,0 +1,125 @@
+{
+  "token": "XMR",
+  "name": "Monero",
+  "research_date": "2026-04-30",
+  "protocol_revenue_status": "NONE",
+  "revenue_model_summary": "XMR is a non-protocol-revenue token. All transaction fees and tail emission rewards go to miners, not to a protocol treasury or governance entity. Traditional revenue multiple analysis does not apply.",
+  "financial_metrics": {
+    "annualized_revenue_usd": null,
+    "annualized_revenue_note": "No protocol entity captures revenue. Block rewards and transaction fees flow entirely to miners.",
+    "tvl_usd": null,
+    "tvl_note": "XMR is native currency, not a collateral/DeFi asset. TVL framework is inapplicable.",
+    "p_s_ratio": null,
+    "p_s_ratio_note": "No protocol sales/revenue to compute valuation multiple.",
+    "p_tvl_ratio": null,
+    "p_tvl_ratio_note": "No protocol TVL; XMR is a privacy currency, not DeFi collateral.",
+    "real_yield_apr_pct": null,
+    "real_yield_note": "XMR does not offer staking. No protocol yield mechanism.",
+    "inflationary_yield_apr_pct": 0.85,
+    "inflationary_yield_note": "Tail emission of ~0.6 XMR per block (~432 XMR/day, ~157,680 XMR/year) results in ~0.85% annualized inflation relative to ~18M circulating supply. This inflation is miner-funded, not user-funded. Inflation rate declines over time as new issuance becomes smaller relative to total supply, approaching zero asymptotically."
+  },
+  "network_activity_proxy": {
+    "daily_transactions_range": "20,000 - 30,000 per day (2024-2025)",
+    "daily_transactions_note": "August 2024 averaged ~20,000 txs/day; 2025 average 20,000-30,000 txs/day, significantly higher than 2020-2021 baseline.",
+    "transaction_trend": "STABLE_TO_GROWING",
+    "transaction_trend_note": "Network activity stabilized at higher baseline in 2024-2025 compared to 2022, indicating sustained demand rather than episodic spikes.",
+    "circulating_supply_xmr": 18.4,
+    "circulating_supply_note": "~18.37M - 18.45M XMR, nearly fully released post-tail-emission.",
+    "daily_trading_volume_usd": "90M - 115M",
+    "daily_trading_volume_note": "24-hour trading volume on major exchanges, 2025 data.",
+    "darknet_adoption_2025": "48% of newly launched darknet markets support only Monero",
+    "darknet_adoption_note": "Notable increase from earlier years, driving sustained use case demand."
+  },
+  "mining_model": {
+    "block_reward_structure": "Fixed tail emission",
+    "block_reward_detail": "~0.6 XMR per block (720 blocks/day = ~432 XMR/day)",
+    "tail_emission_date_began": "May 2022",
+    "transaction_fee_model": "Dynamic blocksize with competitive fee market",
+    "fee_destination": "Miners (not protocol treasury)",
+    "miner_incentive": "Combination of block reward + transaction fees. Tail emission ensures floor for miner income even if fees drop, providing security without requiring zero inflation."
+  },
+  "peer_comparison": {
+    "privacy_coin_peers": [
+      "Zcash (ZEC)",
+      "Dash (DASH)",
+      "Aleo (ALEO)",
+      "Aztec (no live token)"
+    ],
+    "peer_notes": {
+      "zcash_zec": {
+        "cryptography": "zk-SNARKs (zero-knowledge proofs)",
+        "privacy_type": "Shielded transactions optional (supports both transparent and private addresses)",
+        "market_performance_2025": "Surged +1,800% since August 2025 to ~$688",
+        "market_cap_sector_2025": "Privacy coins +288% in 2025, best-performing crypto sector"
+      },
+      "dash_dash": {
+        "privacy_mechanism": "Optional CoinJoin mixing",
+        "adoption": "Wide exchange availability, established user base",
+        "market_performance_2025": "Climbed +194% YTD to ~$84",
+        "distinction": "Hybrid model blending fast settlement with optional privacy"
+      }
+    },
+    "monero_distinction": "Mandatory privacy (ring signatures, stealth addresses, RingCT) on all transactions. No optional transparent mode. All privacy is default, not opt-in."
+  },
+  "valuation_framework": {
+    "applicable_framework": "COMMODITY_VALUATION",
+    "rationale": "XMR should be valued as a privacy commodity, not a cash-flow-generating asset. Traditional DCF, revenue multiples (P/S, P/E), and dividend yield models are inappropriate. Valuation depends on: (1) privacy-currency market demand (darknet, censorship-resistant users), (2) network security (hash rate, mining incentives), (3) adoption rate relative to peers (ZEC, DASH, ALEO), (4) regulatory environment (delisting risk), (5) supply growth (tail emission inflation).",
+    "key_valuation_drivers": [
+      "Privacy utility in high-surveillance or censorship regimes",
+      "Network security and hashrate trends",
+      "Transaction volume and sustained use",
+      "Regulatory pressure (exchange delistings, sanctions)",
+      "Supply inflation from tail emission vs. demand growth",
+      "Competitive pressure from ZEC and DASH"
+    ],
+    "why_traditional_metrics_fail": "XMR generates no protocol fees, no staking yield, no governance treasury. The coin's value derives from its use as a privacy-preserving medium of exchange and store of value. P/S, P/TVL, and yield multiples assume a cash-generating business model that does not exist for Monero."
+  },
+  "growth_assessment": {
+    "assessment_period": "2024-2025",
+    "transaction_volume_trend": "STABLE, trending slightly upward",
+    "network_security_trend": "Maintained (hashrate stable, mining reward floor from tail emission protects security)",
+    "adoption_trend": "GROWING in privacy-sensitive use cases (darknet, regulatory-skeptical users)",
+    "regulatory_headwind": "Some exchange delistings (2024-2025) but transaction volume increased post-delisting, suggesting off-exchange use growth",
+    "comparative_position": "Strong incumbent vs. ZEC (optional privacy) and DASH (optional privacy + governance fee model). XMR's mandatory privacy and lack of protocol revenue are competitive strengths in privacy-centric markets."
+  },
+  "data_sources": [
+    "https://coinlaw.io/monero-statistics/",
+    "https://bitinfocharts.com/monero/",
+    "https://www.trmlabs.com/resources/blog/monero-in-2025-persistent-use-and-emerging-network-layer-insights",
+    "https://www.statista.com/statistics/730827/average-number-of-monero-transactions/",
+    "https://bitinfocharts.com/comparison/monero-transactions.html",
+    "https://localmonero.co/blocks/",
+    "https://medium.com/@compassInvestment/monero-transaction-volume-increases-after-delisting-according-to-trm-labs-3505fc18b744",
+    "https://www.monero.how/",
+    "https://www.getmonero.org/resources/moneropedia/tail-emission.html",
+    "https://coinbureau.com/education/mining-monero",
+    "https://www.thestandard.io/blog/monero-xmr-report---scaling-new-heights-in-blockchain-performance-2025-portfolio-5",
+    "https://localmonero.co/knowledge/monero-tail-emission?language=en",
+    "https://mrscoins.com/is-monero-mining-profitable-late-2025/",
+    "https://cryptopotato.com/moneros-tail-emission-everything-you-need-to-know/",
+    "https://www.monero.how/monero-mining-calculator",
+    "https://www.altcoinbuzz.io/cryptocurrency-news/what-is-moneros-tail-emission-upgrade/",
+    "https://www.cube.exchange/what-is/xmr",
+    "https://www.coinwarz.com/mining/monero/calculator",
+    "https://bingx.com/en/learn/article/zcash-vs-dash-top-privacy-coins-comparison",
+    "https://www.cryptonewsnavigator.com/academy/article/privacy-coins-jumped-288-percent-2025-monero-zcash-whats-next",
+    "https://www.tradingview.com/news/cointelegraph:880c9ee6b094b:0-privacy-coins-surge-80-why-zcash-and-dash-are-back-in-the-spotlight/",
+    "https://apextomining.com/2025/11/05/2025-privacy-coin-rally-tech-policy-market-analysis-top-coins-zecdashzk/",
+    "https://letsexchange.io/blog/the-ultimate-privacy-coin-comparison-for-2025/",
+    "https://www.coindesk.com/business/2025/11/05/crypto-s-anti-surveillance-boom-zcash-monero-and-the-return-of-anonymity",
+    "https://flashift.app/blog/dash-vs-zcash-in-2025-which-privacy-coin-offers-real-anonymity/",
+    "https://www.fool.com/investing/2025/12/18/prediction-zcash-will-prove-to-be-the-best-privacy/",
+    "https://www.bitget.com/news/detail/12560605050517",
+    "https://www.mexc.com/news/387153"
+  ],
+  "flagged_unavailable_metrics": {
+    "annualized_revenue_usd": "UNAVAILABLE - No protocol revenue entity",
+    "tvl_usd": "UNAVAILABLE - Not a DeFi/collateral asset",
+    "p_s_ratio": "UNAVAILABLE - No protocol sales/revenue",
+    "p_tvl_ratio": "UNAVAILABLE - No protocol TVL",
+    "real_yield_apr_pct": "UNAVAILABLE - No staking mechanism",
+    "dividend_yield": "UNAVAILABLE - Not a cash-generating entity",
+    "cash_flow_metrics": "UNAVAILABLE - Non-revenue model"
+  },
+  "analyst_note": "XMR is fundamentally different from DeFi and protocol revenue tokens. It is a privacy-first commodity currency with no centralized entity capturing value. Revenue analysis should be flagged as UNAVAILABLE for most traditional metrics. Analysis should focus on network security (hashrate, mining incentives), transaction volume (as proxy for demand), regulatory environment, and competitive positioning among privacy coins rather than financial ratios. The tail emission inflation (~0.85% annually) is a feature, not a bug—it aligns miner incentives with long-term network security."
+}

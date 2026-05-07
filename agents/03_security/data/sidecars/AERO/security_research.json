@@ -1,0 +1,163 @@
+{
+  "audits": [
+    {
+      "auditor": "Spearbit",
+      "date": "2023-06-16",
+      "report_url": "https://github.com/spearbit/portfolio/raw/master/pdfs/Velodrome-Spearbit-Security-Review.pdf",
+      "target": "Velodrome V2 (Aerodrome inherited architecture)",
+      "duration_days": 10,
+      "findings": {
+        "critical": 1,
+        "high": 8,
+        "medium": 19,
+        "low": 30,
+        "informational": 61
+      },
+      "status": "All critical and high-risk issues resolved before deployment",
+      "notes": "Aerodrome is a ve(3,3) fork of Velodrome V2. This audit covers the core architecture Aerodrome inherited. Post-engagement reviews conducted May-June 2023."
+    },
+    {
+      "auditor": "Code4rena",
+      "date": "2022-05-23",
+      "report_url": "https://github.com/code-423n4/2022-05-velodrome-findings",
+      "target": "Velodrome (Aerodrome ancestor)",
+      "duration_days": 7,
+      "findings": {
+        "high": 6,
+        "medium": 17,
+        "low": 0,
+        "informational": 0
+      },
+      "status": "All high and medium severity findings fixed or wrapped contract solutions applied",
+      "notes": "Public audit contest conducted May 23-30, 2022. Aerodrome benefits from Velodrome's security iteration."
+    },
+    {
+      "auditor": "Zellic",
+      "date": null,
+      "report_url": "reports.zellic.io",
+      "target": "Aerodrome Finance",
+      "notes": "Referenced in security ecosystem but specific Aerodrome audit report not found in public search results. Zellic is known to conduct audits in crypto space."
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident": "DNS Hijacking Attack",
+      "date": "2025-11-22",
+      "type": "frontend_attack",
+      "impact": "$1M+ stolen from users",
+      "description": "DNS records for .box and .finance domains hijacked via NameSilo insider threat. Users redirected to phishing site. Smart contracts unaffected.",
+      "smart_contract_impact": false,
+      "root_cause": "Web2 infrastructure compromise - insider threat at NameSilo domain registrar",
+      "resolution": "Team directed users to decentralized ENS mirrors",
+      "sources": [
+        "https://www.halborn.com/blog/post/explained-the-aerodrome-finance-hack-november-2025",
+        "https://www.coindesk.com/web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain"
+      ]
+    },
+    {
+      "incident": "DNS Hijacking Attacks (Dual incidents)",
+      "date": "2023-11",
+      "type": "frontend_attack",
+      "impact": "~$300,000 in user losses across two incidents",
+      "description": "Two separate DNS attacks in late 2023 targeting official website links. Both Velodrome and Aerodrome suffered similar attacks within 3 days.",
+      "smart_contract_impact": false,
+      "root_cause": "DNS/Web2 infrastructure vulnerability",
+      "sources": [
+        "https://dailycoin.com/velodrome-and-aerodrome-suffer-dual-frontend-hacks-in-3-days/",
+        "https://www.coindesk.com/web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain"
+      ]
+    }
+  ],
+  "code_health": {
+    "open_source": true,
+    "repo_url": "https://github.com/aerodrome-finance/contracts",
+    "immutable_core": true,
+    "governance_mechanism": "ve(3,3) model - veAERO holders vote on gauge emissions",
+    "contract_architecture": "Fork of Velodrome V2 with immutable core contracts and programmatic value flows",
+    "notes": "Core AMM contracts are immutable. Parameter changes controlled via veAERO voting (VotingEscrow NFT). Aero Fed system allows veAERO voters to control weekly emission rates.",
+    "upgrade_path": "Immutable core contracts for Pool.sol, Voter.sol, Gauge.sol, etc. Parameter governance via veAERO voting. No permissioned upgrade mechanism for core logic."
+  },
+  "dependencies": [
+    {
+      "name": "Base L2 Network",
+      "type": "l2_sequencer",
+      "provider": "Coinbase",
+      "risk_level": "medium",
+      "description": "Aerodrome operates on Base, which uses a centralized sequencer operated by Coinbase. Single point of failure.",
+      "notes": "Base experienced 33-minute block production halt in Aug 2025 due to sequencer handover failure. OP Stack component 'Conductor' manages High Availability cluster, but single sequencer model remains structural risk.",
+      "sources": [
+        "https://www.cryptoninjas.net/news/base-network-outage-raises-red-flags-over-centralized-sequencer-design/",
+        "https://beincrypto.com/base-chain-outage-coinbase-sequencer-risk/",
+        "https://www.coindesk.com/tech/2025/08/06/base-says-sequencer-failure-caused-block-production-halt-of-33-minutes"
+      ]
+    },
+    {
+      "name": "Base Bridge",
+      "type": "bridge_infrastructure",
+      "provider": "Coinbase / OP Stack",
+      "risk_level": "medium",
+      "description": "Users must bridge assets to Base network. Aerodrome depends on bridge protocols (Wormhole, Coinbase bridge) for cross-chain asset transfers.",
+      "notes": "Multiple bridge protocols used. cbETH, cbBTC trading pairs indicate Coinbase-wrapped asset integration. Liquidity pool depth tied to bridge traffic."
+    },
+    {
+      "name": "DNS Infrastructure",
+      "type": "web2_infrastructure",
+      "provider": "NameSilo, Box Domains",
+      "risk_level": "high",
+      "description": "Frontend infrastructure vulnerability exploited in multiple DNS hijacking incidents (2023, 2025).",
+      "notes": "Mitigation: team recommends ENS domains and decentralized mirrors. Inherent Web2 risk affecting many DeFi protocols."
+    },
+    {
+      "name": "Ethereum Mainnet (L1)",
+      "type": "underlying_blockchain",
+      "provider": "Ethereum",
+      "risk_level": "low",
+      "description": "Base is an OP Stack L2 settlement layer using Ethereum mainnet for security and data availability."
+    }
+  ],
+  "governance": {
+    "multisig_treasury": {
+      "description": "Aerodrome team multisig controls treasury and parameter governance",
+      "signers_threshold": "Not publicly disclosed in search results",
+      "known_multisigs": [
+        "BaseMultisig1",
+        "OpFoundationOperationsSafe"
+      ],
+      "notes": "Upgrades require approval from both BaseMultisig1 and OpFoundationOperationsSafe with no delay on upgrades. Specific m-of-n configuration not found in public sources."
+    },
+    "veaero_governance": {
+      "description": "veAERO (Vote Escrow AERO) holders control gauge emissions and protocol emissions distribution",
+      "mechanism": "ERC-721 compliant NFTs representing escrowed AERO with linear voting power decay",
+      "aero_fed_system": "Core roadmap item - veAERO voters control weekly AERO emission rates (increase, decrease, or maintain)"
+    }
+  },
+  "bug_bounty": {
+    "program": "Immunefi",
+    "status": "Not confirmed in public search",
+    "notes": "Velodrome Finance has an active Immunefi bug bounty program. Specific confirmation of Aerodrome's participation not found in searches, but likely given protocol importance."
+  },
+  "rationale": "Aerodrome Finance inherits security architecture from Velodrome V2, which underwent comprehensive Spearbit audit (Feb-Mar 2023) with 1 critical and 8 high-severity findings—all resolved before deployment. Code4rena contest (May 2022) identified 6 high and 17 medium findings, also fixed. Core contracts are immutable; governance via ve(3,3) model and veAERO voting. No direct smart-contract exploits documented, but suffered DNS/frontend attacks in 2023 and 2025 (Web2 infrastructure compromise, not protocol vulnerability). Dependencies include Base L2 with Coinbase-operated single sequencer (medium risk, evidenced by Aug 2025 outage), bridge infrastructure, and Web2 DNS layer. Multisig governance for treasury/parameters, specific threshold not disclosed.",
+  "data_quality": {
+    "confidence": "high",
+    "completeness": "Good coverage of audit history, exploit events, and dependency architecture. Limited info on specific multisig thresholds and Zellic audit details.",
+    "sources_quality": "All sources are public: GitHub audit reports, Web3 security firms, news from reputable crypto outlets (CoinDesk, BeInCrypto), and official Aerodrome documentation.",
+    "gaps": [
+      "Specific m-of-n multisig configuration not found",
+      "Zellic audit report details unconfirmed",
+      "Immunefi bug bounty confirmation pending direct verification"
+    ]
+  },
+  "sources": [
+    "https://github.com/spearbit/portfolio/raw/master/pdfs/Velodrome-Spearbit-Security-Review.pdf",
+    "https://github.com/code-423n4/2022-05-velodrome-findings",
+    "https://github.com/aerodrome-finance/contracts",
+    "https://www.halborn.com/blog/post/explained-the-aerodrome-finance-hack-november-2025",
+    "https://www.coindesk.com/web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain",
+    "https://www.cryptoninjas.net/news/base-network-outage-raises-red-flags-over-centralized-sequencer-design/",
+    "https://beincrypto.com/base-chain-outage-coinbase-sequencer-risk/",
+    "https://www.coindesk.com/tech/2025/08/06/base-says-sequencer-failure-caused-block-production-halt-of-33-minutes",
+    "https://dailycoin.com/velodrome-and-aerodrome-suffer-dual-frontend-hacks-in-3-days/",
+    "https://www.zellic.io/",
+    "https://immunefi.com/bug-bounty/"
+  ]
+}

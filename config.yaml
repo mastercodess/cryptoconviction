@@ -1,0 +1,47 @@
+# Crypto Conviction System — orchestrator + global config.
+# Edit these to match your investing thesis. Agent 8 reads this.
+
+# ── Tokens under coverage ───────────────────────────────────────────────
+# Initial set; add more anytime. Keys must match shared/tokens.py.
+tokens:
+  - LINK
+  - AAVE
+  - ONDO
+  - ENA
+  - SUI
+  - AERO
+  - OGN
+  - NMR
+  - AVNT
+  - XMR
+
+# ── Orchestrator weighting (must sum to 1.0) ────────────────────────────
+# How much each specialist agent's score contributes to the final 0-100 conviction.
+# Default = balanced. Tune to your priors.
+agent_weights:
+  tokenomics: 0.15
+  revenue:    0.18
+  security:   0.18
+  onchain:    0.15
+  team:       0.10
+  moat:       0.12
+  macro:      0.12
+
+# ── Personal investing config ───────────────────────────────────────────
+horizon: "1-2Y"          # 3M | 6M | 1-2Y | 4Y
+risk_tolerance: moderate # conservative | moderate | aggressive
+target_position_pct: 5   # default % of portfolio per position; orchestrator scales by conviction
+portfolio: {}            # symbol -> current_pct, used for concentration risk check; empty = skip
+
+# ── Hard red-flag rules (auto-reject regardless of score) ───────────────
+red_flags:
+  reject_if_security_below: 5         # Agent 3 score (1-10) below this → AVOID
+  reject_if_holder_concentration_above: 0.5   # top-10 holding > 50% → AVOID
+  reject_if_unlock_pressure_next_90d_above: 0.25  # >25% supply unlocking → AVOID
+
+# ── Models ──────────────────────────────────────────────────────────────
+# Root agent uses Opus for planning; sub-LLM calls inside RLMs use Sonnet.
+models:
+  root: claude-opus-4-6
+  sub:  claude-sonnet-4-6
+  research: claude-sonnet-4-6
