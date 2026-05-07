@@ -52,8 +52,10 @@ def sub_lm(
 ) -> str:
     """
     Single Sonnet call. This is THE function the RLM root invokes recursively
-    over prompt slices. Keep it side-effect-free (no logging that mutates state)
-    so the REPL is reproducible.
+    over prompt slices. Keep it side-effect-free with respect to model state
+    (no logging that mutates state) so the REPL is reproducible. The optional
+    cost-log emission below is gated on MAA_RUN_LOG env var and is purely
+    observational.
     """
     msg = _client().messages.create(
         model=model,
@@ -62,8 +64,46 @@ def sub_lm(
         system=system or "You are a precise sub-analyst. Answer only what is asked, with no preamble.",
         messages=[{"role": "user", "content": prompt}],
     )
-    # text-only responses; concatenate any text blocks.
+    _emit_usage_log(msg, model)
     return "".join(b.text for b in msg.content if getattr(b, "type", None) == "text")
+
+
+def _emit_usage_log(msg, model: str) -> None:
+    """Append one JSONL line to MAA_RUN_LOG if set; no-op otherwise.
+
+    This is additive. When MAA_RUN_LOG is unset (smoke tests, current single-
+    token runs, anything outside the MAA batch context), this function does
+    nothing. The MAA batch runner sets MAA_RUN_LOG, MAA_AGENT_NAME, and
+    MAA_ACTION on each subprocess invocation.
+    """
+    log_path = os.getenv("MAA_RUN_LOG")
+    if not log_path:
+        return
+    import datetime as _dt
+    import json as _json
+    from shared.pricing import compute_cost_usd, UnknownModelError
+
+    usage = getattr(msg, "usage", None)
+    in_tok = getattr(usage, "input_tokens", 0) or 0
+    out_tok = getattr(usage, "output_tokens", 0) or 0
+    try:
+        cost = compute_cost_usd(model, in_tok, out_tok)
+    except UnknownModelError:
+        cost = None
+    record = {
+        "ts": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+        "model": model,
+        "prompt_tokens": in_tok,
+        "completion_tokens": out_tok,
+        "cost_usd": cost,
+        "agent_name": os.getenv("MAA_AGENT_NAME", "unknown"),
+        "action": os.getenv("MAA_ACTION", "unknown"),
+    }
+    # Append-mode write. Multiple processes writing concurrently could in
+    # theory interleave, but the MAA batch runner is sequential by design,
+    # so we do not lock.
+    with open(log_path, "a") as f:
+        f.write(_json.dumps(record) + "\n")
 
 
 def research_json(prompt: str, *, model: str = DEFAULT_RESEARCH_MODEL,
