@@ -1,0 +1,78 @@
+{
+  "symbol": "ONDO",
+  "name": "Ondo Finance",
+  "category": "rwa",
+  "supply": {
+    "circulating": 4869330647,
+    "total_supply": 10000000000,
+    "max_supply": 10000000000,
+    "as_of": "2026-04-29",
+    "source": "https://coinmarketcap.com/currencies/ondo-finance/ and https://www.coingecko.com/en/coins/ondo"
+  },
+  "market": {
+    "price_usd": 0.2579,
+    "market_cap_usd": 1255800287,
+    "fdv_usd": 2579000000,
+    "as_of": "2026-04-29",
+    "source": "https://www.binance.com/en/price/ondo-finance and https://metamask.io/price/ondo-finance"
+  },
+  "unlocks": {
+    "events": [
+      {
+        "unlock_date": "2025-01-17",
+        "category": "Ecosystem Growth (792M) + Protocol Development (825M) + Private Sales (322M)",
+        "tokens_unlocked": 1939000000,
+        "pct_of_supply": 0.1939,
+        "source_url": "https://crypto.news/ondo-poised-for-1-9b-token-unlock/",
+        "notes": "Major cliff unlock representing ~57% of circulating supply at the time. Split: 792M ecosystem, 825M development, 322M private sales."
+      },
+      {
+        "unlock_date": "2026-03-18",
+        "category": "Scheduled cliff unlock",
+        "tokens_unlocked": 184500000,
+        "pct_of_supply": 0.01845,
+        "source_url": "https://coinmarketcal.com/en/coin/ondo-finance",
+        "notes": "1.85% of total supply (~$47.3M at $0.257 price)"
+      },
+      {
+        "unlock_date": "2027-01-18",
+        "category": "Major cliff unlock",
+        "tokens_unlocked": 1940000000,
+        "pct_of_supply": 0.194,
+        "source_url": "https://tokenomist.ai/ondo-finance/unlock-events",
+        "notes": "Next major cliff unlock scheduled for January 2027. Similar magnitude to January 2025 event."
+      }
+    ],
+    "summary": "ONDO follows a 5-year linear vesting schedule starting January 2024 with cliff releases. Major releases occurred January 2025 (1.94B tokens) and March 2026 (184.5M). Another major cliff of ~1.94B is scheduled for January 2027. Approximately 5.1B tokens (~51%) remain locked through 2029, creating persistent unlock pressure.",
+    "data_quality": "GOOD",
+    "caveats": "Exact cliff amounts for 2028-2029 not fully detailed in available sources. Vesting schedule uses cliff mechanism (all-at-once releases rather than continuous drip). Allocation breakdown: Ecosystem Growth 52.11%, Protocol Development 33.00%, Private Sales 12.90%, Community Access Sale 1.99%."
+  },
+  "mechanism": {
+    "has_burn": false,
+    "burn_source": "NA",
+    "has_staking": false,
+    "staking_apr_pct": null,
+    "staking_emission_inflationary": false,
+    "fee_capture_target": "None direct to ONDO holders",
+    "value_accrual_summary": "ONDO is a governance-only token with no direct value capture. Protocol revenue (~0.15% management fee on USDY/OUSG products, yielding ~$54k monthly from USDY) goes to DAO treasury, NOT to token holders. USDY/OUSG yields accrue to product holders, not ONDO holders. Token's value depends purely on governance scope expansion and ecosystem adoption sentiment.",
+    "sources": [
+      "https://tokeninsight.com/en/research/reports/deep-dive-of-ondo-finance",
+      "https://onekey.so/blog/ecosystem/ondo-token-deep-dive-a-hidden-alpha-gem/",
+      "https://defillama.com/protocol/ondo-finance",
+      "https://www.mexc.com/price/ONDO/info"
+    ]
+  },
+  "inflation": {
+    "current_annualized_rate": 0,
+    "method": "Fixed 10B max supply with no new issuance. All circulating tokens come from scheduled unlocks of the original 10B allocation.",
+    "as_of_date": "2026-04-29",
+    "trend_next_24m": "No monetary inflation. However, 5.1B tokens (~51% of max supply) will unlock through 2029, creating 51% dilution of current circulating supply IF all unlock. January 2027 cliff (~1.94B tokens) poses near-term sell pressure risk.",
+    "rationale": "ONDO has no programmatic minting or emission schedule beyond the pre-set vesting schedule. The 'inflation' is supply-side dilution from vesting cliffs, not monetary expansion. This is distinct from inflationary tokens but still represents substantial future circulation increase.",
+    "sources": [
+      "https://changehero.io/blog/what-is-ondo-crypto/",
+      "https://www.findas.org/tokenomics-review/coins/the-tokenomics-of-ondo/r/GcMNtvvWXN95RKZANtgxJv",
+      "https://coinmarketcal.com/en/coin/ondo-finance"
+    ]
+  },
+  "data_collection_notes": "Research conducted April 29, 2026 using publicly available sources (WebSearch + accessible web pages via WebFetch). Direct API access blocked. Key findings: (1) Circulating supply is 48.69% of max, with 51.31% locked through 2029. (2) Major unlock cliffs create significant dilution events (Jan 2025 was 1.94B, Jan 2027 expected ~1.94B). (3) ONDO has NO direct value capture—governance token only. Fees on USDY/OUSG products go to treasury, yields go to product holders, not ONDO holders. (4) No staking, no burns, no inflation beyond vesting. (5) FDV-to-MC gap: $2.58B FDV vs $1.26B market cap = 2.05x gap, reflecting unlock risk. (6) TVL recently hit $3B (April 2026), up 31% in 30 days, indicating strong institutional adoption despite governance token limitation. Critical caveat: ONDO value depends entirely on governance scope and ecosystem growth—no direct cash flow to holders."
+}

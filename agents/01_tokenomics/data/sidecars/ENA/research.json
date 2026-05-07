@@ -1,0 +1,248 @@
+{
+  "symbol": "ENA",
+  "name": "Ethena",
+  "category": "synthetic-dollar",
+  "supply": {
+    "max_supply_tokens": 15000000000,
+    "max_supply_notes": "15B hard cap; all tokens unlock by April 2027",
+    "circulating_supply_tokens": 8759375000,
+    "circulating_supply_as_percent": 58.4,
+    "total_supply_tokens": 15000000000,
+    "allocation_breakdown": {
+      "core_contributors": {
+        "percent": 30.0,
+        "tokens": 4500000000,
+        "vesting": "1-year 25% cliff, then 3-year linear monthly vesting"
+      },
+      "ecosystem_development": {
+        "percent": 28.0,
+        "tokens": 4200000000,
+        "vesting": "monthly releases"
+      },
+      "investors": {
+        "percent": 25.0,
+        "tokens": 3750000000,
+        "vesting": "1-year cliff, then vesting"
+      },
+      "foundation": {
+        "percent": 15.0,
+        "tokens": 2250000000
+      },
+      "binance_launchpool": {
+        "percent": 2.0,
+        "tokens": 300000000
+      }
+    },
+    "unlock_started": "2024-03-25",
+    "unlock_completes": "2027-04-30",
+    "monthly_release_baseline": 40630000,
+    "monthly_release_notes": "Approximately 40.63M ENA per month on 2nd of each month; varies by allocation cliff/vesting schedules"
+  },
+  "market": {
+    "price_usd": 0.108053,
+    "price_date": "2026-04-29",
+    "market_cap_usd": 947270000,
+    "market_cap_rank": 74,
+    "trading_volume_24h_usd": 69560000,
+    "ath_usd": 1.52,
+    "ath_impact": "Trading ~93% below ATH",
+    "primary_trading_pair": "ENA/USDT",
+    "most_active_exchange": "Gate",
+    "related_asset_usde": {
+      "name": "Ethena USD (USDe)",
+      "market_cap_usd": 3773198048,
+      "circulating_supply": 3775000073,
+      "market_cap_alt_source": 5230383795,
+      "circulating_supply_alt_source": 5200000000,
+      "notes": "sUSDe (staked USDe) yields 4-15% APR depending on funding rate environment; CMC reports $3.77B, CoinGecko reports $5.23B"
+    }
+  },
+  "unlocks": {
+    "events": [
+      {
+        "date": "2025-04-02",
+        "tokens": 40630000,
+        "percent_of_circulating": 0.46,
+        "type": "monthly_vesting",
+        "allocation": "core_contributors / ecosystem"
+      },
+      {
+        "date": "2026-01-05",
+        "tokens": 171880000,
+        "percent_of_circulating": 1.96,
+        "type": "cliff_release",
+        "allocation": "foundation",
+        "value_at_time": 36100000,
+        "price_at_time": 0.21
+      },
+      {
+        "date": "2026-02-02",
+        "tokens": 333000000,
+        "percent_of_circulating": 3.8,
+        "type": "monthly_vesting",
+        "allocation": "core_contributors / ecosystem"
+      },
+      {
+        "date": "2026-03-02",
+        "tokens": 333000000,
+        "percent_of_circulating": 3.8,
+        "type": "monthly_vesting",
+        "allocation": "core_contributors / ecosystem"
+      },
+      {
+        "date": "2026-04-02",
+        "tokens": 300000000,
+        "percent_of_circulating": 3.42,
+        "type": "monthly_vesting",
+        "allocation": "mixed",
+        "notes": "Major cliff event"
+      },
+      {
+        "date": "2026-05-02",
+        "tokens": 40630000,
+        "percent_of_circulating": 0.46,
+        "type": "monthly_vesting",
+        "allocation": "core_contributors"
+      }
+    ],
+    "summary": "ENA implements strict monthly vesting with major investor/core contributor cliffs throughout 2026. April 2026 sees 300M tokens unlock (~3.4% of circ. supply). Critical unlock pressure runs April 2025 through April 2027 per original vesting design. Largest concentration of vesting for core contributors and ecosystem allocations during 2025-2026, with foundation unlocks backloaded.",
+    "data_quality": "HIGH",
+    "data_sources": [
+      "CryptoRank vesting tracker",
+      "TokenUnlocks (TokenMist)",
+      "DropsTab vesting schedules",
+      "Official Ethena tokenomics docs (referenced but not directly fetched)"
+    ],
+    "caveats": "Unlock schedule is deterministic and on-chain. April 2026 300M unlock was previously announced as April 2, 2026 cliff. Exact timing depends on block time variations. Some sources report slightly different month-to-month amounts; baseline 40.63M is most consistent. Investor vesting began March 2024; full investor cliff completion expected by end of 2025."
+  },
+  "mechanism": {
+    "governance": {
+      "token_type": "governance_and_yield",
+      "voting_rights": "ENA holders can vote on critical protocol parameters, elect Risk Committee members, and guide ecosystem direction",
+      "voting_power": "1 ENA = 1 vote"
+    },
+    "staking": {
+      "staked_token_name": "sENA",
+      "staking_type": "liquid_receipt_token",
+      "description": "Users lock ENA to receive sENA, a liquid receipt token that appreciates as protocol revenues accumulate. sENA is not manually claimed; value accrues within smart contract.",
+      "unstaking": "Permissionless; users can unstake sENA at any time and receive amount reflecting principal + accrued value appreciation"
+    },
+    "fee_switch_status": {
+      "activation_status": "THRESHOLDS_MET_SEPTEMBER_2025",
+      "activation_date_announced": "2025-09-01",
+      "required_thresholds": [
+        "USDe supply > $6B",
+        "Cumulative protocol revenue > $250M",
+        "USDe integrated on 4 of top 5 derivatives exchanges"
+      ],
+      "threshold_achievement": [
+        "USDe supply reached $12.43B (August 2025)",
+        "Cumulative revenue exceeded $250M",
+        "USDe integrated on major exchanges"
+      ],
+      "pending_action": "Final Risk Committee implementation approval + ENA tokenholder vote required for activation"
+    },
+    "fee_switch_mechanics": {
+      "description": "When activated, fee switch redirects protocol revenue from treasury to sENA holders instead of DAO treasury",
+      "revenue_flow": "Protocol fees → sENA contract → value accrual in sENA token",
+      "revenue_sources": [
+        "USDe funding rate spread (derivatives basis trade)",
+        "Yield on liquid stablecoin backing assets",
+        "Staking rewards from liquid staking protocols"
+      ],
+      "projected_yields": "4.5% to 15% APR on sENA based on current fee run-rate of $50-60M monthly distributed over $750M in staked ENA; can reach 15-30% in high funding rate environments"
+    },
+    "usde_yield_dependency": {
+      "mechanism": "sENA yield depends on USDe's underlying revenue streams; ENA holders indirectly benefit from USDe growth",
+      "funding_rate_exposure": "HIGH - basis trade yield is primary revenue source; collapses when futures funding rates are negative or when basis spread widens unfavorably",
+      "reserve_backing": "sUSDe (staked USDe) yields range 4-15% APR depending on market conditions; when funding + basis < staked ETH yield, protocol reserve fund supports shortfall",
+      "historical_context": "ETH perpetual funding rates: 16% APY (2021), 0.6% (2022), ~9% (2023), ~13% (2024). Negative funding periods result in zero or negative net yields to USDe holders"
+    },
+    "additional_rewards": {
+      "airdrop_redemption": "sENA receives failed/unclaimed airdrops from other ecosystem applications",
+      "partner_allocations": "Ecosystem applications allocate material token supply portions to sENA holders (e.g., DEX partnership allocations)"
+    }
+  },
+  "inflation": {
+    "annual_inflation_rate": "10.0% of circulating supply maximum (max minting protocol variable)",
+    "annual_inflation_mechanism": "MAX_INFLATION protocol variable caps minting; MINT_WAIT_PERIOD requires 365 days between mint function calls",
+    "current_inflation_source": "Deterministic vesting schedule unlock (not minting)",
+    "unlock_inflation_monthly": {
+      "baseline_monthly_tokens": 40630000,
+      "baseline_as_annual_rate": "9.2% of current circulating supply (at 4.25B circulating)",
+      "monthly_rate_note": "Varies throughout vesting schedule; higher during cliff months (Feb, Mar, Apr 2026)"
+    },
+    "minting_status": "No active minting observed; all token supply increase comes from deterministic vesting unlocks",
+    "minting_governance": "Protocol designed for future minting capability but locked by annual 365-day wait period",
+    "inflation_impact": {
+      "pressure_high_through": "2027-04-30",
+      "pressure_mechanism": "Monthly vesting unlocks increase circulating supply; net effect depends on ENA price stability and sENA staking demand"
+    }
+  },
+  "data_collection_notes": "Research conducted April 29, 2026. All data sourced from public CoinMarketCap, CoinGecko, CryptoRank, TokenUnlocks/TokenMist, DropsTab, and news sources (CryptoSlate, LBank Explore, Blockworks, Yahoo Finance, etc.). Official Ethena documentation (docs.ethena.fi) referenced but not directly fetched due to network restrictions. Fee switch activation status reflects September 2025 threshold achievement; final implementation pending Risk Committee + tokenholder approval. sENA APR figures represent forward-looking projections based on fee run-rate analysis ($50-60M monthly / $750M staked ENA = 8-9.6% base + variable funding rate component). USDe market cap discrepancy between CMC ($3.77B) and CoinGecko ($5.23B) noted; likely reflects differing timestamp/snapshot methodologies. Unlock schedule highly deterministic and on-chain verifiable; no execution risk. Key risk vectors: (1) negative funding rate environment reducing USDe yield to zero/negative, (2) investor unlock pressure April 2025-2026, (3) fee switch activation delayed pending governance vote, (4) sENA staking demand dependency on yield sustainability.",
+  "sources": [
+    "https://www.mexc.co/en-IN/price/ENA/tokenomics",
+    "https://tokenomist.ai/ethena",
+    "https://cryptorank.io/price/ethena/vesting",
+    "https://www.findas.org/tokenomics-review/coins/the-tokenomics-of-ethena-ena/r/WNL49cMCFVzGZCVVi8AvTJ",
+    "https://coinmarketcap.com/cmc-ai/ethena/latest-updates/",
+    "https://www.kucoin.com/news/articles/ethena-supply-dynamics-impact-of-4-3m-ena-token-unlock-on-market-stability",
+    "https://tokenomist.ai/ethena/claim",
+    "https://tokenomist.ai/ethena/unlock-events",
+    "https://dropstab.com/coins/ethena-labs/vesting",
+    "https://coinlaunch.space/projects/ethena/vesting/",
+    "https://finance.yahoo.com/news/ena-unlocks-54m-tokens-ethena-105840092.html",
+    "https://coindar.org/en/coin/ethena/calendar",
+    "https://messari.io/project/ethena/token-unlocks",
+    "https://www.lbank.com/explore/ethena-ena-coin-governance-fee-switch-market-outlook",
+    "https://cryptoslate.com/ena-holders-eye-potential-yields-over-5-as-ethena-confirms-fee-switch-thresholds-met/",
+    "https://99bitcoins.com/news/altcoins/ena-usd-to-1-ethena-fee-switch-is-a-big-deal/",
+    "https://cryptoslate.com/wintermute-proposes-fee-switch-for-fair-revenue-sharing-in-ethena-protocol/",
+    "https://www.cryptopolitan.com/ethena-approves-fee-switch-parameters/",
+    "https://cryptorank.io/news/feed/98084-ethena-approves-fee-switch-parameters",
+    "https://levex.com/en/blog/ena-staking-guide",
+    "https://gov.ethenafoundation.com/t/ena-fee-switch-parameters/396",
+    "https://www.theblock.co/post/324914/wintermute-proposes-fee-switch-for-ethena",
+    "https://docs.ethena.fi/solution-design/staking-usde",
+    "https://coinmarketcap.com/cmc-ai/ethena/what-is/",
+    "https://www.cube.exchange/what-is/",
+    "https://oakresearch.io/en/analyses/fundamentals/ethena-ena-deep-dive-into-ecosystem",
+    "https://medium.com/intotheblock/20-rates-are-back-3de91531ce61",
+    "https://onekey.so/blog/ecosystem/what-is-ethena-ena-the-stable-yield-protocol-token-explained/",
+    "https://stablecoininsider.org/ethenas-staked-usde-stablecoin/",
+    "https://rocknblock.io/blog/stablecoin-architecture-how-ethena-works/",
+    "https://99bitcoins.com/news/altcoins/ena-unlocks-54m-tokens-is-ethena-price-doomed-by-unlock-schedule-in-2026/",
+    "https://dailycoin.com/high-impact-token-unlocks-for-april-2026/",
+    "https://stablecoininsider.org/ethenas-ena-token/",
+    "https://laikalabs.ai/market-intelligence/ethena-ena-price-prediction-2026-2030",
+    "https://blog.mexc.com/news/ethena-airdrop-guide-before-the-season-5-deadline/",
+    "https://coingecko.com/en/coins/ethena-staked-ena",
+    "https://ethena.fi/",
+    "https://captainaltcoin.com/stake-ethena/",
+    "https://airdrops.io/ethena/",
+    "https://coinbureau.com/analysis/best-defi-staking-platforms",
+    "https://messari.io/project/ethena-staked-ena",
+    "https://metamask.io/price/ethena",
+    "https://www.coinbase.com/price/ethena",
+    "https://www.bybit.com/en/price/ethena/",
+    "https://www.gate.com/price/ethena-usde-usde",
+    "https://coinmarketcap.com/currencies/ethena/",
+    "https://www.kraken.com/prices/ethena",
+    "https://coinmarketcap.com/cmc-ai/ethena/price-analysis/",
+    "https://coinstats.app/ai/a/price-potential-ethena",
+    "https://coinmarketcap.com/currencies/ethena-usde/",
+    "https://coingecko.com/en/coins/ethena-usde",
+    "https://coinmarketcap.com/currencies/ethena-staked-usde/",
+    "https://www.cryptopolitan.com/ethena-price-prediction/",
+    "https://rocknblock.io/blog/stablecoin-architecture-how-ethena-usde-work/",
+    "https://multicoin.capital/2025/11/13/ethena-synthetic-dollars-challenge-stablecoins-duopoly/",
+    "https://aave.com/blog/ethena",
+    "https://cryptorank.io/news/feed/57d98-ethena-usde-reserves-diversification-strategy",
+    "https://docs.ethena.fi/ena",
+    "https://docs.ethena.fi/video-guides/how-to-stake-ena",
+    "https://www.ethenaon.com/app/sena",
+    "https://medium.com/@693colline/ethena-ena-sena-airdrop-claim-your-rewards-4413048a5a60",
+    "https://medium.com/@pxp97/staking-ethena-ena-sena-a-step-by-step-process-18c26cc45c3d",
+    "https://www.lbank.com/price/ethena-staked-ena"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "symbol": "XMR",
+  "funding_rate_8h": 0.00009,
+  "open_interest_usd": 142000000,
+  "btc_correlation_30d": 0.55,
+  "eth_correlation_30d": 0.48,
+  "nasdaq_correlation_30d": 0.22,
+  "leverage_warning": false,
+  "rationale": "Monero privacy coin exhibits low BTC/ETH/tech correlation; decorrelates during privacy-coin rallies and regulatory-risk events; isolated derivatives market on Bybit/OKX.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coinglass.com/FundingRate/XMR",
+    "https://www.coinglass.com/currencies/XMR/futures",
+    "https://bitcoinworld.co.in/monero-xmr-price-prediction-2026-2030/"
+  ]
+}

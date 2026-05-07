@@ -1,0 +1,16 @@
+{
+  "symbol": "SUI",
+  "funding_rate_8h": 0.00022,
+  "open_interest_usd": 458863102,
+  "btc_correlation_30d": 0.70,
+  "eth_correlation_30d": 0.75,
+  "nasdaq_correlation_30d": 0.39,
+  "leverage_warning": false,
+  "rationale": "Layer-1 blockchain with largest OI (~$459M) among sample; positive funding with high leverage indicates strong bullish sentiment; watch for crowding risk.",
+  "data_quality": "GOOD",
+  "sources": [
+    "https://www.coinglass.com/FundingRate/SUI",
+    "https://www.coinglass.com/currencies/SUI/futures",
+    "https://coinalyze.net/sui/open-interest/"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "symbol": "AERO",
+  "name": "Aerodrome Finance",
+  "category": "dex",
+  "supply": {
+    "initial_supply_usd": 500000000,
+    "total_supply_current": 1884864776,
+    "circulating_supply_current": 930000000,
+    "circulating_percentage": 49.3,
+    "maximum_supply": null,
+    "notes": "Supply is uncapped with ongoing emissions. Launched Aug 2023 with 500M, 450M (90%) locked as veAERO."
+  },
+  "market": {
+    "current_price_usd": 0.48,
+    "market_cap_usd": 449119617,
+    "market_cap_range_usd": [425806587, 456452053],
+    "data_date": "2026-04-29",
+    "source": "CoinGecko/CoinMarketCap"
+  },
+  "unlocks": {
+    "events": [
+      {
+        "date": "2026-04-30",
+        "amount_aero": 12,
+        "amount_usd": 5.52,
+        "percentage_of_total": 0.00000064,
+        "category": "Rebase",
+        "notes": "Minor ongoing emission event post-vesting completion"
+      }
+    ],
+    "summary": "Major vesting completed Aug 28, 2025. Team locked for 2-4 years as veAERO. April 30 unlock is negligible rebase event (12 AERO). No further major team/foundation unlocks announced.",
+    "data_quality": "High - vesting completed, governance-controlled emissions from epoch 67+",
+    "caveats": "Unlock data limited by blocked access to DefiLlama/Tokenomist. Current schedule relies on April 30 event from public sources. Recommend on-chain verification for future epoch-based emissions."
+  },
+  "mechanism": {
+    "type": "ve(3,3) fork with governance-controlled emissions",
+    "lock_mechanism": {
+      "name": "veAERO",
+      "lock_duration_min_weeks": 1,
+      "lock_duration_max_weeks": 208,
+      "lock_to_vote_ratio": "Linear: 4 year lock = 1:1, 1 year lock = 1:0.25",
+      "benefits": [
+        "100% of trading fees from voted pools",
+        "Bribes from protocols seeking liquidity",
+        "Governance voting power"
+      ]
+    },
+    "real_yield_sources": {
+      "trading_fees": {
+        "description": "100% of trading fees flow to veAERO holders voting for those pools",
+        "recent_monthly_generation": 6900000,
+        "lifetime_distribution_usd": 295000000,
+        "notes": "Slipstream (concentrated liquidity) pools generate $5.7M/month alone"
+      },
+      "bribes": {
+        "description": "Protocols incentivize veAERO votes with bribes in various tokens",
+        "notes": "Bribes can exceed trading fees in competitive periods, primary yield source varies weekly"
+      }
+    },
+    "dilution_for_non_locked": {
+      "description": "Unlocked AERO holders face heavy dilution from emissions, no fee/bribe capture",
+      "current_annualized_inflation_estimate": "11-35% depending on epoch and lock percentage",
+      "net_inflation_with_locks": "8% as of late 2025 (fees/locks offset some emission dilution)"
+    }
+  },
+  "inflation": {
+    "weekly_emission_schedule": {
+      "phase_1_epochs_1_to_14": {
+        "starting_weekly_aero": 10000000,
+        "growth_rate": "3% per epoch",
+        "ending_epoch_14_emission": 15000000,
+        "duration_weeks": 14
+      },
+      "phase_2_epochs_15_to_67": {
+        "starting_weekly_aero": 15000000,
+        "decay_rate": "1% per epoch",
+        "ending_epoch_67_emission": 9300000,
+        "duration_weeks": 53
+      },
+      "phase_3_epoch_67_onward": {
+        "mechanism": "AERO Fed - governance-controlled",
+        "epoch_67_date": "2024-12-04",
+        "weekly_emission_adjustment_options": [
+          "Increase by 0.01% of total supply (+52 bps annualized)",
+          "Maintain current rate",
+          "Decrease by 0.01% of total supply (-52 bps annualized)"
+        ],
+        "maximum_annualized_rate_percent": 52,
+        "minimum_annualized_rate_percent": 0.52,
+        "voting": "Weekly veAERO holder votes"
+      }
+    },
+    "current_estimated_rates": {
+      "weekly_emissions_aero": 9300000,
+      "annualized_rate_of_circulating_supply_percent": 11,
+      "annualized_rate_net_of_locks_percent": 8,
+      "historical_range_percent": [24.81, 35],
+      "notes": "As of Q4 2024-Q1 2026 transition. Phase 3 governance control enables dynamic rates."
+    },
+    "revenue_efficiency": {
+      "dollars_returned_per_dollar_emitted": 1.50,
+      "monthly_protocol_revenue_usd": 6900000,
+      "weekly_protocol_revenue_usd": 1587500,
+      "trading_volume_all_time_usd": 238000000000,
+      "recent_30day_volume_usd": 21850000000,
+      "notes": "Record efficiency as of Aug 2025. Locking drives net supply reduction despite emissions."
+    }
+  },
+  "data_collection_notes": "Data collected April 29, 2026 from public web sources (CoinGecko, CoinMarketCap, Tokenomics.com, Nansen, Bitget, TastyCrypto, CoinGecko Learn). AERO is a ve(3,3) fork on Base chain launched Aug 2023. Key mechanics: (1) Uncapped supply with phase-based emissions until epoch 67, then governance-controlled via AERO Fed; (2) veAERO locks capture 100% of trading fees + bribes = real yield; (3) Unlocked AERO holders suffer dilution; (4) Allocation: 66.69% gauge emissions, 9.8% airdrop, 8.3% team (split initial/new mint), 5.17% rebase, 5.15% ecosystem, 2.45% protocol grants, 1.96% voter incentives, 0.49% genesis LP. Team/foundation locked 2-4 years as veAERO (no liquid vesting). Major vesting completed Aug 28, 2025. Next unlock April 30, 2026 is trivial (12 AERO rebase). Inflation calculation conservative: 11% annualized on circulating supply as of late 2025; actual inflation varies by week and lock ratio. Revenue efficiency $1.50/$1 emitted (fees + bribes sustain veAERO holders despite dilution to non-locked). Recommend on-chain verification of current epoch, weekly emission rate, and circulating supply for live analysis.",
+  "sources": [
+    "https://tokenomics.com/articles/aerodrome-tokenomics-how-aero-captures-100-of-protocol-fees",
+    "https://www.coingecko.com/learn/what-is-aerodrome-finance-aero-base",
+    "https://coinmarketcap.com/cmc-ai/aerodrome-finance/what-is/",
+    "https://www.bitget.com/academy/aero-token-guide",
+    "https://www.tastycrypto.com/blog/aerodrome-guide/",
+    "https://www.coingecko.com/en/coins/aerodrome-finance",
+    "https://coinmarketcap.com/currencies/aerodrome-finance/",
+    "https://messari.io/project/aerodrome-finance/token-unlocks"
+  ]
+}

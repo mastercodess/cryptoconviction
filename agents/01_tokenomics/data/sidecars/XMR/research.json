@@ -1,0 +1,55 @@
+{
+  "symbol": "XMR",
+  "name": "Monero",
+  "category": "privacy-l1",
+  "supply": {
+    "current_supply": 18446744,
+    "circulating_supply": 18446744,
+    "max_supply": null,
+    "supply_cap": "No hard cap; unlimited via tail emission",
+    "notes": "Main emission curve completed May 2022; now in perpetual tail emission phase"
+  },
+  "market": {
+    "market_cap_usd": 6860000000,
+    "price_usd": 371.84,
+    "rank_by_mcap": 17,
+    "data_source": "April 30, 2026 snapshot (CoinGecko/CoinMarketCap)",
+    "recent_peak": {
+      "price_usd": 799.89,
+      "date": "2026-01-14"
+    }
+  },
+  "unlocks": {
+    "events": [],
+    "notes": "No team allocation, no investor unlocks, no foundation reserve. Fair launch in April 2014 with no premine or instamine."
+  },
+  "mechanism": {
+    "consensus": "Proof of Work (PoW)",
+    "mining_algorithm": "RandomX (ASIC-resistant, CPU-optimized since November 2019)",
+    "block_reward": {
+      "current_phase": "Tail emission",
+      "reward_per_block": 0.6,
+      "block_time_seconds": 120,
+      "blocks_per_year": 262980,
+      "annual_issuance_xmr": 157788,
+      "started": "2022-06-09"
+    },
+    "staking": "None (pure PoW)",
+    "burn_mechanism": "None",
+    "fee_capture": "Miners capture transaction fees + block reward",
+    "value_accrual_summary": "Native L1 privacy currency; no token-level fee capture beyond miner block reward. Mining incentives perpetually sustained via tail emission to ensure network security even when fees alone insufficient."
+  },
+  "inflation": {
+    "current_annual_rate_percent": 0.855,
+    "calculation": "157788 XMR/year ÷ 18,446,744 supply = 0.855% per year",
+    "trend": "Declining over time as supply grows (same emission fixed at 0.6 XMR/block forever)",
+    "notes": "Would take ~100+ years of tail emission to double supply; inflation approaching zero asymptotically"
+  },
+  "privacy_features": {
+    "ring_signatures": "Obfuscate sender identity by grouping with decoy outputs",
+    "ring_confidential_transactions": "RingCT masks transaction amounts (implemented 2017)",
+    "stealth_addresses": "Hide recipient addresses",
+    "bulletproofs": "Zero-knowledge proof method for transaction validity"
+  },
+  "data_collection_notes": "Monero tail emission (0.6 XMR/block) entered perpetual phase in June 2022, replacing main emission curve. Current supply ~18.45M XMR growing at ~0.85%/year. Fair-launch cryptocurrency with no premine, founder allocation, or governance token. Pure PoW mining via RandomX algorithm. Holder concentration analysis is UNAVAILABLE on-chain (privacy by design—rings and stealth addresses prevent tracking). Upcoming: THORChain native XMR swap integration (May-June 2026), FCMP++ privacy upgrade (beta 2026). Sources: CoinGecko, CoinMarketCap, LocalMonero, Gate.com, Gemini."
+}

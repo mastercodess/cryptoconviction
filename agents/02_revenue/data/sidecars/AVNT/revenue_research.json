@@ -1,0 +1,126 @@
+{
+  "token": "AVNT",
+  "protocol": "Avantis",
+  "protocol_type": "Perpetual DEX on Base",
+  "research_date": "2026-04-30",
+  "data_sources": [
+    "DefiLlama protocol tracking",
+    "CoinMarketCap price data",
+    "CoinGecko market data",
+    "Avantis documentation and official announcements",
+    "Public blockchain data"
+  ],
+  "market_metrics": {
+    "market_cap_usd": 47381387,
+    "market_cap_usd_range": "47.4M - 48.7M",
+    "circulating_supply": 320070000,
+    "max_supply": 1000000000,
+    "price_usd": 0.150099,
+    "24h_volume_usd": 12129877
+  },
+  "protocol_metrics": {
+    "tvl_usdc_vault_usd": 85000000,
+    "tvl_note": "Oct 2025 figure, likely higher as of April 2026",
+    "cumulative_volume_lifetime": 22000000000,
+    "cumulative_volume_note": "From protocol launch Feb 2024 through April 2026"
+  },
+  "fee_structure": {
+    "maker_fee_bps": 1,
+    "taker_fee_bps": 4,
+    "position_opening_fees": true,
+    "position_closing_fees": true,
+    "rollover_fees": true,
+    "zero_fee_perpetuals": "ZFP available (fees if trade profitable)"
+  },
+  "revenue_and_tokenomics": {
+    "annualized_protocol_revenue_usd": 15000000,
+    "annualized_revenue_note": "From March 2026 buyback program announcement",
+    "buyback_and_burn_program": {
+      "launch_date": "2026-03-11",
+      "current_burn_rate_pct": 30,
+      "future_burn_rate_pct": 50,
+      "future_burn_rate_timeline": "Q2 2026",
+      "burn_frequency": "every 6 hours",
+      "burn_mechanism": "Systematic purchase of AVNT on open market and burn",
+      "fees_included_in_burn": "Opening fees, closing fees, and winning trade fees",
+      "excluded_from_burn": "Margin fees, liquidation fees"
+    },
+    "effective_yield_to_holders": {
+      "calculation": "30% of protocol revenue / market cap",
+      "annualized_burn_value_usd": 4500000,
+      "effective_yield_pct": 9.5,
+      "effective_yield_note": "Burn-as-yield to AVNT holders (deflationary pressure)"
+    },
+    "staking_launch": {
+      "date": "2026-04-13",
+      "feature": "Fee discount tiers across five levels",
+      "requirements": [
+        "Minimum staked AVNT balance",
+        "Minimum 30-day trading volume"
+      ],
+      "max_discount": "30% fixed-fee discount + 25% ZFP discount"
+    }
+  },
+  "peer_comparison": {
+    "competitors": [
+      {
+        "name": "Hyperliquid",
+        "ticker": "HYPE",
+        "market_cap_usd": 9900000000,
+        "market_cap_note": "As of April 2026",
+        "monthly_holder_revenue_usd": 65000000,
+        "annualized_fees_estimate_usd": 780000000,
+        "maker_fee_bps": 1,
+        "taker_fee_bps": 3.5,
+        "monthly_volume_30d_usd": 180000000000,
+        "buyback_mechanism": "97% of fees flow to Assistance Fund for daily HYPE buyback",
+        "daily_buy_pressure_usd": 2000000
+      },
+      {
+        "name": "dYdX",
+        "ticker": "DYDX",
+        "monthly_volume_pct_of_hyperliquid": "10-12%",
+        "maker_fee_bps": 2,
+        "taker_fee_bps": 5
+      },
+      {
+        "name": "GMX",
+        "ticker": "GMX",
+        "relative_size": "Smaller fraction vs Hyperliquid"
+      },
+      {
+        "name": "Synthetix Perps",
+        "ticker": "SNX",
+        "governance_proposal": "SIP-2043",
+        "buyback_mechanism": "100% of trading fees for SNX/sUSD buyback",
+        "phase_1_timeline": "Until sUSD peg restored to $1 (targeted Q2 2026)",
+        "phase_2": "All fees exclusively for SNX buyback and burn",
+        "kwenta_integration": "Kwenta reacquired as frontend (KWENTA token deprecated, 1:17 SNX exchange rate)"
+      }
+    ],
+    "avantis_ps_multiple": {
+      "protocol_revenue_usd": 15000000,
+      "market_cap_usd": 47381387,
+      "ps_multiple": 3.16,
+      "ps_interpretation": "3.16x P/S multiple for AVNT token"
+    },
+    "peer_ps_multiples_estimated": {
+      "hyperliquid_annualized": {
+        "estimated_ps": 12.7,
+        "calc": "9.9B MC / 780M annualized revenue"
+      },
+      "avantis_vs_peers": "AVNT trades at 3.16x P/S, significantly lower than mature peer Hyperliquid at ~12.7x, suggesting either undervaluation or early-stage risk discount"
+    }
+  },
+  "key_findings": {
+    "summary_1": "Avantis launched systematic 30% buyback-and-burn (every 6h) on March 11, 2026, targeting upgrade to 50% by Q2 2026. At current $15M annualized revenue, this generates ~$4.5M annual burn value, equating to 9.5% effective yield to existing AVNT holders via deflationary pressure.",
+    "summary_2": "AVNT trades at 3.16x P/S multiple ($47.4M MC / $15M annualized revenue), significantly cheaper than peer Hyperliquid (~12.7x) and dYdX, reflecting either early-stage discount or execution risk. Buyback-funded yield model mirrors successful SNX and HYPE frameworks.",
+    "summary_3": "Base chain positioning and low fee structure (1 bps maker, 4 bps taker) competitive vs peers; Q2 2026 plans to increase burn rate to 50% (projecting ~$7.5M annual deflationary value) and rollout of staking tiers (fee discounts) suggest protocol-market fit maturation."
+  },
+  "data_quality_notes": {
+    "tvl_caveat": "October 2025 figure of $85M TVL is most recent available; actual April 2026 TVL likely higher",
+    "volume_data": "Cumulative volume ($22B lifetime) confirms protocol traction; 24h volume ($12M) reflects current market conditions",
+    "revenue_estimation": "$15M annualized is official from March 2026 buyback announcement; actual daily revenue tracking requires access to real-time on-chain data",
+    "peer_data_sources": "Hyperliquid, dYdX, GMX, SNX data from published reports and governance documents (March-April 2026 timeframe)"
+  }
+}

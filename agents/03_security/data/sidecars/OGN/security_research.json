@@ -1,0 +1,255 @@
+{
+  "protocol": "Origin Protocol",
+  "ticker": "OGN",
+  "research_date": "2026-04-30",
+  "overall_security_tier": "TIER_2",
+  "summary": "TIER_2: Post-2020 overhaul with continuous OpenZeppelin audits; most recent audit April 2024 (xOGN OpenZeppelin); dependencies on Lido (stETH) and Curve LP pose medium risk.",
+  "products": [
+    {
+      "name": "Origin Dollar",
+      "ticker": "OUSD",
+      "network": "Ethereum",
+      "type": "Yield-bearing stablecoin"
+    },
+    {
+      "name": "Origin Ether",
+      "ticker": "OETH",
+      "network": "Ethereum",
+      "type": "Yield-bearing staked ETH"
+    },
+    {
+      "name": "primeETH",
+      "ticker": "primeETH",
+      "network": "Ethereum",
+      "type": "Staking token",
+      "status": "Under active development"
+    },
+    {
+      "name": "Super OETH",
+      "ticker": "superOETHb, superOETHo",
+      "networks": ["Base", "Optimism"],
+      "type": "Supercharged LST (Layer 2)"
+    }
+  ],
+  "historical_exploits": [
+    {
+      "name": "Origin Dollar Flash Loan Re-entrancy Attack",
+      "date": "2020-11-17",
+      "severity": "major",
+      "funds_lost_usd": 7000000,
+      "attack_type": "Flash loan re-entrancy",
+      "details": "Attacker used 70,000 ETH flash loan from dYdX to exploit missing validation in mint_multiple function. Attacker passed fake stablecoin under their control, exploiting contract reentrancy. By artificially inflating stablecoin supply, attacker created massive rebase event, inflating holdings to exceed vault assets. OUSD token value plummeted 85% post-attack.",
+      "post_mortem_url": "https://medium.com/originprotocol/urgent-ousd-has-hacked-and-there-has-been-a-loss-of-funds-7b8c4a7d534c",
+      "recovery_actions": "Post-incident audits by Trail of Bits and Solidified; protocol overhauled security architecture; multisig governance implemented"
+    }
+  ],
+  "audits": [
+    {
+      "firm": "OpenZeppelin",
+      "product": "OUSD",
+      "date": "2021-10",
+      "severity_findings": [
+        {
+          "severity": "critical",
+          "issue": "OGN buyback code on Uniswap lacked slippage protection",
+          "details": "Theoretical risk of yield theft via price manipulation; economically unviable given staked token volume; code was disabled immediately"
+        }
+      ],
+      "status": "Completed - all issues resolved",
+      "github_url": "https://github.com/OriginProtocol/security/blob/master/audits/OpenZeppelin%20-%20Origin%20Dollar%20-%20October%202021.pdf"
+    },
+    {
+      "firm": "Trail of Bits",
+      "product": "OUSD",
+      "date": "2020-11",
+      "status": "Post-exploit audit",
+      "notes": "Addressed critical re-entrancy and architectural issues following November 2020 flash loan attack"
+    },
+    {
+      "firm": "Solidified",
+      "product": "OUSD",
+      "date": "2020-11",
+      "status": "Post-exploit audit",
+      "notes": "Secondary post-incident security assessment"
+    },
+    {
+      "firm": "OpenZeppelin",
+      "product": "OETH",
+      "date": "2023",
+      "status": "Mainnet launch audit",
+      "severity_findings": [
+        {
+          "severity": "medium",
+          "issue": "Chainlink oracle data feeds may be outdated",
+          "resolution": "Added checks to prevent mints/redeems if oracle stale by specified timeframe"
+        }
+      ],
+      "total_issues_found": 10,
+      "medium_severity_count": 1,
+      "low_severity_count": 9
+    },
+    {
+      "firm": "OpenZeppelin",
+      "product": "OETH Integration",
+      "date": "2024",
+      "status": "Continuous auditing agreement",
+      "details": "100% of OETH code changes audited before mainnet deployment"
+    },
+    {
+      "firm": "OpenZeppelin",
+      "product": "xOGN (OGN/OGV Merge)",
+      "date": "2024-04",
+      "status": "Completed",
+      "findings": "Low-severity edge case issues identified; governance transition from veOGV to xOGN well-structured",
+      "details": "Staking mechanics audited; multiSig timelock governance transition verified"
+    },
+    {
+      "firm": "Certora",
+      "product": "OUSD/OETH",
+      "date": "Various",
+      "status": "Formal verification work"
+    },
+    {
+      "firm": "Quantstamp",
+      "product": "Curve Finance (OUSD dependency)",
+      "date": "Various",
+      "status": "Audited (relevant to OUSD LP strategies)"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "Lido",
+      "token": "stETH",
+      "product": "OETH",
+      "integration_type": "Primary yield source for ETH staking",
+      "risk_level": "medium",
+      "details": "OETH derives staking yield from Lido stETH; superOETHb uses bridged Wrapped OETH from stETH",
+      "mitigation": "OpenZeppelin audit covers integration; Lido audited separately by multiple firms"
+    },
+    {
+      "name": "Curve Finance",
+      "token": "CRV",
+      "product": "OUSD",
+      "integration_type": "Stableswap LP for USDC/OUSD liquidity",
+      "risk_level": "medium",
+      "details": "OUSD allocates portion of USDC collateral to Curve StableSwap pools; earns CRV rewards; provides liquidity for OUSD/USDC pair",
+      "mitigation": "Curve audited by Trail of Bits and Quantstamp; yields diversified across Morpho lending and Curve LP"
+    },
+    {
+      "name": "Morpho",
+      "token": "MORPHO",
+      "product": "OUSD",
+      "integration_type": "Lending strategy for yield generation",
+      "risk_level": "medium",
+      "details": "OUSD deploys stablecoin lending on Morpho protocol alongside Curve LP for yield diversification"
+    },
+    {
+      "name": "Aerodrome",
+      "token": "AERO",
+      "product": "Super OETH (Base)",
+      "integration_type": "LP integration on Layer 2",
+      "risk_level": "medium",
+      "details": "superOETHb has protocol-owned concentrated liquidity position on Aerodrome WETH/superOETHb pool; ensures 1:1 peg with ETH"
+    },
+    {
+      "name": "Uniswap V2",
+      "token": "UNI",
+      "product": "OUSD (legacy)",
+      "integration_type": "Historical swapping (now deprecated slippage issue)",
+      "risk_level": "low",
+      "details": "Legacy swapExactTokensForTokens without slippage protection; function disabled post-OpenZeppelin audit"
+    },
+    {
+      "name": "dYdX",
+      "product": "All (flash loan risk)",
+      "integration_type": "Flash loan exposure",
+      "risk_level": "low",
+      "details": "Historical exploit vector; current architecture mitigates re-entrancy; OpenZeppelin audits verify protections"
+    }
+  ],
+  "governance_and_upgrades": {
+    "model": "Decentralized governance with timelock and multisig",
+    "details": {
+      "token_governance": "OGN token holders control protocol upgrades via on-chain proposals",
+      "timelock": "Time-delayed admin actions give users exit window if proposals deemed malicious",
+      "guardian_multisig": "2-of-8 signature threshold for limited vault operations (depositToStrategy, withdrawFromStrategy, setVaultBuffer, setAssetDefaultStrategy)",
+      "fast_path": "Rebalancing and pause functions can execute without timelock with fewer signers for rapid response to market/security events"
+    },
+    "xOGN_governance": "April 2024 OGV/OGN merger: control transferred from veOGV to xOGN governance; stakers lock OGN 1mo-1yr for voting weight and reward share"
+  },
+  "bug_bounty": {
+    "platform": "Immunefi",
+    "max_reward_usd": 1000000,
+    "details": "Up to $1M for critical vulnerabilities; rewards scaled by severity and report quality; payouts in OUSD on Ethereum",
+    "historical_payouts_usd": 80000,
+    "kyc_required": false,
+    "poc_required": true,
+    "url": "https://immunefi.com/bug-bounty/originprotocol/"
+  },
+  "repositories": [
+    {
+      "name": "OriginProtocol/origin-dollar",
+      "description": "OUSD and OETH smart contracts; yield-bearing stablecoins",
+      "url": "https://github.com/OriginProtocol/origin-dollar",
+      "language": "Solidity + JavaScript tests",
+      "test_framework": "Hardhat"
+    },
+    {
+      "name": "OriginProtocol/security",
+      "description": "Audit reports and security documentation",
+      "url": "https://github.com/OriginProtocol/security"
+    },
+    {
+      "name": "OriginProtocol/origin-dollar-governance",
+      "description": "Governance contracts (OGN/OGV/xOGN staking and voting)",
+      "url": "https://github.com/OriginProtocol"
+    }
+  ],
+  "audit_history_summary": "12+ audits over 4+ years; battle-tested codebase; continuous OpenZeppelin agreement covers 100% of OETH/OUSD code changes",
+  "risk_assessment": {
+    "critical_risks": "None known post-2020 exploit recovery",
+    "significant_risks": [
+      {
+        "category": "Dependency Risk",
+        "details": "Lido stETH price volatility affects OETH yields; Curve LP impermanent loss on stablecoin pairs; Morpho lending protocol risk"
+      },
+      {
+        "category": "Layer 2 Risk",
+        "details": "Super OETH on Base/Optimism introduces Layer 2 consensus and bridge risks; Aerodrome LP dependency on concentrated positions"
+      },
+      {
+        "category": "Oracle Risk",
+        "details": "OpenZeppelin audit identified Chainlink oracle staleness; mitigated by added validation, but oracle ecosystem remains dependency"
+      }
+    ],
+    "medium_risks": [
+      {
+        "category": "Governance",
+        "details": "Multisig can trigger fast-path actions without timelock; requires trusted signers"
+      },
+      {
+        "category": "Smart Contract Risk",
+        "details": "Complex yield strategies across Morpho, Curve, Lido, and Aerodrome increase surface area; audits mitigate but complexity remains"
+      }
+    ],
+    "security_strengths": [
+      "Continuous auditing agreement with OpenZeppelin (100% code coverage)",
+      "Multiple independent audits from Trail of Bits, Solidified, Certora",
+      "Responsive post-exploit overhaul in 2020-2021",
+      "Timelock governance prevents unilateral malicious upgrades",
+      "Bug bounty program up to $1M incentivizes responsible disclosure",
+      "Transparent security repo with published audit reports"
+    ]
+  },
+  "data_sources": [
+    "https://medium.com/originprotocol/urgent-ousd-has-hacked-and-there-has-been-a-loss-of-funds-7b8c4a7d534c",
+    "https://www.openzeppelin.com/news/origin-ousd-audit",
+    "https://www.openzeppelin.com/news/origin-oeth-integration-audit",
+    "https://docs.originprotocol.com/security-and-risk/audits",
+    "https://immunefi.com/bug-bounty/originprotocol/",
+    "https://docs.originprotocol.com/ogn/governance",
+    "https://github.com/OriginProtocol/origin-dollar",
+    "https://docs.originprotocol.com/yield-bearing-tokens/super-oeth",
+    "https://www.originprotocol.com/blog/april-2024-token-holder-update"
+  ]
+}

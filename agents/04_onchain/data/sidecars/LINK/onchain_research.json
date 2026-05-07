@@ -1,0 +1,39 @@
+{
+  "activity": {
+    "dau": "NOT_AVAILABLE_FREE_TIER",
+    "wau": "NOT_AVAILABLE_FREE_TIER",
+    "mau": "NOT_AVAILABLE_FREE_TIER",
+    "dau_mau_ratio": "NOT_AVAILABLE_FREE_TIER",
+    "daily_tx_count": "NOT_AVAILABLE_FREE_TIER",
+    "new_addresses_7d": "NOT_AVAILABLE_FREE_TIER",
+    "as_of": "2025-07-14",
+    "_note": "Granular DAU/WAU/MAU and new-address counts for LINK require Glassnode paid tier (Glassnode free tier exposes only BTC/ETH address metrics). Dune Analytics public dashboards exist for Chainlink oracle activity but do NOT expose a canonical LINK token DAU dashboard freely queryable via API without a Dune account/API key. DefiLlama does not publish a LINK-specific active-users page. Values cannot be responsibly fabricated."
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": "NOT_AVAILABLE_FREE_TIER",
+      "outflow_usd": "NOT_AVAILABLE_FREE_TIER",
+      "net_usd": "NOT_AVAILABLE_FREE_TIER",
+      "_note": "Coinglass public pages show exchange flow charts for BTC and ETH prominently; LINK exchange-flow time-series data in USD is behind Coinglass Pro. Glassnode exchange flow for LINK (exchange_flow_in_usd, exchange_flow_out_usd) requires at least Glassnode Advanced tier \u2014 not available on the free tier. No freely scrapable endpoint confirmed as of 2025-07-14."
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": "NOT_AVAILABLE_FREE_TIER",
+    "sth_supply_pct": "NOT_AVAILABLE_FREE_TIER",
+    "smart_money_stance": "UNKNOWN",
+    "_note": "Glassnode LTH/STH supply split for ERC-20 tokens including LINK is a paid-tier metric (Glassnode Advanced/Institutional). No free public equivalent confirmed on DefiLlama, Etherscan, or Coinglass public pages. Etherscan token holder list (https://etherscan.io/token/0x514910771af9ca656af840dff83e8264ecf986ca#balances) shows top-holder concentration but does NOT classify holders by holding duration."
+  },
+  "wash_trade_concerns": "Volume organicity cannot be definitively assessed without paid exchange-flow and order-book data; however, LINK trades on Tier-1 venues (Binance, Coinbase, Kraken) with deep order books, and CoinGecko's trust-score methodology (https://www.coingecko.com/en/coins/chainlink) rates its top exchanges highly, suggesting volume is largely organic, though smaller CEX pairs warrant caution.",
+  "rationale": "All granular on-chain activity metrics (DAU, WAU, MAU, new addresses, exchange flows, LTH/STH cohorts) for LINK as an ERC-20 token are gated behind paid tiers on the only platforms (Glassnode, Coinglass Pro, Nansen) that compute them reliably. Free-tier sources \u2014 Etherscan, CoinGecko, DefiLlama, and Coinglass public \u2014 provide price, market cap, top-holder snapshots, and protocol TVL but not the time-series on-chain behavioral metrics requested. Fabricating numbers would be misleading; the honest answer is PARTIAL/UNAVAILABLE for this specific data request on free sources.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://www.coingecko.com/en/coins/chainlink \u2014 price, volume, market cap, exchange trust scores (free)",
+    "https://etherscan.io/token/0x514910771af9ca656af840dff83e8264ecf986ca#balances \u2014 top holder list snapshot (free, no duration classification)",
+    "https://defillama.com/protocol/chainlink \u2014 Chainlink protocol TVL (free; no LINK token DAU page exists)",
+    "https://glassnode.com/metrics \u2014 confirms LINK exchange flow & address metrics exist but are Advanced/Institutional tier only",
+    "https://coinglass.com/LiquidationData \u2014 LINK liquidation data publicly visible; exchange flow for LINK is Pro tier",
+    "https://dune.com/browse/dashboards?q=chainlink \u2014 public Chainlink dashboards exist (oracle calls, node operators) but no canonical free LINK token DAU dashboard with API access confirmed",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 macro sentiment index (free, not LINK-specific)"
+  ]
+}

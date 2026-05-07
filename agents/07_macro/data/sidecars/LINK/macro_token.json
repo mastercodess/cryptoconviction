@@ -1,0 +1,16 @@
+{
+  "symbol": "LINK",
+  "funding_rate_8h": 0.00008,
+  "open_interest_usd": 425000000,
+  "btc_correlation_30d": 0.78,
+  "eth_correlation_30d": 0.72,
+  "nasdaq_correlation_30d": 0.35,
+  "leverage_warning": false,
+  "rationale": "Chainlink shows moderate positive funding with substantial OI; typical oracle token correlation to BTC/ETH with moderate tech-stock exposure via derivatives flows.",
+  "data_quality": "GOOD",
+  "sources": [
+    "https://www.coinglass.com/FundingRate/LINK",
+    "https://www.coinglass.com/currencies/LINK/futures",
+    "https://coinalyze.net/chainlink/funding-rate/"
+  ]
+}

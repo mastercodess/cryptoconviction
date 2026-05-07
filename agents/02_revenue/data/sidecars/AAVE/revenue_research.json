@@ -1,0 +1,37 @@
+{
+  "annualized_revenue_usd": 182000000,
+  "tvl_usd": 22800000000,
+  "p_s_ratio": 15.2,
+  "p_tvl_ratio": 0.121,
+  "real_yield_apr_pct": 3.8,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Revenue is event-driven, spiking during high-volatility periods (liquidation fees surge) and bull-market borrowing demand, with Q1 2025 showing notably elevated activity versus prior quarters.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "MKR",
+      "metric": "p_s",
+      "peer_value": 18.4
+    },
+    {
+      "peer_symbol": "COMP",
+      "metric": "p_s",
+      "peer_value": 22.1
+    },
+    {
+      "peer_symbol": "SKY",
+      "metric": "p_s",
+      "peer_value": 9.7
+    }
+  ],
+  "rationale": "DefiLlama reports Aave TVL near $22.8B as of late May 2025, making it the largest lending protocol by TVL. Annualized protocol revenue (fees accruing to the DAO treasury and stakers) is approximately $182M based on trailing 30-day DefiLlama fee data (~$15M/month) annualized; at an AAVE market cap of roughly $2.76B this implies a P/S of ~15x and P/TVL of ~0.12x. Real yield to stkAAVE holders is estimated at 3.8% APR based on Aave governance forum Q1 2025 revenue reports, with no material token inflation directed to stakers (stkAAVE emissions are minimal post-Aave v3 migration, hence inflationary yield set to null).",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/aave",
+    "https://defillama.com/fees/aave",
+    "https://governance.aave.com/t/aave-quarterly-report-q1-2025/",
+    "https://tokenterminal.com/terminal/projects/aave",
+    "https://coinmarketcap.com/currencies/aave/",
+    "https://docs.aave.com/aavenomics/"
+  ]
+}

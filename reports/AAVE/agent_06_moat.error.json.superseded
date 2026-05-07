@@ -1,0 +1,18 @@
+{
+  "error": "7 validation errors for MoatOutput\nmoat_strength_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncategory_rank\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nnetwork_effect_type\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncompetitive_threat\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nregulatory_relative_risk\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrationale\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncomposite_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+  "raw": {
+    "error": "max_iters_reached",
+    "agent": "06_moat::AAVE",
+    "iters": 10,
+    "schema_keys": [
+      "token_symbol",
+      "moat_strength_score",
+      "category_rank",
+      "network_effect_type",
+      "competitive_threat",
+      "regulatory_relative_risk",
+      "rationale",
+      "composite_score"
+    ]
+  }
+}

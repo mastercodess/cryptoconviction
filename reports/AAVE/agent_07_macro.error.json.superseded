@@ -1,0 +1,18 @@
+{
+  "error": "6 validation errors for MacroOutput\ncycle_phase\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nmacro_rating\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nentry_timing_risk\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nleverage_warning\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrationale\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncomposite_score\n  Field required [type=missing, input_value={'error': 'max_iters_reac... 'token_symbol': 'AAVE'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+  "raw": {
+    "error": "max_iters_reached",
+    "agent": "07_macro::AAVE",
+    "iters": 10,
+    "schema_keys": [
+      "token_symbol",
+      "cycle_phase",
+      "macro_rating",
+      "entry_timing_risk",
+      "leverage_warning",
+      "btc_correlation_30d",
+      "rationale",
+      "composite_score"
+    ]
+  }
+}

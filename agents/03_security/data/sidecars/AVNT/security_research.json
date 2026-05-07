@@ -1,0 +1,88 @@
+{
+  "symbol": "AVNT",
+  "audits": [
+    {
+      "auditor": "Zellic",
+      "audit_date": "2024-01-31",
+      "scope": "Avantis core perpetuals smart contracts, ZFP system, liquidity provider vault mechanics",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "In-depth security audit by industry-leading firm Zellic (trusted by LayerZero, Aptos, Pyth) prior to mainnet deployment on Base. Zellic audit verified code quality and identified issues before mainnet launch.",
+      "url": "https://github.com/Zellic/publications"
+    },
+    {
+      "auditor": "Zokyo",
+      "audit_date": "2024-02-01",
+      "scope": "Comprehensive security audit of Avantis protocol contracts and risk framework",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Comprehensive audit by Zokyo (trusted by SushiSwap, Solana Foundation, 1inch) covering full protocol codebase. Zokyo delivered security verification of Avantis' live contracts prior to mainnet operations.",
+      "url": "https://docs.avantisfi.com/security/audits"
+    }
+  ],
+  "exploit_history": [],
+  "code_health": {
+    "primary_repo_url": "https://github.com/Avantis-Labs",
+    "contributors_count": null,
+    "weekly_commits_avg": null,
+    "last_commit_date": null,
+    "upgrade_mechanism": "proxy (UUPS-style or standard proxy pattern; specific admin/timelock details not publicly documented)",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "Not identified on public Immunefi directory"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l2_sequencer",
+      "provider": "Coinbase (Base L2 sequencer)",
+      "risk_level": "medium",
+      "notes": "Avantis operates on Base mainnet; sequencer downtime or censorship would prevent trade execution and settlement"
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Pyth Network (primary)",
+      "risk_level": "high",
+      "notes": "Perpetuals DEX heavily dependent on ultra-low-latency price feeds from Pyth for mark price and liquidation logic. Avantis appears Pyth-affiliated. Oracle downtime or stale prices directly trigger liquidations and trade execution failures."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Chainlink (fallback)",
+      "risk_level": "high",
+      "notes": "Secondary oracle provider for price feed redundancy. Avantis compares Pyth vs Chainlink prices; >5% deviation auto-rejects trades. Both oracles critical for risk management."
+    },
+    {
+      "dep_type": "erc20",
+      "provider": "USDC (Circle, Base-native)",
+      "risk_level": "medium",
+      "notes": "USDC is settlement and collateral asset. Vault liquidity pool backed entirely by USDC deposits; USDC depegging or freeze would impact LP withdrawals and position unwinding."
+    },
+    {
+      "dep_type": "lp_vault_risk",
+      "provider": "Avantis LP Vault (avUSDC)",
+      "risk_level": "high",
+      "notes": "Protocol design creates LP-vs-trader conflict: LPs earn trader losses but face open PnL deficits during prolonged adverse price moves. Buffer depletion < 0.95 activates AVNT staking slashing module; max 20% slashing penalty on stakers. New protocol with unproven extreme-scenario behavior."
+    }
+  ],
+  "rationale": "Avantis is a YOUNG protocol (mainnet Feb 2024, AVNT token Sept 2025) with STRONG audit coverage (Zellic + Zokyo pre-launch). NO EXPLOIT HISTORY to date. However, age and complexity warrant elevated caution: (1) Dual-oracle dependency (Pyth + Chainlink) introduces high counterparty risk; Pyth stale prices or Chainlink circuit breakers could trigger cascade liquidations; (2) LP vault design with AVNT slashing creates novel game-theoretic risk during vault buffer depletion—untested under extreme volatility (2024 launch avoided crypto crash scenarios); (3) Base L2 sequencer dependency (medium risk, but Coinbase-operated sequencer more centralized than Ethereum L1); (4) No visible bug bounty program (missing Immunefi or equivalent), reducing post-launch crowdsourced security; (5) Proxy upgrade mechanism not publicly documented—usual practice is timelock+multisig but not confirmed. Suitable for informed traders with perp leverage experience; NOT suitable for risk-averse LP capital. Protocol treasury covers losses before slashing (positive), but slashing mechanics untested.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://x.com/avantisfi/status/1749960267629494364",
+    "https://x.com/avantisfi/status/1750322630631268631",
+    "https://chainwire.org/2024/02/02/avantis-the-next-generation-perpetuals-dex-launches-today-on-base-mainnet/",
+    "https://docs.avantisfi.com/security/audits",
+    "https://docs.avantisfi.com/trading/zero-fee-perpetuals-zfp",
+    "https://docs.avantisfi.com/liquidity-providers/avantis-lp-vault-avusdc",
+    "https://docs.avantisfi.com/liquidity-providers/risk-management",
+    "https://docs.avantisfi.com/avnt-token/staking-security-module",
+    "https://github.com/Zellic/publications",
+    "https://github.com/Avantis-Labs",
+    "https://www.zellic.io/",
+    "https://zokyo.io/",
+    "https://academy.binance.com/en/articles/what-is-avantis-avnt",
+    "https://messari.io/project/avantis",
+    "https://x.com/bankrbot/status/1968458845564629122"
+  ]
+}

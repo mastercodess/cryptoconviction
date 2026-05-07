@@ -1,0 +1,109 @@
+{
+  "token": {
+    "name": "Numeraire",
+    "symbol": "NMR",
+    "issuer": "Numerai",
+    "chain": "Ethereum Mainnet (L1 only)",
+    "contract_address": "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671",
+    "standard": "ERC-20 (with custom modifications)"
+  },
+  "audit_history": [
+    {
+      "date": "May 2017",
+      "auditor": "New Alchemy",
+      "scope": "NMR Token Initial Audit",
+      "report_available": true,
+      "repo_location": "audits/security_audit.pdf (GitHub: erasureprotocol/NMR)"
+    },
+    {
+      "date": "April 2018",
+      "auditor": "New Alchemy",
+      "scope": "NMR Code Fix Audit (multisig wallet security fixes)",
+      "report_available": true,
+      "repo_location": "audits/2018_upgrade_audit.pdf (GitHub: erasureprotocol/NMR)"
+    },
+    {
+      "date": "July 2019",
+      "auditor": "Trail of Bits",
+      "scope": "NMR 2.0 Contract Upgrade (supply reduction, immutability enablement)",
+      "report_available": true,
+      "repo_location": "audits/NMR2_audit.pdf (GitHub: erasureprotocol/NMR)"
+    }
+  ],
+  "contract_evolution": {
+    "initial_deployment": {
+      "year": 2017,
+      "features": "Minting, multisig, emergency stop, upgradeability",
+      "max_supply": "21 million NMR"
+    },
+    "upgrade_2019": {
+      "year": 2019,
+      "event": "NMR 2.0 Migration",
+      "changes": "Reduced max supply to 11 million; disabled minting, multisig, emergency stop, upgradeability; enabled burning only",
+      "rationale": "Move towards decentralization (Richard Craib); put entire supply in play; give total control to smart contract",
+      "security_improvement": "Converted from upgradeable to immutable contract for supply cap enforcement"
+    }
+  },
+  "upgrade_mechanism": {
+    "type": "Immutable (post-NMR 2.0)",
+    "details": "11 million token cap is now permanently enforced by immutable contract code. No future upgrades possible. Minting disabled; only burning mechanism remains (repurposed from original mint function).",
+    "governance": "No governance needed for contract changes — supply cap is cryptographic law"
+  },
+  "security_features": {
+    "erc20_compliance": "Yes, with custom modifications",
+    "approve_race_condition_fix": true,
+    "approve_mechanism": "Custom changeApproval() function required for non-zero to non-zero allowance changes",
+    "burning_mechanism": true,
+    "minting_mechanism": false,
+    "custody_features": "Staking and burning; stake burning on poor prediction performance"
+  },
+  "dependencies": {
+    "blockchain": "Ethereum Mainnet only",
+    "sidechains": "None (mainnet only)",
+    "external_protocols": "Erasure Protocol (on-chain)",
+    "bridge_risk": "Not applicable"
+  },
+  "treasury_security": {
+    "management": "Gnosis Safe multisig",
+    "status": "Replaces 2018-era multisig wallet vulnerabilities",
+    "signers": "Numerai team (number of signers/threshold not publicly disclosed)",
+    "details": "Centralized multisig for governance; no public disclosure of signer count or threshold"
+  },
+  "bug_bounty": {
+    "formal_program": false,
+    "immunefi_listed": false,
+    "bounty_mechanism": "Ad-hoc bounties for high-impact findings (e.g., ability to steal NMR = full stake value)",
+    "contact": "security@numer.ai",
+    "notes": "Small project with niche audience; no Immunefi listing found. Bounties available via direct disclosure."
+  },
+  "exploit_history": [],
+  "known_vulnerabilities": {
+    "2018_multisig_issue": {
+      "date": "April 2018",
+      "description": "Minor security vulnerabilities in multisignature wallet",
+      "resolution": "Temporary patch implemented; completely replaced with Gnosis Safe in NMR 2.0",
+      "current_status": "Resolved — disabled and replaced"
+    }
+  },
+  "security_assessment": {
+    "audit_coverage": "Comprehensive (3 audits covering 2017, 2018, 2019)",
+    "recent_audit": "Trail of Bits (2019) for NMR 2.0",
+    "immutability_status": "Confirmed — no future upgrades possible",
+    "data_quality": "HIGH",
+    "notes": "Mature, simple ERC-20 with minimal dependencies. Immutable post-2019. No major exploits on record. Audit trail is well-documented in GitHub repository."
+  },
+  "references": {
+    "github_repo": "https://github.com/erasureprotocol/NMR",
+    "etherscan_token": "https://etherscan.io/token/0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671",
+    "security_contact": "security@numer.ai",
+    "numerai_docs": "https://docs.numer.ai/numerai-tournament/bounties",
+    "coindesk_article": "https://www.coindesk.com/markets/2018/12/04/numerai-to-cut-token-supply-by-10-million-to-become-decentralized-as-fck",
+    "gemini_cryptopedia": "https://www.gemini.com/cryptopedia/nmr-token-numerai-prediction-markets"
+  },
+  "metadata": {
+    "research_date": "2026-04-30",
+    "researcher": "Security Data Researcher (Claude)",
+    "sources": "Free public sources (GitHub, Etherscan, Web search, official docs)",
+    "completeness": "Complete audit trail; immutability confirmed; no known exploits"
+  }
+}

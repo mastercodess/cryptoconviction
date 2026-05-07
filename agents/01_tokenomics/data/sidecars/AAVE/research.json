@@ -1,0 +1,52 @@
+{
+  "symbol": "AAVE",
+  "name": "Aave",
+  "category": "lending",
+  "supply": {
+    "circulating": 15396318,
+    "total_supply": 16000000,
+    "max_supply": 16000000,
+    "as_of": "2026-04-29",
+    "source": "https://www.coingecko.com/en/coins/aave"
+  },
+  "market": {
+    "price_usd": 96.61,
+    "market_cap_usd": 1487491095,
+    "fdv_usd": 1545600000,
+    "as_of": "2026-04-29",
+    "source": "https://www.coingecko.com/en/coins/aave"
+  },
+  "unlocks": {
+    "events": [],
+    "summary": "No material unlock events identified. AAVE reached 94% of max supply by end of 2025. Remaining ~0.6M tokens represent residual ecosystem reserves with no scheduled releases. The token operates as a fixed-supply governance asset with vesting schedules completed.",
+    "data_quality": "PARTIAL",
+    "caveats": "Granular vesting schedule details not available from free sources. Historical unlock events (2016-2022) during genesis and ecosystem fund distribution are not tracked here. Focus is on forward-looking unlocks which are minimal."
+  },
+  "mechanism": {
+    "has_burn": false,
+    "burn_source": "buyback",
+    "has_staking": true,
+    "staking_apr_pct": 4.53,
+    "staking_emission_inflationary": false,
+    "fee_capture_target": "split",
+    "value_accrual_summary": "Aavenomics 2.0 (implemented Q1 2025) redirects protocol revenue into two primary value flows: (1) Weekly AAVE buybacks (~$1M weekly, $50M annualized) funded by GHO fee spread and lending fee revenue, with repurchased tokens distributed to stakers via secondary market operations; (2) Anti-GHO distribution: 50% of GHO fees generate non-transferable Anti-GHO tokens, split 80% to stkAAVE holders and 20% to stkBPT holders (~$6M annually at current GHO scale). The 'buy and distribute' mechanism uses no inflation—all buyback capital comes from protocol revenue. Safety Module staking earns both base lending APY plus dynamic safety incentives (current ~4.53% APR reported via dApp). No direct token burn; instead, buyback reduces circulating supply through market repurchase and staker distribution.",
+    "sources": [
+      "https://www.ainvest.com/news/aave-unveils-aavenomics-6m-anti-gho-rewards-1m-weekly-buyback-2504/",
+      "https://governance.aave.com/t/arfc-aavenomics-implementation-part-one/21248",
+      "https://www.ainvest.com/news/aave-aavenomics-revamp-buybacks-fee-mechanism-anti-gho-token-2503/",
+      "https://www.stakingrewards.com/asset/aave"
+    ]
+  },
+  "inflation": {
+    "current_annualized_rate": 0,
+    "method": "Fixed supply. AAVE genesis created 13M from LEND migration + 3M ecosystem reserve = 16M hard cap. No emission schedule or ongoing token grants. Incentive programs now funded entirely by protocol revenue buybacks, not new issuance.",
+    "as_of_date": "2026-04-29",
+    "trend_next_24m": "flat",
+    "rationale": "AAVE hit ~94% circulating supply by late 2025. Remaining ~0.6M in ecosystem reserves. All future growth in staker rewards comes from protocol fee revenue (GHO issuance, lending/borrowing spreads) redirected into secondary market buybacks and Anti-GHO distribution. No inflationary token emission is planned; the treasury and governance control reserve depletion via buybacks.",
+    "sources": [
+      "https://www.coingecko.com/en/coins/aave",
+      "https://governance.aave.com/t/arfc-aavenomics-implementation-part-one/21248"
+    ]
+  },
+  "data_collection_notes": "Research conducted 2026-04-29 using public WebSearch/WebFetch. Price, market cap, and circulating supply sourced from CoinGecko as primary aggregator. Aavenomics 2.0 mechanism details sourced from governance forum (Aave DAO ARFC proposals), news coverage, and secondary reporting. Safety Module staking APR from official Aave dApp and staking reward aggregators. GHO fee revenue and anti-GHO distribution derived from protocol announcements and analysis. No granular unlock calendar available for free sources—token has reached maturity with minimal scheduled releases. APR figures represent snapshots as of 2026-04-29 and fluctuate based on TVL and governance-set emission rates. FDV calculated from max_supply * price_usd. Does not include speculative future yield from protocol upgrades (V4) or GHO protocol expansion."
+}

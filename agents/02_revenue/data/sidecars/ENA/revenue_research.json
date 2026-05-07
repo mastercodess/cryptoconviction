@@ -1,0 +1,154 @@
+{
+  "protocol_name": "Ethena",
+  "token_symbol": "ENA",
+  "staking_token": "sENA",
+  "stablecoin": "USDe",
+  "research_date": "2026-04-30",
+  "data_sources": "Public web sources, CoinMarketCap, Messari, DefiLlama, Stablecoin Insider, governance forums",
+  "tvl_metrics": {
+    "tvl_usd_millions": 6660,
+    "tvl_status": "declining",
+    "tvl_note": "TVL down ~$130M since early March 2026 to $6.66B; significant decline from ~$16B peak in late 2025",
+    "usde_supply_estimate_billions": 5.2,
+    "susde_supply_billions": "est. 0.8-1.2 (derived from higher sUSDe APY vs sUSDe spot)",
+    "usdtb_supply_billions": "est. 0.3-0.5 (less material component)",
+    "tvl_composition_note": "TVL = USDe + sUSDe + USDtb total supply in USD equivalent"
+  },
+  "revenue_metrics": {
+    "q1_2026_gross_protocol_revenue_millions": 65.06,
+    "q4_2025_gross_protocol_revenue_millions": 96.15,
+    "yoy_quarterly_change_pct": -32.2,
+    "q1_annualized_revenue_estimate_millions": 260,
+    "revenue_drivers": [
+      "Perpetual futures funding rates (short position collateral)",
+      "ETH staking yield from LST backing",
+      "Basis from short-dated futures contracts",
+      "Interest on liquid stablecoin reserves"
+    ],
+    "revenue_composition_funding_rate": "Estimated 60-70% of total (highly variable)",
+    "revenue_composition_other": "Estimated 30-40% from staking/basis/reserves",
+    "critical_risk": "Revenue is funding-rate dependent. Negative funding rates (present in April 2026) compress USDe yield to ~3.5% APY, driving redemptions and TVL contraction"
+  },
+  "valuation_metrics": {
+    "market_cap_usd_millions": 950,
+    "market_cap_timestamp": "2026-04-30",
+    "current_price_usd": 0.108435,
+    "circulating_supply_billions": 8.759375,
+    "max_supply_billions": 15.0,
+    "circulating_supply_pct_of_max": 58.4,
+    "fdv_usd_millions": 1627,
+    "market_cap_to_tvl_ratio": 0.143,
+    "market_cap_to_annual_revenue_ratio": 3.65,
+    "valuation_note": "FDV ~$1.63B assumes full dilution at 15B max supply; token still under vesting (unlocks continue until April 2027)"
+  },
+  "fee_switch_status": {
+    "status": "PENDING_ACTIVATION",
+    "parameters_met_date": "September 2025",
+    "activation_requirement_1": "USDe supply > $6B (MET - currently ~$5.2B, was >$14B peak)",
+    "activation_requirement_2": "Cumulative protocol revenue > $250M (MET - accumulated >$250M by Sept 2025)",
+    "activation_requirement_3": "USDe on 4+ of top 5 CEX derivatives (MET)",
+    "governance_status": "Risk Committee sign-off on implementation details pending; community vote required",
+    "expected_activation_timeline": "Q1-Q2 2026 (based on governance pace, not yet confirmed live)",
+    "real_yield_aprox_pct_if_activated": "4.5-15% APR for sENA (varies with revenue levels)",
+    "real_yield_model_assumption": "At current $65M quarterly revenue (~$260M annualized), 50% allocation to sENA = ~$130M/year; distributed over ~$750M staked ENA = ~17% APR theoretical, but actual is lower due to governance conservatism"
+  },
+  "real_yield_analysis": {
+    "sena_real_yield_apr_current_pct": 0,
+    "sena_real_yield_status": "NOT YET LIVE - fee switch awaiting final implementation",
+    "sena_real_yield_note": "Fee switch parameters met in Sept 2025, but as of April 2026 governance has not completed Risk Committee approval + community vote. Yield will only flow once fee switch is formally activated.",
+    "inflationary_yield_apr_pct": 0,
+    "inflationary_yield_note": "No emissions to sENA (all ENA minting is to the protocol operating treasury and staking reserves, not dilution)",
+    "operating_expectation_sena_apr": "4.5-15% APR when activated (market-dependent)",
+    "usde_holder_yield_apr_current_pct": 3.5,
+    "usde_holder_yield_status": "COMPRESSED due to negative funding rates in April 2026",
+    "usde_yield_comparison": "Down from ~11% annualized in bull conditions to 3.5% in current bearish environment; sUSDe yields ~5.06% APY (Llama data)",
+    "yield_sustainability_risk": "CRITICAL - heavily dependent on positive funding rates on BTC/ETH perpetuals. When funding is negative (as in April 2026), reserve fund absorbs losses; users do not see negative returns, but yield collapses toward 0%"
+  },
+  "peer_comparison": {
+    "comparable_protocols": [
+      {
+        "name": "Maker/Sky",
+        "token": "SKY",
+        "stablecoin": "sUSDS",
+        "model": "Real yield from DAI stability fees and real-world asset yields"
+      },
+      {
+        "name": "Frax Finance",
+        "tokens": "FRAX / sfrxUSD",
+        "model": "Algorithmic stablecoin with restaking and yield strategies"
+      },
+      {
+        "name": "Liquity",
+        "token": "LQTY",
+        "model": "Liquidation fees and stability pool yields"
+      },
+      {
+        "name": "Reserve",
+        "token": "RSR",
+        "model": "Backing insurance and protocol yield"
+      }
+    ],
+    "ethena_differentiation": "Unlike Maker/Sky (RWA yield) or Frax (restaking), Ethena's yield is primarily derivative funding—high when leverage is bullish, collapses during bear markets. Unique structural risk."
+  },
+  "key_risks": [
+    {
+      "risk_id": "funding_rate_dependency",
+      "description": "Revenue is almost entirely dependent on positive funding rates in perpetual futures markets. Negative funding (April 2026 present state) collapses protocol revenue and USDe yield to ~0%, forcing redemptions and TVL contraction.",
+      "impact": "HIGH - Direct impact to real yield for sENA holders; TVL down $130M in March alone",
+      "mitigation": "Reserve fund designed to absorb negative periods; users protected from negative yields but yield becomes 0%"
+    },
+    {
+      "risk_id": "tvl_decline",
+      "description": "TVL has contracted from $16B (late 2025) to $6.66B (April 2026) due to yield compression. $1.6B in USDe redemptions occurred as funding rates turned negative.",
+      "impact": "HIGH - Reduces fee revenue available to distribute to sENA holders",
+      "mitigation": "None structural; depends on market sentiment and funding rate recovery"
+    },
+    {
+      "risk_id": "fee_switch_delay",
+      "description": "Fee switch parameters were met in September 2025, but as of April 2026 activation is still pending Risk Committee implementation sign-off and community governance vote. sENA holders have not yet received real yield.",
+      "impact": "MEDIUM - Governance uncertainty; delayed tokenomics realization",
+      "mitigation": "Governance processes underway; activation expected within 1-2 quarters"
+    },
+    {
+      "risk_id": "market_sentiment",
+      "description": "KelpDAO exploit (April 18, 2026) and broader synthetic stablecoin skepticism are driving capital toward established stablecoins (USDC, USDT) over USDe.",
+      "impact": "MEDIUM - Marginal pressure on USDe demand and TVL",
+      "mitigation": "Ethena has no direct exposure to KelpDAO; risk is sentiment-driven"
+    }
+  ],
+  "summary_3_line_funding_dependency_risk": "Ethena's revenue model is structurally dependent on positive funding rates in BTC/ETH perpetual futures markets—when basis turns negative (as in April 2026), protocol revenue collapses and USDe yield drops from 11% to 3.5% APY, triggering $1.6B in redemptions and TVL contraction from $16B to $6.66B. Real yield to sENA holders (currently 0%, pending fee switch activation) will only materialize when funding rates are positive; during bear markets, sENA holders may see 0% yield despite the fee switch being live. This funding-rate dependency is fundamentally distinct from RWA-backed stablecoins (Maker/Sky) and makes Ethena yield highly cyclical and market-regime dependent.",
+  "sources": [
+    {
+      "title": "Ethena Q1 2026 Revenue Report",
+      "url": "https://www.kucoin.com/news/flash/ethena-revenue-falls-32-in-q1-2026-amid-declining-tvl-and-user-activity"
+    },
+    {
+      "title": "Ethena TVL and Revenue (DefiLlama)",
+      "url": "https://defillama.com/protocol/ethena"
+    },
+    {
+      "title": "Fee Switch Parameters Governance",
+      "url": "https://gov.ethenafoundation.com/t/ena-fee-switch-parameters/396"
+    },
+    {
+      "title": "Ethena Foundation Fee Switch Announcement",
+      "url": "https://www.cryptopolitan.com/ethena-approves-fee-switch-parameters/"
+    },
+    {
+      "title": "Ethena USDe Q1 2026 Report",
+      "url": "https://stablecoininsider.org/ethena-usde-q1-2026-report/"
+    },
+    {
+      "title": "ENA Market Cap and Supply Data",
+      "url": "https://coinmarketcap.com/currencies/ethena/"
+    },
+    {
+      "title": "USDe Funding Rate and Yield Analysis",
+      "url": "https://cryptorank.io/news/feed/6c572-usde-stability-check-will-ethena-survive-funding-rate-challenges"
+    },
+    {
+      "title": "Ethena Funding Risk Documentation",
+      "url": "https://docs.ethena.fi/solution-overview/risks/funding-risk"
+    }
+  ]
+}

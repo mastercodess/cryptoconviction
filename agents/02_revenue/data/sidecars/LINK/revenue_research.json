@@ -1,0 +1,38 @@
+{
+  "annualized_revenue_usd": null,
+  "tvl_usd": null,
+  "p_s_ratio": null,
+  "p_tvl_ratio": null,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "STEADY",
+  "seasonality": "Chainlink oracle request volume is event-driven, spiking during high DeFi activity periods (liquidation cascades, major token launches, cross-chain bridge surges) rather than following calendar seasonality.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "API3",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "BAND",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "UMA",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "Chainlink is middleware infrastructure (oracle network), not a fee-accruing protocol in the DeFi sense: node operators are paid in LINK by data consumers, but this payment flow does not accrue to a protocol treasury or token holders in a way that DefiLlama, Token Terminal free tier, or public Chainlink docs expose as auditable 'protocol revenue.' DefiLlama does not list Chainlink under its fees/revenue dashboard as of mid-2025, and Token Terminal's free tier shows no P/S data for LINK. Staking v0.2 launched in late 2023 with a ~5% APR funded by Chainlink Labs (inflationary/subsidized, not fee-derived real yield), but the exact current rate and whether any real yield component exists is not publicly quantified in free-tier sources with sufficient precision to report a number.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/chainlink",
+    "https://defillama.com/fees",
+    "https://tokenterminal.com/terminal/projects/chainlink",
+    "https://chain.link/economics",
+    "https://blog.chain.link/chainlink-staking-v0-2/",
+    "https://www.coingecko.com/en/coins/chainlink",
+    "https://docs.chain.link/chainlink-nodes"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "symbol": "ENA",
+  "funding_rate_8h": 0.00018,
+  "open_interest_usd": 176310000,
+  "btc_correlation_30d": 0.74,
+  "eth_correlation_30d": 0.77,
+  "nasdaq_correlation_30d": 0.42,
+  "leverage_warning": false,
+  "rationale": "Ethena stablecoin protocol showing healthy OI (~$176M) with moderate positive funding; elevated long bias suggests carry-trade structuring.",
+  "data_quality": "GOOD",
+  "sources": [
+    "https://www.coinglass.com/FundingRate/ENA",
+    "https://www.coinglass.com/currencies/ENA/futures"
+  ]
+}

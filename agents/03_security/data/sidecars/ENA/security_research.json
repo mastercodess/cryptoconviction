@@ -1,0 +1,183 @@
+{
+  "symbol": "ENA",
+  "audits": [
+    {
+      "auditor": "Pashov",
+      "audit_date": "2024-09-02",
+      "scope": "USDe stablecoin smart contracts and core protocol",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "summary": "Comprehensive security review completed with no critical or high-level issues identified.",
+      "url": "https://github.com/pashov/audits/blob/master/team/md/Ethena-security-review-October.md"
+    },
+    {
+      "auditor": "Quantstamp",
+      "audit_date": "2024-10-25",
+      "scope": "USDe stablecoin and sUSDe staking contracts",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "summary": "Full security review completed with no critical or high-level vulnerabilities identified.",
+      "url": "https://github.com/code-423n4/2024-11-ethena-labs/blob/main/audits/Ethena_final_report_Quantstamp.pdf"
+    },
+    {
+      "auditor": "Spearbit & Cantina",
+      "audit_date": "2023-10-18",
+      "scope": "V1 Ethena contracts including USDe and related infrastructure",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 24,
+      "summary": "Comprehensive audit identified 24 low/non-critical findings with no critical, high, or medium severity issues.",
+      "url": "https://docs.ethena.fi/resources/audits"
+    },
+    {
+      "auditor": "Cyfrin",
+      "audit_date": "2024-10-31",
+      "scope": "USDtb and extended Ethena ecosystem contracts",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "summary": "Full security review of USDtb stablecoin (BlackRock BUIDL-backed) with no high or medium-level findings.",
+      "url": "https://docs.ethena.fi/resources/audits"
+    },
+    {
+      "auditor": "Code4rena (Invitational)",
+      "audit_date": "2024-11-11",
+      "scope": "Ethena protocol smart contracts including USDe, sENA, minting/redemption mechanisms",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 5,
+      "summary": "C4 analysis yielded 2 medium-severity and 5 low/non-critical issues. No critical or high-severity vulnerabilities. Medium issues: storage gap in upgradeable base contract. Mitigations reviewed and confirmed.",
+      "url": "https://code4rena.com/reports/2024-11-ethena-labs"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2024-03-29",
+      "severity": "minor",
+      "description": "Fake ENA token (unrelated to Ethena Labs protocol) exploited on Binance Launchpool during airdrop announcement confusion. 480 BNB (~$290,000) lost. Caused confusion but Ethena's actual smart contracts and USDe protocol were unaffected.",
+      "funds_lost_usd": 290000,
+      "post_mortem_url": "https://cointelegraph.com/news/ethena-labs-exploited-290k-binance-launchpool"
+    },
+    {
+      "incident_date": "2024-09-19",
+      "severity": "moderate",
+      "description": "Ethena Labs domain registrar account compromised, causing front-end website compromise. Domain was taken offline. Protocol contracts and user funds remained unaffected. Blockaid advised users who connected during compromise window to avoid transaction signing.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://news.shib.io/2024/09/19/ethena-labs-website-compromised-in-front-end-exploit/"
+    },
+    {
+      "incident_date": "2024-04-18",
+      "severity": "moderate",
+      "description": "Negative funding rate stress event: USDe briefly wobbled off peg to $0.995 during market stress (Iran-Israel tensions, severe negative funding rates). USDe held peg and passed stress test but highlighted funding rate risk dependency on CEX liquidity and hedge venues.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://www.llamarisk.com/research/asset-risk-usde-addendum1"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/ethena-labs",
+    "contributors_count": 15,
+    "weekly_commits_avg": 2.5,
+    "last_commit_date": "2025-04-15",
+    "upgrade_mechanism": "Proxy pattern (likely OpenZeppelin UUPS or Transparent Proxy) with gnosis safe multisig ownership managing implementation upgrades",
+    "multisig_signers": 10,
+    "multisig_threshold": 7,
+    "bug_bounty_max_usd": 3000000,
+    "bug_bounty_platform": "Immunefi"
+  },
+  "dependencies": [
+    {
+      "dep_type": "custodian",
+      "provider": "Copper",
+      "risk_level": "medium",
+      "notes": "Institutional-grade custodian holding USDe collateral off-exchange via Off-Exchange Settlement (OES). Custody concentration risk: if Copper fails/freezes, USDe peg breaks. Monthly attestation reports published."
+    },
+    {
+      "dep_type": "custodian",
+      "provider": "Ceffu (Binance custody subsidiary)",
+      "risk_level": "medium",
+      "notes": "OES provider holding portion of USDe backing assets. Ceffu is Binance's institutional custody solution. Concentration risk: custodian failure/freeze would impact USDe."
+    },
+    {
+      "dep_type": "custodian",
+      "provider": "Fireblocks",
+      "risk_level": "medium",
+      "notes": "Institutional-grade OES custodian managing USDe collateral. Multi-custodian approach mitigates single-custodian failure but maintains dependency on off-exchange settlement infrastructure."
+    },
+    {
+      "dep_type": "exchange",
+      "provider": "Binance",
+      "risk_level": "medium",
+      "notes": "Primary CEX for ETH perpetual hedging and funding rate execution. USDe delta-hedging model relies on Binance funding rate availability. CEX regulatory risk or trading halt would impact protocol stability."
+    },
+    {
+      "dep_type": "exchange",
+      "provider": "OKX",
+      "risk_level": "medium",
+      "notes": "Secondary hedge venue for ETH perp positions. Concentration of hedging across limited CEXes introduces liquidity and counterparty risk."
+    },
+    {
+      "dep_type": "exchange",
+      "provider": "Bybit",
+      "risk_level": "medium",
+      "notes": "Tertiary ETH perpetual derivatives venue for hedging. Less liquid than Binance/OKX, increasing execution risk during high volumes."
+    },
+    {
+      "dep_type": "exchange",
+      "provider": "Deribit",
+      "risk_level": "low",
+      "notes": "Options market venue for optional hedging strategies. Lower operational dependency than perp venues."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Chainlink",
+      "risk_level": "low",
+      "notes": "Primary oracle for ETH/USD and USDe/USD price feeds. Decentralized aggregation reduces single-point-of-failure risk. Industry-standard for Ethereum stablecoins."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Pyth",
+      "risk_level": "low",
+      "notes": "Secondary oracle for staked ETH price feeds. Cross-oracle dependency reduces oracle manipulation risk."
+    },
+    {
+      "dep_type": "collateral_token",
+      "provider": "Ethereum (stETH, ETH staking)",
+      "risk_level": "low",
+      "notes": "USDe backed by staked ETH and ETH delta-hedged perpetuals. ETH protocol security is industry-leading; stETH concentration risk to Lido (~30% Ethereum staking share)."
+    },
+    {
+      "dep_type": "smart_contract",
+      "provider": "OpenZeppelin Contracts",
+      "risk_level": "low",
+      "notes": "USDe.sol extends ERC20Burnable, ERC20Permit, Ownable2Step from OZ audited libraries. Dependency on battle-tested standard implementations."
+    },
+    {
+      "dep_type": "funding_mechanism",
+      "provider": "Negative funding rate risk",
+      "risk_level": "high",
+      "notes": "USDe sustainability depends on sustained positive or near-zero funding rates on perpetual hedges. Extended -50% APR rates exceed reserve fund capacity. April 2024 stress test showed USDe can briefly de-peg if funding turns extremely negative. Reserve fund adequacy depends on USDe market cap staying below $4B under worst-case negative rates."
+    }
+  ],
+  "rationale": "Ethena's USDe stablecoin achieved strong security posture across 2024 with 5 major audits (Pashov, Quantstamp, Spearbit/Cantina, Cyfrin, Code4rena) producing zero critical/high-severity smart contract findings. The March 2024 fake-token exploit was unrelated to protocol; September 2024 domain compromise affected front-end only. The primary systemic risk is not in code but in operational dependencies: (1) Collateral custody concentration with Copper/Ceffu/Fireblocks creates single-point-of-failure if OES providers fail/freeze, breaking the peg; (2) Hedging venue concentration (Binance, OKX, Bybit, Deribit) introduces regulatory and liquidity risk; (3) Persistent negative funding rates on perp hedges can exhaust the reserve fund if USDe TVL exceeds $4B. The April 2024 de-peg to $0.995 during market stress highlighted this dynamic. Code health remains healthy with active GitHub development and 7/10 multisig governance. Bug bounty program ($3M max, Immunefi) is top-tier.",
+  "data_quality": "GOOD",
+  "sources": [
+    "https://docs.ethena.fi/resources/audits",
+    "https://github.com/pashov/audits/blob/master/team/md/Ethena-security-review-October.md",
+    "https://github.com/code-423n4/2024-11-ethena-labs/blob/main/audits/Ethena_final_report_Quantstamp.pdf",
+    "https://code4rena.com/reports/2024-11-ethena-labs",
+    "https://code4rena.com/audits/2024-11-ethena-labs-invitational",
+    "https://docs.ethena.fi/backing-custody-and-security/overview/off-exchange-settlement-in-detail",
+    "https://docs.ethena.fi/solution-design/backing-asset-custody",
+    "https://immunefi.com/bug-bounty/ethena/",
+    "https://docs.ethena.fi/solution-design/key-trust-assumptions/matrix-of-multisig-and-timelocks",
+    "https://ethena-labs.gitbook.io/ethena-labs/solution-overview/governance",
+    "https://www.llamarisk.com/research/asset-risk-usde-addendum1",
+    "https://docs.ethena.fi/solution-overview/risks/funding-risk",
+    "https://cointelegraph.com/magazine/real-risks-ethena-stablecoin-model-not-ones-you-think/",
+    "https://cointelegraph.com/news/ethena-labs-exploited-290k-binance-launchpool",
+    "https://news.shib.io/2024/09/19/ethena-labs-website-compromised-in-front-end-exploit/",
+    "https://github.com/ethena-labs"
+  ]
+}

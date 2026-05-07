@@ -1,0 +1,205 @@
+{
+  "chain": "Sui",
+  "token": "SUI",
+  "research_date": "2026-04-30",
+  "data_sources": [
+    "Token Terminal",
+    "Artemis Analytics",
+    "DefiLlama",
+    "KuCoin Research",
+    "Tokenomist.ai",
+    "CoinStats AI",
+    "Chainspect",
+    "SuiVision Explorer",
+    "Suiscan Explorer"
+  ],
+  "network_activity": {
+    "daily_active_users": {
+      "current_dau": {
+        "value": 1200000,
+        "unit": "addresses",
+        "date": "April 2026",
+        "note": "Recovered from lows of 400K after decline from 1.7M peak in 2025"
+      },
+      "historical_dau": [
+        {
+          "period": "October 2025",
+          "value": 691500,
+          "unit": "addresses"
+        },
+        {
+          "period": "Mid-2025",
+          "value": 2460000,
+          "unit": "addresses",
+          "note": "Ranked 3rd globally after Solana (4.4M) and BNB Chain (1.49M)"
+        },
+        {
+          "period": "Peak 2025",
+          "value": 1700000,
+          "unit": "addresses",
+          "note": "Later declined to 400K lows"
+        }
+      ],
+      "dau_quality": "HIGH VOLUME BUT QUALITY CONCERNS - many attributed to gaming/airdrop farming bots"
+    },
+    "monthly_active_users": {
+      "current_mau": {
+        "value": 40000000,
+        "unit": "addresses",
+        "date": "Early 2025",
+        "note": "Peaked early 2025, since declined - volatile retention"
+      },
+      "dau_mau_ratio": {
+        "value": 0.03,
+        "interpretation": "POOR RETENTION - ratio well below 0.1 threshold indicates mostly one-time/ephemeral users"
+      }
+    },
+    "transactions": {
+      "daily_transactions_peak": {
+        "value": 58400000,
+        "unit": "transactions",
+        "note": "Peak single-day volume"
+      },
+      "daily_transactions_current": {
+        "value": 5500000,
+        "unit": "transactions per day",
+        "date": "October 2025"
+      },
+      "tps_current": {
+        "value": 23.61,
+        "unit": "TPS",
+        "max_tps": 926.5,
+        "theoretical_max": 130000
+      }
+    },
+    "dex_volume": {
+      "daily_average": {
+        "value": 250000000,
+        "unit": "USD",
+        "date": "2025"
+      },
+      "cumulative_all_time": {
+        "value": 110000000000,
+        "unit": "USD"
+      },
+      "recent_milestone": "Flipped Base in daily DEX trading volume"
+    }
+  },
+  "staking_participation": {
+    "staked_percentage_of_circulating": {
+      "value": 50,
+      "unit": "percent",
+      "interpretation": "HIGH LOCKING - more than half of circulating SUI locked in staking"
+    },
+    "total_supply_unlocked": {
+      "value": 3953388932,
+      "unit": "SUI tokens",
+      "percentage": 39.53,
+      "note": "39.53% of total 10B token supply unlocked as of April 2026"
+    },
+    "circulating_supply_percentage": {
+      "value": 35,
+      "unit": "percent of total",
+      "date": "Early 2026"
+    },
+    "staking_apy": {
+      "min": 3,
+      "max": 7,
+      "unit": "percent",
+      "date": "2026"
+    }
+  },
+  "token_unlocks_and_flows": {
+    "april_2026_unlock": {
+      "value": 43000000,
+      "unit": "SUI tokens",
+      "range": "43M to 45M",
+      "usd_value": "tens of millions",
+      "date": "April 1, 2026",
+      "market_impact": "Smaller than other major events but part of recurring dilution cycle"
+    },
+    "may_2026_unlock": {
+      "value": 40390000,
+      "unit": "USD value equivalent",
+      "date": "May 1, 2026",
+      "note": "Additional selling pressure scheduled"
+    },
+    "institutional_flows": {
+      "inflow_april_27_2026": {
+        "value": 400000,
+        "unit": "USD",
+        "interpretation": "MODEST - limited institutional buying during unlock period"
+      }
+    },
+    "unlock_frequency": "Monthly recurring pattern ~130M+ tokens"
+  },
+  "organic_vs_farmed_assessment": {
+    "overall_activity_composition": {
+      "organic_estimate": {
+        "percentage": 35,
+        "description": "Core DeFi users, genuine governance participation, yield farming with real economic intent"
+      },
+      "farmed_bot_traffic": {
+        "percentage": 65,
+        "description": "Gaming airdrops (SuiPlay0X1), airdrop farming, wash trading on certain DEXs, inscription bots"
+      }
+    },
+    "evidence_of_farming": [
+      "Gaming ecosystem drives large percentage of DAU (SuiPlay0X1 infrastructure, G Dollar stablecoin for gaming)",
+      "Q2 2025 airdrop landscape highly active with ~$3k/wallet airdrop distributions",
+      "Airdrop farming explicitly noted as primary driver for marginal users",
+      "DEX volume surges correlated with new airdrop announcements and farming opportunities",
+      "High DAU (1.2-2.46M) relative to modest TVL (~$2.1B DeFi) indicates volume inflation",
+      "DAU/MAU ratio of 0.03 shows ephemeral user base typical of airdrop chasers"
+    ],
+    "quality_indicators": {
+      "tvl_to_dau_ratio": "LOW - suggests many users are not deploying capital or protocol-engaged",
+      "retention_metrics": "POOR - MAU peaked then declined from 40M, indicating churn",
+      "stickiness": "LOW - DAU/MAU << 0.1 threshold"
+    }
+  },
+  "ecosystem_dynamics": {
+    "defi_health": {
+      "tvl": {
+        "value": 2100000000,
+        "unit": "USD",
+        "date": "June 2025",
+        "trend": "Growing but modest relative to user count"
+      },
+      "stablecoin_volume": {
+        "january_2025": 400000000,
+        "may_2025": 1200000000,
+        "unit": "USD",
+        "trend": "EXPLOSIVE GROWTH"
+      },
+      "top_dex": {
+        "name": "Momentum Finance",
+        "tvl": 60000000,
+        "timeline": "Fastest growing, reached $60M TVL in <3 months"
+      }
+    },
+    "gaming_gaming_infrastructure": {
+      "suiplay0x1": "Officially showcased at SuiBaseCamp 2025, shipments begin summer 2026",
+      "g_dollar": "Programmable stablecoin pegged to USD, backed by US treasury bonds, aimed at gaming scenarios"
+    },
+    "airdrop_programs": {
+      "status": "HIGHLY ACTIVE in 2025",
+      "programs": [
+        "SuiNS airdrop (~$350/domain with ~$5 cost)",
+        "Ikado Finance (formerly dWallet)",
+        "Aftermath Finance",
+        "Momentum Finance",
+        "7K aggregator"
+      ],
+      "farming_intensity": "LOW barrier to entry, high airdrop value driving marginal user acquisition"
+    }
+  },
+  "risks_and_concerns": {
+    "bot_farming_severity": "HIGH - Gaming and airdrop infrastructure explicitly designed to attract farming",
+    "retention_cliff": "CRITICAL - Massive gap between DAU and MAU suggests one-time user acquisition",
+    "tokenomics_dilution": "ONGOING - Monthly unlock schedules create recurring sell pressure",
+    "organic_engagement_question": "Large volume of DAU/MAU activity concentrated in gaming/airdrops rather than core DeFi",
+    "wash_trading_indicators": "Noted in Sui ecosystem DEX games in 2024-2025 period (historical concern)"
+  },
+  "summary_conviction": "Sui has achieved strong headline metrics (1.2M DAU, $250M daily DEX volume) but organic engagement is COMPROMISED by gaming/airdrop farming infrastructure. DAU/MAU ratio of 0.03 (well below 0.1 retention threshold) indicates predominantly ephemeral users. Approximately 35% organic activity (genuine DeFi/governance), 65% bot/farming traffic. Staking participation remains high (50%+ of circulating supply locked), but this is largely strategic rather than indicating conviction in utility. Monthly token unlocks (~$40-130M) create structural selling pressure. Quality of activity > quantity of activity suggests modest organic demand."
+}

@@ -1,0 +1,203 @@
+{
+  "symbol": "ONDO",
+  "audits": [
+    {
+      "name": "Code4rena March 2024",
+      "date": "2024-03-29",
+      "auditor": "Code4rena",
+      "scope": "OUSG/USDY token contracts, OUSGInstantManager",
+      "severity_high": 1,
+      "severity_med": 4,
+      "severity_low": 64,
+      "key_findings": [
+        "HIGH: USDC depeg risk in OUSGInstantManager - excessive OUSG minting during depeg. Mitigated by adding Chainlink USDC/USD oracle.",
+        "MEDIUM: OUSG Instant Redemption Manager BUIDL redemption limits oversight"
+      ],
+      "status": "resolved"
+    },
+    {
+      "name": "Code4rena September 2023",
+      "date": "2023-09-01",
+      "auditor": "Code4rena",
+      "scope": "Bridge contracts, ONDO governance",
+      "severity_high": 0,
+      "severity_med": 4,
+      "severity_low": 34,
+      "key_findings": [
+        "MEDIUM: Bridged messages receive automatic approval during execution - threshold numberOfApprovalsNeeded requires minimum of two"
+      ],
+      "status": "resolved"
+    },
+    {
+      "name": "Halborn February 2025",
+      "date": "2025-02-01",
+      "auditor": "Halborn",
+      "scope": "ONDO protocol comprehensive review",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "Halborn June 2024",
+      "date": "2024-06-01",
+      "auditor": "Halborn",
+      "scope": "Ondo Tokenized Treasury Bill (USDY/Noble)",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "Halborn July 2024",
+      "date": "2024-07-01",
+      "auditor": "Halborn",
+      "scope": "Ondo Tokenized Treasury Bill Additional Aura Module",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "Spearbit March 2025",
+      "date": "2025-03-01",
+      "auditor": "Spearbit",
+      "scope": "Ondo Funds and USDY (Ethereum)",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "Spearbit June 2025",
+      "date": "2025-06-01",
+      "auditor": "Spearbit",
+      "scope": "Ondo Global Markets tokenized stocks platform",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "Zokyo August 2023",
+      "date": "2023-08-01",
+      "auditor": "Zokyo",
+      "scope": "ONDO token and core contracts",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "NetherMind April 2023",
+      "date": "2023-04-01",
+      "auditor": "NetherMind",
+      "scope": "ONDO protocol contracts",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    },
+    {
+      "name": "Code4rena January 2023",
+      "date": "2023-01-01",
+      "auditor": "Code4rena",
+      "scope": "ONDO CASH protocol",
+      "severity_high": 0,
+      "severity_med": 0,
+      "severity_low": 0,
+      "key_findings": [],
+      "status": "completed"
+    }
+  ],
+  "exploit_history": [
+    {
+      "date": "2022-01-26",
+      "name": "Tranche Token Vulnerability (iosiro)",
+      "severity": "HIGH",
+      "impact": "Theoretical: $50M drain from UniswapStrategy contracts",
+      "status": "disclosed_unexecuted",
+      "details": "Vulnerability in Tranche Token and surrounding contracts. Relied on feature intended for later activation. No user funds at risk at time of disclosure. Remediated with $25,000 bounty.",
+      "outcome": "patched"
+    }
+  ],
+  "code_health": {
+    "repo": "https://github.com/ondoprotocol/",
+    "primary_repos": [
+      "ondoprotocol/usdy",
+      "ondoprotocol/ondo-v1",
+      "ondoprotocol/global-markets-solana"
+    ],
+    "contributors": "multiple (active development)",
+    "upgrade_mechanism": "Transparent Upgradeable Proxy pattern (USDY/OUSG). Governance timelock not explicitly detailed in public sources, but ONDO DAO requires 100M ONDO minimum for proposal initiation.",
+    "language": "Solidity",
+    "test_coverage": "not_specified_in_sources",
+    "active_maintenance": true,
+    "bug_bounty": "Immunefi, active, >$500,000 max reward"
+  },
+  "dependencies": [
+    {
+      "name": "BlackRock",
+      "dep_type": "operational_custody",
+      "provider": "BlackRock (external)",
+      "service": "T-Bill collateral custody for OUSG",
+      "risk_level": "medium",
+      "notes": "Off-chain custodian holding underlying U.S. Treasury securities. Single point of failure for asset backing."
+    },
+    {
+      "name": "Ankura Trust Company",
+      "dep_type": "operational_custody",
+      "provider": "Ankura (external)",
+      "service": "Independent security agent and verification for tokenized assets",
+      "risk_level": "medium",
+      "notes": "Holds first-priority security interest in underlying assets. Conducts daily attestations. Covers USDY administration and Ondo Global Markets holdings."
+    },
+    {
+      "name": "U.S. Broker-Dealer Custodians",
+      "dep_type": "operational_custody",
+      "provider": "Multiple U.S.-registered custodial broker-dealers",
+      "service": "Custody of tokenized stocks and RWA holdings",
+      "risk_level": "medium",
+      "notes": "All Ondo Global Markets holdings with U.S.-registered custodians. Subject to regulatory framework."
+    },
+    {
+      "name": "SPV Structure (Bankruptcy Remoteness)",
+      "dep_type": "legal_structural",
+      "provider": "Ondo USDY LLC / Ondo Global Markets (BVI) Limited",
+      "service": "Ring-fenced legal entity separation",
+      "risk_level": "low_design",
+      "notes": "Separate legal entities from Ondo Finance Inc. Assets protected from parent company insolvency. Independent Board of Directors with independent director."
+    },
+    {
+      "name": "Chainlink Oracle (USDC/USD)",
+      "dep_type": "on_chain_oracle",
+      "provider": "Chainlink",
+      "service": "USDC depeg price feed for OUSGInstantManager",
+      "risk_level": "low",
+      "notes": "Added post-Code4rena March 2024 audit to mitigate HIGH severity finding on USDC depeg risk."
+    }
+  ],
+  "rationale": "ONDO is a Real World Assets (RWA) platform with relatively simple token contracts (OUSG T-Bill derivative, USDY yield-bearing stablecoin, OMMF fund shares). Smart contract risk is LOW—only 1 HIGH severity audit finding (USDC depeg, now mitigated with Chainlink oracle) and 4 MEDIUM findings across all audits. No successful exploits on ONDO token itself. PRIMARY RISK is off-chain: (1) Custody concentration on BlackRock for OUSG T-bill collateral and Ankura for USDY administration—both single points of failure for asset backing. (2) Regulatory exposure (Reg S/Reg D securities issuance limits, SEC enforcement closure in 2025 clears path forward but remains jurisdiction-sensitive). (3) SPV bankruptcy remoteness is well-structured but dependent on legal precedent in BVI/Delaware. (4) KYC/whitelisting requirements create operational friction and regulatory dependency. Strong audit coverage (9 audits 2023-2025 from Code4rena, Halborn, Spearbit, Zokyo, NetherMind) and active bug bounty ($500k+) demonstrate commitment to smart contract security. Governance uses transparent proxy upgrades with 100M ONDO threshold for proposals. Overall: ON-CHAIN SECURITY is solid; OFF-CHAIN/CUSTODIAL RISK is material.",
+  "data_quality": "GOOD",
+  "sources": [
+    "https://docs.ondo.finance/audits",
+    "https://code4rena.com/reports/2024-03-ondo-finance",
+    "https://code4rena.com/reports/2023-09-ondo",
+    "https://github.com/ondoprotocol/usdy",
+    "https://github.com/ondoprotocol/ondo-v1",
+    "https://www.iosiro.com/blog/high-risk-vulnerability-disclosed-to-ondo-finance",
+    "https://immunefi.com/bug-bounty/ondofinance/",
+    "https://docs.ondo.finance/ondo-global-markets/trust-and-transparency",
+    "https://blog.ondo.finance/protecting-investors-what-happens-if-ondo-goes-bankrupt/",
+    "https://github.com/ondoprotocol",
+    "https://changehero.io/blog/what-is-ondo-crypto/",
+    "https://www.mexc.co/en-IN/learn/article/is-ondo-finance-safe-security-compliance-and-institutional-custody-analysis-1"
+  ]
+}

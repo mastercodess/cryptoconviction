@@ -1,0 +1,161 @@
+{
+  "symbol": "XMR",
+  "audits": [
+    {
+      "auditor": "OSTIF + Quarkslab",
+      "audit_date": "2018-10-22",
+      "scope": "Bulletproofs range proof implementation and cryptographic correctness",
+      "severity_high": 1,
+      "severity_med": 2,
+      "severity_low": null,
+      "summary": "Quarkslab security assessment of Bulletproof protocol implementation (Apr 18 - Jul 17, 2018). Critical vulnerabilities discovered in initial key image handling; report delayed until Oct 22, 2018 to allow time for network upgrade and user patching. Audit confirmed C implementation is suitable for production use.",
+      "url": "https://blog.quarkslab.com/security-audit-of-monero-bulletproofs.html"
+    },
+    {
+      "auditor": "OSTIF + Kudelski Security",
+      "audit_date": "2018-07-23",
+      "scope": "Bulletproofs range proof cryptographic design and C implementation",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Kudelski Security evaluation of Bulletproof implementation. Found the code to be largely clean; confirmed the C implementation derived from original Java code is suitable for Monero's use case with rigorous security confidence.",
+      "url": "https://ostif.org/the-quarkslab-and-kudelski-security-audits-of-monero-bulletproofs-are-complete/"
+    },
+    {
+      "auditor": "Trail of Bits",
+      "audit_date": "2019-11-30",
+      "scope": "RandomX proof-of-work algorithm design and ASIC-resistance properties",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Audit of RandomX PoW algorithm. Trail of Bits confirmed high code quality with no critical vulnerabilities. Verified RandomX design effectively prevents ASIC/FPGA optimization; algorithm activated on Monero mainnet Nov 30, 2019.",
+      "url": "https://ostif.org/four-audits-of-randomx-for-monero-and-arweave-have-been-completed-results/"
+    },
+    {
+      "auditor": "X41 D-SEC",
+      "audit_date": "2019-11-30",
+      "scope": "RandomX proof-of-work algorithm cryptographic and implementation analysis",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "X41 security audit of RandomX algorithm. No critical vulnerabilities found. Audit validated algorithm's resistance to ASIC hardware optimization and implementation quality. Part of four-firm randomized audit series coordinated by OSTIF.",
+      "url": "https://ostif.org/four-audits-of-randomx-for-monero-and-arweave-have-been-completed-results/"
+    },
+    {
+      "auditor": "Quarkslab",
+      "audit_date": "2019-08-02",
+      "scope": "RandomX proof-of-work algorithm cryptographic soundness and implementation",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Quarkslab security assessment of RandomX PoW (Jul 4 - Aug 2, 2019). Evaluation spread over 32 days with three engineers. Found code of very high quality with no critical vulnerabilities. Confirmed implementation does not allow ASIC shortcuts.",
+      "url": "https://blog.quarkslab.com/security-audit-of-monero-randomx.html"
+    },
+    {
+      "auditor": "Kudelski Security",
+      "audit_date": "2019-11-30",
+      "scope": "RandomX proof-of-work algorithm design and ASIC-resistance verification",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Kudelski Security audit of RandomX algorithm. No critical vulnerabilities identified. Audit confirmed high-quality implementation and effective prevention of ASIC/FPGA design advantage over general-purpose hardware.",
+      "url": "https://ostif.org/four-audits-of-randomx-for-monero-and-arweave-have-been-completed-results/"
+    },
+    {
+      "auditor": "OSTIF + Quarkslab",
+      "audit_date": "2020-07-31",
+      "scope": "CLSAG (Concise Linkable Ring Signature) cryptographic construction and implementation",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Quarkslab and cryptographers JP Aumasson and Antony Vennard audited CLSAG ring signature scheme. CLSAG enables smaller and faster transactions with rigorous security. Proven secure in more robust security model than predecessor MLSAG.",
+      "url": "https://www.getmonero.org/2020/07/31/clsag-audit.html"
+    },
+    {
+      "auditor": "Cypher Stack",
+      "audit_date": "2024-11-30",
+      "scope": "CARROT addressing protocol upgrade for backwards-compatible enhanced security and privacy",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Cypher Stack completed security audit of CARROT (backwards-compatible addressing protocol upgrade for FCMP++ hard fork). Audit confirmed design maintains backwards compatibility while improving security, privacy, and usability.",
+      "url": "https://x.com/monero/status/1862216934256783400"
+    },
+    {
+      "auditor": "Cypher Stack",
+      "audit_date": "2024-12-31",
+      "scope": "Monero-serai and monero-wallet library audit; CLSAG multisig formalization and FROST security proofs",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "Community-funded (CCS) security audit of monero-serai (Rust reimplementation of Monero transaction protocol) and monero-wallet library. Includes formalization of CLSAG multisig protocol and derivation of FROST-based security proofs.",
+      "url": "https://ccs.getmonero.org/proposals/monero-serai-wallet-audit.html"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2017-04-15",
+      "severity": "minor",
+      "description": "Multisig view secret key disclosure vulnerability in early Monero multisignature wallet generation. Initial key exchange allowed eavesdropper to disclose view keys via formula a = H(a1) + H(a2) + ... + H(an). Wagner attack also identified. No funds directly lost but protocol-level bug required user vigilance.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://github.com/monero-project/monero/issues/3389"
+    },
+    {
+      "incident_date": "2018-09-16",
+      "severity": "moderate",
+      "description": "Burning bug CVE in wallet transaction construction allowing attackers to craft transactions to identical stealth addresses, causing outputs to become unspendable. Exploit could siphon cryptocurrency from exchanges accepting duplicate transactions but not validating for duplicate stealth addresses. No funds lost due to private patching; patch distributed before wide exploitation.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://www.getmonero.org/2018/09/25/a-post-mortum-of-the-burning-bug.html"
+    },
+    {
+      "incident_date": "2017-05-17",
+      "severity": "moderate",
+      "description": "ASNL ring signature vulnerability in RingCT range proofs. Flaw in ASNL (Aggregate Schnorr Non-linkable Ring Signature) security proof allowed creation of coins from nothing. Mitigation: Hard fork to Borromean signatures instead of ASNL in range proofs.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://www.getmonero.org/2017/05/17/disclosure-of-a-major-bug-in-cryptonote-based-currencies.html"
+    },
+    {
+      "incident_date": "2016-02-15",
+      "severity": "moderate",
+      "description": "CryptoNote key image malleability bug affecting all CryptoNote-based currencies. Key image used in elliptic curve ed25519 could be modified to enable double-spends. Mitigation via hard fork to proper key image validation.",
+      "funds_lost_usd": null,
+      "post_mortem_url": null
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/monero-project/monero",
+    "contributors_count": 200,
+    "weekly_commits_avg": null,
+    "last_commit_date": "2026-04-30",
+    "upgrade_mechanism": "other",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "HackerOne"
+  },
+  "dependencies": [],
+  "rationale": "Monero is a privacy L1 with no smart contracts, oracles, or external dependencies—security profile differs from smart contract platforms. Mature codebase (2014 genesis) with fair-launch model. No proxy upgrades or upgrade keys; protocol evolution via scheduled hard forks every 6-12 months (FCMP++ Q1 2026, Seraphis/Jamtis H2 2026-H1 2027). Protocol-level bugs are rare and non-exploitive (no financial loss); multisig implementation has documented vulnerabilities (2017, 2021) but not network-threatening. Burn bug (2018) and ASNL/ASNI issues (2017) were pre-mitigation disclosures with private patches. Modern audits (CLSAG 2020, CARROT 2024, monero-serai/wallet 2024) focus on emerging privacy proofs (Triptych, Seraphis, Bulletproofs+) and Rust reimplementations. RandomX (PoW) audited by four firms with high confidence. Bug bounty via HackerOne and community-funded CCS model. Security posture: strong cryptographic foundation, no executable attack surface (no contracts), responsive vulnerability disclosure process.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://ostif.org/the-ostif-and-quarkslab-audit-of-monero-bulletproofs-is-complete-critical-bug-patched/",
+    "https://ostif.org/the-quarkslab-and-kudelski-security-audits-of-monero-bulletproofs-are-complete/",
+    "https://ostif.org/four-audits-of-randomx-for-monero-and-arweave-have-been-completed-results/",
+    "https://blog.quarkslab.com/security-audit-of-monero-bulletproofs.html",
+    "https://blog.quarkslab.com/security-audit-of-monero-randomx.html",
+    "https://www.getmonero.org/2020/07/31/clsag-audit.html",
+    "https://www.getmonero.org/2018/09/25/a-post-mortum-of-the-burning-bug.html",
+    "https://www.getmonero.org/2017/05/17/disclosure-of-a-major-bug-in-cryptonote-based-currencies.html",
+    "https://github.com/monero-project/monero/issues/3389",
+    "https://github.com/monero-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md",
+    "https://hackerone.com/monero",
+    "https://ccs.getmonero.org/proposals/monero-serai-wallet-audit.html",
+    "https://ccs.getmonero.org/proposals/bulletproofs-plus-audit.html",
+    "https://x.com/monero/status/1862216934256783400",
+    "https://coindar.org/en/coin/monero/calendar",
+    "https://xmr.noctism.com/",
+    "https://ostif.org/ostif-is-partnering-with-the-internet-bug-bounty-and-hackerone-for-bug-bounties/",
+    "https://github.com/monero-project/monero",
+    "https://blog.quarkslab.com/resources/2019-08-02-audit-monero-randomx/19-07-610-REP-monero-randomx-sec-assessment.pdf",
+    "https://blog.quarkslab.com/resources/2018-10-22-audit-monero-bulletproof/18-06-439-REP-monero-bulletproof-sec-assessment.pdf"
+  ]
+}

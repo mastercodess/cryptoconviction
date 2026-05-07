@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Granular 8h funding rates, open interest, and 30-day correlation coefficients for AAVE are not exposed on any free public endpoint without authentication or a paid plan: Coinglass requires a paid API key for per-asset funding/OI data beyond basic UI snapshots, CoinGecko free tier does not publish funding rates or correlation matrices, and no free FRED/alternative.me endpoint covers DeFi token derivatives positioning or cross-asset correlations at this resolution.",
+  "sources": [
+    "https://www.coinglass.com/funding/AAVE \u2014 UI shows funding directionally but machine-readable historical data requires paid API (https://docs.coinglass.com/)",
+    "https://www.coingecko.com/en/coins/aave \u2014 price/volume/market cap only on free tier; no funding rate or correlation fields",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, no per-asset derivatives data",
+    "https://defillama.com/protocol/aave \u2014 TVL/protocol metrics only, no derivatives or correlation data",
+    "https://fred.stlouisfed.org/ \u2014 macro/TradFi data only; no crypto derivatives or correlation series"
+  ]
+}

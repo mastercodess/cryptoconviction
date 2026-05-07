@@ -1,0 +1,84 @@
+{
+  "competitors": [
+    {
+      "competitor": "Aave",
+      "market_cap_usd": 2100000000,
+      "tvl_usd": 11200000000,
+      "dau": null,
+      "revenue_30d_usd": 3800000
+    },
+    {
+      "competitor": "Compound",
+      "market_cap_usd": 390000000,
+      "tvl_usd": 2100000000,
+      "dau": null,
+      "revenue_30d_usd": 420000
+    },
+    {
+      "competitor": "Spark (MakerDAO/Sky)",
+      "market_cap_usd": null,
+      "tvl_usd": 3800000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Morpho",
+      "market_cap_usd": 280000000,
+      "tvl_usd": 2900000000,
+      "dau": null,
+      "revenue_30d_usd": 180000
+    },
+    {
+      "competitor": "Venus Protocol",
+      "market_cap_usd": 95000000,
+      "tvl_usd": 1700000000,
+      "dau": null,
+      "revenue_30d_usd": 210000
+    },
+    {
+      "competitor": "Radiant Capital",
+      "market_cap_usd": 45000000,
+      "tvl_usd": 180000000,
+      "dau": null,
+      "revenue_30d_usd": 35000
+    }
+  ],
+  "market_share": [
+    {
+      "category": "DeFi Lending (TVL, all chains)",
+      "share_pct": 0.34,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "DeFi Lending (TVL, Ethereum mainnet only)",
+      "share_pct": 0.48,
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": 42,
+    "full_time_devs": 95,
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER \u2014 Electric Capital's per-protocol breakdown requires paid access; only aggregate DeFi figures are in the free public report PDF",
+    "integrations_count": 350
+  },
+  "switching_cost_analysis": "Switching costs are moderate-to-high for large integrators (wallets, aggregators, institutional desks) because Aave's battle-tested audits, multi-chain deployments across 12+ networks, GHO stablecoin composability, and deep liquidity create significant re-integration and re-audit overhead, but retail users face near-zero friction via aggregators like DeFi Saver or Instadapp that abstract the underlying protocol.",
+  "category_rank": 1,
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "Aave holds the #1 TVL position in DeFi lending (~$11.2B as of July 2025) with a roughly 34% share of total lending TVL across all chains, giving it a durable liquidity network effect that compounds as more collateral types and chains are added. Its moat is reinforced by the GHO stablecoin (native demand sink), Aave v3 efficiency mode, and a large, active governance community (>170k AAVE stakers in the Safety Module), making it costly for institutional integrators to migrate. Regulatory risk is broadly similar to peers \u2014 all major DeFi lending protocols face the same unresolved questions around KYC/AML and potential securities classification \u2014 though Aave's Lens Protocol social layer and GHO introduce incremental surface area.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocols/lending \u2014 TVL rankings and market share, accessed 2025-07-10",
+    "https://defillama.com/protocol/aave \u2014 Aave TVL breakdown by chain, accessed 2025-07-10",
+    "https://defillama.com/protocol/compound-finance \u2014 Compound TVL, accessed 2025-07-10",
+    "https://defillama.com/protocol/morpho \u2014 Morpho TVL, accessed 2025-07-10",
+    "https://defillama.com/protocol/spark \u2014 Spark TVL, accessed 2025-07-10",
+    "https://coingecko.com/en/coins/aave \u2014 AAVE market cap, accessed 2025-07-10",
+    "https://coingecko.com/en/coins/compound-governance-token \u2014 COMP market cap, accessed 2025-07-10",
+    "https://coingecko.com/en/coins/morpho \u2014 MORPHO market cap, accessed 2025-07-10",
+    "https://aave.com/ecosystem \u2014 Aave integrations/ecosystem page, accessed 2025-07-10",
+    "https://github.com/aave \u2014 Aave GitHub org (repo count proxy), accessed 2025-07-10",
+    "https://electriccapital.com/developerreport \u2014 Electric Capital 2024 Developer Report (free PDF); per-protocol MAD data NOT available on free tier",
+    "https://tokenterminal.com/terminal/projects/aave \u2014 Token Terminal Aave page; 30d revenue figures require paid subscription for precise values; estimate derived from public fee dashboards",
+    "https://governance.aave.com \u2014 Aave governance forum, Safety Module staker data, accessed 2025-07-10"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "symbol": "SUI",
+  "name": "Sui",
+  "category": "l1-smart-contract",
+  "supply": {
+    "total_supply": 10000000000,
+    "circulating_supply": 3953388932,
+    "circulating_percentage": 39.53,
+    "unlocked_at_tge_may_2023": 600000000,
+    "supply_capped": true,
+    "notes": "Fixed 10B max supply set at genesis. No mining-style issuance. New tokens enter circulation primarily through vesting unlocks. Staking rewards paid from pre-allocated supply, not newly minted."
+  },
+  "market": {
+    "price_usd": 0.931369,
+    "price_timestamp": "2026-04-29",
+    "market_cap_usd": 3682062783,
+    "volume_24h_usd": 251920381,
+    "rank": 26,
+    "notes": "Price data as of April 2026. Live prices sourced from CoinMarketCap, CoinGecko."
+  },
+  "unlocks": {
+    "events": [
+      {
+        "date": "2026-05-01",
+        "amount_sui": 42620000,
+        "percentage_of_total_supply": 0.4262,
+        "percentage_of_circulating": 1.08,
+        "allocation_breakdown": {
+          "series_b_investors": 19320000,
+          "community_reserve": 12630000,
+          "early_contributors": 8600000,
+          "mysten_labs_treasury": 2070000
+        },
+        "value_usd_estimated": 40390000
+      },
+      {
+        "date": "2026-06-01",
+        "amount_sui": 44000000,
+        "percentage_of_total_supply": 0.44,
+        "percentage_of_circulating": 1.32,
+        "allocation_breakdown": "early_contributors, community_reserve, foundation"
+      },
+      {
+        "date": "2026-07-01",
+        "amount_sui": 44000000,
+        "percentage_of_total_supply": 0.44,
+        "percentage_of_circulating": 1.30,
+        "allocation_breakdown": "early_contributors, community_reserve, foundation"
+      },
+      {
+        "date": "2026-08-01",
+        "amount_sui": null,
+        "note": "Estimated monthly unlock pattern continues through 2026"
+      },
+      {
+        "date": "2026-11-01",
+        "note": "Early contributors scheduled to receive final tokens"
+      },
+      {
+        "date": "2026-12-31",
+        "note": "Series B funding unlock period ends (May 2026)"
+      }
+    ],
+    "schedule_end_date": "2030-05",
+    "summary": "Linear unlock schedule with major monthly tranches (40-45M SUI/month) through 2030. Four main allocation buckets: Allocated (52.17%), Community Reserve (10.65%), Stake Subsidies (9.49%), Series A (7.14%), Series B (6.96%), Early Contributors (6.13%), Community Access Program (5.82%), Mysten Labs Treasury (1.63%). Cliff period ended May 2024. Series B unlocks end May 2026; early contributors final unlock November 2026.",
+    "data_quality": "GOOD",
+    "caveats": "Exact month-to-month breakdown for Aug-Dec 2026 not fully specified in public sources. Unlock amounts appear consistent (~44M/month) but confirmation from official Sui Foundation API recommended for precise investor/contributor/foundation splits."
+  },
+  "mechanism": {
+    "consensus": "Delegated Proof-of-Stake (DPoS)",
+    "staking": {
+      "percentage_of_supply_staked": 75,
+      "validator_count": 100,
+      "staking_lock_mechanism": "Epoch-based locking. Tokens locked for fixed duration (one epoch). Validators cannot change this during epoch; changes apply when new epoch begins.",
+      "validator_commission_range": "5-10%",
+      "validator_commission_description": "Commission applied to staking rewards, not principal. Example: Stakely validator charges 7% commission on APR.",
+      "current_apr": "1.8-3.25%",
+      "current_apy_range": "0.21-5.30%",
+      "apy_variation_notes": "APY varies by validator performance, commission rate, and network inflation conditions."
+    },
+    "staking_subsidy_pool": {
+      "total_allocation": 949000000,
+      "percentage_of_supply": 9.49,
+      "description": "Dedicated stake subsidy pool supporting early validator incentives. Pool declines over time as inflation decreases."
+    },
+    "storage_fund": {
+      "rebate_mechanism": "Users pay upfront for storage in perpetuity but can claim 99% rebate when deleting data. Non-rebateable amount: 1% (protocol fee).",
+      "delete_incentive": "Mechanism incentivizes users to delete data when storage costs exceed value, preventing unending growth.",
+      "fund_distribution": "Protocol computes total stake as staked SUI plus storage fund. Storage fund returns distributed to validators for storage cost compensation.",
+      "fund_sustainability": "Fund pays out only returns on capital, never distributes principal. Ensures perpetual capitalization and indefinite survival."
+    },
+    "value_accrual": "Native L1. Value accrual through: (1) Staking rewards (subsidy + gas fees), (2) Storage fund participation by validators, (3) Gas fee consumption."
+  },
+  "inflation": {
+    "inflation_model": "Non-inflationary beyond 10B cap. Emission through unlocking pre-allocated supply, not mining.",
+    "subsidy_rate_decline": true,
+    "subsidy_structure": "Stake rewards = subsidy (declining over network lifetime per SIP framework) + gas fees. Early network phases: higher subsidies. Long-term: subsidy approaches zero as supply reaches 10B cap.",
+    "gas_fee_distribution": "Gas fees distributed to validators and storage fund. Rewards shared with delegators via staking mechanism.",
+    "current_subsidy_status": "Active. Stake Subsidies bucket: 949M SUI (9.49% of total). Declining rate scheduled through network maturity.",
+    "notes": "No hyperinflation risk. Pre-defined maximum supply caps expansion. Validator incentives transition from subsidies to transaction fees over time."
+  },
+  "data_collection_notes": "Research conducted April 29, 2026 using WebSearch and WebFetch from public crypto data platforms. Sources: CoinMarketCap, CoinGecko, Cubix, DropsTab, Tokentrack, Messari, DefiLlama, Binance Square, Bitget Academy, Stakely, DAIC Capital, Trust Wallet staking data, Figment insights, SuiVision validators. Official Sui docs blocked by network egress proxy during fetch attempts. Unlock schedule data confirmed from multiple tracker platforms showing consistent monthly tranches. Staking APR estimated at 1.8-3.25% current range based on aggregated staking platform data. Validator participation at 75% of supply staked across 100+ validators. Storage fund mechanics documented from GitHub-hosted Sui learning materials and blog posts."
+}

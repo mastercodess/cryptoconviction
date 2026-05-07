@@ -1,0 +1,15 @@
+{
+  "symbol": "AERO",
+  "funding_rate_8h": 0.00015,
+  "open_interest_usd": 62000000,
+  "btc_correlation_30d": 0.68,
+  "eth_correlation_30d": 0.74,
+  "nasdaq_correlation_30d": 0.36,
+  "leverage_warning": false,
+  "rationale": "Aerodrome DEX governance token with thin perp market on secondary venues; modest OI reflects limited derivatives infrastructure.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coinglass.com/FundingRate/AERO",
+    "https://www.coinglass.com/currencies/AERO/futures"
+  ]
+}

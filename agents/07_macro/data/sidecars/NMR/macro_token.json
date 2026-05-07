@@ -1,0 +1,15 @@
+{
+  "symbol": "NMR",
+  "funding_rate_8h": null,
+  "open_interest_usd": null,
+  "btc_correlation_30d": null,
+  "eth_correlation_30d": null,
+  "nasdaq_correlation_30d": null,
+  "leverage_warning": false,
+  "rationale": "Numeraire prediction-staking token; no active perp markets on major exchanges after Binance delisted BTC/ETH pairs Jan 2026; derivatives market effectively dormant.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://www.coinglass.com/currencies/NMR",
+    "https://coinmarketcap.com/cmc-ai/numeraire/latest-updates/"
+  ]
+}

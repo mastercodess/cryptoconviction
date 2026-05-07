@@ -1,0 +1,106 @@
+{
+  "token": "AAVE",
+  "timestamp": "2026-04-30",
+  "activity": {
+    "protocol_tvl_usd": "42340000000",
+    "tvl_change_yoy_percent": 45,
+    "defi_market_share_percent": 59.79,
+    "borrowed_amount_usd": "24130000000",
+    "total_supplied_usd": "57350000000",
+    "protocol_version": "V3 + V4 (launched 2026-03-30)",
+    "gho_revenue_q3_2025_usd": "4000000",
+    "gho_annual_revenue_estimate_usd": "12000000",
+    "dau_estimate": "Unable to access real-time DefiLlama; see data_quality note",
+    "borrower_count_trend_90d": "Positive trend through Feb 2025; April 2026 shows KelpDAO exploit impact with borrowing spike ($300M+)",
+    "liquidations_single_day_record": "210000000",
+    "liquidation_date": "2025-02-04",
+    "bad_debt_incurred": 0,
+    "note": "Aave processed $210M liquidations Feb 4 2025 without bad debt; demonstrates robust risk controls"
+  },
+  "exchange_flows_30d": {
+    "exchange_reserve_aave_tokens": "2230000",
+    "exchange_reserve_date": "2026-04-07",
+    "binance_holdings": "1630000",
+    "trend": "Rising exchange reserves signal sell-off risk; pulled from earlier ~2.07M in Feb 2026",
+    "exchange_whale_ratio": "Elevated; large holder outflows to CEX in April post-exploit",
+    "aave_token_volume_cexx": "Top-50 token; deep liquidity across Binance, Kraken, Coinbase",
+    "wash_trade_concern": "Minimal; AAVE has institutional-grade CEX liquidity"
+  },
+  "holder_cohort": {
+    "top_100_wallet_concentration_percent": 80.36,
+    "top_100_trend": "Increased from 62.34% in early 2026; whale accumulation",
+    "exchange_supply_percent": 28.8,
+    "exchange_supply_trend": "Decreased from 40.16%; retail/whale withdrawal to cold storage",
+    "stkaaave_market_cap_usd": "269337327",
+    "stkaave_holder_count": 19636,
+    "stkaave_circulating_supply": "2546162",
+    "stkaaave_participation_assessment": "Strong; Umbrella system (launched June 2025) features dynamic rewards; governance stakers at ~2.5M stkAAVE. Anti-GHO distributed to stkAAVE holders (80%) + stkBPT (20%); ~$6M annual Anti-GHO distribution from GHO revenue",
+    "smart_money_bias": "59.3% long bias recorded; smart money accumulating despite price weakness",
+    "whale_positioning_note": "Bifurcated: strategic whales accumulated at $90-100 range post-KelpDAO exploit (April 2026), while retail fled. Smaugvision wallet sold 20k AAVE at $103/token; second whale 0xFC56 sold 20k at $103 avg—clear volatility-driven exit"
+  },
+  "anti_gho_buyback_flows": {
+    "weekly_buyback_usd": "1000000",
+    "buyback_duration_months": 6,
+    "buyback_funding_source": "DAO treasury (Aave Finance Committee)",
+    "buyback_impact": "Positive; $1M weekly = ~$24M over 6 months. Reduces sell pressure as protocol phases out staking emissions and uses GHO revenue instead of new AAVE issuance",
+    "anti_gho_token_mechanics": "Non-transferable ERC-20 earned from stkAAVE/stkBPT; redeemable for stkGHO or GHO debt repayment. ~$6M annual distribution to stakers",
+    "float_consumption_status": "BULLISH; buybacks consuming float via DAO treasury revenue. No new AAVE issuance pressure; protocol shifts to stablecoin/ETH opex",
+    "aave_will_win_proposal": "Approved April 13 2026; redirects 100% Aave-branded product revenue to DAO treasury, supporting buyback program"
+  },
+  "retention_health": {
+    "borrower_count_trend_label": "Mixed; growth phase interrupted by April 2026 KelpDAO exploit",
+    "borrower_count_feb_2025": "Over 1000 unique borrowers on-chain",
+    "borrower_count_april_2026_note": "KelpDAO rsETH exploit (April 19) triggered liquidations; $300M borrowing spike suggests liquidity crunch; not terminal, but retention pressure short-term",
+    "debt_held_ethereum_percent": 80,
+    "retention_signal": "Medium-term concern: Chaos Labs (risk manager) exited April 2026; BGD Labs and Aave Chan Initiative also departed. Talent attrition + V4 complexity = execution risk"
+  },
+  "growth_authenticity": {
+    "tvl_growth_yoy": "45% year-over-year increase (March 2026 report); $42.34B peak",
+    "market_dominance": "59.79% DeFi lending market share; #1 protocol by TVL",
+    "v4_launch": "March 30 2026; significant upgrade; market has not yet repriced; smart money accumulating beneath resistance",
+    "growth_authenticity_assessment": "AUTHENTIC; DeFi lending fundamentals strong. Aave V3 $57.35B supplied, $24.13B borrowed (mid-2025). V4 launch + Umbrella staking + GHO revenue growth = durable flywheel. Exploit disruption temporary.",
+    "institutional_adoption": "sGHO vault (4.25% APR fixed) launched to attract retail/institutional deposits. Aave App on iOS Nov 2025; targeting 1M users by early 2026",
+    "risk_context": "April 2026 KelpDAO exploit external to Aave; highlighted cascade liquidations. Aave risk controls passed test (no bad debt); but contributor exodus (Chaos Labs, BGD) raises governance/execution uncertainty"
+  },
+  "wash_trade_assessment": {
+    "token_status": "Top-50 by market cap; deep CEX liquidity (Binance, Kraken, Coinbase, Bybit)",
+    "volume_quality": "Real; driven by institutional/whale positioning, GHO/governance mechanics, leverage trading, arbitrage",
+    "wash_trade_risk": "MINIMAL to NONE. AAVE is mature, liquid, and subject to CEX regulatory scrutiny"
+  },
+  "rationale": "Aave demonstrates durable on-chain health despite April 2026 KelpDAO exploit disruption. TVL +45% YoY, market dominance at 59.79% lending share, and GHO revenue acceleration ($4M Q3 2025) confirm core protocol strength. Smart money accumulation (59.3% long bias, top-100 concentration rising to 80.36%) suggests informed capital sees valuation opportunity at $90-100 range. Anti-GHO buyback program ($1M weekly for 6 months) paired with Umbrella staking (dynamic rewards, ~$6M Anti-GHO distribution) and 100% revenue-to-DAO (AAW proposal, April 2026) create deflationary mechanics. Retention headwinds: contributor attrition (Chaos Labs, BGD, ACI all exited April 2026), V4 complexity, and short-term borrower stress post-exploit. However, stkAAVE participation (19.6k holders, $269M market cap) and long-term staker commitment remain strong. Exchange flows show rising sell risk (2.23M tokens on CEX as of April 7), but whale cold-storage accumulation (top-100 rising) suggests smart money frontrunning capitulation. Growth authenticity high; wash-trade risk negligible.",
+  "data_quality": {
+    "score": 7.5,
+    "sources_accessed": [
+      "CoinMarketCap AI/latest-updates (AAVE, GHO)",
+      "AInvest news (Aavenomics, buybacks, governance)",
+      "CryptoTimes (exchange reserves)",
+      "Mint Ventures (token distribution, Safety Module)",
+      "Etherscan (stkAAVE holder count, market cap)",
+      "Aave.com governance/documentation",
+      "CoinDesk (KelpDAO exploit, borrowing spike)",
+      "BlockchainNews (whale positioning, price alerts)",
+      "Yahoo Finance/BeInCrypto (whale dumps, KelpDAO impact)",
+      "Blockworks (Arkham Intelligence whale tracking)",
+      "CoinLaw.io (Aave statistics)"
+    ],
+    "limitations": [
+      "DefiLlama/Aavescan direct access blocked (egress proxy); relied on secondary sources for DAU/active users",
+      "Real-time on-chain data snapshot from April 2026 sources; precise 90-day borrower retention trend unavailable",
+      "GHO revenue extrapolated from Q3 2025 record ($4M) and governance proposals; April 2026 GHO revenue not yet reported",
+      "Smart money positioning inferred from whale tracker reports and exchange flow data; not direct Glassnode/CryptoQuant feed",
+      "V4 impact on metrics still materializing; most robust data is V3 + pre-exploit"
+    ]
+  },
+  "sources": [
+    "https://www.ainvest.com/news/aave-unveils-aavenomics-6m-anti-gho-rewards-1m-weekly-buyback-2504/",
+    "https://www.cryptotimes.io/2026/04/07/aave-exchange-reserves-jump-to-2-23m-amid-contributor-exodus-and-v4-tension/",
+    "https://mint-ventures.medium.com/exploring-the-updated-aavenomics-buybacks-profit-distribution-and-safety-module-shift-bcf14abb17fa",
+    "https://blockchain.news/news/20260426-price-prediction-aave-114-breakout-imminent-as-whales-load",
+    "https://coinmarketcap.com/cmc-ai/aave/latest-updates/",
+    "https://www.coindesk.com/markets/2026/04/20/a-usd300m-borrowing-spike-on-aave-signals-liquidity-crunch-after-exploit",
+    "https://finance.yahoo.com/markets/crypto/articles/whales-accumulate-aave-as-retail-flees-064322536.html",
+    "https://etherscan.io/token/0x4da27a545c0c5b758a6ba100e3a049001de870f5",
+    "https://www.ainvest.com/news/aave-launches-umbrella-staking-system-enhancing-insurance-fund-credibility-2506/",
+    "https://www.panewslab.com/en/articles/826a4215-2391-4dc7-848d-3802cc67d54d"
+  ]
+}

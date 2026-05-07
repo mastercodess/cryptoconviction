@@ -1,0 +1,30 @@
+{
+  "as_of": "2025-01-30",
+  "btc_price_usd": 104500,
+  "btc_dominance_pct": 58.1,
+  "total_mc_usd": 3520000000000,
+  "total_mc_ex_btc_usd": 1476320000000,
+  "altcoin_season_index": 38,
+  "fear_greed_index": 72,
+  "fed_funds_rate": 4.33,
+  "m2_yoy_pct": 3.8,
+  "btc_halving_day": 290,
+  "notes": "As of late January 2025, Bitcoin is approximately 290 days into the post-4th-halving cycle (halving occurred April 19\u201320, 2024). BTC dominance remains elevated near 58%, signaling that altcoin season has not yet fully rotated in (Altcoin Season Index ~38, below the 75 threshold). Fear & Greed sits in 'Greed' territory (~72), consistent with a mid-bull-cycle consolidation phase rather than peak euphoria. The Fed held rates at 4.25\u20134.50% (effective ~4.33%) at its January 2025 FOMC meeting, with markets pricing 1\u20132 cuts in 2025. M2 YoY growth has re-accelerated modestly to ~3.8%, a historically supportive backdrop for risk assets. Historically, the strongest altcoin outperformance in prior cycles occurred 12\u201318 months post-halving (roughly Q2\u2013Q4 2025), suggesting the current environment is transitional \u2014 BTC leading, with altcoin rotation potentially ahead if macro liquidity continues to expand.",
+  "sources": [
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 Fear & Greed Index",
+    "https://www.coingecko.com/en/global-charts \u2014 BTC price, dominance, total market cap",
+    "https://www.coinglass.com/AltcoinSeasonIndex \u2014 Altcoin Season Index",
+    "https://fred.stlouisfed.org/series/FEDFUNDS \u2014 Fed Funds Effective Rate",
+    "https://fred.stlouisfed.org/series/M2SL \u2014 M2 Money Supply (YoY calculated from latest release)",
+    "https://en.bitcoin.it/wiki/Halving \u2014 4th halving date reference (April 19, 2024)"
+  ],
+  "_data_quality_notes": {
+    "btc_price_usd": "APPROXIMATE \u2014 snapshot near time of query; verify live at coingecko.com",
+    "total_mc_usd": "APPROXIMATE \u2014 CoinGecko global page rounds; verify live",
+    "total_mc_ex_btc_usd": "DERIVED \u2014 total_mc minus (total_mc * btc_dominance_pct/100)",
+    "altcoin_season_index": "APPROXIMATE \u2014 Coinglass public page; value fluctuates intraday",
+    "fear_greed_index": "APPROXIMATE \u2014 alternative.me updates daily",
+    "m2_yoy_pct": "APPROXIMATE \u2014 based on most recent FRED M2SL release (Nov/Dec 2024 data); exact figure subject to revision",
+    "btc_halving_day": "CALCULATED \u2014 days from April 19 2024 to January 30 2025 = 286 days; rounded to ~290 accounting for query date uncertainty"
+  }
+}
