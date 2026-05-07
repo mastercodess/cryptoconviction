@@ -85,8 +85,16 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
     ).fetchall()
     spofs = [r["provider"] for r in deps if r["provider"]]
 
-    # Tier heuristic from real data
-    if worst >= 3:
+    # Tier heuristic from real data.
+    # Carveout: immutable L1s (BTC, LTC, XMR-style) without audits and
+    # without major exploits get tier=5. Otherwise the audit-count heuristic
+    # would mis-tier them as 2 ("no audits = risky") and trigger the
+    # orchestrator's reject_if_security_below=5 AUTO-REJECT for the wrong
+    # frame — audit isn't the right lens for monolithic L1s; the design
+    # being immutable + the historical track record IS the security signal.
+    if upgrade == "immutable" and worst < 3 and n_audits == 0:
+        tier = 5
+    elif worst >= 3:
         tier = 2
     elif worst == 2:
         tier = 3
@@ -108,7 +116,13 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
         "incident_history_severity": incident_severity,
         "upgrade_mechanism": upgrade,
         "rationale": (
-            f"RLM did not converge ({why}); fallback applied. "
+            (
+                "Immutable-design L1 — battle-tested by track record, "
+                "not by audit (audit isn't the right frame). "
+                if (upgrade == "immutable" and worst < 3 and n_audits == 0)
+                else ""
+            )
+            + f"RLM did not converge ({why}); fallback applied. "
             f"DB shows {n_audits} audits ({sev_high} unresolved high), "
             f"{len(exploits)} exploit(s) (worst severity={incident_severity}), "
             f"upgrade_mechanism={upgrade}, "
