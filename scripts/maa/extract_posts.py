@@ -1,15 +1,18 @@
 """Extract MasterAnanda TradingView posts from the on-disk PDF.
 
-Each PDF page (after page 1, the profile header) contains 1-3 idea entries
-in a regular shape:
+The TradingView PDF export emits, on each page (after page 1, the profile
+header), 1-3 posts of this shape:
 
     <title line>
-    <2-3 line description>
-    by MasterAnanda           <comments_int>   <boosts_int>
-    <date_string e.g. "Updated 6 hours ago" or "11 hours ago">
+    <2-3 description lines>
+    by MasterAnanda                ← byline ALONE on its own line
+    <count_line>                   ← 1 or 2 integers ("13" or "7 31")
+    <date_line>                    ← relative or absolute
+    99+                            ← optional notification badge (page furniture)
 
-Page footer is the URL + page number. The 5/6/26 5:00 PM header gives the
-export anchor (used by parse_dates.py, not here).
+A post can also span a page boundary: title + description on page N, byline +
+counts + date on page N+1. The parser is therefore a state machine driven by
+a flat stream of lines that crosses page boundaries.
 
 Usage:
     python -m scripts.maa.extract_posts \
@@ -26,88 +29,45 @@ import re
 import sys
 from typing import Any
 
-# Boundary marker — case-insensitive, tolerant of whitespace
-_BY_LINE = re.compile(r"^\s*by\s+MasterAnanda\b(.*)$", re.IGNORECASE)
+# --- Regexes ----------------------------------------------------------------
 
-# Engagement counts: two integers on the byline (comments, boosts)
-_TWO_INTS = re.compile(r"(\d+)\s+(\d+)\s*$")
+# Boundary: byline appears alone on its own line.
+_BY_LINE = re.compile(r"^\s*by\s+MasterAnanda\s*$", re.IGNORECASE)
 
-# Date string: "Updated X ago" or "X (units) ago"
-_DATE_LINE = re.compile(
-    r"^\s*((?:Updated\s+)?\d+\s+(?:minutes?|hours?|days?|weeks?|months?)\s+ago)\s*$",
+# Counts line: 1 or 2 integers, nothing else.
+_COUNTS_LINE = re.compile(r"^\s*(\d+)(?:\s+(\d+))?\s*$")
+
+# Relative date: "11 hours ago", "Updated 6 hours ago", "1 day ago", "9 minutes ago".
+_REL_DATE = re.compile(
+    r"^(?:Updated\s+)?\d+\s+(?:minutes?|hours?|days?|weeks?|months?)\s+ago$",
+    re.IGNORECASE,
+)
+
+# Absolute date: "May 4", "Apr 25", "Updated Apr 16", "Jan 5, 2026".
+_ABS_DATE = re.compile(
+    r"^(?:Updated\s+)?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)"
+    r"\s+\d{1,2}(?:,\s*\d{4})?$",
     re.IGNORECASE,
 )
 
 
-class PostParseError(ValueError):
-    """Raised when a post chunk can't be split into title/desc/date/counts."""
+def _try_extract_date(line: str) -> str | None:
+    """Return the line stripped if it matches a known date pattern, else None."""
+    s = line.strip()
+    if _REL_DATE.match(s) or _ABS_DATE.match(s):
+        return s
+    return None
 
 
-def parse_page_text_to_posts(text: str, page_number: int) -> list[dict[str, Any]]:
-    """Split a single page's text into post dicts.
-
-    Returns [] if the page has no posts (e.g. profile header page).
-    Raises PostParseError on chunks that match the byline pattern but lack
-    the date or counts.
-    """
-    lines = [ln.rstrip() for ln in text.splitlines()]
-    posts: list[dict[str, Any]] = []
-    buffer: list[str] = []
-
-    for ln in lines:
-        m = _BY_LINE.match(ln)
-        if m is not None:
-            counts_tail = m.group(1) or ""
-            comments, boosts = _extract_counts(counts_tail)
-            # The previous lines are the title (1) and description (1+).
-            if not buffer:
-                continue  # boundary with no preceding content; skip
-            title = buffer[0].strip()
-            description = " ".join(b.strip() for b in buffer[1:]).strip()
-            buffer = []  # reset for next post
-            posts.append({
-                "_pending_post": True,
-                "title": title,
-                "description": description,
-                "comments": comments,
-                "boosts": boosts,
-                "page_number": page_number,
-            })
-            continue
-
-        # Date line — closes the most recently opened post
-        date_m = _DATE_LINE.match(ln)
-        if date_m and posts and posts[-1].get("_pending_post"):
-            date_str = date_m.group(1).strip()
-            posts[-1]["date_string"] = date_str
-            posts[-1]["is_updated"] = date_str.lower().startswith("updated")
-            del posts[-1]["_pending_post"]
-            continue
-
-        # Otherwise: accumulate as title/description for the next boundary.
-        if ln.strip() and not _is_page_furniture(ln):
-            buffer.append(ln)
-
-    # Drop any post that never received a date — unparsed.
-    finalized: list[dict[str, Any]] = []
-    for p in posts:
-        if p.pop("_pending_post", False):
-            continue  # dropped: pending boundary never closed
-        finalized.append(p)
-    return finalized
-
-
-def _extract_counts(tail: str) -> tuple[int, int]:
-    """Pull (comments, boosts) from the byline tail. Default (0, 0)."""
-    m = _TWO_INTS.search(tail)
-    if not m:
-        return 0, 0
-    return int(m.group(1)), int(m.group(2))
-
+# --- Page furniture ---------------------------------------------------------
 
 def _is_page_furniture(line: str) -> bool:
-    """Filter URL/page-number/header lines that aren't post content."""
+    """Filter URL/page-number/header/badge lines that aren't post content."""
     s = line.strip()
+    if not s:
+        return True
+    if s == "99+":
+        return True
     if s.startswith("http"):
         return True
     if "tradingview.com" in s.lower():
@@ -116,9 +76,126 @@ def _is_page_furniture(line: str) -> bool:
         return True
     if "MasterAnanda" in s and "Trading Ideas" in s:
         return True
-    if re.match(r"^\d+/\d+/\d+,?\s+\d", s):  # "5/6/26, 5:00 PM"
+    if re.match(r"^\d+/\d+/\d+,?\s+\d", s):  # "5/6/26, 5:09 PM"
         return True
     return False
+
+
+# --- State machine ---------------------------------------------------------
+
+class _ParserState:
+    """Mutable state for the multi-page line stream."""
+
+    def __init__(self) -> None:
+        # SEEKING_TITLE: accumulating title + description until we see a byline.
+        # AWAITING_COUNTS: byline seen; next non-furniture line should be counts.
+        # AWAITING_DATE: counts seen; next non-furniture line should be a date.
+        self.mode: str = "SEEKING_TITLE"
+        self.buffer: list[str] = []          # accumulating title + description lines
+        self.pending: dict[str, Any] | None = None  # post-in-flight after byline
+
+
+class PostParseError(ValueError):
+    """Reserved for future strict parsing; current parser is permissive."""
+
+
+def _consume_line(
+    state: _ParserState, line: str, page_number: int
+) -> dict[str, Any] | None:
+    """Process one line through the state machine.
+
+    Returns a finalized post dict when a post completes, else None.
+    """
+    if _is_page_furniture(line):
+        return None
+    s = line.strip()
+    if not s:
+        return None  # blank lines never matter
+
+    if state.mode == "SEEKING_TITLE":
+        if _BY_LINE.match(s):
+            if not state.buffer:
+                # byline with no preceding title; orphan — ignore.
+                return None
+            title = state.buffer[0].strip()
+            description = " ".join(b.strip() for b in state.buffer[1:]).strip()
+            state.pending = {
+                "title": title,
+                "description": description,
+                "page_number": page_number,
+            }
+            state.buffer = []
+            state.mode = "AWAITING_COUNTS"
+            return None
+        # Otherwise accumulate as title/description.
+        state.buffer.append(s)
+        return None
+
+    if state.mode == "AWAITING_COUNTS":
+        # Counts line: 1 or 2 ints.
+        m = _COUNTS_LINE.match(s)
+        if m is not None:
+            assert state.pending is not None
+            state.pending["comments"] = int(m.group(1))
+            state.pending["boosts"] = int(m.group(2)) if m.group(2) else 0
+            state.mode = "AWAITING_DATE"
+            return None
+        # If we see a date directly without counts, default counts to 0.
+        date_str = _try_extract_date(s)
+        if date_str is not None:
+            assert state.pending is not None
+            state.pending["comments"] = 0
+            state.pending["boosts"] = 0
+            state.pending["date_string"] = date_str
+            state.pending["is_updated"] = date_str.lower().startswith("updated")
+            post = state.pending
+            state.pending = None
+            state.mode = "SEEKING_TITLE"
+            return post
+        # Unexpected — drop the pending post and treat this as a new title.
+        state.pending = None
+        state.buffer = [s]
+        state.mode = "SEEKING_TITLE"
+        return None
+
+    if state.mode == "AWAITING_DATE":
+        date_str = _try_extract_date(s)
+        if date_str is not None:
+            assert state.pending is not None
+            state.pending["date_string"] = date_str
+            state.pending["is_updated"] = date_str.lower().startswith("updated")
+            post = state.pending
+            state.pending = None
+            state.mode = "SEEKING_TITLE"
+            return post
+        # Unexpected — orphan post, drop and treat as a new title.
+        state.pending = None
+        state.buffer = [s]
+        state.mode = "SEEKING_TITLE"
+        return None
+
+    # Unreachable.
+    return None
+
+
+# --- Public parsing entry points -------------------------------------------
+
+def parse_page_text_to_posts(
+    text: str, page_number: int
+) -> list[dict[str, Any]]:
+    """Parse a single page's text into completed post dicts.
+
+    For multi-page PDFs use ``extract_pdf_to_jsonl``, which carries state across
+    page boundaries (a post can span pages). This function is for unit testing
+    self-contained samples.
+    """
+    state = _ParserState()
+    posts: list[dict[str, Any]] = []
+    for ln in text.splitlines():
+        post = _consume_line(state, ln, page_number)
+        if post is not None:
+            posts.append(post)
+    return posts
 
 
 def extract_pdf_to_jsonl(
@@ -126,18 +203,19 @@ def extract_pdf_to_jsonl(
     output_path: pathlib.Path,
     unparsed_path: pathlib.Path,
 ) -> tuple[int, int]:
-    """Iterate the PDF, parse each page, write parsed/unparsed JSONL.
+    """Iterate the PDF, drive a single state machine across pages, write JSONL.
 
-    Returns (n_parsed, n_unparsed).
+    Returns ``(n_parsed, n_unparsed)``.
     """
     import pdfplumber  # local import — keeps the CLI fast when not used
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     unparsed_path.parent.mkdir(parents=True, exist_ok=True)
-    n_parsed = n_unparsed = 0
+    n_parsed = 0
+    n_unparsed = 0
 
-    # NOTE: Python 3.9-compatible nested with-statements (parenthesized
-    # multi-context with-statements are a 3.10+ feature).
+    state = _ParserState()
+    # NOTE: Python 3.9-compatible nested with-statements.
     with pdfplumber.open(pdf_path) as pdf:
         with open(output_path, "w") as out_f:
             with open(unparsed_path, "w") as bad_f:
@@ -145,29 +223,37 @@ def extract_pdf_to_jsonl(
                     if page_idx == 1:
                         continue  # profile header
                     text = page.extract_text() or ""
-                    try:
-                        posts = parse_page_text_to_posts(text, page_number=page_idx)
-                    except PostParseError as e:
-                        bad_f.write(json.dumps({"page": page_idx, "error": str(e)}) + "\n")
-                        n_unparsed += 1
-                        continue
-                    for p in posts:
-                        if "date_string" not in p:
-                            # Pending post that never received a date — count as unparsed
-                            bad_f.write(json.dumps({"page": page_idx, "partial": p}) + "\n")
-                            n_unparsed += 1
-                            continue
-                        out_f.write(json.dumps(p) + "\n")
-                        n_parsed += 1
+                    for ln in text.splitlines():
+                        post = _consume_line(state, ln, page_idx)
+                        if post is not None:
+                            out_f.write(json.dumps(post) + "\n")
+                            n_parsed += 1
+                # End-of-PDF: any pending post is dropped (cross-page tail).
+                if state.pending is not None:
+                    bad_f.write(
+                        json.dumps(
+                            {"page": "end-of-file", "partial": state.pending}
+                        )
+                        + "\n"
+                    )
+                    n_unparsed += 1
 
     return n_parsed, n_unparsed
 
 
 def main(argv: list[str] | None = None) -> int:
-    p = argparse.ArgumentParser(description="Extract MasterAnanda PDF posts to JSONL.")
+    p = argparse.ArgumentParser(
+        description="Extract MasterAnanda PDF posts to JSONL."
+    )
     p.add_argument("--pdf", default="MasterAnanda.pdf", type=pathlib.Path)
-    p.add_argument("--out", default="data/maa/posts_raw.jsonl", type=pathlib.Path)
-    p.add_argument("--unparsed", default="data/maa/posts_unparsed.jsonl", type=pathlib.Path)
+    p.add_argument(
+        "--out", default="data/maa/posts_raw.jsonl", type=pathlib.Path
+    )
+    p.add_argument(
+        "--unparsed",
+        default="data/maa/posts_unparsed.jsonl",
+        type=pathlib.Path,
+    )
     args = p.parse_args(argv)
 
     if not args.pdf.exists():
@@ -180,7 +266,10 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  out: {args.out}")
     print(f"  unparsed: {args.unparsed}")
     if pct_unparsed > 5:
-        print("WARNING: >5% unparsed. Consider vision-fallback per spec.", file=sys.stderr)
+        print(
+            "WARNING: >5% unparsed. Consider vision-fallback per spec.",
+            file=sys.stderr,
+        )
     return 0
 
 
