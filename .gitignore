@@ -13,3 +13,8 @@ reports/*.md
 .venv/
 venv/
 *.egg-info/
+
+# MAA pipeline run artifacts (large + per-run)
+data/maa/
+reports/_maa_top20_*/
+.pytest_cache/
