@@ -167,7 +167,7 @@ REGISTRY: dict[str, Token] = {
     "NOT": Token(
         symbol="NOT",
         name="Notcoin",
-        chain="the-open-network",
+        chain="ton",
         coingecko_id="notcoin",
         contract_address="EQAvlWFDxGF2lXm67y4yzC17wYKD9A0guwPkMs1gOsM__NOT",
         defillama_protocol=None,
