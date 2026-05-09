@@ -111,3 +111,48 @@ def test_missing_agent_name_uses_unknown(monkeypatch, fake_anthropic_response, t
     record = json.loads(log_path.read_text().strip().splitlines()[0])
     assert record["agent_name"] == "unknown"
     assert record["action"] == "unknown"
+
+
+def test_rlm_root_turn_logs_opus_call(monkeypatch, fake_anthropic_response, tmp_path):
+    """Regression test for the cost-logging bypass in shared/rlm.py:_root_turn.
+
+    The MAA batch cap depends on EVERY messages.create() call producing a
+    log line. _root_turn calls Anthropic directly (not via sub_lm), so we
+    explicitly verify it routes through _emit_usage_log.
+    """
+    log_path = tmp_path / "run_log.jsonl"
+    monkeypatch.setenv("MAA_RUN_LOG", str(log_path))
+    monkeypatch.setenv("MAA_AGENT_NAME", "01_tokenomics")
+    monkeypatch.setenv("MAA_ACTION", "analyze")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+
+    from shared import rlm
+
+    # Patch the Anthropic class that _root_turn instantiates internally.
+    # _root_turn does `from anthropic import Anthropic` locally, so we patch
+    # the symbol on the anthropic module — the local `from ... import` will
+    # then bind to our fake.
+    fake_messages = MagicMock()
+    fake_messages.create = MagicMock(return_value=fake_anthropic_response)
+    fake_client = MagicMock()
+    fake_client.messages = fake_messages
+
+    import anthropic
+    monkeypatch.setattr(anthropic, "Anthropic", lambda **kwargs: fake_client)
+
+    # _root_turn signature: (history, system, *, model, max_tokens=2048)
+    text = rlm._root_turn(
+        [{"role": "user", "content": "hi"}],
+        "you are a tester",
+        model="claude-opus-4-7",
+        max_tokens=1024,
+    )
+    assert text == "hello world"
+
+    assert log_path.exists(), "MAA_RUN_LOG file should exist after _root_turn"
+    record = json.loads(log_path.read_text().strip().splitlines()[-1])
+    assert record["model"] == "claude-opus-4-7"
+    assert record["agent_name"] == "01_tokenomics"
+    assert record["action"] == "analyze"
+    assert record["prompt_tokens"] == 42  # from fake_anthropic_response
+    assert record["completion_tokens"] == 8

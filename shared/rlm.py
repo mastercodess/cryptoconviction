@@ -46,7 +46,7 @@ import traceback
 from contextlib import redirect_stdout, redirect_stderr
 from typing import Any, Optional
 
-from .llm_client import sub_lm, DEFAULT_ROOT_MODEL
+from .llm_client import sub_lm, DEFAULT_ROOT_MODEL, _emit_usage_log
 try:
     from anthropic import Anthropic                       # noqa: F401
 except ImportError:
@@ -180,6 +180,7 @@ def _root_turn(
         system=system,
         messages=history,
     )
+    _emit_usage_log(msg, model)  # log root-turn Opus calls for cap enforcement
     return "".join(b.text for b in msg.content if getattr(b, "type", None) == "text")
 
 
