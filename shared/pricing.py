@@ -4,6 +4,16 @@ Single source of truth for Anthropic model pricing.
 Used by shared/llm_client.py to compute per-call cost when the MAA pipeline
 batch runner has set MAA_RUN_LOG. Keep prices in sync with
 https://www.anthropic.com/pricing (last verified 2026-05-06).
+
+Anthropic billing distinguishes 4 token classes per call:
+  - input_tokens               (uncached prompt input, full price)
+  - output_tokens              (model output, full output price)
+  - cache_creation_input_tokens (writing to cache; ~1.25x base input)
+  - cache_read_input_tokens     (reading from cache; ~0.10x base input)
+
+The MAA pipeline's RLM scaffold reuses dossier context across iterations,
+so cache reads dominate. Without cache accounting, logged cost overstates
+real spend by ~2x. compute_cost_usd handles all 4 classes correctly.
 """
 from __future__ import annotations
 
@@ -25,13 +35,24 @@ MODEL_PRICES_USD_PER_MTOK: dict[str, tuple[float, float]] = {
     "claude-3-5-haiku-latest":  (0.8, 4.0),
 }
 
+# Anthropic billing multipliers relative to base input price
+CACHE_READ_MULTIPLIER = 0.10      # cached prompt reads are billed at 10% of base
+CACHE_CREATION_MULTIPLIER = 1.25  # writing to the cache is billed at 125% of base
+
 
 def compute_cost_usd(
     model: str,
     prompt_tokens: int,
     completion_tokens: int,
+    cache_read_tokens: int = 0,
+    cache_creation_tokens: int = 0,
 ) -> float:
     """Return USD cost of a single API call given token counts.
+
+    The 4 token-count args correspond directly to fields on the Anthropic API's
+    `usage` object. Older callers passing only (model, prompt, completion)
+    continue to work — cache fields default to 0, which is correct for
+    pre-cache-era responses or callers that don't track cache.
 
     Raises UnknownModelError if the model isn't in MODEL_PRICES_USD_PER_MTOK
     so the caller cannot silently mis-attribute cost. Callers in the cost-log
@@ -44,4 +65,6 @@ def compute_cost_usd(
     return (
         prompt_tokens * in_price / 1_000_000
         + completion_tokens * out_price / 1_000_000
+        + cache_read_tokens * in_price * CACHE_READ_MULTIPLIER / 1_000_000
+        + cache_creation_tokens * in_price * CACHE_CREATION_MULTIPLIER / 1_000_000
     )

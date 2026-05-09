@@ -45,6 +45,42 @@ def test_compute_cost_unknown_model_raises():
         compute_cost_usd("future-claude-99", 100, 100)
 
 
+def test_compute_cost_with_cache_reads():
+    """Cache reads are billed at 0.10x base input price."""
+    # 1M cache_read tokens × $3/MTok × 0.10 = $0.30
+    cost = compute_cost_usd(
+        model="claude-sonnet-4-6",
+        prompt_tokens=0, completion_tokens=0,
+        cache_read_tokens=1_000_000,
+    )
+    assert cost == pytest.approx(0.30, rel=1e-6)
+
+
+def test_compute_cost_with_cache_creation():
+    """Cache creation is billed at 1.25x base input price."""
+    # 1M cache_creation tokens × $3/MTok × 1.25 = $3.75
+    cost = compute_cost_usd(
+        model="claude-sonnet-4-6",
+        prompt_tokens=0, completion_tokens=0,
+        cache_creation_tokens=1_000_000,
+    )
+    assert cost == pytest.approx(3.75, rel=1e-6)
+
+
+def test_compute_cost_realistic_cached_call():
+    """Typical RLM call: small uncached prompt, big cache read, small output.
+    Cache read should dominate the bill, but at 0.10x — not at full price.
+    """
+    cost = compute_cost_usd(
+        model="claude-opus-4-6",
+        prompt_tokens=500,           # Opus $15/MTok input → $0.0075
+        completion_tokens=200,       # Opus $75/MTok output → $0.015
+        cache_read_tokens=20_000,    # $15/MTok × 0.10 = $1.50/MTok → $0.030
+    )
+    # 0.0075 + 0.015 + 0.030 = 0.0525
+    assert cost == pytest.approx(0.0525, rel=1e-6)
+
+
 def test_zero_tokens_zero_cost():
     cost = compute_cost_usd("claude-sonnet-4-6", 0, 0)
     assert cost == 0.0
