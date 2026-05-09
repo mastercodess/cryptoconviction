@@ -98,6 +98,34 @@ def test_unknown_model_logs_null_cost(monkeypatch, fake_anthropic_response, tmp_
     assert record["cost_usd"] is None
 
 
+def test_log_captures_cache_tokens(monkeypatch, tmp_path):
+    """When the API response includes cache fields, they get logged with discounted cost."""
+    log_path = tmp_path / "run_log.jsonl"
+    monkeypatch.setenv("MAA_RUN_LOG", str(log_path))
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+
+    cached_response = SimpleNamespace(
+        content=[SimpleNamespace(type="text", text="cached")],
+        usage=SimpleNamespace(
+            input_tokens=100,
+            output_tokens=50,
+            cache_read_input_tokens=20_000,
+            cache_creation_input_tokens=0,
+        ),
+    )
+    _patch_client(monkeypatch, cached_response)
+
+    llm_client.sub_lm("hello")
+    record = json.loads(log_path.read_text().strip().splitlines()[0])
+    assert record["prompt_tokens"] == 100
+    assert record["completion_tokens"] == 50
+    assert record["cache_read_tokens"] == 20_000
+    assert record["cache_creation_tokens"] == 0
+    # Sonnet 4.6: 100*$3/M + 50*$15/M + 20000*$3/M*0.10
+    #           = 0.0003 + 0.00075 + 0.006 = 0.00705
+    assert record["cost_usd"] == pytest.approx(0.00705, rel=1e-3)
+
+
 def test_missing_agent_name_uses_unknown(monkeypatch, fake_anthropic_response, tmp_path):
     """If MAA_AGENT_NAME isn't set, log emits 'unknown' instead of crashing."""
     log_path = tmp_path / "run_log.jsonl"

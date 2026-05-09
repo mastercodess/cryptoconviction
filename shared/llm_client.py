@@ -86,8 +86,11 @@ def _emit_usage_log(msg, model: str) -> None:
     usage = getattr(msg, "usage", None)
     in_tok = getattr(usage, "input_tokens", 0) or 0
     out_tok = getattr(usage, "output_tokens", 0) or 0
+    # Cache fields are present on responses from 2024-06+; default to 0 if absent
+    cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    cache_create = getattr(usage, "cache_creation_input_tokens", 0) or 0
     try:
-        cost = compute_cost_usd(model, in_tok, out_tok)
+        cost = compute_cost_usd(model, in_tok, out_tok, cache_read, cache_create)
     except UnknownModelError:
         cost = None
     record = {
@@ -95,6 +98,8 @@ def _emit_usage_log(msg, model: str) -> None:
         "model": model,
         "prompt_tokens": in_tok,
         "completion_tokens": out_tok,
+        "cache_read_tokens": cache_read,
+        "cache_creation_tokens": cache_create,
         "cost_usd": cost,
         "agent_name": os.getenv("MAA_AGENT_NAME", "unknown"),
         "action": os.getenv("MAA_ACTION", "unknown"),
