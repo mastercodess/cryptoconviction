@@ -38,6 +38,12 @@ red_flags:
   reject_if_security_below: 5         # Agent 3 score (1-10) below this → AVOID
   reject_if_holder_concentration_above: 0.5   # top-10 holding > 50% → AVOID
   reject_if_unlock_pressure_next_90d_above: 0.25  # >25% supply unlocking → AVOID
+  # If the security agent didn't run, fail closed (AVOID with reason "security
+  # agent missing") rather than silently bypass the security_tier gate.
+  require_security_agent: true
+  # If the loaded-agent coverage drops below this fraction of total config
+  # weight, auto-reject. Prevents silent 2-of-7 or 3-of-7 verdicts.
+  min_agent_coverage_pct: 0.70
 
 # ── Models ──────────────────────────────────────────────────────────────
 # Root agent uses Opus for planning; sub-LLM calls inside RLMs use Sonnet.
