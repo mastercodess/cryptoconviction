@@ -132,12 +132,23 @@ def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[
     stamp_data_as_of(raw, conn, table="macro_snapshot")
     out_dir = REPORTS_DIR / symbol; out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "agent_07_macro.json"
+    err_path = out_dir / "agent_07_macro.error.json"
+    is_fallback = "RLM did not converge" in str(raw.get("rationale", ""))
+    if is_fallback:
+        err_path.write_text(json.dumps({
+            "reason": "max_iters_reached",
+            "fallback_used": True,
+        }, indent=2))
     try:
         v = MacroOutput(**{**raw, "token_symbol": symbol})
         out_path.write_text(json.dumps(v.model_dump(), indent=2))
         return {"ok": True, "path": str(out_path)}
     except Exception as e:
-        (out_dir / "agent_07_macro.error.json").write_text(json.dumps({"error": str(e), "raw": raw}, indent=2, default=str))
+        payload = {"error": str(e), "raw": raw}
+        if is_fallback:
+            payload["reason"] = "max_iters_reached"
+            payload["fallback_used"] = True
+        err_path.write_text(json.dumps(payload, indent=2, default=str))
         return {"ok": False, "error": str(e)}
 
 
