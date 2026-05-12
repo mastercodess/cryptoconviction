@@ -9,6 +9,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared import tokens                                          # noqa: E402
+from shared.freshness import stamp_data_as_of                      # noqa: E402
 from shared.rlm import run_rlm                                     # noqa: E402
 from shared.schemas import RevenueOutput                           # noqa: E402
 
@@ -165,6 +166,8 @@ def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[
     if raw.get("error") == "max_iters_reached":
         why = f"max_iters={raw.get('iters')}"
         raw = _fallback_output(symbol, conn, why)
+
+    stamp_data_as_of(raw, conn, table="revenue_snapshot", symbol=symbol)
 
     try:
         validated = RevenueOutput(**{**raw, "token_symbol": symbol})

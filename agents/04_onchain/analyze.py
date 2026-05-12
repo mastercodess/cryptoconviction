@@ -6,6 +6,7 @@ from typing import Any
 _REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 if str(_REPO_ROOT) not in sys.path: sys.path.insert(0, str(_REPO_ROOT))
 from shared import tokens
+from shared.freshness import stamp_data_as_of
 from shared.rlm import run_rlm
 from shared.schemas import OnChainOutput
 
@@ -119,6 +120,7 @@ def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[
                   task=_TASK, output_schema=_SCHEMA_DOCS, max_iters=max_iters, verbose=verbose)
     if raw.get("error") == "max_iters_reached":
         raw = _fallback_output(symbol, conn, f"max_iters={raw.get('iters')}")
+    stamp_data_as_of(raw, conn, table="activity_metric", symbol=symbol)
     out_dir = REPORTS_DIR / symbol; out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "agent_04_onchain.json"
     try:

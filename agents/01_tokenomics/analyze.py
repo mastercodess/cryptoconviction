@@ -32,6 +32,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared import tokens                                          # noqa: E402
+from shared.freshness import stamp_data_as_of                      # noqa: E402
 from shared.rlm import run_rlm                                     # noqa: E402
 from shared.schemas import TokenomicsOutput                        # noqa: E402
 
@@ -227,6 +228,8 @@ def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[
     if raw.get("error") == "max_iters_reached":
         raw = _fallback_output(symbol, env["tokenomics_db"],
                                f"max_iters={raw.get('iters')}")
+
+    stamp_data_as_of(raw, env["tokenomics_db"], table="supply_snapshot", symbol=symbol)
 
     # Validate before persisting. If invalid, write the raw + the validation
     # error so the user can debug.
