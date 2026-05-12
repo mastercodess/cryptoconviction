@@ -70,13 +70,18 @@ def global_metrics() -> Optional[dict]:
 
     Returns `{"btc_dominance_pct": float, "total_mc_usd": float,
     "total_mc_ex_btc_usd": float, "as_of": "YYYY-MM-DD"}` or None on error.
+
+    Uses the public BASE endpoint without auth — /global is free and
+    works without an API key. Avoiding the pro-api route prevents 400
+    errors when the user holds a demo-tier key (which uses a different
+    header) but COINGECKO_API_KEY is set.
     """
     import datetime as dt
     import logging
     _LOG = logging.getLogger(__name__)
-    url = f"{_base()}/global"
+    url = f"{BASE}/global"
     try:
-        r = requests.get(url, headers=_headers(), timeout=30)
+        r = requests.get(url, timeout=30)
         r.raise_for_status()
     except requests.RequestException as e:
         _LOG.warning("CoinGecko /global failed: %s", e)

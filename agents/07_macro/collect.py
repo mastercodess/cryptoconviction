@@ -123,12 +123,13 @@ def collect_global() -> dict:
         ],
     }
 
-    # Write sidecar (merge with prior contents if any)
+    # Write sidecar — overwrite, do NOT merge with prior contents. The merge
+    # helper preserves old values when new ones are null, which here would
+    # mean keeping stale LLM-hallucinated values if a fresh API call fails.
+    # We prefer null (honest "no data") over stale.
     g_sidecar = SIDECAR_DIR / "_global" / "macro_global.json"
     g_sidecar.parent.mkdir(parents=True, exist_ok=True)
-    g_existing = json.loads(g_sidecar.read_text()) if g_sidecar.exists() else {}
-    g_merged = _deep_merge_sidecar(g_existing, g)
-    g_sidecar.write_text(json.dumps(g_merged, indent=2))
+    g_sidecar.write_text(json.dumps(g, indent=2))
 
     # Write to DB
     c.execute(
