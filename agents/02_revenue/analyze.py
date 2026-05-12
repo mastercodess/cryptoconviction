@@ -170,6 +170,7 @@ def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[
     stamp_data_as_of(raw, conn, table="revenue_snapshot", symbol=symbol)
 
     err_path = out_dir / "agent_02_revenue.error.json"
+    stale_path = out_dir / "agent_02_revenue.stale.json"
     is_fallback = "RLM did not converge" in str(raw.get("rationale", ""))
     if is_fallback:
         err_path.write_text(json.dumps({
@@ -179,8 +180,12 @@ def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[
     try:
         validated = RevenueOutput(**{**raw, "token_symbol": symbol})
         out_path.write_text(json.dumps(validated.model_dump(), indent=2))
+        if stale_path.exists():
+            stale_path.unlink()
         return {"ok": True, "path": str(out_path), "fallback": "fallback applied" in raw.get("rationale", "")}
     except Exception as e:                                  # noqa: BLE001
+        if out_path.exists():
+            out_path.rename(stale_path)
         payload = {"error": str(e), "raw": raw}
         if is_fallback:
             payload["reason"] = "max_iters_reached"
