@@ -255,3 +255,49 @@ def test_orchestrator_check_red_flags_no_stale_no_reject():
     )
     assert auto is False
     assert reason is None
+
+
+def test_render_markdown_includes_stale_agents():
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    orch = importlib.import_module("agents.08_orchestrator.orchestrator")
+    fv = FinalVerdict(
+        token_symbol="TRX", weighted_conviction=56, final_verdict="AVOID",
+        bull_case=["a"], bear_case=["b"], invalidation_conditions=["c"],
+        recommended_position_pct=0.0, monitoring_checklist=["d"],
+        category_scorecard={"tokenomics": 87}, auto_reject_triggered=True,
+        auto_reject_reason="stale data: macro exceeds 48h",
+        stale_agents=["macro"],
+        data_as_of_per_agent={"tokenomics": "2026-05-11", "macro": "unknown"},
+    )
+    md = orch._render_markdown(fv, {"tokenomics": 1.0})
+    # Trust signals section should fire (stale_agents present)
+    assert "## ⚠ Trust signals" in md
+    assert "Stale agents" in md and "macro" in md
+    # Data freshness section should be separate
+    assert "## Data freshness" in md
+    assert "tokenomics: 2026-05-11" in md
+    assert "macro: unknown" in md
+
+
+def test_render_markdown_no_trust_signals_when_healthy():
+    """When all agents loaded fresh and no fallback, the warning section
+    should NOT render — only the Data freshness section."""
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    orch = importlib.import_module("agents.08_orchestrator.orchestrator")
+    fv = FinalVerdict(
+        token_symbol="HEALTHY", weighted_conviction=78, final_verdict="STRONG_CONVICTION",
+        bull_case=["a"], bear_case=["b"], invalidation_conditions=["c"],
+        recommended_position_pct=4.0, monitoring_checklist=["d"],
+        category_scorecard={"tokenomics": 80, "revenue": 75},
+        auto_reject_triggered=False,
+        # No missing, no fallback, full coverage, nothing stale
+        missing_agents=[], fallback_agents=[], coverage_pct=1.0,
+        stale_agents=[],
+        data_as_of_per_agent={"tokenomics": "2026-05-11", "revenue": "2026-05-12"},
+    )
+    md = orch._render_markdown(fv, {"tokenomics": 0.5, "revenue": 0.5})
+    assert "## ⚠ Trust signals" not in md
+    assert "## Data freshness" in md
+    assert "tokenomics: 2026-05-11" in md

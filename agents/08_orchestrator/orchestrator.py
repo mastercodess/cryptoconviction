@@ -305,7 +305,7 @@ def _render_markdown(verdict: FinalVerdict, weights_used: dict[str, float]) -> s
     if v.auto_reject_triggered:
         lines.append(f"- **AUTO-REJECTED**: {v.auto_reject_reason}")
 
-    if v.missing_agents or v.fallback_agents or v.coverage_pct < 1.0:
+    if v.missing_agents or v.fallback_agents or v.coverage_pct < 1.0 or v.stale_agents:
         lines += ["", "## ⚠ Trust signals"]
         if v.missing_agents:
             lines.append(
@@ -320,12 +320,23 @@ def _render_markdown(verdict: FinalVerdict, weights_used: dict[str, float]) -> s
                 "These agents' RLM did not converge; their composite_score is a "
                 "heuristic default, not researched output."
             )
+        if v.stale_agents:
+            lines.append(
+                f"- **Stale agents** ({len(v.stale_agents)}): "
+                f"{', '.join(v.stale_agents)}. "
+                "Data older than the configured freshness threshold; rerun collect for these."
+            )
         if v.coverage_pct < 1.0:
             absent = (1.0 - v.coverage_pct) * 100
             lines.append(
                 f"- Coverage is {v.coverage_pct:.1%}; {absent:.1f}% of original "
                 "config weight is absent and was redistributed."
             )
+
+    if v.data_as_of_per_agent:
+        lines += ["", "## Data freshness"]
+        for agent, ts in sorted(v.data_as_of_per_agent.items()):
+            lines.append(f"- {agent}: {ts}")
 
     lines += ["", "## Category scorecard", "", "| Agent | Score | Weight |", "|---|---:|---:|"]
     for agent, score in v.category_scorecard.items():
