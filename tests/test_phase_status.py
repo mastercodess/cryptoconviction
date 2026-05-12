@@ -160,3 +160,17 @@ def test_analyze_preserves_fallback_flag_on_validation_failure(tmp_path, monkeyp
     assert "error" in err
     assert err.get("reason") == "max_iters_reached"
     assert err.get("fallback_used") is True
+
+
+def test_validate_phase_cli(tmp_path, capsys, monkeypatch):
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    write_phase(symbol="TRX", phase="collect", reports_dir=tmp_path,
+                per_agent={"01_tokenomics": "ok", "07_macro": "rc=1"},
+                started_at="t1", ended_at="t2")
+    import importlib
+    validator = importlib.import_module("scripts.maa.validate_phase")
+    rc = validator.main(["TRX", "--phase", "collect", "--reports-dir", str(tmp_path)])
+    captured = capsys.readouterr()
+    assert "passed=1" in captured.out and "failed=1" in captured.out
+    assert rc == 1  # non-zero because something failed
