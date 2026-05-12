@@ -112,6 +112,7 @@ import json
 import sqlite3
 import pathlib
 import sys
+import importlib
 
 
 def test_macro_analyze_emits_data_as_of(tmp_path, monkeypatch):
@@ -201,3 +202,56 @@ def test_stamp_data_as_of_empty_table(tmp_path):
     raw = {}
     stamp_data_as_of(raw, conn, table="supply_snapshot", symbol="TRX")
     assert raw["data_as_of"] is None
+
+
+def test_orchestrator_check_red_flags_fires_on_stale_data():
+    """_check_red_flags must auto-reject when any agent's data is stale and
+    max_data_age_hours is configured."""
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    orch = importlib.import_module("agents.08_orchestrator.orchestrator")
+
+    loaded = {
+        "tokenomics": {"composite_score": 87, "top10_holding_pct": 0.1,
+                       "unlock_pressure_next_90d_pct": 0.0},
+        "security": {"composite_score": 81, "security_tier": 5},
+    }
+    rules = {
+        "max_data_age_hours": 48,
+        "require_security_agent": True,
+        "reject_if_security_below": 5,
+        "min_agent_coverage_pct": 0.0,
+        "reject_if_holder_concentration_above": 0.5,
+        "reject_if_unlock_pressure_next_90d_above": 0.25,
+    }
+    auto, reason = orch._check_red_flags(
+        loaded, rules, coverage_pct=1.0, stale_agents=["revenue", "macro"]
+    )
+    assert auto is True
+    assert "stale data" in reason
+    assert "revenue" in reason and "macro" in reason
+    assert "48h" in reason
+
+
+def test_orchestrator_check_red_flags_no_stale_no_reject():
+    """When stale_agents is empty, the staleness rule must not fire."""
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    orch = importlib.import_module("agents.08_orchestrator.orchestrator")
+
+    loaded = {
+        "tokenomics": {"composite_score": 87, "top10_holding_pct": 0.1,
+                       "unlock_pressure_next_90d_pct": 0.0},
+        "security": {"composite_score": 81, "security_tier": 5},
+    }
+    rules = {
+        "max_data_age_hours": 48,
+        "require_security_agent": True,
+        "reject_if_security_below": 5,
+        "min_agent_coverage_pct": 0.0,
+    }
+    auto, reason = orch._check_red_flags(
+        loaded, rules, coverage_pct=1.0, stale_agents=[]
+    )
+    assert auto is False
+    assert reason is None

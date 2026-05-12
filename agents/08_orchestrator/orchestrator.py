@@ -35,6 +35,15 @@ Agents whose rationale contains markers like "RLM did not converge",
 `fallback_agents`. The orchestrator does not auto-drop them (a future
 patch may), but the field flags that their composite_score is heuristic
 rather than researched.
+
+Red-flag rules evaluated by `_check_red_flags` (all from config.yaml,
+all concatenate into a single auto_reject_reason when multiple fire):
+  1. `require_security_agent`: missing agent_03 → AVOID (fail-closed).
+  2. `reject_if_security_below`: agent_03.security_tier < N → AVOID.
+  3. `min_agent_coverage_pct`: loaded-weight fraction < N → AVOID.
+  4. `max_data_age_hours`: any agent's data_as_of > N hours → AVOID.
+  5. `reject_if_holder_concentration_above`: top-10 share > N → AVOID.
+  6. `reject_if_unlock_pressure_next_90d_above`: > N share unlocking → AVOID.
 """
 from __future__ import annotations
 
@@ -53,6 +62,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared import tokens                                          # noqa: E402
+from shared.freshness import classify_agents                       # noqa: E402
 from shared.schemas import FinalVerdict                            # noqa: E402
 
 REPORTS_DIR = _REPO_ROOT / "reports"
@@ -152,37 +162,23 @@ def _check_red_flags(
     loaded: dict[str, dict],
     rules: dict,
     coverage_pct: float,
+    stale_agents: list[str],
 ) -> tuple[bool, str | None]:
-    """Hard veto rules from config.yaml.
-
-    All applicable rules are evaluated and their reasons concatenated so the
-    user sees every reason a verdict was auto-rejected (e.g. "security_tier=3
-    < 5; coverage 33% < 70%"). Rules are listed in roughly priority order:
-      1. security agent missing (if `require_security_agent: true`)
-      2. security tier below threshold (if security agent present)
-      3. coverage below floor (if `min_agent_coverage_pct` set)
-      4. holder concentration above threshold
-      5. 90d unlock pressure above threshold
-    """
+    """Hard veto rules. See module docstring for the full list."""
     reasons: list[str] = []
     sec = loaded.get("security") or {}
 
-    # 1. Fail-closed on missing security agent: prevents the security_tier
-    # gate from being silently skipped when sec={} short-circuits a falsy check.
     if rules.get("require_security_agent") and not sec:
         reasons.append(
             "security agent did not run — cannot verify "
             f"security_tier ≥ {rules.get('reject_if_security_below', '?')}"
         )
 
-    # 2. Security tier gate (only fires when security agent is present).
     if "reject_if_security_below" in rules and sec:
         thr = rules["reject_if_security_below"]
         if (sec.get("security_tier") or 99) < thr:
             reasons.append(f"security_tier={sec.get('security_tier')} < {thr}")
 
-    # 3. Coverage floor: prevents 2-of-7 or 3-of-7 syntheses from looking
-    # equivalent to full-coverage verdicts.
     if "min_agent_coverage_pct" in rules:
         thr = rules["min_agent_coverage_pct"]
         if coverage_pct < thr:
@@ -190,6 +186,12 @@ def _check_red_flags(
                 f"agent coverage {coverage_pct:.0%} < {thr:.0%} threshold "
                 "(too few specialist agents contributed)"
             )
+
+    if rules.get("max_data_age_hours") and stale_agents:
+        reasons.append(
+            f"stale data: {', '.join(stale_agents)} exceed "
+            f"{rules['max_data_age_hours']}h freshness threshold"
+        )
 
     tok = loaded.get("tokenomics") or {}
     if "reject_if_holder_concentration_above" in rules and tok:
@@ -359,7 +361,14 @@ def run(symbol: str) -> dict[str, Any]:
 
     loaded, missing = _load_specialist_outputs(symbol)
     score, scorecard, weights_used, coverage_pct = _weighted_score(loaded, weights)
-    auto_reject, reason = _check_red_flags(loaded, rules, coverage_pct)
+    max_age = rules.get("max_data_age_hours")
+    if max_age:
+        _fresh, stale_agents, data_as_of_per_agent = classify_agents(
+            loaded, max_hours=max_age
+        )
+    else:
+        stale_agents, data_as_of_per_agent = [], {}
+    auto_reject, reason = _check_red_flags(loaded, rules, coverage_pct, stale_agents)
     fallback = _detect_fallback_agents(loaded)
 
     narrative = _generate_narrative(symbol, loaded)
@@ -379,6 +388,8 @@ def run(symbol: str) -> dict[str, Any]:
         missing_agents=missing,
         fallback_agents=fallback,
         coverage_pct=round(coverage_pct, 4),
+        stale_agents=stale_agents,
+        data_as_of_per_agent=data_as_of_per_agent,
     )
 
     out_dir = REPORTS_DIR / symbol
