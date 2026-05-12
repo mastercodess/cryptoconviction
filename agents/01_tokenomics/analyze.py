@@ -236,17 +236,27 @@ def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[
     out_dir = REPORTS_DIR / symbol
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "agent_01_tokenomics.json"
+    err_path = out_dir / "agent_01_tokenomics.error.json"
+    is_fallback = "RLM did not converge" in str(raw.get("rationale", ""))
+    if is_fallback:
+        err_path.write_text(json.dumps({
+            "reason": "max_iters_reached",
+            "fallback_used": True,
+        }, indent=2))
     try:
         validated = TokenomicsOutput(**{**raw, "token_symbol": symbol})
         payload = validated.model_dump()
         out_path.write_text(json.dumps(payload, indent=2))
         return {"ok": True, "path": str(out_path), "output": payload}
     except Exception as e:
-        err_path = out_dir / "agent_01_tokenomics.error.json"
-        err_path.write_text(json.dumps({
+        payload = {
             "error": f"{type(e).__name__}: {e}",
             "raw_output": raw,
-        }, indent=2, default=str))
+        }
+        if is_fallback:
+            payload["reason"] = "max_iters_reached"
+            payload["fallback_used"] = True
+        err_path.write_text(json.dumps(payload, indent=2, default=str))
         return {"ok": False, "error": str(e), "path": str(err_path)}
 
 
