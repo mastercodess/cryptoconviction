@@ -12,7 +12,10 @@ import argparse, datetime as dt, json, pathlib, sqlite3, sys, textwrap
 _REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 if str(_REPO_ROOT) not in sys.path: sys.path.insert(0, str(_REPO_ROOT))
 from shared import tokens
-from shared.llm_client import research_json
+from shared.data_sources.coingecko import global_metrics
+from shared.data_sources.alternative_me import fear_greed_index
+from shared.data_sources.fred import fed_funds_rate, m2_yoy_pct
+from shared.llm_client import research_json  # still used by collect_one
 from shared.db_helpers import (
     coerce_float as _coerce_float,
     coerce_int as _coerce_int,
@@ -75,20 +78,65 @@ def _now() -> str: return dt.datetime.now(dt.timezone.utc).isoformat(timespec="s
 
 
 def collect_global() -> dict:
+    """Fetch macro globals from FRED + CoinGecko + alternative.me directly.
+
+    No LLM involvement; `as_of` is the most-recent observation date across
+    the four upstream responses, not a hallucinated value.
+    """
     c = _conn()
-    g = research_json(_GLOBAL_PROMPT)
-    if not g: return {"skipped": True}
+
+    cg = global_metrics() or {}
+    fng = fear_greed_index() or {}
+    dff = fed_funds_rate() or {}
+    m2 = m2_yoy_pct() or {}
+
+    # Determine `as_of` as the latest observation date across responses
+    dates = [d for d in (cg.get("as_of"), fng.get("date"),
+                         dff.get("date"), m2.get("date")) if d]
+    as_of = max(dates) if dates else _now()[:10]
+
+    # Compute BTC halving day offset (BTC's 4th halving was 2024-04-20)
+    halving = dt.date(2024, 4, 20)
+    try:
+        today_d = dt.date.fromisoformat(as_of)
+    except ValueError:
+        today_d = dt.date.today()
+    btc_halving_day = max(0, (today_d - halving).days)
+
+    # Compose the global record
+    g = {
+        "as_of": as_of,
+        "btc_price_usd": None,  # CoinGecko /global doesn't carry price; left null
+        "btc_dominance_pct": cg.get("btc_dominance_pct"),
+        "total_mc_usd": cg.get("total_mc_usd"),
+        "total_mc_ex_btc_usd": cg.get("total_mc_ex_btc_usd"),
+        "altcoin_season_index": None,  # alternative.me /fng doesn't expose this on free tier
+        "fear_greed_index": fng.get("value"),
+        "fed_funds_rate": dff.get("value"),
+        "m2_yoy_pct": m2.get("value"),
+        "btc_halving_day": btc_halving_day,
+        "notes": "API-fetched (no LLM research): FRED + CoinGecko + alternative.me",
+        "sources": [
+            "https://api.stlouisfed.org/fred/series/observations",
+            "https://api.coingecko.com/api/v3/global",
+            "https://api.alternative.me/fng/",
+        ],
+    }
+
+    # Write sidecar (merge with prior contents if any)
     g_sidecar = SIDECAR_DIR / "_global" / "macro_global.json"
     g_sidecar.parent.mkdir(parents=True, exist_ok=True)
     g_existing = json.loads(g_sidecar.read_text()) if g_sidecar.exists() else {}
-    g = _deep_merge_sidecar(g_existing, g)
-    g_sidecar.write_text(json.dumps(g, indent=2))
+    g_merged = _deep_merge_sidecar(g_existing, g)
+    g_sidecar.write_text(json.dumps(g_merged, indent=2))
+
+    # Write to DB
     c.execute(
         "INSERT OR REPLACE INTO macro_snapshot (snapshot_at, btc_price_usd, "
         "btc_dominance_pct, total_mc_usd, total_mc_ex_btc, altcoin_season_index, "
         "fear_greed_index, fed_funds_rate, m2_yoy_pct, btc_halving_day, notes) "
         "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-        (g.get("as_of") or _now(),
+        (as_of,
          _coerce_float(g.get("btc_price_usd")),
          _coerce_float(g.get("btc_dominance_pct")),
          _coerce_float(g.get("total_mc_usd")),
@@ -100,7 +148,8 @@ def collect_global() -> dict:
          _coerce_int(g.get("btc_halving_day")),
          g.get("notes", "")),
     )
-    c.commit(); return {"ok": True}
+    c.commit()
+    return {"ok": True, "as_of": as_of}
 
 
 def collect_one(symbol: str) -> dict:
