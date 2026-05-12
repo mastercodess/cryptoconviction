@@ -16,6 +16,7 @@ Pre-flight:
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import os
 import pathlib
@@ -23,6 +24,8 @@ import shutil
 import subprocess
 import sys
 from typing import Any
+
+from shared.phase_status import write_phase
 
 DEFAULT_AGENTS = (
     "01_tokenomics",
@@ -137,7 +140,7 @@ def _run_subprocess(*, cmd, agent_name, action, run_log, timeout):
 
 
 def run_one_token(*, symbol, agents, run_log, cumulative_batch_before,
-                  batch_cap, per_token_cap):
+                  batch_cap, per_token_cap, reports_dir):
     token_meta = _read_token_meta(symbol)
     summary = {"symbol": symbol, "phases": {}}
 
@@ -145,9 +148,15 @@ def run_one_token(*, symbol, agents, run_log, cumulative_batch_before,
         _, total = read_cumulative_costs(run_log)
         return total - cumulative_batch_before
 
+    def _now():
+        return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+
     # Collect phase
+    collect_started = _now()
+    collect_per_agent: dict[str, str] = {}
     for agent in agents:
         if should_skip_agent(agent, token_meta):
+            collect_per_agent[agent] = "skipped(non-protocol)"
             summary["phases"][f"collect:{agent}"] = "skipped(non-protocol)"
             continue
         # Use sys.executable to invoke the same interpreter — works on systems
@@ -157,17 +166,31 @@ def run_one_token(*, symbol, agents, run_log, cumulative_batch_before,
             agent_name=agent, action="collect",
             run_log=run_log, timeout=COLLECT_TIMEOUT,
         )
-        summary["phases"][f"collect:{agent}"] = "ok" if rc == 0 else f"rc={rc}"
+        status = "ok" if rc == 0 else f"rc={rc}"
+        collect_per_agent[agent] = status
+        summary["phases"][f"collect:{agent}"] = status
         if read_cumulative_costs(run_log)[1] >= batch_cap:
+            write_phase(symbol=symbol, phase="collect", reports_dir=reports_dir,
+                        per_agent=collect_per_agent, started_at=collect_started,
+                        ended_at=_now())
             raise BatchAbortedError(f"batch cap ${batch_cap} hit during {symbol} collect")
         if _per_token_cost() >= per_token_cap:
+            write_phase(symbol=symbol, phase="collect", reports_dir=reports_dir,
+                        per_agent=collect_per_agent, started_at=collect_started,
+                        ended_at=_now())
             print(f"  WARNING: per-token cap hit for {symbol} during collect; jumping to orchestrator",
                   file=sys.stderr)
-            return _orchestrate_and_return(symbol, summary, run_log)
+            return _orchestrate_and_return(symbol, summary, run_log, reports_dir)
+    write_phase(symbol=symbol, phase="collect", reports_dir=reports_dir,
+                per_agent=collect_per_agent, started_at=collect_started,
+                ended_at=_now())
 
     # Analyze phase
+    analyze_started = _now()
+    analyze_per_agent: dict[str, str] = {}
     for agent in agents:
         if should_skip_agent(agent, token_meta):
+            analyze_per_agent[agent] = "skipped(non-protocol)"
             summary["phases"][f"analyze:{agent}"] = "skipped(non-protocol)"
             continue
         rc = _run_subprocess(
@@ -175,24 +198,40 @@ def run_one_token(*, symbol, agents, run_log, cumulative_batch_before,
             agent_name=agent, action="analyze",
             run_log=run_log, timeout=ANALYZE_TIMEOUT,
         )
-        summary["phases"][f"analyze:{agent}"] = "ok" if rc == 0 else f"rc={rc}"
+        status = "ok" if rc == 0 else f"rc={rc}"
+        analyze_per_agent[agent] = status
+        summary["phases"][f"analyze:{agent}"] = status
         if read_cumulative_costs(run_log)[1] >= batch_cap:
+            write_phase(symbol=symbol, phase="analyze", reports_dir=reports_dir,
+                        per_agent=analyze_per_agent, started_at=analyze_started,
+                        ended_at=_now())
             raise BatchAbortedError(f"batch cap ${batch_cap} hit during {symbol} analyze")
         if _per_token_cost() >= per_token_cap:
+            write_phase(symbol=symbol, phase="analyze", reports_dir=reports_dir,
+                        per_agent=analyze_per_agent, started_at=analyze_started,
+                        ended_at=_now())
             print(f"  WARNING: per-token cap hit for {symbol} during analyze; jumping to orchestrator",
                   file=sys.stderr)
-            return _orchestrate_and_return(symbol, summary, run_log)
+            return _orchestrate_and_return(symbol, summary, run_log, reports_dir)
+    write_phase(symbol=symbol, phase="analyze", reports_dir=reports_dir,
+                per_agent=analyze_per_agent, started_at=analyze_started,
+                ended_at=_now())
 
-    return _orchestrate_and_return(symbol, summary, run_log)
+    return _orchestrate_and_return(symbol, summary, run_log, reports_dir)
 
 
-def _orchestrate_and_return(symbol, summary, run_log):
+def _orchestrate_and_return(symbol, summary, run_log, reports_dir):
+    started = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     rc = _run_subprocess(
         cmd=[sys.executable, "-m", f"agents.{ORCHESTRATOR}.orchestrator", symbol],
         agent_name=ORCHESTRATOR, action="orchestrator",
         run_log=run_log, timeout=ORCHESTRATOR_TIMEOUT,
     )
-    summary["phases"]["orchestrator"] = "ok" if rc == 0 else f"rc={rc}"
+    status = "ok" if rc == 0 else f"rc={rc}"
+    summary["phases"]["orchestrator"] = status
+    write_phase(symbol=symbol, phase="orchestrate", reports_dir=reports_dir,
+                per_agent={ORCHESTRATOR: status}, started_at=started,
+                ended_at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"))
     return summary
 
 
@@ -227,6 +266,7 @@ def run(*, top20_path, dropped_path, flag_path, run_log_path,
                 symbol=sym, agents=agents, run_log=run_log_path,
                 cumulative_batch_before=batch_before,
                 batch_cap=BATCH_CAP_USD, per_token_cap=PER_TOKEN_CAP_USD,
+                reports_dir=reports_dir,
             )
         except BatchAbortedError as e:
             print(f"BATCH ABORTED: {e}", file=sys.stderr)
