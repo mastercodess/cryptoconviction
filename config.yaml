@@ -44,6 +44,8 @@ red_flags:
   # If the loaded-agent coverage drops below this fraction of total config
   # weight, auto-reject. Prevents silent 2-of-7 or 3-of-7 verdicts.
   min_agent_coverage_pct: 0.70
+  # Agents with data_as_of older than this fail-close.
+  max_data_age_hours: 48
 
 # ── Models ──────────────────────────────────────────────────────────────
 # Root agent uses Opus for planning; sub-LLM calls inside RLMs use Sonnet.
