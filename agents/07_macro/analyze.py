@@ -6,6 +6,7 @@ from typing import Any
 _REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 if str(_REPO_ROOT) not in sys.path: sys.path.insert(0, str(_REPO_ROOT))
 from shared import tokens
+from shared.freshness import stamp_data_as_of
 from shared.rlm import run_rlm
 from shared.schemas import MacroOutput
 
@@ -66,7 +67,7 @@ _SCHEMA_DOCS = {
 def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[str, Any]:
     """Schema-valid degraded output for macro agent."""
     g = conn.execute(
-        "SELECT fear_greed_index, altcoin_season_index, btc_dominance_pct "
+        "SELECT snapshot_at, fear_greed_index, altcoin_season_index, btc_dominance_pct "
         "FROM macro_snapshot ORDER BY snapshot_at DESC LIMIT 1"
     ).fetchone()
     t = conn.execute(
@@ -111,6 +112,7 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
             f"Cycle phase '{cycle}' from heuristic; rerun for narrative."
         ),
         "composite_score": composite,
+        "data_as_of": g["snapshot_at"] if g else None,
     }
 
 
@@ -126,6 +128,8 @@ def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[
                   output_schema=_SCHEMA_DOCS, max_iters=max_iters, verbose=verbose)
     if raw.get("error") == "max_iters_reached":
         raw = _fallback_output(symbol, conn, f"max_iters={raw.get('iters')}")
+    # Always populate data_as_of from the DB row the agent should have consumed
+    stamp_data_as_of(raw, conn, table="macro_snapshot")
     out_dir = REPORTS_DIR / symbol; out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "agent_07_macro.json"
     try:

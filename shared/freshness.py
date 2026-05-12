@@ -73,3 +73,38 @@ def classify_agents(
         else:
             fresh.append(agent)
     return fresh, stale, per_agent
+
+
+def stamp_data_as_of(
+    raw: dict,
+    conn,
+    *,
+    table: str,
+    ts_col: str = "snapshot_at",
+    symbol: Optional[str] = None,
+) -> None:
+    """Populate raw['data_as_of'] from MAX(ts_col) of the agent's primary table.
+
+    No-op if raw already has a non-null data_as_of (preserves anything the
+    RLM happy-path injected). If `symbol` is provided, filters by
+    token_symbol=?; otherwise queries the table globally (macro-style).
+
+    Mutates `raw` in place; returns None.
+    """
+    if raw.get("data_as_of"):
+        return
+    sql = f"SELECT MAX({ts_col}) AS ts FROM {table}"
+    params: tuple = ()
+    if symbol is not None:
+        sql += " WHERE token_symbol=?"
+        params = (symbol,)
+    row = conn.execute(sql, params).fetchone()
+    if row is None:
+        raw["data_as_of"] = None
+        return
+    # Support both sqlite3.Row and tuple
+    try:
+        ts = row["ts"]
+    except (KeyError, TypeError, IndexError):
+        ts = row[0] if row else None
+    raw["data_as_of"] = ts
