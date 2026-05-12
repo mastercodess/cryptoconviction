@@ -133,3 +133,8 @@ class FinalVerdict(BaseModel):
     category_scorecard: dict[str, int]   # agent_name -> 0-100
     auto_reject_triggered: bool
     auto_reject_reason: Optional[str] = None
+    # Trust signals — populated by orchestrator so the reader can see how
+    # much of the score is grounded and where the gaps are.
+    missing_agents: list[str] = Field(default_factory=list)
+    fallback_agents: list[str] = Field(default_factory=list)
+    coverage_pct: float = Field(default=1.0, ge=0.0, le=1.0)

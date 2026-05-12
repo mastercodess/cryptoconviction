@@ -17,7 +17,24 @@ Run:
 Behavior on missing inputs: if any specialist's JSON is missing or
 errored, the orchestrator records this in the report and proceeds with
 reduced weighting (rebalances among the agents that DID produce output).
-The user is told which agents are missing.
+The user is told which agents are missing via the `missing_agents` field
+in the output JSON and a "Trust signals" section in the markdown.
+
+Two fail-closed rules (from config.yaml `red_flags`) prevent silent
+trust failures:
+  - `require_security_agent: true` — if agent_03_security.json is missing,
+    auto-reject with reason "security agent missing". Stops the security
+    threshold gate from being silently bypassed by a falsy-dict check.
+  - `min_agent_coverage_pct: 0.70` — if loaded-agent coverage (sum of
+    used weights / total config weight) is below this fraction, auto-reject
+    with reason "coverage X% < threshold". Prevents 2-of-7 or 3-of-7
+    syntheses from emitting an actionable verdict.
+
+Agents whose rationale contains markers like "RLM did not converge",
+"forced_offline_fallback", or "max_iters_reached" are recorded in
+`fallback_agents`. The orchestrator does not auto-drop them (a future
+patch may), but the field flags that their composite_score is heuristic
+rather than researched.
 """
 from __future__ import annotations
 
@@ -77,10 +94,32 @@ def _load_specialist_outputs(symbol: str) -> tuple[dict[str, dict], list[str]]:
 
 # ─── Scoring ────────────────────────────────────────────────────────────
 
+# Markers that indicate an agent's rationale was produced by a fallback
+# heuristic rather than a converged RLM run. Lowercased substring match.
+_FALLBACK_MARKERS = (
+    "rlm did not converge",
+    "forced_offline_fallback",
+    "forced offline fallback",
+    "max_iters_reached",
+    "max iters reached",
+    "fallback applied",
+)
+
+
+def _detect_fallback_agents(loaded: dict[str, dict]) -> list[str]:
+    """List agents whose rationale flags themselves as fallback heuristics."""
+    out: list[str] = []
+    for agent, output in loaded.items():
+        rationale = str(output.get("rationale", "")).lower()
+        if any(marker in rationale for marker in _FALLBACK_MARKERS):
+            out.append(agent)
+    return out
+
+
 def _weighted_score(
     loaded: dict[str, dict],
     weights: dict[str, float],
-) -> tuple[int, dict[str, int], dict[str, float]]:
+) -> tuple[int, dict[str, int], dict[str, float], float]:
     """
     Compute the weighted 0-100 conviction.
 
@@ -88,6 +127,10 @@ def _weighted_score(
     among the agents that DID return a composite_score. This matters: with
     7 agents, losing one shouldn't cap conviction at 86% — that would
     distort the verdict.
+
+    Returns (weighted_score, category_scorecard, rebalanced_weights, coverage_pct)
+    where coverage_pct = sum(used_weights) / sum(all_weights) — the fraction
+    of intended weight that actually contributed to the score.
     """
     cats: dict[str, int] = {}
     used_weights: dict[str, float] = {}
@@ -95,30 +138,71 @@ def _weighted_score(
         if agent in loaded and loaded[agent].get("composite_score") is not None:
             cats[agent] = int(loaded[agent]["composite_score"])
             used_weights[agent] = w
+    total_weight = sum(weights.values())
+    used_sum = sum(used_weights.values())
+    coverage_pct = (used_sum / total_weight) if total_weight else 0.0
     if not used_weights:
-        return 0, cats, {}
-    norm = sum(used_weights.values())
-    rebalanced = {a: w / norm for a, w in used_weights.items()}
+        return 0, cats, {}, coverage_pct
+    rebalanced = {a: w / used_sum for a, w in used_weights.items()}
     weighted = sum(cats[a] * rebalanced[a] for a in cats)
-    return int(round(weighted)), cats, rebalanced
+    return int(round(weighted)), cats, rebalanced, coverage_pct
 
 
-def _check_red_flags(loaded: dict[str, dict], rules: dict) -> tuple[bool, str | None]:
-    """Hard veto rules from config.yaml."""
+def _check_red_flags(
+    loaded: dict[str, dict],
+    rules: dict,
+    coverage_pct: float,
+) -> tuple[bool, str | None]:
+    """Hard veto rules from config.yaml.
+
+    All applicable rules are evaluated and their reasons concatenated so the
+    user sees every reason a verdict was auto-rejected (e.g. "security_tier=3
+    < 5; coverage 33% < 70%"). Rules are listed in roughly priority order:
+      1. security agent missing (if `require_security_agent: true`)
+      2. security tier below threshold (if security agent present)
+      3. coverage below floor (if `min_agent_coverage_pct` set)
+      4. holder concentration above threshold
+      5. 90d unlock pressure above threshold
+    """
+    reasons: list[str] = []
     sec = loaded.get("security") or {}
+
+    # 1. Fail-closed on missing security agent: prevents the security_tier
+    # gate from being silently skipped when sec={} short-circuits a falsy check.
+    if rules.get("require_security_agent") and not sec:
+        reasons.append(
+            "security agent did not run — cannot verify "
+            f"security_tier ≥ {rules.get('reject_if_security_below', '?')}"
+        )
+
+    # 2. Security tier gate (only fires when security agent is present).
     if "reject_if_security_below" in rules and sec:
         thr = rules["reject_if_security_below"]
         if (sec.get("security_tier") or 99) < thr:
-            return True, f"security_tier={sec.get('security_tier')} < {thr}"
+            reasons.append(f"security_tier={sec.get('security_tier')} < {thr}")
+
+    # 3. Coverage floor: prevents 2-of-7 or 3-of-7 syntheses from looking
+    # equivalent to full-coverage verdicts.
+    if "min_agent_coverage_pct" in rules:
+        thr = rules["min_agent_coverage_pct"]
+        if coverage_pct < thr:
+            reasons.append(
+                f"agent coverage {coverage_pct:.0%} < {thr:.0%} threshold "
+                "(too few specialist agents contributed)"
+            )
+
     tok = loaded.get("tokenomics") or {}
     if "reject_if_holder_concentration_above" in rules and tok:
         thr = rules["reject_if_holder_concentration_above"]
         if (tok.get("top10_holding_pct") or 0) > thr:
-            return True, f"top10 concentration {tok.get('top10_holding_pct')} > {thr}"
+            reasons.append(f"top10 concentration {tok.get('top10_holding_pct')} > {thr}")
     if "reject_if_unlock_pressure_next_90d_above" in rules and tok:
         thr = rules["reject_if_unlock_pressure_next_90d_above"]
         if (tok.get("unlock_pressure_next_90d_pct") or 0) > thr:
-            return True, f"90d unlock {tok.get('unlock_pressure_next_90d_pct')} > {thr}"
+            reasons.append(f"90d unlock {tok.get('unlock_pressure_next_90d_pct')} > {thr}")
+
+    if reasons:
+        return True, "; ".join(reasons)
     return False, None
 
 
@@ -214,9 +298,33 @@ def _render_markdown(verdict: FinalVerdict, weights_used: dict[str, float]) -> s
         f"## Verdict: **{v.final_verdict}**",
         f"- **Weighted conviction**: {v.weighted_conviction}/100",
         f"- **Recommended position**: {v.recommended_position_pct}% of portfolio",
+        f"- **Agent coverage**: {v.coverage_pct:.0%} of intended config weight loaded",
     ]
     if v.auto_reject_triggered:
         lines.append(f"- **AUTO-REJECTED**: {v.auto_reject_reason}")
+
+    if v.missing_agents or v.fallback_agents or v.coverage_pct < 1.0:
+        lines += ["", "## ⚠ Trust signals"]
+        if v.missing_agents:
+            lines.append(
+                f"- **Missing agents** ({len(v.missing_agents)}): "
+                f"{', '.join(v.missing_agents)}. "
+                "Score was computed on the remaining agents with rebalanced weights."
+            )
+        if v.fallback_agents:
+            lines.append(
+                f"- **Fallback-scored agents** ({len(v.fallback_agents)}): "
+                f"{', '.join(v.fallback_agents)}. "
+                "These agents' RLM did not converge; their composite_score is a "
+                "heuristic default, not researched output."
+            )
+        if v.coverage_pct < 1.0:
+            absent = (1.0 - v.coverage_pct) * 100
+            lines.append(
+                f"- Coverage is {v.coverage_pct:.1%}; {absent:.1f}% of original "
+                "config weight is absent and was redistributed."
+            )
+
     lines += ["", "## Category scorecard", "", "| Agent | Score | Weight |", "|---|---:|---:|"]
     for agent, score in v.category_scorecard.items():
         w = weights_used.get(agent, 0)
@@ -250,8 +358,9 @@ def run(symbol: str) -> dict[str, Any]:
     target_pct = float(cfg.get("target_position_pct", 5))
 
     loaded, missing = _load_specialist_outputs(symbol)
-    auto_reject, reason = _check_red_flags(loaded, rules)
-    score, scorecard, weights_used = _weighted_score(loaded, weights)
+    score, scorecard, weights_used, coverage_pct = _weighted_score(loaded, weights)
+    auto_reject, reason = _check_red_flags(loaded, rules, coverage_pct)
+    fallback = _detect_fallback_agents(loaded)
 
     narrative = _generate_narrative(symbol, loaded)
 
@@ -267,6 +376,9 @@ def run(symbol: str) -> dict[str, Any]:
         category_scorecard=scorecard,
         auto_reject_triggered=auto_reject,
         auto_reject_reason=reason,
+        missing_agents=missing,
+        fallback_agents=fallback,
+        coverage_pct=round(coverage_pct, 4),
     )
 
     out_dir = REPORTS_DIR / symbol
