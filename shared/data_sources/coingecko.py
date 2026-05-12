@@ -63,3 +63,39 @@ def market_chart(coingecko_id: str, days: int = 365) -> dict:
         f"/coins/{coingecko_id}/market_chart",
         params={"vs_currency": "usd", "days": days},
     )
+
+
+def global_metrics() -> Optional[dict]:
+    """CoinGecko /global endpoint — BTC dominance, total market cap.
+
+    Returns `{"btc_dominance_pct": float, "total_mc_usd": float,
+    "total_mc_ex_btc_usd": float, "as_of": "YYYY-MM-DD"}` or None on error.
+    """
+    import datetime as dt
+    import logging
+    _LOG = logging.getLogger(__name__)
+    url = f"{_base()}/global"
+    try:
+        r = requests.get(url, headers=_headers(), timeout=30)
+        r.raise_for_status()
+    except requests.RequestException as e:
+        _LOG.warning("CoinGecko /global failed: %s", e)
+        return None
+    data = r.json().get("data") or {}
+    try:
+        btc_dom = float(data["market_cap_percentage"]["btc"])
+        total = float(data["total_market_cap"]["usd"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    ex_btc = total * (1.0 - btc_dom / 100.0)
+    updated = data.get("updated_at")
+    as_of = (
+        dt.datetime.fromtimestamp(int(updated), dt.timezone.utc).strftime("%Y-%m-%d")
+        if updated else dt.date.today().isoformat()
+    )
+    return {
+        "btc_dominance_pct": btc_dom,
+        "total_mc_usd": total,
+        "total_mc_ex_btc_usd": ex_btc,
+        "as_of": as_of,
+    }
