@@ -55,3 +55,54 @@ def test_final_verdict_stale_agents_populated():
     )
     assert fv.stale_agents == ["macro"]
     assert fv.data_as_of_per_agent["tokenomics"] == "2026-05-12"
+
+
+from shared.freshness import (
+    parse_iso, age_hours, is_stale, classify_agents,
+)
+
+
+def test_parse_iso_handles_date_and_datetime():
+    assert parse_iso("2026-05-12") is not None
+    assert parse_iso("2026-05-12T15:30:00+00:00") is not None
+    assert parse_iso("") is None
+    assert parse_iso(None) is None
+    assert parse_iso("garbage") is None
+
+
+def test_age_hours_with_fresh_data():
+    now = dt.datetime.now(dt.timezone.utc)
+    fresh = (now - dt.timedelta(hours=12)).isoformat()
+    assert 11 < age_hours(fresh) < 13
+
+
+def test_age_hours_with_null_input_returns_inf():
+    import math
+    assert math.isinf(age_hours(None))
+    assert math.isinf(age_hours(""))
+
+
+def test_is_stale_threshold():
+    now = dt.datetime.now(dt.timezone.utc)
+    fresh = (now - dt.timedelta(hours=24)).isoformat()
+    stale = (now - dt.timedelta(hours=72)).isoformat()
+    assert not is_stale(fresh, max_hours=48)
+    assert is_stale(stale, max_hours=48)
+    assert is_stale(None, max_hours=48)  # null counts as stale
+
+
+def test_classify_agents_partitions_correctly():
+    now = dt.datetime.now(dt.timezone.utc)
+    fresh = (now - dt.timedelta(hours=12)).isoformat()
+    stale = (now - dt.timedelta(hours=200)).isoformat()
+    agents = {
+        "tokenomics": {"data_as_of": fresh},
+        "revenue": {"data_as_of": stale},
+        "security": {"data_as_of": None},
+        "onchain": {"data_as_of": fresh},
+    }
+    fresh_list, stale_list, per_agent = classify_agents(agents, max_hours=48)
+    assert set(fresh_list) == {"tokenomics", "onchain"}
+    assert set(stale_list) == {"revenue", "security"}
+    assert per_agent["tokenomics"] == fresh
+    assert per_agent["security"] == "unknown"
