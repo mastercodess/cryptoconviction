@@ -174,3 +174,94 @@ def test_validate_phase_cli(tmp_path, capsys, monkeypatch):
     captured = capsys.readouterr()
     assert "passed=1" in captured.out and "failed=1" in captured.out
     assert rc == 1  # non-zero because something failed
+
+
+def test_analyze_renames_stale_json_on_validation_failure(tmp_path, monkeypatch):
+    """When today's analyze fails Pydantic validation, any pre-existing
+    agent_NN.json from a prior run must be renamed to agent_NN.stale.json
+    so the orchestrator can't silently load yesterday's data."""
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    macro = importlib.import_module("agents.07_macro.analyze")
+
+    schema = (repo_root / "agents" / "07_macro" / "schema.sql").read_text()
+    db_path = tmp_path / "macro.db"
+    conn = sqlite3.connect(db_path)
+    conn.executescript(schema)
+    conn.execute("INSERT INTO macro_snapshot (snapshot_at) VALUES (?)",
+                 ("2026-05-11T08:00:00+00:00",))
+    conn.commit()
+    conn.close()
+    monkeypatch.setattr(macro, "DB_PATH", db_path)
+    monkeypatch.setattr(macro, "REPORTS_DIR", tmp_path / "reports")
+    from shared import tokens
+    monkeypatch.setattr(tokens, "get", lambda s: type("T", (), {"name": s, "symbol": s})())
+
+    # Pre-create a "yesterday" agent_07_macro.json with previous data
+    out_dir = tmp_path / "reports" / "TRX"
+    out_dir.mkdir(parents=True)
+    yesterday_payload = {"token_symbol": "TRX", "previous_run": "from yesterday"}
+    (out_dir / "agent_07_macro.json").write_text(json.dumps(yesterday_payload))
+
+    # Today's RLM returns a payload that fails Pydantic (entry_timing_risk out of range)
+    bad_payload = {
+        "token_symbol": "TRX",
+        "cycle_phase": "MID_BULL",
+        "macro_rating": "NEUTRAL",
+        "entry_timing_risk": 999,  # invalid; must be 1-10
+        "leverage_warning": False,
+        "btc_correlation_30d": None,
+        "rationale": "today's run, but invalid",
+        "composite_score": 50,
+        "data_as_of": "2026-05-12",
+    }
+    monkeypatch.setattr(macro, "run_rlm", lambda **kw: bad_payload)
+    monkeypatch.setattr(macro, "_fallback_output", lambda *a, **k: bad_payload)
+
+    result = macro.analyze("TRX", max_iters=1)
+    assert result["ok"] is False
+    # Yesterday's data should have been moved aside
+    assert not (out_dir / "agent_07_macro.json").exists(), \
+        "stale agent_07_macro.json must be renamed away on validation failure"
+    assert (out_dir / "agent_07_macro.stale.json").exists()
+    stale = json.loads((out_dir / "agent_07_macro.stale.json").read_text())
+    assert stale == yesterday_payload, "stale file must preserve yesterday's content"
+    # And today's failure should be flagged in .error.json
+    assert (out_dir / "agent_07_macro.error.json").exists()
+
+
+def test_analyze_cleans_up_stale_json_on_validation_success(tmp_path, monkeypatch):
+    """When today's analyze succeeds, any pre-existing agent_NN.stale.json
+    from a prior failure must be removed (the run has recovered)."""
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(repo_root))
+    macro = importlib.import_module("agents.07_macro.analyze")
+
+    schema = (repo_root / "agents" / "07_macro" / "schema.sql").read_text()
+    db_path = tmp_path / "macro.db"
+    conn = sqlite3.connect(db_path)
+    conn.executescript(schema)
+    conn.execute("INSERT INTO macro_snapshot (snapshot_at) VALUES (?)",
+                 ("2026-05-11T08:00:00+00:00",))
+    conn.commit()
+    conn.close()
+    monkeypatch.setattr(macro, "DB_PATH", db_path)
+    monkeypatch.setattr(macro, "REPORTS_DIR", tmp_path / "reports")
+    from shared import tokens
+    monkeypatch.setattr(tokens, "get", lambda s: type("T", (), {"name": s, "symbol": s})())
+
+    # Pre-create a leftover agent_07_macro.stale.json from a prior failure
+    out_dir = tmp_path / "reports" / "TRX"
+    out_dir.mkdir(parents=True)
+    (out_dir / "agent_07_macro.stale.json").write_text(json.dumps({"old": "stale"}))
+
+    # Today's RLM returns valid output (fallback path, will validate cleanly)
+    monkeypatch.setattr(macro, "run_rlm",
+                        lambda **kw: {"error": "max_iters_reached", "iters": 14})
+
+    result = macro.analyze("TRX", max_iters=1)
+    assert result["ok"] is True
+    assert (out_dir / "agent_07_macro.json").exists()
+    # Prior .stale.json should have been cleaned up
+    assert not (out_dir / "agent_07_macro.stale.json").exists(), \
+        "stale file from prior failure must be removed when current run succeeds"
