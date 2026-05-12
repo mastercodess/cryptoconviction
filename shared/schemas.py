@@ -32,6 +32,7 @@ class TokenomicsOutput(BaseModel):
     unlock_pressure_next_90d_pct: float = Field(ge=0, le=1)
     next_unlock_date: Optional[str] = None
     next_unlock_pct_of_supply: Optional[float] = None
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100, description="Agent's own 0-100 conviction on tokenomics")
 
@@ -47,6 +48,7 @@ class RevenueOutput(BaseModel):
     inflationary_yield_apr: Optional[float] = None
     annualized_revenue_usd: Optional[float] = None
     p_s_ratio: Optional[float] = None
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100)
 
@@ -61,6 +63,7 @@ class SecurityOutput(BaseModel):
     centralization_risks: list[str]
     incident_history_severity: Literal["NONE", "MINOR", "MODERATE", "MAJOR", "CATASTROPHIC"]
     upgrade_mechanism: str
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100)
 
@@ -75,6 +78,7 @@ class OnChainOutput(BaseModel):
     growth_authenticity_verdict: Verdict
     retention_health_grade: Literal["A", "B", "C", "D", "F"]
     smart_money_stance: Literal["ACCUMULATING", "DISTRIBUTING", "NEUTRAL", "UNKNOWN"]
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100)
 
@@ -89,6 +93,7 @@ class TeamOutput(BaseModel):
     legal_exposure_flag: bool
     trust_tier: Literal["TIER_1", "TIER_2", "TIER_3", "UNKNOWN"]
     doxxed: bool
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100)
 
@@ -102,6 +107,7 @@ class MoatOutput(BaseModel):
     network_effect_type: Literal["LIQUIDITY", "DEVELOPER", "USER", "DATA", "NONE"]
     competitive_threat: Literal["LOW", "MODERATE", "HIGH", "SEVERE"]
     regulatory_relative_risk: Literal["LOWER", "SIMILAR", "HIGHER"]
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100)
 
@@ -115,6 +121,7 @@ class MacroOutput(BaseModel):
     entry_timing_risk: int = Field(ge=1, le=10, description="10 = great entry, 1 = terrible")
     leverage_warning: bool
     btc_correlation_30d: Optional[float] = None
+    data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
     rationale: str = Field(max_length=800)
     composite_score: int = Field(ge=0, le=100)
 
@@ -138,3 +145,8 @@ class FinalVerdict(BaseModel):
     missing_agents: list[str] = Field(default_factory=list)
     fallback_agents: list[str] = Field(default_factory=list)
     coverage_pct: float = Field(default=1.0, ge=0.0, le=1.0)
+    # Per-agent freshness telemetry. data_as_of_per_agent maps agent_name -> ISO string
+    # of the most-recent data the agent's output references. stale_agents lists the
+    # agents whose data exceeds config.red_flags.max_data_age_hours.
+    data_as_of_per_agent: dict[str, str] = Field(default_factory=dict)
+    stale_agents: list[str] = Field(default_factory=list)
