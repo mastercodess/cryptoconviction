@@ -106,3 +106,98 @@ def test_classify_agents_partitions_correctly():
     assert set(stale_list) == {"revenue", "security"}
     assert per_agent["tokenomics"] == fresh
     assert per_agent["security"] == "unknown"
+
+
+import json
+import sqlite3
+import pathlib
+import sys
+
+
+def test_macro_analyze_emits_data_as_of(tmp_path, monkeypatch):
+    """Macro agent's emitted JSON must include data_as_of from the most-recent
+    macro_snapshot row (or null if no snapshot exists)."""
+    # Set up a temp DB matching the macro schema
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    schema = (repo_root / "agents" / "07_macro" / "schema.sql").read_text()
+    db_path = tmp_path / "macro.db"
+    conn = sqlite3.connect(db_path)
+    conn.executescript(schema)
+    conn.execute(
+        "INSERT INTO macro_snapshot (snapshot_at, fear_greed_index) VALUES (?, ?)",
+        ("2026-05-10T12:00:00+00:00", 65),
+    )
+    conn.commit()
+    conn.close()
+
+    # Patch DB_PATH in the macro analyze module
+    sys.path.insert(0, str(repo_root))
+    import importlib
+    macro = importlib.import_module("agents.07_macro.analyze")
+    monkeypatch.setattr(macro, "DB_PATH", db_path)
+    monkeypatch.setattr(macro, "REPORTS_DIR", tmp_path / "reports")
+    # Patch tokens.get to accept TRX
+    from shared import tokens
+    monkeypatch.setattr(tokens, "get", lambda s: type("T", (), {"name": s, "symbol": s})())
+    # Force the max_iters_reached fallback path explicitly
+    monkeypatch.setattr(macro, "run_rlm",
+                        lambda **kw: {"error": "max_iters_reached", "iters": 14})
+
+    result = macro.analyze("TRX", max_iters=1)
+    assert result["ok"], result
+    out = json.loads((tmp_path / "reports" / "TRX" / "agent_07_macro.json").read_text())
+    assert out["data_as_of"] == "2026-05-10T12:00:00+00:00"
+
+
+def test_stamp_data_as_of_global_no_existing_value(tmp_path):
+    """Global query (no symbol) populates data_as_of from MAX(ts_col)."""
+    from shared.freshness import stamp_data_as_of
+    db = tmp_path / "t.db"
+    conn = sqlite3.connect(db)
+    conn.row_factory = sqlite3.Row
+    conn.execute("CREATE TABLE macro_snapshot (snapshot_at TEXT, fg INTEGER)")
+    conn.execute("INSERT INTO macro_snapshot VALUES ('2026-05-01', 60)")
+    conn.execute("INSERT INTO macro_snapshot VALUES ('2026-05-10', 65)")
+    raw = {"composite_score": 50}
+    stamp_data_as_of(raw, conn, table="macro_snapshot")
+    assert raw["data_as_of"] == "2026-05-10"
+
+
+def test_stamp_data_as_of_per_token(tmp_path):
+    """Per-token query filters by token_symbol=?."""
+    from shared.freshness import stamp_data_as_of
+    db = tmp_path / "t.db"
+    conn = sqlite3.connect(db)
+    conn.row_factory = sqlite3.Row
+    conn.execute("CREATE TABLE supply_snapshot (token_symbol TEXT, snapshot_at TEXT)")
+    conn.execute("INSERT INTO supply_snapshot VALUES ('TRX', '2026-05-09')")
+    conn.execute("INSERT INTO supply_snapshot VALUES ('TRX', '2026-05-11')")
+    conn.execute("INSERT INTO supply_snapshot VALUES ('LINK', '2026-05-12')")
+    raw = {}
+    stamp_data_as_of(raw, conn, table="supply_snapshot", symbol="TRX")
+    assert raw["data_as_of"] == "2026-05-11"
+
+
+def test_stamp_data_as_of_preserves_existing(tmp_path):
+    """If raw already has a non-null data_as_of, do not overwrite."""
+    from shared.freshness import stamp_data_as_of
+    db = tmp_path / "t.db"
+    conn = sqlite3.connect(db)
+    conn.row_factory = sqlite3.Row
+    conn.execute("CREATE TABLE macro_snapshot (snapshot_at TEXT)")
+    conn.execute("INSERT INTO macro_snapshot VALUES ('2026-05-10')")
+    raw = {"data_as_of": "2026-05-12"}
+    stamp_data_as_of(raw, conn, table="macro_snapshot")
+    assert raw["data_as_of"] == "2026-05-12"
+
+
+def test_stamp_data_as_of_empty_table(tmp_path):
+    """Empty table sets data_as_of to None."""
+    from shared.freshness import stamp_data_as_of
+    db = tmp_path / "t.db"
+    conn = sqlite3.connect(db)
+    conn.row_factory = sqlite3.Row
+    conn.execute("CREATE TABLE supply_snapshot (token_symbol TEXT, snapshot_at TEXT)")
+    raw = {}
+    stamp_data_as_of(raw, conn, table="supply_snapshot", symbol="TRX")
+    assert raw["data_as_of"] is None
