@@ -59,7 +59,7 @@ _SCHEMA_DOCS = {
     "network_effect_type": '"LIQUIDITY"|"DEVELOPER"|"USER"|"DATA"|"NONE"',
     "competitive_threat": '"LOW"|"MODERATE"|"HIGH"|"SEVERE"',
     "regulatory_relative_risk": '"LOWER"|"SIMILAR"|"HIGHER"',
-    "rationale": "≤800 chars",
+    "rationale": "≤1500 chars",
     "composite_score": "int 0-100",
 }
 

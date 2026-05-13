@@ -100,7 +100,7 @@ _SCHEMA_DOCS = {
     "unlock_pressure_next_90d_pct": "float 0..1 of current circulating",
     "next_unlock_date": "ISO date string or null",
     "next_unlock_pct_of_supply": "float 0..1 or null",
-    "rationale": "string, ≤800 chars, cite specific numbers from the DB",
+    "rationale": "string, ≤1500 chars, cite specific numbers from the DB",
     "composite_score": "int 0-100, your overall tokenomics conviction",
 }
 

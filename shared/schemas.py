@@ -33,7 +33,7 @@ class TokenomicsOutput(BaseModel):
     next_unlock_date: Optional[str] = None
     next_unlock_pct_of_supply: Optional[float] = None
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100, description="Agent's own 0-100 conviction on tokenomics")
 
 
@@ -49,7 +49,7 @@ class RevenueOutput(BaseModel):
     annualized_revenue_usd: Optional[float] = None
     p_s_ratio: Optional[float] = None
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100)
 
 
@@ -64,7 +64,7 @@ class SecurityOutput(BaseModel):
     incident_history_severity: Literal["NONE", "MINOR", "MODERATE", "MAJOR", "CATASTROPHIC"]
     upgrade_mechanism: str
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100)
 
 
@@ -79,7 +79,7 @@ class OnChainOutput(BaseModel):
     retention_health_grade: Literal["A", "B", "C", "D", "F"]
     smart_money_stance: Literal["ACCUMULATING", "DISTRIBUTING", "NEUTRAL", "UNKNOWN"]
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100)
 
 
@@ -94,7 +94,7 @@ class TeamOutput(BaseModel):
     trust_tier: Literal["TIER_1", "TIER_2", "TIER_3", "UNKNOWN"]
     doxxed: bool
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100)
 
 
@@ -108,7 +108,7 @@ class MoatOutput(BaseModel):
     competitive_threat: Literal["LOW", "MODERATE", "HIGH", "SEVERE"]
     regulatory_relative_risk: Literal["LOWER", "SIMILAR", "HIGHER"]
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100)
 
 
@@ -122,7 +122,7 @@ class MacroOutput(BaseModel):
     leverage_warning: bool
     btc_correlation_30d: Optional[float] = None
     data_as_of: Optional[str] = Field(default=None, description="ISO date/datetime of the most recent DB row the agent consumed. Null = unknown/LLM-only.")
-    rationale: str = Field(max_length=800)
+    rationale: str = Field(max_length=1500)
     composite_score: int = Field(ge=0, le=100)
 
 

@@ -55,7 +55,7 @@ _SCHEMA_DOCS = {
     "centralization_risks": "list[str]",
     "incident_history_severity": '"NONE"|"MINOR"|"MODERATE"|"MAJOR"|"CATASTROPHIC"',
     "upgrade_mechanism": "string",
-    "rationale": "≤800 chars",
+    "rationale": "≤1500 chars",
     "composite_score": "int 0-100",
 }
 

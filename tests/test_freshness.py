@@ -301,3 +301,28 @@ def test_render_markdown_no_trust_signals_when_healthy():
     assert "## ⚠ Trust signals" not in md
     assert "## Data freshness" in md
     assert "tokenomics: 2026-05-11" in md
+
+
+def test_team_output_accepts_rationale_up_to_1500_chars():
+    """The 800-char limit was too tight — observed TRX team rationale was 892
+    chars and got rejected. Bump to 1500 to accommodate richer team analysis."""
+    long_rationale = "x" * 1200  # well above old 800, below new 1500
+    out = TeamOutput(
+        token_symbol="TEST", founder_credibility_score=5,
+        vc_overhang_risk="MODERATE", alignment_score=5,
+        legal_exposure_flag=False, trust_tier="TIER_2", doxxed=True,
+        rationale=long_rationale, composite_score=50,
+    )
+    assert len(out.rationale) == 1200
+
+
+def test_team_output_rejects_rationale_above_1500_chars():
+    """New ceiling is 1500. Verify the new limit is enforced (not just gone)."""
+    too_long = "x" * 1501
+    with pytest.raises(Exception):  # Pydantic ValidationError
+        TeamOutput(
+            token_symbol="TEST", founder_credibility_score=5,
+            vc_overhang_risk="MODERATE", alignment_score=5,
+            legal_exposure_flag=False, trust_tier="TIER_2", doxxed=True,
+            rationale=too_long, composite_score=50,
+        )
