@@ -1,14 +1,20 @@
-"""Agent 6 collector — competitive position via Sonnet research + Electric Capital data."""
+"""Agent 6 collector — competitive position via direct DefiLlama API calls.
+
+Previously this module called an LLM (`research_json`) to hallucinate competitor
+lists and market shares. It now routes by token category:
+  - chain-class    (layer-1, layer-2, etc.)    → DefiLlama /chains
+  - protocol-class (defi-lending, dex, etc.)   → DefiLlama /protocols filtered by category
+  - other          (meme, ordinals, etc.)      → no DefiLlama route; emit UNAVAILABLE
+"""
 from __future__ import annotations
-import argparse, datetime as dt, json, pathlib, sqlite3, sys, textwrap
+import argparse, datetime as dt, json, pathlib, sqlite3, sys
 _REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 if str(_REPO_ROOT) not in sys.path: sys.path.insert(0, str(_REPO_ROOT))
 from shared import tokens
-from shared.llm_client import research_json
+from shared.data_sources.defillama import chains, protocols
 from shared.db_helpers import (
     coerce_float as _coerce_float,
     coerce_int as _coerce_int,
-    deep_merge_sidecar as _deep_merge_sidecar,
     normalize_pct as _normalize_pct,
     upsert_note as _upsert_note_generic,
 )
@@ -25,25 +31,6 @@ DB_PATH = AGENT_DIR / "data" / "moat.db"
 SIDECAR_DIR = AGENT_DIR / "data" / "sidecars"
 SCHEMA_PATH = AGENT_DIR / "schema.sql"
 
-_PROMPT = textwrap.dedent("""\
-    Research competitive moat for {name} ({symbol}, category: {category}) using
-    FREE sources: DefiLlama category rankings, Token Terminal free pages,
-    Electric Capital developer report (free), project integration pages.
-
-    Return JSON:
-    {{
-      "competitors": [{{"competitor":"...", "market_cap_usd":<num>, "tvl_usd":<num or null>, "dau":<num or null>, "revenue_30d_usd":<num or null>}}],
-      "market_share": [{{"category":"<category>", "share_pct":<decimal 0..1>, "snapshot_at":"YYYY-MM-DD"}}],
-      "dev_ecosystem": {{"monthly_active_devs":<int>, "full_time_devs":<int>, "repos_building_on":<int>, "integrations_count":<int>}},
-      "switching_cost_analysis": "<one sentence: how easy to switch to a competitor>",
-      "category_rank": <int, 1=leader>,
-      "regulatory_relative_risk": "LOWER|SIMILAR|HIGHER",
-      "rationale": "<2-3 sentences>",
-      "data_quality": "GOOD|PARTIAL|UNAVAILABLE",
-      "sources": ["..."]
-    }}
-""")
-
 
 def _conn() -> sqlite3.Connection:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True); SIDECAR_DIR.mkdir(parents=True, exist_ok=True)
@@ -56,58 +43,185 @@ def _conn() -> sqlite3.Connection:
 def _now() -> str: return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 
-def collect_one(symbol: str) -> dict:
-    tok = tokens.get(symbol); c = _conn()
-    data = research_json(_PROMPT.format(name=tok.name, symbol=symbol, category=tok.category))
-    if not data: return {"skipped": True}
+# Category classes — drives which DefiLlama endpoint we call.
+_CHAIN_CLASS_CATEGORIES = frozenset({
+    "layer-1", "layer-2", "l1-smart-contract",
+    "bitcoin-fork", "privacy-l1",
+})
+_PROTOCOL_CLASS_CATEGORIES = frozenset({
+    "defi", "defi-dex", "defi-lending", "defi-perps", "dex",
+    "lending", "perp-dex", "oracle", "rwa", "lst-aggregator",
+    "synthetic-dollar",
+})
+
+# Map our registry's `category` strings to DefiLlama's `category` strings
+# for the /protocols endpoint. DefiLlama uses title-case + slightly
+# different vocabulary (e.g. "Dexs" vs "dex"). Categories without a
+# verified mapping are intentionally absent — they fall through to
+# UNAVAILABLE in collect_one rather than guessing at the wrong category.
+# Known-unmapped (need registry retagging or fresh verification):
+#   - "synthetic-dollar": ENA's DefiLlama entries are "Basis Trading" / "RWA"
+#   - "defi": too generic; DYDX (defi → defi-perps in DefiLlama "Derivatives")
+_DEFILLAMA_CATEGORY_MAP = {
+    "defi-lending": "Lending",
+    "lending": "Lending",
+    "defi-dex": "Dexs",
+    "dex": "Dexs",
+    "defi-perps": "Derivatives",
+    "perp-dex": "Derivatives",
+    "oracle": "Oracle",
+    "rwa": "RWA",
+    "lst-aggregator": "Liquid Staking",
+}
+
+
+def _today() -> str:
+    return dt.date.today().isoformat()
+
+
+def _write_sidecar(symbol: str, payload: dict) -> None:
     sidecar = SIDECAR_DIR / symbol / "moat_research.json"
     sidecar.parent.mkdir(parents=True, exist_ok=True)
-    existing = json.loads(sidecar.read_text()) if sidecar.exists() else {}
-    data = _deep_merge_sidecar(existing, data)
-    sidecar.write_text(json.dumps(data, indent=2))
-    for comp in data.get("competitors", []) or []:
-        comp_name = (comp.get("competitor") or "").strip()
-        if not comp_name:
-            continue
+    sidecar.write_text(json.dumps(payload, indent=2))
+
+
+def _unavailable(symbol: str, reason: str) -> dict:
+    _write_sidecar(symbol, {
+        "as_of": _today(),
+        "data_quality": "UNAVAILABLE",
+        "notes": reason,
+        "sources": [],
+    })
+    return {"ok": True, "data_quality": "UNAVAILABLE", "reason": reason}
+
+
+def collect_one(symbol: str) -> dict:
+    """Fetch moat data from DefiLlama. Routes by token category:
+    - chain-class (layer-1, layer-2, etc.) → DefiLlama /chains
+    - protocol-class (defi-lending, dex, etc.) → DefiLlama /protocols filtered by category
+    - other (meme, ordinals, etc.) → no DefiLlama route; emit UNAVAILABLE
+    """
+    tok = tokens.get(symbol)
+    cat = (tok.category or "").lower()
+    c = _conn()
+
+    if cat in _CHAIN_CLASS_CATEGORIES:
+        return _collect_chain(symbol, tok, c)
+    if cat in _PROTOCOL_CLASS_CATEGORIES:
+        return _collect_protocol(symbol, tok, c, cat)
+    return _unavailable(symbol, f"category='{cat}' has no DefiLlama route in this collector")
+
+
+def _collect_chain(symbol: str, tok, c: sqlite3.Connection) -> dict:
+    rows = chains()
+    if rows is None:
+        return _unavailable(symbol, "DefiLlama /chains returned an error")
+    # Match self by tokenSymbol case-insensitively, OR by name vs registry name
+    sym_l = symbol.lower()
+    name_l = (tok.name or "").lower()
+    self_row = next(
+        (r for r in rows if (r.get("tokenSymbol") or "").lower() == sym_l
+                          or (r.get("name") or "").lower() == name_l),
+        None,
+    )
+    if self_row is None:
+        return _unavailable(symbol, f"{symbol} not found in DefiLlama /chains")
+    self_tvl = self_row["tvl_usd"]
+    if not self_tvl:  # 0 or None — DefiLlama lists this entity but it has no TVL
+        return _unavailable(symbol, f"{symbol} matches a DefiLlama entry with TVL=0")
+
+    # Top 5 peers by TVL, excluding self
+    peers = [r for r in rows if r is not self_row][:5]
+    today = _today()
+    for p in peers:
         c.execute(
             "INSERT OR REPLACE INTO competitor "
             "(token_symbol, competitor, market_cap_usd, tvl_usd, dau, revenue_30d_usd) "
             "VALUES (?,?,?,?,?,?)",
-            (symbol, comp_name,
-             _coerce_float(comp.get("market_cap_usd")),
-             _coerce_float(comp.get("tvl_usd")),
-             _coerce_int(comp.get("dau")),
-             _coerce_float(comp.get("revenue_30d_usd"))),
+            (symbol, p["name"], None, _coerce_float(p["tvl_usd"]), None, None),
         )
-    for ms in data.get("market_share", []) or []:
-        cat = (ms.get("category") or "").strip()
-        share = _normalize_pct(ms.get("share_pct"))
-        if not cat or share is None:
-            continue
+
+    # Market share = self TVL / sum of top peers + self
+    total = self_tvl + sum(p["tvl_usd"] for p in peers)
+    share = (self_tvl / total) if total > 0 else None
+    if share is not None:
         c.execute(
             "INSERT OR REPLACE INTO market_share "
             "(token_symbol, snapshot_at, category, share_pct) VALUES (?,?,?,?)",
-            (symbol, ms.get("snapshot_at") or _now()[:10], cat, share),
+            (symbol, today, tok.category, share),
         )
-    de = data.get("dev_ecosystem") or {}
-    if de:
-        c.execute(
-            "INSERT OR REPLACE INTO dev_ecosystem "
-            "(token_symbol, monthly_active_devs, full_time_devs, "
-            " repos_building_on, integrations_count, snapshot_at) "
-            "VALUES (?,?,?,?,?,?)",
-            (symbol,
-             _coerce_int(de.get("monthly_active_devs")),
-             _coerce_int(de.get("full_time_devs")),
-             _coerce_int(de.get("repos_building_on")),
-             _coerce_int(de.get("integrations_count")),
-             _now()),
-        )
-    if data.get("rationale"):
-        _upsert_note(c, symbol=symbol, topic="moat_summary",
-                     body=data["rationale"], sources=data.get("sources"))
+
+    _write_sidecar(symbol, {
+        "as_of": today,
+        "data_quality": "GOOD",
+        "self": {"name": self_row["name"], "tvl_usd": self_tvl},
+        "peers": [{"name": p["name"], "tvl_usd": p["tvl_usd"]} for p in peers],
+        "market_share_pct": share,
+        "notes": "API-fetched (no LLM research): DefiLlama /chains",
+        "sources": ["https://api.llama.fi/chains"],
+    })
     c.commit()
-    return {"ok": True, "data_quality": data.get("data_quality")}
+    return {"ok": True, "data_quality": "GOOD"}
+
+
+def _collect_protocol(symbol: str, tok, c: sqlite3.Connection, cat: str) -> dict:
+    dl_cat = _DEFILLAMA_CATEGORY_MAP.get(cat)
+    if not dl_cat:
+        return _unavailable(symbol, f"no DefiLlama category mapping for '{cat}'")
+    rows = protocols(category=dl_cat)
+    if rows is None:
+        return _unavailable(symbol, f"DefiLlama /protocols returned an error")
+    if not rows:
+        return _unavailable(symbol, f"DefiLlama /protocols returned no entries for category '{dl_cat}'")
+
+    sym_l = symbol.lower()
+    slug_l = (tok.defillama_protocol or "").lower()
+    self_row = next(
+        (r for r in rows
+         if (r.get("slug") or "").lower() == slug_l
+            or (r.get("symbol") or "").lower() == sym_l),
+        None,
+    )
+    if self_row is None:
+        return _unavailable(symbol, f"{symbol} not found in DefiLlama /protocols (cat={dl_cat})")
+    self_tvl = self_row["tvl_usd"]
+    if not self_tvl:  # 0 or None — DefiLlama lists this entity but it has no TVL
+        return _unavailable(symbol, f"{symbol} matches a DefiLlama entry with TVL=0")
+
+    peers = [r for r in rows if r is not self_row][:5]
+    today = _today()
+    for p in peers:
+        c.execute(
+            "INSERT OR REPLACE INTO competitor "
+            "(token_symbol, competitor, market_cap_usd, tvl_usd, dau, revenue_30d_usd) "
+            "VALUES (?,?,?,?,?,?)",
+            (symbol, p["name"],
+             _coerce_float(p.get("mcap_usd")),
+             _coerce_float(p["tvl_usd"]), None, None),
+        )
+
+    total = self_tvl + sum(p["tvl_usd"] for p in peers)
+    share = (self_tvl / total) if total > 0 else None
+    if share is not None:
+        c.execute(
+            "INSERT OR REPLACE INTO market_share "
+            "(token_symbol, snapshot_at, category, share_pct) VALUES (?,?,?,?)",
+            (symbol, today, dl_cat, share),
+        )
+
+    _write_sidecar(symbol, {
+        "as_of": today,
+        "data_quality": "GOOD",
+        "self": {"name": self_row["name"], "slug": self_row["slug"],
+                 "tvl_usd": self_tvl, "mcap_usd": self_row.get("mcap_usd")},
+        "peers": [{"name": p["name"], "slug": p["slug"],
+                   "tvl_usd": p["tvl_usd"], "mcap_usd": p.get("mcap_usd")} for p in peers],
+        "market_share_pct": share,
+        "notes": f"API-fetched (no LLM research): DefiLlama /protocols (category={dl_cat})",
+        "sources": [f"https://api.llama.fi/protocols (filtered by category={dl_cat})"],
+    })
+    c.commit()
+    return {"ok": True, "data_quality": "GOOD"}
 
 
 def main(argv: list[str] | None = None) -> int:
