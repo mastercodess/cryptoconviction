@@ -59,7 +59,7 @@ _SCHEMA_DOCS = {
     "entry_timing_risk": "int 1-10 (10 = great entry)",
     "leverage_warning": "bool",
     "btc_correlation_30d": "float -1..1 or null",
-    "rationale": "≤800 chars",
+    "rationale": "≤1500 chars",
     "composite_score": "int 0-100",
 }
 

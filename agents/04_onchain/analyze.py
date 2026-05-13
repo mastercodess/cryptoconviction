@@ -41,7 +41,7 @@ _SCHEMA_DOCS = {
     "growth_authenticity_verdict": '"STRONG"|"NEUTRAL"|"WEAK"',
     "retention_health_grade": '"A"|"B"|"C"|"D"|"F"',
     "smart_money_stance": '"ACCUMULATING"|"DISTRIBUTING"|"NEUTRAL"|"UNKNOWN"',
-    "rationale": "≤800 chars",
+    "rationale": "≤1500 chars",
     "composite_score": "int 0-100",
 }
 

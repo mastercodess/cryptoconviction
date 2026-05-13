@@ -61,7 +61,7 @@ _SCHEMA_DOCS = {
     "legal_exposure_flag": "bool",
     "trust_tier": '"TIER_1"|"TIER_2"|"TIER_3"|"UNKNOWN"',
     "doxxed": "bool — majority of core team identified",
-    "rationale": "≤800 chars",
+    "rationale": "≤1500 chars",
     "composite_score": "int 0-100",
 }
 

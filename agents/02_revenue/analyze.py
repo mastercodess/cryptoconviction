@@ -70,7 +70,7 @@ _SCHEMA_DOCS = {
     "inflationary_yield_apr": "float % or null",
     "annualized_revenue_usd": "float or null",
     "p_s_ratio": "float or null",
-    "rationale": "≤800 chars",
+    "rationale": "≤1500 chars",
     "composite_score": "int 0-100",
 }
 
