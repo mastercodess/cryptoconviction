@@ -22,11 +22,19 @@ PRO_BASE = "https://pro-api.coingecko.com/api/v3"
 
 def _headers() -> dict:
     key = os.getenv("COINGECKO_API_KEY", "").strip()
-    return {"x-cg-pro-api-key": key} if key else {}
+    if not key:
+        return {}
+    tier = os.getenv("COINGECKO_API_TIER", "demo").strip().lower()
+    if tier == "pro":
+        return {"x-cg-pro-api-key": key}
+    return {"x-cg-demo-api-key": key}
 
 
 def _base() -> str:
-    return PRO_BASE if os.getenv("COINGECKO_API_KEY") else BASE
+    tier = os.getenv("COINGECKO_API_TIER", "demo").strip().lower()
+    if tier == "pro" and os.getenv("COINGECKO_API_KEY"):
+        return PRO_BASE
+    return BASE
 
 
 def _get(path: str, params: Optional[dict] = None, *, retries: int = 3) -> dict:
