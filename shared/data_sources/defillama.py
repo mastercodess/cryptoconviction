@@ -79,7 +79,48 @@ def chains() -> list[dict] | None:
     return out
 
 
-# Task 2 will add protocols (a list of protocols across DefiLlama).
-# Temporary stub so the Task 1 test file can `from ... import chains, protocols`
-# without a collection error. Replace with the real implementation in Task 2.
-protocols = None
+def protocols(category: str | None = None) -> list[dict] | None:
+    """Return all protocols with TVL + MCap. Optional case-insensitive
+    `category` filter. None on error.
+
+    DefiLlama returns categories with mixed casing (e.g. "Lending", "Dexes").
+    The filter compares case-insensitively for caller convenience.
+
+    Each record: {"name": str, "slug": str, "tvl_usd": float,
+    "mcap_usd": float | None, "category": str, "symbol": str | None,
+    "coingecko_id": str | None}.
+    """
+    try:
+        r = requests.get(f"{BASE}/protocols", timeout=30)
+        r.raise_for_status()
+    except requests.RequestException:
+        return None
+    cat_l = category.lower() if category else None
+    out = []
+    for p in r.json():
+        cat = p.get("category", "")
+        if cat_l and cat.lower() != cat_l:
+            continue
+        tvl = p.get("tvl")
+        if tvl is None:
+            continue
+        try:
+            tvl_f = float(tvl)
+        except (TypeError, ValueError):
+            continue
+        mcap = p.get("mcap")
+        try:
+            mcap_f = float(mcap) if mcap is not None else None
+        except (TypeError, ValueError):
+            mcap_f = None
+        out.append({
+            "name": p.get("name", ""),
+            "slug": p.get("slug", ""),
+            "tvl_usd": tvl_f,
+            "mcap_usd": mcap_f,
+            "category": cat,
+            "symbol": p.get("symbol"),
+            "coingecko_id": p.get("gecko_id"),
+        })
+    out.sort(key=lambda x: x["tvl_usd"], reverse=True)
+    return out
