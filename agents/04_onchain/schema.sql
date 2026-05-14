@@ -45,3 +45,12 @@ CREATE TABLE IF NOT EXISTS onchain_research_note (
     sources       TEXT,
     collected_at  TEXT NOT NULL
 );
+
+-- Plan 1c: cache for Dune Analytics query results (TTL-based).
+CREATE TABLE IF NOT EXISTS _dune_cache (
+    query_id      INTEGER NOT NULL,
+    params_hash   TEXT NOT NULL,
+    fetched_at    TEXT NOT NULL,
+    rows_json     TEXT NOT NULL,
+    PRIMARY KEY (query_id, params_hash)
+);
