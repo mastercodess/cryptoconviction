@@ -64,8 +64,9 @@ def _now() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 
-# Map a registry token's chain attribute to Dune's chain string. Dune's
-# CHAIN_DAU query returns rows keyed by "chain" (lowercase).
+# Map a registry token's chain attribute to Dune's chain string. Some Dune
+# queries return slightly different identifiers (e.g. "avalanche_c" for
+# Avalanche C-Chain) — the mapping resolves that drift.
 _CHAIN_TO_DUNE = {
     "ethereum": "ethereum",
     "base": "base",
@@ -77,7 +78,7 @@ _CHAIN_TO_DUNE = {
     "bitcoin": "bitcoin",
     "bitcoin-cash": "bitcoin-cash",
     "bnb": "bnb",
-    "avalanche": "avalanche",
+    "avalanche": "avalanche_c",  # Dune uses avalanche_c for Avalanche C-Chain
     "sui": "sui",
 }
 
