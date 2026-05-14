@@ -324,6 +324,26 @@ REGISTRY: dict[str, Token] = {
         category="ai-infra",
         notes="Resolved 2026-05-06 via CoinGecko + DefiLlama; contract verified via explorer.",
     ),
+    "UNI": Token(
+        symbol="UNI",
+        name="Uniswap",
+        chain="ethereum",
+        coingecko_id="uniswap",
+        contract_address="0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        defillama_protocol="uniswap",
+        category="dex",
+        notes="Added 2026-05-14 for top-15 refresh batch.",
+    ),
+    "XLM": Token(
+        symbol="XLM",
+        name="Stellar",
+        chain="stellar",
+        coingecko_id="stellar",
+        contract_address=None,
+        defillama_protocol=None,
+        category="layer-1",
+        notes="Added 2026-05-14 for top-15 refresh batch (native L1, no contract).",
+    ),
 }
 
 
