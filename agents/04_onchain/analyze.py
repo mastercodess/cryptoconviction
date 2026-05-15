@@ -158,7 +158,7 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
     }
 
 
-def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[str, Any]:
+def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[str, Any]:
     symbol = symbol.upper()
     tokens.get(symbol)
     if not DB_PATH.exists():
