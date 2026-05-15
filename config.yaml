@@ -44,8 +44,21 @@ red_flags:
   # If the loaded-agent coverage drops below this fraction of total config
   # weight, auto-reject. Prevents silent 2-of-7 or 3-of-7 verdicts.
   min_agent_coverage_pct: 0.70
-  # Agents with data_as_of older than this fail-close.
+  # Agents with data_as_of older than this fail-close. Default applies to
+  # every agent unless overridden in max_data_age_hours_per_agent below.
   max_data_age_hours: 48
+  # Per-agent overrides. Reason for each override documented inline.
+  max_data_age_hours_per_agent:
+    # security: stamp source is `audit_date` (when the audit happened),
+    # NOT a collector-side timestamp (when we last refreshed our view).
+    # The gate is therefore testing "how old is the most recent audit"
+    # rather than "how stale is our collection." 6mo lets a 2-yr-old
+    # audit still trigger stale while preserving audit-date visibility.
+    # TODO: add a `collected_at` column to audit / exploit_history /
+    # code_health / dependency, switch stamp_data_as_of to use it, then
+    # tighten this back to 48h — at which point the gate tests collection
+    # freshness, which is what the system actually wants.
+    security: 4320   # 6 months (180 days × 24h)
 
 # ── Models ──────────────────────────────────────────────────────────────
 # Root agent uses Opus for planning; sub-LLM calls inside RLMs use Sonnet.

@@ -108,6 +108,81 @@ def test_classify_agents_partitions_correctly():
     assert per_agent["security"] == "unknown"
 
 
+# ─── Item 2: per-agent freshness thresholds ─────────────────────────────
+
+def test_classify_agents_honors_per_agent_threshold_override():
+    """The 'audit_date' stamped by security is conceptually 'when the audit
+    happened', not 'when we last collected.' Until a collector-side
+    timestamp exists, allow security to use a wider threshold (6mo) so
+    the gate doesn't fire on a 2022 audit that we re-verified yesterday."""
+    now = dt.datetime.now(dt.timezone.utc)
+    five_months_ago = (now - dt.timedelta(days=150)).isoformat()
+    eight_months_ago = (now - dt.timedelta(days=240)).isoformat()
+    agents = {
+        "security": {"data_as_of": five_months_ago},
+        "tokenomics": {"data_as_of": five_months_ago},
+    }
+    # Per-agent override: security gets 6mo (4320h), tokenomics uses default 48h.
+    fresh, stale, _ = classify_agents(
+        agents, max_hours=48, per_agent_max_hours={"security": 4320},
+    )
+    assert "security" in fresh, (
+        "security with 5mo-old data_as_of must be fresh under 6mo threshold"
+    )
+    assert "tokenomics" in stale, (
+        "tokenomics with 5mo-old data_as_of stays stale under default 48h"
+    )
+
+
+def test_classify_agents_per_agent_override_does_not_loosen_other_agents():
+    """An override for one agent must not affect any other agent's threshold."""
+    now = dt.datetime.now(dt.timezone.utc)
+    week_old = (now - dt.timedelta(days=7)).isoformat()
+    agents = {
+        "security": {"data_as_of": week_old},
+        "onchain":  {"data_as_of": week_old},
+    }
+    fresh, stale, _ = classify_agents(
+        agents, max_hours=48, per_agent_max_hours={"security": 4320},
+    )
+    assert "security" in fresh
+    assert "onchain" in stale
+
+
+def test_classify_agents_exceeded_per_agent_threshold_is_stale():
+    """If security data_as_of exceeds even the wide 6mo threshold, it's stale."""
+    now = dt.datetime.now(dt.timezone.utc)
+    ten_months_ago = (now - dt.timedelta(days=300)).isoformat()
+    agents = {"security": {"data_as_of": ten_months_ago}}
+    _, stale, _ = classify_agents(
+        agents, max_hours=48, per_agent_max_hours={"security": 4320},
+    )
+    assert "security" in stale
+
+
+def test_classify_agents_backward_compat_no_per_agent_arg():
+    """Existing callers that don't pass per_agent_max_hours must keep working."""
+    now = dt.datetime.now(dt.timezone.utc)
+    fresh_ts = (now - dt.timedelta(hours=12)).isoformat()
+    stale_ts = (now - dt.timedelta(hours=200)).isoformat()
+    agents = {"a": {"data_as_of": fresh_ts}, "b": {"data_as_of": stale_ts}}
+    fresh, stale, _ = classify_agents(agents, max_hours=48)
+    assert fresh == ["a"]
+    assert stale == ["b"]
+
+
+def test_config_yaml_security_threshold_is_six_months():
+    """The committed config must declare the security override at 4320h (6mo)."""
+    import yaml
+    import pathlib
+    cfg = yaml.safe_load(pathlib.Path("config.yaml").read_text())
+    per_agent = cfg.get("red_flags", {}).get("max_data_age_hours_per_agent", {})
+    assert per_agent.get("security") == 4320, (
+        f"config.yaml red_flags.max_data_age_hours_per_agent.security must be "
+        f"4320 (6 months in hours). Got: {per_agent.get('security')}"
+    )
+
+
 import json
 import sqlite3
 import pathlib
@@ -230,7 +305,9 @@ def test_orchestrator_check_red_flags_fires_on_stale_data():
     assert auto is True
     assert "stale data" in reason
     assert "revenue" in reason and "macro" in reason
-    assert "48h" in reason
+    # Reason text no longer hard-codes a single threshold value: per-agent
+    # overrides can apply different cutoffs to different agents.
+    assert "freshness threshold" in reason
 
 
 def test_orchestrator_check_red_flags_no_stale_no_reject():

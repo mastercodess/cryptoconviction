@@ -188,9 +188,13 @@ def _check_red_flags(
             )
 
     if rules.get("max_data_age_hours") and stale_agents:
+        # Phrased without a specific hour value because per-agent thresholds
+        # (config.red_flags.max_data_age_hours_per_agent) can apply different
+        # cutoffs to different agents — e.g. security uses 4320h while
+        # tokenomics uses 48h. The exact per-agent threshold lives in config.
         reasons.append(
             f"stale data: {', '.join(stale_agents)} exceed "
-            f"{rules['max_data_age_hours']}h freshness threshold"
+            "configured freshness threshold"
         )
 
     tok = loaded.get("tokenomics") or {}
@@ -373,9 +377,11 @@ def run(symbol: str) -> dict[str, Any]:
     loaded, missing = _load_specialist_outputs(symbol)
     score, scorecard, weights_used, coverage_pct = _weighted_score(loaded, weights)
     max_age = rules.get("max_data_age_hours")
+    per_agent_max_age = rules.get("max_data_age_hours_per_agent") or {}
     if max_age:
         _fresh, stale_agents, data_as_of_per_agent = classify_agents(
-            loaded, max_hours=max_age
+            loaded, max_hours=max_age,
+            per_agent_max_hours=per_agent_max_age,
         )
     else:
         stale_agents, data_as_of_per_agent = [], {}

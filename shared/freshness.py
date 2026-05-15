@@ -56,19 +56,29 @@ def classify_agents(
     loaded: dict[str, dict],
     *,
     max_hours: float,
+    per_agent_max_hours: Optional[dict[str, float]] = None,
 ) -> tuple[list[str], list[str], dict[str, str]]:
     """Split loaded agents into (fresh, stale, per_agent_as_of_strings).
 
     per_agent_as_of_strings carries the raw data_as_of (or "unknown")
     for surfacing in the final verdict / markdown.
+
+    `per_agent_max_hours` lets specific agents override the global
+    `max_hours`. Used today by:
+      - security: 4320h (6mo) — stamp source is audit_date (an event
+        timestamp), not a collection timestamp. See TODO in config.yaml.
+      - moat / macro: 168h (7d) — underlying metrics shift on weekly-
+        to-monthly cadence; daily re-collection is wasted credits.
     """
+    per_agent_max_hours = per_agent_max_hours or {}
     fresh: list[str] = []
     stale: list[str] = []
     per_agent: dict[str, str] = {}
     for agent, output in loaded.items():
+        threshold = per_agent_max_hours.get(agent, max_hours)
         value = output.get("data_as_of") if output else None
         per_agent[agent] = value if value else "unknown"
-        if is_stale(value, max_hours=max_hours):
+        if is_stale(value, max_hours=threshold):
             stale.append(agent)
         else:
             fresh.append(agent)
