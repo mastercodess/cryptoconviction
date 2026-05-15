@@ -49,15 +49,14 @@ red_flags:
   max_data_age_hours: 48
   # Per-agent overrides. Reason for each override documented inline.
   max_data_age_hours_per_agent:
-    # security: stamp source is `audit_date` (when the audit happened),
-    # NOT a collector-side timestamp (when we last refreshed our view).
-    # The gate is therefore testing "how old is the most recent audit"
-    # rather than "how stale is our collection." 6mo lets a 2-yr-old
-    # audit still trigger stale while preserving audit-date visibility.
-    # TODO: add a `collected_at` column to audit / exploit_history /
-    # code_health / dependency, switch stamp_data_as_of to use it, then
-    # tighten this back to 48h — at which point the gate tests collection
-    # freshness, which is what the system actually wants.
+    # security: stamp source is now `security_collection_log.collected_at`
+    # — the time of the most recent collect run, NOT the underlying
+    # audit_date (the original conceptual bug, fixed in the (c) work).
+    # The gate now correctly tests "how stale is our collection?" The
+    # 6mo threshold is now a safety net for "we haven't run collect in
+    # forever," not a workaround for the audit_date conflation. Consider
+    # tightening to 168 (7d) or 48 (default) once the batch cadence is
+    # consistent enough that aggressive freshness is meaningful here.
     security: 4320   # 6 months (180 days × 24h)
     # moat: TVL, category rank, dev-ecosystem signal all shift on weekly-
     # to-monthly cadence. Re-collecting daily is wasted API credits with
