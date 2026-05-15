@@ -17,13 +17,19 @@ REPORTS_DIR = _REPO_ROOT / "reports"
 
 _TASK = """\
 Score on-chain activity authenticity. Tables: activity_metric, exchange_flow,
-holder_cohort, retention_cohort, onchain_research_note.
+holder_cohort, onchain_research_note.
 
 Strategy:
   1. SELECT * FROM activity_metric — peek at dau_mau_ratio. >0.4 healthy,
-     <0.1 retention concern.
+     <0.1 retention concern. If dau_mau_ratio is null but dau is populated
+     (the typical Dune-fed case), score from DAU alone — don't probe a
+     separate retention table; the project doesn't have one.
   2. SELECT SUM(net_usd) FROM exchange_flow last 30d. Negative net = outflow
-     to self-custody = bullish; positive = exchange-bound = bearish.
+     to self-custody = bullish; positive = exchange-bound = bearish. If the
+     most recent exchange_flow row is >60 days old (non-EVM chains often
+     have no fresh CEX-flow labels), treat capital_flow_direction as FLAT
+     and stop probing — don't synthesize a directional verdict from a
+     stale row.
   3. SELECT lth_supply_pct, smart_money_stance FROM holder_cohort latest.
   4. For wash-trade concerns, sub_lm() the research_note 'summary' rows.
   5. growth_authenticity_verdict: STRONG if real DAU growth + LTH increasing
