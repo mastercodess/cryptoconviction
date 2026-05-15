@@ -183,6 +183,50 @@ def test_config_yaml_security_threshold_is_six_months():
     )
 
 
+# ─── Item 3: moat / macro freshness thresholds at 7d ────────────────────
+
+def test_config_yaml_moat_threshold_is_seven_days():
+    """Moat metrics (TVL, category rank, network-effect signal) shift on
+    weekly-to-monthly timescales. 48h gate is wasted credits."""
+    import yaml
+    import pathlib
+    cfg = yaml.safe_load(pathlib.Path("config.yaml").read_text())
+    per_agent = cfg.get("red_flags", {}).get("max_data_age_hours_per_agent", {})
+    assert per_agent.get("moat") == 168, (
+        f"config.yaml red_flags.max_data_age_hours_per_agent.moat must be "
+        f"168 (7 days in hours). Got: {per_agent.get('moat')}"
+    )
+
+
+def test_config_yaml_macro_threshold_is_seven_days():
+    """Macro cycle phase, BTC correlation, and Fear&Greed are smoothed over
+    windows by construction — sub-daily re-collection has no information
+    value."""
+    import yaml
+    import pathlib
+    cfg = yaml.safe_load(pathlib.Path("config.yaml").read_text())
+    per_agent = cfg.get("red_flags", {}).get("max_data_age_hours_per_agent", {})
+    assert per_agent.get("macro") == 168, (
+        f"config.yaml red_flags.max_data_age_hours_per_agent.macro must be "
+        f"168 (7 days in hours). Got: {per_agent.get('macro')}"
+    )
+
+
+def test_config_yaml_other_agents_keep_default_48h():
+    """Regression: only security/moat/macro override the default. The
+    asymmetry matters — onchain DAU and exchange flow genuinely go stale
+    at the day timescale."""
+    import yaml
+    import pathlib
+    cfg = yaml.safe_load(pathlib.Path("config.yaml").read_text())
+    per_agent = cfg.get("red_flags", {}).get("max_data_age_hours_per_agent", {})
+    overridden = set(per_agent.keys())
+    assert overridden == {"security", "moat", "macro"}, (
+        f"per-agent overrides must be exactly {{security, moat, macro}}. "
+        f"Got: {overridden}"
+    )
+
+
 import json
 import sqlite3
 import pathlib
