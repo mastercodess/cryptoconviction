@@ -78,11 +78,12 @@ _PROMPT = textwrap.dedent("""\
 def _conn() -> sqlite3.Connection:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     SIDECAR_DIR.mkdir(parents=True, exist_ok=True)
-    fresh = not DB_PATH.exists()
     c = sqlite3.connect(DB_PATH)
-    if fresh:
-        c.executescript(SCHEMA_PATH.read_text())
-        c.commit()
+    # Idempotent — CREATE IF NOT EXISTS makes this safe to run on every
+    # connect, and it picks up new tables (e.g. security_collection_log)
+    # on existing DBs without a separate migration step.
+    c.executescript(SCHEMA_PATH.read_text())
+    c.commit()
     return c
 
 
@@ -173,6 +174,13 @@ def collect_one(symbol: str) -> dict:
             (symbol, dep_type, provider,
              d.get("risk_level", "medium"), d.get("notes", "")),
         )
+
+    # Stamp the collection time — this is what the orchestrator's
+    # freshness gate reads, distinct from audit_date / incident_date.
+    c.execute(
+        "INSERT OR REPLACE INTO security_collection_log (token_symbol, collected_at) VALUES (?, ?)",
+        (symbol, dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")),
+    )
     c.commit()
     return {"ok": True, "data_quality": data.get("data_quality")}
 

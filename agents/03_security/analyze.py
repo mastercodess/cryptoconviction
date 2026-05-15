@@ -183,7 +183,13 @@ def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[
                   task=_TASK, output_schema=_SCHEMA_DOCS, max_iters=max_iters, verbose=verbose)
     if raw.get("error") == "max_iters_reached":
         raw = _fallback_output(symbol, conn, f"max_iters={raw.get('iters')}")
-    stamp_data_as_of(raw, conn, table="audit", ts_col="audit_date", symbol=symbol)
+    # data_as_of for security = collection time, NOT audit_date (event time).
+    # Strip any LLM-set value first: opus tends to surface the latest
+    # audit_date from the DB, but that's the wrong semantic for the
+    # orchestrator's freshness gate. The collection log is authoritative.
+    raw.pop("data_as_of", None)
+    stamp_data_as_of(raw, conn, table="security_collection_log",
+                     ts_col="collected_at", symbol=symbol)
     out_dir = REPORTS_DIR / symbol
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "agent_03_security.json"

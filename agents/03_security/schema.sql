@@ -44,3 +44,12 @@ CREATE TABLE IF NOT EXISTS dependency (
     notes         TEXT,
     PRIMARY KEY (token_symbol, dep_type, provider)
 );
+
+-- Tracks WHEN we last collected security data for each token, distinct
+-- from WHEN the underlying events happened (audit_date, incident_date).
+-- The orchestrator's freshness gate reads this — collection time, not
+-- event time, is the right semantic for "how stale is our view?".
+CREATE TABLE IF NOT EXISTS security_collection_log (
+    token_symbol  TEXT PRIMARY KEY,
+    collected_at  TEXT NOT NULL          -- ISO 8601 datetime, UTC
+);
