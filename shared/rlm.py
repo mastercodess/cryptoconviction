@@ -320,6 +320,8 @@ def run_rlm(
         if not feedback.strip():
             feedback = "(no output)"
         history.append({"role": "user", "content": f"REPL stdout:\n{feedback}"})
+        if verbose:
+            print(f"\n--- iter {i} repl ---\n{feedback}\n")
 
         # Did FINAL get set this turn?
         final_val = repl.get("FINAL")
