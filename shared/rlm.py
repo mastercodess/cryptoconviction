@@ -135,7 +135,11 @@ Strategy:
 Hard rules:
   • NEVER print > 4000 chars in one turn — the root context will choke.
   • NEVER paste large file contents into your reasoning. Refer by variable.
-  • Keep code blocks short and incremental; one logical step per turn.
+  • You may emit one or more code blocks per turn; all execute against
+    the persistent REPL in order, sharing globals. Use multiple blocks
+    when steps are independent (different SELECTs, sidecar reads, etc.);
+    use one block when a later step needs to see earlier output before
+    being written.
   • If a sub_lm reply is ambiguous, query again with a tighter prompt.
 """
 
@@ -227,11 +231,28 @@ def _root_turn(
 
 
 _CODE_RE = re.compile(r"```(?:python)?\s*\n(.*?)```", re.DOTALL)
+_BLOCK_BOUNDARY_MARKER = "---block-boundary---"
 
 
 def _extract_code(reply: str) -> Optional[str]:
-    m = _CODE_RE.search(reply)
-    return m.group(1).strip() if m else None
+    """Extract all ```python blocks from a reply, concatenated in order.
+
+    When opus emits multiple blocks per turn (common after the system
+    prompt update authorizing it), every block runs against the same
+    persistent REPL globals, sharing state. A printed marker is inserted
+    between blocks so runtime errors can be attributed to the right
+    block and partial outputs can be located in feedback.
+
+    Single-block emission is byte-identical to the pre-fix behavior:
+    no marker, just the stripped block content.
+    """
+    blocks = [m.strip() for m in _CODE_RE.findall(reply)]
+    if not blocks:
+        return None
+    if len(blocks) == 1:
+        return blocks[0]
+    sep = f"\nprint('{_BLOCK_BOUNDARY_MARKER}')\n"
+    return sep.join(blocks)
 
 
 # ────────────────────────────────────────────────────────────────────────
