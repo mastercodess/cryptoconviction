@@ -63,3 +63,44 @@ def test_task_still_lists_remaining_tables():
     assert "exchange_flow" in _TASK
     assert "holder_cohort" in _TASK
     assert "onchain_research_note" in _TASK
+
+
+# ─── T3: converging-agent template (EMIT-EARLY block + named fast paths) ──
+
+def test_task_has_hard_turn_budget():
+    """The four agents that never max_iters all have an explicit budget
+    reminder. Onchain must match."""
+    assert "HARD" in _TASK
+    assert "turn budget" in _TASK
+
+
+def test_task_has_emit_early_block():
+    """Visual structure matching tokenomics/team/moat — opus latches onto
+    the EMIT-EARLY header to authorize short-path termination."""
+    assert "EMIT-EARLY" in _TASK
+
+
+def test_task_has_unavailable_fast_path():
+    """Protocol-class tokens (AAVE/UNI/MORPHO/RNDR/etc.) have no Dune
+    queries — all three tables empty. The LLM must short-circuit, not
+    loop trying to find data that doesn't exist."""
+    assert "UNAVAILABLE" in _TASK
+    # The fast path should reference a turn target so opus emits early.
+    assert "turn 3" in _TASK or "turn 4" in _TASK
+
+
+def test_task_has_dau_only_named_fast_path():
+    """Promote the T2b directive into a named fast path the LLM can match
+    on the same line as DAU-ONLY."""
+    assert "DAU-ONLY" in _TASK or "DAU ONLY" in _TASK
+
+
+def test_task_has_stale_flow_named_fast_path():
+    """T2b had this as a strategy bullet; T3 elevates it to a named path."""
+    assert "STALE FLOW" in _TASK or "STALE-FLOW" in _TASK
+
+
+def test_task_references_data_quality_hint():
+    """T2c surfaces data_quality_hint in the manifest. The TASK must tell
+    the LLM to read it on turn 1 so the plumbing is actually used."""
+    assert "data_quality_hint" in _TASK
