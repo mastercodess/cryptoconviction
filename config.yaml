@@ -59,6 +59,14 @@ red_flags:
     # tighten this back to 48h — at which point the gate tests collection
     # freshness, which is what the system actually wants.
     security: 4320   # 6 months (180 days × 24h)
+    # moat: TVL, category rank, dev-ecosystem signal all shift on weekly-
+    # to-monthly cadence. Re-collecting daily is wasted API credits with
+    # no information lift. 7d gate keeps signal-to-noise honest.
+    moat: 168        # 7 days
+    # macro: cycle phase / BTC correlation / Fear & Greed are smoothed
+    # over windows by construction. Sub-daily refreshes don't change the
+    # verdict. 7d matches the underlying data cadence.
+    macro: 168       # 7 days
 
 # ── Models ──────────────────────────────────────────────────────────────
 # Root agent uses Opus for planning; sub-LLM calls inside RLMs use Sonnet.
