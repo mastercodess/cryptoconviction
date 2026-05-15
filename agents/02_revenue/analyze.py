@@ -28,37 +28,57 @@ Tables in revenue_db:
   - peer_comparison: peer P/S, P/TVL multiples.
   - revenue_research_note: prose summaries.
 
-Strategy:
+HARD 14-turn budget. Use it efficiently. Set FINAL as soon as you have
+enough signal — don't burn turns re-querying the same null fields.
+
+Read the manifest first: if `data_quality_hint` is UNAVAILABLE or PARTIAL,
+trust it and apply the matching EMIT-EARLY rule on turn 1-2.
+
+EMIT-EARLY rules (apply if hit; aim to set FINAL by turn 4):
+
+  • NON-PROTOCOL FAST PATH (2 of 3 revenue fields null):
+    If 2 of 3 in {annualized_revenue_usd, tvl_usd, p_s_ratio} are null
+    after reading revenue_snapshot, this token is not a fee-accruing
+    protocol (oracles like LINK, privacy chains like XMR, ML-tournament
+    tokens like NMR, gas-token L1s). Don't probe further. By turn 3 at
+    the latest, set FINAL with:
+      revenue_quality_score = 4
+      growth_trend           = "STEADY"
+      valuation_vs_peers     = "NEUTRAL"
+      real_yield_apr         = null  (or echo if populated)
+      inflationary_yield_apr = null  (or echo if populated)
+      annualized_revenue_usd = (echo whatever is in the snapshot)
+      p_s_ratio              = (echo whatever is in the snapshot)
+      composite_score        = 35   (conservative — neither bullish nor bearish)
+    Rationale: "Token is not a fee-accruing protocol; revenue
+    fundamentals don't apply." + 1-2 sentences citing what IS null.
+
+  • STALE PROTOCOL DATA FAST PATH (snapshot >90 days old):
+    If revenue_snapshot has a row but its as_of / snapshot_at is older
+    than 90 days, the cached numbers can't support a current-period
+    verdict. Emit FINAL by turn 4 with:
+      revenue_quality_score = 5
+      growth_trend           = "STEADY"
+      valuation_vs_peers     = "NEUTRAL"
+      real_yield_apr / inflationary_yield_apr / annualized_revenue_usd /
+        p_s_ratio  = echo from row (so downstream sees the cached numbers)
+      composite_score = 45
+    Rationale: "revenue_snapshot is >90 days stale (as_of=YYYY-MM-DD);
+    numbers echoed but cannot anchor a current verdict. Refresh collect
+    before relying on this output."
+
+Strategy (full path, only if no EMIT-EARLY rule fits):
   1. SELECT * FROM revenue_snapshot WHERE token_symbol=? — read latest.
-  2. NON-PROTOCOL FAST PATH: If annualized_revenue_usd, tvl_usd, AND
-     p_s_ratio are ALL null after step 1, this token is not a fee-accruing
-     protocol (oracles like LINK, privacy chains like XMR, ML-tournament
-     tokens like NMR). DO NOT keep probing for data that isn't there. By
-     turn 3 at the latest, set FINAL with:
-       revenue_quality_score = 4
-       growth_trend           = "STEADY"
-       valuation_vs_peers     = "NEUTRAL"
-       real_yield_apr         = null
-       inflationary_yield_apr = null
-       annualized_revenue_usd = null
-       p_s_ratio              = null
-       composite_score        = 35   (conservative — neither bullish nor bearish)
-       rationale              = "Token is not a fee-accruing protocol; revenue
-                                 fundamentals don't apply. <explain WHY in 1-2
-                                 sentences using the research_note context>"
-  3. PROTOCOL PATH: revenue is non-null. Compute P/S relative to peer
+  2. PROTOCOL PATH: revenue is non-null. Compute P/S relative to peer
      median; classify trend.
-  4. CRUCIAL: real_yield_apr (from real fees) vs inflationary_yield_apr
+  3. CRUCIAL: real_yield_apr (from real fees) vs inflationary_yield_apr
      (emission-funded). Fake yield is penalized in composite_score.
-  5. sub_lm() the prose research_note to extract growth narrative if you
+  4. sub_lm() the prose research_note to extract growth narrative if you
      can't infer it from numbers alone.
 
 Composite weighting suggestion (PROTOCOL PATH only):
   ~30% real-yield magnitude, ~25% growth trend, ~25% valuation vs peers,
   ~20% revenue durability (seasonality/concentration).
-
-You have a HARD 12-turn budget. Use it efficiently. Set FINAL early when the
-data is unambiguous; don't burn turns re-querying the same null fields.
 """
 
 _SCHEMA_DOCS = {
@@ -88,17 +108,19 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
         "ORDER BY snapshot_at DESC LIMIT 1",
         (symbol,),
     ).fetchone()
-    # Non-protocol = the three revenue-defining fields are all null.
+    # Non-protocol = 2+ of the 3 revenue-defining fields are null.
     # We deliberately ignore inflationary_yield_apr here — XMR has emission
-    # inflation but isn't a fee protocol.
+    # inflation but isn't a fee protocol. Loosened from 3-of-3 in T3: even
+    # one populated field (e.g. tvl_usd only, from a partial DefiLlama pull)
+    # shouldn't force the slow path when the other two are missing.
     if row is None:
         is_non_protocol = True
     else:
-        is_non_protocol = (
-            row["annualized_revenue_usd"] is None
-            and row["tvl_usd"] is None
-            and row["p_s_ratio"] is None
+        null_count = sum(
+            1 for f in ("annualized_revenue_usd", "tvl_usd", "p_s_ratio")
+            if row[f] is None
         )
+        is_non_protocol = null_count >= 2
     if is_non_protocol:
         return {
             "token_symbol": symbol,
@@ -136,7 +158,7 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
     }
 
 
-def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[str, Any]:
+def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[str, Any]:
     symbol = symbol.upper()
     tokens.get(symbol)
     if not DB_PATH.exists():
