@@ -16,7 +16,18 @@ import importlib
 # fmt: off
 _onchain = importlib.import_module("agents.04_onchain.analyze")
 _TASK = _onchain._TASK
+analyze = _onchain.analyze
 # fmt: on
+
+
+def test_max_iters_default_matches_converging_cohort():
+    """The TASK string promises a 'HARD 14-turn budget' but the analyze
+    function signature was left at 12 in T3 onchain — a silent contradiction
+    that gave opus a misleading budget. security and revenue were bumped
+    to 14 in d072f2f and 552b8cb; onchain must match."""
+    import inspect
+    sig = inspect.signature(analyze)
+    assert sig.parameters["max_iters"].default == 14
 
 
 def test_task_does_not_mention_retention_cohort_table():
