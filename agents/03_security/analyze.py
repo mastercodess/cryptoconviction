@@ -22,7 +22,38 @@ _TASK = """\
 Score security posture for the given token. Tables in security_db: audit,
 exploit_history, code_health, dependency.
 
-Strategy:
+HARD 14-turn budget. Use it efficiently. Set FINAL as soon as you have
+enough signal — do NOT keep probing for fields that aren't in the DB.
+
+Read the manifest first: if `data_quality_hint` is UNAVAILABLE, emit a
+conservative tier-3 result on turn 2 with a note that data wasn't
+collected. Don't waste turns re-validating.
+
+EMIT-EARLY rules (apply if hit; aim to set FINAL by turn 4):
+
+  • IMMUTABLE FAST PATH (immutable design + clean record):
+    If code_health.upgrade_mechanism = 'immutable' AND no 'major' or
+    'catastrophic' exploits in last 36 months: emit FINAL by turn 3 with
+    security_tier=5, incident_history_severity in {"NONE", "MINOR"},
+    upgrade_mechanism="immutable", audit_coverage_score 7-10,
+    composite_score 80-90. The chain's track record IS the security
+    signal — audit count is not the frame.
+
+  • RECENT-MAJOR-EXPLOIT FAST PATH (severe history flag):
+    If exploit_history has any 'major' or 'catastrophic' severity row
+    in last 24 months, OR exploit_history has 5+ rows with worst
+    severity in {"major", "catastrophic"}: emit FINAL by turn 3 with
+    security_tier <= 2, incident_history_severity matching the worst
+    ("MAJOR" or "CATASTROPHIC"), composite_score <= 30. Cite the
+    exploit count and worst severity in rationale.
+
+  • WELL-AUDITED FAST PATH (clean mature project):
+    If audit count >= 3, sum(severity_high) = 0, AND no 'major' or
+    'catastrophic' exploits in any row: emit FINAL by turn 4 with
+    security_tier=4, audit_coverage_score >= 8, incident_history_
+    severity in {"NONE", "MINOR"}, composite_score 70-80.
+
+Strategy (full path, only if no EMIT-EARLY rule fits):
   1. List exploits — any 'major' or 'catastrophic' = automatic security_tier
      ≤ 2 unless ≥3 years have passed without recurrence.
   2. Count audits and severity_high counts. Multiple top auditors with low
@@ -134,7 +165,7 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
     }
 
 
-def analyze(symbol: str, *, max_iters: int = 12, verbose: bool = False) -> dict[str, Any]:
+def analyze(symbol: str, *, max_iters: int = 14, verbose: bool = False) -> dict[str, Any]:
     symbol = symbol.upper()
     tokens.get(symbol)
     if not DB_PATH.exists():
