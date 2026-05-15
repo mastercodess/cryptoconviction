@@ -77,12 +77,22 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
     else:
         holder_score = 5
 
-    # Score organic activity from DAU/MAU
-    if activity and activity["dau_mau_ratio"]:
-        dm = activity["dau_mau_ratio"]
-        activity_score = 9 if dm >= 0.4 else 7 if dm >= 0.2 else 5 if dm >= 0.1 else 3
+    # Score organic activity. Prefer dau_mau_ratio (more informative) when
+    # populated; fall back to DAU magnitude when only DAU is available — the
+    # typical post-Dune chain-class case (CHAIN_DAU query gives DAU, no MAU).
+    dau_value = activity["dau"] if activity else None
+    ratio_value = activity["dau_mau_ratio"] if activity else None
+    if ratio_value is not None:
+        activity_score = 9 if ratio_value >= 0.4 else 7 if ratio_value >= 0.2 else 5 if ratio_value >= 0.1 else 3
+    elif dau_value is not None:
+        activity_score = 9 if dau_value >= 5_000_000 else 7 if dau_value >= 1_000_000 else 5 if dau_value >= 100_000 else 3
     else:
         activity_score = 5
+
+    if dau_value is not None:
+        dau_str = f"DAU={dau_value:,}" + (f" (ratio {ratio_value:.2f})" if ratio_value is not None else "")
+    else:
+        dau_str = "DAU/MAU: unknown"
 
     composite = max(25, min(75, holder_score*5 + activity_score*4 + (15 if flow_dir == "OUTFLOW" else 0)))
 
@@ -99,7 +109,7 @@ def _fallback_output(symbol: str, conn: sqlite3.Connection, why: str) -> dict[st
             f"Net flow: {flow_dir} (net_usd={flow['net_usd'] if flow else 'NA'}), "
             f"LTH%: {f'{lth*100:.1f}' if lth else 'unknown'}, "
             f"smart money: {smart}, "
-            f"DAU/MAU: {activity['dau_mau_ratio'] if activity else 'unknown'}. "
+            f"{dau_str}. "
             "Conservative scores; rerun analyze for narrative judgement."
         ),
         "composite_score": composite,
