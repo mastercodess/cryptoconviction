@@ -19,21 +19,57 @@ _TASK = """\
 Score on-chain activity authenticity. Tables: activity_metric, exchange_flow,
 holder_cohort, onchain_research_note.
 
-Strategy:
-  1. SELECT * FROM activity_metric — peek at dau_mau_ratio. >0.4 healthy,
-     <0.1 retention concern. If dau_mau_ratio is null but dau is populated
-     (the typical Dune-fed case), score from DAU alone — don't probe a
-     separate retention table; the project doesn't have one.
-  2. SELECT SUM(net_usd) FROM exchange_flow last 30d. Negative net = outflow
-     to self-custody = bullish; positive = exchange-bound = bearish. If the
-     most recent exchange_flow row is >60 days old (non-EVM chains often
-     have no fresh CEX-flow labels), treat capital_flow_direction as FLAT
-     and stop probing — don't synthesize a directional verdict from a
-     stale row.
+HARD 14-turn budget. Use it efficiently. Set FINAL as soon as you have
+enough signal — do NOT keep probing for fields that aren't in the DB.
+
+Read the manifest first: if `data_quality_hint` is UNAVAILABLE or PARTIAL,
+trust it and apply the matching EMIT-EARLY rule on turn 1-2. Don't waste
+turns re-validating what the collector already flagged.
+
+EMIT-EARLY rules (apply if hit; aim to set FINAL by turn 5):
+
+  • UNAVAILABLE FAST PATH (protocol-class, no Dune chain queries):
+    If activity_metric, exchange_flow, AND holder_cohort all have zero
+    rows for this token (typical for protocols like AAVE/UNI/MORPHO
+    where Dune chain queries don't apply), OR data_quality_hint is
+    UNAVAILABLE: emit FINAL by turn 3 with all scores=5,
+    growth_authenticity_verdict="NEUTRAL", retention_health_grade="C",
+    smart_money_stance="UNKNOWN", composite_score=50. Rationale:
+    "On-chain chain-level data not collected for this protocol-class
+    token; UNAVAILABLE."
+
+  • DAU-ONLY CHAIN-CLASS FAST PATH (Dune-fed chain, no MAU populated):
+    If activity_metric has dau populated AND dau_mau_ratio IS NULL
+    AND exchange_flow has no fresh rows (most recent >60 days old),
+    OR data_quality_hint is PARTIAL: emit FINAL by turn 4 with:
+      organic_activity_score: 9 if dau>=5M, 7 if dau>=1M, 5 if dau>=100K,
+                              else 3
+      capital_flow_direction: "FLAT"
+      holder_quality_rating: 5
+      growth_authenticity_verdict: "NEUTRAL"
+      retention_health_grade: "C"
+      smart_money_stance: "UNKNOWN"
+    Cite the DAU value in rationale. composite_score in 40-60 range.
+
+  • STALE FLOW FAST PATH (applies as a modifier to any other path):
+    If the most recent exchange_flow row is >60 days old, treat
+    capital_flow_direction as "FLAT" — do not synthesize a directional
+    verdict from a stale row. Continue to score other dimensions from
+    fresh data, but cap capital_flow at FLAT.
+
+Strategy (full path, only if no EMIT-EARLY rule fits):
+  1. SELECT * FROM activity_metric — read dau, dau_mau_ratio. If
+     dau_mau_ratio is null but dau is populated, score from DAU
+     alone — don't probe a separate retention table; the project
+     doesn't have one.
+  2. SELECT SUM(net_usd) FROM exchange_flow last 30d — only if the
+     latest row is <60 days old. Negative net = outflow = bullish;
+     positive = exchange-bound = bearish.
   3. SELECT lth_supply_pct, smart_money_stance FROM holder_cohort latest.
   4. For wash-trade concerns, sub_lm() the research_note 'summary' rows.
-  5. growth_authenticity_verdict: STRONG if real DAU growth + LTH increasing
-     + outflows; WEAK if incentive farming or wash-trading suspected.
+  5. growth_authenticity_verdict: STRONG if real DAU growth + LTH
+     increasing + outflows; WEAK if incentive farming or wash-trading
+     suspected.
 
 For privacy chains (XMR) most fields will be UNAVAILABLE — score on the
 basis of network usage proxies only and document UNKNOWNs.
