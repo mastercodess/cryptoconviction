@@ -140,8 +140,47 @@ Hard rules:
 """
 
 
+_DATA_QUALITY_RANK = {"GOOD": 0, "PARTIAL": 1, "UNAVAILABLE": 2}
+
+
+def _peek_sidecar_data_quality(environment: dict[str, Any]) -> Optional[str]:
+    """Return the worst top-level `data_quality` value across sidecar JSONs.
+
+    Best-effort and silent — any error (missing dir, malformed JSON,
+    permission, etc.) yields None rather than raising. A crash in this
+    helper would break the manifest for every agent, not just the one
+    being analyzed.
+    """
+    try:
+        import pathlib
+        import json as _json
+        sidecar_dir = environment.get("sidecar_dir")
+        if not sidecar_dir:
+            return None
+        d = pathlib.Path(sidecar_dir)
+        if not d.is_dir():
+            return None
+        worst: Optional[str] = None
+        for f in d.glob("*.json"):
+            try:
+                data = _json.loads(f.read_text())
+            except Exception:
+                continue
+            if not isinstance(data, dict):
+                continue
+            q = data.get("data_quality")
+            if not isinstance(q, str):
+                continue
+            if worst is None or _DATA_QUALITY_RANK.get(q, -1) > _DATA_QUALITY_RANK.get(worst, -1):
+                worst = q
+        return worst
+    except Exception:
+        return None
+
+
 def _format_manifest(environment: dict[str, Any]) -> str:
     """Describe what's in the REPL without printing contents."""
+    hint = _peek_sidecar_data_quality(environment)
     lines = ["ENVIRONMENT MANIFEST (variables you can access in the REPL):"]
     for k, v in environment.items():
         if k.startswith("_"):
@@ -156,7 +195,10 @@ def _format_manifest(environment: dict[str, Any]) -> str:
                 size = f"len={len(v)}"
             else:
                 size = ""
-            lines.append(f"  {k!s}: {t}  {size}")
+            line = f"  {k!s}: {t}  {size}"
+            if k == "sidecar_files" and hint:
+                line += f"  (data_quality_hint: {hint})"
+            lines.append(line)
         except Exception:
             lines.append(f"  {k!s}: <opaque>")
     return "\n".join(lines)
