@@ -68,18 +68,26 @@ def _now() -> str:
 # queries return slightly different identifiers (e.g. "avalanche_c" for
 # Avalanche C-Chain) — the mapping resolves that drift.
 _CHAIN_TO_DUNE = {
+    # EVM chains — all enumerated by CHAIN_DAU query 7485961.
     "ethereum": "ethereum",
     "base": "base",
     "arbitrum": "arbitrum",
     "optimism": "optimism",
     "polygon": "polygon",
+    "bnb": "bnb",
+    "avalanche": "avalanche_c",  # Dune label for Avalanche C-Chain
+    # Non-EVM chains Dune enumerates in CHAIN_DAU.
     "tron": "tron",
     "solana": "solana",
+    "sui": "sui",
+    "ton": "ton",                  # added 2026-05-15
+    "ripple": "xrpl",              # registry uses 'ripple' (company), Dune emits 'xrpl' — added 2026-05-15
+    "near": "near",                # added 2026-05-15; Dune table is near.actions w/ tx_from
+    # Stacks (STX) is NOT carried by Dune as of 2026-05-15. STX onchain
+    # data routes through plan 2 (Hiro API) when written.
+    # BTC-style chains (separate query path via BTC_LTH_STH).
     "bitcoin": "bitcoin",
     "bitcoin-cash": "bitcoin-cash",
-    "bnb": "bnb",
-    "avalanche": "avalanche_c",  # Dune uses avalanche_c for Avalanche C-Chain
-    "sui": "sui",
 }
 
 # Token-category buckets for routing (matches shared/tokens.py categories).
