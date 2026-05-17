@@ -103,6 +103,14 @@ _PROTOCOL_CLASS_CATEGORIES = frozenset({
 # Chains where BTC-style LTH/STH UTXO-age query would apply (when enabled).
 _BTC_STYLE_CHAINS = frozenset({"bitcoin", "litecoin", "bitcoin-cash"})
 
+# Per-chain handlers for chains Dune doesn't index. Dispatch in collect_one()
+# runs BEFORE the category check, so any chain entering this map bypasses
+# the Dune path entirely. Populated below as handlers are defined:
+#   - "stellar":      _collect_stellar       (plan 2a, 2026-05-17)
+#   - "cardano":      _collect_cardano       (plan 2b, future)
+#   - "hyperliquid":  _collect_hyperliquid   (plan 2c, future — evaluate post-replay)
+_NON_DUNE_CHAIN_HANDLERS: dict = {}
+
 
 def _today() -> str:
     return dt.date.today().isoformat()
@@ -125,14 +133,20 @@ def _unavailable(symbol: str, reason: str) -> dict:
 
 
 def collect_one(symbol: str) -> dict:
-    """Fetch on-chain data from Dune Analytics. Routes by token category:
-    - chain-class → Dune CHAIN_DAU + CEX_FLOWS_BY_CHAIN
-    - protocol-class → skip (use TVL/fee proxies via moat agent's data)
-    - other → no Dune route; emit UNAVAILABLE
+    """Fetch on-chain data. Dispatch order:
+    1. _NON_DUNE_CHAIN_HANDLERS — chains with dedicated non-Dune sources
+       (Stellar via BigQuery/Hubble, Cardano via TBD, Hyperliquid via TBD).
+    2. Category routing:
+       - chain-class → Dune CHAIN_DAU + CEX_FLOWS_BY_CHAIN
+       - protocol-class → skip (use TVL/fee proxies via moat agent's data)
+       - other → no route; emit UNAVAILABLE
     """
     tok = tokens.get(symbol)
-    cat = (tok.category or "").lower()
+    handler = _NON_DUNE_CHAIN_HANDLERS.get((tok.chain or "").lower())
+    if handler:
+        return handler(symbol, tok)
 
+    cat = (tok.category or "").lower()
     if cat in _CHAIN_CLASS_CATEGORIES:
         return _collect_chain(symbol, tok)
     if cat in _PROTOCOL_CLASS_CATEGORIES:
@@ -252,6 +266,106 @@ def _collect_chain(symbol: str, tok) -> dict:
         "sources": sources_used,
     })
     return {"ok": True, "data_quality": data_quality, "populated": populated_fields}
+
+
+# ─── Stellar (XLM) — plan 2a, BigQuery / Hubble canonical source ─────────
+#
+# Hubble is Stellar Foundation's official analytics platform. The
+# `enriched_history_operations` table contains one row per Stellar
+# operation with the originating account in `op_source_account`. DAU =
+# COUNT(DISTINCT op_source_account) over 24h per OrbitLens methodology:
+# https://medium.com/@orbit.lens/daily-active-accounts-on-stellar-correct-estimates-ec40c2c382a4
+# (distinct origin accounts, NOT destinations which inflate via passive recipients).
+#
+# Free at our scale: ~100-500 MB queried per run, well within BigQuery's
+# 1 TB/month free tier. Requires google-cloud-bigquery client lib and
+# GOOGLE_APPLICATION_CREDENTIALS env var pointing at a service-account
+# JSON key (BigQuery Data Viewer + BigQuery Job User roles).
+
+_STELLAR_DAU_QUERY = """
+SELECT COUNT(DISTINCT op_source_account) AS dau
+FROM `crypto-stellar.crypto_stellar_dbt.enriched_history_operations`
+WHERE closed_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 DAY)
+  AND closed_at <  CURRENT_TIMESTAMP()
+"""
+
+
+def _fetch_stellar_dau():
+    """Query Stellar Hubble for last-24h DAU. Lazy-imports BigQuery so
+    the dependency only loads when XLM is actually collected.
+
+    Returns the DAU as an int, or None if the query returned no rows.
+    Raises if BigQuery auth fails or the package isn't installed —
+    caller (_collect_stellar) catches and converts to UNAVAILABLE.
+    """
+    try:
+        from google.cloud import bigquery
+    except ImportError as e:
+        raise RuntimeError(
+            "google-cloud-bigquery is required for Stellar onchain collect. "
+            "Install with: pip install 'google-cloud-bigquery>=3.0.0'"
+        ) from e
+    client = bigquery.Client()
+    rows = list(client.query(_STELLAR_DAU_QUERY).result())
+    if not rows:
+        return None
+    return _coerce_int(rows[0].dau)
+
+
+def _collect_stellar(symbol: str, tok) -> dict:
+    """Fetch XLM DAU from Stellar Hubble (BigQuery), write activity_metric
+    row, return same shape as _collect_chain. data_quality is PARTIAL
+    because exchange_flow is unavailable for non-EVM-CEX-labeled chains
+    (parent plan's deferred work)."""
+    try:
+        dau_value = _fetch_stellar_dau()
+    except Exception as e:
+        return _unavailable(symbol, f"Stellar BigQuery unavailable: {e}")
+
+    if dau_value is None:
+        return _unavailable(symbol, "Stellar BigQuery returned no DAU value")
+
+    c = _conn()
+    today = _today()
+    c.execute(
+        "INSERT OR REPLACE INTO activity_metric "
+        "(token_symbol, snapshot_at, dau, wau, mau, dau_mau_ratio, "
+        " daily_tx_count, new_addresses_7d) VALUES (?,?,?,?,?,?,?,?)",
+        (symbol, today, dau_value, None, None, None, None, None),
+    )
+    # Mirror _collect_chain: always write a holder_cohort row with
+    # smart_money_stance=UNKNOWN so the analyzer can distinguish
+    # "we tried, no data" from "we didn't query".
+    c.execute(
+        "INSERT OR REPLACE INTO holder_cohort "
+        "(token_symbol, snapshot_at, lth_supply_pct, sth_supply_pct, "
+        " smart_money_stance) VALUES (?,?,?,?,?)",
+        (symbol, today, None, None, "UNKNOWN"),
+    )
+    c.commit()
+
+    _write_sidecar(symbol, {
+        "as_of": today,
+        "data_quality": "PARTIAL",
+        "chain": "stellar",
+        "activity": {"dau": dau_value},
+        "exchange_flow_30d": None,
+        "holder_cohort": None,
+        "smart_money_stance": "UNKNOWN",
+        "notes": (
+            "API-fetched (no LLM research): BigQuery / Stellar Hubble. "
+            "DAU = COUNT(DISTINCT op_source_account) over 24h per OrbitLens "
+            "methodology. Populated fields: activity_metric.dau."
+        ),
+        "sources": [
+            "https://console.cloud.google.com/bigquery?p=crypto-stellar&d=crypto_stellar_dbt&t=enriched_history_operations",
+            "https://medium.com/@orbit.lens/daily-active-accounts-on-stellar-correct-estimates-ec40c2c382a4",
+        ],
+    })
+    return {"ok": True, "data_quality": "PARTIAL", "populated": ["activity_metric.dau"]}
+
+
+_NON_DUNE_CHAIN_HANDLERS["stellar"] = _collect_stellar
 
 
 def main(argv: list[str] | None = None) -> int:
