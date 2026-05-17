@@ -13,7 +13,9 @@ marked UNAVAILABLE — never fabricated.
 """
 from __future__ import annotations
 
-import argparse, datetime as dt, json, pathlib, sqlite3, sys
+import argparse, datetime as dt, json, pathlib, sqlite3, sys, time
+
+import requests
 _REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
@@ -366,6 +368,120 @@ def _collect_stellar(symbol: str, tok) -> dict:
 
 
 _NON_DUNE_CHAIN_HANDLERS["stellar"] = _collect_stellar
+
+
+# ─── Cardano (ADA) — plan 2b, AdaStat /accounts.json pagination ──────────
+#
+# Cardano's BigQuery datasets are either archived (IOG iog-data-analytics,
+# Aug 2023) or paywalled (blockchain-analytics-392322, Jan 2025). The
+# canonical free path is AdaStat's REST API.
+#
+# AdaStat doesn't expose a direct DAU endpoint, but /accounts.json with
+# sort=last_tx&dir=desc returns accounts ordered by their most-recent
+# transaction timestamp. Paginating until last_tx < (now - 24h) and
+# counting rows yields DAU at stake-address level — Cardano's canonical
+# user metric (one stake address per wallet, regardless of payment-
+# address rotation per HD wallet).
+#
+# Rate limit: 1 req/sec per AdaStat docs. Daily DAU calc takes ~30-200
+# pages × 1 sec = 30-200 sec wall-clock. Acceptable for daily cron.
+
+_ADASTAT_ACCOUNTS_URL = "https://api.adastat.net/accounts.json"
+_ADASTAT_RATE_LIMIT_SLEEP_SEC = 1.05  # 1 req/sec + 5% margin
+
+
+def _fetch_cardano_dau():
+    """Query AdaStat for last-24h DAU via paginated /accounts.json.
+
+    Returns DAU as int (count of stake addresses with last_tx in last 24h),
+    or None if the response shape is wrong. Raises on network / rate-limit
+    failures — caller (_collect_cardano) catches and converts to UNAVAILABLE.
+
+    Methodology: COUNT(DISTINCT stake_address WHERE last_tx >= now-24h).
+    Cardano canonical user-level metric, matches AdaStat's own dashboard.
+    """
+    cutoff = time.time() - 86400  # 24h ago, UNIX seconds
+    count = 0
+    cursor = ""
+    while True:
+        params = {
+            "sort": "last_tx",
+            "dir": "desc",
+            "limit": 1000,
+            "rows": "true",
+            "after": cursor,
+        }
+        r = requests.get(_ADASTAT_ACCOUNTS_URL, params=params, timeout=30)
+        r.raise_for_status()
+        payload = r.json()
+        rows = payload.get("rows") or []
+        if not rows:
+            return count
+        for row in rows:
+            last_tx = row.get("last_tx")
+            if last_tx is None or last_tx < cutoff:
+                return count
+            count += 1
+        cursor_obj = payload.get("cursor") or {}
+        if not cursor_obj.get("next"):
+            return count
+        cursor = cursor_obj.get("after") or ""
+        time.sleep(_ADASTAT_RATE_LIMIT_SLEEP_SEC)
+
+
+def _collect_cardano(symbol: str, tok) -> dict:
+    """Fetch ADA DAU from AdaStat, write activity_metric row, return same
+    shape as _collect_chain. data_quality is PARTIAL because exchange_flow
+    is unavailable for non-EVM-CEX-labeled chains."""
+    try:
+        dau_value = _fetch_cardano_dau()
+    except Exception as e:
+        return _unavailable(symbol, f"AdaStat unavailable: {e}")
+
+    if dau_value is None:
+        return _unavailable(symbol, "AdaStat returned no DAU value")
+
+    c = _conn()
+    today = _today()
+    c.execute(
+        "INSERT OR REPLACE INTO activity_metric "
+        "(token_symbol, snapshot_at, dau, wau, mau, dau_mau_ratio, "
+        " daily_tx_count, new_addresses_7d) VALUES (?,?,?,?,?,?,?,?)",
+        (symbol, today, dau_value, None, None, None, None, None),
+    )
+    # Mirror _collect_chain / _collect_stellar: always write a
+    # holder_cohort row with smart_money_stance=UNKNOWN so the analyzer
+    # can distinguish "we tried, no data" from "we didn't query".
+    c.execute(
+        "INSERT OR REPLACE INTO holder_cohort "
+        "(token_symbol, snapshot_at, lth_supply_pct, sth_supply_pct, "
+        " smart_money_stance) VALUES (?,?,?,?,?)",
+        (symbol, today, None, None, "UNKNOWN"),
+    )
+    c.commit()
+
+    _write_sidecar(symbol, {
+        "as_of": today,
+        "data_quality": "PARTIAL",
+        "chain": "cardano",
+        "activity": {"dau": dau_value},
+        "exchange_flow_30d": None,
+        "holder_cohort": None,
+        "smart_money_stance": "UNKNOWN",
+        "notes": (
+            "API-fetched (no LLM research): AdaStat /accounts.json paginated. "
+            "DAU = COUNT(stake_address) with last_tx in last 24h. "
+            "Populated fields: activity_metric.dau."
+        ),
+        "sources": [
+            "https://api.adastat.net/accounts.json",
+            "https://api.adastat.net/",  # OpenAPI docs
+        ],
+    })
+    return {"ok": True, "data_quality": "PARTIAL", "populated": ["activity_metric.dau"]}
+
+
+_NON_DUNE_CHAIN_HANDLERS["cardano"] = _collect_cardano
 
 
 def main(argv: list[str] | None = None) -> int:
