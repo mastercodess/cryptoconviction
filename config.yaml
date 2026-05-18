@@ -35,7 +35,14 @@ portfolio: {}            # symbol -> current_pct, used for concentration risk ch
 
 # ── Hard red-flag rules (auto-reject regardless of score) ───────────────
 red_flags:
-  reject_if_security_below: 5         # Agent 3 score (1-10) below this → AVOID
+  # Agent 3 returns security_tier on 1-5 scale (1=highest risk, 5=battle-tested).
+  # Reject only when tier < 3 — i.e. "real concerns" (tier 2) or "high risk" (tier 1).
+  # Tier 3 ("moderate risk, well-known") and tier 4 ("solid, minor incidents only or
+  # fully recovered") flow into composite score but do NOT auto-reject. The previous
+  # threshold of 5 was effectively "reject everything" — only UNI hit tier 5 across
+  # the 13-token replay scope (2026-05-17), confirming the bar was unmeetable for
+  # L1 chains whose security model isn't audit-centric (XRP, ADA, AVAX, etc).
+  reject_if_security_below: 3
   reject_if_holder_concentration_above: 0.5   # top-10 holding > 50% → AVOID
   reject_if_unlock_pressure_next_90d_above: 0.25  # >25% supply unlocking → AVOID
   # If the security agent didn't run, fail closed (AVOID with reason "security
