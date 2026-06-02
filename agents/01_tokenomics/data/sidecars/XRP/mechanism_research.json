@@ -1,0 +1,16 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "protocol",
+  "value_accrual_summary": "Every XRP Ledger transaction destroys a small amount of XRP as the network fee (currently 10 drops = 0.00001 XRP minimum), permanently reducing total supply; no staking exists, no fee revenue is redistributed to token holders or validators, so value accrual is purely deflationary scarcity accruing to all XRP holders pro-rata.",
+  "sources": [
+    "https://xrpl.org/transaction-cost.html",
+    "https://xrpl.org/xrp.html",
+    "https://xrpl.org/consensus.html",
+    "https://github.com/XRPLF/rippled/blob/develop/src/ripple/app/tx/impl/Transactor.cpp"
+  ],
+  "data_quality": "GOOD"
+}

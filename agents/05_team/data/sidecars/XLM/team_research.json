@@ -1,0 +1,163 @@
+{
+  "team_members": [
+    {
+      "name": "Jed McCaleb",
+      "role": "Co-Founder (departed day-to-day role ~2019, XLM sales completed ~2021)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/jed-mccaleb-4052a4/",
+      "prior_projects": [
+        "Mt. Gox (founded, sold 2011)",
+        "Ripple/XRP (co-founder, departed 2013)",
+        "eDonkey2000 (P2P network)"
+      ],
+      "notes": "Jed held a massive XLM allocation (~100B XLM at genesis). Per SDF public disclosures and community tracking, his personal sales concluded around 2021. He has since focused on Vast (space habitats company). His departure and completed sell-down reduces ongoing insider sell pressure from him specifically."
+    },
+    {
+      "name": "Joyce Kim",
+      "role": "Co-Founder (departed ~2016)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/joycejkim/",
+      "prior_projects": [
+        "Stripe (early team)",
+        "Soompi"
+      ],
+      "notes": "Left SDF in 2016. No known ongoing XLM holdings disclosed publicly."
+    },
+    {
+      "name": "Denelle Dixon",
+      "role": "CEO & Executive Director, Stellar Development Foundation (SDF)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/denelledixon/",
+      "prior_projects": [
+        "Mozilla Foundation (COO & Chief Business & Legal Officer)"
+      ],
+      "notes": "Joined SDF 2019. Former Mozilla COO brings legal/policy credibility. Actively represents SDF in regulatory discussions. Compensation not publicly disclosed in detail."
+    },
+    {
+      "name": "Jason Chlipala",
+      "role": "CFO, Stellar Development Foundation",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 LinkedIn profile not prominently indexed; name confirmed via SDF website (stellar.org/foundation/team)",
+      "prior_projects": [
+        "NOT_AVAILABLE_FREE_TIER"
+      ],
+      "notes": "Listed on SDF team page. Financial details of SDF are partially disclosed in annual reports on stellar.org."
+    },
+    {
+      "name": "David Mazi\u00e8res",
+      "role": "Chief Scientist, SDF; Creator of Stellar Consensus Protocol (SCP)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/david-mazi%C3%A8res-b4b4b/",
+      "prior_projects": [
+        "Stanford University (Professor, CS)",
+        "SFS (Self-certifying File System)"
+      ],
+      "notes": "Academic cryptographer; authored the SCP whitepaper. Provides strong technical credibility. Part-time role alongside Stanford professorship."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Stripe",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Stripe provided initial $3M seed funding in 2014 and received 2B XLM (~2% of original supply). Stripe later sold/returned most holdings; considered fully resolved. Source: stellar.org blog 2014, Crunchbase."
+    },
+    {
+      "investor_name": "BlackRock (via institutional product interest, not direct equity)",
+      "round": "NOT_AVAILABLE_FREE_TIER",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "No confirmed direct VC equity round in SDF (it is a nonprofit). BlackRock and Franklin Templeton have explored Stellar for tokenized assets but are partners, not equity investors."
+    },
+    {
+      "investor_name": "Stellar Development Foundation (SDF) \u2014 self-custodied treasury",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "SDF controls ~29B XLM as of 2024 per SDF Lumens Dashboard (dashboard.stellar.org). This is the primary 'overhang' risk. SDF publishes quarterly disbursement reports. Original supply was 100B XLM; ~50B was burned in 2019 via community vote, reducing total to ~50B."
+    },
+    {
+      "investor_name": "Franklin Templeton",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Strategic ecosystem partner; launched tokenized money market fund (BENJI) on Stellar. Not an equity investor in SDF. No XLM allocation disclosed publicly."
+    },
+    {
+      "investor_name": "Mercado Bitcoin / 2TM Group",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Ecosystem partner in Latin America. Not a direct SDF equity investor per available free sources."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-11-09",
+      "jurisdiction": "USA \u2014 SEC",
+      "description": "SEC lawsuit against Binance (SEC v. Binance, D.D.C.) listed XLM among tokens alleged to be unregistered securities. SDF was NOT named as a defendant; the allegation targets Binance's listing practices. SDF issued a public statement disputing XLM's classification as a security.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2023-06-06",
+      "jurisdiction": "USA \u2014 SEC",
+      "description": "SEC lawsuit against Coinbase (SEC v. Coinbase, S.D.N.Y.) also listed XLM as a potential unregistered security in the context of Coinbase's staking and listing services. Again SDF not a defendant.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    },
+    {
+      "event_date": "2021-11-01",
+      "jurisdiction": "USA \u2014 FinCEN / General Compliance",
+      "description": "SDF voluntarily registered as a Money Services Business (MSB) with FinCEN and maintains AML/KYC compliance posture. No enforcement action; proactive compliance noted.",
+      "severity": "minor",
+      "source_url": "https://www.stellar.org/blog/stellar-development-foundation-regulatory-approach"
+    },
+    {
+      "event_date": "2019-10-30",
+      "jurisdiction": "Global \u2014 Community Governance",
+      "description": "SDF burned ~55B XLM (reducing supply from ~105B to ~50B) following community vote. While not a legal event, it was a major governance action affecting tokenomics and was publicly disclosed.",
+      "severity": "minor",
+      "source_url": "https://www.stellar.org/blog/sdfs-next-chapter"
+    },
+    {
+      "event_date": "2021-09-01",
+      "jurisdiction": "USA",
+      "description": "Jed McCaleb's personal XLM sell-down completed per community tracking site (stellarbeat.io / lumensale trackers). McCaleb had a structured sale agreement with SDF limiting daily sell volumes. Completion removes a long-standing overhang.",
+      "severity": "minor",
+      "source_url": "https://stellar.org/blog/jed-mccaleb-lumens-and-stellar"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "USA \u2014 SEC EDGAR",
+      "description": "SEC EDGAR search for 'Stellar Development Foundation' returns NO Form D, S-1, or enforcement filings directly against SDF as of research date. SDF is a 501(c)(3) nonprofit and does not file standard securities registration forms. EDGAR search result: no hits for SDF as issuer.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Stellar+Development+Foundation%22&dateRange=custom&startdt=2014-01-01&enddt=2024-12-31&forms=D"
+    }
+  ],
+  "founder_credibility_summary": "Jed McCaleb is a serial crypto entrepreneur with a mixed track record \u2014 he founded Mt. Gox (later hacked under new ownership) and co-founded Ripple before departing amid disputes, then launched Stellar in 2014; his technical vision is credible but his history of departing projects and executing a multi-year personal token sell-down raises governance concerns. Current CEO Denelle Dixon, a former Mozilla COO with legal/policy expertise, has substantially professionalized SDF's operations and public credibility since 2019.",
+  "vc_overhang_summary": "SDF is a nonprofit with no traditional VC equity investors, which eliminates typical Series A/B liquidation pressure; however, SDF itself holds approximately 29 billion XLM (~58% of circulating-adjacent supply) in its treasury, disbursed via quarterly public reports, representing the primary structural overhang. Jed McCaleb's personal allocation sell-down concluded ~2021, removing that specific pressure, but SDF's ongoing programmatic disbursements for ecosystem grants and operations continue to add sell-side supply.",
+  "alignment_summary": "Insider and retail incentives are PARTIALLY aligned but with notable caveats. SDF's nonprofit structure and public quarterly disbursement reports create more transparency than typical VC-backed projects, and the 2019 burn of 55B XLM demonstrated responsiveness to community concerns. However, SDF retains unilateral control over ~29B XLM with no hard lock-up or third-party escrow, meaning retail holders must trust SDF's self-reported disbursement discipline. The SEC's inclusion of XLM in securities allegations against exchanges (without naming SDF) creates regulatory uncertainty that disproportionately affects retail liquidity versus SDF's nonprofit treasury. Overall: better aligned than many Layer-1s, but SDF treasury concentration is a meaningful misalignment risk.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://stellar.org/foundation/team",
+    "https://stellar.org/blog/sdfs-next-chapter (2019 burn announcement)",
+    "https://stellar.org/blog/jed-mccaleb-lumens-and-stellar",
+    "https://dashboard.stellar.org (SDF Lumens Dashboard \u2014 live treasury tracker)",
+    "https://www.crunchbase.com/organization/stellar-development-foundation",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf (SEC v. Binance)",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf (SEC v. Coinbase)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Stellar+Development+Foundation%22 (EDGAR search)",
+    "https://www.linkedin.com/in/jed-mccaleb-4052a4/",
+    "https://www.linkedin.com/in/denelledixon/",
+    "https://www.stellar.org/papers/stellar-consensus-protocol (SCP whitepaper \u2014 David Mazi\u00e8res)",
+    "https://coingecko.com/en/coins/stellar (circulating supply data)",
+    "https://stellar.org/blog/stellar-development-foundation-regulatory-approach"
+  ]
+}

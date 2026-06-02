@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.0,
+  "method": "disclosed_target",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "flat",
+  "rationale": "AAVE has a hard-capped maximum supply of 16,000,000 tokens with no protocol-level minting of new AAVE beyond what was originally distributed; the Aave governance/safety module does allow stkAAVE staking rewards and ecosystem reserve distributions, but these come from the pre-minted Ecosystem Reserve (originally ~3M AAVE) rather than new token issuance, meaning the total supply ceiling is fixed and net new inflation from minting is zero. CoinGecko confirms circulating supply has been effectively flat near ~14.9\u201315.1M AAVE for the past 12+ months with no new mint events, and the Aave governance docs confirm no scheduled future emissions beyond the existing reserve drawdowns.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/aave",
+    "https://docs.aave.com/aavenomics/",
+    "https://etherscan.io/token/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "https://governance.aave.com/t/arc-aave-ecosystem-reserve-overview/3499"
+  ]
+}

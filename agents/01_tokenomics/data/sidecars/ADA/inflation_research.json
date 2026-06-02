@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.027,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Cardano uses a reserve-based emission model where staking rewards are drawn from a fixed reserve of ~14B ADA (originally 45B max supply minus circulating); each epoch (~5 days) releases 0.3% of the remaining reserve, causing absolute emissions to shrink geometrically over time. As of mid-2025, circulating supply is approximately 35.9B ADA out of a 45B hard cap, with the remaining reserve (~9.1B ADA) decaying at ~0.3%/epoch, yielding an annualized new-issuance rate of roughly 2.6\u20132.8% of current circulating supply \u2014 a rate that declines continuously as the reserve depletes.",
+  "sources": [
+    "https://docs.cardano.org/explore-cardano/monetary-policy",
+    "https://www.coingecko.com/en/coins/cardano",
+    "https://cardano.org/monetary-policy/",
+    "https://iohk.io/en/blog/posts/2020/11/03/the-general-perspective-on-staking-in-cardano/"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "competitors": [
+    {
+      "competitor": "Hamster Kombat (HMSTR)",
+      "market_cap_usd": 180000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: Token Terminal does not index HMSTR revenue; no on-chain fee model exists"
+    },
+    {
+      "competitor": "Catizen (CATI)",
+      "market_cap_usd": 95000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: No public revenue dashboard on free tier"
+    },
+    {
+      "competitor": "Dogs (DOGS)",
+      "market_cap_usd": 110000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: No fee-generating protocol; meme/airdrop token"
+    },
+    {
+      "competitor": "Pixelverse (PIXFI)",
+      "market_cap_usd": 45000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Notcoin (NOT) \u2014 subject",
+      "market_cap_usd": 820000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: Notcoin has no on-chain fee/revenue model; pure tap-to-earn game token"
+    }
+  ],
+  "market_share": [
+    {
+      "category": "telegram-game / tap-to-earn tokens (by market cap, CoinGecko 'Telegram Apps' category)",
+      "share_pct": 0.31,
+      "snapshot_at": "2025-07-14",
+      "note": "Estimated: NOT ~$820M of ~$2.65B aggregate CoinGecko 'Telegram Apps' category market cap. Exact category total NOT_AVAILABLE_FREE_TIER without CoinGecko Pro API; figure is best-effort from individual token pages."
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": "NOT_AVAILABLE_FREE_TIER: Electric Capital 2024 Developer Report (electriccapital.com/developer-report) does not break out Notcoin/TON mini-app ecosystem separately at the sub-chain level in its free public PDF; TON ecosystem overall reported ~450 monthly active devs in 2024 report but NOT-specific figure unavailable.",
+    "full_time_devs": "NOT_AVAILABLE_FREE_TIER: Same limitation as above",
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER: GitHub search for 'notcoin' yields ~120 public repos referencing the project (github.com/search?q=notcoin), but repos formally 'building on' NOT token infrastructure vs. fan/clone projects cannot be reliably separated without manual audit.",
+    "integrations_count": 12,
+    "integrations_count_note": "Verified free-tier integrations from Notcoin's official integration page (t.me/notcoin) and Open League announcements: TON Wallet, Tonkeeper, OKX Wallet, Bybit, Binance, Gate.io, KuCoin, HTX, MEXC, Bitget, Fragment marketplace, Getgems NFT marketplace = 12 confirmed exchange/wallet/marketplace integrations."
+  },
+  "switching_cost_analysis": "Switching costs are extremely low: Notcoin's tap-to-earn mechanic is trivially replicable (Hamster Kombat, Catizen, and dozens of clones already exist), users hold no persistent on-chain state or locked capital that would be lost by migrating to a competing Telegram mini-app, and the NOT token itself confers no protocol utility or governance rights that create lock-in.",
+  "category_rank": 1,
+  "category_rank_note": "Notcoin ranks #1 by market cap within CoinGecko's 'Telegram Apps' category as of 2025-07-14 (coingecko.com/en/categories/telegram-apps).",
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "Notcoin and its direct competitors (HMSTR, DOGS, CATI) are all pure gaming/airdrop tokens with no DeFi yield, lending, or stablecoin mechanics, placing them in a similar regulatory bucket \u2014 primarily securities-classification risk in the US and EU MiCA scrutiny as 'utility tokens' with speculative characteristics. Notcoin's slightly larger market cap and Binance listing may attract marginally more regulatory attention than smaller peers, but no jurisdiction has specifically targeted tap-to-earn Telegram tokens as of mid-2025. The TON blockchain's prior Telegram association (SEC action against Telegram's TON in 2020) is a residual risk factor shared across the entire category.",
+  "data_quality": "PARTIAL",
+  "data_quality_note": "Market cap figures sourced from CoinGecko free tier (spot prices, circulating supply). DAU, revenue, and granular developer counts are NOT_AVAILABLE_FREE_TIER across all sources checked. DefiLlama does not list Notcoin or competitors under any TVL category (no DeFi protocol exists). Token Terminal free tier does not index any telegram-game tokens. Electric Capital free report covers TON ecosystem in aggregate only.",
+  "sources": [
+    "https://www.coingecko.com/en/categories/telegram-apps \u2014 category market cap rankings, accessed 2025-07-14",
+    "https://www.coingecko.com/en/coins/notcoin \u2014 NOT market cap $820M",
+    "https://www.coingecko.com/en/coins/hamster-kombat \u2014 HMSTR market cap",
+    "https://www.coingecko.com/en/coins/catizen \u2014 CATI market cap",
+    "https://www.coingecko.com/en/coins/dogs-2 \u2014 DOGS market cap",
+    "https://www.coingecko.com/en/coins/pixelverse \u2014 PIXFI market cap",
+    "https://defillama.com/protocols/telegram-apps \u2014 category returns no TVL protocols for tap-to-earn games, accessed 2025-07-14",
+    "https://tokenterminal.com \u2014 free tier search for NOT/HMSTR/CATI returns no indexed protocol revenue data",
+    "https://electriccapital.com/developer-report \u2014 2024 free PDF; TON ecosystem ~450 MADs; NOT-specific data unavailable",
+    "https://github.com/search?q=notcoin \u2014 ~120 public repos referencing Notcoin",
+    "https://t.me/notcoin \u2014 official Notcoin Telegram channel for integration announcements",
+    "https://ton.org/en/open-league \u2014 TON Open League integration listings"
+  ]
+}

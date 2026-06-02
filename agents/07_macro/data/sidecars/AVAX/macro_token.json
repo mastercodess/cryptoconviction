@@ -1,0 +1,19 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Precise real-time funding rates, open interest, and correlation coefficients for AVAX require authenticated API access or paid tiers on Coinglass, CoinGecko Pro, or similar platforms \u2014 none of these specific computed metrics are served on freely browsable public pages without login/API key as of mid-2025.",
+  "sources": [
+    "https://www.coinglass.com/funding/AVAX \u2014 Funding rate & OI page EXISTS but live numeric data requires account/API; public page renders values via authenticated JS calls not scrapable as free static data.",
+    "https://www.coingecko.com/en/coins/avalanche \u2014 Price history available free but 30-day correlation coefficients vs BTC/ETH/NASDAQ are NOT pre-computed or exposed on the free public page.",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 Provides market-wide sentiment only, not AVAX-specific derivatives data.",
+    "https://defillama.com/chain/Avalanche \u2014 TVL and chain metrics only; no derivatives positioning data."
+  ],
+  "notes": {
+    "funding_rate_8h": "Coinglass public page (coinglass.com/funding/AVAX) displays this but the value is loaded dynamically via a credentialed API endpoint. No static free-tier scrape is reliable.",
+    "open_interest_usd": "Same constraint as funding rate \u2014 Coinglass and CoinMarketCap derivatives pages gate live OI behind accounts.",
+    "correlations": "30-day rolling Pearson correlations vs BTC, ETH, and NASDAQ require downloading OHLC time-series and computing locally. Raw AVAX price data is free on CoinGecko (/coins/avalanche/market_chart?vs_currency=usd&days=30), BTC/ETH similarly free, but NASDAQ (^IXIC) requires Yahoo Finance or FRED \u2014 computation must be done client-side; no source publishes the finished coefficient for free."
+  }
+}

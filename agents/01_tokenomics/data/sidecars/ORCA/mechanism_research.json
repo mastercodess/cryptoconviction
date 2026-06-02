@@ -1,0 +1,16 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "lps",
+  "value_accrual_summary": "ORCA is currently a pure governance token with no activated fee-sharing, burn, or staking mechanism; all swap fees accrue exclusively to liquidity providers, and any protocol fee authority is held by the Orca team treasury with no on-chain distribution to ORCA holders.",
+  "sources": [
+    "https://docs.orca.so/",
+    "https://github.com/orca-so/whirlpools",
+    "https://www.coingecko.com/en/coins/orca",
+    "https://gov.orca.so/"
+  ],
+  "data_quality": "PARTIAL"
+}

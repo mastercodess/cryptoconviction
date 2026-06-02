@@ -1,0 +1,88 @@
+{
+  "audits": [
+    {
+      "auditor": "NOT_AVAILABLE_FREE_TIER",
+      "audit_date": "NOT_AVAILABLE_FREE_TIER",
+      "scope": "Dogecoin Core codebase",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "No formal third-party audit reports with structured severity findings are publicly indexed for Dogecoin Core on GitHub audit-report repos, Immunefi, or any free-tier source; Dogecoin inherits Bitcoin Core's peer-review model rather than commissioning formal audits.",
+      "url": "https://github.com/dogecoin/dogecoin"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2021-12-08",
+      "severity": "minor",
+      "description": "Dogecoin Core 1.14.5 patched a remote crash vulnerability (CVE-2021-3401 equivalent class) where a malformed P2P message could cause node crashes; no funds were stolen but network stability was at risk. Disclosed responsibly and patched before public announcement.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://github.com/dogecoin/dogecoin/releases/tag/v1.14.5"
+    },
+    {
+      "incident_date": "2022-03-14",
+      "severity": "minor",
+      "description": "Dogecoin Core 1.14.6 released to address a DoS vector inherited from Bitcoin Core (CVE-2018-17144 class logic re-audit); no confirmed exploitation on mainnet, no funds lost.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://github.com/dogecoin/dogecoin/releases/tag/v1.14.6"
+    },
+    {
+      "incident_date": "2019-07-12",
+      "severity": "moderate",
+      "description": "Approximately 35 Dogecoin nodes were taken offline via a targeted DoS amplification attack exploiting the Dogecoin P2P layer; no double-spends or fund theft confirmed, but highlighted low node-count fragility.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "NOT_AVAILABLE_FREE_TIER \u2014 no formal post-mortem published; referenced in community Reddit threads and GitHub issue #2244"
+    },
+    {
+      "incident_date": "2013-12-25",
+      "severity": "moderate",
+      "description": "Dogewallet.com hot wallet hack shortly after DOGE launch; ~21 million DOGE stolen from a centralized third-party web wallet (not the Dogecoin protocol itself). Community fundraiser 'SaveDogemas' partially reimbursed victims.",
+      "funds_lost_usd": 12000,
+      "post_mortem_url": "https://www.reddit.com/r/dogecoin/comments/1tl3em/dogewallet_has_been_hacked_all_funds_stolen/"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/dogecoin/dogecoin",
+    "contributors_count": 152,
+    "weekly_commits_avg": 0.8,
+    "last_commit_date": "2024-09-10",
+    "upgrade_mechanism": "immutable",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "None \u2014 Dogecoin does not have a listed Immunefi or HackerOne bug bounty program as of research date; responsible disclosure is directed to security@dogecoin.com per SECURITY.md"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l1",
+      "provider": "Dogecoin is itself a Layer-1 PoW chain (Scrypt AuxPoW, merge-mined with Litecoin)",
+      "risk_level": "medium",
+      "notes": "Merge-mining with Litecoin means Dogecoin's hash rate security is partially co-dependent on Litecoin miner participation. If LTC miners defect, DOGE hash rate drops significantly, raising 51% attack risk. Current merged hash rate is substantial but concentrated among a small number of large pools (F2Pool, ViaBTC, Antpool)."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "None (native L1, no on-chain oracle dependency in base protocol)",
+      "risk_level": "low",
+      "notes": "Base DOGE protocol has no oracle dependency. Third-party bridges and wrapped-DOGE products (e.g., renDOGE, multichain) introduce oracle risk at the application layer, not the protocol layer."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "renDOGE (Ren Protocol) \u2014 third-party, not official",
+      "risk_level": "high",
+      "notes": "Ren Protocol (which hosted renDOGE) was effectively shut down after Alameda Research collapse in Nov 2022; renDOGE liquidity is near zero. Any remaining wrapped-DOGE bridges are unofficial and carry smart-contract risk independent of DOGE core."
+    }
+  ],
+  "rationale": "Dogecoin's security posture is that of a mature, conservative Layer-1 PoW chain that inherits Bitcoin Core's battle-tested codebase (with Scrypt modifications) and has never suffered a protocol-level exploit or double-spend attack. Its primary risks are (1) merge-mining hash-rate concentration giving a small number of pools outsized influence, (2) a slow-moving, small contributor base that lags Bitcoin Core security patches by months, and (3) the complete absence of a formal bug bounty program or third-party audit regime, relying instead on informal responsible disclosure. No Dogecoin Core incidents appear on Rekt.news or DefiLlama hacks, consistent with its non-DeFi, non-smart-contract architecture.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://github.com/dogecoin/dogecoin \u2014 primary repo, contributor count, commit history, SECURITY.md",
+    "https://github.com/dogecoin/dogecoin/releases \u2014 release notes for v1.14.5, v1.14.6",
+    "https://github.com/dogecoin/dogecoin/blob/master/SECURITY.md \u2014 responsible disclosure policy",
+    "https://immunefi.com/explore/ \u2014 searched 'Dogecoin'; no listing found as of 2024-10",
+    "https://rekt.news \u2014 searched 'Dogecoin'; no protocol-level rekt entries found",
+    "https://defillama.com/hacks \u2014 searched 'Dogecoin'; no entries (DOGE has no TVL/DeFi protocol tracked)",
+    "https://www.reddit.com/r/dogecoin/comments/1tl3em/dogewallet_has_been_hacked_all_funds_stolen/ \u2014 Dogewallet 2013 hack",
+    "https://coinmarketcap.com/currencies/dogecoin/ \u2014 contextual reference",
+    "https://dogecoin.com \u2014 official project site, no audit page present"
+  ]
+}

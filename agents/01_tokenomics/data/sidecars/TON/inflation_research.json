@@ -1,0 +1,20 @@
+{
+  "current_annualized_rate": "NOT_AVAILABLE_FREE_TIER",
+  "method": null,
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "NOT_AVAILABLE_FREE_TIER \u2014 see explanation below.",
+  "sources": [
+    "https://ton.org/docs/learn/tvm-instructions/tvm-overview",
+    "https://www.coingecko.com/en/coins/toncoin",
+    "https://docs.ton.org/learn/services/validator",
+    "https://github.com/ton-blockchain/ton",
+    "https://tonscan.org/"
+  ],
+  "notes": {
+    "best_available_estimate": "~0.5\u20130.6% annualized (projected_from_schedule)",
+    "basis": "TON whitepaper and validator docs describe a target inflation of ~0.6% annually of total supply paid to validators as staking rewards. With ~5.1B TON total supply (CoinGecko, July 2025) and ~30M TON minted annually per disclosed schedule, this implies roughly 0.5\u20130.6% annualized inflation.",
+    "caveat": "The actual rate depends on the number of active validators and elected masterchain config parameters, which can be changed by governance. Real-time on-chain config is readable at tonscan.org/config but requires manual parsing of ConfigParam 14 (block rewards) and is not pre-computed as an annualized rate on any free aggregator.",
+    "why_not_available": "CoinGecko does not publish a circulating supply time-series API on the free tier sufficient to compute YoY change precisely; Messari free profile does not include TON inflation metrics; DefiLlama does not track TON emissions; no public free-tier emissions dashboard exists for TON as of 2025-07-14."
+  }
+}

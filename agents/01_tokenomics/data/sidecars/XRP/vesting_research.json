@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "unlock_date": "2012-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 100000000000,
+      "pct_of_supply": 1.0,
+      "source_url": "https://xrpl.org/history.html",
+      "notes": "All 100 billion XRP were created (pre-mined) at genesis; no mining or emission schedule exists."
+    },
+    {
+      "unlock_date": "2017-12-07",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 55000000000,
+      "pct_of_supply": 0.55,
+      "source_url": "https://ripple.com/insights/ripple-escrow-55-billion-xrp-for-supply-predictability/",
+      "notes": "Ripple placed 55 billion XRP into 55 separate on-chain escrow contracts (1 billion each, releasing monthly from Jan 2018 through Dec 2022, then renewed)."
+    },
+    {
+      "unlock_date": "2018-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 1000000000,
+      "pct_of_supply": 0.01,
+      "source_url": "https://ripple.com/insights/ripple-escrow-55-billion-xrp-for-supply-predictability/",
+      "notes": "First monthly escrow release of 1 billion XRP; Ripple historically returns the majority unused to new escrow contracts."
+    },
+    {
+      "unlock_date": "2023-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 1000000000,
+      "pct_of_supply": 0.01,
+      "source_url": "https://ripple.com/insights/ripple-escrow-55-billion-xrp-for-supply-predictability/",
+      "notes": "Ongoing monthly 1 billion XRP escrow releases continue post-2022; unused portions are re-escrowed for future months."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 1000000000,
+      "pct_of_supply": 0.01,
+      "source_url": "https://xrpscan.com/escrows",
+      "notes": "Representative 2024 monthly escrow release; on-chain escrow balances and release dates are publicly verifiable on XRPScan."
+    }
+  ],
+  "summary": "XRP has no traditional vesting cliff or investor/team unlock schedule in the conventional sense. All 100 billion XRP were pre-mined at the XRPL genesis in 2012. Ripple (the company) received ~80 billion XRP and in December 2017 locked 55 billion into 55 sequential on-chain escrow contracts releasing 1 billion XRP per month; the vast majority of each monthly release (~800\u2013900 million) is historically returned to new escrow, meaning actual net sell-side pressure from escrow is far lower than the gross 1 billion/month figure. As of early 2024, Ripple holds roughly 40\u201345 billion XRP still in escrow plus an operational wallet, representing the primary ongoing unlock pressure on the market.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Exact month-by-month escrow release dates beyond the representative samples above require querying the XRPL ledger directly (xrpscan.com/escrows) or Ripple's quarterly XRP Markets Reports \u2014 the full forward schedule was NOT_AVAILABLE_FREE_TIER on tokenunlocks.app or CryptoRank free tier at time of research. 2) Ripple's exact current operational (non-escrowed) XRP holdings and any internal team/employee allocations are not publicly disclosed in granular form. 3) The three co-founders (Jed McCaleb, Chris Larsen, Arthur Britto) received ~20 billion XRP at launch; Jed McCaleb's share was subject to a settlement agreement with Ripple and was fully sold off by ~2022 per public reporting, but the original vesting terms are not in a freely accessible structured document. 4) No data was fabricated; representative monthly events are shown rather than all 55+ escrow tranches."
+}

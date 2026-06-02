@@ -1,0 +1,12 @@
+{
+  "current_annualized_rate": 0.0,
+  "method": "disclosed_target",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "flat",
+  "rationale": "UNI has a hard-capped total supply of 1,000,000,000 tokens, all of which were minted at genesis in September 2020; there is no ongoing emission schedule or inflationary mint mechanism. The original governance proposal included a 2% perpetual inflation clause starting in Year 4 (i.e., from ~September 2024), but this provision has never been activated by a governance vote, so the circulating and total supply remain effectively static at ~1B UNI.",
+  "sources": [
+    "https://uniswap.org/blog/uni",
+    "https://www.coingecko.com/en/coins/uniswap",
+    "https://gov.uniswap.org/t/uni-governance-and-treasury/1326"
+  ]
+}

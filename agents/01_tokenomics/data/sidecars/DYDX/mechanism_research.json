@@ -1,0 +1,17 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "stakers",
+  "value_accrual_summary": "On dYdX Chain (v4), 100% of trading fees denominated in USDC are distributed to DYDX validators and delegating stakers as staking rewards; there is no token burn, and yield is sourced from real protocol trading fees rather than new token emissions.",
+  "sources": [
+    "https://docs.dydx.exchange/concepts-trading/fees",
+    "https://docs.dydx.exchange/concepts-architecture/network_constants",
+    "https://dydx.forum/t/dydx-chain-fee-distribution/1054",
+    "https://github.com/dydxprotocol/v4-chain",
+    "https://docs.dydx.exchange/governance/staking"
+  ],
+  "data_quality": "PARTIAL"
+}

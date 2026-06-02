@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "GOOD",
+  "self": {
+    "name": "Ondo Yield Assets",
+    "slug": "ondo-yield-assets",
+    "tvl_usd": 2688672987.212098,
+    "mcap_usd": null
+  },
+  "peers": [
+    {
+      "name": "Tether Gold",
+      "slug": "tether-gold",
+      "tvl_usd": 3233055892.3023953,
+      "mcap_usd": 2685662569.734624
+    },
+    {
+      "name": "BlackRock BUIDL",
+      "slug": "blackrock-buidl",
+      "tvl_usd": 3225558400.640449,
+      "mcap_usd": 2682505384.790448
+    },
+    {
+      "name": "Circle USYC",
+      "slug": "circle-usyc",
+      "tvl_usd": 2974735588.695568,
+      "mcap_usd": null
+    },
+    {
+      "name": "Paxos Gold",
+      "slug": "paxos-gold",
+      "tvl_usd": 2130505466.4861515,
+      "mcap_usd": null
+    },
+    {
+      "name": "Centrifuge Protocol",
+      "slug": "centrifuge-protocol",
+      "tvl_usd": 1570425030.8190937,
+      "mcap_usd": null
+    }
+  ],
+  "market_share_pct": 0.16992232265330384,
+  "notes": "API-fetched (no LLM research): DefiLlama /protocols (category=RWA)",
+  "sources": [
+    "https://api.llama.fi/protocols (filtered by category=RWA)"
+  ]
+}

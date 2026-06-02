@@ -1,0 +1,43 @@
+{
+  "annualized_revenue_usd": 8200000,
+  "tvl_usd": 447000000,
+  "p_s_ratio": 4100,
+  "p_tvl_ratio": 31.2,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": 2.8,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Event-driven: TVL and fee activity spike around major protocol upgrades (Chang hard fork, Hydra milestones) and DeFi protocol launches on Cardano rather than showing consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "ETH",
+      "metric": "p_s",
+      "peer_value": 110
+    },
+    {
+      "peer_symbol": "SOL",
+      "metric": "p_s",
+      "peer_value": 95
+    },
+    {
+      "peer_symbol": "AVAX",
+      "metric": "p_s",
+      "peer_value": 320
+    },
+    {
+      "peer_symbol": "DOT",
+      "metric": "p_s",
+      "peer_value": 850
+    }
+  ],
+  "rationale": "Cardano's annualized on-chain fee revenue is approximately $8.2M (DefiLlama fees page, trailing 30-day extrapolated), against a fully diluted market cap near ~$33.6B (CoinGecko, ADA ~$0.96 \u00d7 35B supply), yielding an extremely high P/S of ~4,100 \u2014 reflecting that Cardano remains lightly used relative to its valuation. TVL of ~$447M (DefiLlama, Cardano chain page) gives a P/TVL of ~31x, also elevated versus Ethereum (~1.1x) and Solana (~3x). Real yield to stakers is effectively null because staking rewards (~2.8% APR) are entirely inflationary (reserve emissions), not derived from fee revenue redistribution; protocol fees are burned or go to the treasury, not directly to stakers as 'real yield'.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Cardano",
+    "https://defillama.com/fees/cardano",
+    "https://www.coingecko.com/en/coins/cardano",
+    "https://iohk.io/en/blog/posts/2024/10/29/chang-upgrade-2-cardano-enters-the-voltaire-era/",
+    "https://cardanofoundation.org/en/news/cardano-foundation-2024-annual-report/",
+    "https://messari.io/report/state-of-cardano-q3-2024",
+    "https://alternative.me/crypto/fear-and-greed-index/"
+  ]
+}

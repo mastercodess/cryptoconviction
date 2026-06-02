@@ -1,0 +1,159 @@
+{
+  "team_members": [
+    {
+      "name": "Fan Long",
+      "role": "Co-Founder & CEO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/fan-long-0a3b4b1b/",
+      "prior_projects": [
+        "MIT CSAIL PhD (Computer Science)",
+        "Researcher at MIT",
+        "Co-founder of Conflux Network"
+      ],
+      "notes": "Academic background in distributed systems and programming languages. LinkedIn profile exists but detail depth varies. Frequently cited in Conflux official blog and press releases. NOT_AVAILABLE_FREE_TIER: Exact LinkedIn URL not fully verified without login; URL above is approximate \u2014 confirm at linkedin.com/search."
+    },
+    {
+      "name": "Andrew Chi-Chih Yao",
+      "role": "Chief Scientist / Academic Advisor",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Turing Award Winner (2000)",
+        "Professor at Tsinghua University",
+        "Theoretical Computer Science research"
+      ],
+      "notes": "World-renowned computer scientist. His involvement is heavily cited in Conflux whitepapers and official docs (confluxnetwork.org). Provides significant academic credibility. No LinkedIn profile publicly known."
+    },
+    {
+      "name": "Ming Wu",
+      "role": "Co-Founder & CTO",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Microsoft Research Asia",
+        "Distributed systems engineering"
+      ],
+      "notes": "Background in distributed systems from Microsoft Research Asia. Referenced in Conflux team page and early blog posts. LinkedIn not publicly confirmed without login."
+    },
+    {
+      "name": "Guang Yang",
+      "role": "Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Tsinghua University",
+        "Early Conflux protocol research"
+      ],
+      "notes": "Listed as co-founder in early Conflux documentation. Less publicly visible than Fan Long. Details sparse on free-tier sources."
+    },
+    {
+      "name": "Yuanjie Zhang",
+      "role": "Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Tsinghua University research group"
+      ],
+      "notes": "Part of the original Tsinghua-affiliated founding team. Limited public profile on free sources."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Sequoia China (HongShan)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 vesting schedule not publicly disclosed"
+    },
+    {
+      "investor_name": "Huobi Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "IMO Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "Metastable Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "F2Pool / Wang Chun",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "Shanghai Municipal Government (indirect)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 government backing via state-linked entities, not a traditional equity round; details opaque"
+    },
+    {
+      "investor_name": "IOSG Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2021-09-24",
+      "jurisdiction": "China (PRC)",
+      "description": "People's Bank of China and 9 other regulators issued blanket ban on all cryptocurrency transactions and mining. Conflux, being a China-based project, faced existential regulatory pressure. The team and some operations reportedly shifted focus to international markets (especially Latin America and Africa) and the eSpace EVM layer to reduce China-specific exposure.",
+      "severity": "severe",
+      "source_url": "https://www.pbc.gov.cn/ (PBoC official notice, September 2021); widely reported"
+    },
+    {
+      "event_date": "2023-03-01",
+      "jurisdiction": "China (Shanghai)",
+      "description": "Conflux was publicly identified as the only blockchain project with Chinese government backing (Shanghai government), positioning it as a 'compliant' chain for state-linked use cases. This dual status \u2014 banned for retail crypto trading yet state-endorsed for enterprise blockchain \u2014 creates an unusual and unresolved legal ambiguity.",
+      "severity": "moderate",
+      "source_url": "https://confluxnetwork.org/en/blog/ (official blog references); Reuters and Bloomberg coverage March 2023"
+    },
+    {
+      "event_date": "NOT_FOUND",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "SEC EDGAR full-text search (https://efts.sec.gov/LATEST/search-index?q=%22Conflux%22&dateRange=custom&startdt=2018-01-01&enddt=2024-12-31) returns no material filings directly naming Conflux Network or CFX token as a subject of enforcement or registration. No Form D, no Wells Notice, no enforcement action found on free EDGAR search.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Conflux+Network%22"
+    },
+    {
+      "event_date": "2022-06-01",
+      "jurisdiction": "Global / Exchange-level",
+      "description": "CFX was delisted or trading-restricted on several platforms for users in restricted jurisdictions following broader regulatory crackdowns. No single formal legal action; operational compliance measure.",
+      "severity": "minor",
+      "source_url": "NOT_AVAILABLE_FREE_TIER \u2014 exchange announcements not archived on free public sources"
+    }
+  ],
+  "founder_credibility_summary": "The founding team carries strong academic pedigree \u2014 anchored by Turing Award winner Andrew Yao and MIT/Tsinghua-trained engineers \u2014 lending technical legitimacy that is rare in the crypto space. However, the China-domiciled structure, limited Western public presence, and opacity around individual LinkedIn profiles reduce independent verifiability for non-Chinese-speaking researchers.",
+  "vc_overhang_summary": "Specific vesting schedules and ownership percentages are NOT publicly disclosed on free-tier sources (Crunchbase free page shows investor names but no round sizes or terms). The presence of Sequoia China, Huobi Capital, and state-linked entities suggests meaningful insider allocations that could represent sell pressure, but without on-chain vesting contract data or official tokenomics unlock schedules, precise VC overhang cannot be quantified from free sources alone.",
+  "alignment_summary": "Incentive alignment is UNCERTAIN-TO-WEAK for retail investors. Positives: the Shanghai government backing creates a long-term institutional incentive to maintain network value. Negatives: (1) China's crypto ban means the core team cannot openly use or promote CFX domestically, creating a structural misalignment; (2) investor vesting terms are opaque; (3) the project's pivot to international markets (Latin America, Africa) and enterprise use cases may prioritize partnership announcements over organic retail token demand. Retail holders bear regulatory risk that insiders can partially hedge via geographic/legal structuring.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://confluxnetwork.org/en/ \u2014 Official project website",
+    "https://confluxnetwork.org/en/blog/ \u2014 Official blog (team announcements, partnership news)",
+    "https://github.com/Conflux-Chain \u2014 GitHub organization (open-source code, contributor history)",
+    "https://www.crunchbase.com/organization/conflux-network \u2014 Crunchbase free page (investor names, no financial terms)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Conflux+Network%22 \u2014 SEC EDGAR full-text search",
+    "https://efts.sec.gov/LATEST/search-index?q=%22CFX+token%22 \u2014 SEC EDGAR CFX search",
+    "https://www.coingecko.com/en/coins/conflux-token \u2014 CoinGecko CFX page (market data, token info)",
+    "https://defillama.com/chain/Conflux \u2014 DefiLlama Conflux TVL data",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 Market sentiment (general)",
+    "https://www.pbc.gov.cn/ \u2014 People's Bank of China (2021 crypto ban source)",
+    "https://confluxscan.io/ \u2014 Conflux block explorer (on-chain data)",
+    "NOTE: LinkedIn URLs for individual team members could NOT be fully verified without authenticated login \u2014 treat as approximate"
+  ]
+}

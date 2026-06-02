@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass's free public pages previously displayed funding rates and OI summaries, but as of 2024\u20132025 granular per-asset funding rate history, real-time OI breakdowns, and correlation matrices require a paid API or account login; FRED and alternative.me do not carry NEAR derivatives data; CoinGecko free tier provides price/volume but not funding rates or correlations.",
+  "sources": [
+    "https://www.coinglass.com/en/currencies/NEAR \u2014 funding rate & OI page exists but live/historical data gated behind login/paid tier",
+    "https://www.coingecko.com/en/coins/near \u2014 price & market cap only, no derivatives or correlation data on free tier",
+    "https://defillama.com/protocol/near \u2014 TVL data only, no derivatives metrics",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, no per-asset correlation",
+    "https://fred.stlouisfed.org/ \u2014 macro data only, NEAR not listed"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "As of mid-2025, UNI token holders capture no economic value from protocol fees: the 'fee switch' that would redirect a portion of LP fees to the protocol treasury/UNI holders has never been activated by governance, so 100% of swap fees go to liquidity providers, and UNI itself has no burn, no staking yield, and no direct fee distribution mechanism.",
+  "sources": [
+    "https://docs.uniswap.org/concepts/protocol/fees",
+    "https://gov.uniswap.org/t/fee-switch/",
+    "https://github.com/Uniswap/v3-core/blob/main/contracts/UniswapV3Factory.sol",
+    "https://uniswap.org/whitepaper-v3.pdf"
+  ],
+  "data_quality": "GOOD"
+}

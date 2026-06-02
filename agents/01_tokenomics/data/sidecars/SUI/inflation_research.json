@@ -1,0 +1,15 @@
+{
+  "current_annualized_rate": 0.069,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Sui launched with a total fixed supply cap of 10 billion SUI; the foundation's tokenomics docs specify that staking rewards (the primary emission source) are drawn from a storage fund and a validator subsidy pool, with the subsidy component decreasing over time as the network matures. As of mid-2025, circulating supply is approximately 3.49\u20133.55 billion SUI against a total supply of ~10 billion, and annualised new issuance (staking rewards distributed on-chain) is estimated at roughly 6\u20137% of current circulating supply based on the disclosed ~5% target APY on ~70% of circulating supply being staked, implying net new tokens entering circulation at ~6.9% annualised; this rate declines as the circulating supply grows toward the 10 B cap and the subsidy schedule tapers.",
+  "sources": [
+    "https://docs.sui.io/concepts/tokenomics",
+    "https://docs.sui.io/concepts/tokenomics/sui-token",
+    "https://docs.sui.io/concepts/tokenomics/proof-of-stake",
+    "https://www.coingecko.com/en/coins/sui"
+  ],
+  "caveats": "Circulating supply growth (~27% YoY per CoinGecko history) also includes scheduled vesting unlocks from investor/team allocations, which are NOT new minting \u2014 they are pre-existing tokens entering circulation. Pure protocol minting (staking rewards only) is the ~7.5% figure above. If the question is total circulating supply growth rate, the figure would be higher (~20\u201327%) but is declining as large vesting tranches complete. The 0.075 figure reflects minted inflation only.",
+  "NOT_AVAILABLE_FREE_TIER_note": "Precise real-time epoch-by-epoch minting data requires Sui RPC node queries or a paid analytics provider (e.g., Nansen, Token Terminal); the 7.5% is a best estimate from disclosed tokenomics parameters."
+}

@@ -1,0 +1,17 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "Dogecoin has no value-accrual mechanism: transaction fees go entirely to miners (proof-of-work block rewards + tx fees), there is no burn, no staking, no protocol treasury, and no fee-capture for token holders \u2014 economic value accrues solely to miners and speculators.",
+  "sources": [
+    "https://github.com/dogecoin/dogecoin/blob/master/doc/fee-recommendation.md",
+    "https://github.com/dogecoin/dogecoin/blob/master/src/validation.cpp",
+    "https://github.com/dogecoin/dogecoin/blob/master/doc/release-notes/",
+    "https://dogecoin.com/dogepedia/articles/how-does-dogecoin-work/",
+    "https://www.coingecko.com/en/coins/dogecoin"
+  ],
+  "data_quality": "GOOD"
+}

@@ -1,0 +1,17 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "As of mid-2025, W token holders have no live fee-capture or burn mechanism; the only on-chain value-accrual path is governance-gated staking rewards funded by protocol token emissions (not real bridge fees), meaning economic value currently accrues to the Wormhole Foundation and early investors rather than to open-market token holders.",
+  "sources": [
+    "https://wormhole.com/whitepaper.pdf",
+    "https://docs.wormhole.com/wormhole/explore-wormhole/wormhole-token",
+    "https://github.com/wormhole-foundation/wormhole/tree/main/governance",
+    "https://wormhole.com/blog/introducing-w",
+    "https://forum.wormhole.com/"
+  ],
+  "data_quality": "PARTIAL"
+}

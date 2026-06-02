@@ -1,0 +1,36 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "Orca's on-chain swap volume on Solana appears broadly organic given its concentrated-liquidity AMM design and verifiable pool activity on Solana Explorer, but thin ORCA token markets on CEXs (low reported volume relative to circulating supply) make wash-trading on those venues difficult to rule out without paid analytics.",
+  "rationale": "As of mid-July 2025, Orca remains one of Solana's top DEXs by TVL; DefiLlama reported Orca TVL in the range of $150\u2013$200 million USD in Q2 2025, though the exact current figure requires live API confirmation. Granular DAU, WAU, MAU, and new-address metrics for Orca are not published in any free public dashboard (Dune public dashboards exist but require account-level queries that are not freely surfaced as static figures). Exchange-flow data (CEX inflow/outflow in USD) for ORCA is not available on Coinglass free tier or any other freely accessible aggregator as of this research date. Holder cohort breakdowns (LTH vs STH) are a Glassnode paid-tier feature for Solana SPL tokens and are not available on the free studio for ORCA specifically.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/orca",
+    "https://www.coingecko.com/en/coins/orca",
+    "https://coinglass.com/en/currencies/orca",
+    "https://glassnode.com/",
+    "https://solscan.io/token/orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+    "https://dune.com/search?q=orca",
+    "https://www.orca.so/"
+  ]
+}

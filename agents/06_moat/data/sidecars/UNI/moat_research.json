@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "GOOD",
+  "self": {
+    "name": "Uniswap V3",
+    "slug": "uniswap-v3",
+    "tvl_usd": 2080082609.29424,
+    "mcap_usd": null
+  },
+  "peers": [
+    {
+      "name": "PancakeSwap AMM",
+      "slug": "pancakeswap-amm",
+      "tvl_usd": 1773039871.8856924,
+      "mcap_usd": null
+    },
+    {
+      "name": "Curve DEX",
+      "slug": "curve-dex",
+      "tvl_usd": 1687716233.9087176,
+      "mcap_usd": null
+    },
+    {
+      "name": "Raydium AMM",
+      "slug": "raydium-amm",
+      "tvl_usd": 1009552326.6597826,
+      "mcap_usd": null
+    },
+    {
+      "name": "Uniswap V2",
+      "slug": "uniswap-v2",
+      "tvl_usd": 953655624.2247071,
+      "mcap_usd": null
+    },
+    {
+      "name": "Uniswap V4",
+      "slug": "uniswap-v4",
+      "tvl_usd": 759894008.0941436,
+      "mcap_usd": null
+    }
+  ],
+  "market_share_pct": 0.25170589811004546,
+  "notes": "API-fetched (no LLM research): DefiLlama /protocols (category=Dexs)",
+  "sources": [
+    "https://api.llama.fi/protocols (filtered by category=Dexs)"
+  ]
+}

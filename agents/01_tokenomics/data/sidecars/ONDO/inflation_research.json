@@ -1,0 +1,18 @@
+{
+  "current_annualized_rate": 0.19,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "ONDO has a fixed hard cap of 10 billion tokens with no minting; 'inflation' is entirely driven by vesting unlocks releasing previously locked allocations into circulating supply. The unlock rate is heaviest in 2024\u20132025 and tapers as allocations fully vest by ~2028, so the circulating-supply growth rate will decline materially over the next 24 months.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/ondo-finance",
+    "https://docs.ondo.finance/ondo-token/tokenomics",
+    "https://coinmarketcap.com/currencies/ondo-finance/"
+  ],
+  "caveats": [
+    "ONDO total supply is fixed at 10B \u2014 no protocol-level inflation/minting exists.",
+    "The 0.19 rate reflects projected circulating supply dilution from vesting unlocks over the next ~12 months, not monetary inflation.",
+    "Exact unlock schedule granularity is NOT_AVAILABLE_FREE_TIER from official docs; figure is estimated from CoinGecko supply trajectory and publicly disclosed vesting categories.",
+    "Observed YoY from TGE (Jan 2024\u2013Jan 2025) was ~125% but is unrepresentative due to low initial float at launch."
+  ]
+}

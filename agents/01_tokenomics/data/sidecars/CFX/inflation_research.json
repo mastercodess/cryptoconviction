@@ -1,0 +1,14 @@
+{
+  "current_annualized_rate": 0.04,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Conflux emits ~2 CFX per block at ~2 blocks/second (gross ~126M CFX/year from PoW) plus PoS staking rewards, but CIP-107/CIP-112 burn mechanisms (storage fees, base fee burning) partially offset gross issuance; observed total supply growth on CoinGecko over the trailing 12 months approximates ~4% net annualized inflation. The emission schedule is fixed-declining with no halving event but increasing burn pressure as network usage grows, pointing to a gradually declining net inflation rate over the next 24 months.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/conflux-token",
+    "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+    "https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md",
+    "https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-112.md",
+    "https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf"
+  ]
+}

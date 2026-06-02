@@ -1,0 +1,121 @@
+{
+  "team_members": [
+    {
+      "name": "Billy Markus",
+      "role": "Co-Founder (original creator)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no active public LinkedIn profile found; Markus operates primarily via X/Twitter (@BillyM2k)",
+      "prior_projects": [
+        "IBM software engineering",
+        "Dogecoin (DOGE)"
+      ],
+      "notes": "Markus created DOGE in ~3 hours in December 2013 as a joke/meme coin based on Litecoin's codebase. He sold all his DOGE in 2015 to pay rent after being laid off. He has no formal ongoing governance role. Active on X as @BillyM2k. Source: https://en.wikipedia.org/wiki/Dogecoin, https://fortune.com/2021/05/06/dogecoin-creator-billy-markus/"
+    },
+    {
+      "name": "Jackson Palmer",
+      "role": "Co-Founder (departed)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 Palmer has deliberately withdrawn from crypto; no current active LinkedIn confirmed publicly",
+      "prior_projects": [
+        "Adobe Systems (product manager)",
+        "Dogecoin (DOGE)"
+      ],
+      "notes": "Palmer permanently left the Dogecoin project in 2015 and publicly renounced crypto in 2021, calling it 'a right-wing super-charged casino.' He retains no governance or financial stake. Source: https://twitter.com/ummjackson/status/1415353984617914370, https://www.bbc.com/news/technology-57780168"
+    },
+    {
+      "name": "Dogecoin Core Developers (pseudonymous/volunteer)",
+      "role": "Protocol maintainers",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Bitcoin Core",
+        "Litecoin"
+      ],
+      "notes": "The GitHub repo (https://github.com/dogecoin/dogecoin) shows contributors including handles such as patricklodder, chromatic, and others. No formal corporate entity governs DOGE. The Dogecoin Foundation (re-established 2021) provides loose coordination. Source: https://github.com/dogecoin/dogecoin/graphs/contributors, https://foundation.dogecoin.com/"
+    },
+    {
+      "name": "Dogecoin Foundation (Board)",
+      "role": "Non-profit stewardship body (re-established Aug 2021)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Board includes Jared Birchall (Elon Musk's advisor, representing Musk as 'Dogecoin Advisor'), Vitalik Buterin (Ethereum founder, as 'Blockchain Advisor'), Timothy Stebbing (Foundation lead), and Billy Markus (community rep). Source: https://foundation.dogecoin.com/about/"
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "No formal VC/institutional seed round \u2014 public proof-of-work network",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "DOGE was launched as open-source with no ICO, no pre-mine allocation to founders, and no venture capital raise. All coins enter circulation via mining (Scrypt PoW, ~10,000 DOGE/block, uncapped supply). Source: https://www.coingecko.com/en/coins/dogecoin, https://github.com/dogecoin/dogecoin"
+    },
+    {
+      "investor_name": "Elon Musk (retail/public market holder + influencer)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Musk has publicly stated he holds DOGE personally and that SpaceX accepts DOGE for merchandise. His tweets have historically caused 20-80% price swings. He is NOT a VC investor with locked tokens; his influence is market/social, not structural. Source: https://twitter.com/elonmusk, https://www.sec.gov/cgi-bin/browse-edgar (no DOGE-specific filing found)"
+    },
+    {
+      "investor_name": "Robinhood Markets (custodial holder on behalf of retail)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Robinhood disclosed in its S-1 (2021) that DOGE represented ~34% of its crypto revenue in Q1 2021, indicating massive retail custodial concentration. This is a custodial risk, not a VC overhang. Source: https://www.sec.gov/Archives/edgar/data/1783879/000162828021013318/robinhoods-1.htm"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2022-06-16",
+      "jurisdiction": "United States (SDNY)",
+      "description": "Class action lawsuit filed against Elon Musk, Tesla, and SpaceX alleging a 'pyramid scheme' to manipulate DOGE price via tweets and SNL appearance. Plaintiffs sought $258 billion in damages.",
+      "severity": "moderate",
+      "source_url": "https://www.courtlistener.com/docket/63440026/keith-johnson-v-elon-musk/"
+    },
+    {
+      "event_date": "2023-08-29",
+      "jurisdiction": "United States (SDNY)",
+      "description": "Federal judge dismissed the $258B DOGE manipulation lawsuit against Musk, ruling that promoting a cryptocurrency is not inherently fraudulent and that DOGE is a speculative asset buyers purchase at their own risk.",
+      "severity": "minor",
+      "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.578887/gov.uscourts.nysd.578887.90.0.pdf"
+    },
+    {
+      "event_date": "2021-05-01",
+      "jurisdiction": "United States (Federal \u2014 SEC)",
+      "description": "SEC has NOT formally classified DOGE as a security as of research date. DOGE is generally treated as a commodity/currency by regulators given its PoW structure and no ICO. No SEC enforcement action found on EDGAR against Dogecoin or its foundation.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22dogecoin%22&dateRange=custom&startdt=2013-01-01&enddt=2024-12-31&forms=&hits.hits._source=period_of_report"
+    },
+    {
+      "event_date": "2021-07-26",
+      "jurisdiction": "United States (FTC/CFTC context)",
+      "description": "CFTC has jurisdiction over DOGE as a commodity under the Commodity Exchange Act. No formal CFTC enforcement action specifically targeting DOGE found as of research date.",
+      "severity": "minor",
+      "source_url": "https://www.cftc.gov/digitalassets/index.htm"
+    }
+  ],
+  "founder_credibility_summary": "Both original founders have fully exited: Markus sold his holdings in 2015 and Palmer permanently renounced crypto in 2021, leaving no founding team with ongoing skin-in-the-game or governance authority. The project is now maintained by volunteer developers and a loosely structured foundation, which limits accountability but also reduces centralized founder risk.",
+  "vc_overhang_summary": "Dogecoin has zero VC overhang \u2014 there was no ICO, no pre-mine, no seed round, and no locked token allocations to insiders or venture funds. All supply enters circulation through open mining, meaning there are no cliff or vesting schedules that could create structured sell pressure.",
+  "alignment_summary": "Retail and insider incentives are unusually well-aligned structurally because there are no privileged insiders with discounted tokens or lock-up schedules. However, alignment is distorted by Elon Musk's outsized social influence \u2014 his public statements move price dramatically, creating an asymmetric information dynamic where his followers bear retail risk while he holds an undefined position. The uncapped inflationary supply (~5.256 billion DOGE/year) also creates a long-term misalignment between holders seeking appreciation and the protocol's design as a high-velocity spending currency.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/dogecoin",
+    "https://github.com/dogecoin/dogecoin",
+    "https://github.com/dogecoin/dogecoin/graphs/contributors",
+    "https://foundation.dogecoin.com/about/",
+    "https://en.wikipedia.org/wiki/Dogecoin",
+    "https://fortune.com/2021/05/06/dogecoin-creator-billy-markus/",
+    "https://www.bbc.com/news/technology-57780168",
+    "https://twitter.com/ummjackson/status/1415353984617914370",
+    "https://efts.sec.gov/LATEST/search-index?q=%22dogecoin%22",
+    "https://www.sec.gov/Archives/edgar/data/1783879/000162828021013318/robinhoods-1.htm",
+    "https://www.courtlistener.com/docket/63440026/keith-johnson-v-elon-musk/",
+    "https://storage.courtlistener.com/recap/gov.uscourts.nysd.578887/gov.uscourts.nysd.578887.90.0.pdf",
+    "https://www.cftc.gov/digitalassets/index.htm",
+    "https://alternative.me/crypto/fear-and-greed-index/"
+  ]
+}

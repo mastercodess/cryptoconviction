@@ -1,0 +1,163 @@
+{
+  "team_members": [
+    {
+      "name": "Illia Polosukhin",
+      "role": "Co-Founder & CEO (NEAR Foundation Board)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/illia-polosukhin-77b6538/",
+      "prior_projects": [
+        "Google Brain (Software Engineer / Research)",
+        "Co-author of 'Attention Is All You Need' (Transformer paper, 2017)",
+        "MemSQL"
+      ],
+      "notes": "Highly credible AI/ML background. One of the original authors of the Transformer architecture underpinning modern LLMs. Left Google in 2017 to co-found NEAR. Active on X (@ilblackdragon). Currently also leads NEAR AI initiative."
+    },
+    {
+      "name": "Alexander Skidanov",
+      "role": "Co-Founder (Protocol Research)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/skidanovalex/",
+      "prior_projects": [
+        "MemSQL (Engineer)",
+        "Microsoft (Software Engineer)"
+      ],
+      "notes": "Systems engineer background. Co-founded NEAR with Polosukhin after MemSQL. Stepped back from day-to-day CEO role; Polosukhin leads public-facing strategy. Still involved in protocol research."
+    },
+    {
+      "name": "Marieke Flament",
+      "role": "CEO, NEAR Foundation (appointed 2022)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/marieke-flament-b8b4a41/",
+      "prior_projects": [
+        "Mettle (CEO)",
+        "Circle (Managing Director, Europe)",
+        "Expedia"
+      ],
+      "notes": "Brought in to professionalize the Foundation post-fundraise. Strong fintech/payments background. Announced departure in late 2023; transition underway as of early 2024."
+    },
+    {
+      "name": "Pagoda Team (DevHub)",
+      "role": "Core Protocol Development Company",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Spun out of NEAR Inc. in 2022"
+      ],
+      "notes": "Pagoda is the primary developer studio building on NEAR Protocol. Key engineers include Bowen Wang (Protocol Lead) and others visible on GitHub (github.com/near). Individual LinkedIn profiles exist but are numerous."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Andreessen Horowitz (a16z)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 specific vesting schedules not publicly disclosed; token lockup terms from 2020\u20132022 rounds likely fully elapsed by 2024 per standard 2\u20134 year schedules"
+    },
+    {
+      "investor_name": "Pantera Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 same caveat as above; Pantera participated in multiple rounds"
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "Electric Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "Dragonfly Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "Tiger Global",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 participated in $350M raise (Jan 2022) at reported $9B FDV; lockup likely expired or near expiry by 2024"
+    },
+    {
+      "investor_name": "FTX Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining \u2014 FTX bankruptcy estate may hold NEAR tokens; disposition uncertain, monitored via FTX bankruptcy proceedings (SDNY)"
+    },
+    {
+      "investor_name": "Mechanism Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "investor_name": "Public Token Sale (IEO via Coinlist, Aug 2020)",
+      "round": "public",
+      "valuation_usd": 35000000,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested \u2014 public sale tokens fully unlocked; $35M raised at ~$0.34/NEAR"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-06-06",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC named NEAR (NEAR token) as an unregistered security in its complaint against Binance (SEC v. Binance, Case No. 1:23-cv-01599, D.D.C.). NEAR was listed among tokens the SEC alleges are securities traded on Binance without proper registration. NEAR Protocol / NEAR Foundation is NOT a named defendant \u2014 the allegation targets Binance's listing practices.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2023-06-12",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC complaint against Coinbase (SEC v. Coinbase, Case No. 1:23-cv-04738, SDNY) also listed NEAR among tokens alleged to be unregistered securities. Again, NEAR Foundation is not a defendant; exposure is indirect via exchange listing allegations.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    },
+    {
+      "event_date": "2022-01-01",
+      "jurisdiction": "Switzerland (FINMA)",
+      "description": "NEAR Foundation is incorporated as a Swiss foundation (Stiftung) in Zug, Switzerland, regulated under Swiss law. No adverse FINMA enforcement actions found on public record as of research date. Swiss structure chosen deliberately for regulatory clarity.",
+      "severity": "minor",
+      "source_url": "https://near.foundation/"
+    },
+    {
+      "event_date": "2023-10-15",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "SEC EDGAR full-text search for 'NEAR Protocol' returns NO Form D filings, no S-1, no enforcement orders directly naming NEAR Foundation or NEAR Inc. as respondent. Absence of filing is noted \u2014 private token sales may not have triggered Reg D obligations if structured offshore.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22NEAR+Protocol%22&dateRange=custom&startdt=2020-01-01&enddt=2024-01-01&forms=D"
+    }
+  ],
+  "founder_credibility_summary": "Illia Polosukhin and Alexander Skidanov are among the most technically credible founders in crypto: Polosukhin is a co-author of the seminal 'Attention Is All You Need' Transformer paper and a former Google Brain engineer, while Skidanov brings deep systems engineering experience from MemSQL and Microsoft. Both are fully doxxed with verifiable, distinguished pre-crypto careers, substantially reducing founder-risk concerns.",
+  "vc_overhang_summary": "NEAR raised approximately $535M across multiple rounds (2020\u20132022), with major backers including a16z, Pantera, Tiger Global, and Dragonfly; the $350M Series B in January 2022 was conducted near the market peak (~$9B FDV), meaning many institutional investors are likely underwater or near break-even at current prices, reducing aggressive sell pressure incentive. However, standard 2\u20134 year lockup schedules from 2020\u20132022 rounds are largely or fully elapsed by 2024\u20132025, meaning VC tokens are technically liquid and represent latent overhang risk if price recovers significantly.",
+  "alignment_summary": "Insider and retail incentives are partially aligned but carry meaningful tension. The NEAR Foundation's Swiss non-profit structure and on-chain treasury governance (via NEAR governance forums) create some accountability to the ecosystem. However, large VC allocations (estimated 17\u201320% of genesis supply to investors per NEAR tokenomics docs) with now-vested tokens mean institutional sellers can exit freely into retail liquidity. The FTX Ventures position adds an unpredictable wildcard via bankruptcy proceedings. Positive alignment signals include the team's continued building (NEAR AI pivot, BOS/Blockchain Operating System), active validator decentralization, and Polosukhin's long-term public commitment \u2014 but retail buyers should treat VC overhang as a real, unresolved risk.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.linkedin.com/in/illia-polosukhin-77b6538/",
+    "https://www.linkedin.com/in/skidanovalex/",
+    "https://www.linkedin.com/in/marieke-flament-b8b4a41/",
+    "https://near.org/blog/near-announces-350-million-funding-round/",
+    "https://near.foundation/",
+    "https://github.com/near",
+    "https://pages.near.org/papers/tokenomics/",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf",
+    "https://efts.sec.gov/LATEST/search-index?q=%22NEAR+Protocol%22&forms=D",
+    "https://www.crunchbase.com/organization/near-protocol",
+    "https://coinlist.co/near (historical, 2020 IEO reference)",
+    "https://arxiv.org/abs/1706.03762 (Attention Is All You Need \u2014 Polosukhin co-authorship)"
+  ]
+}

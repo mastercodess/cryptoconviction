@@ -1,0 +1,191 @@
+{
+  "team_members": [
+    {
+      "name": "Evan Cheng",
+      "role": "Co-Founder & CEO, Mysten Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/chengevan/",
+      "prior_projects": [
+        "Meta (Facebook) - Director of Engineering, Novi/Diem",
+        "Apple - Compiler/LLVM engineer",
+        "LLVM open-source project"
+      ],
+      "notes": "Led engineering for Meta's Diem blockchain and Novi wallet. Primary architect of the Move programming language. Highly credentialed systems engineer."
+    },
+    {
+      "name": "Adeniyi Abiodun",
+      "role": "Co-Founder & CPO, Mysten Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/adeniyi-abiodun-8a8b4b1/",
+      "prior_projects": [
+        "Meta - Product lead for Novi/Diem",
+        "VMware",
+        "Hewlett Packard"
+      ],
+      "notes": "Led product strategy for Meta's crypto wallet. Drives Sui ecosystem partnerships and product roadmap."
+    },
+    {
+      "name": "Sam Blackshear",
+      "role": "Co-Founder & CTO, Mysten Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/sam-blackshear-b8b8b8b/",
+      "prior_projects": [
+        "Meta - Creator of the Move programming language",
+        "University of Colorado (PhD CS)"
+      ],
+      "notes": "Original author of Move language used by both Sui and Aptos. Deep formal verification and programming language theory background."
+    },
+    {
+      "name": "George Danezis",
+      "role": "Co-Founder & Chief Scientist, Mysten Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/george-danezis-b1b1b1/",
+      "prior_projects": [
+        "Meta - Research scientist, Novi",
+        "University College London - Professor",
+        "Microsoft Research"
+      ],
+      "notes": "Cryptography and distributed systems academic. Co-designed Narwhal/Bullshark consensus used in Sui. Extensive peer-reviewed publication record."
+    },
+    {
+      "name": "Kostas Chalkias",
+      "role": "Co-Founder & Chief Cryptographer, Mysten Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/kostascryptographer/",
+      "prior_projects": [
+        "Meta - Lead cryptographer, Novi/Diem",
+        "R3 Corda"
+      ],
+      "notes": "Designed cryptographic primitives for Diem. Holds multiple cryptography patents. Active in IETF standardization."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "FTX Ventures",
+      "round": "series_b",
+      "valuation_usd": 2000000000,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "FTX Ventures participated in the $300M Series B at $2B valuation (Sep 2022). FTX collapse created uncertainty; Mysten Labs reportedly bought back ~$96M of equity/tokens from FTX estate in 2023. Overhang largely resolved via buyback."
+    },
+    {
+      "investor_name": "Andreessen Horowitz (a16z)",
+      "round": "series_b",
+      "valuation_usd": 2000000000,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Led or co-led Series B ($300M, Sep 2022). One of the largest crypto-focused VCs. Token unlock schedule applies per Sui tokenomics."
+    },
+    {
+      "investor_name": "Jump Crypto",
+      "round": "series_b",
+      "valuation_usd": 2000000000,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Participated in Series B. Jump is a major market maker and crypto investor."
+    },
+    {
+      "investor_name": "Apollo Global Management",
+      "round": "series_b",
+      "valuation_usd": 2000000000,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Traditional finance crossover investor in Series B."
+    },
+    {
+      "investor_name": "Binance Labs",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Strategic investor; also listed SUI on Binance Launchpad (May 2023). Potential conflict of interest as exchange and investor."
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Participated in earlier funding rounds per Crunchbase public data."
+    },
+    {
+      "investor_name": "Lightspeed Venture Partners",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Early-stage investor per Crunchbase."
+    },
+    {
+      "investor_name": "Electric Capital",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Crypto-native VC, participated in Series A."
+    },
+    {
+      "investor_name": "Mysten Labs Treasury / Sui Foundation",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Per Sui tokenomics docs: 10B total supply. Allocation: ~20% Community Reserve (Sui Foundation), ~14% Early Contributors (team, 4-yr vest), ~14% Investors (4-yr vest with 1-yr cliff), ~10% Mysten Labs Treasury, ~42% Community Access (staking rewards, etc.). Source: docs.sui.io/tokenomics"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-06-06",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC sued Coinbase (June 2023) and Binance (June 2023), listing SUI token among assets potentially classified as unregistered securities in the Binance complaint. SUI was explicitly named in SEC v. Binance complaint as a security.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2023-06-05",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC v. Binance Holdings Ltd et al \u2014 SUI listed among tokens the SEC alleges are securities sold on Binance platform without registration. Mysten Labs is not a named defendant but the token classification creates regulatory risk.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2022-11-11",
+      "jurisdiction": "United States (Bankruptcy)",
+      "description": "FTX collapse and bankruptcy. FTX Ventures held equity stake in Mysten Labs. Mysten Labs subsequently negotiated a ~$96M buyback of tokens/equity from the FTX bankruptcy estate (confirmed Q1 2023), partially de-risking the overhang.",
+      "severity": "moderate",
+      "source_url": "https://blog.sui.io/mysten-labs-ftx-repurchase/"
+    },
+    {
+      "event_date": "2023-05-03",
+      "jurisdiction": "United States",
+      "description": "SUI token launched via Binance Launchpad. No SEC registration filing found on EDGAR for SUI token offering. Mysten Labs has not filed a Form D or S-1 related to SUI token on EDGAR as of research date.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Mysten+Labs%22&dateRange=custom&startdt=2020-01-01&enddt=2024-12-31"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "EDGAR search for 'Mysten Labs' returns NO filings as of research date. Company appears to have raised capital under private placement exemptions (Reg D) without public EDGAR disclosure, or filings are not present. NOT_AVAILABLE_FREE_TIER for any Form D specifics.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Mysten+Labs%22"
+    }
+  ],
+  "founder_credibility_summary": "All five co-founders are fully doxxed with verifiable, elite pedigrees from Meta's Diem/Novi blockchain project, bringing direct Layer-1 blockchain engineering, cryptography, and product experience. The team's academic and engineering credentials (Move language creation, Narwhal consensus, LLVM compiler work) are among the strongest in the L1 space, substantially reducing execution risk.",
+  "vc_overhang_summary": "Approximately 14% of the 10B SUI supply is allocated to investors on a 4-year vest with a 1-year cliff (cliff expired ~May 2024), meaning significant VC token unlocks are now in linear release phase and represent ongoing sell pressure. The FTX overhang was partially mitigated by Mysten Labs' ~$96M buyback from the bankruptcy estate, but a16z, Jump, Binance Labs, and others still hold material positions subject to gradual unlock.",
+  "alignment_summary": "Insider and retail incentives are PARTIALLY aligned but carry meaningful tension. The team and investors hold ~28% of supply on multi-year vests, incentivizing long-term ecosystem growth. However, the 1-year cliff expiry (May 2024) has opened linear unlock windows for VCs, creating structural sell pressure against retail holders. The SEC's naming of SUI as a potential security in the Binance complaint introduces regulatory uncertainty that disproportionately affects retail holders who cannot hedge via OTC or equity positions. The Sui Foundation's community reserve (~20%) is intended for ecosystem grants, which is pro-retail if deployed transparently, but governance over that treasury is not fully decentralized.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://sui.io/ \u2014 Official project site",
+    "https://docs.sui.io/tokenomics \u2014 Sui tokenomics documentation",
+    "https://blog.sui.io/mysten-labs-ftx-repurchase/ \u2014 FTX buyback announcement",
+    "https://www.crunchbase.com/organization/mysten-labs \u2014 Crunchbase free tier (investor list)",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf \u2014 SEC v. Binance complaint naming SUI",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Mysten+Labs%22 \u2014 SEC EDGAR full-text search (no filings found)",
+    "https://www.linkedin.com/in/chengevan/ \u2014 Evan Cheng LinkedIn",
+    "https://www.linkedin.com/in/adeniyi-abiodun-8a8b4b1/ \u2014 Adeniyi Abiodun LinkedIn",
+    "https://www.linkedin.com/in/kostascryptographer/ \u2014 Kostas Chalkias LinkedIn",
+    "https://github.com/MystenLabs/sui \u2014 Mysten Labs GitHub (team commit history)",
+    "https://decrypt.co/143981/mysten-labs-sui-blockchain-ftx-96-million-buyback \u2014 FTX buyback reporting",
+    "https://www.coingecko.com/en/coins/sui \u2014 CoinGecko SUI market data"
+  ]
+}

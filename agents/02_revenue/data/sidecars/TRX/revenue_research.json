@@ -1,0 +1,38 @@
+{
+  "annualized_revenue_usd": 2100000000,
+  "tvl_usd": 5800000000,
+  "p_s_ratio": 2.8,
+  "p_tvl_ratio": 0.97,
+  "real_yield_apr_pct": 4.2,
+  "inflationary_yield_apr_pct": 2.1,
+  "growth_trend": "STEADY",
+  "seasonality": "Revenue is primarily event-driven by USDT-TRC20 transfer volume surges (emerging-market demand, exchange inflows) rather than consistent seasonal cycles, with periodic spikes tied to broader crypto bull runs.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "ETH",
+      "metric": "p_s",
+      "peer_value": 18.0
+    },
+    {
+      "peer_symbol": "BNB",
+      "metric": "p_s",
+      "peer_value": 6.5
+    },
+    {
+      "peer_symbol": "SOL",
+      "metric": "p_s",
+      "peer_value": 22.0
+    }
+  ],
+  "rationale": "Tron generated approximately $2.1B in annualized protocol fees (dominated by USDT-TRC20 bandwidth/energy fees), per DefiLlama fees data as of mid-2025, making it one of the top-3 fee-generating chains. TVL sits near $5.8B per DefiLlama, yielding a P/TVL near ~0.97x at a ~$5.6B market cap; the P/S of ~2.8x is extremely cheap versus Ethereum (~18x) and Solana (~22x), reflecting Tron's mature, low-growth profile and governance/centralization discount. Real staking yield (~4.2% APR net of inflation) is funded by genuine fee revenue rather than pure token emission, giving TRX a credible real-yield narrative.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Tron",
+    "https://defillama.com/fees/tron",
+    "https://tronscan.org/#/sr/votes",
+    "https://tron.network/resources",
+    "https://coinmarketcap.com/currencies/tron/",
+    "https://coingecko.com/en/coins/tron",
+    "https://theblock.co/data/on-chain-metrics/tron"
+  ]
+}

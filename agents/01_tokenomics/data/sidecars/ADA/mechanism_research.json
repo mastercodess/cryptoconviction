@@ -1,0 +1,26 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": 3.0,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "stakers",
+  "value_accrual_summary": "ADA stakers (delegators and stake pool operators) capture block rewards funded primarily by a fixed reserve-emission schedule (~0.3% of remaining reserve drawn each epoch), with transaction fees playing a minor supplementary role; there is no token burn mechanism, so value accrual depends entirely on demand-side appreciation rather than supply reduction.",
+  "sources": [
+    "https://docs.cardano.org/about-cardano/learn/ada-lovelace/",
+    "https://docs.cardano.org/about-cardano/learn/cardano-monetary-policy/",
+    "https://docs.cardano.org/about-cardano/learn/staking-and-delegating/",
+    "https://www.essentialcardano.io/article/staking-and-delegating-for-beginners-a-step-by-step-guide",
+    "https://iohk.io/en/research/library/papers/ouroboros-a-provably-secure-proof-of-stake-blockchain-protocol/",
+    "https://coingecko.com/en/coins/cardano"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn": "Cardano has no burn mechanism. The protocol does not destroy ADA from fees or any other source. Unclaimed rewards expire and return to the reserve, but this is not a burn.",
+    "supply_cap": "Hard cap of 45 billion ADA. As of mid-2025, ~35.8B ADA is in circulation; ~8B ADA remains in the reserve.",
+    "emission_mechanics": "Each epoch (~5 days), 0.3% of the remaining reserve is released into a 'virtual pot'. 20% of that pot goes to the treasury; 80% is distributed to stakers and SPOs, supplemented by transaction fees collected that epoch. Because reserve emissions dwarf fee revenue, yield is predominantly inflationary.",
+    "fee_revenue_context": "Transaction fees are real but small relative to reserve emissions. Fees flow into the epoch reward pot alongside reserve releases \u2014 they do not accrue to a protocol treasury or get burned.",
+    "staking_apr": "~3% APY is the current network average per StakingRewards and Cardano Explorer data; it declines over time as the reserve depletes.",
+    "governance": "CIP-1694 (Voltaire era) introduces on-chain governance but does not introduce a burn or fee-buyback mechanism as of the research date."
+  }
+}

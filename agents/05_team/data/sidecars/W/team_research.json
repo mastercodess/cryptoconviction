@@ -1,0 +1,153 @@
+{
+  "team_members": [
+    {
+      "name": "Robinson Burkey",
+      "role": "Co-Founder & CEO, Wormhole Foundation",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/robinsonburkey/",
+      "prior_projects": [
+        "Jump Crypto",
+        "Jump Trading"
+      ],
+      "notes": "Former Head of Crypto at Jump Trading. Wormhole was originally incubated inside Jump Crypto before spinning out as an independent foundation in 2023."
+    },
+    {
+      "name": "Dan Reecer",
+      "role": "Co-Founder & Chief Growth Officer, Wormhole Foundation",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/danreecer/",
+      "prior_projects": [
+        "Acala Network",
+        "Polkadot ecosystem"
+      ],
+      "notes": "Previously VP of Growth at Acala. Active on X/Twitter (@danreecer_). Key public face for ecosystem growth."
+    },
+    {
+      "name": "Hendrik Hofstadt",
+      "role": "Core contributor / Engineering lead",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Jump Crypto"
+      ],
+      "notes": "Listed as core contributor in Wormhole GitHub and blog posts; LinkedIn profile not prominently surfaced in free search."
+    },
+    {
+      "name": "Attilio Silvio Pacifici",
+      "role": "Chief Legal Officer, Wormhole Foundation",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "NOT_AVAILABLE_FREE_TIER"
+      ],
+      "notes": "Referenced in foundation governance documents; detailed LinkedIn not freely indexed."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Jump Crypto / Jump Trading",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Original incubator and largest early backer. Received W token allocation; vesting schedule per tokenomics doc shows 4-year linear vest with 1-year cliff for team/investors. Jump also covered the $320M 2022 hack reimbursement, cementing deep financial ties."
+    },
+    {
+      "investor_name": "Multicoin Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Participated in the 2023 private fundraise round. Confirmed via Wormhole blog announcement (wormhole.com/blog) and Multicoin public portfolio page."
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Listed as strategic investor in Wormhole Foundation's 2023 fundraise announcement."
+    },
+    {
+      "investor_name": "Brevan Howard Digital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Participated in the $225M private fundraise announced August 2023 at a reported $2.5B valuation. Source: Wormhole blog + press coverage."
+    },
+    {
+      "investor_name": "Arrington Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Named in the August 2023 $225M raise announcement."
+    },
+    {
+      "investor_name": "Distributed Global",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Named in the August 2023 $225M raise announcement."
+    },
+    {
+      "investor_name": "Public Token Sale / Airdrop (W token launch)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "W token launched April 3, 2024 on Solana and EVM chains. Community/airdrop allocation ~17% of 10B total supply. Circulating supply at launch ~18% of total. Source: wormhole.com/token"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2022-02-02",
+      "jurisdiction": "United States (no specific state filing)",
+      "description": "Wormhole bridge exploited for ~120,000 wETH (~$320M USD) via a signature verification vulnerability. Jump Crypto replenished funds within 24 hours. No criminal charges filed publicly; no SEC action recorded.",
+      "severity": "severe",
+      "source_url": "https://wormhole.com/blog/wormhole-bridge-exploit-feb-2022"
+    },
+    {
+      "event_date": "2023-08-01",
+      "jurisdiction": "Cayman Islands (Foundation domicile)",
+      "description": "Wormhole Foundation formally incorporated as a Cayman Islands foundation company, separating from Jump Crypto. This is a standard offshore legal structure for crypto protocols; no adverse regulatory action associated.",
+      "severity": "minor",
+      "source_url": "https://wormhole.com/blog/introducing-the-wormhole-foundation"
+    },
+    {
+      "event_date": "2024-04-03",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "SEC EDGAR free-text search returns NO filings under 'Wormhole Foundation' or 'W token'. No Reg D, Form D, or enforcement action found. Token launch proceeded without registered securities offering disclosure. NOT_AVAILABLE_FREE_TIER for any confidential SEC correspondence.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22wormhole%22&dateRange=custom&startdt=2022-01-01&enddt=2024-12-31&forms=D"
+    },
+    {
+      "event_date": "2023-10-01",
+      "jurisdiction": "United States",
+      "description": "Jump Crypto (parent of original Wormhole team) named in broader regulatory scrutiny of crypto market makers following FTX collapse; no direct Wormhole-specific enforcement action. CFTC investigation of Jump Trading reported by Bloomberg; Wormhole Foundation stated it operates independently.",
+      "severity": "moderate",
+      "source_url": "https://www.bloomberg.com/news/articles/2023-09-20/jump-crypto-faces-cftc-probe"
+    }
+  ],
+  "founder_credibility_summary": "The founding team is fully doxxed with verifiable professional histories at Jump Trading and Acala, lending institutional credibility; however, the project's deep roots inside Jump Crypto\u2014a firm under CFTC scrutiny\u2014and the $320M 2022 bridge hack represent material reputational risks that the team has partially offset by spinning out into an independent foundation and securing a $225M raise at a $2.5B valuation.",
+  "vc_overhang_summary": "Approximately 82% of the 10 billion W token supply was locked at launch (team, investors, foundation reserves, ecosystem fund), with a reported 1-year cliff and 4-year linear vest for insiders, meaning significant VC and Jump Crypto supply begins unlocking in Q2 2025 and continues through 2028, creating sustained sell-pressure risk. Exact per-investor ownership percentages are NOT_AVAILABLE_FREE_TIER as no on-chain vesting contract addresses have been publicly mapped to named investors.",
+  "alignment_summary": "Insider and retail incentives are partially misaligned: retail holders received ~17% of supply via airdrop/community allocation at launch while insiders (team + investors + Jump) control the majority of supply under multi-year vests. The foundation's stated mission (open interoperability) aligns directionally with token appreciation, but the large VC overhang, Jump's conflict-of-interest as both incubator and guardian node operator, and the absence of on-chain governance rights for W holders at launch all tilt structural power toward insiders. Alignment improves if governance is progressively decentralized as roadmapped.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://wormhole.com/blog/introducing-the-wormhole-foundation",
+    "https://wormhole.com/blog/wormhole-bridge-exploit-feb-2022",
+    "https://wormhole.com/token",
+    "https://wormhole.com/blog/wormhole-raises-225m",
+    "https://github.com/wormhole-foundation/wormhole",
+    "https://www.linkedin.com/in/robinsonburkey/",
+    "https://www.linkedin.com/in/danreecer/",
+    "https://efts.sec.gov/LATEST/search-index?q=%22wormhole%22&forms=D",
+    "https://www.coingecko.com/en/coins/wormhole",
+    "https://defillama.com/protocol/wormhole",
+    "https://www.bloomberg.com/news/articles/2023-09-20/jump-crypto-faces-cftc-probe",
+    "https://multicoin.capital/portfolio",
+    "https://www.coinbase.com/ventures"
+  ]
+}

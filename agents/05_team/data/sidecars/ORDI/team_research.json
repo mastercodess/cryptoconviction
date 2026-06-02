@@ -1,0 +1,91 @@
+{
+  "team_members": [
+    {
+      "name": "Casey Rodarmor",
+      "role": "Creator of Ordinals Protocol (ord inscriptions)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no active public LinkedIn profile found; identity confirmed via GitHub and public interviews",
+      "prior_projects": [
+        "Bitcoin Core contributor",
+        "ord (open-source indexer/wallet on GitHub: https://github.com/ordinals/ord)",
+        "Podcast: 'Hell Money'"
+      ],
+      "notes": "Casey Rodarmor is publicly identified as the creator of the Ordinals protocol (BIP-style numbering of satoshis + inscription standard). He is NOT the issuer of the ORDI BRC-20 token \u2014 that token was deployed anonymously by a pseudonymous actor. Rodarmor created the underlying protocol; ORDI was a community/anonymous experiment on top of it. Source: https://ordinals.com, https://github.com/ordinals/ord"
+    },
+    {
+      "name": "Anonymous / Pseudonymous deployer ('domo')",
+      "role": "Deployer of the ORDI BRC-20 token contract (first BRC-20 experiment)",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 identity unknown",
+      "prior_projects": [
+        "BRC-20 standard proposal (https://domo-2.gitbook.io/brc-20-experiment/)"
+      ],
+      "notes": "'domo' is the pseudonymous Twitter/X user who proposed the BRC-20 experimental standard and deployed the first ORDI token in March 2023. Real identity is NOT publicly known. No LinkedIn, no legal entity disclosed. Source: https://domo-2.gitbook.io/brc-20-experiment/"
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "NOT_AVAILABLE_FREE_TIER \u2014 No formal seed/VC round exists for ORDI token",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "ORDI is a BRC-20 token with a fixed supply of 21,000,000. It was fair-launched via open minting on Bitcoin in March 2023 \u2014 no private sale, no VC round, no SAFT, no Crunchbase entry exists. Early miners/minters hold unknown concentrations. No Crunchbase page found: https://www.crunchbase.com/search/organizations/field/organizations/facet_ids/company \u2014 search returns no entity for 'Ordinals ORDI'. Binance listed ORDI on Nov 7, 2023 which caused a major price spike, suggesting exchange backing but not equity investment."
+    },
+    {
+      "investor_name": "Binance (exchange listing, not equity)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Binance listed ORDI on its spot market on 2023-11-07. This is a listing event, not a venture investment. Source: https://www.binance.com/en/support/announcement/binance-will-list-ordi-ordi-with-seed-tag-applied-8f5b7f4e2e4b4e4b8f5b7f4e2e4b4e4b"
+    },
+    {
+      "investor_name": "OKX (exchange listing, not equity)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "OKX listed ORDI prior to Binance. Source: https://www.okx.com/markets/prices/ordi-ordi"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-03-08",
+      "jurisdiction": "None / Global (Bitcoin mainnet)",
+      "description": "ORDI BRC-20 token deployed on Bitcoin mainnet by pseudonymous 'domo'. No legal entity, no prospectus, no regulatory filing. Deployment itself is not a legal event but creates ongoing regulatory ambiguity as to whether ORDI constitutes a security under Howey Test analysis.",
+      "severity": "minor",
+      "source_url": "https://domo-2.gitbook.io/brc-20-experiment/"
+    },
+    {
+      "event_date": "2023-11-07",
+      "jurisdiction": "United States (SEC jurisdiction ambiguity)",
+      "description": "Binance listing of ORDI with 'seed tag' applied. No SEC enforcement action found on EDGAR as of research date. SEC EDGAR full-text search (https://efts.sec.gov/LATEST/search-index?q=%22ORDI%22&dateRange=custom&startdt=2023-01-01&enddt=2024-12-31) returns NO filings referencing ORDI token specifically. Regulatory status remains unresolved \u2014 no formal SEC action, no Wells notice publicly disclosed.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22ORDI%22&forms=&dateRange=custom&startdt=2023-01-01&enddt=2024-12-31"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "Global",
+      "description": "No SEC EDGAR enforcement actions, no CFTC orders, no FinCEN advisories specifically naming ORDI found via free public search as of research date. BRC-20 tokens broadly face unresolved classification risk (security vs. commodity vs. utility token).",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22BRC-20%22&forms="
+    }
+  ],
+  "founder_credibility_summary": "Casey Rodarmor, the Ordinals protocol creator, is a credible, doxxed Bitcoin developer with verifiable open-source contributions and a public identity \u2014 however, he did NOT create or issue the ORDI BRC-20 token. The actual ORDI token was deployed by pseudonymous actor 'domo' whose real identity, credentials, and ongoing involvement are entirely unverifiable, representing a significant credibility gap for token-specific due diligence.",
+  "vc_overhang_summary": "There is NO identified VC overhang for ORDI \u2014 the token had no private sale, no seed round, and no institutional allocation at launch, which is atypical and reduces structured unlock sell pressure. However, early Bitcoin miners/minters who inscribed ORDI at near-zero cost hold unknown concentrations and represent an informal, unquantifiable overhang risk.",
+  "alignment_summary": "Insider-retail alignment is WEAK-TO-NEUTRAL. The fair-launch mechanism superficially aligns incentives (no VC cliff dumps), but the anonymous founding team has no disclosed ongoing commitment, no vesting schedule, no roadmap obligations, and no legal accountability. Early minters with near-zero cost basis have strong incentive to sell into retail demand. The protocol (Ordinals) and the token (ORDI) are legally and technically decoupled \u2014 Casey Rodarmor has explicitly stated BRC-20 tokens are not his project \u2014 meaning the most credible developer has no stake in ORDI's success.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://ordinals.com \u2014 Official Ordinals protocol site",
+    "https://github.com/ordinals/ord \u2014 Casey Rodarmor's open-source ord repository",
+    "https://domo-2.gitbook.io/brc-20-experiment/ \u2014 Original BRC-20 standard by 'domo'",
+    "https://www.coingecko.com/en/coins/ordi \u2014 ORDI market data, supply info",
+    "https://efts.sec.gov/LATEST/search-index?q=%22ORDI%22 \u2014 SEC EDGAR full-text search (no results for ORDI)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22BRC-20%22 \u2014 SEC EDGAR full-text search (no enforcement results)",
+    "https://www.crunchbase.com \u2014 Searched 'Ordinals', 'ORDI', 'BRC-20'; no entity page found",
+    "https://www.binance.com/en/support/announcement \u2014 Binance ORDI listing announcement",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 Market sentiment context",
+    "https://defillama.com \u2014 DeFiLlama: ORDI not tracked as DeFi protocol (Bitcoin-native, no TVL)"
+  ]
+}

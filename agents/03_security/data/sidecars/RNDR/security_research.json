@@ -1,0 +1,82 @@
+{
+  "audits": [
+    {
+      "auditor": "NOT_AVAILABLE_FREE_TIER",
+      "audit_date": "NOT_AVAILABLE_FREE_TIER",
+      "scope": "RNDR ERC-20 token contract (Ethereum)",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "No publicly linked or published audit report was found in the rendernetwork GitHub repositories or project documentation for the original RNDR token contract deployed in 2020.",
+      "url": "https://github.com/rendernetwork/RNDR \u2014 no /audits folder present"
+    },
+    {
+      "auditor": "NOT_AVAILABLE_FREE_TIER",
+      "audit_date": "NOT_AVAILABLE_FREE_TIER",
+      "scope": "Foundation DAO smart contracts",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "The foundation-dao-smart-contracts repo contains no audit subfolder or linked report as of the research date; no third-party audit is publicly disclosed.",
+      "url": "https://github.com/rendernetwork/foundation-dao-smart-contracts"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": null,
+      "severity": null,
+      "description": "No exploits, hacks, or security incidents involving Render Network smart contracts appear on Rekt.news or DefiLlama's hacks tracker as of research date. RNDR is primarily a utility/payment token with limited on-chain DeFi surface area, reducing exploit exposure.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "NOT_AVAILABLE_FREE_TIER \u2014 no incidents found on https://rekt.news or https://defillama.com/hacks"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/rendernetwork/RNDR",
+    "contributors_count": "NOT_AVAILABLE_FREE_TIER \u2014 GitHub API rate-limited without auth; visible contributors on foundation-dao repo appear to be 3\u20135 based on public contributor tab",
+    "weekly_commits_avg": "NOT_AVAILABLE_FREE_TIER \u2014 requires GitHub API or authenticated access for accurate stats; repos appear low-activity (token contract is static)",
+    "last_commit_date": "NOT_AVAILABLE_FREE_TIER \u2014 public repo shows infrequent commits; foundation-dao repo last visible activity was 2023 based on public browsing",
+    "upgrade_mechanism": "immutable",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "NOT_AVAILABLE_FREE_TIER \u2014 no active listing found on Immunefi (https://immunefi.com/explore/) or HackerOne public pages as of research date"
+  },
+  "dependencies": [
+    {
+      "dep_type": "bridge",
+      "provider": "Wormhole (Ethereum \u2194 Solana RNDR/RENDER bridge)",
+      "risk_level": "high",
+      "notes": "Wormhole suffered a $320M exploit in Feb 2022 (unrelated to RNDR). RNDR's migration to Solana and cross-chain liquidity relies on Wormhole infrastructure, inheriting its bridge risk. Source: https://rekt.news/wormhole-rekt/"
+    },
+    {
+      "dep_type": "l1",
+      "provider": "Ethereum (ERC-20 origin chain)",
+      "risk_level": "low",
+      "notes": "Original RNDR token is a standard ERC-20 on Ethereum mainnet; inherits Ethereum consensus security. Contract: 0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24"
+    },
+    {
+      "dep_type": "l1",
+      "provider": "Solana (RENDER token post-migration)",
+      "risk_level": "medium",
+      "notes": "Render Network migrated to Solana in late 2023 (RENDER token). Solana has experienced multiple network outages (2022\u20132023), introducing liveness risk for the payment layer. Source: https://docs.rendernetwork.com"
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "NOT_AVAILABLE_FREE_TIER",
+      "risk_level": "low",
+      "notes": "RNDR/RENDER token contracts do not appear to use on-chain price oracles directly; pricing for GPU job payments is handled off-chain by the Render platform, reducing oracle attack surface. No Chainlink or Pyth dependency confirmed in public contracts."
+    }
+  ],
+  "rationale": "Render Network's on-chain security surface is relatively narrow \u2014 the core asset is a standard ERC-20/SPL token with no complex DeFi logic, no known exploits, and no entries on Rekt.news or DefiLlama hacks. However, the security posture is materially weakened by the absence of any publicly disclosed smart contract audits, no active bug bounty program on Immunefi or equivalent platforms, and inherited bridge risk from Wormhole for cross-chain RNDR/RENDER transfers. The migration to Solana adds network-level liveness risk but does not introduce new smart contract complexity.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://github.com/rendernetwork/RNDR",
+    "https://github.com/rendernetwork/foundation-dao-smart-contracts",
+    "https://docs.rendernetwork.com",
+    "https://rekt.news (searched 'Render' \u2014 no results)",
+    "https://defillama.com/hacks (searched 'Render' \u2014 no results)",
+    "https://immunefi.com/explore/ (searched 'Render' \u2014 no active listing found)",
+    "https://etherscan.io/token/0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24",
+    "https://rekt.news/wormhole-rekt/ (Wormhole bridge risk context)"
+  ]
+}

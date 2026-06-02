@@ -1,0 +1,32 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": 4.75,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "stakers",
+  "value_accrual_summary": "LINK stakers in v0.2 earn rewards funded primarily by token emissions (from the 1B total supply reserve held by Chainlink Labs/SmartContract Ltd) rather than protocol fee revenue, with BUILD program partner token allocations providing a supplementary but minor non-inflationary component; node operators earn LINK fees paid by data-consumer sponsors, but those fees flow to operators, not to stakers or a burn mechanism.",
+  "sources": [
+    "https://docs.chain.link/chainlink-staking/staking-overview",
+    "https://docs.chain.link/chainlink-staking/staking-v02-migration",
+    "https://blog.chain.link/chainlink-staking-v0-2-launch/",
+    "https://chain.link/economics",
+    "https://github.com/smartcontractkit/chainlink/tree/develop/contracts/src/v0.8/staking",
+    "https://www.coingecko.com/en/coins/chainlink"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "staking_apr_pct_source": "Chainlink staking v0.2 docs and blog state a base reward rate of ~4.75% APY at launch; exact current rate varies by pool utilization and is NOT_AVAILABLE_FREE_TIER in real-time without a subgraph query, so 4.75 is the published launch figure.",
+    "burn_note": "No burn mechanism exists in any audited Chainlink contract or official documentation as of mid-2025.",
+    "fee_flow_note": "Data-feed sponsors pay LINK to node operators directly via the AggregatorProxy billing system; there is no on-chain routing of those fees to stakers. The BUILD and SCALE programs promise future fee-sharing from partner protocols, but this is not yet a live, audited, material revenue stream for stakers.",
+    "inflation_note": "The 1B LINK supply is fixed (no new minting), but staking rewards are drawn from the pre-allocated ecosystem/node-operator reserve, which is economically equivalent to inflation for existing holders since it dilutes the circulating float over time.",
+    "burn": "No burn mechanism exists in any audited contract or official documentation as of mid-2025.",
+    "staking_apr": "The ~4.75% figure is the published base reward rate for Chainlink Staking v0.2 as stated in official docs and the staking UI. This rate is set by Chainlink Labs and funded by reserved LINK tokens, NOT by protocol fees collected from oracle consumers.",
+    "inflation_caveat": "Chainlink Labs controls a large reserve of LINK (originally ~35% of supply) used to fund node operator payments and staking rewards. Staking rewards are therefore inflationary in economic substance even though total supply is technically capped \u2014 they dilute non-stakers by distributing reserved supply. This is NOT fee-sharing from protocol revenue.",
+    "fee_flow": "Protocols pay LINK fees to node operators directly (off-chain agreement or on-chain via OCR billing). There is no protocol-level fee split that routes revenue to stakers or a treasury. Stakers earn only the Chainlink Labs-funded emission rate.",
+    "future_economics": "Chainlink Economics 2.0 (announced 2022) introduced the concept of BUILD and SCALE programs where partner protocols pay fees partly in LINK, but these flow to node operators and ecosystem funds, not directly to stakers as of the current v0.2 staking implementation.",
+    "apr_availability": "Live APR is visible on staking.chain.link but requires wallet connection; the 4.75% base rate is documented in public blog posts and FAQs.",
+    "emission_detail": "Chainlink Labs funds staking rewards from its own LINK treasury allocation (part of the 350M+ LINK held by SmartContract Ltd per on-chain data). BUILD program partners (e.g., Metis, Backed Finance) allocate their own tokens to stakers, which is non-inflationary to LINK but represents a small fraction of total yield.",
+    "fee_capture_gap": "There is no on-chain mechanism routing oracle request fees to stakers or burning LINK. Fee revenue accrues to node operators. This is a known criticism of LINK's value-accrual model."
+  }
+}

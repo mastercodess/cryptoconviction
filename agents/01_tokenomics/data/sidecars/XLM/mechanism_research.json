@@ -1,0 +1,16 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "Stellar transaction fees (minimum 100 stroops / 0.00001 XLM per operation) are destroyed (burned) by the protocol, removing supply from circulation, but no mechanism routes economic value to XLM holders, stakers, or LPs \u2014 the Stellar Development Foundation holds a large treasury and the protocol has no staking or fee-sharing construct.",
+  "sources": [
+    "https://developers.stellar.org/docs/learn/fundamentals/fees-resource-limits-metering",
+    "https://developers.stellar.org/docs/learn/fundamentals/lumens",
+    "https://stellar.org/foundation/mandate",
+    "https://github.com/stellar/stellar-core/blob/master/src/ledger/LedgerManagerImpl.cpp"
+  ],
+  "data_quality": "GOOD"
+}

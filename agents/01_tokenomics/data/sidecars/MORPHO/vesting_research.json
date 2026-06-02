@@ -1,0 +1,55 @@
+{
+  "events": [
+    {
+      "unlock_date": "2024-10-01",
+      "category": "airdrop",
+      "tokens_unlocked": 95000000,
+      "pct_of_supply": 0.095,
+      "source_url": "https://morpho.mirror.xyz/morpho-token-launch",
+      "notes": "Initial transferability enabled; community/airdrop allocation made liquid at token launch (~9.5% of supply distributed to early users)."
+    },
+    {
+      "unlock_date": "2025-10-01",
+      "category": "team_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.morpho.org/governance/morpho-token",
+      "notes": "Estimated cliff end for team/contributor tokens (1-year cliff on 4-year vest starting ~Oct 2024); exact token count NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "unlock_date": "2025-10-01",
+      "category": "investor_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.morpho.org/governance/morpho-token",
+      "notes": "Estimated cliff end for investor tokens (1-year cliff on 4-year vest); exact per-investor token count NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "unlock_date": "2024-10-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.morpho.org/governance/morpho-token",
+      "notes": "DAO/treasury allocation (~51% of supply) governed by Morpho DAO; release cadence determined by governance votes, not a fixed schedule."
+    },
+    {
+      "unlock_date": "2026-10-01",
+      "category": "team_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.morpho.org/governance/morpho-token",
+      "notes": "Ongoing monthly/linear vesting for team tokens continues through ~Oct 2028 (4-year total); granular monthly figures NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "unlock_date": "2028-10-01",
+      "category": "team_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.morpho.org/governance/morpho-token",
+      "notes": "Final vesting completion date for team and investor allocations (~4 years from Oct 2024 launch)."
+    }
+  ],
+  "summary": "MORPHO (total supply 1,000,000,000) became transferable in October 2024. Approximately 9.5% was distributed immediately via community/airdrop; team (~22%) and investor (~19%) allocations are subject to a 1-year cliff followed by linear vesting over 4 years, meaning the first major insider unlocks begin around October 2025 and continue through ~October 2028. The largest allocation (~51%) sits with the Morpho DAO/community treasury and is released via governance decisions rather than a fixed schedule, representing a persistent but governance-controlled source of potential sell pressure.",
+  "data_quality": "PARTIAL",
+  "caveats": "Granular per-date unlock quantities (exact tokens per month for team/investor tranches) are NOT_AVAILABLE_FREE_TIER \u2014 TokenUnlocks.app and CryptoRank require paid subscriptions for the full unlock calendar. The exact investor allocation split across individual funds/rounds is not publicly disclosed. DAO treasury release cadence depends on future governance votes and cannot be predicted. All structural vesting terms (cliff, duration) are sourced from Morpho's public docs and mirror.xyz announcements, but should be verified against the actual on-chain vesting contracts (Etherscan: token contract 0x58D97B57BB95320F9a05dC918Aef65434969c2B2)."
+}

@@ -1,0 +1,33 @@
+{
+  "annualized_revenue_usd": null,
+  "tvl_usd": null,
+  "p_s_ratio": null,
+  "p_tvl_ratio": null,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "STEADY",
+  "seasonality": "DOGE price and on-chain activity are event-driven, spiking around Elon Musk social-media posts, meme cycles, and exchange listing announcements rather than following a consistent calendar pattern.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "LTC",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "BCH",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "Dogecoin is a proof-of-work Layer-1 payments chain with no smart-contract platform, no TVL, no protocol fee switch, and no staking yield; miners receive block rewards (currently 10,000 DOGE per block, ~1 minute blocks, ~5.256 billion DOGE emitted per year at ~$0.16 = ~$840 M annualized issuance) but this is miner revenue/inflation, not 'protocol revenue' in the DeFi sense. DefiLlama does not list DOGE under its fees/revenue dashboard, Token Terminal free tier does not cover DOGE, and there is no fee-accrual mechanism to token holders, making P/S, P/TVL, real yield, and TVL metrics structurally inapplicable. Peer chains LTC and BCH share the same architecture and are equally untrackable via DeFi-native revenue metrics.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://defillama.com/chain/dogechain",
+    "https://defillama.com/fees",
+    "https://tokenterminal.com/terminal/projects",
+    "https://dogecoin.com/dogepedia/articles/how-does-dogecoin-work/",
+    "https://github.com/dogecoin/dogecoin/blob/master/doc/release-notes/",
+    "https://www.coingecko.com/en/coins/dogecoin",
+    "https://alternative.me/crypto/fear-and-greed-index/"
+  ]
+}

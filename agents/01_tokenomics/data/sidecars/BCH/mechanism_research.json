@@ -1,0 +1,17 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "protocol",
+  "value_accrual_summary": "Economic value in Bitcoin Cash accrues exclusively to Proof-of-Work miners, who capture all transaction fees plus block subsidies (currently 3.125 BCH per block post-April 2024 halving); there is no burn mechanism, no staking, and no protocol-level fee redistribution to token holders.",
+  "sources": [
+    "https://bitcoincash.org/",
+    "https://github.com/bitcoin/bips/blob/master/bip-0042.mediawiki",
+    "https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/blob/master/src/validation.cpp",
+    "https://docs.bitcoincashnode.org/doc/whitepaper/bitcoin.pdf",
+    "https://www.coingecko.com/en/coins/bitcoin-cash"
+  ],
+  "data_quality": "GOOD"
+}

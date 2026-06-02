@@ -1,0 +1,172 @@
+{
+  "team_members": [
+    {
+      "name": "Nathan Allman",
+      "role": "Founder & CEO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/nathanallman/",
+      "prior_projects": [
+        "Goldman Sachs (Digital Assets division)",
+        "Ondo Finance"
+      ],
+      "notes": "Former Goldman Sachs digital assets team. Founded Ondo Finance in 2021. Publicly visible and frequently quoted in press. Holds economics degree from Dartmouth."
+    },
+    {
+      "name": "Pinku Surana",
+      "role": "Co-Founder & CTO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/pinku-surana/",
+      "prior_projects": [
+        "Google (Software Engineer)",
+        "Ondo Finance"
+      ],
+      "notes": "Former Google engineer. Technical co-founder responsible for protocol architecture. Publicly visible on LinkedIn and in project communications."
+    },
+    {
+      "name": "Ian De Bode",
+      "role": "Co-Founder (early, departed)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/iandebode/",
+      "prior_projects": [
+        "McKinsey & Company",
+        "Ondo Finance"
+      ],
+      "notes": "Was listed as co-founder at launch; no longer listed on Ondo's current team page as of 2024. Departure details NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "name": "Justin Schmidt",
+      "role": "President & COO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/justinschmidt1/",
+      "prior_projects": [
+        "Goldman Sachs (Head of Digital Asset Markets)",
+        "OKCoin"
+      ],
+      "notes": "Highly credentialed TradFi-to-crypto executive. Former Head of Digital Asset Markets at Goldman Sachs. Joined Ondo post-launch, significantly boosting institutional credibility."
+    },
+    {
+      "name": "Katie Wheeler",
+      "role": "Chief Compliance Officer",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Traditional finance compliance roles (specific firms NOT_AVAILABLE_FREE_TIER)"
+      ],
+      "notes": "Listed on Ondo's website as CCO. Specific LinkedIn profile not confirmed via free search. Presence of a dedicated CCO signals compliance-first posture consistent with RWA tokenization focus."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Pantera Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Participated in Ondo's $4M seed round (2022). Specific ownership % NOT_AVAILABLE_FREE_TIER \u2014 not disclosed in public filings."
+    },
+    {
+      "investor_name": "Founders Fund",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Peter Thiel's fund participated in seed round. Ownership % NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Participated in $4M seed round (2022). Strategic alignment with Coinbase Base chain integrations."
+    },
+    {
+      "investor_name": "Tiger Global",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Participated in Ondo's $20M Series A (April 2022). Valuation at Series A NOT_AVAILABLE_FREE_TIER \u2014 not publicly disclosed."
+    },
+    {
+      "investor_name": "Wintermute Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Strategic investor; also serves as a market maker for ONDO token. Dual role creates potential conflict of interest worth monitoring."
+    },
+    {
+      "investor_name": "GoldenTree Asset Management",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "TradFi credit manager; participation signals institutional RWA credibility. Round details NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Arca",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Digital asset fund. Participated in seed. Ownership % NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Public Token Sale / Exchange Listings",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "ONDO token launched January 2024 on major exchanges. Public float is a minority of total supply at launch per tokenomics docs."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-01-01",
+      "jurisdiction": "United States",
+      "description": "Ondo Finance restructured its product offerings, discontinuing its original Ondo Vaults (structured DeFi yield products) and pivoting fully to tokenized US Treasuries (OUSG) to reduce regulatory exposure. This was a proactive compliance decision, not an enforcement action.",
+      "severity": "minor",
+      "source_url": "https://blog.ondo.finance/"
+    },
+    {
+      "event_date": "2023-02-01",
+      "jurisdiction": "United States (SEC)",
+      "description": "Ondo Finance filed a Form D (Regulation D exempt offering) with the SEC for OUSG (Ondo Short-Term US Government Bond Fund). This is a standard private placement exemption filing, not an enforcement action. Confirms OUSG is offered only to accredited investors.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Ondo+Finance%22&dateRange=custom&startdt=2022-01-01&enddt=2024-12-31&forms=D"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States",
+      "description": "ONDO token launched publicly. No SEC enforcement action or Wells Notice identified via EDGAR free search as of research date. Token is structured as a governance token; Ondo has been careful to avoid explicit yield promises on the token itself.",
+      "severity": "minor",
+      "source_url": "https://ondo.finance/"
+    },
+    {
+      "event_date": "2024-06-01",
+      "jurisdiction": "United Arab Emirates / Global",
+      "description": "Ondo Finance announced expansion into international markets including Middle East. No regulatory violations cited. Ongoing monitoring of cross-border RWA tokenization regulatory landscape required.",
+      "severity": "minor",
+      "source_url": "https://blog.ondo.finance/"
+    }
+  ],
+  "founder_credibility_summary": "Nathan Allman and Justin Schmidt bring rare Goldman Sachs digital assets pedigree to Ondo, lending strong institutional credibility that is verifiable via public LinkedIn profiles and press coverage. The team's TradFi-native background is directly aligned with Ondo's RWA tokenization thesis, reducing execution risk relative to crypto-native-only founding teams.",
+  "vc_overhang_summary": "Ondo raised ~$24M across seed and Series A from top-tier VCs (Pantera, Founders Fund, Tiger Global, Coinbase Ventures); specific vesting schedules and unlock cliffs are NOT fully disclosed in public sources, creating meaningful VC overhang uncertainty. The ONDO tokenomics document indicates a large portion of supply is allocated to investors and team with multi-year vesting, meaning sustained sell pressure from insiders is a material risk as cliffs expire post-2025.",
+  "alignment_summary": "Insider and retail incentives are PARTIALLY aligned but carry notable tension. Positives: the team has strong reputational skin-in-the-game, OUSG AUM growth directly benefits the protocol, and the governance token structure avoids explicit yield promises that could trigger SEC action. Risks: VC and team token allocations dwarf the public float at launch, vesting unlock schedules are not fully transparent in free-tier sources, and Wintermute's dual role as investor and market maker creates a potential conflict. Retail buyers should treat ONDO as a high-VC-overhang governance token until full vesting schedules are publicly confirmed.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://ondo.finance/ (official website, team page)",
+    "https://blog.ondo.finance/ (official blog, product announcements)",
+    "https://www.linkedin.com/in/nathanallman/ (Nathan Allman LinkedIn)",
+    "https://www.linkedin.com/in/pinku-surana/ (Pinku Surana LinkedIn)",
+    "https://www.linkedin.com/in/justinschmidt1/ (Justin Schmidt LinkedIn)",
+    "https://www.linkedin.com/in/iandebode/ (Ian De Bode LinkedIn)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Ondo+Finance%22&forms=D (SEC EDGAR Form D search)",
+    "https://www.crunchbase.com/organization/ondo-finance (Crunchbase free tier \u2014 funding rounds)",
+    "https://coinmarketcap.com/currencies/ondo-finance/ (token supply/tokenomics reference)",
+    "https://coingecko.com/en/coins/ondo-finance (market data)",
+    "https://defillama.com/protocol/ondo-finance (TVL and protocol metrics)",
+    "https://docs.ondo.finance/ (protocol documentation, tokenomics)"
+  ]
+}

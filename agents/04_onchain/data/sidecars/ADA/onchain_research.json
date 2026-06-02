@@ -1,0 +1,6 @@
+{
+  "as_of": "2026-05-17",
+  "data_quality": "UNAVAILABLE",
+  "notes": "AdaStat unavailable: 404 Client Error: Not Found for url: https://api.adastat.net/accounts.json?sort=last_tx&dir=desc&limit=1000&rows=true&after=",
+  "sources": []
+}

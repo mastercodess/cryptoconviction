@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "GOOD",
+  "chain": "avalanche_c",
+  "activity": {
+    "dau": 570615
+  },
+  "exchange_flow_30d": {
+    "inflow_usd": 4824221326.321401,
+    "outflow_usd": 5016914927.057216,
+    "net_usd": -192693600.73581505
+  },
+  "holder_cohort": null,
+  "smart_money_stance": "UNKNOWN",
+  "wash_trade_concerns": "Smart-money detection requires curated address list (deferred to plan 1c.2).",
+  "notes": "API-fetched (no LLM research): Dune Analytics. Populated fields: activity_metric.dau, exchange_flow.",
+  "sources": [
+    "https://dune.com/queries/7485961",
+    "https://dune.com/queries/7496843"
+  ]
+}

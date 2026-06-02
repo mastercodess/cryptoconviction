@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass public pages show W perpetual funding rate and OI directionally, but precise real-time 8h funding rate and USD OI figures require a paid API or account login; 30-day correlation coefficients vs BTC, ETH, and NASDAQ are not published as ready-made metrics on any free-tier source (CoinGecko, DefiLlama, alternative.me, FRED) and would require downloading raw OHLC series and computing manually \u2014 which is beyond a live data pull.",
+  "sources": [
+    "https://www.coinglass.com/coins/wormhole \u2014 funding rate & OI directional view visible on public page but precise values gated behind login/API",
+    "https://www.coingecko.com/en/coins/wormhole \u2014 price history downloadable for manual correlation calc, but no pre-computed correlation metrics",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, no W-specific derivatives data",
+    "https://defillama.com/protocol/wormhole \u2014 TVL/protocol data only, no derivatives metrics",
+    "https://fred.stlouisfed.org \u2014 macro/NASDAQ data available but no crypto correlation outputs"
+  ]
+}

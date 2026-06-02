@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass free public pages (coinglass.com/en/coins/terra-classic) display LUNC funding rates and open interest widgets, but programmatic/exact decimal values require a paid API key; correlation metrics vs BTC, ETH, and NASDAQ are not published as ready-made figures on any of the listed free sources (CoinGecko, DefiLlama, alternative.me, FRED) and would require raw OHLC downloads plus manual calculation \u2014 none of which is surfaced as a citable real-time number on a free public URL at the time of this query.",
+  "sources": [
+    "https://www.coinglass.com/en/coins/terra-classic \u2014 funding rate & OI widgets visible but not freely machine-readable without API key",
+    "https://www.coingecko.com/en/coins/terra-luna \u2014 price/market data; no pre-computed correlation figures",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market sentiment only, no LUNC-specific derivatives data",
+    "https://defillama.com \u2014 no LUNC derivatives or correlation data available",
+    "https://fred.stlouisfed.org \u2014 NASDAQ/macro data available but cross-asset correlation to LUNC not computed"
+  ]
+}

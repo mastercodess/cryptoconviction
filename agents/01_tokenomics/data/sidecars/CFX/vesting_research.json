@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+      "unlock_date": "2020-10-29",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 400000000,
+      "pct_of_supply": 0.08,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "Genesis foundation/ecosystem reserve allocation; 400M CFX allocated to Conflux Foundation at mainnet launch (Oct 2020), subject to internal multi-year release schedule."
+    },
+    {
+      "unlock_date": "2020-10-29",
+      "category": "public_emission",
+      "tokens_unlocked": 500000000,
+      "pct_of_supply": 0.1,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "Genesis community fund / public ecosystem allocation of 500M CFX made available at mainnet launch for grants, ecosystem development, and community incentives."
+    },
+    {
+      "unlock_date": "2020-10-29",
+      "category": "investor_unlock",
+      "tokens_unlocked": 200000000,
+      "pct_of_supply": 0.04,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "Private investor allocation of ~200M CFX at genesis; exact vesting cliff/linear schedule NOT_AVAILABLE_FREE_TIER from public docs \u2014 internal agreements not fully disclosed."
+    },
+    {
+      "unlock_date": "2020-10-29",
+      "category": "team_unlock",
+      "tokens_unlocked": 400000000,
+      "pct_of_supply": 0.08,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "Team/core contributor allocation of ~400M CFX at genesis; subject to multi-year vesting per Conflux Foundation disclosures, specific monthly unlock dates not publicly granular."
+    },
+    {
+      "unlock_date": "2020-10-29",
+      "category": "other",
+      "tokens_unlocked": 3500000000,
+      "pct_of_supply": 0.7,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "3.5B CFX (70% of genesis 5B) reserved for long-term mining/PoW block rewards to be emitted over ~4 years via block production starting at mainnet."
+    },
+    {
+      "unlock_date": "2021-11-01",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "Conflux introduced PoS staking rewards (eSpace / Hydra upgrade ~2022); ongoing staking APY emissions began adding supply continuously \u2014 exact per-epoch amounts vary by participation rate."
+    },
+    {
+      "unlock_date": "2022-03-31",
+      "category": "public_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://confluxnetwork.org/en/blog/conflux-v2-0-hardfork-hydra-is-live/",
+      "notes": "Hydra hard fork (v2.0) launched eSpace EVM compatibility and introduced PoS layer; PoS block rewards began emitting additional CFX to validators from this date onward."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+      "notes": "Ongoing foundation reserve releases for ecosystem grants and partnerships; specific tranches and dates are NOT_AVAILABLE_FREE_TIER as Conflux Foundation does not publish a granular forward-looking unlock calendar publicly."
+    }
+  ],
+  "summary": "Conflux (CFX) launched in October 2020 with a 5 billion CFX genesis supply split roughly as: 70% reserved for PoW mining emissions (~3.5B over ~4 years), 10% community/ecosystem fund, 8% foundation, 8% team (multi-year vest), and ~4% private investors. The dominant unlock pressure historically came from the large PoW block reward emission schedule, which steadily released the majority of supply through mining rewards from 2020\u20132024; this emission is now largely exhausted or near completion. Ongoing supply inflation continues via PoS staking rewards introduced in the Hydra upgrade (March 2022), while team/investor vesting specifics are not granularly disclosed in free public sources.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Conflux does not publish a granular, date-stamped vesting table for team/investor tranches in its free public documentation \u2014 specific monthly cliff/linear unlock dates are NOT_AVAILABLE_FREE_TIER. 2) tokenunlocks.app does not appear to have a detailed free public page for CFX with forward-looking event data as of this research. 3) Messari's detailed vesting schedule for CFX is behind their Pro paywall. 4) CryptoRank.io free tier shows allocation pie chart but not individual unlock event dates. 5) The exact private investor vesting terms (cliff length, linear duration) were disclosed only to investors and are not in public docs. 6) All genesis allocation figures are sourced from Conflux's economics documentation which gives percentage ranges; exact token counts are derived calculations and should be verified against the genesis block explorer data at https://confluxscan.io."
+}

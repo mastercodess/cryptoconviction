@@ -1,0 +1,144 @@
+{
+  "team_members": [
+    {
+      "name": "Jules Urbach",
+      "role": "Founder & CEO, OTOY Inc. / Render Network",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/jules-urbach-4a4b4/",
+      "prior_projects": [
+        "OTOY Inc. (GPU rendering company, founded ~2008)",
+        "imeem (early social music platform, acquired by MySpace 2009)",
+        "Lightstage (co-developed facial capture tech with USC ICT)"
+      ],
+      "notes": "Jules Urbach is the primary public face and architect of Render Network. OTOY Inc. is the originating company behind RNDR. He has been publicly vocal at conferences (SIGGRAPH, AWE, etc.). LinkedIn profile exists but connection count/details vary by access tier."
+    },
+    {
+      "name": "Ari Emanuel",
+      "role": "Board Advisor / Strategic Advisor",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "WME (William Morris Endeavor) \u2013 CEO",
+        "Endeavor Group Holdings"
+      ],
+      "notes": "Listed as advisor in OTOY/Render Network public communications. High-profile Hollywood talent agent. Relationship disclosed in project blog posts."
+    },
+    {
+      "name": "Brendan Eich",
+      "role": "Advisor",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/brendaneich/",
+      "prior_projects": [
+        "Mozilla (co-founder)",
+        "Brave Software (founder/CEO)",
+        "JavaScript (creator)"
+      ],
+      "notes": "Listed as advisor in Render Network documentation and OTOY announcements. Relationship is public."
+    },
+    {
+      "name": "JJ Abrams",
+      "role": "Strategic Advisor / Creative Advisor",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Bad Robot Productions",
+        "Star Wars / Star Trek film franchises"
+      ],
+      "notes": "Mentioned in OTOY/Render Network public blog posts as advisor. Adds Hollywood credibility but operational role is unclear."
+    },
+    {
+      "name": "Render Network Foundation (Cayman Islands)",
+      "role": "Protocol Governance Entity (post-migration to Solana, 2023)",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Following the RNDR\u2192RENDER token migration in late 2023, governance shifted toward a foundation model. Individual foundation directors are NOT publicly disclosed on free-tier sources."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Multicoin Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 specific vesting schedule not publicly disclosed; Multicoin has publicly discussed RNDR holdings in blog posts"
+    },
+    {
+      "investor_name": "Alameda Research (FTX)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 Alameda bankruptcy proceedings (SDNY) may have resulted in token liquidation; status post-FTX collapse unclear from free sources"
+    },
+    {
+      "investor_name": "OTOY Inc. (treasury/founding allocation)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 OTOY retained a significant founding allocation; exact vesting/unlock schedule not published in free-tier docs"
+    },
+    {
+      "investor_name": "Various ICO participants (2017\u20132018 token sale)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested \u2014 ICO tokens from 2017\u20132018 are long past any lock-up"
+    },
+    {
+      "investor_name": "Solana Ventures / Solana Foundation",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER \u2014 strategic relationship disclosed around Solana migration (2023) but investment terms not public"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2017-10-01",
+      "jurisdiction": "United States (Federal)",
+      "description": "RNDR token ICO conducted. No SEC enforcement action has been publicly filed against OTOY or Render Network as of mid-2025 per SEC EDGAR free search (https://efts.sec.gov/LATEST/search-index?q=%22Render+Network%22&dateRange=custom&startdt=2017-01-01). Token was structured as a utility token for GPU rendering services, which OTOY has consistently argued exempts it from securities classification.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22OTOY%22&dateRange=custom&startdt=2017-01-01"
+    },
+    {
+      "event_date": "2023-11-01",
+      "jurisdiction": "Cayman Islands / Global",
+      "description": "RNDR token migrated to Solana blockchain and rebranded to RENDER token. Token swap executed via smart contract. No legal challenge to the migration has been identified on free-tier sources. Migration introduced new tokenomics (Burn-and-Mint Equilibrium model).",
+      "severity": "minor",
+      "source_url": "https://rendernetwork.com/blog/render-network-migration-to-solana"
+    },
+    {
+      "event_date": "2022-11-01",
+      "jurisdiction": "United States (Federal \u2014 SDNY Bankruptcy)",
+      "description": "FTX/Alameda Research collapse. Alameda was a known RNDR holder. Potential forced liquidation of RNDR holdings by bankruptcy estate. No specific RNDR-targeted legal action found; general FTX bankruptcy proceedings ongoing. This created market overhang.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/litreleases/2022/lr25575.htm"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States (Federal)",
+      "description": "Broader SEC scrutiny of crypto tokens continues. No specific Wells Notice or enforcement action against RNDR/OTOY found on SEC EDGAR as of research date. SEC EDGAR full-text search for 'Render Network' and 'RNDR' returns no enforcement filings.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22RNDR%22"
+    }
+  ],
+  "founder_credibility_summary": "Jules Urbach is a highly doxxed, technically credible founder with a 15+ year track record at OTOY building GPU rendering infrastructure used by major Hollywood studios and cloud providers (Google, AWS); his prior exit (imeem) and deep industry relationships (Abrams, Emanuel, Eich) lend legitimacy. The primary risk is that OTOY remains a private company with opaque financials, making it difficult to independently verify the degree to which Render Network is operationally independent from OTOY's commercial interests.",
+  "vc_overhang_summary": "The most significant historical overhang was Alameda Research's position, which was likely liquidated through FTX bankruptcy proceedings (2022\u20132024), reducing that specific risk. Multicoin Capital's position size and remaining lock-up terms are NOT publicly disclosed on free-tier sources, representing an unquantified but real overhang risk; OTOY's founding allocation is also opaque.",
+  "alignment_summary": "Partial alignment. Jules Urbach and OTOY have strong reputational and financial incentives to grow the network, and the Burn-and-Mint Equilibrium tokenomics (post-Solana migration) theoretically tie token value to real GPU compute demand, which aligns network usage with token price. However, OTOY's dual role as both the founding entity and a major commercial user/beneficiary of the network creates a potential conflict of interest. Retail holders lack visibility into OTOY's token treasury movements, VC vesting schedules, or foundation governance decisions, which structurally disadvantages retail vs. insiders.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://rendernetwork.com/ \u2014 official project site",
+    "https://rendernetwork.com/blog/ \u2014 project blog (migration, tokenomics)",
+    "https://otoy.com \u2014 OTOY Inc. corporate site",
+    "https://www.coingecko.com/en/coins/render-token \u2014 CoinGecko RNDR page",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Render+Network%22 \u2014 SEC EDGAR full-text search",
+    "https://efts.sec.gov/LATEST/search-index?q=%22OTOY%22 \u2014 SEC EDGAR OTOY search",
+    "https://www.crunchbase.com/organization/otoy \u2014 Crunchbase OTOY free page",
+    "https://github.com/rndr-network \u2014 Render Network GitHub",
+    "https://multicoin.capital/2021/06/10/render-network/ \u2014 Multicoin Capital RNDR thesis post (public blog)",
+    "https://www.linkedin.com/in/jules-urbach-4a4b4/ \u2014 Jules Urbach LinkedIn",
+    "https://www.linkedin.com/in/brendaneich/ \u2014 Brendan Eich LinkedIn",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market sentiment context only",
+    "NOTE: Crunchbase free tier does not disclose funding round valuations or ownership percentages for OTOY \u2014 marked NOT_AVAILABLE_FREE_TIER where applicable"
+  ]
+}

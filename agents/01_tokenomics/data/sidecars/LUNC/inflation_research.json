@@ -1,0 +1,14 @@
+{
+  "current_annualized_rate": "NOT_AVAILABLE_FREE_TIER",
+  "method": null,
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "LUNC's net supply dynamics are governed by two competing forces: (1) a community-passed 1.2% on-chain tax burn (partially implemented, currently ~0.2% effective burn on on-chain volume) and (2) staking rewards emitted from the community pool and validator commissions. As of mid-2025, CoinGecko reports a circulating supply of approximately 5.71\u20135.73 trillion LUNC, but precise 12-month supply-change figures require historical snapshot data not freely exportable from CoinGecko's public UI without API pagination. The Terra Classic governance forum and Agora (agora.terra.money) indicate the chain is in a net-deflationary or near-zero-inflation regime on paper due to burn mechanics, but actual realized inflation/deflation depends on transaction volume driving burns versus staking emission rates \u2014 a precise annualized figure cannot be reliably computed from freely available snapshots alone.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/terra-luna-classic",
+    "https://agora.terra.money",
+    "https://station.terra.money",
+    "https://terrasco.pe",
+    "https://docs.terra.money"
+  ]
+}

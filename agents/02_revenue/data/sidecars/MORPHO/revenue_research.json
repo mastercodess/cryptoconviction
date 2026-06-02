@@ -1,0 +1,37 @@
+{
+  "annualized_revenue_usd": 63000000,
+  "tvl_usd": 3800000000,
+  "p_s_ratio": 28.5,
+  "p_tvl_ratio": 0.047,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Revenue is event-driven rather than seasonal, spiking with broader DeFi credit demand cycles and new vault/market launches on Morpho Blue (e.g., Base expansion in late 2024 drove a step-change in TVL).",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "AAVE",
+      "metric": "p_s",
+      "peer_value": 18.0
+    },
+    {
+      "peer_symbol": "COMP",
+      "metric": "p_s",
+      "peer_value": 12.0
+    },
+    {
+      "peer_symbol": "EULER",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "DefiLlama shows Morpho TVL near $3.8 B as of late May 2025, up from ~$1.2 B at end-2023, reflecting rapid adoption of Morpho Blue and MetaMorpho vaults. Annualized protocol revenue is estimated at ~$63 M based on DefiLlama's trailing 30-day fee run-rate (~$5.25 M/month \u00d7 12); at a fully-diluted market cap of roughly $1.8 B (1 B tokens, ~$1.80 FDV price), the P/S is ~28.5\u00d7 and P/TVL ~0.047\u00d7. Real yield to MORPHO stakers is not yet live in a formal revenue-share mechanism (governance controls fee switch), so real_yield_apr_pct and inflationary_yield_apr_pct are null pending fee-switch activation.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/morpho",
+    "https://defillama.com/fees/morpho",
+    "https://docs.morpho.org/",
+    "https://morpho.mirror.xyz/",
+    "https://www.coingecko.com/en/coins/morpho",
+    "https://tokenterminal.com/terminal/projects/morpho"
+  ]
+}

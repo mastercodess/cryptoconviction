@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "unlock_date": "2014-07-31",
+      "category": "other",
+      "tokens_unlocked": 100000000000,
+      "pct_of_supply": 1.0,
+      "source_url": "https://www.stellar.org/blog/stellar-lumens",
+      "notes": "All 100 billion XLM minted at genesis; no time-locked vesting schedule was ever implemented at the protocol level."
+    },
+    {
+      "unlock_date": "2019-11-04",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 55000000000,
+      "pct_of_supply": 0.55,
+      "source_url": "https://stellar.org/blog/sdfs-next-steps",
+      "notes": "SDF burned 55 billion XLM (55% of total supply), reducing total supply from 105B to ~50B; remaining SDF holdings restructured into three mandate buckets."
+    },
+    {
+      "unlock_date": "2020-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 12000000000,
+      "pct_of_supply": 0.24,
+      "source_url": "https://stellar.org/blog/sdfs-next-steps",
+      "notes": "Post-burn SDF operational reserve of ~12B XLM designated for ecosystem grants, development, and operations \u2014 released at SDF discretion, not on a fixed schedule."
+    },
+    {
+      "unlock_date": "2023-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://dashboard.stellar.org/",
+      "notes": "SDF publishes quarterly mandate reports showing lumens disbursed from its three buckets (Ecosystem Support, Developer & Business Development, Operations); exact per-quarter amounts vary and are NOT_AVAILABLE_FREE_TIER in structured unlock-event form."
+    }
+  ],
+  "summary": "XLM has no traditional investor or team vesting cliff schedule. All 100 billion lumens were minted at genesis in 2014, and in November 2019 the Stellar Development Foundation burned 55 billion (55% of supply), leaving roughly 50 billion in circulation plus SDF reserves. The SDF holds approximately 12 billion XLM across three discretionary mandate buckets and disburses them on an ongoing, non-time-locked basis for grants, partnerships, and operations \u2014 meaning unlock 'pressure' is low and irregular rather than driven by cliff events.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) TokenUnlocks.app does not list XLM because there are no programmatic time-locked vesting contracts \u2014 confirmed by absence of an XLM page on the site. 2) SDF quarterly disbursement amounts (the closest analog to 'unlocks') are published in narrative mandate reports (stellar.org/blog) but are not available in machine-readable structured form on any free tier; exact future disbursement dates and sizes are at SDF discretion and cannot be forecast. 3) The original 2014 distribution plan included a 'direct development' pool and an 'ecosystem' pool, but those were never enforced by smart-contract vesting and the 2019 burn superseded the original allocation structure. 4) CryptoRank.io and Messari free profiles confirm no upcoming cliff unlocks for XLM as of mid-2025."
+}

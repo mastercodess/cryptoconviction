@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.0,
+  "method": "disclosed_target",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "flat",
+  "rationale": "Notcoin (NOT) launched with a fully pre-minted fixed maximum supply of 102,719,221,714 NOT tokens; the project documentation and CoinGecko data confirm no further minting or emission schedule exists, making the inflation rate effectively zero. CoinGecko shows circulating supply essentially at or very near the max supply, consistent with a one-time mint model with no ongoing issuance.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/notcoin",
+    "https://ton.app/jettons/EQAvlWFDxGF2JbVyWRM-QgfykNbqoYEIjaBOS5Re2iKs2iKs",
+    "https://notco.in/",
+    "https://docs.notco.in/"
+  ]
+}

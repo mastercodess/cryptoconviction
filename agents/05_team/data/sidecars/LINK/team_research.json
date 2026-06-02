@@ -1,0 +1,178 @@
+{
+  "team_members": [
+    {
+      "name": "Sergey Nazarov",
+      "role": "Co-Founder & CEO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/sergeynazarov/",
+      "prior_projects": [
+        "SmartContract.com (predecessor entity, ~2014)",
+        "CryptaMail (decentralized email service)",
+        "Secure Asset Exchange (decentralized exchange, ~2014-2015)"
+      ],
+      "notes": "Highly public figure; frequent keynote speaker at SmartCon and industry conferences. Holds significant LINK allocation. Background in philosophy and management from NYU. No formal CS degree but deep crypto-native experience since ~2011."
+    },
+    {
+      "name": "Steve Ellis",
+      "role": "Co-Founder & CTO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/steveellis1/",
+      "prior_projects": [
+        "SmartContract.com",
+        "Pivotal Labs (software engineer)"
+      ],
+      "notes": "Technical co-founder; lower public profile than Nazarov. Engineering background from Pivotal Labs. Leads core protocol development."
+    },
+    {
+      "name": "Ari Juels",
+      "role": "Chief Scientist / Technical Advisor",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/ari-juels-b8a7b/",
+      "prior_projects": [
+        "Cornell Tech (Professor)",
+        "RSA Laboratories (Chief Scientist)",
+        "IC3 (Initiative for CryptoCurrencies & Contracts, co-director)"
+      ],
+      "notes": "Co-authored the Chainlink 2.0 whitepaper. Highly credentialed academic cryptographer. Adds significant institutional legitimacy."
+    },
+    {
+      "name": "Adelyn Zhou",
+      "role": "Chief Marketing Officer",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/adelynzhou/",
+      "prior_projects": [
+        "Amino (Head of Growth)",
+        "Toptal"
+      ],
+      "notes": "Led ecosystem growth and partnership announcements. LinkedIn profile publicly visible."
+    },
+    {
+      "name": "Johann Eid",
+      "role": "VP of Integrations / Head of Partnerships",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/johanneid/",
+      "prior_projects": [
+        "Consensys",
+        "Various blockchain advisory roles"
+      ],
+      "notes": "Leads enterprise and protocol integrations. Publicly visible at conferences."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Framework Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Disclosed publicly as major LINK holder; purchased on open market and via OTC. Exact terms NOT_AVAILABLE_FREE_TIER \u2014 private OTC deals not filed publicly."
+    },
+    {
+      "investor_name": "Andreessen Horowitz (a16z)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Reported LINK holder via public portfolio disclosures and blog posts. Specific round terms NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Blockchain Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Listed as early backer in multiple public sources. Exact stake NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "ICONIUM",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Disclosed as early investor in public interviews. Terms NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Public ICO Participants",
+      "round": "public",
+      "valuation_usd": 32000000,
+      "ownership_pct": 0.35,
+      "unlock_status": "fully_vested",
+      "notes": "September 2017 ICO raised ~$32M. 35% of 1B LINK total supply (350M tokens) sold publicly at $0.091/LINK. Source: Chainlink ICO whitepaper and CoinGecko historical data."
+    },
+    {
+      "investor_name": "SmartContract / Team Reserve",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": 0.35,
+      "unlock_status": "linear",
+      "notes": "35% of supply (350M LINK) reserved for team/company (SmartContract Chainlink Ltd). Vesting schedule not fully disclosed publicly. Significant tokens remain in deployer wallets tracked on Etherscan. NOT_AVAILABLE_FREE_TIER for exact vesting cliff details."
+    },
+    {
+      "investor_name": "Node Operator Ecosystem Reserve",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": 0.3,
+      "unlock_status": "linear",
+      "notes": "30% of supply (300M LINK) reserved for node operator incentives and ecosystem grants. Released over time per operational needs. Tracked partially via Etherscan deployer wallet: 0x98c63b7b319dfbdf3d811530f2ab9dfe4983af9d."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2022-06-13",
+      "jurisdiction": "United States (Federal)",
+      "description": "SEC complaint against Coinbase (SEC v. Coinbase, SDNY 2023) and Binance (SEC v. Binance, DDC 2023) listed LINK as an alleged unregistered security among ~60+ tokens. Chainlink Labs itself was NOT named as a defendant. This creates regulatory cloud over LINK trading in the US.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    },
+    {
+      "event_date": "2023-06-06",
+      "jurisdiction": "United States (Federal \u2014 SDNY)",
+      "description": "SEC v. Coinbase filing explicitly named LINK as one of the tokens the SEC alleges is an unregistered security. Chainlink Labs not a party but token classification at issue.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    },
+    {
+      "event_date": "2023-06-05",
+      "jurisdiction": "United States (Federal \u2014 DDC)",
+      "description": "SEC v. Binance filing also listed LINK among tokens alleged to be unregistered securities. Same caveat: Chainlink Labs not named as defendant.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2017-09-01",
+      "jurisdiction": "Cayman Islands / British Virgin Islands",
+      "description": "Chainlink ICO conducted via SmartContract Chainlink Ltd (Cayman Islands entity). No SEC registration filed for the token sale. No enforcement action taken against Chainlink directly as of research date.",
+      "severity": "minor",
+      "source_url": "https://link.smartcontract.com/whitepaper"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States (Federal)",
+      "description": "No SEC EDGAR filings found for SmartContract Chainlink Ltd or Chainlink Labs Inc under free EDGAR full-text search. Entity does not appear to have registered securities or filed Form D (Reg D exemption) publicly. Search conducted at EDGAR: https://efts.sec.gov/LATEST/search-index?q=%22chainlink%22&dateRange=custom&startdt=2017-01-01",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22chainlink%22&dateRange=custom&startdt=2017-01-01"
+    }
+  ],
+  "founder_credibility_summary": "Sergey Nazarov and Steve Ellis are fully doxxed, long-tenured crypto-native founders with verifiable track records dating to 2014; the addition of Ari Juels (Cornell/RSA Labs) as Chief Scientist substantially elevates academic and cryptographic credibility. No fraud allegations, rug-pull history, or anonymous team concerns exist, though neither founder holds a traditional computer-science or finance credential.",
+  "vc_overhang_summary": "The most significant overhang is the team/company reserve of 350M LINK (~35% of supply) held by SmartContract Chainlink Ltd, whose vesting schedule is not fully public; Etherscan shows the deployer wallet still holds hundreds of millions of tokens that can be released at management's discretion. Institutional VC holders (Framework, a16z, Blockchain Capital) appear largely vested given the 2017 vintage, but exact lock-up terms are NOT_AVAILABLE_FREE_TIER from free public sources.",
+  "alignment_summary": "Incentives are partially aligned but carry meaningful insider risk: the team's 35% reserve and undisclosed vesting create asymmetric information, and the SEC's classification of LINK as a potential unregistered security (in third-party exchange cases) could restrict US retail liquidity while insiders retain OTC exit options. The node operator reserve (30%) is designed to align long-term protocol growth with token demand, which is a positive structural feature. Overall: moderate alignment \u2014 better than many ICO-era projects, but the opaque team vesting and regulatory overhang are material retail risks.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://chain.link/whitepaper (Chainlink 2.0 Whitepaper)",
+    "https://link.smartcontract.com/whitepaper (Original 2017 ICO Whitepaper)",
+    "https://www.coingecko.com/en/coins/chainlink (CoinGecko LINK page)",
+    "https://www.linkedin.com/in/sergeynazarov/ (Sergey Nazarov LinkedIn)",
+    "https://www.linkedin.com/in/steveellis1/ (Steve Ellis LinkedIn)",
+    "https://www.linkedin.com/in/ari-juels-b8a7b/ (Ari Juels LinkedIn)",
+    "https://www.linkedin.com/in/adelynzhou/ (Adelyn Zhou LinkedIn)",
+    "https://www.linkedin.com/in/johanneid/ (Johann Eid LinkedIn)",
+    "https://etherscan.io/token/0x514910771af9ca656af840dff83e8264ecf986ca (LINK Token Contract)",
+    "https://etherscan.io/address/0x98c63b7b319dfbdf3d811530f2ab9dfe4983af9d (SmartContract deployer wallet)",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf (SEC v. Coinbase complaint)",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf (SEC v. Binance complaint)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22chainlink%22 (SEC EDGAR full-text search)",
+    "https://blog.chain.link/ (Chainlink Official Blog)",
+    "https://www.crunchbase.com/organization/chainlink (Crunchbase free page \u2014 limited data)",
+    "https://defillama.com/oracles (DefiLlama oracle TVS data)"
+  ]
+}

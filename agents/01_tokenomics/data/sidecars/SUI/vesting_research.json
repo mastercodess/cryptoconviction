@@ -1,0 +1,55 @@
+{
+  "events": [
+    {
+      "unlock_date": "2023-05-03",
+      "category": "public_emission",
+      "tokens_unlocked": 525000000,
+      "pct_of_supply": 0.0525,
+      "source_url": "https://blog.sui.io/tokenomics-sui-token/",
+      "notes": "Initial circulating supply at mainnet launch (~525M SUI), comprising public sale tokens and initial community reserve allocations."
+    },
+    {
+      "unlock_date": "2024-05-03",
+      "category": "investor_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://blog.sui.io/tokenomics-sui-token/",
+      "notes": "Series A/B investor tokens begin cliff expiry at 12 months post-mainnet; exact monthly tranches NOT_AVAILABLE_FREE_TIER at per-event granularity."
+    },
+    {
+      "unlock_date": "2024-05-03",
+      "category": "team_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://blog.sui.io/tokenomics-sui-token/",
+      "notes": "Mysten Labs team/employee tokens begin vesting after 12-month cliff; linear vesting over subsequent 24\u201336 months per public docs."
+    },
+    {
+      "unlock_date": "2023-05-03",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.sui.io/concepts/tokenomics/tokenomics-whitepaper",
+      "notes": "Staking rewards drawn from the Storage Fund and protocol emissions begin at mainnet; emission rate is dynamic and epoch-based, not a fixed unlock event."
+    },
+    {
+      "unlock_date": "2026-05-03",
+      "category": "team_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://blog.sui.io/tokenomics-sui-token/",
+      "notes": "Estimated end of Mysten Labs team vesting window (~3 years post-mainnet); precise final tranche size NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "unlock_date": "2033-05-03",
+      "category": "foundation_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://blog.sui.io/tokenomics-sui-token/",
+      "notes": "Community Reserve / Sui Foundation allocation (~20% of 10B supply) released over ~10 years for ecosystem grants, R&D, and validator subsidies; no single cliff date."
+    }
+  ],
+  "summary": "SUI launched on mainnet on 2023-05-03 with a total fixed supply of 10 billion tokens. Roughly 52.5% is allocated to early contributors (Mysten Labs team ~20%), investors (~14%), and the Sui Foundation/Community Reserve (~20%), with the remainder for public sale and staking rewards. Investor and team tokens are subject to a 12-month cliff followed by linear vesting over 2\u20133 years, meaning the heaviest structured unlock pressure falls in the 2024\u20132026 window; Foundation tokens drip over ~10 years, creating persistent but moderate long-tail supply expansion.",
+  "data_quality": "PARTIAL",
+  "caveats": "Exact per-tranche token counts and precise monthly unlock dates for investor and team categories are NOT_AVAILABLE_FREE_TIER: Sui Foundation has not published a granular vesting table in its public blog or docs, and tokenunlocks.app / Messari require paid tiers for full schedule exports. The allocation percentages (team ~20%, investors ~14%, community reserve ~20%, public sale ~6%, staking reserve ~40%) are sourced from the public Sui tokenomics blog post but individual investor round breakdowns (Series A vs B cliff dates) are not publicly disclosed. All figures should be verified against on-chain vesting contract data on Sui Explorer (https://suiexplorer.com) for precision."
+}

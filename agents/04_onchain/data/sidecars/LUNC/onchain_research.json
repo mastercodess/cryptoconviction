@@ -1,0 +1,34 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "LUNC spot volume on centralized exchanges has historically shown signs of wash trading, with reported 24h volumes frequently spiking 5-10x relative to its market cap on low-liquidity days, suggesting a meaningful portion of reported volume is likely inorganic; CoinGecko's trust score for several LUNC pairs remains low.",
+  "rationale": "Terra Classic (LUNC) has a circulating supply of approximately 5.79 trillion tokens and a market cap near $70\u201380 million USD as of mid-July 2025 per CoinGecko. Granular on-chain metrics such as DAU, WAU, MAU, new addresses, and daily transaction counts are not freely published by any of the permitted free-tier sources for the Terra Classic chain; the Terra Classic explorer (finder.terra.money) does not expose aggregated user-activity APIs without authentication, and Glassnode, Nansen, and Dune Analytics do not maintain comprehensive free public dashboards for LUNC. Exchange flow data in USD terms is similarly unavailable on Coinglass or DefiLlama free tiers for LUNC specifically. The Terra Classic ecosystem's DeFi TVL on DefiLlama is negligible (under $1 million), reflecting very limited active capital deployment on-chain as of Q2\u2013Q3 2025.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://www.coingecko.com/en/coins/terra-luna-classic",
+    "https://defillama.com/chain/Terra%20Classic",
+    "https://finder.terra.money",
+    "https://coinglass.com",
+    "https://glassnode.com/studio"
+  ]
+}

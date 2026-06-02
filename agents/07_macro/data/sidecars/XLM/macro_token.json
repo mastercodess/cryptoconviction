@@ -1,0 +1,30 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Precise 8h funding rates and open interest for XLM perpetuals are gated behind Coinglass Pro/paid tiers; 30-day rolling correlations against BTC, ETH, and NASDAQ require either a paid data API (CoinGecko Pro, Messari) or manual calculation from raw OHLCV downloads \u2014 none of these values are surfaced as ready-made figures on the free public pages of Coinglass, CoinGecko, DefiLlama, or FRED as of the current date.",
+  "sources": [
+    {
+      "field": "funding_rate_8h + open_interest_usd",
+      "url": "https://www.coinglass.com/FundingRate",
+      "note": "XLM perpetual funding & OI visible in summary table on free page, but real-time 8h decimal values and full OI breakdown require Coinglass Pro subscription; free page shows truncated/delayed data without exportable precision."
+    },
+    {
+      "field": "btc_correlation_30d / eth_correlation_30d",
+      "url": "https://www.coingecko.com/en/coins/stellar",
+      "note": "CoinGecko free tier provides OHLCV history downloadable as CSV (up to 365 days) but does NOT compute or display rolling correlations natively; calculation would require manual work in Python/Excel from raw data \u2014 NOT_AVAILABLE_FREE_TIER as a ready figure."
+    },
+    {
+      "field": "nasdaq_correlation_30d",
+      "url": "https://fred.stlouisfed.org/",
+      "note": "FRED carries NASDAQ Composite index data (NASDAQCOM series) but provides no crypto price data or cross-asset correlation tools; pairing with XLM requires manual merge \u2014 NOT_AVAILABLE_FREE_TIER as a ready figure."
+    },
+    {
+      "field": "general XLM market context",
+      "url": "https://defillama.com/chain/Stellar",
+      "note": "DefiLlama covers Stellar TVL and chain metrics but does not publish derivatives positioning or correlation data."
+    }
+  ]
+}

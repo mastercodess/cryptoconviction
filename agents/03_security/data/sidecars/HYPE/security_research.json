@@ -1,0 +1,92 @@
+{
+  "audits": [
+    {
+      "auditor": "Zellic",
+      "audit_date": "2024-06-01",
+      "scope": "Hyperliquid L1 smart contracts and bridge logic (HyperEVM / HyperBFT components)",
+      "severity_high": "NOT_AVAILABLE_FREE_TIER",
+      "severity_med": "NOT_AVAILABLE_FREE_TIER",
+      "severity_low": "NOT_AVAILABLE_FREE_TIER",
+      "summary": "Zellic conducted an audit of Hyperliquid's bridge and L1 contracts; full report has not been publicly released by the project as of mid-2025.",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/audits"
+    },
+    {
+      "auditor": "Trail of Bits",
+      "audit_date": "NOT_AVAILABLE_FREE_TIER",
+      "scope": "Reportedly engaged for audit per community references; no public report confirmed",
+      "severity_high": "NOT_AVAILABLE_FREE_TIER",
+      "severity_med": "NOT_AVAILABLE_FREE_TIER",
+      "severity_low": "NOT_AVAILABLE_FREE_TIER",
+      "summary": "Trail of Bits engagement referenced in community discussions but no public report has been released as of research date.",
+      "url": "NOT_AVAILABLE_FREE_TIER \u2014 no public report URL found on github.com/trailofbits/publications or hyperliquid docs"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2024-12-23",
+      "severity": "moderate",
+      "description": "North Korea-linked Lazarus Group wallets were identified depositing and withdrawing ~$60M USDC on Hyperliquid, raising fears of reconnaissance or pre-exploit probing. Hyperliquid's validator set (only 4 validators at the time) was flagged as a critical centralization risk \u2014 a compromise of 3 validators would control the bridge. No funds were directly stolen from the protocol, but the episode triggered a USDC depeg scare and ~$200M in net outflows from the platform within 48 hours.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://www.theblock.co/post/331688/hyperliquid-faces-scrutiny-after-north-korean-linked-wallets-trade-on-platform"
+    },
+    {
+      "incident_date": "2025-03-26",
+      "severity": "moderate",
+      "description": "Hyperliquid's liquidation vault (HLP) suffered ~$12M in losses due to a deliberate market manipulation attack by a whale trader who used large leveraged JELLY token positions to force the protocol's liquidation engine to absorb a toxic position. The attacker exploited the mechanics of the liquidation backstop rather than a smart contract bug. Hyperliquid validators voted to delist JELLY and settle positions at a favorable price, recovering most losses but raising governance/centralization concerns.",
+      "funds_lost_usd": 12000000,
+      "post_mortem_url": "https://x.com/HyperliquidX/status/1904969197415477679"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/hyperliquid-dex/hyperliquid-python-sdk",
+    "contributors_count": "NOT_AVAILABLE_FREE_TIER \u2014 core L1/node code is NOT open source; only SDK and peripheral tooling repos are public",
+    "weekly_commits_avg": "NOT_AVAILABLE_FREE_TIER \u2014 core protocol is closed source",
+    "last_commit_date": "2025-05-01",
+    "upgrade_mechanism": "multisig_only",
+    "multisig_signers": 4,
+    "multisig_threshold": 3,
+    "bug_bounty_max_usd": 500000,
+    "bug_bounty_platform": "Immunefi (unverified listing \u2014 see notes) / direct via docs"
+  },
+  "dependencies": [
+    {
+      "dep_type": "bridge",
+      "provider": "Native Hyperliquid Bridge (Arbitrum \u2192 Hyperliquid L1)",
+      "risk_level": "high",
+      "notes": "Bridge is secured by the same 4-validator set (3-of-4 threshold). A Lazarus Group reconnaissance event in Dec 2024 highlighted that compromising 3 validators would drain the bridge. Validator count has reportedly been expanded post-incident but remains small. Bridge holds hundreds of millions in USDC."
+    },
+    {
+      "dep_type": "l1",
+      "provider": "Arbitrum One (USDC settlement layer / bridge anchor)",
+      "risk_level": "medium",
+      "notes": "Hyperliquid's bridge contract lives on Arbitrum; Arbitrum's own security (Offchain Labs multisig, fraud proofs) adds a layer of protection but also a dependency."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Internal validator-based oracle (no Chainlink/Pyth)",
+      "risk_level": "high",
+      "notes": "Price oracles are computed by the validator set itself via a median of external CEX prices. No third-party decentralized oracle. Validator collusion or compromise could manipulate prices. The JELLY incident (Mar 2025) demonstrated oracle/liquidation manipulation risk."
+    },
+    {
+      "dep_type": "l2_sequencer",
+      "provider": "HyperBFT (proprietary Tendermint-variant consensus)",
+      "risk_level": "medium",
+      "notes": "Custom BFT consensus with a small validator set. Closed-source implementation limits external auditability. Liveness and safety depend on <4\u201316 validators (set size has been growing but remains permissioned)."
+    }
+  ],
+  "rationale": "Hyperliquid presents a materially elevated security risk profile relative to comparable DeFi protocols: its core node software is closed-source (preventing community audits), its validator set remains small and permissioned (creating a low attack surface for bridge compromise), and its internal oracle design was demonstrably exploited for economic manipulation in March 2025. The project has engaged reputable auditors (Zellic) but has not published full audit reports publicly, making independent verification of remediation impossible; combined with the December 2024 Lazarus Group reconnaissance event, the overall posture is best characterized as high-centralization, moderate-to-high smart-contract/operational risk, partially offset by a strong team track record and rapid incident response.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/audits",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/risks",
+    "https://github.com/hyperliquid-dex",
+    "https://defillama.com/hacks",
+    "https://rekt.news (searched 'hyperliquid' \u2014 no dedicated rekt.news post-mortem as of 2025-06-01; JELLY incident covered in news)",
+    "https://immunefi.com/bug-bounty/hyperliquid/ (listing existence referenced in community; direct page may require login for full details)",
+    "https://www.theblock.co/post/331688/hyperliquid-faces-scrutiny-after-north-korean-linked-wallets-trade-on-platform",
+    "https://x.com/HyperliquidX/status/1904969197415477679",
+    "https://x.com/tayvano_/status/1871651195846861001 (Taylor Monahan Lazarus analysis)",
+    "https://github.com/trailofbits/publications (checked \u2014 no Hyperliquid report listed)",
+    "https://github.com/zellic/audit-reports (checked \u2014 no public Hyperliquid report as of research date)"
+  ]
+}

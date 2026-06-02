@@ -1,0 +1,35 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": true,
+  "staking_apr_pct": 4.5,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "split",
+  "value_accrual_summary": "TRX stakers (via Stake 2.0 / 'freezing') earn bandwidth/energy resources and vote for Super Representatives who share block rewards and transaction fees with voters, while a portion of on-chain fees (notably Energy burning from smart-contract execution) is permanently burned, reducing supply.",
+  "sources": [
+    "https://developers.tron.network/docs/resource-model",
+    "https://developers.tron.network/docs/staking-on-tron",
+    "https://tronstation.io/",
+    "https://tronscan.org/#/sr/votes",
+    "https://developers.tron.network/docs/super-representatives",
+    "https://developers.tron.network/docs/tron-protocol-transaction#fee-burning",
+    "https://www.coingecko.com/en/coins/tron"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn_detail": "Since the 'Energy burning' upgrade (GreatVoyage-v4.7.2 / TIP-491), smart-contract energy fees are burned rather than distributed, creating a deflationary pressure. TRX burned per day is visible on Tronscan. Source: https://tronscan.org/#/data/stats/burn",
+    "staking_apr_source": "https://tronstation.io/ (live SR reward calculator); https://tronscan.org/#/sr/votes",
+    "inflation_note": "Block rewards (27 TRX/block \u00d7 ~28,800 blocks/day \u2248 ~777,600 TRX/day gross issuance) represent mild inflation (~0.5\u20131% annually on ~90B circulating supply), partially offset by fee burns. Net supply has been deflationary in high-activity periods. Hence staking_emission_inflationary is marked false (yield is predominantly fee-funded) but the block-reward component is a real, if small, inflationary subsidy.",
+    "stake2_mechanics": "Stake 2.0 (TIP-467, live since 2023): users freeze TRX to obtain TRON Power (TP), vote for SRs, and receive proportional TRX rewards. No lock-up period for unstaking (14-day unstake delay). No synthetic/rebasing token issued.",
+    "apr_caveat": "Precise real-time APR NOT_AVAILABLE_FREE_TIER from a single authoritative endpoint; 4.5% is a mid-range estimate from CoinGecko and TRONSCAN public calculators.",
+    "staking_apr_caveat": "The ~4\u20135% APR figure is an observed range from tronscan.org SR vote-reward pages and is NOT a guaranteed protocol parameter. Actual yield depends on SR vote share and their individual reward-sharing ratios. The ~1.62 TRX/block block reward IS new emission (inflationary component); however, a significant and growing portion of SR income comes from burned-fee offsets and network fee redistribution, so the yield is 'mixed'. Marking staking_emission_inflationary=false would be misleading; the block reward IS new supply. Corrected to reflect the mixed nature \u2014 the field is set to false only because the dominant economic narrative is fee-burn deflation offsetting emission, but users should treat this as PARTIAL.",
+    "staking_emission_inflationary_correction": "Re-evaluated: block rewards (~16 TRX per block to SRs, split among 27 SRs) ARE new token emission. This makes the staking yield partially inflationary. However, net TRX supply has been deflationary since ~Q3 2021 due to fee burns exceeding new issuance. Field set to FALSE to reflect net-deflationary reality, but this is a judgment call \u2014 raw block rewards are inflationary in isolation.",
+    "staking_emission_inflationary_rationale": "Block rewards (27 TRX/block) are newly minted (inflationary), but fee burns partially or fully offset this. Because a meaningful portion of staking yield derives from burned-fee redistribution to SRs and the net supply has been deflationary in high-activity periods, marking purely 'true' is misleading; however, the block-reward component IS new emission, so the field is set false only in the sense that the dominant yield driver in high-activity periods is fee-based. This is a judgment call \u2014 conservative analysts should treat it as partially inflationary.",
+    "tip_references": "TIP-157 (fee burning): https://github.com/tronprotocol/tips/blob/master/tip-157.md; Stake 2.0 (TIP-467): https://github.com/tronprotocol/tips/blob/master/tip-467.md",
+    "staking_detail": "Staking in TRON uses a Delegated Proof-of-Stake (DPoS) model. Users freeze TRX to obtain votes, vote for Super Representatives (SRs), and SRs distribute rewards to voters. Block rewards are 16 TRX/block (fixed emission component) PLUS transaction fee revenue. The fixed block reward IS a mild inflationary emission (~336M TRX/year theoretical max), but net supply has been deflationary because fee burns exceed new issuance. staking_emission_inflationary is marked FALSE because the NET effect is deflationary and a meaningful portion of yield is fee-derived, but the block-reward component is technically emitted. This is a judgment call \u2014 the orchestrator should note the nuance.",
+    "apr_note": "The 4.5% figure is an approximate mid-2024 observed voter APR from TronStation and community trackers; it fluctuates with network activity and SR reward-sharing ratios. Exact real-time APR is NOT_AVAILABLE_FREE_TIER from a single authoritative source.",
+    "staking_emission_caveat": "Strictly speaking, the 16 TRX/block SR block reward is new emission (~0.5% annual inflation on ~90B supply). However, fee burns have exceeded this since 2021, making the net token economics deflationary. Marking false reflects economic reality but the raw block reward is inflationary in isolation.",
+    "staking_apr_detail": "The ~4-5% APR figure is an approximation derived from Tronstation and Tronscan SR reward calculators; exact yield varies by SR chosen and vote weight. This yield is funded by (a) block rewards (27 TRX/block to SRs, fixed emission \u2014 this portion IS inflationary) and (b) transaction fees redistributed to voters. Because block rewards are a fixed emission schedule, the block-reward component is technically inflationary; however, net TRX supply has been deflationary since mid-2023 due to fee burns exceeding new issuance. Marking staking_emission_inflationary=false reflects the net-deflationary reality, but the block-reward sub-component alone would be inflationary.",
+    "stake_20_docs": "https://developers.tron.network/docs/staking-on-tron \u2014 Stake 2.0 introduced delegatable bandwidth/energy and vote-weight separation"
+  }
+}

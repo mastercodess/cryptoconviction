@@ -1,0 +1,66 @@
+{
+  "audits": [
+    {
+      "auditor": "NOT_AVAILABLE_FREE_TIER",
+      "audit_date": null,
+      "scope": "NOT_AVAILABLE_FREE_TIER",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "No publicly accessible audit report found for Notcoin (NOT) Jetton contract on TON via GitHub, project docs, or major audit firm public registries as of mid-2025.",
+      "url": "NOT_AVAILABLE_FREE_TIER \u2014 no audit PDF/repo link discoverable via free sources"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": null,
+      "severity": null,
+      "description": "No exploits or hacks involving Notcoin (NOT) found on Rekt.news or DefiLlama Hacks page as of research date (2025-07). The project has had no publicly documented smart-contract exploit. Note: centralized distribution risks existed during the airdrop phase (May 2024) but no funds were lost to a contract exploit.",
+      "funds_lost_usd": null,
+      "post_mortem_url": null
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/notcoin-bot \u2014 NOTE: primary Jetton contract source not prominently open-sourced on GitHub; TON contract address: EQAvlWFDxGF2lXm67y4yzC17wYKD9A0guwPkMs1gOsM6vBGS (mainnet)",
+    "contributors_count": "NOT_AVAILABLE_FREE_TIER \u2014 GitHub org has limited public repos; contributor count for core token contract not determinable",
+    "weekly_commits_avg": "NOT_AVAILABLE_FREE_TIER \u2014 no active public development repo with commit history found for the token contract",
+    "last_commit_date": "NOT_AVAILABLE_FREE_TIER",
+    "upgrade_mechanism": "immutable",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "NOT_AVAILABLE_FREE_TIER \u2014 no Immunefi or HackenProof public listing found for Notcoin as of 2025-07"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l1",
+      "provider": "The Open Network (TON)",
+      "risk_level": "medium",
+      "notes": "NOT token is a TON Jetton; security is entirely dependent on TON L1 consensus and the TON Jetton standard. TON has a smaller security researcher ecosystem than EVM, reducing likelihood of independent vulnerability discovery. TON has not suffered a major L1 exploit to date."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "TON Bridge (ton.org/bridge) for EVM-side wrapped NOT",
+      "risk_level": "medium",
+      "notes": "Bridged NOT on EVM chains (e.g., via official TON Bridge or third-party bridges) introduces bridge smart-contract risk. TON Bridge is operated by the TON Foundation; no public audit link found via free sources. Bridge exploits are a common attack vector industry-wide."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "NOT_AVAILABLE_FREE_TIER",
+      "risk_level": "low",
+      "notes": "Notcoin (NOT) is a pure transfer/meme token with no on-chain DeFi logic requiring price oracles in its native contract. Oracle risk exists only in third-party DeFi protocols that list NOT as collateral (e.g., DEXes on TON like STON.fi or DeDust), not in the token contract itself."
+    }
+  ],
+  "rationale": "Notcoin (NOT) presents a relatively low smart-contract attack surface because it is a simple TON Jetton (fungible token) with no complex DeFi logic, upgradability, or admin keys embedded in the token contract itself \u2014 reducing rug-pull and exploit vectors at the contract level. However, the security posture is difficult to verify independently because no public audit report, bug bounty program, or open-source contract repository with commit history was discoverable via free sources, which is a significant transparency gap for a token with multi-billion dollar market cap at peak. The primary residual risks are TON ecosystem immaturity (smaller auditor pool), bridge risk for EVM-side liquidity, and the centralized off-chain game infrastructure that controlled the original point-to-token conversion.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://rekt.news \u2014 searched 'Notcoin', no results returned (2025-07)",
+    "https://defillama.com/hacks \u2014 no Notcoin entry found",
+    "https://immunefi.com/bug-bounty/ \u2014 no Notcoin listing found",
+    "https://github.com/notcoin-bot \u2014 limited public repos, no audit report found",
+    "https://tonviewer.com/EQAvlWFDxGF2lXm67y4yzC17wYKD9A0guwPkMs1gOsM6vBGS \u2014 TON mainnet Jetton master contract",
+    "https://ton.org/bridge \u2014 TON official bridge documentation",
+    "https://www.coingecko.com/en/coins/notcoin \u2014 token metadata reference",
+    "https://notco.in \u2014 official project site (no audit links found in docs)"
+  ]
+}

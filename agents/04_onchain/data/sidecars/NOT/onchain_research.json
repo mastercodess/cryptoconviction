@@ -1,0 +1,36 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "Notcoin (NOT) trades primarily on centralized exchanges (Binance, OKX, Bybit) with reported 24h volume frequently exceeding its market cap by multiples, a pattern consistent with potential wash trading or inflated volume reporting on smaller venues, though organic retail interest from the Telegram mini-app origin provides some genuine baseline demand.",
+  "rationale": "Notcoin (NOT) is a TON-based token launched via airdrop in May 2024 to ~35 million Telegram game participants; CoinGecko as of mid-July 2025 shows a circulating supply of approximately 102.7 billion NOT with a market cap near $700\u2013900M range depending on price. Granular on-chain metrics (DAU, daily tx count, new addresses) are not freely published for the TON blockchain at the token level on CoinGecko, DefiLlama, or Glassnode free tier, and no public Dune dashboard with current figures was accessible. Exchange flow data (inflow/outflow USD) is paywalled on Coinglass and Glassnode beyond free summaries. The token's holder distribution is not broken into LTH/STH cohorts on any free public source, making smart_money_stance indeterminate.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://www.coingecko.com/en/coins/notcoin",
+    "https://defillama.com/protocol/notcoin",
+    "https://coinglass.com/en/coins/NOT",
+    "https://glassnode.com/",
+    "https://dune.com/search?q=notcoin",
+    "https://ton.org/",
+    "https://notco.in/"
+  ]
+}

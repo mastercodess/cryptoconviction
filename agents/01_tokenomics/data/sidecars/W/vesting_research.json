@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+      "unlock_date": "2024-04-03",
+      "category": "airdrop",
+      "tokens_unlocked": 617500000,
+      "pct_of_supply": 0.06175,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "W airdrop distributed at TGE to eligible community participants (W1 airdrop, ~6.175% of supply)."
+    },
+    {
+      "unlock_date": "2024-04-03",
+      "category": "public_emission",
+      "tokens_unlocked": 1182500000,
+      "pct_of_supply": 0.11825,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Remaining initial circulating supply at TGE from ecosystem/community bucket, excluding airdrop portion."
+    },
+    {
+      "unlock_date": "2025-04-03",
+      "category": "investor_unlock",
+      "tokens_unlocked": 1700000000,
+      "pct_of_supply": 0.17,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Investor allocation (17% of supply) cliff ends ~1 year post-TGE; linear vesting begins monthly over ~2 years."
+    },
+    {
+      "unlock_date": "2025-04-03",
+      "category": "team_unlock",
+      "tokens_unlocked": 1700000000,
+      "pct_of_supply": 0.17,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Core contributor/team allocation (17% of supply) cliff ends ~1 year post-TGE; linear vesting begins monthly over ~2 years."
+    },
+    {
+      "unlock_date": "2025-04-03",
+      "category": "foundation_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Foundation Treasury (19.5% of supply) vesting schedule subject to governance; exact monthly release cadence NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "unlock_date": "2025-04-03",
+      "category": "public_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Ecosystem/community remaining tokens (~40%+ of supply) vest on a multi-year schedule; exact monthly tranches NOT_AVAILABLE_FREE_TIER without premium unlock tracker."
+    },
+    {
+      "unlock_date": "2027-04-03",
+      "category": "investor_unlock",
+      "tokens_unlocked": 1700000000,
+      "pct_of_supply": 0.17,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Full investor allocation fully vested by approximately April 2027 (end of 2-year linear vest post-cliff)."
+    },
+    {
+      "unlock_date": "2027-04-03",
+      "category": "team_unlock",
+      "tokens_unlocked": 1700000000,
+      "pct_of_supply": 0.17,
+      "source_url": "https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics",
+      "notes": "Full core contributor allocation fully vested by approximately April 2027 (end of 2-year linear vest post-cliff)."
+    }
+  ],
+  "summary": "Wormhole (W) launched its token on April 3, 2024 with ~18% of the 10B supply circulating at TGE (including a community airdrop). The most significant unlock pressure begins in April 2025, when the 1-year cliff expires for both investor (17%) and core contributor/team (17%) allocations \u2014 together representing 3.4B tokens (~34% of supply) beginning to unlock linearly over the following 24 months. The remaining ~46.5% ecosystem/community bucket and ~19.5% foundation treasury also vest over multi-year schedules, creating sustained but gradual sell pressure through approximately 2027\u20132028.",
+  "data_quality": "PARTIAL",
+  "caveats": "Exact month-by-month unlock tranches for the Foundation Treasury (19.5%) and Ecosystem/Community (46.5%) buckets are NOT_AVAILABLE_FREE_TIER \u2014 TokenUnlocks.app and CryptoRank premium tiers carry the granular schedule. The investor and team cliff/vest structure is confirmed from Wormhole's own blog post. The 'tokens_unlocked' figures for the April 2025 investor/team rows represent the TOTAL allocation that begins vesting (not a single-day unlock) \u2014 actual daily/monthly release is linear. Foundation vesting cadence is governance-dependent and not publicly specified in free-tier sources. All figures should be verified against https://wormhole.com/blog/wormhole-w-token-launch-and-tokenomics before use."
+}

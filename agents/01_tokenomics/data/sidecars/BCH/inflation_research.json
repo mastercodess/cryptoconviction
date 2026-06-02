@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.0172,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Bitcoin Cash follows Bitcoin's identical halving schedule; the most recent halving occurred in April 2024, reducing the block reward from 6.25 BCH to 3.125 BCH per block (~144 blocks/day). With ~450 BCH minted daily against a circulating supply of approximately 19.87 million BCH (per CoinGecko), the annualized new issuance is ~164,250 BCH, yielding an inflation rate of roughly 1.72%. The next halving is expected around April 2028, which will cut the rate to ~0.86%, so the trend over the next 24 months remains flat-to-declining as supply grows and the halving approaches.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/bitcoin-cash",
+    "https://www.bitcoincash.org/",
+    "https://learnmeabitcoin.com/tools/block-reward",
+    "https://en.bitcoin.it/wiki/Controlled_supply"
+  ]
+}

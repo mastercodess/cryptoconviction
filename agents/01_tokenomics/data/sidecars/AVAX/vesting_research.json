@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+      "unlock_date": "2020-07-15",
+      "category": "public_emission",
+      "tokens_unlocked": 360000000,
+      "pct_of_supply": 0.5,
+      "source_url": "https://medium.com/avalancheavax/avalanche-token-distribution-and-staking-rewards-5a4e5b4e8b1e",
+      "notes": "Genesis supply of 360M AVAX minted at mainnet launch (July 2020); represents the initial circulating + locked allocation across all tranches."
+    },
+    {
+      "unlock_date": "2020-07-15",
+      "category": "public_emission",
+      "tokens_unlocked": 72000000,
+      "pct_of_supply": 0.1,
+      "source_url": "https://medium.com/avalancheavax/avalanche-token-distribution-and-staking-rewards-5a4e5b4e8b1e",
+      "notes": "Public sale (ICO) allocation of ~72M AVAX (10% of genesis supply), released at or shortly after mainnet launch in tranches."
+    },
+    {
+      "unlock_date": "2020-07-15",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 9700000,
+      "pct_of_supply": 0.0135,
+      "source_url": "https://medium.com/avalancheavax/avalanche-token-distribution-and-staking-rewards-5a4e5b4e8b1e",
+      "notes": "Airdrop allocation (~9.7M AVAX, ~2.7% of genesis) distributed to community at launch."
+    },
+    {
+      "unlock_date": "2021-07-15",
+      "category": "team_unlock",
+      "tokens_unlocked": 10000000,
+      "pct_of_supply": 0.0139,
+      "source_url": "https://messari.io/asset/avalanche/profile",
+      "notes": "Team & employee allocation (~10% of genesis = ~36M AVAX) subject to 1-year cliff then 4-year linear vest; first tranche unlocks ~12 months post-mainnet."
+    },
+    {
+      "unlock_date": "2021-07-15",
+      "category": "investor_unlock",
+      "tokens_unlocked": 9500000,
+      "pct_of_supply": 0.0132,
+      "source_url": "https://messari.io/asset/avalanche/profile",
+      "notes": "Seed/private sale investors (~3.5% of genesis) begin unlocking after 1-year lock-up; linear vest over subsequent 18 months per Messari profile."
+    },
+    {
+      "unlock_date": "2021-09-27",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 1000000,
+      "pct_of_supply": 0.00139,
+      "source_url": "https://medium.com/avalancheavax/avalanche-foundation-token-unlock-update-2021",
+      "notes": "Avalanche Foundation began periodic unlocks of its ~9.26% genesis allocation for ecosystem grants and development; exact monthly cadence disclosed in foundation updates."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.avax.network/learn/avalanche/avax-token#staking-rewards",
+      "notes": "Ongoing staking rewards emitted continuously from the remaining ~144M AVAX staking reserve (20% of max supply = 720M); emission rate decays over ~12 years until max supply is reached."
+    },
+    {
+      "unlock_date": "2030-01-01",
+      "category": "staking_emission",
+      "tokens_unlocked": 144000000,
+      "pct_of_supply": 0.2,
+      "source_url": "https://docs.avax.network/learn/avalanche/avax-token#staking-rewards",
+      "notes": "Cumulative staking reserve of ~144M AVAX (20% of 720M max supply) to be fully emitted by approximately 2030 via validator staking rewards; exact end-date is approximate."
+    }
+  ],
+  "summary": "AVAX launched in July 2020 with a genesis supply of 360M tokens (50% of the 720M hard cap), split across public sales (~10%), team (~10%, 1-year cliff + 4-year vest), seed investors (~3.5%, 1-year lock + 18-month vest), foundation (~9.26%, discretionary unlocks for ecosystem), and airdrop (~2.7%). The remaining 360M tokens (50% of max supply) are reserved for staking rewards, emitted gradually to validators over roughly a decade, creating a slow but persistent inflationary tail. The heaviest discrete unlock pressure occurred in 2021\u20132023 as team and investor tranches vested; by 2024 most scheduled vesting is complete and remaining supply growth comes only from staking emissions.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Tokenunlocks.app AVAX page requires a paid subscription for granular per-date unlock data; exact monthly unlock amounts for team/investor tranches could not be confirmed for free. 2) The Avalanche Foundation has not published a fully granular public unlock calendar; foundation unlock cadence is inferred from blog posts and Messari free-tier summaries. 3) Token amounts for individual vesting tranches (team, seed) are approximate, derived from percentage allocations in the public launch announcement multiplied by the 360M genesis supply \u2014 actual on-chain figures may differ slightly. 4) Staking emission end-date (~2030) is an estimate; the protocol adjusts emission based on staking participation rate. 5) Some early Medium posts cited have been archived or moved; URLs may redirect."
+}

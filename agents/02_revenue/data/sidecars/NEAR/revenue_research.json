@@ -1,0 +1,38 @@
+{
+  "annualized_revenue_usd": 3200000,
+  "tvl_usd": 195000000,
+  "p_s_ratio": 142,
+  "p_tvl_ratio": 2.3,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": 8.5,
+  "growth_trend": "DECELERATING",
+  "seasonality": "NEAR fee revenue is event-driven, spiking around AI-agent narrative cycles (Q4 2024) and memecoin activity on Hot Wallet/Ref Finance, but lacks consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "AVAX",
+      "metric": "p_s",
+      "peer_value": 95
+    },
+    {
+      "peer_symbol": "SOL",
+      "metric": "p_s",
+      "peer_value": 45
+    },
+    {
+      "peer_symbol": "ATOM",
+      "metric": "p_s",
+      "peer_value": 110
+    }
+  ],
+  "rationale": "DefiLlama reports NEAR TVL near $195M as of mid-2025, down from ~$300M peak in late 2024. Annualized protocol fees are estimated at ~$3.2M based on DefiLlama's trailing 30-day fee data (~$267K/month \u00d7 12); at a ~$455M fully diluted market cap this implies a P/S of roughly 142x, elevated versus Solana (~45x) but in line with other L1s with thin fee capture. Real yield to stakers is effectively null because nearly all validator rewards are inflationary (~8.5% APR from token issuance) rather than fee-derived \u2014 protocol fees are largely burned or go to the treasury, leaving stakers with minimal real (fee-backed) yield.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Near",
+    "https://defillama.com/protocol/ref-finance",
+    "https://defillama.com/fees/near",
+    "https://tokenterminal.com/terminal/projects/near-protocol",
+    "https://near.org/blog/near-q4-2024-protocol-report",
+    "https://coinmarketcap.com/currencies/near-protocol/",
+    "https://docs.near.org/concepts/basics/tokens#inflation"
+  ]
+}

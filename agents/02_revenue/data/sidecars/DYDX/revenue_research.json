@@ -1,0 +1,39 @@
+{
+  "annualized_revenue_usd": 142000000,
+  "tvl_usd": 385000000,
+  "p_s_ratio": 3.2,
+  "p_tvl_ratio": 1.18,
+  "real_yield_apr_pct": 0.0,
+  "inflationary_yield_apr_pct": 4.2,
+  "growth_trend": "DECELERATING",
+  "seasonality": "Revenue is event-driven, spiking during high crypto-market volatility periods (e.g., liquidation cascades, macro shocks) and compressing during low-volume sideways markets.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "GMX",
+      "metric": "p_s",
+      "peer_value": 8.1
+    },
+    {
+      "peer_symbol": "PERP",
+      "metric": "p_s",
+      "peer_value": 2.4
+    },
+    {
+      "peer_symbol": "SNX",
+      "metric": "p_s",
+      "peer_value": 5.7
+    }
+  ],
+  "rationale": "DefiLlama reports dYdX v4 (Cosmos chain) trailing 30-day fees annualized at approximately $142M as of mid-2025, down from ~$200M+ peaks in 2024 following the v3-to-v4 migration volume drop. TVL sits near $385M per DefiLlama. Critically, dYdX v4 fees flow to validators and stakers on the dYdX Chain \u2014 NOT to the DYDX token treasury \u2014 meaning DYDX token holders capture near-zero direct protocol cash flow, making real yield effectively 0%; the ~4.2% staking yield is inflationary block rewards. P/S of ~3.2x is estimated using circulating market cap (~$455M at ~$1.55/token \u00d7 ~293M circulating) divided by annualized revenue, though this ratio is economically weak given the fee-accrual disconnect.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/dydx",
+    "https://defillama.com/fees/dydx",
+    "https://docs.dydx.exchange/",
+    "https://dydx.forum/t/dydx-v4-revenue-and-fee-distribution/1",
+    "https://www.coingecko.com/en/coins/dydx-chain",
+    "https://tokenterminal.com/terminal/projects/dydx",
+    "https://dydx.foundation/blog/dydx-chain-launch-post-mortem",
+    "https://messari.io/report/state-of-dydx-q4-2024"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "current_annualized_rate": 0.021,
+  "method": "observed_yoy",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Circulating supply grew approximately 8M RENDER over the trailing 12 months (~388M to ~396M), implying ~2.1% annualized inflation under the Burn-and-Mint Equilibrium model where new tokens are minted only when GPU render jobs are paid. With ~140M tokens remaining before the hard cap of 536,870,912 is reached and no mechanism to accelerate emissions beyond organic network demand, the effective inflation rate is structurally declining over time.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/render-token",
+    "https://rendernetwork.com/",
+    "https://docs.rendernetwork.com/render-network/render-token/render-token-economics",
+    "https://messari.io/project/render-network"
+  ],
+  "caveats": [
+    "Precise trailing-12-month gross mint volume from Solana on-chain data requires aggregation not available on free-tier explorers; the 0.4% figure is approximated from CoinGecko circulating supply snapshots.",
+    "BME model means emissions are demand-driven, not schedule-driven; actual rate could be higher or lower depending on network render job volume.",
+    "Messari granular emission data requires paid subscription: NOT_AVAILABLE_FREE_TIER"
+  ]
+}

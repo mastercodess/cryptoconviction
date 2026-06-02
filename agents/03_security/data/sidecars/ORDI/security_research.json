@@ -1,0 +1,73 @@
+{
+  "audits": [
+    {
+      "auditor": "NOT_AVAILABLE_FREE_TIER",
+      "audit_date": null,
+      "scope": "No formal smart-contract audits exist because ORDI/BRC-20 has no EVM or WASM smart contracts. The protocol is a JSON inscription standard interpreted by off-chain indexers.",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "No audit reports found on GitHub, project docs, or any public audit repository; BRC-20 is an off-chain indexer convention, not an auditable on-chain contract.",
+      "url": "https://github.com/layer-egde/brc-20-standard"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2023-05-07",
+      "severity": "moderate",
+      "description": "Indexer inconsistency exploit: an attacker discovered that certain BRC-20 indexers (including early OKX and UniSat indexers) diverged in how they counted 'mint' inscriptions, allowing double-counting of balances on some platforms. UniSat halted BRC-20 trading and patched their indexer. No Bitcoin-layer funds were 'stolen' in the cryptographic sense, but users who traded on the inconsistent indexer state suffered losses.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://twitter.com/unisat_wallet/status/1655126876587716608"
+    },
+    {
+      "incident_date": "2023-09-01",
+      "severity": "minor",
+      "description": "Multiple centralized exchanges listing ORDI used independent indexers with occasional state divergence, causing temporary balance discrepancies and withdrawal halts. No cryptographic breach; resolved by indexer re-sync.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "NOT_AVAILABLE_FREE_TIER \u2014 no formal post-mortem published"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/casey/ord",
+    "contributors_count": "NOT_AVAILABLE_FREE_TIER \u2014 GitHub API rate-limited without auth; publicly the ord repo shows 100+ contributors on the contributors page as of early 2024",
+    "weekly_commits_avg": "NOT_AVAILABLE_FREE_TIER \u2014 requires GitHub API authenticated call for precise average",
+    "last_commit_date": "2024-01-15",
+    "upgrade_mechanism": "immutable",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "None \u2014 no public bug bounty program found on Immunefi, HackenProof, or project docs as of research date"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l1",
+      "provider": "Bitcoin (base layer)",
+      "risk_level": "low",
+      "notes": "ORDI inscriptions are settled on Bitcoin L1. Bitcoin's consensus is the most battle-tested in crypto; the dependency risk here is extremely low. Inscription data is immutable once confirmed."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "BRC-20 Indexers (UniSat, OKX, Hiro, etc.)",
+      "risk_level": "high",
+      "notes": "CRITICAL RISK: BRC-20 balances are NOT enforced by Bitcoin consensus. They are computed by off-chain indexers that read inscription data. There is no canonical, decentralized indexer. Divergence between indexers (as seen in May 2023) can create phantom balances or deny legitimate ones. This is the single largest security risk for ORDI holders."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "Centralized Exchange Custodians (Binance, OKX, etc.)",
+      "risk_level": "high",
+      "notes": "Most ORDI trading occurs on CEXs that custody BTC and maintain internal ledgers. Users face standard CEX counterparty risk. There is no trustless bridge or DEX with significant ORDI liquidity."
+    }
+  ],
+  "rationale": "ORDI's security model is fundamentally unlike EVM DeFi: Bitcoin L1 provides immutable settlement, but the BRC-20 balance layer is entirely dependent on off-chain indexer consensus, which has already demonstrated exploitable divergence in May 2023. There are no formal audits, no bug bounty program, and no on-chain upgrade mechanism \u2014 the protocol is 'immutable' only in the sense that inscriptions cannot be altered, but the interpretation layer (indexers) is centralized, unaudited, and the primary attack surface. Investors should treat indexer risk and CEX custody risk as the dominant threat vectors.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://github.com/casey/ord",
+    "https://github.com/layer-egde/brc-20-standard",
+    "https://domo-2.gitbook.io/brc-20-experiment/",
+    "https://rekt.news (searched; no ORDI entry found)",
+    "https://defillama.com/hacks (searched; no ORDI protocol entry found)",
+    "https://immunefi.com/explore/ (searched; no ORDI/BRC-20 listing found)",
+    "https://twitter.com/unisat_wallet/status/1655126876587716608",
+    "https://unisat.io/brc20"
+  ]
+}

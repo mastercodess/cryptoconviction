@@ -1,0 +1,190 @@
+{
+  "team_members": [
+    {
+      "name": "Hayden Adams",
+      "role": "Founder & CEO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/hayden-adams-963b7a148/",
+      "prior_projects": [
+        "Siemens (mechanical engineer, brief tenure before Uniswap)"
+      ],
+      "notes": "Mechanical engineering graduate from Stony Brook University. Had no prior Solidity/blockchain experience before building Uniswap v1 in 2018, famously inspired by a Vitalik Buterin Reddit post. Highly public figure; active on X/Twitter (@haydenzadams). Uniswap v1 launched Nov 2018."
+    },
+    {
+      "name": "Mary-Catherine Lader",
+      "role": "Chief Operating Officer",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/mary-catherine-lader/",
+      "prior_projects": [
+        "BlackRock (Managing Director, ~10 years)",
+        "Goldman Sachs"
+      ],
+      "notes": "Joined Uniswap Labs ~2022. Strong TradFi pedigree; signals institutional maturation of the team."
+    },
+    {
+      "name": "Noah Zinsmeister",
+      "role": "Engineering Lead / Protocol Engineer",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/noahzinsmeister/",
+      "prior_projects": [
+        "Harvard University (CS)",
+        "Early Uniswap contributor"
+      ],
+      "notes": "One of the earliest core engineers; led v2 and v3 smart contract development."
+    },
+    {
+      "name": "Matteo Leibowitz",
+      "role": "Strategy Lead",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/matteo-leibowitz-7b2a4b130/",
+      "prior_projects": [
+        "The Block (analyst)"
+      ],
+      "notes": "Joined from crypto media/research background; leads strategic initiatives."
+    },
+    {
+      "name": "Marvin Ammori",
+      "role": "Chief Legal Officer",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/marvinammori/",
+      "prior_projects": [
+        "Protocol Labs",
+        "Free Press (internet law advocacy)",
+        "University of Michigan Law"
+      ],
+      "notes": "Prominent internet/tech lawyer. Critical hire given SEC scrutiny of DeFi. Publicly vocal on crypto regulatory issues."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Paradigm",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Led $1.8M seed round in 2019. Also participated in Series A. One of earliest and most prominent backers. Ownership % NOT_AVAILABLE_FREE_TIER \u2014 exact cap table not publicly filed."
+    },
+    {
+      "investor_name": "Andreessen Horowitz (a16z)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in $11M Series A (2020). Also holds UNI governance tokens allocated to investors (4-year vesting, cliff at 1 year from Sep 2020 launch \u2014 cliff long passed, tokens fully vested as of ~Sep 2024)."
+    },
+    {
+      "investor_name": "Union Square Ventures (USV)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Part of $11M Series A. UNI token vesting schedule same as above \u2014 fully vested."
+    },
+    {
+      "investor_name": "Variant Fund",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in Series A. Jesse Walden (founder) publicly disclosed involvement."
+    },
+    {
+      "investor_name": "Uniswap Labs (team & future employees allocation)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": 0.2154,
+      "unlock_status": "fully_vested",
+      "notes": "Per UNI tokenomics at launch: 21.54% of 1B UNI allocated to team/future employees with 4-year vesting (1-year cliff from Sep 2020). All cliff/linear vesting periods have now elapsed as of 2024."
+    },
+    {
+      "investor_name": "Investor allocation (VCs + advisors)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": 0.1799,
+      "unlock_status": "fully_vested",
+      "notes": "17.99% of 1B UNI tokens allocated to investors at genesis with same 4-year vest / 1-year cliff. Fully vested as of ~Sep 2024. Source: Uniswap blog token announcement."
+    },
+    {
+      "investor_name": "Community Treasury (Uniswap DAO)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": 0.4306,
+      "unlock_status": "linear",
+      "notes": "43.06% reserved for community governance treasury, released over 4 years. Controlled by UNI governance votes. Ongoing distribution."
+    },
+    {
+      "investor_name": "Polychain Capital",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Reported Series A participant. Exact stake NOT_AVAILABLE_FREE_TIER."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2021-09-03",
+      "jurisdiction": "United States (Federal)",
+      "description": "SEC opened investigation into Uniswap Labs, reported by Wall Street Journal. SEC reportedly examining how UNI token is marketed and sold, and whether the DEX facilitates trading of unregistered securities. No formal charges filed at that time.",
+      "severity": "moderate",
+      "source_url": "https://www.wsj.com/articles/sec-investigates-uniswap-labs-developer-of-crypto-exchange-11630666800"
+    },
+    {
+      "event_date": "2024-04-10",
+      "jurisdiction": "United States (Federal \u2014 SEC)",
+      "description": "Uniswap Labs received a Wells Notice from the SEC, indicating the SEC staff intends to recommend enforcement action. Uniswap Labs publicly disclosed this and stated it would 'fight' the SEC. CLO Marvin Ammori published a public rebuttal. No lawsuit filed as of research date.",
+      "severity": "severe",
+      "source_url": "https://blog.uniswap.org/fighting-for-defi"
+    },
+    {
+      "event_date": "2024-04-10",
+      "jurisdiction": "United States (Federal \u2014 SEC)",
+      "description": "Uniswap Labs published formal response to Wells Notice arguing UNI is not a security, the protocol is a technology not a broker-dealer, and that SEC lacks jurisdiction over decentralized protocols.",
+      "severity": "moderate",
+      "source_url": "https://blog.uniswap.org/uniswap-labs-wells-notice-response"
+    },
+    {
+      "event_date": "2023-07-17",
+      "jurisdiction": "United States (Federal \u2014 CFTC/Class Action)",
+      "description": "Class action lawsuit filed against Uniswap Labs in SDNY alleging investors lost money trading 'scam tokens' on Uniswap and that Uniswap Labs is liable as the developer. Case: Risley v. Universal Navigation Inc. (Uniswap Labs). District court dismissed the case in August 2023, ruling Uniswap Labs not liable for third-party token listings on the protocol.",
+      "severity": "moderate",
+      "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.575939/gov.uscourts.nysd.575939.71.0.pdf"
+    },
+    {
+      "event_date": "2023-08-29",
+      "jurisdiction": "United States (SDNY)",
+      "description": "Judge Katherine Polk Failla dismissed the Risley class action, finding that Uniswap's smart contracts are not 'sellers' under securities law and that the protocol's decentralized nature shields Uniswap Labs from liability for third-party tokens. Significant legal precedent favorable to DeFi.",
+      "severity": "minor",
+      "source_url": "https://casetext.com/case/risley-v-universal-navigation-inc"
+    },
+    {
+      "event_date": "2024-02-23",
+      "jurisdiction": "United States (Federal)",
+      "description": "Uniswap Foundation (DAO governance arm) proposed and passed 'fee switch' governance vote to begin routing a portion of swap fees to UNI stakers/delegators, raising questions about whether UNI could be reclassified as a security if it generates yield. Governance vote passed but implementation pending further legal review.",
+      "severity": "moderate",
+      "source_url": "https://gov.uniswap.org/t/rfc-activate-uniswap-protocol-governance/22936"
+    }
+  ],
+  "founder_credibility_summary": "Hayden Adams is a fully doxxed, highly credible founder who built Uniswap v1 from scratch with no prior blockchain experience, demonstrating exceptional self-taught technical ability; he has maintained consistent public presence and shipped multiple major protocol versions (v1\u2013v4) since 2018. The broader Uniswap Labs team has been significantly professionalized with TradFi and legal talent (e.g., ex-BlackRock COO, prominent internet-law CLO), suggesting institutional-grade operational maturity.",
+  "vc_overhang_summary": "All major VC and team UNI token vesting schedules (4-year with 1-year cliff from September 2020) have fully elapsed as of September 2024, meaning there is no remaining lockup-driven sell pressure from the original allocation. However, VCs and team collectively received ~39.5% of the 1B UNI supply at genesis, and any large coordinated liquidation by these holders would represent meaningful market overhang \u2014 though on-chain data would be needed to assess current wallet balances (NOT_AVAILABLE_FREE_TIER for precise current holdings).",
+  "alignment_summary": "Insider and retail incentives are partially aligned but with notable tensions. The fee switch proposal (if implemented) would reward UNI holders including both insiders and retail, creating shared economic upside. However, the SEC Wells Notice creates existential regulatory risk that insiders (with legal resources and equity in Uniswap Labs) can hedge better than retail UNI token holders. The DAO treasury (43% of supply) is community-controlled, which is structurally pro-retail, but low governance participation rates mean large token holders (VCs, team) disproportionately influence outcomes. Overall alignment is moderate \u2014 better than most DeFi projects but not fully symmetric.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://blog.uniswap.org/uni (UNI token launch & tokenomics)",
+    "https://blog.uniswap.org/fighting-for-defi (Wells Notice disclosure)",
+    "https://blog.uniswap.org/uniswap-labs-wells-notice-response",
+    "https://www.linkedin.com/in/hayden-adams-963b7a148/",
+    "https://www.linkedin.com/in/mary-catherine-lader/",
+    "https://www.linkedin.com/in/noahzinsmeister/",
+    "https://www.linkedin.com/in/marvinammori/",
+    "https://www.linkedin.com/in/matteo-leibowitz-7b2a4b130/",
+    "https://www.crunchbase.com/organization/uniswap (free tier \u2014 limited round detail)",
+    "https://www.wsj.com/articles/sec-investigates-uniswap-labs-developer-of-crypto-exchange-11630666800",
+    "https://gov.uniswap.org/t/rfc-activate-uniswap-protocol-governance/22936",
+    "https://casetext.com/case/risley-v-universal-navigation-inc",
+    "https://storage.courtlistener.com/recap/gov.uscourts.nysd.575939/gov.uscourts.nysd.575939.71.0.pdf",
+    "https://efts.sec.gov/LATEST/search-index?q=%22uniswap%22&dateRange=custom&startdt=2021-01-01&enddt=2024-12-31&forms=D (SEC EDGAR \u2014 no Form D filings found for Uniswap Labs under free search; entity may have filed under 'Universal Navigation Inc.')",
+    "https://uniswap.org/whitepaper-v3.pdf",
+    "https://github.com/Uniswap (GitHub \u2014 open source code, contributor history)"
+  ]
+}

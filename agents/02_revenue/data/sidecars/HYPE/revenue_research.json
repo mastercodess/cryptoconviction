@@ -1,0 +1,45 @@
+{
+  "annualized_revenue_usd": 1400000000,
+  "tvl_usd": 580000000,
+  "p_s_ratio": 7.1,
+  "p_tvl_ratio": 17.2,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Revenue is primarily event-driven, spiking during high-volatility crypto market periods (e.g., Q1 2025 altcoin season and liquidation cascades) rather than following a consistent seasonal calendar pattern.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "GMX",
+      "metric": "p_s",
+      "peer_value": 8.2
+    },
+    {
+      "peer_symbol": "dYdX",
+      "metric": "p_s",
+      "peer_value": 12.5
+    },
+    {
+      "peer_symbol": "DYDX",
+      "metric": "p_s",
+      "peer_value": 12.5
+    },
+    {
+      "peer_symbol": "SNX",
+      "metric": "p_s",
+      "peer_value": 6.8
+    }
+  ],
+  "rationale": "Hyperliquid generated approximately $350M in protocol fees in Q1 2025 alone (annualizing to ~$1.4B), driven by its perps DEX dominance with >$200B in cumulative trading volume as of mid-2025 per DefiLlama and community dashboards. At a circulating market cap of roughly $9.9B (HYPE ~$19\u201320 price \u00d7 ~500M circulating supply per CoinGecko), the P/S of ~7x is competitive versus perp DEX peers. Real yield APR is null because HYPE staking rewards and HLP vault returns are not cleanly separated into inflation vs. real-revenue components in any free public source, and the HLP vault yield blends market-making PnL with fee revenue in a way that cannot be decomposed without proprietary data.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/hyperliquid",
+    "https://defillama.com/fees/hyperliquid",
+    "https://www.coingecko.com/en/coins/hyperliquid",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/",
+    "https://dune.com/hyperliquid/hyperliquid",
+    "https://www.theblock.co/post/hyperliquid-trading-volume-revenue-2025",
+    "https://defillama.com/protocol/gmx",
+    "https://defillama.com/protocol/dydx",
+    "https://defillama.com/protocol/synthetix"
+  ]
+}

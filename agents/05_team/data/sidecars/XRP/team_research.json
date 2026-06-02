@@ -1,0 +1,200 @@
+{
+  "team_members": [
+    {
+      "name": "Chris Larsen",
+      "role": "Co-Founder & Executive Chairman, Ripple Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/chrislarsensf/",
+      "prior_projects": [
+        "E-LOAN (co-founder, NASDAQ: EELN)",
+        "Prosper Marketplace (co-founder & CEO)"
+      ],
+      "notes": "Holds a large personal XRP allocation (~2.7B XRP disclosed in SEC filings and public statements). Named personally in SEC lawsuit (2020). One of the largest individual XRP holders globally."
+    },
+    {
+      "name": "Jed McCaleb",
+      "role": "Co-Founder (departed Ripple 2013, founded Stellar)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/jed-mccaleb-4052a4/",
+      "prior_projects": [
+        "Mt. Gox (founder)",
+        "eDonkey (P2P network)",
+        "Stellar (co-founder)"
+      ],
+      "notes": "Received ~9B XRP at founding. Sold the vast majority under a structured settlement agreement with Ripple. As of ~2022 his wallet was effectively depleted. No longer affiliated with Ripple."
+    },
+    {
+      "name": "Arthur Britto",
+      "role": "Co-Founder (technical), largely private",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "NOT_AVAILABLE_FREE_TIER \u2014 Britto maintains a very low public profile"
+      ],
+      "notes": "Credited as a primary architect of the XRP Ledger. Received a founding XRP allocation. Rarely makes public appearances; LinkedIn profile not publicly confirmed."
+    },
+    {
+      "name": "Brad Garlinghouse",
+      "role": "CEO, Ripple Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/bradgarlinghouse/",
+      "prior_projects": [
+        "Yahoo! (SVP)",
+        "AOL (President, Consumer Applications)",
+        "Hightail/YouSendIt (CEO)"
+      ],
+      "notes": "Named personally in SEC lawsuit (2020). Holds personal XRP. Frequently public-facing spokesperson for Ripple and XRP ecosystem."
+    },
+    {
+      "name": "David Schwartz",
+      "role": "Chief Technology Officer, Ripple Labs; XRPL architect",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/david-schwartz-9a4b4b2/",
+      "prior_projects": [
+        "WebMaster Inc. (developed encrypted cloud storage for NSA/FBI, per his own public statements)"
+      ],
+      "notes": "Known online as 'JoelKatz'. One of the original XRPL protocol designers. Active on social media and developer forums."
+    },
+    {
+      "name": "Monica Long",
+      "role": "President, Ripple Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/monicalong/",
+      "prior_projects": [
+        "Ripple (various marketing/comms roles since ~2013)"
+      ],
+      "notes": "Promoted to President in 2023. Long-tenured Ripple executive."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Andreessen Horowitz (a16z)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in early Ripple Labs equity rounds (~2013). Equity in Ripple Labs Inc., not direct XRP token allocation. Exact ownership % NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Google Ventures (GV)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Invested in Ripple Labs equity ~2013-2015. Specific terms NOT_AVAILABLE_FREE_TIER on free public sources."
+    },
+    {
+      "investor_name": "IDG Capital",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Early Ripple Labs equity investor."
+    },
+    {
+      "investor_name": "AME Cloud Ventures (Jerry Yang)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in early rounds."
+    },
+    {
+      "investor_name": "SBI Holdings (Japan)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Strategic investor and major partner. SBI Ripple Asia is a joint venture. SBI has been a vocal public supporter of XRP. Equity stake in Ripple Labs; also holds XRP directly."
+    },
+    {
+      "investor_name": "Tetragon Financial Group",
+      "round": "series_c",
+      "valuation_usd": 10000000000,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Invested $200M in Ripple Labs Series C (Dec 2019) at ~$10B valuation. Tetragon sued Ripple in Jan 2021 seeking to redeem preferred shares after SEC lawsuit; suit was dismissed. Source: public court records and Ripple blog."
+    },
+    {
+      "investor_name": "Route 66 Ventures",
+      "round": "series_c",
+      "valuation_usd": 10000000000,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Part of $200M Series C round (Dec 2019)."
+    },
+    {
+      "investor_name": "Ripple Labs (Escrow \u2014 company-held XRP)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Ripple Labs holds ~4.4B XRP in operational wallets plus ~37-38B XRP locked in on-ledger escrow (1B XRP released monthly, unused portions re-escrowed). This is the primary supply overhang. Tracked publicly on XRPL ledger and Ripple's transparency reports at ripple.com/xrp."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2020-12-22",
+      "jurisdiction": "United States \u2014 SEC (Federal)",
+      "description": "SEC filed lawsuit against Ripple Labs, CEO Brad Garlinghouse, and Co-Founder Chris Larsen alleging unregistered securities offering of XRP, raising ~$1.38B. Case: SEC v. Ripple Labs Inc., No. 1:20-cv-10832 (S.D.N.Y.).",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/complaints/2020/comp-pr2020-338.pdf"
+    },
+    {
+      "event_date": "2023-07-13",
+      "jurisdiction": "United States \u2014 SDNY Federal Court",
+      "description": "Judge Analisa Torres issued partial summary judgment ruling: XRP sold programmatically on exchanges did NOT constitute an unregistered securities offering (no reasonable expectation of profit from Ripple's efforts for retail buyers); however, XRP sold directly to institutional investors DID constitute unregistered securities. Mixed ruling \u2014 widely seen as a partial win for Ripple and the broader crypto industry.",
+      "severity": "moderate",
+      "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.551082/gov.uscourts.nysd.551082.874.0.pdf"
+    },
+    {
+      "event_date": "2024-08-07",
+      "jurisdiction": "United States \u2014 SDNY Federal Court",
+      "description": "Judge Torres ordered Ripple Labs to pay $125M civil penalty (SEC had sought ~$2B). Ripple declared victory; SEC appealed the ruling on the institutional sales penalty amount and the programmatic sales ruling. Appeal pending as of mid-2024.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/litreleases/2024/lr26076.htm"
+    },
+    {
+      "event_date": "2025-03-19",
+      "jurisdiction": "United States \u2014 SEC",
+      "description": "SEC and Ripple Labs jointly requested the court to pause (stay) the SEC's appeal, signaling settlement negotiations. SEC under new leadership (post-Gensler) indicated it was reconsidering the case. As of early 2025, case appeared headed toward resolution.",
+      "severity": "minor",
+      "source_url": "https://www.sec.gov/litigation/litreleases/2025/lr26261.htm"
+    },
+    {
+      "event_date": "2021-01-04",
+      "jurisdiction": "United States \u2014 Delaware Chancery Court",
+      "description": "Tetragon Financial Group sued Ripple Labs seeking to exercise preferred share redemption rights triggered by the SEC lawsuit. Court denied Tetragon's emergency injunction in Feb 2021; case subsequently dismissed.",
+      "severity": "moderate",
+      "source_url": "https://courts.delaware.gov/opinions/download.aspx?ID=316060"
+    },
+    {
+      "event_date": "2015-05-05",
+      "jurisdiction": "United States \u2014 FinCEN / DOJ",
+      "description": "Ripple Labs Inc. entered into settlement with FinCEN and DOJ for $700,000 for willful violation of the Bank Secrecy Act (BSA) \u2014 specifically for selling XRP without registering as a money services business (MSB). First enforcement action against a virtual currency company under BSA.",
+      "severity": "moderate",
+      "source_url": "https://www.fincen.gov/news/news-releases/fincen-fines-ripple-labs-inc-first-civil-enforcement-action-against-virtual"
+    }
+  ],
+  "founder_credibility_summary": "Chris Larsen and Brad Garlinghouse are highly doxxed, serial entrepreneurs with verifiable track records in fintech and technology (E-LOAN, Prosper, Yahoo, AOL), lending significant credibility; however, both were personally named in the SEC's 2020 securities lawsuit, creating material reputational and legal risk that has only partially resolved. Co-founder Arthur Britto remains largely anonymous, which is an outlier transparency gap for a top-5 crypto asset.",
+  "vc_overhang_summary": "The dominant supply overhang is not traditional VC token unlocks but rather Ripple Labs' own escrow: ~37-40B XRP (roughly 37-40% of total 100B supply) is released at up to 1B XRP/month and sold or distributed by Ripple to fund operations and partnerships, creating persistent structural sell pressure. Institutional equity investors (a16z, GV, SBI) hold Ripple Labs equity rather than direct XRP allocations, so their exit path is an IPO or acquisition rather than token dumping.",
+  "alignment_summary": "Incentives are partially misaligned: Ripple Labs' business model depends on XRP price appreciation for treasury value and ODL (On-Demand Liquidity) product viability, which aligns with retail holders long-term. However, Ripple's monthly escrow releases and programmatic XRP sales to fund operations create a structural conflict \u2014 the company is a continuous net seller into the market that retail buyers participate in. Founding team members (Larsen, Britto) hold billions of XRP personally, aligning them with price appreciation, but their ability to sell without full public disclosure has historically been a concern. The SEC lawsuit resolution removes a major overhang but the escrow sell pressure remains an ongoing misalignment factor.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.sec.gov/litigation/complaints/2020/comp-pr2020-338.pdf",
+    "https://www.sec.gov/litigation/litreleases/2024/lr26076.htm",
+    "https://www.sec.gov/litigation/litreleases/2025/lr26261.htm",
+    "https://storage.courtlistener.com/recap/gov.uscourts.nysd.551082/gov.uscourts.nysd.551082.874.0.pdf",
+    "https://www.fincen.gov/news/news-releases/fincen-fines-ripple-labs-inc-first-civil-enforcement-action-against-virtual",
+    "https://ripple.com/xrp/",
+    "https://ripple.com/insights/q4-2023-xrp-markets-report/",
+    "https://www.crunchbase.com/organization/ripple-labs",
+    "https://www.linkedin.com/in/chrislarsensf/",
+    "https://www.linkedin.com/in/bradgarlinghouse/",
+    "https://www.linkedin.com/in/david-schwartz-9a4b4b2/",
+    "https://www.linkedin.com/in/monicalong/",
+    "https://xrpl.org/",
+    "https://coingecko.com/en/coins/xrp",
+    "https://courts.delaware.gov/opinions/download.aspx?ID=316060"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "unlock_date": "2021-08-01",
+      "category": "airdrop",
+      "tokens_unlocked": 1000000,
+      "pct_of_supply": 0.01,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Approximate 1% of supply distributed at TGE via initial airdrop to early users at launch in August 2021."
+    },
+    {
+      "unlock_date": "2021-08-01",
+      "category": "public_emission",
+      "tokens_unlocked": 5000000,
+      "pct_of_supply": 0.05,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Initial circulating community/ecosystem tokens released at TGE for liquidity bootstrapping; exact figure not precisely disclosed."
+    },
+    {
+      "unlock_date": "2022-08-01",
+      "category": "investor_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": 0.0,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "1-year cliff ends for investor allocation (18M ORCA total); linear vesting begins after this date over 2 years."
+    },
+    {
+      "unlock_date": "2022-08-01",
+      "category": "team_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": 0.0,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "1-year cliff ends for team+advisor allocation (22M ORCA total); linear vesting begins after this date over 3 years."
+    },
+    {
+      "unlock_date": "2022-08-01",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Community/ecosystem emissions (43.8M ORCA total) began flowing continuously from TGE via liquidity mining and grants; no single cliff date."
+    },
+    {
+      "unlock_date": "2023-08-01",
+      "category": "investor_unlock",
+      "tokens_unlocked": 9000000,
+      "pct_of_supply": 0.09,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Approximate midpoint of 2-year linear investor vest; roughly half of 18M investor tokens unlocked by this date."
+    },
+    {
+      "unlock_date": "2024-08-01",
+      "category": "investor_unlock",
+      "tokens_unlocked": 18000000,
+      "pct_of_supply": 0.18,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Full investor allocation (18M ORCA) fully vested by approximately August 2024 per 1-year cliff + 2-year linear schedule."
+    },
+    {
+      "unlock_date": "2025-08-01",
+      "category": "team_unlock",
+      "tokens_unlocked": 22000000,
+      "pct_of_supply": 0.22,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Full team+advisor allocation (20M team + 2M advisors = 22M ORCA) fully vested by approximately August 2025 per 1-year cliff + 3-year linear schedule."
+    },
+    {
+      "unlock_date": "2025-12-31",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 16200000,
+      "pct_of_supply": 0.162,
+      "source_url": "https://medium.com/orca-so/introducing-orca-the-most-user-friendly-dex-on-solana-a7c7f4f3e0e4",
+      "notes": "Treasury/Foundation allocation (16.2M ORCA) held in DAO-controlled multisig with no publicly disclosed hard time-lock; date is a placeholder indicating ongoing discretionary control."
+    }
+  ],
+  "summary": "Orca (ORCA) launched in August 2021 with a 100M total supply split across community emissions (43.8%), team/advisors (22%), investors (18%), and treasury (16.2%). Investor tokens faced a 1-year cliff followed by 2-year linear vesting (fully unlocked ~Aug 2024), while team/advisor tokens had a 1-year cliff and 3-year linear vest (fully unlocked ~Aug 2025). The largest ongoing unlock pressure comes from continuous community/ecosystem emissions used for liquidity mining and grants, which have been flowing since TGE with no single large cliff event.",
+  "data_quality": "PARTIAL",
+  "caveats": "Precise monthly unlock amounts and exact on-chain vesting contract addresses are NOT_AVAILABLE_FREE_TIER \u2014 tokenunlocks.app does not maintain a detailed free public page for ORCA, and Messari's free tier does not publish granular vesting tables for this token. The original Orca Medium launch post provides allocation percentages and vesting terms in prose but not a month-by-month schedule. Token counts for intermediate linear-vest periods are calculated estimates based on disclosed terms, not verified on-chain figures. The treasury/foundation allocation has no publicly disclosed hard time-lock, making it impossible to assign a precise unlock date. All dates are approximations anchored to an assumed August 2021 TGE."
+}

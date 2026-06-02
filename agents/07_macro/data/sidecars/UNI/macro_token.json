@@ -1,0 +1,21 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Precise 8h funding rates, open interest, and 30-day correlation coefficients for UNI require authenticated API access or paid tiers on Coinglass, CoinGecko Pro, or Kaiko \u2014 none of these specific computed metrics are exposed on freely browsable public pages without login or API key as of mid-2025.",
+  "sources": [
+    "https://www.coinglass.com/uni \u2014 funding rate & OI overview page exists but real-time numeric values require account/API: NOT_AVAILABLE_FREE_TIER",
+    "https://www.coingecko.com/en/coins/uniswap \u2014 price history available but correlation computation not pre-calculated: NOT_AVAILABLE_FREE_TIER",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, no per-asset correlation: NOT_AVAILABLE_FREE_TIER",
+    "https://fred.stlouisfed.org/ \u2014 NASDAQ index data available but cross-asset correlation vs UNI not pre-computed: NOT_AVAILABLE_FREE_TIER"
+  ],
+  "notes": {
+    "funding_rate_8h": "Coinglass shows UNI perpetual funding on its public page (https://www.coinglass.com/uni) but the numeric value is behind a login wall or rendered dynamically and not scrapable as a free static fact.",
+    "open_interest_usd": "Same Coinglass limitation; aggregate OI across exchanges requires API key (https://docs.coinglass.com/).",
+    "btc_correlation_30d": "CoinGecko free REST API (/coins/uniswap/market_chart) provides OHLCV but does NOT return pre-computed correlation coefficients; manual calculation from raw data would be needed and is outside a single API call.",
+    "eth_correlation_30d": "Same as BTC correlation \u2014 raw data retrievable but coefficient not served by any free endpoint.",
+    "nasdaq_correlation_30d": "FRED provides NASDAQ Composite (NASDAQCOM) daily data free (https://fred.stlouisfed.org/series/NASDAQCOM), but cross-correlation with UNI price is not pre-computed anywhere on a free public page."
+  }
+}

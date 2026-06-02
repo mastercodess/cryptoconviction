@@ -1,0 +1,19 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Precise real-time derivatives metrics (funding rate, OI) and computed 30-day correlations require authenticated API access or paid tiers on Coinglass, CoinGecko Pro, and similar platforms; the free public pages display these values visually but do not expose machine-readable endpoints without a key, and manual spot-checks at time of query were not resolvable to confirmed live figures.",
+  "sources": [
+    "https://www.coinglass.com/en/currencies/DOGE \u2014 Coinglass public DOGE page shows funding rate & OI charts but live numeric values require login/API key",
+    "https://www.coingecko.com/en/coins/dogecoin \u2014 CoinGecko free tier /coins/{id} endpoint does not return funding rate or correlation coefficients",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 provides market-wide sentiment only, not per-asset derivatives data",
+    "https://defillama.com \u2014 covers DeFi TVL; DOGE is not a DeFi-native asset, no relevant derivatives data available here"
+  ],
+  "notes": {
+    "funding_rate_8h": "Coinglass shows DOGE perpetual funding rates on https://www.coinglass.com/en/currencies/DOGE but a free unauthenticated scrape at query time could not confirm a stable numeric value. Typical DOGE 8h funding has ranged ~0.0000 to 0.0003 in neutral markets, but citing an unverified number would be misleading.",
+    "open_interest_usd": "Coinglass aggregates OI across Binance, OKX, Bybit etc. for DOGE but the free public page renders via JS and requires a paid API key (https://coinglass.com/pricing) for programmatic access.",
+    "correlations": "30-day rolling Pearson correlations vs BTC, ETH, and NASDAQ-100 require a time-series of daily closes and a computation step. CoinGecko free /coins/{id}/market_chart returns DOGE prices (usable), but NASDAQ-100 data from FRED (https://fred.stlouisfed.org) and cross-asset correlation computation are not pre-computed on any free endpoint. This is calculable from raw data but not directly pullable as a single fact from a free source."
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "team_members": [
+    {
+      "name": "Charles Hoskinson",
+      "role": "Co-Founder, CEO of Input Output Global (IOG / IOHK)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/charles-hoskinson-70256/",
+      "prior_projects": [
+        "Ethereum (Co-Founder, departed 2014)",
+        "BitShares (early contributor)",
+        "Invictus Innovations",
+        "Ethereum Classic (supporter post-split)"
+      ],
+      "notes": "Mathematician by background; founded IOG in 2015 with Jeremy Wood. Highly public figure with active YouTube/Twitter presence. Departed Ethereum amid reported governance disputes with Vitalik Buterin. Runs Wyoming-based ranch; vocal on US crypto regulation."
+    },
+    {
+      "name": "Jeremy Wood",
+      "role": "Co-Founder, Chief Strategy Officer at IOG",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/jeremywood/",
+      "prior_projects": [
+        "Ethereum (early operations role)",
+        "Cryptonomics (predecessor entity)"
+      ],
+      "notes": "Operational co-founder alongside Hoskinson. Lower public profile than Hoskinson. LinkedIn confirms IOG tenure since 2015."
+    },
+    {
+      "name": "Aggelos Kiayias",
+      "role": "Chief Scientist, IOG; Professor at University of Edinburgh",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/aggelos-kiayias-b8a7b511/",
+      "prior_projects": [
+        "University of Connecticut (faculty)",
+        "University of Edinburgh (faculty)"
+      ],
+      "notes": "Lead author of the Ouroboros proof-of-stake protocol papers. Academic credibility is a key differentiator for Cardano's peer-review approach."
+    },
+    {
+      "name": "Frederik Gregaard",
+      "role": "CEO, Cardano Foundation",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/frederikgregaard/",
+      "prior_projects": [
+        "PwC Switzerland (Partner, Digital Assets)",
+        "Various Swiss fintech roles"
+      ],
+      "notes": "Cardano Foundation is a separate Swiss non-profit entity from IOG. Gregaard joined in 2020."
+    },
+    {
+      "name": "Emurgo (entity, not individual)",
+      "role": "Commercial arm / third founding entity",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/company/emurgo/",
+      "prior_projects": [],
+      "notes": "Japanese-registered entity; led by Ken Kodama historically. Responsible for enterprise adoption and ADA commercial ventures. Three-entity structure (IOG, Cardano Foundation, Emurgo) is unique governance design."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Public ICO Participants (Japan-focused, 2015\u20132017)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "ADA was sold via a series of voucher sales primarily to Japanese retail investors through Emurgo/Attain Corp. Raised approximately $62M USD equivalent. No institutional VC round in the traditional sense. ICO tokens are fully distributed and liquid."
+    },
+    {
+      "investor_name": "IOG / IOHK (treasury allocation)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "IOG received an allocation of ADA at genesis for ongoing development funding. Exact current holdings NOT_AVAILABLE_FREE_TIER \u2014 IOG does not publish a real-time treasury wallet breakdown publicly, though on-chain analysis tools (e.g., Cardanoscan) can approximate. Estimated ~2.5B ADA across founding entities at genesis per community analyses."
+    },
+    {
+      "investor_name": "Cardano Foundation (treasury allocation)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Swiss non-profit holds ADA treasury. Annual reports published at cardanofoundation.org but granular wallet balances NOT_AVAILABLE_FREE_TIER in audited form."
+    },
+    {
+      "investor_name": "Emurgo (treasury allocation)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Commercial entity received genesis ADA allocation. No traditional VC equity structure. Emurgo has made its own venture investments in ecosystem projects."
+    },
+    {
+      "investor_name": "No traditional VC investors identified",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Unlike Solana (a16z, Multicoin) or Polkadot (private sale), Cardano has NO identified Tier-1 VC institutional investors from public Crunchbase records or project disclosures. Crunchbase page for IOHK shows no funding rounds listed. This is a distinguishing characteristic."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-06-05",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC filed complaint against Coinbase (SEC v. Coinbase, SDNY). ADA was explicitly named as an unregistered security in the complaint (paragraph 135). This is not a direct action against Cardano/IOG but creates significant regulatory overhang for ADA trading on US exchanges.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    },
+    {
+      "event_date": "2023-06-05",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC filed complaint against Binance (SEC v. Binance et al.). ADA also named as an unregistered security in this parallel action.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2023-06-09",
+      "jurisdiction": "United States",
+      "description": "Robinhood delisted ADA (along with MATIC and SOL) citing SEC security designation risk following the Coinbase/Binance complaints.",
+      "severity": "moderate",
+      "source_url": "https://blog.robinhood.com/news/2023/6/9/robinhood-crypto-updates"
+    },
+    {
+      "event_date": "2021-09-01",
+      "jurisdiction": "China",
+      "description": "China's broad crypto trading ban (PBOC/NDRC joint notice) affected ADA trading volumes on Chinese platforms, consistent with all crypto assets. Not ADA-specific.",
+      "severity": "minor",
+      "source_url": "https://www.pbc.gov.cn/en/3688110/3688172/4157443/4293696/2021093015111543657.pdf"
+    },
+    {
+      "event_date": "2018-01-01",
+      "jurisdiction": "Japan (FSA)",
+      "description": "Japan FSA increased scrutiny of crypto exchanges post-Coincheck hack. Attain Corp (Cardano ICO distributor in Japan) operated under FSA oversight. No enforcement action against Cardano specifically found in public records.",
+      "severity": "minor",
+      "source_url": "https://www.fsa.go.jp/en/news/2018/20180330-1.html"
+    },
+    {
+      "event_date": "2019-07-15",
+      "jurisdiction": "Switzerland (FINMA)",
+      "description": "Cardano Foundation underwent governance restructuring; former chairman Michael Parsons departed amid community criticism of mismanagement. FINMA (Swiss regulator) oversees the Foundation as a non-profit. No formal enforcement action found, but reputational event.",
+      "severity": "moderate",
+      "source_url": "https://cardanofoundation.org/en/news/an-open-letter-to-the-cardano-community/"
+    }
+  ],
+  "founder_credibility_summary": "Charles Hoskinson is one of the most credentialed and publicly accountable founders in crypto, with verifiable co-founding roles at Ethereum and a peer-reviewed academic research approach via IOG; however, his departure from Ethereum under disputed circumstances and occasional combative public communications introduce reputational risk. The three-entity governance structure (IOG, Cardano Foundation, Emurgo) adds institutional checks but also complexity and historical friction.",
+  "vc_overhang_summary": "Cardano has no identified traditional VC investors, which is structurally unusual and means there is minimal institutional VC sell-pressure or cliff-based unlock events that plague many Layer-1 competitors. The primary overhang risk comes from the founding entity treasury allocations (IOG, Foundation, Emurgo) whose spending and liquidation schedules are not fully transparent in real-time public disclosures.",
+  "alignment_summary": "Insider and retail incentives are moderately aligned but imperfect. The absence of VC investors removes a major misalignment vector common in other L1s. However, the three founding entities hold significant genesis ADA allocations with limited on-chain transparency, and the SEC's security designation of ADA in two separate complaints creates asymmetric legal risk that falls disproportionately on US retail holders (exchange delistings, trading restrictions) while founding entities operating from Switzerland, Japan, and Wyoming face different exposure profiles. The on-chain treasury governance (Project Catalyst / Voltaire) is a genuine attempt at community alignment but remains maturing.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.linkedin.com/in/charles-hoskinson-70256/",
+    "https://www.linkedin.com/in/jeremywood/",
+    "https://www.linkedin.com/in/aggelos-kiayias-b8a7b511/",
+    "https://www.linkedin.com/in/frederikgregaard/",
+    "https://www.linkedin.com/company/emurgo/",
+    "https://www.crunchbase.com/organization/iohk",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Cardano%22&dateRange=custom&startdt=2018-01-01&enddt=2024-01-01&forms=&hits.hits._source=period_of_report (SEC EDGAR full-text search \u2014 no direct IOG/Cardano registration filings found)",
+    "https://blog.robinhood.com/news/2023/6/9/robinhood-crypto-updates",
+    "https://cardanofoundation.org/en/news/an-open-letter-to-the-cardano-community/",
+    "https://cardanofoundation.org/en/annual-report/",
+    "https://iohk.io/en/blog/",
+    "https://www.pbc.gov.cn/en/3688110/3688172/4157443/4293696/2021093015111543657.pdf",
+    "https://www.fsa.go.jp/en/news/2018/20180330-1.html",
+    "https://cardanoscan.io (on-chain treasury address monitoring)",
+    "https://iohk.io/en/research/library/ (Ouroboros papers, academic credibility)",
+    "https://projectcatalyst.io (community governance/treasury)"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass public pages display BCH funding rates and open interest visually but do not expose raw numeric values without a paid API key; correlation figures require downloading 30-day OHLC series for BCH, BTC, ETH, and NASDAQ and computing Pearson r, which is a calculation step beyond direct free-source retrieval and the underlying per-minute/daily data endpoints on CoinGecko free tier are rate-limited and do not return a pre-computed correlation metric.",
+  "sources": [
+    "https://www.coinglass.com/FundingRate \u2014 BCH funding rate page exists but numeric export requires API subscription",
+    "https://www.coinglass.com/openInterest \u2014 BCH OI chart visible but raw USD figure not freely scrapable without API key",
+    "https://www.coingecko.com/en/coins/bitcoin-cash \u2014 price/market data available but no pre-computed correlation metrics",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, no BCH-specific derivatives data",
+    "https://fred.stlouisfed.org/ \u2014 NASDAQ/macro data available but correlation computation requires pairing with BCH price series manually"
+  ]
+}

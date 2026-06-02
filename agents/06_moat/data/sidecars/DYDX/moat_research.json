@@ -1,0 +1,85 @@
+{
+  "competitors": [
+    {
+      "competitor": "GMX",
+      "market_cap_usd": 270000000,
+      "tvl_usd": 580000000,
+      "dau": 2500,
+      "revenue_30d_usd": 4200000
+    },
+    {
+      "competitor": "Hyperliquid",
+      "market_cap_usd": 4800000000,
+      "tvl_usd": 380000000,
+      "dau": 35000,
+      "revenue_30d_usd": 18000000
+    },
+    {
+      "competitor": "Gains Network (gTrade)",
+      "market_cap_usd": 65000000,
+      "tvl_usd": 42000000,
+      "dau": 800,
+      "revenue_30d_usd": 900000
+    },
+    {
+      "competitor": "Vertex Protocol",
+      "market_cap_usd": 85000000,
+      "tvl_usd": 55000000,
+      "dau": 1200,
+      "revenue_30d_usd": 600000
+    },
+    {
+      "competitor": "dYdX",
+      "market_cap_usd": 380000000,
+      "tvl_usd": 320000000,
+      "dau": 4500,
+      "revenue_30d_usd": 2800000
+    }
+  ],
+  "market_share": [
+    {
+      "category": "Perp DEX (TVL-based, DefiLlama)",
+      "share_pct": 0.07,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "Perp DEX (Volume-based, 30d)",
+      "share_pct": 0.04,
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": 12,
+    "full_time_devs": 35,
+    "repos_building_on": 48,
+    "integrations_count": 30
+  },
+  "switching_cost_analysis": "Switching costs are LOW for traders \u2014 positions can be closed and capital moved to Hyperliquid or GMX within minutes with no lock-up, and the dYdX v4 Cosmos app-chain migration actually increased friction for integrators (new SDK, new wallet flows) rather than reducing it.",
+  "category_rank": 4,
+  "regulatory_relative_risk": "HIGHER",
+  "rationale": "dYdX pioneered on-chain perpetuals and retains brand recognition and a battle-tested order-book model, but its competitive moat has materially eroded: Hyperliquid now commands the majority of perp DEX volume with a faster, cheaper UX, while GMX dominates TVL-weighted mindshare on EVM chains. The v4 migration to a sovereign Cosmos chain removed Ethereum composability advantages and introduced new execution-layer risks, and the DYDX token's staking/governance utility has not translated into strong fee-capture or retention mechanics. Regulatory risk is relatively higher because dYdX Trading Inc. already settled with the CFTC (2023, $100k fine) and the US-person geo-block history draws continued scrutiny compared to fully decentralised competitors like GMX.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocols/derivatives",
+    "https://defillama.com/protocol/dydx",
+    "https://defillama.com/protocol/gmx",
+    "https://defillama.com/protocol/hyperliquid",
+    "https://defillama.com/protocol/gains-network",
+    "https://defillama.com/protocol/vertex-protocol",
+    "https://www.coingecko.com/en/coins/dydx-chain",
+    "https://www.coingecko.com/en/coins/gmx",
+    "https://www.coingecko.com/en/coins/hyperliquid",
+    "https://dydx.exchange/blog/dydx-v4-open-source",
+    "https://github.com/dydxprotocol",
+    "https://electriccapital.com/developer-report (2024 edition \u2014 perp/derivatives sub-category)",
+    "https://docs.dydx.exchange/",
+    "https://www.cftc.gov/PressRoom/PressReleases/8774-23"
+  ],
+  "_data_quality_notes": {
+    "market_cap": "Sourced from CoinGecko spot prices ~2025-07-10; figures rounded to nearest $5M.",
+    "dau": "NOT_AVAILABLE_FREE_TIER for most competitors with precision; estimates derived from DefiLlama unique-address proxies and public Dune dashboards referenced in project docs \u2014 treat as indicative \u00b140%.",
+    "revenue_30d": "DefiLlama 'Fees & Revenue' module used where available; Hyperliquid and GMX figures are protocol fees to treasury/LPs, not annualised. dYdX revenue reflects trading-fee accrual to the community treasury.",
+    "dev_ecosystem": "Electric Capital 2024 Developer Report free summary does not break out dYdX specifically at sub-protocol level; monthly_active_devs and full_time_devs are estimates from GitHub commit activity on github.com/dydxprotocol (public repos) cross-referenced with EC report 'mid-size protocol' band. repos_building_on and integrations_count from dydx.exchange/ecosystem page.",
+    "market_share": "Volume-based share is approximate; Hyperliquid does not report to DefiLlama volume aggregator consistently, so true perp DEX market share for dYdX is likely lower than shown."
+  }
+}

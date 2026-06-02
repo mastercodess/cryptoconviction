@@ -1,0 +1,17 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "protocol",
+  "value_accrual_summary": "As of mid-2025, MORPHO is a governance token with no burn, no staking yield, and no direct fee distribution to holders; protocol fees (performance fees on Morpho Vaults) accrue to the Morpho DAO treasury, controlled by MORPHO governance, with no automatic value pass-through to token holders.",
+  "sources": [
+    "https://docs.morpho.org/morpho/concepts/fees",
+    "https://docs.morpho.org/morpho-token/intro",
+    "https://forum.morpho.org/t/mip-morpho-token-and-dao/350",
+    "https://github.com/morpho-org/morpho-token",
+    "https://docs.morpho.org/morpho/concepts/governance"
+  ],
+  "data_quality": "PARTIAL"
+}

@@ -1,0 +1,17 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "PARTIAL",
+  "chain": "xrpl",
+  "activity": {
+    "dau": 15672
+  },
+  "exchange_flow_30d": null,
+  "holder_cohort": null,
+  "smart_money_stance": "UNKNOWN",
+  "wash_trade_concerns": "Smart-money detection requires curated address list (deferred to plan 1c.2).",
+  "notes": "API-fetched (no LLM research): Dune Analytics. Populated fields: activity_metric.dau.",
+  "sources": [
+    "https://dune.com/queries/7485961",
+    "https://dune.com/queries/7496843"
+  ]
+}

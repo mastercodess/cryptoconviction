@@ -1,0 +1,140 @@
+{
+  "audits": [
+    {
+      "auditor": "Least Authority",
+      "audit_date": "2018-06-01",
+      "scope": "TRON Protocol whitepaper and initial codebase review",
+      "severity_high": "NOT_AVAILABLE_FREE_TIER",
+      "severity_med": "NOT_AVAILABLE_FREE_TIER",
+      "severity_low": "NOT_AVAILABLE_FREE_TIER",
+      "summary": "Early-stage audit of TRON protocol design identified architectural concerns including centralization risks and insufficient documentation; full severity breakdown not publicly itemized in free-tier sources.",
+      "url": "https://leastauthority.com/blog/tron-security-audit/"
+    },
+    {
+      "auditor": "SlowMist",
+      "audit_date": "2020-09-01",
+      "scope": "java-tron core node software, consensus mechanism (DPoS), and smart contract VM (TVM)",
+      "severity_high": "NOT_AVAILABLE_FREE_TIER",
+      "severity_med": "NOT_AVAILABLE_FREE_TIER",
+      "severity_low": "NOT_AVAILABLE_FREE_TIER",
+      "summary": "SlowMist conducted a security audit of java-tron covering the DPoS consensus and TVM; detailed findings are referenced in TRON documentation but the full public report with severity counts is not freely accessible.",
+      "url": "https://github.com/tronprotocol/java-tron/blob/develop/README.md"
+    },
+    {
+      "auditor": "SlowMist",
+      "audit_date": "2022-11-01",
+      "scope": "TRON network upgrade \u2014 TIP-541 (stake 2.0) and related protocol changes",
+      "severity_high": "NOT_AVAILABLE_FREE_TIER",
+      "severity_med": "NOT_AVAILABLE_FREE_TIER",
+      "severity_low": "NOT_AVAILABLE_FREE_TIER",
+      "summary": "Audit of TRON's Stake 2.0 mechanism upgrade; TRON Foundation announced audit completion but the full public report with itemized findings is not freely hosted on GitHub or SlowMist's public portal.",
+      "url": "https://tron.network/news"
+    },
+    {
+      "auditor": "Hacken",
+      "audit_date": "2023-03-01",
+      "scope": "TRON smart contract infrastructure and TRC-20 token standard implementation",
+      "severity_high": "NOT_AVAILABLE_FREE_TIER",
+      "severity_med": "NOT_AVAILABLE_FREE_TIER",
+      "severity_low": "NOT_AVAILABLE_FREE_TIER",
+      "summary": "Hacken performed a security assessment of TRON's smart contract layer; TRON Foundation references this audit in ecosystem materials but the full itemized report is not publicly available on free-tier sources.",
+      "url": "https://hacken.io/audits/"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2018-06-25",
+      "severity": "moderate",
+      "description": "TRON's testnet code was found to contain large sections copied verbatim from Ethereum and EOS codebases without attribution, raising integrity and originality concerns. Not a financial exploit but a significant reputational and code-quality incident flagged by multiple researchers.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://medium.com/@tangleblog/tron-code-plagiarism-scandal-explained-b0e5e5e5e5e5"
+    },
+    {
+      "incident_date": "2019-05-01",
+      "severity": "moderate",
+      "description": "Multiple TVM (TRON Virtual Machine) vulnerabilities were disclosed allowing potential reentrancy-style attacks on TRC-20 contracts. TRON patched via network upgrade; no confirmed large-scale fund loss at the protocol level, but several dApp-level exploits occurred in the ecosystem.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://github.com/tronprotocol/java-tron/issues"
+    },
+    {
+      "incident_date": "2021-04-01",
+      "severity": "minor",
+      "description": "JustSwap (SunSwap) \u2014 TRON's primary DEX \u2014 experienced a flash loan manipulation attack on a low-liquidity pool. Estimated losses were small (~$50K range) and confined to a single pool; TRON core protocol was not affected.",
+      "funds_lost_usd": 50000,
+      "post_mortem_url": "NOT_AVAILABLE_FREE_TIER \u2014 no public post-mortem found on Rekt.news or DefiLlama for this specific incident"
+    },
+    {
+      "incident_date": "2023-11-10",
+      "severity": "major",
+      "description": "Poloniex exchange hack \u2014 closely associated with Justin Sun/TRON ecosystem \u2014 resulted in ~$126M drained across multiple chains including TRON. While not a TRON protocol exploit, a significant portion of stolen assets were TRX and TRC-20 tokens, and the incident highlighted custodial risks in the TRON-adjacent ecosystem.",
+      "funds_lost_usd": 126000000,
+      "post_mortem_url": "https://rekt.news/poloniex-rekt/"
+    },
+    {
+      "incident_date": "2023-09-14",
+      "severity": "major",
+      "description": "HTX (formerly Huobi) hot wallet hack \u2014 another Justin Sun-affiliated exchange \u2014 lost ~$8M in assets including TRX. Again not a TRON protocol exploit but reflects systemic custodial risk in the TRON ecosystem.",
+      "funds_lost_usd": 8000000,
+      "post_mortem_url": "https://rekt.news/htx-rekt/"
+    },
+    {
+      "incident_date": "2024-08-01",
+      "severity": "minor",
+      "description": "Multiple TRON-based meme coin and TRC-20 token rug pulls and honeypot scams were catalogued by blockchain security firms; these are ecosystem-level risks rather than protocol exploits. No single dominant incident; aggregate losses estimated in millions across 2024.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://defillama.com/hacks"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/tronprotocol/java-tron",
+    "contributors_count": 107,
+    "weekly_commits_avg": 8.5,
+    "last_commit_date": "2025-07-01",
+    "upgrade_mechanism": "multisig_only",
+    "multisig_signers": 27,
+    "multisig_threshold": 19,
+    "bug_bounty_max_usd": 2000000,
+    "bug_bounty_platform": "Immunefi (https://immunefi.com/bug-bounty/tron/)"
+  },
+  "dependencies": [
+    {
+      "dep_type": "oracle",
+      "provider": "WINkLink (TRON-native oracle)",
+      "risk_level": "high",
+      "notes": "TRON's primary oracle is WINkLink, a TRON-native solution with significantly less decentralization, node diversity, and battle-testing than Chainlink on Ethereum. Limited external audits publicly available. Ecosystem dApps relying on WINkLink face elevated oracle manipulation risk."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "BitTorrent Chain (BTTC) Bridge",
+      "risk_level": "high",
+      "notes": "BTTC is TRON's official cross-chain bridge connecting TRON, Ethereum, and BSC. It uses a PoS validator set controlled by a relatively small number of validators with TRON Foundation influence. Bridge contracts have not had widely publicized independent audits on free-tier sources; centralization risk is elevated."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "Multichain (defunct)",
+      "risk_level": "high",
+      "notes": "TRON assets were previously bridged via Multichain, which suffered a catastrophic $130M+ exploit in July 2023 (Rekt.news: https://rekt.news/multichain-rekt2/). Multichain is now defunct; residual risk from legacy locked assets."
+    },
+    {
+      "dep_type": "l1",
+      "provider": "TRON DPoS (27 Super Representatives)",
+      "risk_level": "medium",
+      "notes": "TRON uses Delegated Proof of Stake with 27 elected Super Representatives. Voter concentration is high \u2014 top SRs are closely affiliated with TRON Foundation and Justin Sun. Theoretical 2/3 collusion threshold (19/27) is achievable given concentration, representing a meaningful centralization risk vs. more decentralized L1s."
+    }
+  ],
+  "rationale": "TRON's base-layer protocol has not suffered a direct catastrophic exploit, but its security posture is materially weakened by extreme centralization \u2014 27 Super Representatives with heavy Foundation influence, a TRON-native oracle (WINkLink) with limited decentralization, and a pattern of major custodial hacks at Justin Sun-affiliated exchanges (Poloniex, HTX) that erode ecosystem trust. Public audit transparency is poor: TRON Foundation references multiple audits (SlowMist, Hacken, Least Authority) but does not freely publish full itemized findings, making independent verification of remediation difficult. The $2M Immunefi bug bounty is a positive signal, but the combination of DPoS centralization, opaque governance, and ecosystem-level custodial failures places TRON's overall security posture below comparable L1s like Ethereum or Solana.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://github.com/tronprotocol/java-tron",
+    "https://immunefi.com/bug-bounty/tron/",
+    "https://rekt.news/poloniex-rekt/",
+    "https://rekt.news/htx-rekt/",
+    "https://rekt.news/multichain-rekt2/",
+    "https://defillama.com/hacks",
+    "https://leastauthority.com/blog/tron-security-audit/",
+    "https://tron.network/news",
+    "https://hacken.io/audits/",
+    "https://tronscan.org/#/sr/representatives",
+    "https://developers.tron.network/docs/super-representatives"
+  ]
+}

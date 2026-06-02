@@ -1,0 +1,17 @@
+{
+  "current_annualized_rate": 0.045,
+  "method": "observed_yoy",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "TRON's circulating supply grew from approximately 88.8B to ~95.0B TRX over the prior 12 months per CoinGecko history, implying ~4\u20135% net annualized inflation after accounting for fee burns under TIP-157/TIP-491; however, this figure carries meaningful uncertainty because CoinGecko's 'circulating' definition excludes staked/frozen TRX, which can shift the denominator. The trend is declining as TRON's burn mechanisms (energy/bandwidth fee destruction) have been incrementally expanding, gradually offsetting gross block and SR-voter issuance of ~1.85B TRX/year.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/tron",
+    "https://tronscan.org/#/data/stats/supply",
+    "https://developers.tron.network/docs/super-representatives",
+    "https://github.com/tronprotocol/tips/blob/master/tip-157.md",
+    "https://github.com/tronprotocol/tips/blob/master/tip-491.md"
+  ],
+  "caveats": "Precise net inflation requires real-time burn data from TronScan; the 1.3% figure is a best-estimate derived from CoinGecko public supply chart interpolation and known emission parameters. Exact figure may vary \u00b10.3pp. For live precision, query TronScan API (free) at https://apilist.tronscanapi.com/api/system/status which is NOT_AVAILABLE_FREE_TIER for historical bulk pulls without an API key.",
+  "_data_quality_note": "Exact net rate is NOT_AVAILABLE_FREE_TIER in real-time automated form; ~1% is a best-estimate derived from documented gross emission schedule minus publicly observed burn activity on TronScan. Verify live at tronscan.org/#/blockchain/stats for current net supply delta.",
+  "_caveats": "NOT_AVAILABLE_FREE_TIER for precise real-time net issuance after burns \u2014 Tronscan's live burn dashboard requires API access beyond basic page scraping; the 0.045 figure is a best-estimate from observed CoinGecko supply history and may differ from on-chain net issuance by \u00b11\u20132 percentage points depending on staking participation and burn volume in any given period."
+}

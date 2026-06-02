@@ -1,0 +1,16 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "PARTIAL",
+  "chain": "stellar",
+  "activity": {
+    "dau": 52633
+  },
+  "exchange_flow_30d": null,
+  "holder_cohort": null,
+  "smart_money_stance": "UNKNOWN",
+  "notes": "API-fetched (no LLM research): BigQuery / Stellar Hubble. DAU = COUNT(DISTINCT op_source_account) over 24h per OrbitLens methodology. Populated fields: activity_metric.dau.",
+  "sources": [
+    "https://console.cloud.google.com/bigquery?p=crypto-stellar&d=crypto_stellar_dbt&t=enriched_history_operations",
+    "https://medium.com/@orbit.lens/daily-active-accounts-on-stellar-correct-estimates-ec40c2c382a4"
+  ]
+}

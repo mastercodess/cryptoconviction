@@ -1,0 +1,27 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Hyperliquid (HYPE) perpetual funding rates and open interest are natively available on Hyperliquid's own DEX interface and stats pages, but programmatic free-tier aggregators (Coinglass public pages, CoinGecko derivatives tab) do not currently list HYPE perps as a tracked market; 30-day correlation coefficients against BTC, ETH, and NASDAQ require a clean 30-day OHLCV series plus index data and a correlation calculation \u2014 CoinGecko does provide HYPE spot price history (free tier, no API key needed) and FRED provides NASDAQ data, but the computed correlation values are not pre-published anywhere and performing the live calculation is outside the scope of a single lookup, so all five fields are unavailable from a direct free-source pull at this time.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/hyperliquid \u2014 HYPE spot price & market cap (free, no key)",
+    "https://app.hyperliquid.xyz/trade \u2014 native perp UI with live funding & OI (requires browser session, not a free REST endpoint)",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs \u2014 protocol docs",
+    "https://www.coinglass.com/currencies/HYPE \u2014 checked; HYPE perps not listed as of knowledge cutoff",
+    "https://defillama.com/protocol/hyperliquid \u2014 TVL/volume data only, no funding/OI",
+    "https://fred.stlouisfed.org/series/NASDAQCOM \u2014 NASDAQ Composite daily (free, for correlation input)",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 macro sentiment only, no HYPE-specific derivatives data"
+  ],
+  "how_to_obtain": {
+    "funding_rate_8h": "Query Hyperliquid's public info endpoint: POST https://api.hyperliquid.xyz/info with body {\"type\":\"metaAndAssetCtxs\"} \u2014 returns fundingRate per asset including HYPE, no API key required.",
+    "open_interest_usd": "Same endpoint above returns openInterest (in contracts); multiply by mark price from the same response.",
+    "correlations": "Fetch 30 days of HYPE, BTC, ETH daily close from CoinGecko /coins/{id}/market_chart?vs_currency=usd&days=30 (free, no key needed for low rate-limit use), then compute Pearson r. For NASDAQ use Yahoo Finance CSV export (free download) for ^IXIC."
+  },
+  "notes": {
+    "funding_rate_8h": "Hyperliquid publishes funding via its own REST API (https://api.hyperliquid.xyz/info) but this requires a live programmatic call; no cached free-tier aggregator surfaces it in a citable static page.",
+    "open_interest_usd": "Same constraint as funding rate \u2014 Hyperliquid API endpoint /info with type='metaAndAssetCtxs' would return OI, but no free aggregator caches it publicly.",
+    "correlations": "30-day rolling correlations against BTC, ETH, and NASDAQ require a price-return time series + computation; CoinGecko provides HYPE OHLC (https://www.coingecko.com/en/coins/hyperliquid/historical_data) but does not pre-compute correlations, and NASDAQ data via FRED (https://fred.stlouisfed.org/) would need to be cross-referenced manually \u2014 values not directly pullable as a cited fact from a free source."
+  }
+}

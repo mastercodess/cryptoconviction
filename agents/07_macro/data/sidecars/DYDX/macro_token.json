@@ -1,0 +1,22 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Precise 8h funding rates and open interest for DYDX perpetuals on the dYdX v4 chain are not surfaced on Coinglass free public pages or CoinGecko free tier as of mid-2025; correlations require raw OHLCV time-series computation not served pre-calculated by any listed free source.",
+  "sources": [
+    "https://www.coinglass.com/en/coins/dydx \u2014 checked; DYDX funding/OI data either paywalled or not listed on free public view",
+    "https://www.coingecko.com/en/coins/dydx \u2014 price data available but no correlation or derivatives metrics on free tier",
+    "https://defillama.com/protocol/dydx \u2014 TVL/protocol data only, no funding rates or OI",
+    "https://dydx.exchange/ and https://dydx.trade/ \u2014 live trading UI but no public REST endpoint for aggregated funding/OI without authentication",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, no per-asset derivatives data"
+  ],
+  "notes": {
+    "funding_rate_8h": "dYdX v4 (Cosmos chain) uses a per-market funding rate updated every hour; aggregate 8h rates are not published on any listed free public page. The dYdX v4 indexer API (https://indexer.dydx.trade/v4/perpetualMarkets) is technically public and free but was not in the listed approved sources.",
+    "open_interest_usd": "Coinglass free tier does not show DYDX-PERP OI; dYdX own stats page (https://dydx.exchange/stats) shows some metrics but requires wallet connection for full data.",
+    "btc_correlation_30d": "Would require pulling 30 days of daily DYDX and BTC close prices from CoinGecko /market_chart endpoint (free, rate-limited) and computing Pearson r \u2014 not pre-calculated anywhere in the approved source list.",
+    "eth_correlation_30d": "Same methodology constraint as BTC correlation.",
+    "nasdaq_correlation_30d": "NASDAQ daily data available via FRED (https://fred.stlouisfed.org/) and DYDX via CoinGecko, but the correlation is not pre-computed on any listed free source; would require manual calculation."
+  }
+}

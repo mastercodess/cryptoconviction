@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "unlock_date": "2020-10-01",
+      "category": "public_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://rendernetwork.com/blog/",
+      "notes": "RNDR token went live on exchanges circa late 2020 after SAFT raise; exact initial circulating unlock quantity not published in free-tier sources."
+    },
+    {
+      "unlock_date": "2021-01-01",
+      "category": "investor_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://messari.io/asset/render-token",
+      "notes": "Messari free profile notes early SAFT investor vesting began releasing through 2021, but granular cliff/schedule dates are NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "unlock_date": "2023-11-01",
+      "category": "other",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://rendernetwork.com/blog/render-network-migration-to-solana/",
+      "notes": "Token migrated from Ethereum (RNDR) to Solana (RENDER) at 1:1 ratio; no new tokens minted but migration window created effective unlock/conversion event."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://renderfoundation.com",
+      "notes": "Render Foundation treasury allocation (~30% of supply per allocation docs) subject to ongoing discretionary release; no public vesting schedule with specific dates disclosed."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://rendernetwork.com/blog/rnip-10/",
+      "notes": "RNIP-10 BME model introduced usage-based emissions (burn-and-mint) replacing fixed emission schedule; ongoing rate is variable and demand-driven, not time-locked."
+    }
+  ],
+  "summary": "Render Network's token unlock schedule is one of the least transparently documented among major crypto projects on free public sources. The original SAFT-based investor and team vesting from the 2017\u20132018 raise appears to have been substantially completed by 2022\u20132023, with no future large cliff unlocks publicly scheduled. Since the Solana migration in late 2023 and adoption of the BME (Burn-and-Mint Equilibrium) model via RNIP-10, new token emissions are tied to network usage rather than a fixed vesting calendar, meaning traditional 'unlock pressure' from scheduled tranches is largely replaced by variable, demand-driven supply dynamics. The Render Foundation retains a significant treasury (~30% of total supply) with no publicly disclosed time-locked release schedule, representing the primary ongoing supply-side uncertainty.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) tokenunlocks.app free tier for RENDER does not expose granular per-tranche unlock dates or token quantities without a paid subscription \u2014 all specific dates/amounts are NOT_AVAILABLE_FREE_TIER. 2) Render Network's own public documentation (rendernetwork.com, renderfoundation.com) describes allocation categories (team, investors, foundation, ecosystem) but does not publish a dated vesting table in any freely accessible doc or blog post as of mid-2025. 3) Messari's free profile confirms allocation categories but gates the detailed vesting schedule behind a Pro subscription. 4) CryptoRank.io free tab shows the ICO price and raise amount but not a vesting breakdown. 5) Because most investor/team vesting from the 2017\u20132018 SAFT raise is believed to be completed, the absence of future dated events may reflect reality rather than a data gap \u2014 but this cannot be confirmed without paid data. 6) No dates or token quantities were fabricated; all null values reflect genuine unavailability on free tiers."
+}

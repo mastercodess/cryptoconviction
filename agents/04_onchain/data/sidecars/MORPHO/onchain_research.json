@@ -1,0 +1,34 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "Morpho (MORPHO) spot volume appears broadly organic given its distribution across major CEXs (Binance, Coinbase, Kraken) and on-chain DEX venues, though granular wash-trade screening data is not publicly available on free tiers.",
+  "rationale": "Morpho's protocol TVL stood at approximately $3.8\u20134.0 billion as of mid-July 2025 per DefiLlama, making it one of the largest lending protocols on Ethereum and Base. The MORPHO governance token was listed on major exchanges in late 2024 following its unlock; circulating supply is roughly 350\u2013400 million MORPHO out of a 1 billion total supply per CoinGecko. Granular on-chain user metrics (DAU/MAU), exchange flow USD figures, and LTH/STH cohort breakdowns for MORPHO are not freely available without Glassnode paid tier, Nansen subscription, or a dedicated Dune dashboard \u2014 none of which returned public MORPHO-specific figures at time of research. Smart-money stance is therefore marked UNKNOWN due to data unavailability rather than any negative signal.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/morpho",
+    "https://www.coingecko.com/en/coins/morpho",
+    "https://etherscan.io/token/0x9994e35db50125e0df82e4c2dde62496ce330999",
+    "https://morpho.org/blog/",
+    "https://dune.com/morpho/morpho-blue"
+  ]
+}

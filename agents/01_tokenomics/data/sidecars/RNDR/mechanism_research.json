@@ -1,0 +1,16 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "protocol",
+  "value_accrual_summary": "Under the Burn-and-Mint Equilibrium (BME) model, RNDR paid by render job clients is burned (reducing supply), while node operators are compensated in newly minted RNDR, so value accrues to all token holders via deflationary burn pressure rather than to stakers or LPs; there is no staking mechanism.",
+  "sources": [
+    "https://renderfoundation.com/whitepaper",
+    "https://docs.rendernetwork.com/render-network/render-token/burn-and-mint-equilibrium",
+    "https://rendertoken.com/",
+    "https://github.com/rndr-network"
+  ],
+  "data_quality": "PARTIAL"
+}

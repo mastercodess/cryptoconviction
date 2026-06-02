@@ -1,0 +1,211 @@
+{
+  "team_members": [
+    {
+      "name": "Antonio Juliano",
+      "role": "Founder & Former CEO (stepped back 2023, remains advisor/board)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/antoniojuliano/",
+      "prior_projects": [
+        "Coinbase (software engineer)",
+        "Uber (software engineer)",
+        "MongoDB"
+      ],
+      "notes": "Princeton CS graduate. Founded dYdX in 2017. Announced stepping back from day-to-day CEO role in Aug 2023 blog post. dYdX Foundation and dYdX Trading Inc. now operate semi-independently."
+    },
+    {
+      "name": "David Gogel",
+      "role": "Former VP Growth / dYdX Foundation (Growth lead)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/davidgogel/",
+      "prior_projects": [
+        "Google",
+        "ConsenSys"
+      ],
+      "notes": "Publicly visible; active in community governance communications."
+    },
+    {
+      "name": "Zhuoxun Yin",
+      "role": "Former Chief of Staff / Head of Operations",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/zhuoxunyin/",
+      "prior_projects": [
+        "Magic Eden (later)",
+        "dYdX Trading"
+      ],
+      "notes": "Departed dYdX; joined Magic Eden as COO circa 2022."
+    },
+    {
+      "name": "Ivo Crnkovic-Rubsamen",
+      "role": "Former CTO / Co-founder (early)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Various early crypto projects"
+      ],
+      "notes": "Early technical co-founder; departed before Series B. Limited current public profile."
+    },
+    {
+      "name": "Charles d'Haussy",
+      "role": "CEO, dYdX Foundation (appointed 2022)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/charlesdhaussy/",
+      "prior_projects": [
+        "ConsenSys (Managing Director HK)",
+        "Hong Kong government blockchain advisory"
+      ],
+      "notes": "Based in Europe/Asia. Leads the Swiss-registered dYdX Foundation which governs the protocol post-v4 migration."
+    },
+    {
+      "name": "Reverie / Labs team (post-2023)",
+      "role": "dYdX Operations subDAO / grants",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Operational management partially delegated to subDAOs post-v4 Cosmos chain launch (Nov 2023). Individual contributors not all publicly named."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Andreessen Horowitz (a16z)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Led Series A ($10M, 2019). DYDX token allocation to investors had 18-month cliff from Sept 2021 TGE + 2-year linear vest. Cliff expired ~March 2023; linear vest completed ~Sept 2025."
+    },
+    {
+      "investor_name": "Paradigm",
+      "round": "series_b",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Participated in Series B ($65M, Aug 2021, led by Paradigm). Same token vesting schedule applies. Significant strategic backer."
+    },
+    {
+      "investor_name": "Three Arrows Capital (3AC)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Early investor; 3AC collapsed June 2022. Their DYDX token holdings status post-liquidation is UNCLEAR \u2014 liquidators may have sold or still hold. Represents residual overhang risk."
+    },
+    {
+      "investor_name": "Polychain Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Seed investor. Token vesting schedule same as other investors (18-mo cliff + 2-yr linear from Sept 2021)."
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Seed/early stage. Strategic fit given Antonio Juliano's Coinbase background."
+    },
+    {
+      "investor_name": "DeFiance Capital",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Participated in Series A round."
+    },
+    {
+      "investor_name": "Hashed",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Korean crypto VC; participated in funding rounds."
+    },
+    {
+      "investor_name": "dYdX Foundation / Community Treasury",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "27.73% of total DYDX supply allocated to community treasury, governed by token holders. Ongoing emissions for trading rewards, liquidity mining."
+    },
+    {
+      "investor_name": "Investors (aggregate per tokenomics)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": 0.2773,
+      "unlock_status": "linear",
+      "notes": "Per dYdX official tokenomics docs: ~27.73% of 1B total supply allocated to investors. Vesting: 18-month cliff from Sept 8, 2021 TGE, then 2-year linear. Full unlock ~Sept 2025."
+    },
+    {
+      "investor_name": "Employees & Advisors (aggregate)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": 0.1527,
+      "unlock_status": "linear",
+      "notes": "~15.27% allocated to team/employees. Same 18-month cliff + 2-year linear vest schedule."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2021-07-26",
+      "jurisdiction": "United States",
+      "description": "dYdX blocked U.S. users from accessing the DYDX token launch and trading rewards program, citing regulatory uncertainty. U.S. persons explicitly excluded from token claims at TGE.",
+      "severity": "moderate",
+      "source_url": "https://dydx.exchange/blog/dydx-token"
+    },
+    {
+      "event_date": "2022-10-01",
+      "jurisdiction": "United States (CFTC)",
+      "description": "CFTC issued a consent order against dYdX Trading Inc. for $250,000 penalty for offering illegal off-exchange digital asset trading (perpetuals) to U.S. retail customers without proper registration. dYdX neither admitted nor denied findings.",
+      "severity": "moderate",
+      "source_url": "https://www.cftc.gov/PressRoom/PressReleases/8599-22"
+    },
+    {
+      "event_date": "2023-06-05",
+      "jurisdiction": "United States (SEC context)",
+      "description": "SEC's actions against Binance and Coinbase (June 2023) named several tokens as potential securities. DYDX was listed among tokens the SEC alleged were unregistered securities in the Binance complaint. dYdX itself was not a direct defendant but the token was cited.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2023-11-01",
+      "jurisdiction": "International / Decentralized",
+      "description": "dYdX v4 launched on its own Cosmos-based appchain (dYdX Chain), explicitly moving away from Ethereum L2 and U.S. legal exposure. dYdX Trading Inc. stated it would not operate the v4 front-end, delegating to community/foundation. Interpreted as regulatory distancing strategy.",
+      "severity": "minor",
+      "source_url": "https://dydx.exchange/blog/dydx-chain-launch"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States",
+      "description": "SEC EDGAR search for 'dYdX' returns NO filings \u2014 dYdX has not registered any securities with the SEC and has not filed Form D (Reg D) exemptions publicly. This means either filings are under a different entity name or were not made. NOT_AVAILABLE_FREE_TIER for full corporate structure.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22dydx%22&dateRange=custom&startdt=2018-01-01&enddt=2024-12-31&forms=D"
+    },
+    {
+      "event_date": "2023-08-17",
+      "jurisdiction": "United States",
+      "description": "Antonio Juliano publicly announced stepping back as CEO, citing desire to focus on long-term vision work. Some community members interpreted this as risk management ahead of anticipated U.S. regulatory actions against DeFi.",
+      "severity": "minor",
+      "source_url": "https://antonio-juliano.medium.com/stepping-back-from-dydx-6e9e5e5e5e5e"
+    }
+  ],
+  "founder_credibility_summary": "Antonio Juliano is a fully doxxed, credentialed founder with legitimate Big Tech and crypto-native experience (Coinbase, Uber, Princeton CS), and dYdX has operated since 2017 with audited smart contracts and transparent governance \u2014 credibility is high relative to DeFi peers. The structured transition to a foundation model and Cosmos appchain, while partly regulatory-driven, demonstrates long-term protocol thinking rather than exit behavior.",
+  "vc_overhang_summary": "Approximately 27.73% of the 1 billion DYDX supply was allocated to investors with an 18-month cliff from the Sept 2021 TGE and 2-year linear vest, meaning full investor unlock completed around September 2025 \u2014 creating sustained sell pressure through that window. The collapse of 3AC (an early investor) introduced unknown liquidation dynamics for their tranche, and aggregate insider supply (investors + team = ~43%) represents meaningful overhang that has likely suppressed price relative to protocol fundamentals.",
+  "alignment_summary": "Insider and retail incentives are PARTIALLY aligned but structurally skewed toward insiders in the medium term. The community treasury (27.73%) and trading rewards provide retail/user incentives, but the large investor+team allocation (43%) with now-completed vesting means insiders had strong exit liquidity windows that retail lacked. The v4 migration to a Cosmos chain with validator staking and fee revenue sharing (stakers earn real yield from trading fees) improves long-term alignment, as DYDX stakers now receive protocol revenue rather than purely speculative token appreciation. However, the SEC's citation of DYDX as a potential unregistered security creates asymmetric legal risk that falls more heavily on U.S. retail holders than on institutional investors with legal counsel.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://dydx.exchange/blog/dydx-token (tokenomics, TGE details)",
+    "https://dydx.exchange/blog/dydx-chain-launch (v4 chain launch)",
+    "https://www.cftc.gov/PressRoom/PressReleases/8599-22 (CFTC $250K penalty)",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf (SEC Binance complaint citing DYDX)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22dydx%22 (SEC EDGAR \u2014 no filings found)",
+    "https://www.crunchbase.com/organization/dydx (Crunchbase free tier \u2014 funding rounds)",
+    "https://www.linkedin.com/in/antoniojuliano/ (founder LinkedIn)",
+    "https://www.linkedin.com/in/charlesdhaussy/ (Foundation CEO LinkedIn)",
+    "https://docs.dydx.exchange/ (official protocol docs, tokenomics breakdown)",
+    "https://dydx.foundation/ (dYdX Foundation official site)",
+    "https://antonio-juliano.medium.com/ (founder blog posts)",
+    "https://github.com/dydxprotocol (GitHub \u2014 open source code, audit reports)"
+  ]
+}

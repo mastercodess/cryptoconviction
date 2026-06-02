@@ -1,0 +1,37 @@
+{
+  "annualized_revenue_usd": null,
+  "tvl_usd": null,
+  "p_s_ratio": null,
+  "p_tvl_ratio": null,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "DECELERATING",
+  "seasonality": "Volume and fee generation are event-driven, spiking around major token launches, airdrops, and cross-chain DeFi campaigns rather than following consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "LAYERZERO",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "AXL",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "CCIP",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "Wormhole (W) is a cross-chain messaging/bridge protocol that launched its W token in April 2024 at a ~$1B+ FDV; however, DefiLlama's public fees dashboard shows Wormhole's protocol revenue as NOT reliably tracked in a standardized way on the free tier as of mid-2025 \u2014 the bridge volume is visible but fee accrual to the protocol/token holders is not clearly separated from relayer costs. TVL attributable specifically to Wormhole's own contracts (vs. bridged assets in transit) is not meaningfully reported on DefiLlama's free pages. Token Terminal does not list Wormhole on its free tier with auditable P/S data. Consequently all ratio fields are set to null due to data unavailability, not because Wormhole lacks economic activity.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://defillama.com/protocol/wormhole",
+    "https://defillama.com/fees/wormhole",
+    "https://tokenterminal.com/terminal/projects/wormhole",
+    "https://wormhole.com/docs",
+    "https://coingecko.com/en/coins/wormhole",
+    "https://wormhole.com/blog"
+  ]
+}

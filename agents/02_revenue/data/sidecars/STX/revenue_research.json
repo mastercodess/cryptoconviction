@@ -1,0 +1,39 @@
+{
+  "annualized_revenue_usd": 4200000,
+  "tvl_usd": 171000000,
+  "p_s_ratio": 185,
+  "p_tvl_ratio": 4.5,
+  "real_yield_apr_pct": 7.5,
+  "inflationary_yield_apr_pct": 10.0,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Event-driven: activity spikes around Bitcoin halving cycles and Nakamoto upgrade milestones, with Q1 2024 showing outsized volume tied to sBTC testnet launches and Ordinals-adjacent speculation.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "THOR",
+      "metric": "p_s",
+      "peer_value": 22
+    },
+    {
+      "peer_symbol": "OSMO",
+      "metric": "p_s",
+      "peer_value": 45
+    },
+    {
+      "peer_symbol": "ICP",
+      "metric": "p_s",
+      "peer_value": 310
+    }
+  ],
+  "rationale": "DefiLlama reports Stacks TVL near $171M as of late May 2025, with annualized protocol fees estimated at roughly $4.2M based on trailing 30-day on-chain fee data extrapolated; at a ~$775M fully-diluted market cap this implies a P/S near 185, which is elevated but reflects early-stage Bitcoin L2 optionality premium. STX stacking (PoX) yields approximately 7\u201310% APR in BTC rewards, with the 'real' component (BTC paid by miners) around 7.5% and the remainder inflationary STX emissions; post-Nakamoto upgrade throughput improvements and sBTC launch are the primary catalysts for the accelerating growth trend.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Stacks",
+    "https://defillama.com/protocol/stacks",
+    "https://stacking.club",
+    "https://docs.stacks.co/concepts/block-production/stacking",
+    "https://www.stacks.co/blog/nakamoto-upgrade",
+    "https://coinmarketcap.com/currencies/stacks/",
+    "https://coingecko.com/en/coins/stacks",
+    "https://tokenterminal.com/terminal/projects/stacks"
+  ]
+}
