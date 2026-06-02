@@ -72,10 +72,15 @@ pip install -r requirements.txt
 cp .env.example .env
 # edit .env, fill in ANTHROPIC_API_KEY
 
-# 3. Verify the pipeline (no API key needed for the smoke test)
+# 3. (Optional) Install the gitleaks pre-commit hook so secrets
+#    can't accidentally land in a commit
+brew install pre-commit gitleaks       # or: pip install pre-commit
+pre-commit install
+
+# 4. Verify the pipeline (no API key needed for the smoke test)
 python -m pytest tests/
 
-# 4. Run agent 1 on one token (requires API key)
+# 5. Run agent 1 on one token (requires API key)
 python -m agents.01_tokenomics.collect LINK
 python -m agents.01_tokenomics.analyze LINK
 cat reports/LINK/agent_01_tokenomics.json
