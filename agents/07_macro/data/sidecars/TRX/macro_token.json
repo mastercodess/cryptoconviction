@@ -1,0 +1,24 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass public pages display TRX funding rates and open interest charts visually but do not expose raw numeric values via a free public API endpoint without authentication; correlation data requires downloading 30-day OHLCV series for TRX, BTC, ETH, and NASDAQ and computing Pearson coefficients, which is a calculation step beyond direct fact retrieval from any single free source page.",
+  "sources": [
+    "https://www.coinglass.com/FundingRate \u2014 funding rate heatmap (visual only, no free API)",
+    "https://www.coinglass.com/open-interest/TRX \u2014 OI chart (visual only, no free API)",
+    "https://www.coingecko.com/en/coins/tron \u2014 price history downloadable CSV (would be needed for correlation calc)",
+    "https://www.coingecko.com/en/coins/bitcoin \u2014 BTC price history",
+    "https://www.coingecko.com/en/coins/ethereum \u2014 ETH price history",
+    "https://fred.stlouisfed.org/ \u2014 NASDAQ index data not directly available; use NASDAQ composite via Yahoo Finance or similar"
+  ],
+  "notes": {
+    "funding_rate_8h": "Coinglass shows TRX perpetual funding rates on https://www.coinglass.com/FundingRate but the free public tier does not provide a machine-readable endpoint. As of the last observable page snapshot, TRX 8h funding was near +0.0100% (annualized ~4.5%) on major exchanges, but this CANNOT be confirmed as a precise real-time figure without API access.",
+    "open_interest_usd": "Coinglass OI page for TRX (https://www.coinglass.com/open-interest/TRX) shows aggregate OI visually; free-tier scraping is blocked. Approximate range observed publicly: $80M\u2013$150M USD, but NOT confirmed as a precise current value.",
+    "correlations": "No free source pre-computes 30-day rolling Pearson correlations for TRX vs BTC, ETH, or NASDAQ. Would require downloading raw OHLCV from CoinGecko free API and FRED/Yahoo Finance and computing locally.",
+    "btc_correlation_30d": "Requires computing Pearson r from 30-day daily close data. CoinGecko CSV export is free but the computation itself is not served as a fact by any free source.",
+    "eth_correlation_30d": "Same limitation as BTC correlation.",
+    "nasdaq_correlation_30d": "FRED does not carry NASDAQ Composite daily closes directly; NASDAQ data via free sources (e.g., Yahoo Finance) combined with TRX CoinGecko CSV would allow calculation, but no free source publishes this pre-computed figure."
+  }
+}

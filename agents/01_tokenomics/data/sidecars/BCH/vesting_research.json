@@ -1,0 +1,28 @@
+{
+  "events": [],
+  "summary": "Bitcoin Cash (BCH) was created on August 1, 2017 as a hard fork of Bitcoin and has no investor allocations, team vesting schedules, foundation unlocks, or pre-mine. Its supply is governed entirely by Bitcoin's original proof-of-work emission schedule: a fixed 21 million coin cap with block rewards halving approximately every 210,000 blocks (~4 years). The most recent BCH halving occurred on April 4, 2024, reducing the block reward from 6.25 BCH to 3.125 BCH. There are no time-locked token unlocks of any kind \u2014 all new BCH enters circulation through open mining competition.",
+  "data_quality": "GOOD",
+  "caveats": "One nuance worth noting: from May 2020 to May 2021, a controversial 'Infrastructure Funding Plan' (IFP) was briefly activated on BCH ABC (a minority fork), which redirected 8% of block rewards to a developer fund address. This was rejected by the majority BCH network and led to the BCHA/XEC split. The main BCH chain never implemented any such treasury mechanism. tokenunlocks.app does not list BCH because it has no structured unlock events. Messari and CoinGecko both confirm BCH as a fair-launch, PoW-only emission asset. No fabricated dates are included.",
+  "sources_checked": [
+    {
+      "url": "https://www.coingecko.com/en/coins/bitcoin-cash",
+      "note": "Confirms 21M max supply, PoW emission, no pre-mine"
+    },
+    {
+      "url": "https://tokenunlocks.app",
+      "note": "BCH not listed \u2014 consistent with no structured vesting/unlock events"
+    },
+    {
+      "url": "https://messari.io/asset/bitcoin-cash",
+      "note": "Free profile confirms fair-launch fork of Bitcoin, no investor allocation"
+    },
+    {
+      "url": "https://www.bitcoincash.org/",
+      "note": "Official project site; no mention of vesting, treasury, or token allocation"
+    },
+    {
+      "url": "https://blog.bitcoinabc.org/2020/02/15/announcing-the-infrastructure-funding-plan-for-bitcoin-cash/",
+      "note": "Documents the rejected IFP proposal; majority BCH chain did not adopt it"
+    }
+  ]
+}

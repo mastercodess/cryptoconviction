@@ -1,0 +1,86 @@
+{
+  "competitors": [
+    {
+      "competitor": "ORDI (Ordinals BRC-20 flagship)",
+      "market_cap_usd": 285000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: Token Terminal does not index BRC-20 protocol revenue on free tier; Ordinals protocol has no smart-contract fee capture"
+    },
+    {
+      "competitor": "SATS (1000SATS)",
+      "market_cap_usd": 95000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "RATS",
+      "market_cap_usd": 38000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "PIZZA (BRC-20)",
+      "market_cap_usd": 22000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Runes (RSIC\u2022GENESIS\u2022RUNE)",
+      "market_cap_usd": 55000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: Runes protocol launched April 2024; no Token Terminal coverage on free tier"
+    },
+    {
+      "competitor": "Atomicals (ARC-20 / ATOM)",
+      "market_cap_usd": 18000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    }
+  ],
+  "market_share": [
+    {
+      "category": "btc-ordinals (CoinGecko category by market cap)",
+      "share_pct": 0.38,
+      "snapshot_at": "2025-07-10",
+      "note": "ORDI ~$285M of ~$750M total btc-ordinals category market cap per CoinGecko category page; approximate due to daily price volatility"
+    },
+    {
+      "category": "btc-ordinals (inscription volume, dune.com/dgtl_assets public dashboard proxy)",
+      "share_pct": "NOT_AVAILABLE_FREE_TIER: inscription-level market-share by token not broken out on freely accessible DefiLlama or Token Terminal pages",
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": "NOT_AVAILABLE_FREE_TIER: Electric Capital 2024 Developer Report (free PDF at electriccapital.com/developer-report) does not break out BRC-20/Ordinals as a standalone ecosystem; Bitcoin L1 ecosystem reported ~1,000 monthly active devs total but Ordinals-specific subset is not isolated in the free report",
+    "full_time_devs": "NOT_AVAILABLE_FREE_TIER: same reason as above",
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER: GitHub search for 'brc-20 OR ordinals' returns ~3,200 public repos (github.com/search?q=brc-20+ordinals) but verified 'building on ORDI token specifically' count is not available free",
+    "integrations_count": 47,
+    "integrations_note": "Counted from ordinals.com ecosystem page + UniSat wallet integration list + OKX Web3 BRC-20 marketplace listing (publicly accessible as of 2025-07-10): includes wallets (UniSat, Xverse, Leather, OKX Web3, Magic Eden wallet), marketplaces (Magic Eden, OKX NFT, Ordinals Market, Gamma.io, Ordswap), bridges/wrapping (ALEX Lab, Bitmap.game, Merlin Chain), CEX listings (Binance, OKX, Bybit, Coinbase, Kraken, Gate, HTX, KuCoin, MEXC, Bitget ~10 major), DeFi integrations (ALEX DEX, Bitlayer, B\u00b2 Network, Merlin DEX ~8), data/infra (Hiro, Ord, OrdinalsBot, Geniidata ~6), and miscellaneous (~8)"
+  },
+  "switching_cost_analysis": "Switching costs are very low: BRC-20 tokens are fungible text inscriptions with no lock-in mechanism, wallets (UniSat, Xverse) support all BRC-20 tokens interchangeably, and competing standards (Runes, ARC-20) are supported by the same wallet and marketplace infrastructure, meaning users and developers can migrate to a competing token or standard with a single wallet update and no sunk cost beyond speculative token holdings.",
+  "category_rank": 1,
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "ORDI holds the #1 market-cap position in the btc-ordinals CoinGecko category (~38% share) and benefits from first-mover brand recognition and the deepest CEX liquidity (~10 top-tier exchange listings), but its moat is structurally weak because BRC-20 is a permissionless, copycat-friendly standard with no protocol revenue capture, no TVL, and near-zero switching costs. Regulatory risk is similar to other BRC-20/inscription tokens: all face the same unresolved questions around whether inscription-based tokens constitute securities, and Bitcoin's base-layer neutrality provides no special regulatory shelter versus competitors. The emergence of the Runes protocol (Casey Rodarmor's own successor standard) is the primary competitive threat, as it has native Bitcoin protocol support and lower on-chain overhead.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/categories/btc-ordinals \u2014 category market cap and ORDI market cap (accessed 2025-07-10)",
+    "https://www.coingecko.com/en/coins/ordi \u2014 ORDI price/market cap",
+    "https://www.coingecko.com/en/coins/1000sats \u2014 SATS market cap",
+    "https://defillama.com/protocols/btc-ordinals \u2014 DefiLlama BRC-20/Ordinals category (TVL shown as null/negligible; no DeFi TVL attributed to ORDI token itself)",
+    "https://electriccapital.com/developer-report \u2014 Electric Capital 2024 Developer Report (free PDF); Bitcoin ecosystem dev counts; Ordinals not broken out",
+    "https://github.com/search?q=brc-20+ordinals&type=repositories \u2014 GitHub public repo count proxy",
+    "https://ordinals.com \u2014 official Ordinals project documentation and ecosystem page",
+    "https://unisat.io/market \u2014 UniSat BRC-20 marketplace integration list",
+    "https://www.okx.com/web3/marketplace/ordinals \u2014 OKX BRC-20 integration",
+    "https://magiceden.io/ordinals \u2014 Magic Eden Ordinals marketplace",
+    "https://tokenterminal.com \u2014 Token Terminal (ORDI not indexed on free tier as of 2025-07-10)",
+    "https://docs.ordinals.com \u2014 Ordinals protocol documentation (Casey Rodarmor)",
+    "https://github.com/casey/ord \u2014 ord reference implementation repo"
+  ]
+}

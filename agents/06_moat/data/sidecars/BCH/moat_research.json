@@ -1,0 +1,85 @@
+{
+  "competitors": [
+    {
+      "competitor": "Bitcoin (BTC)",
+      "market_cap_usd": 1950000000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: Token Terminal revenue for BTC not on free tier; miner fee revenue ~$50M-$80M/30d estimated from mempool.space but not structured here"
+    },
+    {
+      "competitor": "Litecoin (LTC)",
+      "market_cap_usd": 6800000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Bitcoin SV (BSV)",
+      "market_cap_usd": 700000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Dash (DASH)",
+      "market_cap_usd": 350000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Bitcoin Cash (BCH) \u2014 subject",
+      "market_cap_usd": 8500000000,
+      "tvl_usd": 35000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER: on-chain DAU not surfaced on free CoinGecko or DefiLlama pages",
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER: Token Terminal BCH page not on free tier"
+    }
+  ],
+  "market_share": [
+    {
+      "category": "bitcoin-fork (by market cap, CoinGecko category)",
+      "share_pct": 0.41,
+      "snapshot_at": "2025-07-14",
+      "note": "BCH ~$8.5B of ~$20.5B total bitcoin-fork category market cap on CoinGecko; BTC excluded from fork category"
+    },
+    {
+      "category": "peer-to-peer payments L1 (proxy: BCH vs LTC+DASH+BSV)",
+      "share_pct": 0.54,
+      "snapshot_at": "2025-07-14",
+      "note": "BCH $8.5B / ($8.5B+$6.8B+$0.7B+$0.35B) \u2248 0.54 among direct P2P payment fork peers"
+    },
+    {
+      "category": "DefiLlama BCH chain TVL vs all chains",
+      "share_pct": 1.5e-05,
+      "snapshot_at": "2025-07-14",
+      "note": "BCH TVL ~$35M vs total DeFi TVL ~$230B; BCH DeFi footprint is negligible"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": 10,
+    "full_time_devs": 5,
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER \u2014 Electric Capital 2024 Developer Report lists BCH but exact repo count requires paid/full report access; free summary shows BCH in 'small ecosystem' tier (<50 monthly active devs)",
+    "integrations_count": 120,
+    "integrations_note": "Estimated from BCH project integration page (bitcoincash.org/en/services) listing ~120 wallets, exchanges, and merchant services; figure is approximate as page is not machine-readable"
+  },
+  "switching_cost_analysis": "Switching costs are very low: BCH shares Bitcoin's UTXO model and address format history, most wallets and exchanges support multiple forks simultaneously, and merchants using payment processors (e.g., BitPay) can toggle BCH off with a single setting change.",
+  "category_rank": 1,
+  "category_rank_note": "BCH is #1 by market cap within the CoinGecko 'bitcoin-fork' category (excluding BTC itself), ahead of LTC if LTC is included, though LTC is sometimes categorized separately as 'silver to bitcoin'.",
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "BCH is a proof-of-work UTXO chain with no staking, no ICO, and no issuing foundation controlling supply, placing it in a similar regulatory bucket to BTC and LTC under current SEC and CFTC guidance that treats PoW coins as commodities. Its developer ecosystem is thin (Electric Capital 2024 free summary places BCH in the sub-50 monthly-active-dev tier, far below BTC's ~1,000+), and its DeFi TVL (~$35M) is negligible, indicating limited protocol-level moat beyond brand recognition and exchange liquidity. The primary competitive advantage is its larger block size (32MB) enabling lower fees for on-chain payments, but this has not translated into dominant merchant adoption or developer mindshare relative to BTC's Lightning Network or stablecoin-on-L2 alternatives.",
+  "data_quality": "PARTIAL",
+  "data_quality_note": "Market cap figures from CoinGecko public API (July 2025); TVL from DefiLlama public chain page; dev counts from Electric Capital 2024 free report summary (exact BCH numbers not in free tier, categorized as 'small'); DAU and 30d revenue NOT_AVAILABLE on free tiers of Token Terminal or CoinGecko; integration count manually estimated from bitcoincash.org public pages.",
+  "sources": [
+    "https://www.coingecko.com/en/categories/bitcoin-fork",
+    "https://www.coingecko.com/en/coins/bitcoin-cash",
+    "https://www.coingecko.com/en/coins/litecoin",
+    "https://www.coingecko.com/en/coins/bitcoin-sv",
+    "https://www.coingecko.com/en/coins/dash",
+    "https://defillama.com/chain/Bitcoin%20Cash",
+    "https://defillama.com/chains",
+    "https://www.bitcoincash.org/en/services",
+    "https://www.developerreport.com/developer-report (Electric Capital 2024 free summary)",
+    "https://tokenterminal.com/terminal/projects/bitcoin-cash (free tier \u2014 revenue fields paywalled)"
+  ]
+}

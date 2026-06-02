@@ -1,0 +1,190 @@
+{
+  "team_members": [
+    {
+      "name": "Muneeb Ali",
+      "role": "Co-Founder & CEO, Trust Machines (primary Stacks ecosystem company)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/muneebali/",
+      "prior_projects": [
+        "Blockstack PBC (rebranded to Hiro Systems / Trust Machines)",
+        "Princeton University PhD (Computer Science)",
+        "Y Combinator W14"
+      ],
+      "notes": "One of the most credentialed founders in crypto. PhD from Princeton, dissertation on distributed systems. Led the first SEC-qualified token offering (Reg A+) in crypto history in 2019. Active on X/Twitter (@muneeb). Public figure with extensive publication record."
+    },
+    {
+      "name": "Ryan Shea",
+      "role": "Co-Founder (departed ~2019, moved to other ventures)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/ryaneshea/",
+      "prior_projects": [
+        "Blockstack PBC",
+        "Princeton University (undergrad)",
+        "AngelList"
+      ],
+      "notes": "Left day-to-day Stacks operations circa 2019 to pursue other projects. Less active in Stacks ecosystem post-departure. Departure was publicly disclosed."
+    },
+    {
+      "name": "Diwaker Gupta",
+      "role": "CTO, Trust Machines",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/diwakergupta/",
+      "prior_projects": [
+        "Dropbox (engineering leadership)",
+        "Cloudflare",
+        "Twitter"
+      ],
+      "notes": "Strong traditional tech background. Joined Trust Machines to lead engineering. Adds credibility via FAANG/major tech pedigree."
+    },
+    {
+      "name": "Jude Nelson",
+      "role": "Core Protocol Engineer, Hiro Systems",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Princeton University (PhD)",
+        "Blockstack PBC"
+      ],
+      "notes": "Long-tenured core developer. Key architect of the Stacks blockchain and Clarity smart contract language. GitHub: @jcnelson. Highly technical, less public-facing."
+    },
+    {
+      "name": "Aaron Blankstein",
+      "role": "Core Engineer, Hiro Systems",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Princeton University (PhD)",
+        "Blockstack PBC"
+      ],
+      "notes": "Co-designer of Clarity language. Active GitHub contributor. Academic background in programming languages and security."
+    },
+    {
+      "name": "Mitchell Cuevas",
+      "role": "Head of Growth, Stacks Foundation (former)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/mitchellcuevas/",
+      "prior_projects": [
+        "Product Hunt",
+        "Blockstack"
+      ],
+      "notes": "Community and growth role. Has since moved on; listed for historical completeness."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Union Square Ventures (USV)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Early backer of Blockstack PBC. One of the most prominent crypto-friendly VCs. Exact ownership NOT_AVAILABLE_FREE_TIER \u2014 Crunchbase free tier does not disclose equity %."
+    },
+    {
+      "investor_name": "Lux Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in early Blockstack rounds. Exact terms NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Y Combinator",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "W14 batch. Standard YC deal (~7% equity at the time, but this is equity in Blockstack PBC, not STX tokens directly)."
+    },
+    {
+      "investor_name": "Winklevoss Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in early rounds per Crunchbase free listing."
+    },
+    {
+      "investor_name": "Naval Ravikant (AngelList)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Angel investor in early Blockstack. Exact terms NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Public Token Sale (Reg A+ SEC-Qualified)",
+      "round": "public",
+      "valuation_usd": 23000000,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "2019 Reg A+ offering raised ~$23M. First SEC-qualified token offering in US history. Tokens sold to US retail investors legally. SEC filing: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001719379&type=1-A&dateb=&owner=include&count=40"
+    },
+    {
+      "investor_name": "Public Token Sale (Reg S / Reg D prior rounds)",
+      "round": "private",
+      "valuation_usd": 47500000,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Multiple prior private raises totaling ~$47.5M per SEC filings and Crunchbase. Includes accredited investor rounds 2017-2018."
+    },
+    {
+      "investor_name": "Trust Machines Series A Investors (a16z crypto, etc.)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Trust Machines (the primary Stacks ecosystem company) raised $150M in 2022 led by undisclosed investors; a16z crypto participation reported in press. This is equity in Trust Machines, not direct STX token allocation. Exact vesting NOT_AVAILABLE_FREE_TIER. Source: https://trustmachines.co/blog/trust-machines-raises-150-million/"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2019-07-10",
+      "jurisdiction": "United States (Federal - SEC)",
+      "description": "SEC qualified Blockstack's Regulation A+ token offering \u2014 the first such qualification for a crypto token in US history. This was a POSITIVE legal event: it meant Blockstack could legally sell STX tokens to US retail investors. SEC filing CIK: 0001719379.",
+      "severity": "minor",
+      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001719379&type=1-A&dateb=&owner=include&count=40"
+    },
+    {
+      "event_date": "2020-12-01",
+      "jurisdiction": "United States (Federal - SEC)",
+      "description": "Blockstack PBC filed to exit SEC reporting obligations after Stacks 2.0 launch, arguing STX had become sufficiently decentralized and was no longer a security. Filed Form 15 (deregistration). SEC accepted the filing. This is a significant legal milestone \u2014 the company proactively sought and achieved regulatory clarity.",
+      "severity": "minor",
+      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001719379&type=15-12G&dateb=&owner=include&count=40"
+    },
+    {
+      "event_date": "2021-01-01",
+      "jurisdiction": "United States",
+      "description": "Blockstack PBC rebranded to Hiro Systems PBC, separating the development company from the Stacks Foundation (non-profit) and later Trust Machines. Structural reorganization, not a legal violation.",
+      "severity": "minor",
+      "source_url": "https://www.hiro.so/blog/hiro-systems-formerly-blockstack-pbc"
+    },
+    {
+      "event_date": "2023-06-01",
+      "jurisdiction": "United States (Federal - SEC)",
+      "description": "In the broader SEC enforcement wave post-Coinbase/Binance actions, STX was listed by the SEC in its complaint against Coinbase (June 2023) as one of ~13 tokens it considers unregistered securities. This is a MODERATE legal risk \u2014 STX was named but Stacks/Hiro/Trust Machines is not a direct defendant. The SEC's position conflicts with Stacks' prior Reg A+ qualification argument.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    }
+  ],
+  "founder_credibility_summary": "Muneeb Ali is among the most credentialed and transparent founders in the crypto industry, holding a Princeton PhD in distributed systems, completing Y Combinator, and leading the first SEC-qualified token offering in US history \u2014 demonstrating a consistent preference for regulatory engagement over avoidance. Ryan Shea's departure was handled openly, and the remaining leadership (Diwaker Gupta, Jude Nelson) brings legitimate Big Tech and academic pedigree, reducing key-man risk.",
+  "vc_overhang_summary": "Early VC rounds (USV, Lux, YC, angels) are almost certainly fully vested given the 2013-2019 vintage, meaning minimal near-term VC dump pressure from those cohorts; however, Trust Machines' $150M Series A (2022) likely carries standard 4-year vesting with a 1-year cliff, meaning some equity-linked incentives remain active through 2026. Direct STX token allocations to VCs are not fully disclosed in free-tier sources, creating residual uncertainty about on-chain sell pressure.",
+  "alignment_summary": "Incentives are PARTIALLY aligned but with notable caveats. The Reg A+ structure and SEC engagement demonstrate genuine effort to include retail investors legally, which is rare and positive. The Stacks Foundation controls a significant STX treasury for ecosystem grants, creating long-term alignment. However, the SEC's June 2023 naming of STX as a potential unregistered security (in the Coinbase complaint) creates regulatory overhang that disproportionately harms retail holders who cannot hedge, while sophisticated insiders may have more tools to manage exposure. The Trust Machines $150M raise is equity-based, meaning those investors' upside is tied to ecosystem success broadly, which aligns with STX appreciation \u2014 a positive signal.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001719379&type=1-A&dateb=&owner=include&count=40",
+    "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001719379&type=15-12G&dateb=&owner=include&count=40",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf",
+    "https://www.crunchbase.com/organization/blockstack",
+    "https://trustmachines.co/blog/trust-machines-raises-150-million/",
+    "https://www.hiro.so/blog/hiro-systems-formerly-blockstack-pbc",
+    "https://stacks.org/",
+    "https://www.linkedin.com/in/muneebali/",
+    "https://www.linkedin.com/in/ryaneshea/",
+    "https://www.linkedin.com/in/diwakergupta/",
+    "https://github.com/stacks-network/stacks-blockchain",
+    "https://docs.stacks.co/",
+    "https://coinmarketcap.com/currencies/stacks/",
+    "https://www.coingecko.com/en/coins/stacks"
+  ],
+  "_data_quality_notes": "PARTIAL because: (1) exact VC ownership percentages are behind Crunchbase Pro paywall; (2) individual token vesting schedules for 2022 investors are not publicly disclosed; (3) some LinkedIn URLs for junior team members could not be independently verified via free search; (4) Trust Machines cap table is private. All SEC EDGAR data is from the free public search tool."
+}

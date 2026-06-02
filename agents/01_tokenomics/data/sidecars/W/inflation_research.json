@@ -1,0 +1,14 @@
+{
+  "current_annualized_rate": 0.35,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Wormhole (W) has a 10B fixed max supply with ~3.68B currently circulating (~37% of total) following its April 2024 TGE; large investor, team, and ecosystem tranches continue unlocking linearly over a ~4-year schedule, producing an estimated ~1.2\u20131.4B new circulating tokens annually (~33\u201338% inflation on current circulating supply). The rate is declining because each successive year unlocks a smaller share relative to the growing circulating base, and the absolute unlock pace tapers after year 2.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/wormhole",
+    "https://wormhole.com/blog/wormhole-foundation-tokenomics",
+    "https://docs.wormhole.com/wormhole/explore-wormhole/tokenomics",
+    "https://token.unlocks.app/wormhole"
+  ],
+  "caveats": "Precise monthly unlock tranches are NOT fully disclosed in a machine-readable public schedule; the ~35% figure is a best-estimate derived from observed circulating supply growth (CoinGecko history: ~1.8B at TGE Apr-2024 \u2192 ~3.68B Jul-2025 \u2248 +1.88B in ~15 months) and publicly described vesting categories. Treat as \u00b15 percentage points. A precise figure would require the full vesting contract data on-chain (Solana/Ethereum) which is NOT_AVAILABLE_FREE_TIER without a paid indexer."
+}

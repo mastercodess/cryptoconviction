@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": "NOT_AVAILABLE_FREE_TIER",
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "NOT_AVAILABLE_FREE_TIER \u2014 see explanation below.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/dydx-chain",
+    "https://docs.dydx.foundation/dydx-token-migration/dydx-token-migration-overview",
+    "https://dydx.foundation/blog/en/dydx-token-migration",
+    "https://tokenomist.ai/dydx"
+  ]
+}

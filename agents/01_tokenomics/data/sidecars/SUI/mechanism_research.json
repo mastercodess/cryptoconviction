@@ -1,0 +1,26 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": 2.97,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "stakers",
+  "value_accrual_summary": "SUI stakers (validators and delegators) capture gas fees plus inflationary token emissions; there is no burn mechanism, so protocol value accrual depends almost entirely on emission-funded staking rewards rather than fee-driven deflation.",
+  "sources": [
+    "https://docs.sui.io/concepts/tokenomics",
+    "https://docs.sui.io/concepts/tokenomics/gas-in-sui",
+    "https://docs.sui.io/concepts/tokenomics/sui-token",
+    "https://docs.sui.io/concepts/tokenomics/validators-staking",
+    "https://www.coingecko.com/en/coins/sui"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn": "Sui docs explicitly state there is no token burn. Gas fees are distributed to validators/stakers, not burned. Source: https://docs.sui.io/concepts/tokenomics/gas-in-sui",
+    "staking_apr": "~2.97% APR as of mid-2025 per CoinGecko staking data; this figure fluctuates and was NOT_AVAILABLE_FREE_TIER from official Sui docs directly \u2014 CoinGecko aggregates it from on-chain data. Treat as approximate.",
+    "inflation": "Total supply is capped at 10 billion SUI, but a large portion of the supply is still being released from the treasury/reserve over time to fund staking rewards. The Sui tokenomics doc confirms staking rewards come from a combination of gas fees AND storage fund rebates AND token emissions from the reserve. Because emissions dominate over fee revenue at current network scale, staking_emission_inflationary=true.",
+    "fee_distribution": "100% of gas fees go to validators and their delegators (stakers) via the staking reward pool each epoch. There is no treasury cut or LP share. Reference: https://docs.sui.io/concepts/tokenomics/gas-in-sui",
+    "storage_fund": "Sui has a unique 'storage fund' mechanism: users pre-pay storage fees which accumulate in a fund; validators earn a share of storage fund returns each epoch. This is a partial real-yield component, but it is small relative to emission rewards at current TVL/usage levels.",
+    "staking": "SUI uses a delegated proof-of-stake model. Token holders delegate to validators; rewards are paid each epoch (~24 hours). Source: https://docs.sui.io/concepts/tokenomics/validators-staking",
+    "fee_capture": "100% of gas fees go to validators/stakers (no protocol treasury cut, no burn). Source: https://docs.sui.io/concepts/tokenomics/gas-in-sui"
+  }
+}

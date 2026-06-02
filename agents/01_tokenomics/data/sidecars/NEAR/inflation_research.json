@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.045,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "NEAR Protocol targets a fixed 5% annual issuance of total supply, of which ~4.5% goes to validators/stakers and ~0.5% to the protocol treasury; however, roughly 30% of transaction fees are burned, which reduces net inflation meaningfully below the gross 5% target \u2014 at current fee-burn rates the net effective inflation is approximately 4\u20134.5%. The burn mechanism means net inflation trends slightly downward as network usage and fee volume grow over the next 24 months.",
+  "sources": [
+    "https://docs.near.org/concepts/basics/tokens#inflation",
+    "https://near.org/blog/near-protocol-economics",
+    "https://www.coingecko.com/en/coins/near/tokenomics",
+    "https://explorer.near.org"
+  ]
+}

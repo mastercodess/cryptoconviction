@@ -1,0 +1,16 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "Notcoin (NOT) is a pure meme/social token launched via Telegram tap-to-earn with no protocol fee capture, no burn mechanism, no staking yield, and no on-chain revenue routing \u2014 holders accrue no economic value beyond speculative price appreciation.",
+  "sources": [
+    "https://notco.in/",
+    "https://t.me/notcoin",
+    "https://www.coingecko.com/en/coins/notcoin",
+    "https://github.com/ton-community/notcoin-contract"
+  ],
+  "data_quality": "PARTIAL"
+}

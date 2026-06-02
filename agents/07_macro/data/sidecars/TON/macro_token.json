@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "All derivatives metrics (funding rate, open interest) and correlation coefficients require either Coinglass PRO tier, paid API access (Binance/Bybit), or a Bloomberg/TradingView subscription \u2014 none of the specified free-tier sources publish pre-computed 30-day TON correlations or real-time TON perpetual funding data at no cost.",
+  "sources": [
+    "https://www.coinglass.com/ton \u2014 Coinglass public page for TON shows aggregated OI chart visually but does NOT expose numeric OI or funding rate values via free API or scrapable table; premium plan required for CSV/API export.",
+    "https://www.coingecko.com/en/coins/toncoin \u2014 CoinGecko free tier provides price, volume, market cap, but NO correlation coefficients or derivatives data.",
+    "https://defillama.com/chain/TON \u2014 DefiLlama covers TON TVL/DeFi metrics only; no derivatives or correlation data.",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 Market-wide sentiment index only; no asset-specific correlation or funding data.",
+    "https://fred.stlouisfed.org \u2014 Macro/NASDAQ data available but cross-asset correlation computation against TON requires combining with paid price feeds."
+  ]
+}

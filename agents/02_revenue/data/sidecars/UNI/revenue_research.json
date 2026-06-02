@@ -1,0 +1,38 @@
+{
+  "annualized_revenue_usd": 1051000000,
+  "tvl_usd": 4200000000,
+  "p_s_ratio": 14.2,
+  "p_tvl_ratio": 1.78,
+  "real_yield_apr_pct": 0.0,
+  "inflationary_yield_apr_pct": 0.0,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Uniswap volume is event-driven, spiking sharply during broad market rallies, token launch frenzies, and meme-coin cycles (e.g., Q1 2024 and Q1 2025 surges tied to memecoin activity and ETF-driven BTC/ETH rallies).",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "AAVE",
+      "metric": "p_s",
+      "peer_value": 18.5
+    },
+    {
+      "peer_symbol": "CURVE",
+      "metric": "p_s",
+      "peer_value": 6.1
+    },
+    {
+      "peer_symbol": "GMX",
+      "metric": "p_s",
+      "peer_value": 9.3
+    }
+  ],
+  "rationale": "DefiLlama reports Uniswap trailing 30-day fees annualized at approximately $1.05B as of late May 2025, with TVL near $4.2B across all chains; however, 100% of protocol fees currently accrue to LPs \u2014 the UNI token captures zero revenue because the fee switch remains off, making real yield to token holders 0%. The UNI token's market cap (~$7.4B at ~$12.40) divided by annualized LP-fee revenue yields a P/S of ~14x, but this is a vanity metric until governance activates the fee switch. Uniswap v4 launched in Q1 2025 and hooks-driven volume growth is accelerating the fee trajectory.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/uniswap",
+    "https://defillama.com/fees/uniswap",
+    "https://tokenterminal.com/terminal/projects/uniswap",
+    "https://uniswap.org/whitepaper-v3.pdf",
+    "https://gov.uniswap.org/t/fee-switch-discussion/21261",
+    "https://coingecko.com/en/coins/uniswap",
+    "https://messari.io/report/uniswap-q1-2025-review"
+  ]
+}

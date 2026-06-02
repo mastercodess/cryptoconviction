@@ -1,0 +1,25 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": true,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "split",
+  "value_accrual_summary": "A 0.2% on-chain tax on LUNC transfers burns 50% of collected fees and distributes the remaining 50% to stakers/validators, but staking yield is also supplemented by inflationary block rewards (community-pool and oracle rewards funded by new emission), making real fee-only yield negligible given extremely low on-chain volume; economic value capture is therefore minimal and largely theoretical.",
+  "sources": [
+    "https://station.terra.money/",
+    "https://github.com/classic-terra/core/blob/main/x/treasury/keeper/keeper.go",
+    "https://github.com/classic-terra/core/blob/main/x/tax2gas/README.md",
+    "https://classic-agora.terra.money/t/proposal-to-enable-the-1-2-burn-tax/8191",
+    "https://classic-agora.terra.money/t/commonwealth-proposal-5234-reduce-burn-tax-to-0-2/10369",
+    "https://docs.terra.money/develop/module-specifications/spec-treasury/",
+    "https://coingecko.com/en/coins/terra-luna"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn_rate": "50% of the 0.2% on-chain transfer tax is burned; the other 50% goes to the community pool / staking rewards. Governance proposal #11111 (Commonwealth) set the tax to 0.2% in 2023.",
+    "staking_apr": "Live APR is NOT_AVAILABLE_FREE_TIER from a single authoritative free source; CoinGecko does not publish it directly, and Station wallet figures fluctuate. Estimates seen on community dashboards range 3\u20138% annualized but are dominated by inflationary oracle/block rewards, not fee revenue.",
+    "inflation": "Terra Classic retains Cosmos-SDK inflationary minting for block rewards (mint module). The mint module was NOT disabled post-collapse; annual inflation is governed by the mint module parameters and remains non-zero, confirming staking_emission_inflationary=true.",
+    "volume_caveat": "On-chain LUNC transfer volume is very low post-collapse, so actual fee burn and fee-to-staker distributions are economically small despite the mechanism existing in code."
+  }
+}

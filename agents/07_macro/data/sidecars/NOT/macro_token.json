@@ -1,0 +1,14 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "All derivatives metrics (funding rate, open interest) and correlation coefficients for NOT require either Coinglass Pro/paid tier, exchange API keys, or custom statistical computation against NASDAQ time-series \u2014 none of which are accessible via the free public endpoints available at this time.",
+  "sources": [
+    "https://www.coinglass.com/en/coins/notcoin \u2014 funding rate & OI pages exist but real-time granular data requires login/paid tier",
+    "https://www.coingecko.com/en/coins/notcoin \u2014 price/volume data available but 30d correlation coefficients vs BTC/ETH/NASDAQ are NOT pre-computed and served freely",
+    "https://alternative.me/ \u2014 does not cover NOT derivatives or correlation data",
+    "https://fred.stlouisfed.org/ \u2014 NASDAQ index data available but pairing/computing correlation with NOT requires custom calculation not served as a free endpoint"
+  ]
+}

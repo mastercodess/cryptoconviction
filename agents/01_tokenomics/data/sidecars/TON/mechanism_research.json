@@ -1,0 +1,28 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": true,
+  "staking_apr_pct": 3.5,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "stakers",
+  "value_accrual_summary": "Validators and nominators capture the majority of economic value via inflationary block rewards (~0.6% annual emission) plus a small share of transaction fees, while a portion of fees is burned reducing supply marginally; net value accrual is dominated by emission rather than fee revenue at current network scale.",
+  "sources": [
+    "https://docs.ton.org/learn/tvm-whitepaper/tvm-whitepaper",
+    "https://docs.ton.org/participate/network-maintenance/staking-incentives",
+    "https://ton.org/docs/learn/economics/basics",
+    "https://github.com/ton-blockchain/ton",
+    "https://www.coingecko.com/en/coins/toncoin",
+    "https://tonscan.org/validation"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn_detail": "TON's fee mechanism splits transaction fees: a portion is burned (destroyed) and a portion goes to validators. The exact split is governed by config parameters on-chain (ConfigParam 20/21). Per TON docs, storage fees and a share of gas fees are burned.",
+    "staking_apr_detail": "CoinGecko and TonScan report staking APR in the ~3\u20134% range (approximately 3.5% as of mid-2025). This yield is funded primarily by new token issuance (block rewards), not by fee revenue redistribution, hence inflationary=true.",
+    "emission_detail": "TON's annual inflation is capped at ~0.6% of total supply per the whitepaper, but validator rewards are drawn from this emission pool. Fee burn partially offsets inflation but does not eliminate it.",
+    "exact_burn_pct": "NOT_AVAILABLE_FREE_TIER \u2014 the precise real-time fee-burn fraction requires parsing on-chain config params 20/21 and masterchain blocks; not surfaced in a single free API endpoint.",
+    "staking_apr_source": "~3-4% APR is visible on tonscan.org and coingecko staking pages; the ~3.5% figure is approximate as of mid-2025. Exact real-time rate is NOT_AVAILABLE_FREE_TIER without a live API call.",
+    "inflation_detail": "TON has a target annual inflation of ~0.6% (minted as validator rewards). Because fee revenue at current volumes is small relative to minted rewards, yield is predominantly inflationary. The burn partially offsets but does not fully neutralize emission at current fee volumes.",
+    "nominator_pools": "Liquid staking via TON Whales and TON Foundation nominator pools allows non-validator participation; yield passes through the same inflationary reward mechanism.",
+    "staking_apr_pct_caveat": "Value is approximate; live figure should be verified at https://tonscan.org/validation"
+  }
+}

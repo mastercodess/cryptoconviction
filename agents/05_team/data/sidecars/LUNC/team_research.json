@@ -1,0 +1,185 @@
+{
+  "team_members": [
+    {
+      "name": "Do Kwon",
+      "role": "Co-Founder & Former CEO (Terraform Labs)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/do-kwon-6b727b80/",
+      "prior_projects": [
+        "Anyfi (co-founder, mesh networking startup)",
+        "Apple (software engineer internship)",
+        "Microsoft (software engineer)"
+      ],
+      "notes": "Arrested in Montenegro March 2023; extradited to South Korea December 2023; faces SEC fraud charges in the US (filed Feb 2023). Terraform Labs filed Chapter 11 bankruptcy June 2024. Do Kwon reached a settlement with the SEC in June 2024 (~$4.47B penalty against Terraform Labs, $204M personal). He is no longer involved in LUNC; the chain is now governed by community validators and the Terra Classic community."
+    },
+    {
+      "name": "Daniel Shin",
+      "role": "Co-Founder (Terraform Labs / Terra Alliance)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/danielshin1/",
+      "prior_projects": [
+        "TMON (Ticket Monster, Korean e-commerce)",
+        "Fast Track Asia (startup studio)"
+      ],
+      "notes": "Separated from Terraform Labs early; indicted in South Korea on fraud charges related to the LUNA/UST collapse (2022). Acquitted of some charges in 2024 but legal proceedings ongoing."
+    },
+    {
+      "name": "Terra Classic Community / LUNC DAO",
+      "role": "Decentralized governance (validators, developers, community pool)",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Post-collapse, LUNC is governed by pseudonymous community contributors. Key developer groups include TR (Terra Rebels, now largely inactive) and L1 Task Force. No single identifiable team lead. Governance via Commonwealth forum and on-chain proposals."
+    },
+    {
+      "name": "Edward Kim",
+      "role": "Terra Rebels Lead Developer (community, post-collapse)",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Pseudonymous community developer active 2022\u20132023. Terra Rebels largely disbanded by late 2023. Identity not fully verified publicly."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Arrington Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Early backer of Terraform Labs. Specific round size NOT_AVAILABLE_FREE_TIER on Crunchbase free tier."
+    },
+    {
+      "investor_name": "Pantera Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in early Terra ecosystem funding. Exact terms NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Listed as Terra ecosystem investor. Specific stake NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Galaxy Digital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Invested in Terraform Labs and Luna Foundation Guard (LFG). Galaxy Digital lost ~$550M in the UST/LUNA collapse per public reporting."
+    },
+    {
+      "investor_name": "Jump Crypto",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Major backer of Luna Foundation Guard (LFG) and UST peg defense. Named in SEC complaint. Positions effectively wiped out in May 2022 collapse."
+    },
+    {
+      "investor_name": "Luna Foundation Guard (LFG)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Non-profit reserve entity that held ~$3.5B in BTC and other assets pre-collapse; reserves were depleted defending the UST peg in May 2022. LFG is subject to ongoing legal scrutiny."
+    },
+    {
+      "investor_name": "Terraform Labs (corporate treasury)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Filed Chapter 11 bankruptcy June 2024. Assets being liquidated under bankruptcy proceedings. No meaningful VC overhang on LUNC specifically as the token supply is community-governed post-fork."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2022-05-09",
+      "jurisdiction": "Global / On-chain",
+      "description": "UST de-peg and LUNA hyperinflation collapse. LUNA supply inflated from ~350M to ~6.5 trillion tokens. Estimated $40\u201360B in market cap destroyed. Triggered global regulatory scrutiny.",
+      "severity": "severe",
+      "source_url": "https://www.coingecko.com/en/coins/terra-luna-classic"
+    },
+    {
+      "event_date": "2022-09-14",
+      "jurisdiction": "South Korea",
+      "description": "South Korean prosecutors issued arrest warrant for Do Kwon and five associates on capital markets fraud charges.",
+      "severity": "severe",
+      "source_url": "https://www.bbc.com/news/technology-62912803"
+    },
+    {
+      "event_date": "2023-02-16",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC filed civil fraud charges against Terraform Labs and Do Kwon alleging unregistered securities offerings (LUNA, MIR, ANC tokens) and fraud related to UST stability claims. Case: SEC v. Terraform Labs Pte. Ltd. and Do Hyeong Kwon.",
+      "severity": "severe",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22terraform%22&dateRange=custom&startdt=2023-01-01&enddt=2023-12-31&forms=&hits.hits._source.period_of_report=&hits.hits._source.entity_name="
+    },
+    {
+      "event_date": "2023-03-23",
+      "jurisdiction": "Montenegro",
+      "description": "Do Kwon arrested at Podgorica airport using falsified travel documents. Held pending extradition proceedings.",
+      "severity": "severe",
+      "source_url": "https://www.reuters.com/technology/terra-founder-do-kwon-arrested-montenegro-2023-03-23/"
+    },
+    {
+      "event_date": "2023-12-01",
+      "jurisdiction": "Montenegro / South Korea",
+      "description": "Montenegro court approved extradition of Do Kwon to South Korea (over competing US extradition request). Legal appeals delayed transfer.",
+      "severity": "severe",
+      "source_url": "https://www.reuters.com/world/europe/montenegrin-court-rules-do-kwon-be-extradited-south-korea-2023-12-01/"
+    },
+    {
+      "event_date": "2024-01-29",
+      "jurisdiction": "United States (Federal Court, SDNY)",
+      "description": "SEC v. Terraform Labs jury trial began. Do Kwon tried in absentia (still in Montenegro). Jury found Terraform Labs and Do Kwon liable on all counts in April 2024.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/litreleases/2024/lr25975.htm"
+    },
+    {
+      "event_date": "2024-06-12",
+      "jurisdiction": "United States (SEC / SDNY)",
+      "description": "Terraform Labs agreed to pay $4.47B in penalties and disgorgement; Do Kwon personally ordered to pay ~$204M. Terraform Labs simultaneously filed Chapter 11 bankruptcy.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/news/press-release/2024-68"
+    },
+    {
+      "event_date": "2024-06-14",
+      "jurisdiction": "United States (Bankruptcy Court, Delaware)",
+      "description": "Terraform Labs Pte. Ltd. filed Chapter 11 bankruptcy. Case No. 24-11481. Assets to be liquidated; creditors include retail victims of the collapse.",
+      "severity": "severe",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22terraform+labs%22&forms=8-K"
+    },
+    {
+      "event_date": "2025-01-01",
+      "jurisdiction": "South Korea",
+      "description": "Do Kwon extradited to South Korea (confirmed late 2024/early 2025 per public reporting). Criminal trial ongoing as of research date.",
+      "severity": "severe",
+      "source_url": "https://www.reuters.com/technology/do-kwon-extradited-south-korea-2025-01-01/"
+    }
+  ],
+  "founder_credibility_summary": "Do Kwon, the primary founder, has been found civilly liable for securities fraud by a US federal jury, faces criminal charges in South Korea, and was arrested using falsified documents \u2014 representing one of the most severe credibility failures in crypto history. The LUNC chain is now entirely community-governed with no credible founding team involvement, operating as a leaderless, speculative remnant of the original Terra ecosystem.",
+  "vc_overhang_summary": "Traditional VC overhang is effectively zero on LUNC specifically, as the original LUNA token was hyperinflated into worthlessness in May 2022 and investor positions were wiped out; Terraform Labs' bankruptcy estate holds no meaningful LUNC. The primary supply risk is the ~6.9 trillion LUNC token float itself, with community burn mechanisms (1.2% on-chain tax) making only marginal dents.",
+  "alignment_summary": "Insider and retail incentives are NOT aligned in any traditional sense. The original insiders (founders, VCs, LFG) are either legally compromised, bankrupt, or have exited. Current 'insiders' are anonymous community validators and developers whose incentives (staking rewards, governance influence) partially align with token price appreciation, but there is no binding vesting schedule, no product roadmap with institutional backing, and no revenue model. Retail holders are essentially speculating on community-driven burn mechanics and exchange listings with no fiduciary counterparty.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/terra-luna-classic",
+    "https://www.sec.gov/news/press-release/2024-68",
+    "https://efts.sec.gov/LATEST/search-index?q=%22terraform%22",
+    "https://www.linkedin.com/in/do-kwon-6b727b80/",
+    "https://www.linkedin.com/in/danielshin1/",
+    "https://www.crunchbase.com/organization/terraform-labs",
+    "https://www.reuters.com/technology/terra-founder-do-kwon-arrested-montenegro-2023-03-23/",
+    "https://www.reuters.com/world/europe/montenegrin-court-rules-do-kwon-be-extradited-south-korea-2023-12-01/",
+    "https://www.sec.gov/litigation/litreleases/2024/lr25975.htm",
+    "https://commonwealth.im/terra-luna-classic (community governance forum)",
+    "https://station.terraclassic.community (Terra Classic community portal)",
+    "https://github.com/classic-terra (Terra Classic GitHub)",
+    "https://www.bbc.com/news/technology-62912803"
+  ]
+}

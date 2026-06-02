@@ -1,0 +1,14 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Granular derivatives data (funding rates, open interest) for MORPHO and 30-day cross-asset correlations are not surfaced on Coinglass public pages, CoinGecko free tier, or any other listed free source at sufficient resolution for MORPHO specifically \u2014 MORPHO perpetual markets exist on Binance/Bybit but their funding/OI APIs require authenticated or paid endpoints; correlation calculations would require downloading 30 days of OHLCV for MORPHO, BTC, ETH, and NASDAQ and computing Pearson coefficients, which is a derived calculation not published ready-made on any free source.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/morpho \u2014 price history available but no correlation outputs",
+    "https://www.coinglass.com/en/currencies/MORPHO \u2014 public page exists but funding rate / OI data not rendered without login as of 2025",
+    "https://defillama.com/protocol/morpho \u2014 TVL data only, no derivatives metrics",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market-wide sentiment only, not asset-specific"
+  ]
+}

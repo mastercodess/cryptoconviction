@@ -1,0 +1,17 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": true,
+  "staking_apr_pct": 8.5,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "split",
+  "value_accrual_summary": "70% of transaction fees go to the smart contract developer (or are burned if no contract is involved / no rebate address set), 30% go to the protocol treasury; validators/stakers earn rewards funded almost entirely by inflationary token emission (~5% annual inflation) rather than fee revenue, so staking yield is effectively inflationary with negligible real-fee component.",
+  "sources": [
+    "https://docs.near.org/concepts/basics/tokens#transaction-fees",
+    "https://docs.near.org/concepts/basics/validators",
+    "https://near.org/blog/near-protocol-economics/",
+    "https://nomicon.io/Economics/",
+    "https://coingecko.com/en/coins/near"
+  ],
+  "data_quality": "PARTIAL"
+}

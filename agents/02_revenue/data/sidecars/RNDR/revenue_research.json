@@ -1,0 +1,37 @@
+{
+  "annualized_revenue_usd": null,
+  "tvl_usd": null,
+  "p_s_ratio": null,
+  "p_tvl_ratio": null,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "DECELERATING",
+  "seasonality": "Render Network usage is event-driven, spiking around major AI/GPU demand surges and crypto bull cycles rather than following consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "AKT",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "HNT",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "FIL",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "Render Network is a decentralized GPU rendering marketplace, not a DeFi protocol \u2014 it has no TVL, no liquidity pools, and no on-chain revenue accrual in the DeFi sense. Protocol 'revenue' (RNDR tokens burned or paid to node operators) is NOT reported in USD terms on any free public source (DefiLlama does not list RNDR; Token Terminal free tier does not cover it). CoinGecko shows RNDR market cap ~$1.4B as of mid-2025, but without a verifiable annualized revenue figure from free sources, P/S cannot be computed. Node operator payments are denominated in RNDR tokens and figures are not aggregated publicly in USD on any free tier source.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/render-token",
+    "https://defillama.com/protocol/render-network",
+    "https://tokenterminal.com/terminal/projects/render-network",
+    "https://rendernetwork.com/",
+    "https://medium.com/render-token",
+    "https://alternative.me/crypto/fear-and-greed-index/"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "current_annualized_rate": 0.0,
+  "method": "disclosed_target",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "flat",
+  "rationale": "ORDI is a BRC-20 token deployed on Bitcoin via the Ordinals protocol with a hard-capped total supply of 21,000,000 tokens, all of which were minted at inception (fair-launch mint completed in March 2023). There is no emission schedule, no team allocation vesting, and no protocol mechanism to create new ORDI tokens; the circulating supply equals the max supply, making the inflation rate permanently zero.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/ordi",
+    "https://ordinals.com",
+    "https://domo-2.gitbook.io/brc-20-experiment/"
+  ]
+}

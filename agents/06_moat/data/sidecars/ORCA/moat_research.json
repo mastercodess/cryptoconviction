@@ -1,0 +1,77 @@
+{
+  "competitors": [
+    {
+      "competitor": "Raydium (RAY)",
+      "market_cap_usd": 480000000,
+      "tvl_usd": 1020000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Jupiter (JUP)",
+      "market_cap_usd": 1100000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Meteora",
+      "market_cap_usd": null,
+      "tvl_usd": 620000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Lifinity",
+      "market_cap_usd": null,
+      "tvl_usd": 18000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Uniswap (UNI) [cross-chain reference]",
+      "market_cap_usd": 4800000000,
+      "tvl_usd": 4100000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    }
+  ],
+  "market_share": [
+    {
+      "category": "Solana DEX TVL",
+      "share_pct": 0.12,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "Solana DEX Volume (7d, among AMMs excl. aggregators)",
+      "share_pct": 0.18,
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": "NOT_AVAILABLE_FREE_TIER \u2014 Electric Capital's 2024 Developer Report provides Solana ecosystem totals (~2,200 monthly active devs on Solana) but does not break out per-protocol figures for Orca specifically on the free public report PDF.",
+    "full_time_devs": "NOT_AVAILABLE_FREE_TIER \u2014 same reason as above; Orca's GitHub (github.com/orca-so) shows ~8 public repos with recent commits from a small core team estimated at 10\u201320 engineers, but exact headcount not disclosed.",
+    "repos_building_on": 42,
+    "integrations_count": 35
+  },
+  "switching_cost_analysis": "Switching costs are LOW for end-users (Jupiter aggregator routes around Orca automatically) but MODERATE for integrators who have directly embedded Orca's Whirlpools SDK, since migrating concentrated-liquidity pool logic requires re-auditing smart-contract integrations and rewriting position-management code.",
+  "category_rank": 3,
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "Orca pioneered concentrated liquidity (Whirlpools) on Solana and retains a strong SDK/integration moat with 35+ documented integrations (wallets, aggregators, yield protocols), but Raydium's CLMM launch and Meteora's dynamic pools have eroded Orca's TVL lead, pushing it to roughly #3 on Solana by TVL as of mid-2025. Regulatory risk is similar to all non-custodial Solana DEXes \u2014 no KYC, permissionless pools \u2014 placing it in the same SEC/CFTC grey zone as peers. Developer mindshare on Solana is growing (Electric Capital 2024 report cites Solana as the #2 ecosystem by monthly active devs), which benefits Orca but also intensifies competition.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Solana \u2014 Solana TVL breakdown by protocol, accessed 2025-07-10",
+    "https://defillama.com/dexs/chains/Solana \u2014 Solana DEX volume rankings, accessed 2025-07-10",
+    "https://defillama.com/protocol/orca \u2014 Orca TVL history, accessed 2025-07-10",
+    "https://defillama.com/protocol/raydium \u2014 Raydium TVL, accessed 2025-07-10",
+    "https://defillama.com/protocol/meteora \u2014 Meteora TVL, accessed 2025-07-10",
+    "https://github.com/orca-so \u2014 Orca public repositories and commit activity, accessed 2025-07-10",
+    "https://www.orca.so/whitepaper \u2014 Orca Whirlpools documentation and integration list",
+    "https://dev.orca.so \u2014 Orca developer docs listing SDK integrations",
+    "https://electriccapital.com/developer-report \u2014 Electric Capital 2024 Developer Report (free PDF), Solana ecosystem figures",
+    "https://coingecko.com/en/coins/orca \u2014 ORCA market cap (note: ORCA market cap ~$60\u201380M range; JUP/RAY from same source)",
+    "https://coingecko.com/en/coins/raydium",
+    "https://coingecko.com/en/coins/jupiter-exchange-solana",
+    "NOTE: DAU and 30d revenue figures for individual Solana DEXes are NOT_AVAILABLE_FREE_TIER on Token Terminal (paywalled) and DefiLlama does not expose per-protocol DAU on free tier."
+  ]
+}

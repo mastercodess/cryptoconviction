@@ -1,0 +1,130 @@
+{
+  "audits": [
+    {
+      "auditor": "Spearbit / Cantina",
+      "audit_date": "2023-08-01",
+      "scope": "Morpho Blue core protocol (singleton lending primitive, IRM, oracles)",
+      "severity_high": 0,
+      "severity_med": 1,
+      "severity_low": 3,
+      "summary": "Morpho Blue received a clean audit with no high-severity findings; one medium related to rounding direction edge cases was acknowledged and mitigated.",
+      "url": "https://github.com/morpho-org/morpho-blue/blob/main/audits/2023-08-spearbit.pdf"
+    },
+    {
+      "auditor": "Cantina (competitive audit / Cantina crowd)",
+      "audit_date": "2023-10-01",
+      "scope": "Morpho Blue full codebase including periphery contracts",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 4,
+      "summary": "Competitive Cantina audit found no critical or high issues; medium findings related to oracle price staleness handling and share inflation edge cases.",
+      "url": "https://github.com/morpho-org/morpho-blue/blob/main/audits/2023-10-cantina.pdf"
+    },
+    {
+      "auditor": "Trail of Bits",
+      "audit_date": "2023-07-01",
+      "scope": "Morpho Blue smart contracts \u2014 core lending logic and math libraries",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 5,
+      "summary": "Trail of Bits found no high/critical issues; medium findings addressed rounding and precision in interest accrual math.",
+      "url": "https://github.com/morpho-org/morpho-blue/blob/main/audits/2023-07-trail-of-bits.pdf"
+    },
+    {
+      "auditor": "OpenZeppelin",
+      "audit_date": "2022-06-01",
+      "scope": "Morpho-Compound and Morpho-Aave v2 (legacy optimizer layer)",
+      "severity_high": 1,
+      "severity_med": 3,
+      "severity_low": 6,
+      "summary": "OpenZeppelin audited the original Morpho optimizer layer; one high finding (access control on reward distribution) was fixed before deployment.",
+      "url": "https://blog.openzeppelin.com/morpho-audit"
+    },
+    {
+      "auditor": "Omniscia",
+      "audit_date": "2022-05-01",
+      "scope": "Morpho-Aave optimizer contracts",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 4,
+      "summary": "Omniscia found no critical or high issues in the Morpho-Aave optimizer; medium findings were remediated prior to launch.",
+      "url": "https://omniscia.io/reports/morpho-aave-optimizer"
+    },
+    {
+      "auditor": "Spearbit",
+      "audit_date": "2024-03-01",
+      "scope": "MetaMorpho vaults (ERC-4626 vault layer built on Morpho Blue)",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 3,
+      "summary": "MetaMorpho vault contracts audited with no high/critical findings; mediums addressed curator role privilege escalation edge cases.",
+      "url": "https://github.com/morpho-org/metamorpho/blob/main/audits/2024-03-spearbit.pdf"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": null,
+      "severity": "minor",
+      "description": "No material exploits or hacks of Morpho Blue or MetaMorpho have been recorded on Rekt.news or DefiLlama hacks tracker as of mid-2025. Morpho does not appear in the Rekt leaderboard.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://rekt.news/leaderboard/"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/morpho-org/morpho-blue",
+    "contributors_count": 18,
+    "weekly_commits_avg": 4.5,
+    "last_commit_date": "2025-07-01",
+    "upgrade_mechanism": "immutable",
+    "multisig_signers": 5,
+    "multisig_threshold": 3,
+    "bug_bounty_max_usd": 555000,
+    "bug_bounty_platform": "Immunefi"
+  },
+  "dependencies": [
+    {
+      "dep_type": "oracle",
+      "provider": "Chainlink (primary) + Uniswap v3 TWAP (secondary)",
+      "risk_level": "medium",
+      "notes": "Morpho Blue is oracle-agnostic \u2014 market creators choose their own oracle. Chainlink is most commonly used in production markets. Oracle risk is market-specific; a bad oracle in one market cannot affect others due to isolated market design. Stale price or manipulation risk exists per-market."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Morpho ChainlinkOracle / MorphoChainlinkOracleV2",
+      "risk_level": "low",
+      "notes": "Morpho Labs ships audited oracle adapter contracts (ChainlinkOracleV2) that wrap Chainlink feeds with staleness checks; these are open-source and audited."
+    },
+    {
+      "dep_type": "l1",
+      "provider": "Ethereum Mainnet",
+      "risk_level": "low",
+      "notes": "Core deployment is on Ethereum L1; inherits Ethereum consensus security. Also deployed on Base (L2)."
+    },
+    {
+      "dep_type": "l2_sequencer",
+      "provider": "Base (Coinbase) / OP Stack sequencer",
+      "risk_level": "medium",
+      "notes": "Morpho is deployed on Base; sequencer downtime or censorship could delay liquidations, creating bad debt risk. Chainlink L2 sequencer uptime feeds are recommended but market-creator-dependent."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "N/A \u2014 no cross-chain bridge dependency in core protocol",
+      "risk_level": "low",
+      "notes": "Morpho Blue is deployed independently per chain; no native cross-chain bridge is part of the core protocol, eliminating bridge hack vectors at the protocol level."
+    }
+  ],
+  "rationale": "Morpho Blue's immutable singleton architecture is a deliberate security-first design choice \u2014 once deployed, core contracts cannot be upgraded, eliminating governance-attack and proxy-upgrade vectors that have plagued other DeFi protocols. The protocol has accumulated 6+ audits from top-tier firms (Spearbit, Trail of Bits, OpenZeppelin, Cantina) with zero critical findings on the Blue core, and has no recorded exploits on Rekt.news or DefiLlama's hacks tracker as of mid-2025. The primary residual risks are oracle quality (market-creator-chosen, isolated per market) and the MetaMorpho vault layer which introduces curator/role complexity and is newer/less battle-tested than the core.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://github.com/morpho-org/morpho-blue",
+    "https://github.com/morpho-org/morpho-blue/tree/main/audits",
+    "https://github.com/morpho-org/metamorpho",
+    "https://github.com/morpho-org/metamorpho/tree/main/audits",
+    "https://docs.morpho.org/morpho-blue/concepts/security",
+    "https://immunefi.com/bounty/morpho/",
+    "https://rekt.news/leaderboard/",
+    "https://defillama.com/hacks",
+    "https://blog.openzeppelin.com/morpho-audit",
+    "https://omniscia.io/reports/morpho-aave-optimizer"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "events": [
+    {
+      "unlock_date": "2019-10-30",
+      "category": "public_emission",
+      "tokens_unlocked": 1320000000,
+      "pct_of_supply": 0.6286,
+      "source_url": "https://stacks.org/stacks-token-overview",
+      "notes": "Genesis block: ~1.32B STX distributed at mainnet launch (Oct 2019) covering public sale, SAFT investors, foundation, and team allocations per the Blockstack token offering."
+    },
+    {
+      "unlock_date": "2019-10-30",
+      "category": "team_unlock",
+      "tokens_unlocked": 177000000,
+      "pct_of_supply": 0.0843,
+      "source_url": "https://blog.stacks.co/stacks-token-offering",
+      "notes": "Team/employee allocation at genesis, subject to 3-year vesting with 1-year cliff beginning from mainnet launch (Oct 2019)."
+    },
+    {
+      "unlock_date": "2019-10-30",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 252000000,
+      "pct_of_supply": 0.12,
+      "source_url": "https://blog.stacks.co/stacks-token-offering",
+      "notes": "Blockstack PBC / Stacks Foundation treasury allocation at genesis for ecosystem development and grants."
+    },
+    {
+      "unlock_date": "2020-10-30",
+      "category": "team_unlock",
+      "tokens_unlocked": 59000000,
+      "pct_of_supply": 0.0281,
+      "source_url": "https://blog.stacks.co/stacks-token-offering",
+      "notes": "Estimated first cliff unlock for team/employee tokens after 1-year cliff from Oct 2019 mainnet; remaining vest monthly through Oct 2022."
+    },
+    {
+      "unlock_date": "2021-10-30",
+      "category": "investor_unlock",
+      "tokens_unlocked": 65000000,
+      "pct_of_supply": 0.031,
+      "source_url": "https://blog.stacks.co/stacks-token-offering",
+      "notes": "SAFT (2017) investor lockup fully expired approximately 2 years post-mainnet; exact tranche dates varied by investor agreement."
+    },
+    {
+      "unlock_date": "2022-10-30",
+      "category": "team_unlock",
+      "tokens_unlocked": 118000000,
+      "pct_of_supply": 0.0562,
+      "source_url": "https://blog.stacks.co/stacks-token-offering",
+      "notes": "Final team vesting tranche completes ~3 years post-mainnet (Oct 2022); all early team lockups considered fully vested after this date."
+    },
+    {
+      "unlock_date": "2050-01-01",
+      "category": "public_emission",
+      "tokens_unlocked": 882000000,
+      "pct_of_supply": 0.42,
+      "source_url": "https://docs.stacks.co/concepts/stacks-101/stacks-blockchain#stx-token",
+      "notes": "Remaining ~882M STX emitted gradually as mining rewards anchored to Bitcoin blocks over ~30 years until ~2050 hard cap of ~1.818B total STX is reached."
+    }
+  ],
+  "summary": "Stacks (STX) launched with a genesis supply of ~1.32B tokens in October 2019, with team and investor lockups that fully vested by approximately October 2022 \u2014 meaning discrete cliff/vest unlock pressure is now largely historical. The ongoing 'unlock' is a protocol-level mining emission (~882M STX remaining) distributed gradually to miners and Stackers anchored to Bitcoin block production over roughly 30 years toward a hard cap of ~1.818B STX, creating modest, predictable inflation rather than sudden unlock events. There are no known large upcoming scheduled cliff unlocks as of mid-2025.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Exact per-tranche SAFT investor unlock dates and individual allocations are NOT_AVAILABLE_FREE_TIER \u2014 the full investor lockup table was in private agreements not publicly disclosed in granular form. 2) tokenunlocks.app does not appear to have a detailed live Stacks unlock schedule on its free public tier as of this research. 3) The Stacks Foundation's own treasury vesting/spending schedule post-2022 is not publicly itemized with specific unlock dates. 4) Team token figures are estimates derived from the 2019 Reg A+ offering circular (SEC filing) and Blockstack blog posts; precise monthly vest amounts per employee were not public. 5) The Nakamoto upgrade (2024) and sBTC launch may have introduced new foundation/ecosystem token programs not yet fully documented in free public sources."
+}

@@ -1,0 +1,34 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "ORDI trading volume on centralized exchanges (primarily Binance and OKX) has historically shown signs of inflated activity during inscription hype cycles in 2023-2024; current organic demand signals are difficult to verify without paid on-chain tooling, but CoinGecko's trust score for top ORDI markets is moderate, suggesting some concern remains.",
+  "rationale": "ORDI is a BRC-20 token on Bitcoin, meaning granular on-chain metrics (DAU, wallet cohorts, exchange flow USD values) are not freely surfaced by standard EVM explorers or DefiLlama, which does not track BRC-20 TVL for ORDI specifically. CoinGecko (coingecko.com/en/coins/ordi) shows ORDI trading near $5.50\u2013$6.50 range as of mid-July 2025, down sharply from its all-time high of ~$96 in December 2023. Coinglass public pages do not provide ORDI-specific exchange net-flow USD breakdowns on the free tier. Dune Analytics has community dashboards for BRC-20 activity (e.g., dune.com/dgtl_assets/bitcoin-ordinals) but granular ORDI-specific DAU and cohort data require queries that are either paywalled or not maintained with current data as of this date.",
+  "data_quality": "UNAVAILABLE",
+  "sources": [
+    "https://www.coingecko.com/en/coins/ordi",
+    "https://defillama.com/chain/Bitcoin",
+    "https://dune.com/dgtl_assets/bitcoin-ordinals",
+    "https://www.coinglass.com/currencies/ORDI",
+    "https://ordinals.com"
+  ]
+}

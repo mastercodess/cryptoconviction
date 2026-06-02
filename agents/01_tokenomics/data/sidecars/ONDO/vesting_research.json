@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "unlock_date": "2024-01-18",
+      "category": "airdrop",
+      "tokens_unlocked": 188700000,
+      "pct_of_supply": 0.01887,
+      "source_url": "https://blog.ondo.finance/ondo-token-distribution/",
+      "notes": "TGE airdrop to early community/protocol users at launch on January 18, 2024."
+    },
+    {
+      "unlock_date": "2024-01-18",
+      "category": "public_emission",
+      "tokens_unlocked": 1776000000,
+      "pct_of_supply": 0.1776,
+      "source_url": "https://blog.ondo.finance/ondo-token-distribution/",
+      "notes": "Ecosystem/community growth allocation made liquid at TGE (released gradually for ecosystem incentives, liquidity, and grants)."
+    },
+    {
+      "unlock_date": "2025-01-18",
+      "category": "investor_unlock",
+      "tokens_unlocked": 1939000000,
+      "pct_of_supply": 0.1939,
+      "source_url": "https://blog.ondo.finance/ondo-token-distribution/",
+      "notes": "1-year cliff ends for private sale / seed investors (~19.39% of supply); linear vesting begins after this date over subsequent months."
+    },
+    {
+      "unlock_date": "2025-01-18",
+      "category": "team_unlock",
+      "tokens_unlocked": 3300000000,
+      "pct_of_supply": 0.33,
+      "source_url": "https://blog.ondo.finance/ondo-token-distribution/",
+      "notes": "1-year cliff ends for team, advisors, and company allocation (~33% of supply); linear vesting begins after this date over 18\u201336 months."
+    },
+    {
+      "unlock_date": "2025-01-18",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 5260000000,
+      "pct_of_supply": 0.526,
+      "source_url": "https://blog.ondo.finance/ondo-token-distribution/",
+      "notes": "Cliff end date for protocol development / DAO treasury tokens; these vest linearly and are not all immediately liquid \u2014 released over multi-year schedule."
+    }
+  ],
+  "summary": "ONDO launched on January 18, 2024 with ~18.76% of the 10B token supply circulating at TGE (airdrop + ecosystem). The dominant unlock pressure arrives at the 1-year anniversary (January 18, 2025), when 1-year cliffs expire for investors (~19.4%), the team/advisors/company (~33%), and protocol development/treasury (~52.6%) allocations \u2014 though these then vest linearly over 18\u201336 months rather than dumping all at once. The largest sustained sell pressure window is therefore 2025\u20132027 as insider and treasury tokens gradually enter circulation.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Ondo's official blog post (https://blog.ondo.finance/ondo-token-distribution/) gives allocation percentages and cliff/vesting structures but does NOT publish a granular month-by-month unlock table, so exact per-month token quantities post-cliff are estimated from percentages rather than confirmed figures. 2) tokenunlocks.app shows a dashboard for ONDO but the detailed per-event breakdown requires a paid subscription \u2014 only the high-level chart is visible on the free tier. 3) The exact linear vesting end dates for each tranche (team vs. investors) differ slightly per tranche and are NOT_AVAILABLE_FREE_TIER with precision \u2014 the blog states 'up to 4 years' for some tranches. 4) Any subsequent changes to vesting schedules (e.g., governance votes to accelerate or lock further) would not be captured here. Always verify against the latest Ondo governance forum and on-chain vesting contracts on Etherscan."
+}

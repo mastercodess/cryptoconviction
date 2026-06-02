@@ -1,0 +1,87 @@
+{
+  "events": [
+    {
+      "unlock_date": "2021-08-03",
+      "category": "airdrop",
+      "tokens_unlocked": 75000000,
+      "pct_of_supply": 0.075,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "Initial retroactive mining airdrop allocation (7.5% of supply) made claimable at launch; actual claim pace spread over 18 months."
+    },
+    {
+      "unlock_date": "2021-08-03",
+      "category": "public_emission",
+      "tokens_unlocked": 25000000,
+      "pct_of_supply": 0.025,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "Liquidity provider rewards pool (2.5% of supply) began emitting at launch over 5 years via epoch-based distribution."
+    },
+    {
+      "unlock_date": "2021-08-03",
+      "category": "staking_emission",
+      "tokens_unlocked": 25000000,
+      "pct_of_supply": 0.025,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "Safety module staking rewards (2.5% of supply) began emitting at launch over 5 years."
+    },
+    {
+      "unlock_date": "2021-08-03",
+      "category": "public_emission",
+      "tokens_unlocked": 383562500,
+      "pct_of_supply": 0.3836,
+      "source_url": "https://docs.dydx.community/dydx-governance/start-here/dydx-allocations",
+      "notes": "Trading rewards allocation (38.36% of supply) began emitting at launch over 5 years in 28-day epochs; not a single unlock event but continuous emission."
+    },
+    {
+      "unlock_date": "2023-02-03",
+      "category": "investor_unlock",
+      "tokens_unlocked": 144139050,
+      "pct_of_supply": 0.1441,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "18-month cliff expiry for investor allocations (27.73% total to investors); tokens begin linear vesting monthly after this date through Aug 2026."
+    },
+    {
+      "unlock_date": "2023-02-03",
+      "category": "team_unlock",
+      "tokens_unlocked": 152174000,
+      "pct_of_supply": 0.1522,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "18-month cliff expiry for employees & consultants (15.27% of supply); linear monthly vesting begins after cliff through Aug 2026."
+    },
+    {
+      "unlock_date": "2023-02-03",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 27333333,
+      "pct_of_supply": 0.0273,
+      "source_url": "https://docs.dydx.community/dydx-governance/start-here/dydx-allocations",
+      "notes": "dYdX Foundation treasury (11.67% total) begins unlocking after 18-month cliff; remainder vests linearly over following 36 months."
+    },
+    {
+      "unlock_date": "2023-02-03",
+      "category": "other",
+      "tokens_unlocked": 6250000,
+      "pct_of_supply": 0.00625,
+      "source_url": "https://docs.dydx.community/dydx-governance/start-here/dydx-allocations",
+      "notes": "Future employees & consultants reserve (0.625% tranche) cliff unlock begins Feb 2023 with linear vesting thereafter."
+    },
+    {
+      "unlock_date": "2026-08-03",
+      "category": "investor_unlock",
+      "tokens_unlocked": 133060950,
+      "pct_of_supply": 0.1331,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "Final investor vesting tranche fully unlocked; all investor tokens fully distributed by this date (5 years post-launch)."
+    },
+    {
+      "unlock_date": "2026-08-03",
+      "category": "team_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": 0.0,
+      "source_url": "https://dydx.foundation/blog/en/dydx-token",
+      "notes": "All employee/consultant tokens fully vested by Aug 2026 (5-year schedule complete); this marks end of structured vesting."
+    }
+  ],
+  "summary": "DYDX launched in August 2021 with ~8% circulating supply; the dominant unlock pressure came on February 3, 2023 (18 months post-launch) when the cliff expired for investors (~27.73% of supply) and the team/employees (~15.27% of supply), releasing those cohorts into monthly linear vesting through August 2026. Continuous emissions for trading rewards (~38.36%), liquidity provider rewards (2.5%), and staking rewards (2.5%) have been dripping out since launch in 28-day epochs, creating steady but moderate sell pressure. By August 2026 the full 1 billion token supply will be fully distributed, with the heaviest discrete unlock pressure having already passed in early-to-mid 2023.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Exact per-epoch emission amounts for trading/LP/staking rewards require on-chain calculation or a paid data provider \u2014 epoch-by-epoch breakdowns are NOT_AVAILABLE_FREE_TIER on tokenunlocks.app without a subscription. 2) The dYdX v4 chain migration (Oct 2023) introduced wethDYDX and new staking/validator reward mechanics; precise new-chain emission schedules require reading the dYdX Chain docs and may differ from v3 figures cited here. 3) Investor sub-allocation breakdown (a16z, Paradigm, etc.) and exact per-investor cliff/vest dates are not publicly disclosed at granular level. 4) Some figures (e.g. exact Feb 2023 cliff unlock token counts) are derived from published percentage allocations \u00d7 1B supply and may differ slightly from on-chain actuals due to rounding or governance changes. Source URLs for tokenunlocks.app free tier: https://tokenunlocks.app/dydx \u2014 detailed schedule requires login."
+}

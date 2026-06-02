@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "unlock_date": "2024-11-29",
+      "category": "airdrop",
+      "tokens_unlocked": 310000000,
+      "pct_of_supply": 0.31,
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+      "notes": "Genesis airdrop distributed at TGE to early users of the Hyperliquid platform (no vesting, immediate)."
+    },
+    {
+      "unlock_date": "2024-11-29",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 60000000,
+      "pct_of_supply": 0.06,
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+      "notes": "Hyper Foundation allocation received at TGE; specific internal vesting schedule not publicly disclosed."
+    },
+    {
+      "unlock_date": "2024-11-29",
+      "category": "public_emission",
+      "tokens_unlocked": 388888888,
+      "pct_of_supply": 0.38888,
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+      "notes": "Future community rewards / Assistance Fund held for ongoing emissions; exact emission rate schedule not fully published."
+    },
+    {
+      "unlock_date": "2025-11-29",
+      "category": "team_unlock",
+      "tokens_unlocked": 238888888,
+      "pct_of_supply": 0.23888,
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+      "notes": "Team allocation locked for at least 1 year from TGE (earliest unlock ~Nov 2025); granular vesting cliff/linear schedule beyond the 1-year minimum lock has NOT been publicly disclosed in free sources \u2014 date shown is the earliest possible unlock, not a confirmed full-release date."
+    },
+    {
+      "unlock_date": "2024-11-29",
+      "category": "other",
+      "tokens_unlocked": 3000000,
+      "pct_of_supply": 0.003,
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+      "notes": "Community grants allocation (~0.3%); distribution timeline not specified."
+    }
+  ],
+  "summary": "Hyperliquid (HYPE) launched in November 2024 with no VC or outside investor allocations \u2014 a notable structural difference from most tokens. The largest immediate unlock pressure came from the 31% genesis airdrop distributed at TGE. The most significant future unlock risk is the ~23.9% team allocation, which is locked for at least one year (earliest: ~November 2025), but the precise vesting curve beyond that minimum lock has not been publicly disclosed in granular form. The ~38.9% community/emissions pool represents slow, ongoing sell pressure over time rather than a cliff event.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) The team vesting schedule beyond the stated '1-year minimum lock' has not been published in a granular cliff+linear format in any free public source (tokenunlocks.app, Messari free tier, CryptoRank free tier) as of the research date \u2014 the 2025-11-29 date is the EARLIEST possible team unlock, not a confirmed schedule. 2) The Assistance Fund / future emissions release cadence is not broken into dated tranches in public docs. 3) tokenunlocks.app may have more granular data behind a paywall. 4) No investor tranches exist (Hyperliquid was self-funded), so investor_unlock category is absent by design."
+}

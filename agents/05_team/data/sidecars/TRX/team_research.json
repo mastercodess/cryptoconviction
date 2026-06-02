@@ -1,0 +1,156 @@
+{
+  "team_members": [
+    {
+      "name": "Justin Sun (\u5b59\u5b87\u6668)",
+      "role": "Founder & Former CEO",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/justinsuntron/",
+      "prior_projects": [
+        "Ripple (XRP) \u2014 Greater China Representative",
+        "Peiwo App (Chinese voice social app, ~10M users)",
+        "BitTorrent (acquired via Tron Foundation, 2018)"
+      ],
+      "notes": "Graduated Peking University History; MA from Penn (Wharton-adjacent program). Named Grenada's Ambassador/Permanent Representative to WTO (2021-present). Stepped back from day-to-day Tron CEO role in Dec 2021 citing diplomatic duties. Highly promotional social media presence; multiple controversies including SEC charges (see legal_events). Currently also associated with HTX (formerly Huobi) as advisor/owner."
+    },
+    {
+      "name": "Zhaojun He",
+      "role": "Co-founder / Early Core Developer",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no confirmed public LinkedIn found",
+      "prior_projects": [
+        "Yunbi Exchange (early Chinese crypto exchange)"
+      ],
+      "notes": "Low public profile post-launch; largely absent from current Tron communications."
+    },
+    {
+      "name": "Lucien Chen",
+      "role": "Co-founder / Early Technical Lead",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no confirmed public LinkedIn found",
+      "prior_projects": [
+        "Alibaba (engineering background cited in early docs)"
+      ],
+      "notes": "Stepped back from public role early in project history. Limited verifiable current information."
+    },
+    {
+      "name": "Marcus Zhao",
+      "role": "CTO (post-2021 restructuring)",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Mentioned in some Tron Foundation communications but minimal independent verifiable public profile. Identity not fully doxxed in free public sources."
+    },
+    {
+      "name": "Sam Elfarra",
+      "role": "Community Spokesperson / PR (TRON DAO)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no confirmed URL found in free search",
+      "prior_projects": [],
+      "notes": "Active public-facing representative for TRON DAO in 2022-2024 media. Limited background detail publicly available."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "ICO Public Sale Participants",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": 0.4,
+      "unlock_status": "fully_vested",
+      "notes": "~40% of initial TRX supply sold in ICO (June\u2013Aug 2017). Raised ~$70M USD equivalent. Fully distributed."
+    },
+    {
+      "investor_name": "Tron Foundation / Justin Sun & Team",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": 0.35,
+      "unlock_status": "fully_vested",
+      "notes": "~35% of genesis supply allocated to founding team and foundation per original whitepaper. Original 4-year vesting schedule (2017-2021) has elapsed. Considered fully vested by 2021. Exact current wallet holdings NOT_AVAILABLE_FREE_TIER with precision, though on-chain analysis by third parties (e.g., Arkham) suggests large TRX holdings remain with Sun-linked addresses."
+    },
+    {
+      "investor_name": "Private/Angel Round Investors (Chinese crypto ecosystem)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": 0.25,
+      "unlock_status": "fully_vested",
+      "notes": "~25% allocated to private investors pre-ICO. Specific named institutional investors NOT fully disclosed in free public sources. Crunchbase Tron page (https://www.crunchbase.com/organization/tron-3) lists minimal structured funding data. All original lock-ups have elapsed."
+    },
+    {
+      "investor_name": "Binance Labs",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Binance received TRX as part of IEO/listing relationship and early ecosystem support. Exact stake NOT_AVAILABLE_FREE_TIER. Binance has publicly reduced or redistributed holdings over time."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-03-22",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC filed civil charges against Justin Sun and Tron Foundation (plus celebrities Lindsey Lohan, Jake Paul, Ne-Yo, Akon, Soulja Boy, Austin Mahone, DeAndre Cortez Way) alleging: (1) unregistered offer/sale of TRX and BTT securities; (2) market manipulation via wash trading ($7.6B+ in coordinated wash trades on US exchanges); (3) unlawful touting by paid celebrities without disclosure. SEC complaint filed in SDNY.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-59.pdf"
+    },
+    {
+      "event_date": "2023-03-22",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "SEC EDGAR filing reference: Case No. 1:23-cv-02433 (S.D.N.Y.). Searchable on EDGAR full-text search for 'Tron' and 'Justin Sun'. Justin Sun has not settled as of knowledge cutoff; litigation ongoing.",
+      "severity": "severe",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Justin+Sun%22&dateRange=custom&startdt=2023-01-01&enddt=2024-12-31&forms=&hits.hits._source=period_of_report"
+    },
+    {
+      "event_date": "2024-03-25",
+      "jurisdiction": "United States (SEC)",
+      "description": "Several celebrity co-defendants (Lindsay Lohan, Jake Paul, Ne-Yo, Akon, Soulja Boy, Austin Mahone) settled with SEC for amounts ranging from ~$30K to ~$1.26M without admitting wrongdoing. Justin Sun and Tron Foundation did NOT settle; case continues.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/news/press-release/2024-31"
+    },
+    {
+      "event_date": "2018-06-01",
+      "jurisdiction": "China (regulatory environment)",
+      "description": "Tron Foundation relocated legal domicile to Singapore following China's 2017 ICO ban. Chinese nationals' participation in TRX trading remains restricted under PBoC/CSRC rules. Not a direct enforcement action against Tron but a material regulatory constraint.",
+      "severity": "moderate",
+      "source_url": "https://tron.network/static/doc/white_paper_v_2_0.pdf"
+    },
+    {
+      "event_date": "2021-10-01",
+      "jurisdiction": "United States (FinCEN / OFAC context)",
+      "description": "USDT on Tron (TRC-20) flagged repeatedly in OFAC sanctions enforcement actions against illicit actors (e.g., Hamas financing, North Korean laundering). Tron network itself not sanctioned, but Tether/Tron combination cited in multiple Treasury enforcement contexts as high-risk channel. Tron Foundation has faced reputational pressure to implement blacklisting.",
+      "severity": "moderate",
+      "source_url": "https://home.treasury.gov/news/press-releases/jy1816"
+    },
+    {
+      "event_date": "2022-11-01",
+      "jurisdiction": "Multiple / HTX (Huobi)",
+      "description": "Justin Sun's acquisition of controlling interest in Huobi (rebranded HTX) raised conflict-of-interest concerns. HTX subsequently experienced significant withdrawals and financial stress in 2023. Not a direct Tron legal event but materially affects Sun's credibility and potential conflicts with TRX ecosystem.",
+      "severity": "minor",
+      "source_url": "https://www.bloomberg.com/news/articles/2022-10-11/huobi-crypto-exchange-sold-to-about-team-linked-to-justin-sun"
+    },
+    {
+      "event_date": "2019-07-25",
+      "jurisdiction": "United States (FTC / publicity)",
+      "description": "Justin Sun cancelled a $4.57M charity lunch with Warren Buffett at the last minute (citing kidney stones), later rescheduled. While not a legal enforcement event, the episode drew significant regulatory and media scrutiny and contributed to early credibility concerns.",
+      "severity": "minor",
+      "source_url": "https://www.coindesk.com/markets/2019/07/25/justin-sun-cancels-warren-buffett-lunch-citing-kidney-stones/"
+    }
+  ],
+  "founder_credibility_summary": "Justin Sun is fully doxxed and has a verifiable (if controversial) track record including a Ripple China role and the BitTorrent acquisition, but faces an active SEC civil lawsuit alleging securities fraud and $7.6B+ in wash trading, which represents a severe unresolved legal overhang. His simultaneous roles as Grenada's WTO ambassador, HTX owner, and Tron promoter create significant conflict-of-interest concerns that materially reduce institutional credibility.",
+  "vc_overhang_summary": "All original token lock-ups from the 2017 ICO and private rounds have fully elapsed (vesting completed by ~2021), meaning there is no near-term scheduled cliff unlock pressure from early investors. However, the Tron Foundation and Sun-linked wallets are believed to hold very large undisclosed TRX positions that could represent significant latent sell pressure; exact quantities are NOT_AVAILABLE_FREE_TIER without paid on-chain analytics.",
+  "alignment_summary": "Insider and retail incentives are WEAKLY ALIGNED at best. The founding team's tokens are fully unlocked, removing vesting-based alignment mechanisms. Justin Sun's multi-entity conflicts (HTX, diplomatic role, USDD stablecoin, BitTorrent) create scenarios where actions benefiting one entity may harm TRX holders. The SEC's wash-trading allegations, if proven, would indicate historical active misalignment. The network does generate real utility (USDT-TRC20 is the dominant stablecoin transfer rail globally by volume), which provides some organic demand floor independent of insider behavior, but governance is highly centralized around Sun-affiliated Super Representatives.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-59.pdf",
+    "https://www.sec.gov/news/press-release/2024-31",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Justin+Sun%22+%22Tron%22",
+    "https://www.crunchbase.com/organization/tron-3",
+    "https://tron.network/static/doc/white_paper_v_2_0.pdf",
+    "https://trondao.org/blog/",
+    "https://home.treasury.gov/news/press-releases/jy1816",
+    "https://www.linkedin.com/in/justinsuntron/",
+    "https://www.bloomberg.com/news/articles/2022-10-11/huobi-crypto-exchange-sold-to-about-team-linked-to-justin-sun",
+    "https://www.coindesk.com/markets/2019/07/25/justin-sun-cancels-warren-buffett-lunch-citing-kidney-stones/",
+    "https://defillama.com/chain/Tron",
+    "https://coingecko.com/en/coins/tron",
+    "https://tronscan.org/ (on-chain supply/distribution data)"
+  ]
+}

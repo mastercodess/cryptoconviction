@@ -1,0 +1,36 @@
+{
+  "annualized_revenue_usd": null,
+  "tvl_usd": null,
+  "p_s_ratio": null,
+  "p_tvl_ratio": null,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "STEADY",
+  "seasonality": "XRP transaction volume is event-driven, spiking around Ripple legal developments (SEC lawsuit milestones), exchange listings, and macro crypto bull cycles rather than consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "XLM",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "ALGO",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "SOL",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "XRP is the native asset of the XRP Ledger (XRPL), a layer-1 payment-focused blockchain. Transaction fees on XRPL are burned (not distributed to token holders or a protocol treasury), averaging roughly 0.00001 XRP per transaction; with ~1\u20132 million daily transactions the annualized fee burn is on the order of a few thousand USD equivalent \u2014 economically negligible and not 'revenue' in any conventional protocol sense. DefiLlama does list XRPL TVL (approximately $50\u201380M in on-chain DEX/AMM liquidity as of mid-2025), but Ripple the company's revenue (from XRP sales and ODL corridors, reported at ~$285M in Q1 2024 per Ripple's own disclosures) accrues to a private corporation, not to XRP token holders, making P/S and yield metrics inapplicable to the token itself. Because there is no staking mechanism, no fee distribution to holders, and no on-chain treasury, real yield and inflationary yield are both null.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/XRPL",
+    "https://xrpl.org/transaction-cost.html",
+    "https://ripple.com/insights/ripple-releases-q1-2024-xrp-markets-report/",
+    "https://xrpscan.com/",
+    "https://www.coingecko.com/en/coins/xrp"
+  ]
+}

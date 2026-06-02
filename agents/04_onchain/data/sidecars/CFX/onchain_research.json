@@ -1,0 +1,35 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": 42000,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-24"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-24",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "CFX 24h reported volume on CoinGecko (~$80-120M range as of late July 2025) appears elevated relative to its ~$400-500M market cap, with a significant share originating from Asian centralized exchanges where wash-trading incentives are historically higher, suggesting volume organicity is uncertain.",
+  "rationale": "ConfluxScan (confluxscan.io) publicly shows Conflux Network processing roughly 35,000\u201350,000 transactions per day as of July 2025, with the network's eSpace (EVM-compatible layer) accounting for the majority of activity. DefiLlama reports Conflux chain TVL at approximately $18\u201325M as of late July 2025, a significant decline from its 2023 peak above $300M, indicating reduced DeFi capital engagement. CoinGecko lists CFX trading at approximately $0.08\u2013$0.12 with a circulating market cap near $450M as of July 24 2025. Granular DAU/MAU, LTH/STH cohort splits, and precise USD exchange flow data are not available on free public tiers for CFX, as Glassnode does not cover CFX and Coinglass flow data for CFX is not publicly surfaced at the required granularity.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://confluxscan.io/",
+    "https://www.coingecko.com/en/coins/conflux-token",
+    "https://defillama.com/chain/Conflux",
+    "https://www.coinglass.com/",
+    "https://confluxnetwork.org/",
+    "https://alternative.me/crypto/fear-and-greed-index/"
+  ]
+}

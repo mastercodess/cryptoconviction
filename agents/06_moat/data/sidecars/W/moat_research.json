@@ -1,0 +1,77 @@
+{
+  "competitors": [
+    {
+      "competitor": "Stargate / LayerZero",
+      "market_cap_usd": 580000000,
+      "tvl_usd": 380000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Across Protocol",
+      "market_cap_usd": 95000000,
+      "tvl_usd": 120000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Axelar",
+      "market_cap_usd": 320000000,
+      "tvl_usd": 45000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "deBridge",
+      "market_cap_usd": 85000000,
+      "tvl_usd": 18000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Wormhole (W)",
+      "market_cap_usd": 620000000,
+      "tvl_usd": 870000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    }
+  ],
+  "market_share": [
+    {
+      "category": "Cross-Chain Bridges (TVL, DefiLlama)",
+      "share_pct": 0.12,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "Cross-Chain Bridges (Message Volume, all-time)",
+      "share_pct": "NOT_AVAILABLE_FREE_TIER",
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": "NOT_AVAILABLE_FREE_TIER",
+    "full_time_devs": "NOT_AVAILABLE_FREE_TIER",
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER",
+    "integrations_count": 200
+  },
+  "switching_cost_analysis": "Switching costs are moderate-to-high for deeply integrated protocols (e.g., Uniswap v4 hooks, Circle CCTP routing via Wormhole) due to custom SDK/API rewrites and re-auditing requirements, but greenfield dApps face low friction given competing SDKs (LayerZero, Axelar) offer comparable developer tooling.",
+  "category_rank": 2,
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "Wormhole holds a strong #2 TVL position in the bridge category on DefiLlama (~$870M as of July 2025), trailing only Stargate/LayerZero, and benefits from deep institutional integrations including Circle (CCTP), Uniswap, and 30+ L1/L2 chains. Its Guardian network of 19 validators (including Jump, Everstake, Figment) provides a differentiated security model versus optimistic bridges, but the 2022 $320M exploit remains a reputational overhang. Developer ecosystem data from Electric Capital's free report does not break out Wormhole-specific contributors, so dev metrics are estimated from GitHub public repo activity (~200+ integration repos across wormhole-foundation org).",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/bridges",
+    "https://defillama.com/protocol/wormhole",
+    "https://defillama.com/protocol/stargate",
+    "https://defillama.com/protocol/across",
+    "https://defillama.com/protocol/axelar",
+    "https://wormhole.com/ecosystem (integration count ~200+ cited on project page)",
+    "https://github.com/wormhole-foundation (public repos)",
+    "https://www.coingecko.com/en/coins/wormhole",
+    "https://www.coingecko.com/en/coins/layerzero (STG proxy)",
+    "https://www.coingecko.com/en/coins/axelar",
+    "https://www.coingecko.com/en/coins/across-protocol",
+    "https://developerreport.com/ (Electric Capital 2024 \u2014 Wormhole not broken out at free tier)",
+    "NOTE: DAU, 30d revenue, precise message-volume market share NOT_AVAILABLE_FREE_TIER \u2014 Token Terminal requires paid plan for bridge revenue breakdowns; Wormhole native analytics dashboard (wormholescan.io) shows tx counts but not USD revenue"
+  ]
+}

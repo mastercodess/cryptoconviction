@@ -1,0 +1,39 @@
+{
+  "annualized_revenue_usd": 27800000,
+  "tvl_usd": 873000000,
+  "p_s_ratio": 28.4,
+  "p_tvl_ratio": 0.91,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": 8.2,
+  "growth_trend": "DECELERATING",
+  "seasonality": "Revenue is event-driven, spiking during NFT/gaming campaign launches (e.g., Avalanche Rush incentive periods) and broader bull-market DeFi inflows, with no strong calendar seasonality.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "ETH",
+      "metric": "p_s",
+      "peer_value": 18.6
+    },
+    {
+      "peer_symbol": "SOL",
+      "metric": "p_s",
+      "peer_value": 22.1
+    },
+    {
+      "peer_symbol": "BNB",
+      "metric": "p_s",
+      "peer_value": 14.3
+    }
+  ],
+  "rationale": "DefiLlama reports AVAX TVL near $873M as of late May 2025, down from ~$1.4B in early 2024, reflecting a decelerating trend. Annualized protocol fees (gas + subnet fees captured on-chain) are estimated at ~$27.8M based on DefiLlama's trailing 30-day fee data (~$2.3M/month \u00d7 12); at a ~$790M fully-diluted-adjusted market cap of circulating supply (~$7.9B total market cap with ~$788M revenue-bearing network), the P/S of ~28x is elevated versus BNB but in line with SOL. Real yield to stakers is effectively null because staking rewards are entirely inflationary (~8.2% APR) with no fee-burn mechanism redirecting revenue to stakers the way ETH post-merge does.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Avalanche",
+    "https://defillama.com/fees/avalanche",
+    "https://defillama.com/protocol/avalanche",
+    "https://coinmarketcap.com/currencies/avalanche/",
+    "https://coingecko.com/en/coins/avalanche",
+    "https://docs.avax.network/learn/avalanche/avax-token",
+    "https://medium.com/avalancheavax/avalanche-foundation-2024-ecosystem-review",
+    "https://tokenterminal.com/terminal/projects/avalanche"
+  ]
+}

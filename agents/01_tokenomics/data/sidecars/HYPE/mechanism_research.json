@@ -1,0 +1,30 @@
+{
+  "has_burn": true,
+  "burn_source": "buyback",
+  "has_staking": true,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "protocol",
+  "value_accrual_summary": "Trading fees on Hyperliquid flow into the Assistance Fund (AF), which uses USDC revenue to buy back and burn HYPE tokens on the open market, while a separate HLP vault distributes a share of trading fees to liquidity providers; HYPE stakers secure the network via the HyperBFT validator set and earn a portion of gas/sequencing fees, but staking APR figures are not publicly disclosed in free-tier sources.",
+  "sources": [
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/hyperliquid-l1/staking",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/hyperliquid-l1/assistance-fund"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn_mechanism": "The Assistance Fund (AF) receives a portion of spot and perp trading fees denominated in USDC. The AF uses these USDC proceeds to purchase HYPE on the open market and burn the acquired tokens, creating deflationary pressure. This is a fee-funded buyback-and-burn, NOT an inflationary emission.",
+    "staking": "HYPE holders can delegate/stake to validators running HyperBFT consensus. Stakers earn a share of network gas fees. The protocol docs confirm staking rewards come from real fee revenue, not new token issuance, so staking_emission_inflationary=false. However, a precise live APR % is NOT_AVAILABLE_FREE_TIER \u2014 the docs do not publish a fixed rate and no free aggregator (CoinGecko, DefiLlama staking page) shows a verified figure as of knowledge cutoff.",
+    "staking_emission_inflationary": "Staking rewards are sourced from real gas/transaction fees, not from new token emission per the tokenomics docs. The genesis allocation is fixed; there is no described inflationary emission schedule for staking rewards.",
+    "hlp_vault": "The HLP (Hyperliquid Provider) vault is a separate mechanism where LPs deposit USDC and earn a share of trading fees + liquidation profits. This is LP yield, not HYPE staking yield.",
+    "staking_apr_pct": "NOT_AVAILABLE_FREE_TIER \u2014 live APR is not published in the official docs or any free public dashboard as of the knowledge cutoff.",
+    "burn_detail": "The Assistance Fund (AF) receives a portion of spot and perp trading fees and uses them to buy HYPE on the open market and burn it. This is a fee-funded buyback-burn, not a scheduled emission burn.",
+    "staking_detail": "HYPE can be staked to validators to secure the HyperBFT L1. Stakers earn a share of network gas fees paid in HYPE. There is NO inflationary emission to stakers \u2014 yield is sourced from real protocol gas revenue. However, the exact current APR is NOT_AVAILABLE_FREE_TIER: the docs do not publish a live APR figure and on-chain staking reward data requires querying the Hyperliquid L1 RPC directly.",
+    "staking_apr_pct_note": "NOT_AVAILABLE_FREE_TIER \u2014 live APR requires on-chain RPC query or a dashboard not yet publicly indexed by CoinGecko/DefiLlama staking endpoints as of knowledge cutoff.",
+    "hlp_note": "HLP (Hyperliquidity Provider) vault is separate from HYPE staking; it distributes trading fees/PnL to vault depositors, not to HYPE holders per se.",
+    "fee_capture_target_note": "Set to 'protocol' because the primary fee destination is the AF (protocol-controlled), which then executes buyback-burn. Stakers and LPs also receive portions, making this technically a 'split', but the dominant and most novel mechanism is the AF buyback-burn.",
+    "total_supply": "1,000,000,000 HYPE; 31.0% allocated to community rewards/emissions over time, but staking rewards specifically are sourced from fees per docs, not from this community bucket.",
+    "caveat": "Gitbook docs are the primary free source; no on-chain audit report for the AF burn contract was publicly linked as of knowledge cutoff. Code is partially open on GitHub (https://github.com/hyperliquid-dex) but the L1 validator code is not fully open-source."
+  }
+}

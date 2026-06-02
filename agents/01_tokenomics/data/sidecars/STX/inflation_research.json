@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.0178,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-06-15",
+  "trend_next_24m": "flat",
+  "rationale": "Stacks entered its Year 5\u20138 epoch (~Jan 2025) where block rewards halved from 1,000 to 500 STX/block; at ~144 Bitcoin-anchored blocks/day this yields ~26.28M STX/year against a circulating supply of ~1.475B STX, giving ~1.78% annualized inflation. The rate stays flat for the next 24 months until the next halving (~Jan 2029), so no meaningful change is expected within the 24-month window.",
+  "sources": [
+    "https://docs.stacks.co/stacks-101/stx",
+    "https://www.coingecko.com/en/coins/stacks",
+    "https://stacks.org/stx",
+    "https://github.com/stacksgov/sips/blob/main/sips/sip-001/sip-001-burn-election.md"
+  ]
+}

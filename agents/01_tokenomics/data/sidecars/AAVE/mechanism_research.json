@@ -1,0 +1,25 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": 4.87,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "split",
+  "value_accrual_summary": "AAVE stakers in the Safety Module earn yield that is primarily funded by inflationary AAVE token emissions (not protocol revenue), while a portion of protocol interest-rate fees flow to the DAO treasury via the Ecosystem Reserve and Collector contract, with no direct fee distribution to stakers or token burns as of mid-2025; Aave v3 'Umbrella' upgrade (in governance) proposes shifting Safety Module rewards toward real fee-backed yield.",
+  "sources": [
+    "https://docs.aave.com/tokenomics/",
+    "https://docs.aave.com/developers/periphery-contracts/staking",
+    "https://governance.aave.com/t/arfc-aave-safety-module-upgrade-umbrella/20800",
+    "https://governance.aave.com/t/arc-aavenomics-quarterly-upgrade/5353",
+    "https://github.com/aave/aave-stk-v1-5",
+    "https://app.aave.com/staking/",
+    "https://governance.aave.com/t/temp-check-aave-protocol-treasury-management/14400"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "staking_apr_source": "Live APR pulled from app.aave.com/staking as of research date; fluctuates daily. The ~4-5% figure is denominated in AAVE tokens emitted from the Ecosystem Reserve, NOT from protocol fee revenue.",
+    "fee_flow": "Protocol fees (reserve factor from borrowers) accumulate in the Aave Collector contract controlled by governance. They are NOT automatically distributed to AAVE stakers; governance votes on their use (grants, buybacks, treasury). No burn mechanism exists in deployed contracts.",
+    "umbrella_caveat": "Aave Governance Proposal 'Umbrella' (ARFC posted 2024-Q4) proposes replacing the current Safety Module with a fee-backed slashing/reward system. Not yet live as of mid-2025.",
+    "inflationary_flag_rationale": "StakedAave (stkAAVE) rewards are sourced from the AaveEcosystemReserve (pre-minted AAVE supply allocation), making them dilutive emissions, not cash-flow yield."
+  }
+}

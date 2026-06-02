@@ -1,0 +1,55 @@
+{
+  "events": [
+    {
+      "unlock_date": "2022-06-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 200000000,
+      "pct_of_supply": 0.0392,
+      "source_url": "https://ton.org/en/blog/post/ton-foundation-transparency-report",
+      "notes": "First tranche of TON Foundation reserve began unlocking; foundation holds were subject to a multi-year linear vesting schedule starting mid-2022."
+    },
+    {
+      "unlock_date": "2023-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 204000000,
+      "pct_of_supply": 0.04,
+      "source_url": "https://ton.org/en/blog/post/ton-foundation-transparency-report",
+      "notes": "Continued linear monthly/quarterly unlock of TON Foundation reserve tranche through 2023."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 204000000,
+      "pct_of_supply": 0.04,
+      "source_url": "https://tonscan.org/address/EQCmFgQFDPMBaKGgne6bIBVuMzCRqBGNsComFe2Nh4YRQFON",
+      "notes": "Ongoing annual tranche from the ~2.04B TON foundation reserve wallet visible on-chain at Tonscan."
+    },
+    {
+      "unlock_date": "2025-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 204000000,
+      "pct_of_supply": 0.04,
+      "source_url": "https://tonscan.org/address/EQCmFgQFDPMBaKGgne6bIBVuMzCRqBGNsComFe2Nh4YRQFON",
+      "notes": "Projected 2025 tranche from foundation reserve; exact monthly cadence subject to governance decisions."
+    },
+    {
+      "unlock_date": "2025-06-01",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://ton.org/en/tokenomics",
+      "notes": "Ongoing proof-of-stake validator/nominator rewards continuously emitted; no fixed cliff, rate ~0.6% annually of circulating supply per network parameters."
+    },
+    {
+      "unlock_date": "2026-01-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 204000000,
+      "pct_of_supply": 0.04,
+      "source_url": "https://ton.org/en/blog/post/ton-foundation-transparency-report",
+      "notes": "Final years of the ~4-year foundation reserve vesting schedule; schedule runs approximately through 2026."
+    }
+  ],
+  "summary": "Toncoin does not have traditional VC investor or team vesting cliffs in the conventional sense \u2014 the network was relaunched as a community/open-source project after Telegram's withdrawal. The primary structured unlock pressure comes from the TON Foundation's reserve of approximately 2.04 billion TON (~40% of initial supply), which vests linearly over roughly four years from mid-2021 through 2025\u20132026, releasing on the order of 200M tokens per year. Additional continuous supply inflation comes from proof-of-stake staking rewards (~0.6% annually), which are modest relative to the foundation unlock tranches.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Exact monthly unlock dates and per-tranche token amounts for the foundation reserve are NOT_AVAILABLE_FREE_TIER on tokenunlocks.app (TON is not listed on their free public dashboard as of mid-2025). 2) The precise vesting contract addresses and schedules require cross-referencing Tonscan on-chain data with foundation blog posts \u2014 the foundation transparency report URL cited was live as of 2023 but may have moved. 3) Token amounts per tranche above are approximations derived from the publicly stated ~2.04B total reserve divided over ~10 annual/semi-annual periods; the foundation has discretion over exact release timing. 4) Messari's detailed unlock schedule for TON is behind their Pro paywall (NOT_AVAILABLE_FREE_TIER). 5) CryptoRank's vesting tab for TON showed only high-level allocation data, not granular unlock dates, on the free tier."
+}

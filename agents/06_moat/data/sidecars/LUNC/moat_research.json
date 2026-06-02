@@ -1,0 +1,81 @@
+{
+  "competitors": [
+    {
+      "competitor": "Ethereum",
+      "market_cap_usd": 289000000000,
+      "tvl_usd": 47000000000,
+      "dau": 400000,
+      "revenue_30d_usd": 120000000
+    },
+    {
+      "competitor": "BNB Chain",
+      "market_cap_usd": 85000000000,
+      "tvl_usd": 4800000000,
+      "dau": 1200000,
+      "revenue_30d_usd": 45000000
+    },
+    {
+      "competitor": "Solana",
+      "market_cap_usd": 68000000000,
+      "tvl_usd": 4200000000,
+      "dau": 1100000,
+      "revenue_30d_usd": 38000000
+    },
+    {
+      "competitor": "Avalanche",
+      "market_cap_usd": 9800000000,
+      "tvl_usd": 820000000,
+      "dau": 85000,
+      "revenue_30d_usd": 3200000
+    },
+    {
+      "competitor": "Cosmos Hub (ATOM)",
+      "market_cap_usd": 2800000000,
+      "tvl_usd": 180000000,
+      "dau": 40000,
+      "revenue_30d_usd": 800000
+    },
+    {
+      "competitor": "Terra Classic (LUNC)",
+      "market_cap_usd": 430000000,
+      "tvl_usd": 18000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    }
+  ],
+  "market_share": [
+    {
+      "category": "Layer-1 TVL share (LUNC vs all L1s tracked by DefiLlama)",
+      "share_pct": 0.0003,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "Layer-1 market cap share (LUNC vs CoinGecko L1 category)",
+      "share_pct": 0.0008,
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": "NOT_AVAILABLE_FREE_TIER \u2014 Electric Capital 2024 Developer Report lists Terra ecosystem but LUNC-specific monthly active dev count is not broken out in the free public summary; Terra (combined Classic+2.0) showed <50 monthly active devs in 2023 report",
+    "full_time_devs": "NOT_AVAILABLE_FREE_TIER \u2014 same report does not publish per-chain full-time counts in free tier; estimated <10 based on GitHub activity on terra-money/classic-core",
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER \u2014 Electric Capital free tier does not expose per-ecosystem repo counts for LUNC specifically",
+    "integrations_count": 12
+  },
+  "switching_cost_analysis": "Switching costs are extremely low for LUNC users and developers because the chain uses standard Cosmos SDK / CosmWasm tooling that is directly portable to Terra 2.0, Osmosis, Injective, or any other IBC-compatible chain, and most surviving dApps have already migrated away post-collapse.",
+  "category_rank": 47,
+  "regulatory_relative_risk": "HIGHER",
+  "rationale": "Terra Classic carries materially higher regulatory risk than most L1 peers because the original UST algorithmic stablecoin collapse triggered SEC enforcement action against Terraform Labs and Do Kwon (SEC v. Terraform Labs, 2023), creating lasting legal overhang on the ecosystem and its token. LUNC's TVL (~$18M) and developer activity are a fraction of top-tier L1s, giving it no meaningful competitive moat in throughput, tooling, liquidity, or brand trust. The community-driven burn mechanism and low token price attract speculative retail interest but do not constitute a durable structural advantage against Cosmos-ecosystem competitors or broader L1 alternatives.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Terra%20Classic \u2014 TVL $18M as of 2025-07-10",
+    "https://www.coingecko.com/en/coins/terra-luna-classic \u2014 LUNC market cap ~$430M",
+    "https://www.coingecko.com/en/categories/layer-1 \u2014 L1 category market caps for competitors",
+    "https://defillama.com/chains \u2014 competitor TVL figures",
+    "https://github.com/terra-money/classic-core \u2014 LUNC core repo, sparse recent commits observable publicly",
+    "https://electriccapital.com/developer-report \u2014 Electric Capital 2024 Developer Report (free public PDF); Terra ecosystem <50 monthly active devs noted in 2023 edition; 2024 update does not break out LUNC separately in free summary",
+    "https://station.terra.money \u2014 integration/dApp list; ~12 active integrations counted",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-32.pdf \u2014 SEC complaint vs Terraform Labs (regulatory risk basis)",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market sentiment context",
+    "NOTE: Token Terminal free tier does NOT cover Terra Classic; DAU and revenue_30d marked NOT_AVAILABLE_FREE_TIER accordingly"
+  ]
+}

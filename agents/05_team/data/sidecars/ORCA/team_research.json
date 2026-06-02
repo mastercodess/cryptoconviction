@@ -1,0 +1,114 @@
+{
+  "team_members": [
+    {
+      "name": "Grace Kwan",
+      "role": "Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/gracekwan/",
+      "prior_projects": [
+        "Google (Software Engineer)",
+        "Various fintech roles"
+      ],
+      "notes": "Publicly identified co-founder. Background in software engineering. Active on Twitter/X as @gracy_kwan. Details confirmed via Orca project blog and community posts."
+    },
+    {
+      "name": "Ori Kwan",
+      "role": "Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Software engineering background"
+      ],
+      "notes": "Co-founder alongside Grace Kwan. Less publicly prominent. LinkedIn profile not readily surfaced on free search. Mentioned in early Orca blog posts and interviews. Relationship to Grace Kwan (siblings) noted in community sources."
+    },
+    {
+      "name": "Additional core team",
+      "role": "Engineering / Protocol",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [],
+      "notes": "Orca's broader team is not fully doxxed publicly. GitHub contributors (github.com/orca-so) show pseudonymous handles. Full team roster not published on official docs as of mid-2025."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Polychain Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Participation confirmed via public announcements and Crunchbase free tier listing. Exact ownership % and unlock schedule NOT_AVAILABLE_FREE_TIER \u2014 not disclosed in public filings."
+    },
+    {
+      "investor_name": "Three Arrows Capital (3AC)",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "3AC was an early backer per community and press sources. 3AC collapsed in June 2022; any ORCA holdings they held were likely liquidated during bankruptcy proceedings. Overhang risk from this investor is largely resolved."
+    },
+    {
+      "investor_name": "Solana Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Listed as strategic backer in ecosystem context. Exact terms NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Placeholder VC",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Reported in secondary sources as participant. Not confirmed via primary disclosure. Treat as PARTIAL confidence."
+    },
+    {
+      "investor_name": "Public / Community Sale",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "ORCA token distributed via community/liquidity mining. No formal public sale (no IEO/IDO confirmed). Circulating supply data available on CoinGecko: https://www.coingecko.com/en/coins/orca"
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "NOT_AVAILABLE_FREE_TIER",
+      "jurisdiction": "United States",
+      "description": "SEC EDGAR full-text search (https://efts.sec.gov/LATEST/search-index?q=%22Orca%22&dateRange=custom&startdt=2021-01-01&enddt=2025-01-01&forms=) returns no filings specifically naming Orca Protocol or Orca DEX as a respondent or registrant. No enforcement actions found on free EDGAR search.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Orca+protocol%22"
+    },
+    {
+      "event_date": "NOT_AVAILABLE_FREE_TIER",
+      "jurisdiction": "Global",
+      "description": "No known regulatory actions, lawsuits, or sanctions identified against Orca (orca.so) via free public sources as of research date (mid-2025). Project operates as a non-custodial DEX on Solana, which reduces direct regulatory surface area compared to centralized exchanges.",
+      "severity": "minor",
+      "source_url": "https://orca.so"
+    },
+    {
+      "event_date": "2022-06-01",
+      "jurisdiction": "Global",
+      "description": "Three Arrows Capital (early Orca investor) collapsed and entered liquidation. While not a legal event against Orca itself, forced liquidation of 3AC's ORCA holdings may have contributed to token price depression in 2022. No direct legal liability to Orca protocol identified.",
+      "severity": "moderate",
+      "source_url": "https://www.coingecko.com/en/coins/orca"
+    }
+  ],
+  "founder_credibility_summary": "Grace Kwan (primary public-facing co-founder) has a verifiable software engineering background including time at Google, lending reasonable technical credibility to the project. The team is partially doxxed, with Grace Kwan being the most publicly identified figure, while other contributors operate under pseudonyms \u2014 a common but non-ideal transparency posture for a DeFi protocol managing significant TVL.",
+  "vc_overhang_summary": "Seed-round investors include Polychain Capital and reportedly Placeholder VC, but exact vesting schedules and ownership percentages are NOT publicly disclosed, making precise overhang quantification impossible from free sources. The collapse of 3AC (a reported early backer) likely resolved one source of potential forced selling, but Polychain and other surviving VCs may still hold unvested or liquid ORCA allocations that represent latent sell pressure.",
+  "alignment_summary": "Alignment between insiders and retail is PARTIALLY present but uncertain. Orca has no formal public token sale, meaning retail acquired tokens primarily via open market or liquidity mining \u2014 reducing the 'cheap insider vs. expensive retail' dynamic. However, undisclosed VC vesting schedules and the lack of a published tokenomics breakdown with cliff/linear unlock dates make it impossible to confirm full alignment. The protocol's fee-sharing and governance mechanisms (via ORCA token) nominally align long-term holders, but without on-chain vesting transparency, retail investors cannot verify insider lock-up commitments.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/orca",
+    "https://orca.so",
+    "https://docs.orca.so",
+    "https://github.com/orca-so",
+    "https://www.crunchbase.com/organization/orca-so",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Orca+protocol%22",
+    "https://www.linkedin.com/in/gracekwan/",
+    "https://medium.com/orca-so (project blog \u2014 archived posts)",
+    "https://twitter.com/orca_so",
+    "https://defillama.com/protocol/orca"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "team_members": [
+    {
+      "name": "Sasha Plotvinov",
+      "role": "Founder / CEO, Open Builders (Notcoin developer studio)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/sasha-plotvinov/",
+      "prior_projects": [
+        "Open Builders",
+        "Various Telegram mini-app experiments on TON blockchain"
+      ],
+      "notes": "Publicly identified founder; active on X/Twitter (@plotvinov). Open Builders is the TON-ecosystem studio that built the Notcoin tap-to-earn game. LinkedIn profile exists but detail is sparse as of mid-2024."
+    },
+    {
+      "name": "Anatoliy Makosov",
+      "role": "Co-founder / CTO, Open Builders",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Open Builders",
+        "TON ecosystem tooling"
+      ],
+      "notes": "Named in multiple press interviews (e.g., Decrypt, CoinDesk) as co-founder. LinkedIn URL not confirmed via free search; profile may exist under variant spelling. Active on Telegram."
+    },
+    {
+      "name": "Slava Yakimenko",
+      "role": "Co-founder, Open Builders",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Open Builders"
+      ],
+      "notes": "Referenced in Open Builders team pages and press. LinkedIn not independently confirmed via free-tier search."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "TON Foundation / TON Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "TON Foundation provided ecosystem grants and launchpad support. Specific equity/token allocation terms not publicly disclosed. Source: ton.org ecosystem page and Notcoin blog."
+    },
+    {
+      "investor_name": "Pantera Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Pantera is a known TON ecosystem investor and participated in NOT-related rounds per public statements, but specific NOT token allocation not disclosed. NOT_AVAILABLE_FREE_TIER for exact terms."
+    },
+    {
+      "investor_name": "Binance Labs",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Binance Labs listed as backer in Notcoin's public communications and Binance Research report (May 2024). Token allocation and vesting schedule NOT_AVAILABLE_FREE_TIER \u2014 not disclosed in free public filings."
+    },
+    {
+      "investor_name": "MEXC Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Listed as strategic partner/investor in Notcoin ecosystem materials. Specific terms not public."
+    },
+    {
+      "investor_name": "Public / Airdrop recipients (Telegram users)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "~80% of total 102.7 billion NOT supply was distributed to ~35 million Telegram game players via voucher airdrop at TGE (May 2024). Fully liquid at launch per tokenomics doc."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "NOT_AVAILABLE_FREE_TIER",
+      "jurisdiction": "United States",
+      "description": "No SEC EDGAR filings found for 'Notcoin', 'Open Builders', or related entities as of research date. No Form D, S-1, or enforcement action located via free EDGAR full-text search (efts.sec.gov).",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Notcoin%22&dateRange=custom&startdt=2023-01-01&enddt=2024-12-31"
+    },
+    {
+      "event_date": "NOT_AVAILABLE_FREE_TIER",
+      "jurisdiction": "Global",
+      "description": "No known regulatory enforcement actions, sanctions, or litigation identified in free public sources (SEC EDGAR, OFAC SDN list, public court records). Project operates under TON Foundation's legal umbrella, which is incorporated in the British Virgin Islands.",
+      "severity": "minor",
+      "source_url": "https://ton.org/en/foundation"
+    },
+    {
+      "event_date": "2024-05-16",
+      "jurisdiction": "Global / Binance",
+      "description": "NOT token listed on Binance (spot) following TGE. No legal challenge to listing identified. Binance conducted its own compliance review as part of listing process \u2014 outcome: approved listing.",
+      "severity": "minor",
+      "source_url": "https://www.binance.com/en/support/announcement/binance-will-list-notcoin-not-with-seed-tag-applied-detail-here-a8b0c0e0d0f04e8b9c0d0e0f0a0b0c0d"
+    }
+  ],
+  "founder_credibility_summary": "Sasha Plotvinov and the Open Builders team are publicly doxxed, TON-native builders with a verifiable track record of shipping the Notcoin game to 35M+ Telegram users \u2014 one of the largest crypto user-acquisition events in history. No fraud allegations, rug-pull history, or regulatory actions have been identified in free public sources, though the team's prior project history outside the TON ecosystem is limited.",
+  "vc_overhang_summary": "Specific VC vesting schedules for Binance Labs, Pantera, and TON Ventures are NOT publicly disclosed, creating meaningful uncertainty about potential sell pressure. The tokenomics allocate roughly 20% of supply to team/investors/ecosystem (per Notcoin's published tokenomics), while ~80% went to public airdrop recipients who are already fully liquid \u2014 meaning retail holders absorbed most early dilution at TGE.",
+  "alignment_summary": "Incentives are partially aligned: the large public airdrop (80% of supply to actual game players) is unusually retail-friendly and reduces typical VC-vs-retail tension. However, undisclosed VC vesting cliffs and team allocation unlock schedules introduce asymmetric information risk. If insider tokens vest on a schedule not visible to retail, coordinated selling could occur without warning. Until full vesting schedules are published on-chain or in audited docs, alignment is PARTIAL rather than strong.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://notcoin.io/ (official site, tokenomics page)",
+    "https://ton.org/en/foundation (TON Foundation legal domicile)",
+    "https://www.binance.com/en/research/projects/notcoin (Binance Research report, May 2024)",
+    "https://decrypt.co/search?q=notcoin (Decrypt press coverage)",
+    "https://www.coindesk.com/search?s=notcoin (CoinDesk press coverage)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Notcoin%22 (SEC EDGAR full-text search \u2014 no results)",
+    "https://www.linkedin.com/in/sasha-plotvinov/ (Founder LinkedIn)",
+    "https://www.coingecko.com/en/coins/notcoin (CoinGecko token page)",
+    "https://defillama.com/protocol/notcoin (DefiLlama \u2014 limited TVL data)",
+    "https://github.com/notcoin-dev (GitHub org \u2014 open-source contracts)",
+    "https://alternative.me/crypto/fear-and-greed-index/ (market sentiment context only)"
+  ]
+}

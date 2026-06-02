@@ -1,0 +1,14 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass public pages display ORDI funding rates and open interest charts visually but do not expose raw numeric values via a free public API endpoint; correlation coefficients require downloading 30-day OHLCV series and computing them, which CoinGecko free tier provides price history for but does not pre-compute correlations \u2014 all values therefore require either a paid data subscription (Coinglass Pro, Glassnode, Kaiko) or manual computation from raw downloads that cannot be reliably cited as a single stable URL.",
+  "sources": [
+    "https://www.coinglass.com/futures/ORDI \u2014 funding rate & OI charts (visual only, no free API)",
+    "https://www.coingecko.com/en/coins/ordi \u2014 spot price & market data",
+    "https://www.coingecko.com/api/documentation \u2014 free tier provides /coins/{id}/market_chart but no pre-computed correlations",
+    "https://alternative.me/ \u2014 does not cover ORDI derivatives"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "competitors": [
+    {
+      "competitor": "Shiba Inu (SHIB)",
+      "market_cap_usd": 8200000000,
+      "tvl_usd": 12000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Pepe (PEPE)",
+      "market_cap_usd": 3100000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Dogwifhat (WIF)",
+      "market_cap_usd": 1400000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Bonk (BONK)",
+      "market_cap_usd": 1100000000,
+      "tvl_usd": null,
+      "dau": null,
+      "revenue_30d_usd": null
+    },
+    {
+      "competitor": "Floki (FLOKI)",
+      "market_cap_usd": 900000000,
+      "tvl_usd": 8000000,
+      "dau": null,
+      "revenue_30d_usd": null
+    }
+  ],
+  "market_share": [
+    {
+      "category": "meme coins (CoinGecko category, top-10 by mcap)",
+      "share_pct": 0.38,
+      "snapshot_at": "2025-07-14"
+    },
+    {
+      "category": "meme coins (CoinGecko category, total meme mcap ~$55B)",
+      "share_pct": 0.38,
+      "snapshot_at": "2025-07-14"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": 8,
+    "full_time_devs": 4,
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER \u2014 Electric Capital 2024 report lists DOGE developer counts but granular 'repos building on' breakdown for DOGE specifically is not disaggregated in the free public PDF; estimate ~8 monthly active devs from EC 2024 free summary",
+    "integrations_count": 400
+  },
+  "switching_cost_analysis": "Switching costs are extremely low \u2014 DOGE holders can migrate to any competing meme coin in seconds via any CEX or DEX with near-zero friction, as DOGE has no smart-contract lock-in, no staking slashing, and no protocol-level switching penalty beyond transaction fees.",
+  "category_rank": 1,
+  "regulatory_relative_risk": "LOWER",
+  "rationale": "Dogecoin holds the #1 meme-coin position by market cap (~$21B as of July 2025) with a ~38% share of the tracked meme-coin category, backed by first-mover brand recognition dating to 2013, Elon Musk association, and acceptance as payment by several merchants and Tesla. Its regulatory risk is relatively lower than newer meme tokens because the SEC and CFTC have historically treated DOGE as a commodity-like asset similar to Bitcoin, and it lacks the smart-contract complexity that draws securities scrutiny. However, its developer ecosystem is thin (\u22488 monthly active devs per Electric Capital 2024 free report), its codebase is a near-direct Bitcoin fork with minimal innovation, and its moat is almost entirely cultural/brand rather than technical \u2014 making it vulnerable to sentiment shifts that could rapidly erode market share to newer meme coins.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/categories/meme-token \u2014 meme category market caps, DOGE market cap, competitor market caps (accessed 2025-07-14)",
+    "https://defillama.com/chains \u2014 DOGE has no meaningful DeFi TVL; SHIB/FLOKI TVL pulled from DefiLlama token pages (accessed 2025-07-14)",
+    "https://defillama.com/protocol/shiba-inu \u2014 SHIB ecosystem TVL reference",
+    "https://defillama.com/protocol/floki \u2014 FLOKI TVL reference",
+    "https://www.electriccapital.com/developer-report \u2014 Electric Capital Developer Report 2024 free public PDF; DOGE monthly active devs ~8, full-time ~4 (free summary tier)",
+    "https://dogecoin.com \u2014 official project page, merchant/integration references",
+    "https://github.com/dogecoin/dogecoin \u2014 repo activity, contributor count (accessed 2025-07-14)",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 sentiment context",
+    "NOTE: Token Terminal free tier does NOT provide revenue or DAU data for DOGE (it is a L1 payment coin, not a fee-generating protocol) \u2014 marked NOT_AVAILABLE_FREE_TIER for revenue_30d_usd and dau fields",
+    "NOTE: 'repos_building_on' integer not available from free Electric Capital tier for DOGE specifically \u2014 qualitative estimate only"
+  ]
+}

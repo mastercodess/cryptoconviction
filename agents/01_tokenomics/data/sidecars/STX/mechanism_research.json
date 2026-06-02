@@ -1,0 +1,29 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": true,
+  "staking_apr_pct": 6.5,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "stakers",
+  "value_accrual_summary": "STX holders who lock tokens via Proof-of-Transfer (PoX) 'Stacking' receive native BTC rewards sourced from Bitcoin miners who must transfer BTC to Stackers to mine new STX blocks \u2014 yield is paid in BTC, not newly minted STX, making it non-inflationary real-yield; STX itself has a fixed emission schedule that will eventually reach a tail emission of 0.5% annually, but Stacking rewards are structurally BTC-denominated miner expenditure, not protocol inflation.",
+  "sources": [
+    "https://docs.stacks.co/stacks-101/proof-of-transfer",
+    "https://docs.stacks.co/stacks-101/stacking",
+    "https://github.com/stacksgov/sips/blob/main/sips/sip-007/sip-007-stacking-consensus.md",
+    "https://www.coingecko.com/en/coins/stacks",
+    "https://stacks.org/stacking"
+  ],
+  "data_quality": "PARTIAL",
+  "notes": {
+    "burn_detail": "No STX burn mechanism exists in the base protocol. BTC spent by miners is sent to Stackers (not burned), and STX itself is not burned.",
+    "staking_apr_source": "The ~7.5% figure is a recent approximate market rate for Stacking rewards denominated in BTC-equivalent yield; exact real-time APR varies by cycle and is NOT_AVAILABLE_FREE_TIER from a single authoritative free endpoint. CoinGecko and stacking.club (community tracker) show ranges of 6\u201310% depending on cycle participation.",
+    "inflation_caveat": "Stacks does have a block subsidy (STX emission schedule starting at 1,000 STX/block, halving every 4 years aligned with Bitcoin halvings). This inflationary STX goes to miners, NOT stackers. Stackers receive BTC. Therefore staking_emission_inflationary=false for the BTC yield component, but the overall STX supply is still inflationary via miner subsidies, diluting all holders.",
+    "pox4_upgrade": "The Nakamoto upgrade (SIP-021) and PoX-4 contract (live 2024) changed Stacking mechanics; signers now also participate in consensus, adding a security role to value capture.",
+    "stacking_club_url": "https://stacking.club (community, not official)",
+    "staking_apr_pct_caveat": "The ~6-7% APR figure (in BTC terms) is a trailing estimate visible on CoinGecko and stacking dashboards; it fluctuates with BTC price, STX price, and total STX locked. Exact current cycle APR requires a live stacking dashboard (e.g., stacking.club) which is free but dynamic \u2014 treat 6.5% as a rough mid-2024 reference.",
+    "emission_schedule": "STX has a declining block-reward schedule (started 1000 STX/block, halving-like reductions) converging to a 0.5%/yr tail emission. New STX issuance goes to miners, NOT to Stackers. Stackers receive BTC from miners.",
+    "no_burn": "There is no fee-burn mechanism in the current Stacks protocol. Transaction fees are paid in STX and go to miners.",
+    "nakamoto_upgrade": "The Stacks Nakamoto upgrade (SIP-021, live 2024) changes block production but does not alter the PoX BTC-reward mechanism for Stackers.",
+    "sip_021_source": "https://github.com/stacksgov/sips/blob/main/sips/sip-021/sip-021-nakamoto.md"
+  }
+}

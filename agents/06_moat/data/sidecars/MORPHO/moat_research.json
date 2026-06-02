@@ -1,0 +1,80 @@
+{
+  "competitors": [
+    {
+      "competitor": "Aave",
+      "market_cap_usd": 2100000000,
+      "tvl_usd": 11200000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER",
+      "revenue_30d_usd": 3500000
+    },
+    {
+      "competitor": "Compound",
+      "market_cap_usd": 420000000,
+      "tvl_usd": 2100000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER",
+      "revenue_30d_usd": 280000
+    },
+    {
+      "competitor": "Spark (MakerDAO)",
+      "market_cap_usd": "NOT_AVAILABLE_FREE_TIER",
+      "tvl_usd": 3800000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER",
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Euler Finance",
+      "market_cap_usd": 95000000,
+      "tvl_usd": 380000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER",
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Morpho",
+      "market_cap_usd": 580000000,
+      "tvl_usd": 3200000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER",
+      "revenue_30d_usd": 1200000
+    }
+  ],
+  "market_share": [
+    {
+      "category": "defi-lending (TVL, Ethereum + multi-chain)",
+      "share_pct": 0.09,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "defi-lending (TVL, Ethereum mainnet only)",
+      "share_pct": 0.13,
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": 18,
+    "full_time_devs": 12,
+    "repos_building_on": "NOT_AVAILABLE_FREE_TIER",
+    "integrations_count": 60
+  },
+  "switching_cost_analysis": "Switching costs are moderate-to-high for large integrators (curators, vaults, and protocols built on Morpho Blue's permissionless vault layer face non-trivial re-auditing and re-integration work), but end-user borrowers/lenders face low friction since positions can be migrated to Aave or Compound with a single transaction via aggregators.",
+  "category_rank": 3,
+  "regulatory_relative_risk": "SIMILAR",
+  "rationale": "Morpho occupies a structurally differentiated niche as a 'meta-lending' layer (Morpho Blue + MetaMorpho vaults) rather than a monolithic pool, giving it a composability moat that Aave and Compound lack natively. Its TVL growth from ~$200M (early 2023) to ~$3.2B (mid-2025) is the fastest in the lending category, driven by institutional curator adoption (Steakhouse, Re7, Gauntlet). However, Aave v3 and Euler v2 are converging on similar modular designs, compressing Morpho's architectural lead over a 12\u201318 month horizon.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocols/lending",
+    "https://defillama.com/protocol/morpho",
+    "https://defillama.com/protocol/aave",
+    "https://defillama.com/protocol/compound-finance",
+    "https://defillama.com/protocol/spark",
+    "https://defillama.com/protocol/euler",
+    "https://www.coingecko.com/en/coins/morpho",
+    "https://www.coingecko.com/en/coins/aave",
+    "https://www.coingecko.com/en/coins/compound",
+    "https://docs.morpho.org/morpho-blue/overview",
+    "https://docs.morpho.org/metamorpho/overview",
+    "https://morpho.org/ecosystem",
+    "https://app.morpho.org",
+    "https://electriccapital.com/developer-report (2024 edition \u2014 Morpho ecosystem dev counts estimated from public GitHub org: https://github.com/morpho-org)",
+    "https://github.com/morpho-org",
+    "NOTE: DAU figures require Token Terminal Pro or Dune Analytics paid tier \u2014 NOT_AVAILABLE_FREE_TIER. Revenue_30d for Morpho estimated from DefiLlama fees page (https://defillama.com/fees/morpho). Electric Capital full breakdown for Morpho sub-ecosystem repos_building_on not granularly published in free report summary."
+  ]
+}

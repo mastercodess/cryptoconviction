@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "unlock_date": "2024-05-16",
+      "category": "airdrop",
+      "tokens_unlocked": 82317739551,
+      "pct_of_supply": 0.802,
+      "source_url": "https://notco.in/blog/notcoin-tokenomics",
+      "notes": "~80.2% of total supply distributed to Notcoin game players via burn-to-mint airdrop at TGE on TON blockchain; tokens were immediately liquid."
+    },
+    {
+      "unlock_date": "2024-05-16",
+      "category": "other",
+      "tokens_unlocked": 5957715059,
+      "pct_of_supply": 0.058,
+      "source_url": "https://notco.in/blog/notcoin-tokenomics",
+      "notes": "~5.8% allocated to exchange listings and liquidity provision at TGE; exact exchange breakdown not publicly disclosed."
+    },
+    {
+      "unlock_date": "2024-05-16",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 10271922171,
+      "pct_of_supply": 0.1,
+      "source_url": "https://notco.in/blog/notcoin-tokenomics",
+      "notes": "~10% ecosystem/foundation reserve; vesting schedule beyond TGE cliff is NOT publicly detailed in free-tier sources \u2014 partial unlock at TGE assumed."
+    },
+    {
+      "unlock_date": "NOT_AVAILABLE_FREE_TIER",
+      "category": "team_unlock",
+      "tokens_unlocked": null,
+      "pct_of_supply": 0.04,
+      "source_url": "https://notco.in/blog/notcoin-tokenomics",
+      "notes": "~4% early supporters/team allocation; specific vesting cliff and linear unlock dates not published on any free public source reviewed."
+    }
+  ],
+  "summary": "Notcoin (NOT) launched in May 2024 with an unusually community-heavy distribution: roughly 80.2% of the 102.7 billion token supply was airdropped directly to game players at TGE with immediate liquidity, making it structurally low in traditional VC/investor unlock pressure. The remaining ~20% (team ~4%, foundation ~10%, liquidity ~5.8%) carries some future unlock risk, but the team/foundation vesting schedule with specific dates has not been published in any freely accessible source. Because the vast majority of supply was liquid from day one, ongoing unlock pressure is relatively modest compared to typical VC-backed token launches.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Tokenunlocks.app lists Notcoin but granular per-tranche unlock dates and cliff details are behind their Pro paywall \u2014 NOT_AVAILABLE_FREE_TIER. 2) The official Notcoin blog (notco.in) and TON ecosystem announcements confirm high-level allocation percentages but do not publish a dated vesting table for team/foundation tranches. 3) Messari and CryptoRank free tiers do not include a detailed unlock calendar for NOT. 4) The ~4% team/supporter figure and ~10% foundation figure are sourced from community-cited tokenomics summaries cross-referenced with the official blog; on-chain verification via TON explorer (tonscan.org) would be needed to confirm exact vesting contract parameters. 5) No fabricated dates have been included \u2014 only the TGE date (2024-05-16) is confirmed from public sources."
+}

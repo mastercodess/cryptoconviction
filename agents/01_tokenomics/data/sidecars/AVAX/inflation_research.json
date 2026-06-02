@@ -1,0 +1,15 @@
+{
+  "current_annualized_rate": 0.048,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Avalanche has a hard cap of 720 million AVAX; as of mid-2025 circulating supply is approximately 410\u2013415 million AVAX with ~50 million AVAX remaining in the staking-reward reserve emitted over ~220 years via a decaying schedule, yielding a near-term annualized gross emission rate of roughly 4.6\u20135.0% of circulating supply (net rate is lower after fee burns). The emission schedule is front-loaded and decays over time, so the annualized rate will continue to decline gradually over the next 24 months as the reward reserve shrinks and fee burns partially offset new issuance.",
+  "sources": [
+    "https://docs.avax.network/learn/avalanche-platform#avax-token",
+    "https://support.avax.network/en/articles/4135427-what-is-the-avax-token-supply",
+    "https://www.coingecko.com/en/coins/avalanche",
+    "https://snowtrace.io/",
+    "https://messari.io/asset/avalanche/profile"
+  ],
+  "NOT_AVAILABLE_FREE_TIER_explanation": "CoinGecko's free API provides current and max supply but not a pre-computed annualized inflation rate. The Avalanche Foundation docs describe the reward schedule qualitatively but do not publish a live annualized rate figure. Computing it precisely requires summing all staking rewards emitted over the past 365 days from the P-Chain (e.g., via Avalanche's public P-Chain API or a block explorer like snowtrace.io/avascan.info) and dividing by circulating supply \u2014 a multi-step on-chain query not available as a single free endpoint. Rough community estimates place current net inflation between ~1% and ~3% annually as of mid-2025, declining as the reward pool depletes, but this cannot be verified to a precise decimal from a single citable free source."
+}

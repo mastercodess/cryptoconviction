@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "GOOD",
+  "self": {
+    "name": "Hyperliquid HLP",
+    "slug": "hyperliquid-hlp",
+    "tvl_usd": 389146988.0396583,
+    "mcap_usd": null
+  },
+  "peers": [
+    {
+      "name": "Jupiter Perpetual Exchange",
+      "slug": "jupiter-perpetual-exchange",
+      "tvl_usd": 680040229.8685318,
+      "mcap_usd": null
+    },
+    {
+      "name": "GMX V2 Perps",
+      "slug": "gmx-v2-perps",
+      "tvl_usd": 203604544.15564412,
+      "mcap_usd": null
+    },
+    {
+      "name": "Extended",
+      "slug": "extended",
+      "tvl_usd": 152834274.8279479,
+      "mcap_usd": null
+    },
+    {
+      "name": "Derive V2",
+      "slug": "derive-v2",
+      "tvl_usd": 117762754.0486148,
+      "mcap_usd": null
+    },
+    {
+      "name": "dYdX V4",
+      "slug": "dydx-v4",
+      "tvl_usd": 99096271.51673613,
+      "mcap_usd": null
+    }
+  ],
+  "market_share_pct": 0.23692573949957285,
+  "notes": "API-fetched (no LLM research): DefiLlama /protocols (category=Derivatives)",
+  "sources": [
+    "https://api.llama.fi/protocols (filtered by category=Derivatives)"
+  ]
+}

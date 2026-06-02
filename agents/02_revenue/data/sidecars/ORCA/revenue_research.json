@@ -1,0 +1,36 @@
+{
+  "annualized_revenue_usd": 10800000,
+  "tvl_usd": 180000000,
+  "p_s_ratio": 18.5,
+  "p_tvl_ratio": 0.11,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "DECELERATING",
+  "seasonality": "Volume and revenue are event-driven, spiking during Solana ecosystem bull runs and new token launches (e.g., meme-coin seasons), but otherwise inconsistent quarter-to-quarter.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "RAY",
+      "metric": "p_s",
+      "peer_value": 12.0
+    },
+    {
+      "peer_symbol": "UNI",
+      "metric": "p_s",
+      "peer_value": 14.0
+    },
+    {
+      "peer_symbol": "CAKE",
+      "metric": "p_s",
+      "peer_value": 8.0
+    }
+  ],
+  "rationale": "DefiLlama shows Orca's 30-day fees running roughly $900K/month as of late Q1 2025, implying ~$10.8M annualized protocol revenue; TVL sits near $180M, giving a P/TVL of ~0.11x at a ~$200M fully-diluted market cap. The protocol peaked in late 2024 during the Solana meme-coin surge and volumes have since moderated, placing it in a decelerating trend relative to that peak. Real yield to ORCA stakers is not formally distributed on-chain in a trackable APR format, so real_yield_apr_pct and inflationary_yield_apr_pct are null pending confirmed tokenomics data.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/protocol/orca",
+    "https://defillama.com/dexs/orca",
+    "https://www.orca.so/",
+    "https://docs.orca.so/",
+    "https://coingecko.com/en/coins/orca"
+  ]
+}

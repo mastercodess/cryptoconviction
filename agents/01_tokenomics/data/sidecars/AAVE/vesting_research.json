@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "unlock_date": "2020-10-02",
+      "category": "other",
+      "tokens_unlocked": 13000000,
+      "pct_of_supply": 0.13,
+      "source_url": "https://docs.aave.com/aavenomics/",
+      "notes": "AAVE migration launched; 13M AAVE made available via 1:100 swap from legacy LEND token (100 LEND = 1 AAVE), effectively converting the existing circulating LEND supply."
+    },
+    {
+      "unlock_date": "2020-10-02",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 3000000,
+      "pct_of_supply": 0.03,
+      "source_url": "https://docs.aave.com/aavenomics/",
+      "notes": "3M AAVE allocated to the Aave Ecosystem Reserve at genesis to fund protocol development, grants, and governance incentives; not time-locked with a cliff but governed by Aave DAO."
+    },
+    {
+      "unlock_date": "2020-10-02",
+      "category": "staking_emission",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://docs.aave.com/aavenomics/safety-incentives",
+      "notes": "Safety Module (SM) staking rewards began at genesis; emission rate set by governance (initially ~550 AAVE/day from Ecosystem Reserve), distributed continuously to stkAAVE holders \u2014 no single cliff date."
+    },
+    {
+      "unlock_date": "2021-04-01",
+      "category": "staking_emission",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://governance.aave.com/t/arc-extend-aave-liquidity-mining-rewards/3822",
+      "notes": "Liquidity Mining (LM) program for Aave V2 markets launched ~April 2021 via governance vote; AAVE and stkAAVE emitted continuously to depositors/borrowers from Ecosystem Reserve \u2014 no single cliff."
+    },
+    {
+      "unlock_date": "2024-07-25",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://governance.aave.com/t/arfc-aave-finance-committee-afc-formation/17428",
+      "notes": "Aave Finance Committee (AFC) formed mid-2024 to manage treasury; ongoing DAO-controlled emissions from Ecosystem Reserve continue with no new cliff-based unlock events."
+    }
+  ],
+  "summary": "AAVE does not follow a traditional VC/team vesting schedule with hard cliff-and-linear-release unlocks. The entire 16M token supply was effectively distributed at the October 2020 genesis: 13M via the LEND\u2192AAVE migration (already circulating) and 3M into the DAO-controlled Ecosystem Reserve. There are no future scheduled large cliff unlocks; the only ongoing 'emission pressure' comes from continuous Safety Module staking rewards and governance-approved liquidity mining programs drawn from the Ecosystem Reserve, both of which are modest in rate and controlled by AAVE token holders.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) TokenUnlocks.app and CryptoRank.io free tiers show AAVE as having no upcoming scheduled cliff unlocks, consistent with the above, but their detailed historical breakdowns require paid access \u2014 so exact per-epoch emission totals are NOT_AVAILABLE_FREE_TIER. 2) Messari's free AAVE profile confirms the genesis allocation split but does not publish granular vesting tables for free. 3) Early LEND investor/team allocations (pre-2020) were governed by the original ETHLend token structure and are fully vested/converted; no documentation of those original lock periods remains easily accessible for free. 4) Exact daily/weekly AAVE emission rates from the Safety Module and LM programs vary by governance vote and are best tracked live on https://app.aave.com or Aave governance forum rather than a static unlock calendar."
+}

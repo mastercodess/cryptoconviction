@@ -1,0 +1,163 @@
+{
+  "team_members": [
+    {
+      "name": "Paul Frambot",
+      "role": "CEO & Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/paul-frambot/",
+      "prior_projects": [
+        "\u00c9cole Polytechnique (student researcher)",
+        "Morpho Labs"
+      ],
+      "notes": "Founded Morpho while at \u00c9cole Polytechnique. Active on Twitter/X (@PaulFrambot). French national. Frequently cited in DeFi media. Led Series A fundraise."
+    },
+    {
+      "name": "Merlin Egalite",
+      "role": "CTO & Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/merlin-egalite/",
+      "prior_projects": [
+        "\u00c9cole Polytechnique",
+        "Morpho Labs"
+      ],
+      "notes": "Lead smart-contract architect. Active GitHub contributor (@MerlinEgalite). Co-authored Morpho whitepapers."
+    },
+    {
+      "name": "Julien Thomas",
+      "role": "COO & Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/julien-thomas-morpho/",
+      "prior_projects": [
+        "\u00c9cole Polytechnique",
+        "Morpho Labs"
+      ],
+      "notes": "Handles operations and business development. Less public-facing than Paul/Merlin."
+    },
+    {
+      "name": "Baptiste Greve",
+      "role": "Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/baptiste-greve/",
+      "prior_projects": [
+        "\u00c9cole Polytechnique"
+      ],
+      "notes": "Fourth co-founder; role less publicly defined post-launch. Confirmed on Morpho blog and early press."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Andreessen Horowitz (a16z crypto)",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Led $18M Series A announced July 2022. Token allocation subject to Morpho DAO governance vesting schedule; exact cliff NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Variant Fund",
+      "round": "series_a",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Participated in Series A. Jesse Walden publicly confirmed."
+    },
+    {
+      "investor_name": "Coinbase Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Seed-round participant. Confirmed via Morpho blog post and Crunchbase free tier."
+    },
+    {
+      "investor_name": "Nascent",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Early backer. Confirmed via Crunchbase and Morpho announcement posts."
+    },
+    {
+      "investor_name": "Semantic Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Seed participant. Listed in Morpho Labs funding announcements."
+    },
+    {
+      "investor_name": "Kraken Ventures",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Seed participant. Confirmed via public announcement."
+    },
+    {
+      "investor_name": "Mechanism Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Seed participant."
+    },
+    {
+      "investor_name": "Rapha\u00ebl Strauch / angel network",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "cliff_remaining",
+      "notes": "Various angels including DeFi founders. Specific names partially disclosed in blog."
+    },
+    {
+      "investor_name": "Token Allocation \u2014 Team & Investors",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": 0.51,
+      "unlock_status": "cliff_remaining",
+      "notes": "Per Morpho tokenomics docs: ~51% of 1B MORPHO supply allocated to team, investors, and contributors combined, subject to multi-year vesting. Exact per-entity breakdown NOT_AVAILABLE_FREE_TIER without on-chain forensics."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States",
+      "description": "Morpho Association (Swiss entity) and Morpho Labs structured token distribution to exclude US persons from direct MORPHO token claims at TGE (October 2024), citing SEC regulatory uncertainty around DeFi tokens. No formal SEC action filed as of research date.",
+      "severity": "minor",
+      "source_url": "https://morpho.org/blog/"
+    },
+    {
+      "event_date": "2024-10-10",
+      "jurisdiction": "Switzerland / Global",
+      "description": "MORPHO token launched (TGE). Token initially non-transferable; governance-only. Transferability vote passed by DAO in early 2025. No SEC EDGAR filings found for Morpho Labs or Morpho Association \u2014 consistent with non-US entity structure deliberately avoiding US securities registration.",
+      "severity": "minor",
+      "source_url": "https://morpho.org/blog/introducing-morpho-token"
+    },
+    {
+      "event_date": "NOT_AVAILABLE_FREE_TIER",
+      "jurisdiction": "France",
+      "description": "Morpho Labs SAS is a French entity. No AMF (Autorit\u00e9 des march\u00e9s financiers) enforcement actions found via public AMF search as of research date.",
+      "severity": "minor",
+      "source_url": "https://www.amf-france.org/en"
+    }
+  ],
+  "founder_credibility_summary": "All four co-founders are fully doxxed French engineers from \u00c9cole Polytechnique with verifiable LinkedIn profiles and consistent public presence since 2021; Paul Frambot in particular has a strong media and conference track record. No fraud allegations, rug-pull history, or pseudonymous concerns have surfaced in public sources.",
+  "vc_overhang_summary": "Approximately 51% of the 1 billion MORPHO supply is held by team, investors, and contributors under multi-year vesting schedules; a16z crypto is the largest known institutional holder via the Series A. Exact unlock dates per investor are NOT_AVAILABLE_FREE_TIER on free public sources, creating meaningful but unquantified sell-pressure risk as cliffs expire post-TGE (Oct 2024 onward).",
+  "alignment_summary": "Incentives are partially aligned but carry notable asymmetry: insiders hold a majority of supply under vesting that began at TGE (Oct 2024), meaning retail buyers in secondary markets face multi-year dilution risk as tokens unlock. The DAO governance structure gives token holders (including retail) voting rights, and the non-transferable launch period was framed as protecting retail from speculative volatility. However, the lack of publicly auditable per-investor vesting schedules on free-tier sources limits retail ability to model unlock pressure, which is a meaningful misalignment of information access.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://morpho.org/blog/",
+    "https://morpho.org/blog/introducing-morpho-token",
+    "https://docs.morpho.org/",
+    "https://www.crunchbase.com/organization/morpho-labs",
+    "https://www.linkedin.com/in/paul-frambot/",
+    "https://www.linkedin.com/in/merlin-egalite/",
+    "https://www.linkedin.com/in/julien-thomas-morpho/",
+    "https://www.linkedin.com/in/baptiste-greve/",
+    "https://github.com/morpho-org",
+    "https://efts.sec.gov/LATEST/search-index?q=%22morpho%22&dateRange=custom&startdt=2021-01-01&enddt=2024-12-31&forms=D (no results found)",
+    "https://www.amf-france.org/en",
+    "https://coingecko.com/en/coins/morpho",
+    "https://defillama.com/protocol/morpho"
+  ]
+}

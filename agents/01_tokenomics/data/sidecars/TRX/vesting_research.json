@@ -1,0 +1,63 @@
+{
+  "events": [
+    {
+      "unlock_date": "2017-08-01",
+      "category": "public_emission",
+      "tokens_unlocked": 34000000000,
+      "pct_of_supply": 0.4,
+      "source_url": "https://web.archive.org/web/2017*/https://tron.network/static/doc/white_paper_v_2_0.pdf",
+      "notes": "40% of initial 85B TRX supply sold in public ICO; tokens distributed at TGE (August 2017)."
+    },
+    {
+      "unlock_date": "2017-08-01",
+      "category": "investor_unlock",
+      "tokens_unlocked": 8500000000,
+      "pct_of_supply": 0.1,
+      "source_url": "https://web.archive.org/web/2017*/https://tron.network/static/doc/white_paper_v_2_0.pdf",
+      "notes": "10% of initial supply allocated to private-sale investors; distributed at TGE per original whitepaper."
+    },
+    {
+      "unlock_date": "2018-08-01",
+      "category": "team_unlock",
+      "tokens_unlocked": 12750000000,
+      "pct_of_supply": 0.15,
+      "source_url": "https://web.archive.org/web/2018*/https://tron.network/static/doc/white_paper_v_2_0.pdf",
+      "notes": "15% company/team allocation unlocked after ~1-year lock-up post-ICO (approximate date, Q3 2018)."
+    },
+    {
+      "unlock_date": "2018-08-01",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 29750000000,
+      "pct_of_supply": 0.35,
+      "source_url": "https://web.archive.org/web/2018*/https://tron.network/static/doc/white_paper_v_2_0.pdf",
+      "notes": "35% ecosystem/foundation allocation unlocked after ~1-year lock-up; used for grants, partnerships, and ecosystem development."
+    },
+    {
+      "unlock_date": "2018-06-25",
+      "category": "other",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://tron.network/en.html",
+      "notes": "Mainnet launch (Genesis block); ERC-20 TRX swapped 1:1 to native TRX \u2014 no new tokens created, supply migrated."
+    },
+    {
+      "unlock_date": "2018-06-26",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://developers.tron.network/docs/super-representatives",
+      "notes": "Ongoing block rewards began at mainnet: ~16 TRX/block to Super Representatives + voter rewards, yielding ~460,800 TRX/day in perpetual emission."
+    },
+    {
+      "unlock_date": "2021-04-07",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://developers.tron.network/docs/tron-stake-20",
+      "notes": "Stake 2.0 upgrade refined staking/energy model; ongoing emission rate unchanged at ~1.58% annualized inflation from SR and voter rewards."
+    }
+  ],
+  "summary": "TRX is a 2017-era token whose historical vesting cliffs (team 15%, foundation 35%) all expired by mid-2018 \u2014 well over six years ago \u2014 meaning there is zero remaining time-locked supply overhang from the original allocation. The only ongoing 'unlock pressure' is perpetual block-reward emission (~460,800 TRX/day, roughly 1.58% annualized inflation) paid to Super Representatives and stakers since mainnet launch in June 2018. Because all discrete vesting events are historical and the current supply is effectively fully circulating (~86.8B TRX), TRX presents no near-term scheduled unlock risk.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) The original 2017 whitepaper PDF is no longer hosted at tron.network; figures are sourced from archived copies and widely cited secondary sources (Messari, CoinGecko token info, CryptoRank) \u2014 exact unlock dates for team/foundation are approximate (Q3 2018) as no on-chain vesting contract was publicly documented. 2) tokenunlocks.app does not maintain an active TRX page, confirming no future scheduled unlocks are tracked. 3) Exact daily emission varies with network participation (energy/bandwidth burn can offset some inflation); the ~460,800 TRX/day figure is a network-parameter-based estimate from Tron developer docs, not a live feed. 4) Any tokens held by the Tron Foundation / Justin Sun's entities are not subject to on-chain time-locks and their disposition is NOT_AVAILABLE_FREE_TIER."
+}

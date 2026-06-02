@@ -1,0 +1,170 @@
+{
+  "team_members": [
+    {
+      "name": "Roger Ver",
+      "role": "Early evangelist / primary promoter (not a founder of BCH protocol)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/rogerver/",
+      "prior_projects": [
+        "Bitcoin.com (CEO)",
+        "MemoryDealers.com (founder)",
+        "Blockchain.com (early investor)"
+      ],
+      "notes": "Often called 'Bitcoin Jesus'; renounced US citizenship in 2014; arrested in Spain April 2024 on US DOJ tax evasion charges (~$48M alleged). Not a protocol developer \u2014 primary role was advocacy and funding. LinkedIn profile exists but is sparse."
+    },
+    {
+      "name": "Amaury S\u00e9chet (deadalnix)",
+      "role": "Lead protocol developer at BCH launch (2017); later forked to create eCash/XEC (2020)",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/amaurysechet/",
+      "prior_projects": [
+        "Facebook (software engineer)",
+        "eCash / Bitcoin ABC (founder)"
+      ],
+      "notes": "Primary architect of Bitcoin ABC client that launched BCH in August 2017. Left BCH ecosystem after November 2020 hash war dispute over Infrastructure Funding Proposal (IFP); now leads eCash (XEC)."
+    },
+    {
+      "name": "Jonald Fyookball",
+      "role": "Developer \u2014 Electron Cash wallet (BCH)",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Electron Cash wallet"
+      ],
+      "notes": "Known pseudonymously in community; real name publicly associated. Maintains Electron Cash, the primary BCH light wallet. No LinkedIn found via free search."
+    },
+    {
+      "name": "Jason Cox",
+      "role": "Developer \u2014 Bitcoin ABC",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Bitcoin ABC"
+      ],
+      "notes": "Contributed to Bitcoin ABC codebase; limited public profile outside GitHub (github.com/jasonbcox)."
+    },
+    {
+      "name": "Chris Pacia",
+      "role": "Developer \u2014 OpenBazaar, bchd full node",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "OpenBazaar",
+        "bchd (Go-based BCH node)"
+      ],
+      "notes": "Prominent BCH developer; built bchd node implementation. Active on GitHub (github.com/cpacia)."
+    },
+    {
+      "name": "Bitcoin Unlimited / BCHN Teams",
+      "role": "Collective node client maintainers (post-2020 dominant client: BCHN)",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Bitcoin Unlimited",
+        "Bitcoin Cash Node (BCHN)"
+      ],
+      "notes": "BCH has no single controlling team post-2020 split. BCHN (bitcoincashnode.org) is now the dominant client. Core contributors include 'freetrader' (pseudonymous) and Calin Culianu. Governance is informal and contentious."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Roger Ver (Bitcoin.com)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Ver held significant BCH from the 2017 fork (all BTC holders received BCH 1:1). No formal VC round. Exact holdings NOT_AVAILABLE_FREE_TIER \u2014 no public disclosure required. Bitcoin.com promoted BCH heavily."
+    },
+    {
+      "investor_name": "Bitmain / Jihan Wu",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Bitmain was a major BCH supporter at launch; mined BCH and held reserves. Bitmain's BCH holdings were partially disclosed in its failed 2018 Hong Kong IPO prospectus (showed ~$887M BCH on balance sheet at peak). Exact current holdings NOT_AVAILABLE_FREE_TIER."
+    },
+    {
+      "investor_name": "Calvin Ayre (CoinGeek)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Ayre backed BSV (Craig Wright's fork) after the November 2018 hash war split from BCH. Not a current BCH investor \u2014 included for historical context of the split."
+    },
+    {
+      "investor_name": "General Public (fork recipients)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "BCH was distributed via hard fork of Bitcoin on August 1, 2017 (block 478558). All BTC holders received BCH 1:1. No ICO, no VC seed round, no lockups. Supply is fully circulating (21M cap, ~19.7M mined as of 2024)."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2024-04-30",
+      "jurisdiction": "United States / Spain",
+      "description": "Roger Ver arrested in Spain at request of US DOJ. Charged with mail fraud, tax evasion, and filing false tax returns. Alleged ~$48M in unpaid taxes related to Bitcoin holdings at time of citizenship renunciation (2014). Ver denies charges. Extradition proceedings ongoing as of mid-2024.",
+      "severity": "severe",
+      "source_url": "https://www.justice.gov/opa/pr/early-bitcoin-investor-charged-tax-evasion"
+    },
+    {
+      "event_date": "2018-11-15",
+      "jurisdiction": "Decentralized / Global",
+      "description": "BCH hash war: Bitcoin ABC (Ver/Bitmain-backed) vs. Bitcoin SV (Craig Wright/Calvin Ayre-backed). Resulted in chain split creating BSV. Accusations of 51% attack attempts, market manipulation, and exchange halts. No formal legal ruling but severe reputational and market damage.",
+      "severity": "severe",
+      "source_url": "https://www.coindesk.com/markets/2018/11/20/bitcoin-cash-hash-war-is-over-but-the-battle-for-legitimacy-has-just-begun/"
+    },
+    {
+      "event_date": "2020-11-15",
+      "jurisdiction": "Decentralized / Global",
+      "description": "Second BCH chain split: Bitcoin ABC (Amaury S\u00e9chet) vs. BCHN over Infrastructure Funding Proposal (IFP) \u2014 a 8% miner tax to fund development. BCHN won majority hash rate; ABC chain became eCash (XEC). Community governance failure exposed.",
+      "severity": "moderate",
+      "source_url": "https://bitcoincashnode.org/en/newsroom/bchn-lead-maintainer-report-2020-11-15"
+    },
+    {
+      "event_date": "2023-05-10",
+      "jurisdiction": "United States (SEC)",
+      "description": "SEC did not specifically name BCH in its major enforcement actions (Coinbase/Binance complaints named other assets). BCH is NOT listed as a security in any SEC complaint found via EDGAR free search as of research date. SEC EDGAR search for 'Bitcoin Cash' returns no enforcement filings naming BCH as a security.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22bitcoin+cash%22&dateRange=custom&startdt=2020-01-01&enddt=2024-12-31&forms=litigation"
+    },
+    {
+      "event_date": "2018-09-01",
+      "jurisdiction": "United States",
+      "description": "Bitmain's draft IPO prospectus (HKEX filing) revealed massive BCH holdings and losses, raising concerns about BCH price manipulation and Bitmain's conflict of interest as both miner and large holder. IPO was withdrawn in 2019.",
+      "severity": "moderate",
+      "source_url": "https://www.coindesk.com/business/2018/09/26/bitmain-ipo-filing-reveals-massive-bitcoin-cash-holdings/"
+    }
+  ],
+  "founder_credibility_summary": "Bitcoin Cash has no single founder \u2014 it emerged from a contentious Bitcoin hard fork in 2017 driven by a loose coalition including Roger Ver, Bitmain's Jihan Wu, and developer Amaury S\u00e9chet. Credibility is severely undermined by Ver's 2024 DOJ arrest on tax fraud charges, two major chain splits (2018, 2020) reflecting deep governance dysfunction, and the departure of its lead protocol developer to a competing chain.",
+  "vc_overhang_summary": "BCH had no traditional VC funding round or ICO; supply was distributed via fork to all BTC holders, meaning there are no institutional lockup cliffs or vesting schedules creating structured sell pressure. However, concentrated holdings by early whales (Ver, Bitmain) represent informal overhang \u2014 Bitmain's 2018 IPO filing showed ~$887M in BCH at peak prices, and those holdings have never been publicly accounted for post-liquidation.",
+  "alignment_summary": "Insider and retail incentives are POORLY aligned. The absence of formal vesting creates no lockup protection for retail; large early holders (Ver, Bitmain) can and have sold freely. Repeated governance failures (two chain splits) demonstrate that influential insiders prioritize ideological or financial self-interest over network stability. The arrest of BCH's most prominent promoter (Ver) creates additional uncertainty. The project now operates without clear leadership, which cuts both ways \u2014 no single insider can rug-pull, but also no coordinated development roadmap exists.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.justice.gov/opa/pr/early-bitcoin-investor-charged-tax-evasion",
+    "https://bitcoincashnode.org/en/newsroom/bchn-lead-maintainer-report-2020-11-15",
+    "https://www.coindesk.com/markets/2018/11/20/bitcoin-cash-hash-war-is-over-but-the-battle-for-legitimacy-has-just-begun/",
+    "https://www.coindesk.com/business/2018/09/26/bitmain-ipo-filing-reveals-massive-bitcoin-cash-holdings/",
+    "https://efts.sec.gov/LATEST/search-index?q=%22bitcoin+cash%22&forms=litigation",
+    "https://github.com/bitcoin-cash-node/bitcoin-cash-node",
+    "https://github.com/Bitcoin-ABC/bitcoin-abc",
+    "https://www.linkedin.com/in/rogerver/",
+    "https://www.linkedin.com/in/amaurysechet/",
+    "https://bitcoincash.org/",
+    "https://www.coingecko.com/en/coins/bitcoin-cash",
+    "https://coinmarketcap.com/currencies/bitcoin-cash/",
+    "https://www.crunchbase.com/organization/bitcoin-com"
+  ],
+  "_researcher_notes": {
+    "sec_edgar_result": "No SEC enforcement action names BCH as an unregistered security as of 2024. EDGAR full-text search conducted at efts.sec.gov.",
+    "crunchbase_result": "Bitcoin.com Crunchbase page (crunchbase.com/organization/bitcoin-com) shows no disclosed funding rounds for BCH itself. Bitcoin.com raised undisclosed amounts but these are company-level, not protocol-level.",
+    "unavailable_data": [
+      "Exact BCH whale wallet holdings (on-chain analysis tools like Glassnode require paid tier)",
+      "Ver's current BCH holdings (no public disclosure)",
+      "Bitmain's current BCH treasury (private company, no public filings post-IPO withdrawal)",
+      "BCHN developer team full doxxing (several contributors pseudonymous)",
+      "Any formal SEC Wells Notice or investigation specific to BCH (none found in free EDGAR search)"
+    ]
+  }
+}

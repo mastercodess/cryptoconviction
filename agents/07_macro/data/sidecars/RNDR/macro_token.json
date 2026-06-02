@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass provides funding rate and open interest data for RNDR perpetuals, but real-time/current values require a paid API or logged-in session; correlation calculations require downloading 30-day OHLCV time-series for RNDR, BTC, ETH, and NASDAQ and computing Pearson coefficients \u2014 raw price data is freely available via CoinGecko /coins/{id}/market_chart but the computation itself must be performed client-side and cannot be 'pulled' as a pre-computed fact from any free public endpoint.",
+  "sources": [
+    "https://www.coinglass.com/en/coins/render \u2014 funding rate & OI page (values gated behind login/paid tier for live data)",
+    "https://api.coingecko.com/api/v3/coins/render-token/market_chart?vs_currency=usd&days=30 \u2014 raw RNDR price series (free, unauthenticated)",
+    "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30 \u2014 raw BTC price series",
+    "https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=30 \u2014 raw ETH price series",
+    "https://fred.stlouisfed.org/series/NASDAQCOM \u2014 NASDAQ Composite daily closes (free, but 30-day correlation must be computed externally)"
+  ]
+}

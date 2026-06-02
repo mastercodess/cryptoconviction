@@ -1,0 +1,34 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "Wormhole (W) 24h trading volume on CoinGecko as of mid-July 2025 is reported at roughly $50\u2013120M across major CEXs (Binance, OKX, Bybit), which is plausible relative to its ~$400\u2013500M market cap, but the token's high concentration on a small number of venues and its status as a recently airdropped governance token make organic volume difficult to confirm without paid on-chain analytics.",
+  "rationale": "Wormhole (W) launched its token via airdrop in April 2024 with a total supply of 10 billion W; as of July 2025 CoinGecko lists circulating supply at approximately 3.68 billion W and a market cap near $430M at ~$0.117 per token. DefiLlama tracks Wormhole's cross-chain messaging protocol TVL and bridge volume but does not publish per-token DAU/MAU figures for the W governance token itself; granular on-chain address-level metrics (DAU, new addresses, LTH/STH cohorts) require Nansen, Glassnode paid tiers, or Dune dashboards that are either paywalled or not publicly indexed for W specifically. Exchange flow data (CEX inflow/outflow in USD) is not available on free tiers of Coinglass or CryptoQuant for W. The protocol itself processed over $40B in cumulative cross-chain volume as of Q1 2025 per Wormhole's own blog, but this reflects bridge usage, not W token capital flows.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/wormhole",
+    "https://defillama.com/protocol/wormhole",
+    "https://wormhole.com/blog/",
+    "https://coinglass.com/",
+    "https://etherscan.io/token/0xb0ffa8000886e57f86dd5264b9582b2ad87b2b91"
+  ]
+}

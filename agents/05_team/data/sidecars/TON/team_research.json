@@ -1,0 +1,161 @@
+{
+  "team_members": [
+    {
+      "name": "Pavel Durov",
+      "role": "Original Founder (TON concept / Telegram); not active TON Foundation lead",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 Durov has no public LinkedIn; identity confirmed via Telegram blog and press",
+      "prior_projects": [
+        "VKontakte (VK) \u2014 co-founder",
+        "Telegram \u2014 founder & CEO"
+      ],
+      "notes": "Durov and brother Nikolai created the original TON (Telegram Open Network) in 2018. After SEC enforcement action, Telegram abandoned the project in 2020. The open-source code was picked up by the community and rebranded as 'The Open Network'. Durov is NOT a formal officer of the TON Foundation. Arrested in France Aug 2024 on unrelated Telegram moderation charges."
+    },
+    {
+      "name": "Nikolai Durov",
+      "role": "Original Protocol Architect (TON whitepaper author); not active in TON Foundation",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no public LinkedIn found",
+      "prior_projects": [
+        "VKontakte",
+        "Telegram CTO"
+      ],
+      "notes": "Authored the original TON whitepapers (2017-2018). Considered the technical genius behind the architecture. No current formal role in TON Foundation."
+    },
+    {
+      "name": "Steve Yun",
+      "role": "President, TON Foundation",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/steveyun/ \u2014 profile exists but details sparse; confirmed via TON Foundation blog",
+      "prior_projects": [
+        "Kakao (Klaytn ecosystem)",
+        "Various Web3 advisory roles"
+      ],
+      "notes": "Appointed as TON Foundation President ~2022. Background in Korean tech/blockchain ecosystem. Primary public face of the Foundation."
+    },
+    {
+      "name": "Anatoly Makosov",
+      "role": "Core Developer, TON Foundation",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER \u2014 no confirmed public LinkedIn",
+      "prior_projects": [
+        "TON Labs / community fork contributors"
+      ],
+      "notes": "One of the key open-source contributors who revived the project post-Telegram abandonment. Active on GitHub (ton-blockchain org)."
+    },
+    {
+      "name": "Kirill Emelyanenko",
+      "role": "Core Developer",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "TON community development"
+      ],
+      "notes": "Listed as core contributor on TON GitHub. Limited public profile."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Telegram / Pavel Durov (original raise)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Telegram raised ~$1.7B in two private placement rounds (2018) from accredited investors for GRAM tokens. SEC halted distribution. Telegram refunded ~$1.2B and paid $18.5M SEC penalty. Original GRAM investors did NOT receive TON tokens in the community relaunch."
+    },
+    {
+      "investor_name": "Miner/Validator early allocations (community launch 2020-2021)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Initial TON supply distributed via Proof-of-Work mining (givers). No VC round for the community chain. Tokens earned by miners are fully liquid."
+    },
+    {
+      "investor_name": "TON Foundation treasury",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Foundation holds a portion of supply for ecosystem grants and development. Exact wallet addresses partially trackable on-chain via Tonscan.org. Vesting/unlock schedule not fully disclosed in public docs \u2014 PARTIAL data."
+    },
+    {
+      "investor_name": "Pantera Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Pantera has publicly stated TON exposure via ecosystem investments; specific round terms NOT disclosed on free-tier Crunchbase or public filings."
+    },
+    {
+      "investor_name": "Mirana Ventures (Bybit affiliate)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Reported ecosystem/strategic investor. Terms not publicly available."
+    },
+    {
+      "investor_name": "KuCoin Ventures",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Listed as ecosystem partner/investor in TON Foundation announcements. Financial terms undisclosed."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2019-10-11",
+      "jurisdiction": "United States (SDNY)",
+      "description": "SEC obtained emergency restraining order against Telegram Group Inc. and TON Issuer Inc., alleging unregistered securities offering of GRAM tokens (~$1.7B raise). Case: SEC v. Telegram Group Inc., 1:19-cv-09439.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/litigation/litreleases/2019/lr24678.htm"
+    },
+    {
+      "event_date": "2020-06-26",
+      "jurisdiction": "United States (SDNY)",
+      "description": "Telegram settled with SEC: agreed to return ~$1.2B to investors, pay $18.5M civil penalty, and provide 45-day notice before any future digital asset sales. Telegram formally abandoned TON project.",
+      "severity": "severe",
+      "source_url": "https://www.sec.gov/news/press-release/2020-146"
+    },
+    {
+      "event_date": "2020-05-12",
+      "jurisdiction": "Decentralized / Community",
+      "description": "Community developers (NewTON / Free TON) forked and relaunched the open-source TON codebase independently of Telegram, rebranding eventually as 'The Open Network'. This legally separated the chain from Telegram's SEC issues.",
+      "severity": "minor",
+      "source_url": "https://ton.org/en/blog"
+    },
+    {
+      "event_date": "2024-08-24",
+      "jurisdiction": "France",
+      "description": "Pavel Durov arrested at Paris Le Bourget airport by French authorities. Charges related to alleged facilitation of criminal activity on Telegram (not TON-specific). Released on \u20ac5M bail. Ongoing investigation. Creates reputational/association risk for TON given Telegram integration.",
+      "severity": "moderate",
+      "source_url": "https://www.bbc.com/news/articles/c3ggl9l9gdgo"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "SEC EDGAR search for 'TON Foundation' and 'The Open Network' returns NO current filings. The community chain has not registered any securities with the SEC. GRAM settlement applies to Telegram, not the community TON chain. Regulatory status of TON token under US law remains unresolved/untested.",
+      "severity": "moderate",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22TON+Foundation%22&dateRange=custom&startdt=2020-01-01&enddt=2024-12-31"
+    }
+  ],
+  "founder_credibility_summary": "The original founders (Pavel and Nikolai Durov) are highly credible technologists with proven track records (VK, Telegram) but are legally and formally disconnected from the current TON Foundation following the 2020 SEC settlement. The current TON Foundation leadership (Steve Yun et al.) has limited public track record compared to the Durov brand, and the project's credibility is heavily dependent on Telegram's 950M+ user distribution \u2014 a dependency that introduces concentration risk, especially given Durov's August 2024 French legal troubles.",
+  "vc_overhang_summary": "Unlike most L1s, TON's community chain was NOT launched via a traditional VC-funded token sale, meaning there is no large cliff-vesting VC overhang in the conventional sense. However, the TON Foundation treasury and undisclosed strategic investor allocations (Pantera, Mirana, KuCoin Ventures) represent opaque supply-side risk; unlock schedules for these parties are NOT publicly available on free-tier sources, making precise overhang quantification impossible.",
+  "alignment_summary": "Retail and insider incentives are PARTIALLY aligned but with notable caveats. The PoW mining launch gave early community participants fair access, which is positive. However, the Foundation treasury's undisclosed vesting, the heavy dependency on Telegram's commercial decisions (mini-apps, TON Space wallet), and the lack of transparent governance mean insiders (Foundation, Telegram) retain significant unilateral influence over ecosystem direction and token utility. Durov's legal situation adds an exogenous misalignment risk: adverse Telegram outcomes could suppress TON adoption regardless of protocol fundamentals.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://ton.org/en/blog \u2014 TON Foundation official blog",
+    "https://www.sec.gov/litigation/litreleases/2019/lr24678.htm \u2014 SEC emergency action vs Telegram 2019",
+    "https://www.sec.gov/news/press-release/2020-146 \u2014 SEC settlement with Telegram 2020",
+    "https://efts.sec.gov/LATEST/search-index?q=%22TON+Foundation%22 \u2014 SEC EDGAR search (no filings found)",
+    "https://github.com/ton-blockchain \u2014 TON core GitHub org (contributor data)",
+    "https://tonscan.org \u2014 On-chain explorer for Foundation wallet tracking",
+    "https://www.crunchbase.com/organization/ton-foundation \u2014 Crunchbase free tier (minimal data)",
+    "https://www.bbc.com/news/articles/c3ggl9l9gdgo \u2014 Durov arrest reporting Aug 2024",
+    "https://coinmarketcap.com/currencies/toncoin/ \u2014 Supply/tokenomics reference",
+    "https://coingecko.com/en/coins/toncoin \u2014 Market data reference",
+    "https://docs.ton.org \u2014 TON technical documentation"
+  ]
+}

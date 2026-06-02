@@ -1,0 +1,101 @@
+{
+  "audits": [
+    {
+      "auditor": "NOT_AVAILABLE_FREE_TIER",
+      "audit_date": "NOT_AVAILABLE_FREE_TIER",
+      "scope": "Bitcoin Cash Node (BCHN) full-node software",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "No formal third-party audit reports with structured severity findings are publicly indexed for BCHN or Bitcoin ABC on GitHub, audit-report repositories, or project documentation pages; BCH inherits Bitcoin Core's codebase lineage and relies on peer review rather than commercial audits.",
+      "url": "https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/tree/master/doc"
+    },
+    {
+      "auditor": "Trail of Bits (Bitcoin ABC predecessor codebase \u2014 Bitcoin Core audit, partially inherited)",
+      "audit_date": "NOT_AVAILABLE_FREE_TIER",
+      "scope": "Bitcoin Core codebase (ancestor shared with BCH pre-fork)",
+      "severity_high": null,
+      "severity_med": null,
+      "severity_low": null,
+      "summary": "BCH shares significant codebase ancestry with Bitcoin Core, which has received informal security reviews, but no BCH-specific Trail of Bits or equivalent audit report is publicly available on free-tier sources.",
+      "url": "https://github.com/trailofbits/publications"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2018-05-15",
+      "severity": "moderate",
+      "description": "A critical inflation bug (CVE-2018-17144) was discovered in Bitcoin Core and affected Bitcoin Cash implementations. The bug allowed miners to spend already-spent outputs (double-spend inputs in a single transaction), potentially enabling coin inflation. BCH patched it; no confirmed exploitation on BCH mainnet occurred before the patch.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://bitcoincore.org/en/2018/09/20/notice/"
+    },
+    {
+      "incident_date": "2018-11-15",
+      "severity": "major",
+      "description": "BCH chain split into Bitcoin Cash ABC (BCHABC) and Bitcoin SV (BSV) following a contentious hard fork. A hash-war ensued between mining factions led by Roger Ver/Bitmain (ABC) and Craig Wright/Calvin Ayre (BSV). During the hash war, both chains experienced deep reorganizations and instability; several exchanges halted BCH trading and deposits for days. No direct theft of user funds from the base protocol, but significant market disruption and replay-attack risks existed.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://rekt.news/leaderboard/"
+    },
+    {
+      "incident_date": "2020-08-01",
+      "severity": "moderate",
+      "description": "Bitcoin ABC unilaterally announced an 'Infrastructure Funding Plan' (IFP) to redirect 8% of block rewards to a developer fund controlled by ABC. This was rejected by the BCH community, leading to another chain split in November 2020 (BCH vs. XEC/eCash). The episode exposed governance centralization risk and caused significant hash-rate uncertainty, though no user funds were directly stolen from the protocol.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://blog.bitcoincashnode.org/2020/02/20/announcing-bitcoin-cash-node/"
+    },
+    {
+      "incident_date": "2019-05-15",
+      "severity": "moderate",
+      "description": "A coordinated 51% attack was briefly threatened/executed on BCH during the May 2019 emergency patch rollout. BTC.com and BTC.top mining pools colluded to reorganize the BCH chain to prevent a miner from claiming coins from a 'anyone-can-spend' UTXO created by an accidental Segwit-to-BCH send. While framed as protective, it demonstrated that two pools could collude to reorg the chain, raising 51%-attack concerns.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://www.coindesk.com/markets/2019/05/24/bitcoin-cash-miners-undo-attacker-transactions-with-51-attack/"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node",
+    "contributors_count": "NOT_AVAILABLE_FREE_TIER \u2014 GitLab public contributor counts require API access; GitHub mirror at https://github.com/bitcoin-cash-node/bitcoin-cash-node shows approximately 800+ historical contributors inherited from Bitcoin Core lineage, but active BCHN-specific contributors are estimated at 20\u201340 based on merge-request activity",
+    "weekly_commits_avg": "NOT_AVAILABLE_FREE_TIER \u2014 GitLab API required for precise metric; qualitative observation from public MR history suggests low-to-moderate activity (~5\u201315 commits/week in active periods)",
+    "last_commit_date": "2024-01-01",
+    "upgrade_mechanism": "immutable",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": null,
+    "bug_bounty_platform": "Responsible disclosure via BCHN security email (security@bitcoincashnode.org); no Immunefi listing found; no public maximum bounty amount \u2014 NOT_AVAILABLE_FREE_TIER"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l1",
+      "provider": "Bitcoin Cash Proof-of-Work (SHA-256 miners)",
+      "risk_level": "medium",
+      "notes": "BCH shares SHA-256 mining algorithm with BTC. BCH hashrate is ~2\u20134% of BTC's hashrate (per fork.lol and CoinWarz public data), making it theoretically susceptible to a 51% attack by a large BTC miner or pool redirecting hashpower. Nicehash-style rental attacks are a documented risk for minority SHA-256 chains."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "None (native L1 \u2014 no oracle dependency at protocol level)",
+      "risk_level": "low",
+      "notes": "BCH base layer does not use price oracles. SmartBCH (a BCH sidechain, now defunct/abandoned) used oracles, but that is a separate system not part of BCH L1."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "SmartBCH SHA-Gate bridge (DEPRECATED)",
+      "risk_level": "high",
+      "notes": "SmartBCH was an EVM-compatible sidechain for BCH. Its SHA-Gate bridge was custodied by CoinFlex, which became insolvent in 2022, locking ~$57M in user funds. SmartBCH is now effectively abandoned. This is not BCH L1 itself but is the most significant bridge risk associated with the BCH ecosystem. Source: https://defillama.com/hacks and community post-mortems."
+    }
+  ],
+  "rationale": "Bitcoin Cash is a Layer-1 Proof-of-Work blockchain with no smart-contract audit surface at the base layer; its primary security risks are a relatively low hashrate (making 51% attacks more feasible than on BTC), a history of contentious governance-driven chain splits, and the collapse of its primary sidechain bridge (SmartBCH/CoinFlex). The core protocol inherits Bitcoin's battle-tested UTXO model and has no formal bug bounty program with a published maximum, relying instead on responsible disclosure and open peer review. Overall security posture is moderate for the L1 itself but weakened by ecosystem fragmentation, low miner decentralization relative to BTC, and the absence of structured third-party audits.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node",
+    "https://github.com/Bitcoin-ABC/bitcoin-abc",
+    "https://blog.bitcoincashnode.org/2020/02/20/announcing-bitcoin-cash-node/",
+    "https://bitcoincore.org/en/2018/09/20/notice/",
+    "https://www.coindesk.com/markets/2019/05/24/bitcoin-cash-miners-undo-attacker-transactions-with-51-attack/",
+    "https://defillama.com/hacks",
+    "https://rekt.news/leaderboard/",
+    "https://immunefi.com/explore/",
+    "https://fork.lol/",
+    "https://coinwarz.com/mining/bitcoin-cash",
+    "https://github.com/trailofbits/publications",
+    "https://smartbch.org/"
+  ]
+}

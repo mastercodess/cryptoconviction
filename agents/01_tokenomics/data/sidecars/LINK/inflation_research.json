@@ -1,0 +1,27 @@
+{
+  "current_annualized_rate": "NOT_AVAILABLE_FREE_TIER",
+  "method": null,
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": null,
+  "rationale": "NOT_AVAILABLE_FREE_TIER \u2014 see explanation below.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/chainlink",
+    "https://docs.chain.link/resources/link-token-contracts",
+    "https://chain.link/economics",
+    "https://messari.io/asset/chainlink"
+  ],
+  "supplemental_note": {
+    "coingecko_circulating_supply_approx": 638000000,
+    "coingecko_max_supply": 1000000000,
+    "non_circulating_reserve_approx": 362000000,
+    "why_not_available": "Chainlink Labs has never published a binding, time-stamped vesting or unlock schedule for the ~362M reserve tokens. On-chain movements from the reserve wallet can be tracked (Etherscan: 0x98C63b7B319dFBDF3d811530F2ab9DfD7E2b9E9E and related multisigs), but without a disclosed schedule the forward rate cannot be projected. A rough trailing-12-month observed rate could be estimated by comparing CoinGecko circulating supply snapshots, but CoinGecko's free API historical granularity and the irregular nature of reserve releases make this estimate unreliable (\u00b12\u20134 pp error). Messari's detailed unlock data requires a paid subscription."
+  },
+  "supplemental_observed_estimate": {
+    "note": "Best-effort observed estimate only \u2014 NOT a disclosed or scheduled rate",
+    "circulating_supply_approx_july_2023": 517000000,
+    "circulating_supply_approx_july_2025": 638000000,
+    "observed_2yr_growth_pct": 0.234,
+    "implied_annualized_cagr": 0.112,
+    "caveat": "Releases are discretionary; forward rate could be materially higher or lower. No public vesting schedule exists. Use with extreme caution."
+  }
+}

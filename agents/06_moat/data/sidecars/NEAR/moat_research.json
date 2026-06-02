@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-05-16",
+  "data_quality": "GOOD",
+  "self": {
+    "name": "Near",
+    "tvl_usd": 222693548.3189271
+  },
+  "peers": [
+    {
+      "name": "Ethereum",
+      "tvl_usd": 100315681069.33797
+    },
+    {
+      "name": "Solana",
+      "tvl_usd": 13132897227.987047
+    },
+    {
+      "name": "Binance",
+      "tvl_usd": 7553309329.104104
+    },
+    {
+      "name": "Base",
+      "tvl_usd": 6989427275.686473
+    },
+    {
+      "name": "Bitcoin",
+      "tvl_usd": 6585309424.335203
+    }
+  ],
+  "market_share_pct": 0.0016520376499665394,
+  "notes": "API-fetched (no LLM research): DefiLlama /chains",
+  "sources": [
+    "https://api.llama.fi/chains"
+  ]
+}

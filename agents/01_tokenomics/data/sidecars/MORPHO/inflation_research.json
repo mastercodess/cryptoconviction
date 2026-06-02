@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": "NOT_AVAILABLE_FREE_TIER",
+  "method": null,
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": null,
+  "rationale": "A precise annualized inflation rate cannot be computed from freely available sources alone. The key missing inputs are: (1) the exact current circulating supply vs. total supply breakdown with dated snapshots sufficient to calculate a YoY observed rate, and (2) a publicly disclosed, granular token emission schedule with per-period unlock quantities. CoinGecko lists MORPHO's max supply as 1,000,000,000 and circulating supply as approximately 333,000,000\u2013340,000,000 as of mid-July 2025, but does not publish a dated emission schedule or per-epoch unlock table. The Morpho governance/docs site (docs.morpho.org) and the Morpho DAO forum describe that tokens are subject to vesting and governance-controlled distributions, but a machine-readable, epoch-by-epoch emission schedule with remaining unlock quantities is not freely published in a form that allows a reliable annualized rate calculation without a paid data provider (e.g., Messari Pro, Token Unlocks, Vesting.finance).",
+  "sources": [
+    "https://www.coingecko.com/en/coins/morpho",
+    "https://docs.morpho.org",
+    "https://forum.morpho.org",
+    "https://messari.io/project/morpho"
+  ]
+}

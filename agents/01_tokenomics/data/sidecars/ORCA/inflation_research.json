@@ -1,0 +1,18 @@
+{
+  "current_annualized_rate": "NOT_AVAILABLE_FREE_TIER",
+  "method": null,
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": null,
+  "rationale": "Orca's detailed token emission schedule and vesting unlock calendar are not publicly disclosed in a machine-readable or clearly dated format on the project's official docs (orca.so), CoinGecko's free tier, or Messari's free profile as of the research date. CoinGecko shows a circulating supply of approximately 64\u201365 million ORCA against a max supply of 100 million, but does not publish timestamped historical supply snapshots on the free tier sufficient to compute a reliable YoY observed rate. The project has not published a public on-chain emissions tracker.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/orca",
+    "https://docs.orca.so/",
+    "https://messari.io/asset/orca"
+  ],
+  "notes": {
+    "circulating_supply_approx": "95,400,000 ORCA",
+    "max_supply": "100,000,000 ORCA",
+    "remaining_unlocked": "~4,600,000 ORCA (~4.8% of max)",
+    "why_not_available": "No public emission schedule with dated unlock tranches found on free-tier sources. The remaining ~4.6 M tokens could represent near-zero annual inflation if already fully vested, or a small but non-trivial rate if still vesting \u2014 the split is NOT_AVAILABLE_FREE_TIER. A rough upper-bound estimate would be <5% annualized, but publishing a specific decimal without a verified schedule would be misleading."
+  }
+}

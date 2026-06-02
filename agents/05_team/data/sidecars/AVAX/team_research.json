@@ -1,0 +1,201 @@
+{
+  "team_members": [
+    {
+      "name": "Emin G\u00fcn Sirer",
+      "role": "Co-Founder & CEO, Ava Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/emin-gun-sirer-0a921a4/",
+      "prior_projects": [
+        "Cornell University Professor (CS)",
+        "Karma (peer-to-peer virtual currency, 2003)",
+        "Bitcoin-NG (scaling research)",
+        "IC3 (Initiative for CryptoCurrencies & Contracts, co-director)"
+      ],
+      "notes": "PhD Cornell; widely published academic in distributed systems. Founded Ava Labs in 2018. Active on X/Twitter @el33th4xor. High credibility in academic and crypto circles."
+    },
+    {
+      "name": "Kevin Sekniqi",
+      "role": "Co-Founder & COO, Ava Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/kevinsekniqi/",
+      "prior_projects": [
+        "Cornell PhD candidate (distributed systems)",
+        "Research at IC3"
+      ],
+      "notes": "Co-authored the Avalanche consensus whitepaper. Oversees operations and engineering at Ava Labs."
+    },
+    {
+      "name": "Maofan 'Ted' Yin",
+      "role": "Co-Founder (Protocol), Ava Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/maofan-ted-yin-b4b8b3139/",
+      "prior_projects": [
+        "Cornell PhD (HotStuff BFT consensus \u2014 used in Diem/Libra)",
+        "IC3 researcher"
+      ],
+      "notes": "Primary author of HotStuff consensus protocol later adopted by Meta's Diem. Less publicly active post-launch."
+    },
+    {
+      "name": "John Wu",
+      "role": "President, Ava Labs",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/johnwunyc/",
+      "prior_projects": [
+        "Galaxy Digital (President)",
+        "SoftBank Vision Fund",
+        "Goldman Sachs"
+      ],
+      "notes": "Joined Ava Labs 2021. Brings institutional finance background; leads business development and institutional partnerships."
+    },
+    {
+      "name": "Luigi DeMeo",
+      "role": "VP Engineering, Ava Labs",
+      "doxxed": true,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Cornell research"
+      ],
+      "notes": "Core protocol engineer; less public-facing. LinkedIn not readily surfaced on free search."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "Polychain Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Led $6M seed round (2019). Tokens from seed/private rounds had 1-year cliff + linear vesting; substantially unlocked by 2022."
+    },
+    {
+      "investor_name": "a16z (Andreessen Horowitz)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in $42M private sale (2020) and $230M Series B (2021) into Ava Labs equity \u2014 not direct AVAX token purchase. Equity stake in Ava Labs, not necessarily AVAX tokens directly."
+    },
+    {
+      "investor_name": "Three Arrows Capital (3AC)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Early AVAX token investor. 3AC collapsed June 2022; any AVAX holdings were liquidated by liquidators. No longer an active holder."
+    },
+    {
+      "investor_name": "Initialized Capital",
+      "round": "seed",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Part of $6M seed (2019)."
+    },
+    {
+      "investor_name": "Galaxy Digital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in $42M private token sale (2020)."
+    },
+    {
+      "investor_name": "Dragonfly Capital",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Participated in $42M private token sale (2020)."
+    },
+    {
+      "investor_name": "Bitmain / Antpool",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Strategic investor in 2020 private round."
+    },
+    {
+      "investor_name": "Public ICO / IEO participants",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "Public sale July 2020 raised ~$42M at $0.50/AVAX. Fully liquid at TGE (no lockup for public buyers)."
+    },
+    {
+      "investor_name": "Ava Labs Series B (Equity)",
+      "round": "series_a",
+      "valuation_usd": 5200000000,
+      "ownership_pct": null,
+      "unlock_status": "fully_vested",
+      "notes": "$230M Series B led by Polychain & a16z in July 2021 at $5.25B Ava Labs valuation. This is equity in Ava Labs Inc., not AVAX tokens directly. Source: Ava Labs blog / Crunchbase."
+    },
+    {
+      "investor_name": "Blizzard Fund (Ecosystem Fund)",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "$200M Avalanche ecosystem fund announced Nov 2021. Deployed as grants/investments into Avalanche projects; not a VC round into Ava Labs itself."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2023-09-28",
+      "jurisdiction": "United States (Federal)",
+      "description": "Coinbase lawsuit (SEC v. Coinbase) listed AVAX as one of ~13 tokens the SEC alleged are unregistered securities. AVAX was named in the SEC's complaint as an example security, though Ava Labs / Avalanche Foundation were NOT named as defendants. This creates regulatory overhang.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf"
+    },
+    {
+      "event_date": "2023-06-05",
+      "jurisdiction": "United States (Federal)",
+      "description": "SEC v. Binance complaint also listed AVAX among tokens alleged to be unregistered securities sold on Binance platform. Again, Ava Labs not a named defendant but AVAX token classification is contested.",
+      "severity": "moderate",
+      "source_url": "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf"
+    },
+    {
+      "event_date": "2022-09-01",
+      "jurisdiction": "United States",
+      "description": "Alleged leaked Ava Labs / Roche Freedman law firm controversy: Twitter/X accusations that Ava Labs had a relationship with a law firm filing class-action suits against competitors (Solana, Cardano, etc.). Ava Labs denied any involvement. No formal legal finding against Ava Labs. Reputational event only.",
+      "severity": "minor",
+      "source_url": "https://www.coindesk.com/business/2022/09/01/ava-labs-denies-involvement-in-crypto-class-action-lawsuits-after-video-surfaces/"
+    },
+    {
+      "event_date": "2020-07-01",
+      "jurisdiction": "United States",
+      "description": "AVAX public token sale conducted. No SEC registration filed (relied on Reg S / offshore exemptions for non-US participants and Reg D for accredited US investors in private rounds). No enforcement action taken to date specifically targeting the token sale itself.",
+      "severity": "minor",
+      "source_url": "https://www.avalabs.org/whitepapers"
+    },
+    {
+      "event_date": "2024-01-01",
+      "jurisdiction": "United States",
+      "description": "No SEC EDGAR filings found for Ava Labs Inc. or Avalanche Foundation under free EDGAR full-text search as of research date. No Form D filings publicly surfaced for AVAX token sales (private rounds may have used offshore structures). NOT_AVAILABLE_FREE_TIER for full regulatory filing details.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Ava+Labs%22&dateRange=custom&startdt=2018-01-01&enddt=2024-12-31&forms=D"
+    }
+  ],
+  "founder_credibility_summary": "Emin G\u00fcn Sirer is one of the most credentialed founders in crypto \u2014 a tenured Cornell CS professor with 20+ years of distributed systems research, including pre-Bitcoin digital currency work; his academic pedigree and doxxed identity substantially reduce rug-pull risk. The co-founding team's consensus research (Avalanche whitepaper, HotStuff) is peer-reviewed and widely cited, lending strong technical legitimacy, though the 2022 Roche Freedman controversy created temporary reputational noise that was not substantiated by evidence.",
+  "vc_overhang_summary": "The primary VC/private token vesting schedules (seed 2019, private 2020) had 1-year cliffs and linear unlocks, meaning substantially all early investor AVAX tokens were fully liquid by late 2022 \u2014 peak selling pressure has likely passed. The $230M Series B (2021) was equity in Ava Labs Inc., not AVAX tokens, so it does not create direct token unlock overhang; however, large foundation/team allocations (~9.26% team + 9.26% foundation of 720M max supply) continue to vest on multi-year schedules per the tokenomics, representing ongoing but moderate dilution risk.",
+  "alignment_summary": "Insider and retail incentives are partially aligned but with notable caveats: (1) Ava Labs and the Avalanche Foundation hold significant AVAX allocations with long vesting, incentivizing long-term price appreciation; (2) staking rewards (up to ~8% APY early, declining over time) reward long-term holders including both insiders and retail; (3) HOWEVER, the SEC's classification of AVAX as a potential unregistered security in third-party complaints creates asymmetric legal risk that insiders (with legal teams and offshore structures) can navigate more easily than retail holders; (4) the Roche Freedman controversy, even if unsubstantiated, suggested possible competitive manipulation that would harm retail holders in competing ecosystems. Net assessment: alignment is moderate \u2014 better than many L1s due to academic founder credibility and staking design, but regulatory overhang and foundation token concentration create meaningful divergence.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.avax.network/ \u2014 Official Avalanche site",
+    "https://www.avalabs.org/ \u2014 Ava Labs official site",
+    "https://www.crunchbase.com/organization/ava-labs \u2014 Crunchbase free tier (funding rounds)",
+    "https://www.linkedin.com/in/emin-gun-sirer-0a921a4/ \u2014 Emin G\u00fcn Sirer LinkedIn",
+    "https://www.linkedin.com/in/kevinsekniqi/ \u2014 Kevin Sekniqi LinkedIn",
+    "https://www.linkedin.com/in/maofan-ted-yin-b4b8b3139/ \u2014 Ted Yin LinkedIn",
+    "https://www.linkedin.com/in/johnwunyc/ \u2014 John Wu LinkedIn",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-102.pdf \u2014 SEC v. Coinbase complaint (AVAX named)",
+    "https://www.sec.gov/litigation/complaints/2023/comp-pr2023-101.pdf \u2014 SEC v. Binance complaint (AVAX named)",
+    "https://efts.sec.gov/LATEST/search-index?q=%22Ava+Labs%22 \u2014 SEC EDGAR full-text search",
+    "https://www.coindesk.com/business/2022/09/01/ava-labs-denies-involvement-in-crypto-class-action-lawsuits-after-video-surfaces/ \u2014 Roche Freedman controversy",
+    "https://support.avax.network/en/articles/4135427-avalanche-tokenomics \u2014 Avalanche tokenomics documentation",
+    "https://medium.com/avalancheavax \u2014 Ava Labs Medium blog (funding announcements)",
+    "https://coingecko.com/en/coins/avalanche \u2014 CoinGecko AVAX market data",
+    "https://defillama.com/chain/Avalanche \u2014 DefiLlama Avalanche TVL"
+  ]
+}

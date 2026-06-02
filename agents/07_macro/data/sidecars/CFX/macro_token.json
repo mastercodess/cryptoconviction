@@ -1,0 +1,15 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Coinglass public pages show CFX perpetual funding rates and open interest directionally, but precise real-time 8h funding rate and total OI figures require a paid API tier or authenticated session; 30-day correlation coefficients against BTC, ETH, and NASDAQ are not published as ready-made metrics on any of the listed free sources and would require raw OHLCV downloads plus manual calculation \u2014 all values are therefore NOT_AVAILABLE_FREE_TIER under the stated source constraints.",
+  "sources": [
+    "https://www.coinglass.com/futures/CFX \u2014 funding rate & OI overview page (aggregated display only; granular figures behind auth/paid tier)",
+    "https://www.coingecko.com/en/coins/conflux-token \u2014 spot price history downloadable as CSV for manual correlation calc, but pre-computed correlations not provided",
+    "https://defillama.com/protocol/conflux \u2014 TVL/chain data only, no derivatives metrics",
+    "https://fred.stlouisfed.org \u2014 NASDAQ Composite (NASDAQCOM) series available for download but correlation vs CFX not pre-computed",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 market sentiment only, no CFX-specific correlation data"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "ORCA is a low-liquidity Solana DEX token with minimal perpetual futures presence; Coinglass public pages show no listed ORCA perpetual markets with publicly accessible funding rate or open interest data on the free tier, and 30-day correlation calculations against BTC, ETH, or NASDAQ require either a paid data API (e.g., Kaiko, Messari Pro) or manual OHLCV computation that is not surfaced on CoinGecko free endpoints or alternative.me.",
+  "sources": [
+    "https://www.coinglass.com/currencies/ORCA \u2014 no ORCA perpetual contract listed as of query date",
+    "https://www.coingecko.com/en/coins/orca \u2014 price/volume data available but correlation metrics not computed on free tier",
+    "https://alternative.me/crypto/ \u2014 Fear & Greed index only, no per-asset correlation data",
+    "https://defillama.com/protocol/orca \u2014 TVL/protocol data only, no derivatives data"
+  ]
+}

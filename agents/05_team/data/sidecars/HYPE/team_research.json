@@ -1,0 +1,91 @@
+{
+  "team_members": [
+    {
+      "name": "Jeff Yan",
+      "role": "Co-Founder",
+      "doxxed": true,
+      "linkedin_url": "https://www.linkedin.com/in/jeff-yan-/",
+      "prior_projects": [
+        "Hudson River Trading (HRT) - quantitative trader",
+        "Chameleon Trading (co-founded, HFT/market-making firm)"
+      ],
+      "notes": "Harvard graduate (Mathematics + CS). Left HRT to co-found Chameleon Trading with Iliensinc, then pivoted to build Hyperliquid. Publicly identified; has given interviews and written blog posts under his real name."
+    },
+    {
+      "name": "Iliensinc (known pseudonymously; believed to be 'iliensinc' on X/Twitter)",
+      "role": "Co-Founder",
+      "doxxed": false,
+      "linkedin_url": "NOT_AVAILABLE_FREE_TIER",
+      "prior_projects": [
+        "Chameleon Trading (co-founded with Jeff Yan)",
+        "Hudson River Trading (alleged prior employment)"
+      ],
+      "notes": "Second co-founder operates pseudonymously in public communications. Full legal name NOT confirmed via free public sources. Some community sources suggest Harvard background similar to Jeff Yan but this is unverified."
+    }
+  ],
+  "investors": [
+    {
+      "investor_name": "No external VC investors \u2014 self-funded / bootstrapped",
+      "round": "private",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "NOT_AVAILABLE_FREE_TIER",
+      "notes": "Hyperliquid has publicly and repeatedly stated it took ZERO venture capital funding. The team self-funded development using profits from Chameleon Trading (their prior HFT firm). This is confirmed in the project blog and multiple founder interviews."
+    },
+    {
+      "investor_name": "Hyper Foundation (community treasury)",
+      "round": "public",
+      "valuation_usd": null,
+      "ownership_pct": null,
+      "unlock_status": "linear",
+      "notes": "Token distribution: ~38.888% of HYPE supply allocated to community (genesis airdrop Nov 2024). ~23.8% to future emissions/community rewards. Team allocation reported at ~23.8% with multi-year vesting. Exact unlock schedule per team tokens: NOT_AVAILABLE_FREE_TIER \u2014 not published in granular form on free public docs as of research date."
+    }
+  ],
+  "legal_events": [
+    {
+      "event_date": "2024-12-23",
+      "jurisdiction": "United States (OFAC/Treasury)",
+      "description": "North Korean DPRK-linked wallets were identified as having traded on Hyperliquid prior to the platform's OFAC compliance response. Hyperliquid voluntarily geo-blocked DPRK-associated addresses after community and researcher pressure (notably from Tayvano/MetaMask security researcher). No formal enforcement action was filed against Hyperliquid; this was a compliance risk event, not a legal proceeding.",
+      "severity": "moderate",
+      "source_url": "https://x.com/tayvano_/status/1869925552891498867"
+    },
+    {
+      "event_date": "2025-03-26",
+      "jurisdiction": "United States (market integrity / self-regulatory)",
+      "description": "Hyperliquid suffered a ~$12M loss from its HLP (Hyperliquidity Provider) vault due to a large ETH position manipulation event where a whale deliberately liquidated a massive leveraged long to drain the vault. Hyperliquid responded by lowering max leverage on BTC and ETH. No legal action filed; classified as a protocol risk/market manipulation event.",
+      "severity": "moderate",
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/"
+    },
+    {
+      "event_date": "2024-11-01",
+      "jurisdiction": "United States (SEC EDGAR)",
+      "description": "SEC EDGAR search for 'Hyperliquid' returns NO filings. The project has no registered securities offerings, no Form D (Reg D exemption), and no enforcement actions on EDGAR as of research date. This is consistent with the no-VC, no-token-sale posture.",
+      "severity": "minor",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22hyperliquid%22&dateRange=custom&startdt=2020-01-01&enddt=2025-06-01&forms=D"
+    },
+    {
+      "event_date": "2025-02-01",
+      "jurisdiction": "United States (regulatory risk \u2014 unresolved)",
+      "description": "Hyperliquid operates as a decentralized perpetuals exchange accessible to US-based users without KYC at the protocol level. This creates ongoing regulatory exposure under CFTC jurisdiction (unregistered derivatives exchange). No formal CFTC action has been filed as of research date, but the risk is flagged by multiple analysts.",
+      "severity": "moderate",
+      "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/risks"
+    }
+  ],
+  "founder_credibility_summary": "Jeff Yan is a verifiably doxxed founder with a strong quantitative finance pedigree (Harvard Math/CS, Hudson River Trading, co-founded profitable HFT firm Chameleon Trading), lending significant credibility to the team's technical and market-making expertise. The pseudonymous co-founder introduces a minor transparency gap, though the project's self-funded model and successful product execution partially offset this concern.",
+  "vc_overhang_summary": "Hyperliquid has zero venture capital investors, eliminating the typical VC overhang risk of large coordinated token dumps at cliff/vesting dates. The primary overhang risk is the ~23.8% team allocation, whose granular vesting schedule is not fully disclosed in free public documentation, representing the main unknown for retail holders.",
+  "alignment_summary": "Incentive alignment between insiders and retail is ABOVE AVERAGE relative to crypto peers. The no-VC structure means no preferential early-round pricing that disadvantages retail. The genesis airdrop distributed ~38.888% of supply to community users with no purchase required. Team tokens carry vesting (exact terms partially opaque), and the team's revenue model (protocol fees flowing to HLP and stakers) ties team wealth to protocol health. The main misalignment risk is the undisclosed team vesting granularity and the CFTC regulatory overhang, which could disproportionately harm retail users if enforcement occurs.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/tokenomics",
+    "https://hyperliquid.gitbook.io/hyperliquid-docs/risks",
+    "https://www.linkedin.com/in/jeff-yan-/",
+    "https://www.crunchbase.com/organization/hyperliquid \u2014 NOTE: Crunchbase free tier shows NO funding rounds listed, consistent with bootstrapped claim",
+    "https://efts.sec.gov/LATEST/search-index?q=%22hyperliquid%22&forms=D",
+    "https://x.com/HyperliquidX (official project X/Twitter)",
+    "https://x.com/tayvano_/status/1869925552891498867 (DPRK wallet incident)",
+    "https://medium.com/hyperliquid (project blog posts by Jeff Yan)",
+    "https://alternative.me/crypto/fear-and-greed-index/ (macro context only)",
+    "https://www.coingecko.com/en/coins/hyperliquid"
+  ]
+}

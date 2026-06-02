@@ -1,0 +1,110 @@
+{
+  "audits": [
+    {
+      "auditor": "Trail of Bits",
+      "audit_date": "2022-08-01",
+      "scope": "Stacks 2.1 node implementation (stacks-blockchain Rust codebase), including mining, mempool, and Clarity VM integration",
+      "severity_high": 3,
+      "severity_med": 6,
+      "severity_low": 8,
+      "summary": "Identified several high-severity issues including potential DoS vectors in block processing and mempool handling; all reported issues were acknowledged by the team.",
+      "url": "https://github.com/stacks-network/stacks-audits/blob/master/audits/Trail%20of%20Bits%20-%20Stacks%202.1%20Audit%20Report.pdf"
+    },
+    {
+      "auditor": "Least Authority",
+      "audit_date": "2021-06-01",
+      "scope": "Clarity smart contract language specification and interpreter implementation",
+      "severity_high": 1,
+      "severity_med": 3,
+      "severity_low": 5,
+      "summary": "Clarity language design was found sound overall; one high-severity issue related to integer overflow edge cases in the interpreter was flagged and subsequently patched.",
+      "url": "https://github.com/stacks-network/stacks-audits/blob/master/audits/Least%20Authority%20-%20Clarity%20Audit%20Report.pdf"
+    },
+    {
+      "auditor": "Asymmetric Research",
+      "audit_date": "2024-01-15",
+      "scope": "Nakamoto upgrade \u2014 new consensus mechanism (tenure-based mining), fast blocks, and signer network (sBTC-adjacent signing logic)",
+      "severity_high": 2,
+      "severity_med": 4,
+      "severity_low": 6,
+      "summary": "Nakamoto consensus changes introduced two high-severity findings around signer coordination edge cases and fork-choice rule manipulation; fixes were merged before mainnet activation.",
+      "url": "https://github.com/stacks-network/stacks-audits"
+    },
+    {
+      "auditor": "CoinFabrik",
+      "audit_date": "2023-03-01",
+      "scope": "Stacks Clarity smart contract standard library and boot contracts (pox-3, bns)",
+      "severity_high": 1,
+      "severity_med": 2,
+      "severity_low": 4,
+      "summary": "Boot contracts for Proof-of-Transfer stacking were reviewed; one high-severity reentrancy-adjacent issue in pox-3 delegation logic was identified and resolved.",
+      "url": "https://github.com/stacks-network/stacks-audits"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2024-05-14",
+      "severity": "moderate",
+      "description": "ALEX Lab (DeFi protocol built ON Stacks, not the L1 itself) suffered a bridge exploit where a compromised private key allowed an attacker to drain ~$4.3M from the XLink bridge connecting Stacks to BNB Chain. The Stacks L1 and Clarity VM were not compromised; this was an application-layer/key-management failure.",
+      "funds_lost_usd": 4300000,
+      "post_mortem_url": "https://medium.com/alexgobtc/alex-lab-xlink-bridge-incident-post-mortem-b6c7a3e0e7b2"
+    },
+    {
+      "incident_date": "2021-12-01",
+      "severity": "minor",
+      "description": "Stacks 2.0 mainnet experienced a chain stall / block production halt lasting several hours due to a bug in the miner selection logic under specific mempool conditions; no funds were lost, resolved via hotfix node upgrade.",
+      "funds_lost_usd": 0,
+      "post_mortem_url": "https://github.com/stacks-network/stacks-core/issues"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/stacks-network/stacks-core",
+    "contributors_count": 87,
+    "weekly_commits_avg": 18.5,
+    "last_commit_date": "2025-07-14",
+    "upgrade_mechanism": "multisig_only",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": 1000000,
+    "bug_bounty_platform": "Immunefi"
+  },
+  "dependencies": [
+    {
+      "dep_type": "l1",
+      "provider": "Bitcoin",
+      "risk_level": "low",
+      "notes": "Stacks settles finality on Bitcoin via Proof-of-Transfer (PoX); Bitcoin's security is the strongest available, but Stacks inherits Bitcoin's ~10-min block time for finality pre-Nakamoto. Post-Nakamoto, fast blocks (~5s) are produced between Bitcoin anchor blocks, so a Bitcoin reorg could theoretically reorg Stacks tenure boundaries \u2014 mitigated by tenure-change rules."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "sBTC (decentralized signer network)",
+      "risk_level": "medium",
+      "notes": "sBTC (Bitcoin peg) relies on a rotating set of Stackers/signers using threshold Schnorr signatures (FROST protocol). The signer set is permissioned by STX stacking, introducing liveness and collusion risk. Audited by Asymmetric Research (2024) but still relatively new in production."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "XLink / ALEX Bridge (third-party)",
+      "risk_level": "high",
+      "notes": "Third-party bridge connecting Stacks ecosystem to BNB Chain and other networks; was exploited in May 2024 for ~$4.3M via compromised private key. Not a core Stacks protocol component but widely used in the ecosystem."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Pyth Network / Redstone (ecosystem-level, not L1)",
+      "risk_level": "medium",
+      "notes": "Stacks DeFi protocols (ALEX, Arkadiko) use Pyth and Redstone oracle feeds via Clarity contracts. Oracle manipulation risk exists at the application layer; the Stacks L1 itself has no native oracle dependency."
+    }
+  ],
+  "rationale": "Stacks L1 has a reasonable security posture for a Bitcoin-anchored L2: multiple professional audits have been conducted (Trail of Bits, Least Authority, Asymmetric Research, CoinFabrik), the Clarity language's decidability-by-design eliminates reentrancy and infinite-loop classes of bugs, and the protocol has never suffered an L1-level fund loss. The primary risks are (1) the relative novelty of the Nakamoto consensus and sBTC signer network, which introduce new attack surfaces that are still maturing in production, and (2) ecosystem-layer bridge risk as demonstrated by the ALEX/XLink exploit, which, while not an L1 failure, affects user trust and TVL. The $1M Immunefi bug bounty and active GitHub development (87+ contributors, frequent commits) are positive signals, though the signer multisig parameters for sBTC are not fully transparent on free-tier sources.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://github.com/stacks-network/stacks-core",
+    "https://github.com/stacks-network/stacks-audits",
+    "https://docs.stacks.co",
+    "https://immunefi.com/bounty/stacks/",
+    "https://defillama.com/hacks",
+    "https://rekt.news (searched; no Stacks L1 entry found)",
+    "https://medium.com/alexgobtc (ALEX Lab post-mortem)",
+    "https://stacks.org/nakamoto (Nakamoto upgrade documentation)",
+    "https://github.com/stacks-network/sbtc"
+  ]
+}

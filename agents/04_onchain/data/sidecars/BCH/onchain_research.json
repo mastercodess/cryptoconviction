@@ -1,0 +1,35 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": 45000,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-10"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-10",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": 0.78,
+    "sth_supply_pct": 0.22,
+    "smart_money_stance": "NEUTRAL"
+  },
+  "wash_trade_concerns": "BCH spot volume on major CEXs (Binance, Coinbase) appears broadly organic given order-book depth and trade-size distribution, though smaller exchanges with BCH pairs have historically shown inflated volume; CoinGecko's trust-score filtering removes the worst offenders from its aggregated figure of roughly $200\u2013400 M/day as of mid-2025.",
+  "rationale": "BCH daily transaction counts have hovered in the 40,000\u201355,000 range through Q2 2025 per Blockchair public explorer data, well below its 2018 peak but stable year-over-year. Long-term holder supply (coins unmoved >155 days) is estimated at ~78% of circulating supply based on Glassnode free-tier cohort data as of early July 2025, suggesting limited near-term sell pressure. Exchange-flow USD figures (inflow/outflow) are not available on free tiers of Glassnode or CryptoQuant without a paid subscription, so those fields are null. CoinGecko lists BCH market cap at approximately $8\u20139 B and 24 h volume near $250 M as of 2025-07-10, implying a volume-to-market-cap ratio of ~3%, which is within normal bounds for a large-cap asset.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/bitcoin-cash",
+    "https://blockchair.com/bitcoin-cash",
+    "https://studio.glassnode.com/metrics?a=BCH&m=addresses.ActiveCount",
+    "https://studio.glassnode.com/metrics?a=BCH&m=supply.LthSum",
+    "https://defillama.com/chain/Bitcoin%20Cash",
+    "https://alternative.me/crypto/fear-and-greed-index/"
+  ]
+}

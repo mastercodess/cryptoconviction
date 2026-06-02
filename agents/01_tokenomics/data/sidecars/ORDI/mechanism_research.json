@@ -1,0 +1,16 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "ORDI is a fixed-supply (21,000,000 cap) BRC-20 meme/inscription token deployed via the Bitcoin Ordinals protocol with no on-chain fee capture, no burn mechanism, no staking, and no governance-controlled treasury; value accrual is purely speculative and driven by secondary-market demand for the first BRC-20 token, not by any protocol cash-flow directed to holders.",
+  "sources": [
+    "https://docs.ordinals.com/",
+    "https://github.com/casey/ord",
+    "https://www.coingecko.com/en/coins/ordi",
+    "https://ordinals.com/"
+  ],
+  "data_quality": "PARTIAL"
+}

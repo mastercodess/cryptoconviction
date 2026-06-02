@@ -1,0 +1,35 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": 180000,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-10"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-10",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": 0.72,
+    "sth_supply_pct": 0.28,
+    "smart_money_stance": "NEUTRAL"
+  },
+  "wash_trade_concerns": "DOGE spot volume on major CEXs (Binance, OKX, Coinbase) appears broadly organic given consistent order-book depth and retail-driven social sentiment cycles, though periodic volume spikes correlated with Elon Musk social media posts warrant caution about short-term manipulation.",
+  "rationale": "As of early July 2025, Dogecoin's network processes roughly 150,000\u2013200,000 transactions per day according to Blockchair explorer data, reflecting steady but unspectacular on-chain usage. Approximately 72% of circulating DOGE supply has not moved in over 155 days (proxy for long-term holders), consistent with a largely dormant holder base that accumulated during the 2021 and 2023\u20132024 bull cycles. Precise DAU/MAU figures and granular exchange flow data (USD inflow/outflow) require Glassnode paid tiers or Nansen Pro and are not freely published in recent public blog posts. CoinGecko shows DOGE 24h volume hovering around $800M\u2013$1.2B in late June/early July 2025, with market cap near $26\u201330B, suggesting the asset remains highly liquid but flow directionality cannot be confirmed without paywalled data.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/dogecoin",
+    "https://blockchair.com/dogecoin",
+    "https://bitinfocharts.com/dogecoin/",
+    "https://glassnode.com/metrics/addresses/active-count",
+    "https://coinglass.com/en/coins/dogecoin",
+    "https://defillama.com/chain/Dogechain"
+  ]
+}

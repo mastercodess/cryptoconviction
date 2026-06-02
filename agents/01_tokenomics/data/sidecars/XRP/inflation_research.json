@@ -1,0 +1,14 @@
+{
+  "current_annualized_rate": 0.0,
+  "method": "disclosed_target",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "flat",
+  "rationale": "XRP has a fixed maximum supply of 100 billion tokens, all of which were pre-mined at genesis with no new issuance mechanism or mining rewards; the only supply dynamic is deflationary, as a small amount of XRP is permanently destroyed (burned) as transaction fees on the XRPL (currently 10 drops = 0.00001 XRP per transaction). Circulating supply changes reflect Ripple's periodic escrow releases and sales, but these do not constitute new issuance \u2014 they are distributions from the pre-existing fixed pool held in escrow, making net new inflation effectively zero (and technically slightly negative due to fee burns).",
+  "sources": [
+    "https://xrpl.org/docs/concepts/accounts/reserves",
+    "https://xrpl.org/docs/concepts/transactions/fees",
+    "https://ripple.com/xrp/",
+    "https://www.coingecko.com/en/coins/xrp",
+    "https://xrpscan.com/metrics"
+  ]
+}

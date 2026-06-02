@@ -1,0 +1,14 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Derivatives positioning data for STX (funding rates, open interest) is not freely accessible without a paid Coinglass API key or exchange API subscription; correlation coefficients require raw OHLCV data and computation not served pre-calculated on any listed free tier.",
+  "sources": [
+    "https://www.coinglass.com/en/currencies/STX \u2014 Coinglass STX page exists but funding rate & OI data behind API paywall / login for export; spot-check UI values are not machine-readable on free tier.",
+    "https://www.coingecko.com/en/coins/blockstack \u2014 CoinGecko provides price/volume/market cap for STX but does NOT publish pre-computed correlation coefficients or derivatives metrics on free public pages.",
+    "https://defillama.com/protocol/stacks \u2014 DefiLlama covers Stacks TVL but has no derivatives or correlation data.",
+    "https://fred.stlouisfed.org \u2014 FRED provides NASDAQ index data (e.g. NASDAQCOM series) but correlation to STX requires manual computation against CoinGecko price series; not pre-calculated anywhere on free tier."
+  ]
+}

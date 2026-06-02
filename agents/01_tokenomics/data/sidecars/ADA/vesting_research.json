@@ -1,0 +1,55 @@
+{
+  "events": [
+    {
+      "unlock_date": "2017-09-29",
+      "category": "public_emission",
+      "tokens_unlocked": 25927070538,
+      "pct_of_supply": 0.5761,
+      "source_url": "https://cardano.org/genesis/",
+      "notes": "ICO participant allocation distributed at mainnet genesis; no lock-up applied."
+    },
+    {
+      "unlock_date": "2017-09-29",
+      "category": "team_unlock",
+      "tokens_unlocked": 2185415171,
+      "pct_of_supply": 0.0486,
+      "source_url": "https://cardano.org/genesis/",
+      "notes": "IOHK allocation (~5.18B total across IOHK, CF, Emurgo) distributed at genesis with no on-chain time-lock; figure here is Emurgo portion."
+    },
+    {
+      "unlock_date": "2017-09-29",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 648176761,
+      "pct_of_supply": 0.0144,
+      "source_url": "https://cardano.org/genesis/",
+      "notes": "Cardano Foundation allocation distributed at genesis; no on-chain vesting contract enforced."
+    },
+    {
+      "unlock_date": "2017-09-29",
+      "category": "team_unlock",
+      "tokens_unlocked": 5185414108,
+      "pct_of_supply": 0.1152,
+      "source_url": "https://cardano.org/genesis/",
+      "notes": "IOHK allocation distributed at genesis; no on-chain time-lock; subject to informal multi-year commitment per IOHK agreements."
+    },
+    {
+      "unlock_date": "2020-07-29",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.cardano.org/explore-cardano/monetary-policy",
+      "notes": "Shelley era began; staking rewards started drawing from the ~13.88B ADA reserve at ~0.3% of remaining reserve per 5-day epoch, continuing indefinitely."
+    },
+    {
+      "unlock_date": "2024-01-01",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.cardano.org/explore-cardano/monetary-policy",
+      "notes": "Ongoing reserve emissions as of 2024; approximately 8\u20139B ADA remaining in reserve, emitting ~300M\u2013400M ADA annually at current decay rate."
+    }
+  ],
+  "summary": "Cardano had no traditional time-locked vesting schedule: the vast majority of ADA (ICO participants ~57.6%, IOHK ~11.5%, Emurgo ~4.9%, Cardano Foundation ~1.4%) was distributed at genesis on 2017-09-29 with no on-chain lock-up contracts. The only ongoing 'unlock pressure' comes from staking reward emissions drawn from a reserve pool of ~13.88B ADA (originally ~30.9% of max supply), which decays at roughly 0.3% of the remaining reserve per 5-day epoch \u2014 meaning annual emissions are declining over time and will asymptotically approach zero. There are no upcoming cliff unlocks or investor tranches to monitor.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) IOHK, Emurgo, and Cardano Foundation founding allocations had informal/contractual (not on-chain) commitments about usage; the exact terms of those agreements are not fully public, so any internal vesting schedules between those entities are NOT_AVAILABLE_FREE_TIER. 2) tokenunlocks.app does not carry a Cardano vesting page, confirming no structured on-chain unlock schedule exists. 3) Precise current reserve balance requires querying a Cardano node or explorer (e.g. adapools.org) in real time; the figures cited here are approximations from public documentation. 4) Messari's detailed token unlock data for Cardano is behind their Pro paywall."
+}

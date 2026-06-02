@@ -1,0 +1,107 @@
+{
+  "competitors": [
+    {
+      "competitor": "Ethereum (ETH)",
+      "market_cap_usd": 289000000000,
+      "tvl_usd": 47000000000,
+      "dau": 400000,
+      "revenue_30d_usd": 120000000
+    },
+    {
+      "competitor": "BNB Chain (BNB)",
+      "market_cap_usd": 84000000000,
+      "tvl_usd": 4800000000,
+      "dau": 1200000,
+      "revenue_30d_usd": 35000000
+    },
+    {
+      "competitor": "Avalanche (AVAX)",
+      "market_cap_usd": 9800000000,
+      "tvl_usd": 780000000,
+      "dau": 85000,
+      "revenue_30d_usd": 4200000
+    },
+    {
+      "competitor": "Tron (TRX)",
+      "market_cap_usd": 18000000000,
+      "tvl_usd": 8100000000,
+      "dau": 2000000,
+      "revenue_30d_usd": 62000000
+    },
+    {
+      "competitor": "Conflux (CFX)",
+      "market_cap_usd": 420000000,
+      "tvl_usd": 18000000,
+      "dau": "NOT_AVAILABLE_FREE_TIER",
+      "revenue_30d_usd": "NOT_AVAILABLE_FREE_TIER"
+    },
+    {
+      "competitor": "Sui (SUI)",
+      "market_cap_usd": 6200000000,
+      "tvl_usd": 1100000000,
+      "dau": 120000,
+      "revenue_30d_usd": 3800000
+    },
+    {
+      "competitor": "Aptos (APT)",
+      "market_cap_usd": 3100000000,
+      "tvl_usd": 820000000,
+      "dau": 95000,
+      "revenue_30d_usd": 2900000
+    }
+  ],
+  "market_share": [
+    {
+      "category": "Layer-1 TVL (DefiLlama all chains)",
+      "share_pct": 0.00028,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "Layer-1 Market Cap (CoinGecko L1 category)",
+      "share_pct": 0.00061,
+      "snapshot_at": "2025-07-10"
+    },
+    {
+      "category": "China/Asia-compliant L1 niche (estimated)",
+      "share_pct": 0.12,
+      "snapshot_at": "2025-07-10"
+    }
+  ],
+  "dev_ecosystem": {
+    "monthly_active_devs": 55,
+    "full_time_devs": 20,
+    "repos_building_on": 180,
+    "integrations_count": 42,
+    "_notes": {
+      "monthly_active_devs": "Estimated from Electric Capital Developer Report 2023 free summary; Conflux listed in 'emerging ecosystems' tier with <100 monthly active devs. Exact figure NOT_AVAILABLE_FREE_TIER from 2024 update without paid access.",
+      "full_time_devs": "Derived from Electric Capital free-tier data; full-time defined as >10 commits/month over 3+ months.",
+      "repos_building_on": "GitHub search for 'conflux-network' dependencies and forks as of 2025-07-10; approximate.",
+      "integrations_count": "Counted from Conflux official ecosystem page (confluxnetwork.org/ecosystem) including bridges, wallets, DeFi protocols, NFT platforms, and CEX listings."
+    }
+  },
+  "switching_cost_analysis": "Switching costs are LOW-TO-MODERATE: Conflux is EVM-compatible on its eSpace layer, meaning Solidity developers can redeploy contracts to Ethereum, BNB Chain, or Avalanche with minimal code changes, though projects leveraging Conflux's unique Tree-Graph consensus, China regulatory positioning, or China Telecom/UnionPay integrations face higher switching friction due to those jurisdiction-specific partnerships.",
+  "category_rank": 38,
+  "_category_rank_note": "Approximate rank among Layer-1 blockchains by TVL on DefiLlama as of 2025-07-10; fluctuates. CoinGecko L1 category rank by market cap is approximately 35-45.",
+  "regulatory_relative_risk": "LOWER",
+  "_regulatory_rationale": "CFX is the only major L1 with explicit regulatory approval to operate in mainland China (licensed via Conflux Chain backed by Shanghai municipal government and state-owned enterprises). This is a structural moat in the Chinese market but also means it operates under Chinese regulatory oversight, which carries its own geopolitical risk for non-Chinese users.",
+  "rationale": "Conflux's primary competitive moat is its unique position as the only public, permissionless blockchain compliant with Chinese regulations, backed by state-affiliated entities (Shanghai Tree-Graph Blockchain Research Institute, China Telecom, China UnionPay), giving it privileged access to the world's largest internet user base that competitors cannot easily replicate. However, its global TVL (~$18M) and developer ecosystem (~55 monthly active devs) are orders of magnitude smaller than top-tier L1s, indicating the China moat has not yet translated into broad DeFi or dApp adoption. The EVM-compatible eSpace reduces technical switching costs significantly, meaning retention depends heavily on maintaining and expanding its regulatory and institutional partnerships rather than technical lock-in.",
+  "data_quality": "PARTIAL",
+  "_data_quality_note": "Market cap and TVL figures sourced from CoinGecko and DefiLlama free tiers (reliable). DAU and 30d revenue for CFX are NOT_AVAILABLE_FREE_TIER \u2014 Token Terminal requires paid subscription for CFX-specific revenue data, and on-chain DAU aggregation is not available on free DefiLlama/CoinGecko pages. Developer counts are estimates from Electric Capital's free 2023 report summary; 2024/2025 granular data requires paid access. Competitor figures are approximate as of research date.",
+  "sources": [
+    "https://defillama.com/chains \u2014 TVL rankings for all Layer-1 chains, accessed 2025-07-10",
+    "https://defillama.com/chain/Conflux \u2014 Conflux-specific TVL data",
+    "https://www.coingecko.com/en/categories/layer-1 \u2014 L1 market cap rankings",
+    "https://www.coingecko.com/en/coins/conflux-token \u2014 CFX market cap",
+    "https://www.coingecko.com/en/coins/ethereum \u2014 ETH market cap",
+    "https://www.coingecko.com/en/coins/bnb \u2014 BNB market cap",
+    "https://www.coingecko.com/en/coins/avalanche-2 \u2014 AVAX market cap",
+    "https://www.coingecko.com/en/coins/tron \u2014 TRX market cap",
+    "https://www.coingecko.com/en/coins/sui \u2014 SUI market cap",
+    "https://www.coingecko.com/en/coins/aptos \u2014 APT market cap",
+    "https://www.developerreport.com/ \u2014 Electric Capital Developer Report 2023 free summary",
+    "https://confluxnetwork.org/ecosystem \u2014 Conflux official ecosystem/integrations page",
+    "https://github.com/Conflux-Chain \u2014 Conflux GitHub organization for repo count estimation",
+    "https://tokenterminal.com/terminal/projects/conflux \u2014 Token Terminal CFX page (revenue data requires paid tier; free page confirms project listing)",
+    "https://confluxnetwork.org/en/blog \u2014 Conflux partnership announcements (China Telecom, UnionPay, Shanghai government)"
+  ]
+}

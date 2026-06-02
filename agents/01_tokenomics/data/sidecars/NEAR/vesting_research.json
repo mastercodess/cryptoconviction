@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+      "unlock_date": "2020-10-13",
+      "category": "public_emission",
+      "tokens_unlocked": 1000000000,
+      "pct_of_supply": 1.0,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Genesis block minted 1,000,000,000 NEAR; initial circulating supply was ~35% (~350M NEAR) at launch with remainder subject to vesting."
+    },
+    {
+      "unlock_date": "2020-10-13",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 100000000,
+      "pct_of_supply": 0.1,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Community grants & ecosystem fund allocation (10% of genesis supply) available at launch for ecosystem development."
+    },
+    {
+      "unlock_date": "2020-10-13",
+      "category": "other",
+      "tokens_unlocked": 120000000,
+      "pct_of_supply": 0.12,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Operations grants (12% of genesis supply) allocated at launch for protocol operations and early contributors."
+    },
+    {
+      "unlock_date": "2021-10-13",
+      "category": "investor_unlock",
+      "tokens_unlocked": 179400000,
+      "pct_of_supply": 0.1794,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Early backers/investors (17.94% of genesis) subject to 12-month cliff from October 2020, then linear vesting over 24 months; cliff tranche released ~Oct 2021."
+    },
+    {
+      "unlock_date": "2021-10-13",
+      "category": "team_unlock",
+      "tokens_unlocked": 140000000,
+      "pct_of_supply": 0.14,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Core team allocation (14% of genesis) subject to 12-month cliff from October 2020, then linear vesting over 24 months; cliff tranche released ~Oct 2021."
+    },
+    {
+      "unlock_date": "2022-10-13",
+      "category": "investor_unlock",
+      "tokens_unlocked": 179400000,
+      "pct_of_supply": 0.1794,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Remaining investor linear vesting fully completed by approximately October 2022 (24 months post-cliff)."
+    },
+    {
+      "unlock_date": "2022-10-13",
+      "category": "team_unlock",
+      "tokens_unlocked": 140000000,
+      "pct_of_supply": 0.14,
+      "source_url": "https://near.org/blog/near-token-supply-and-distribution/",
+      "notes": "Remaining core team linear vesting fully completed by approximately October 2022 (24 months post-cliff)."
+    },
+    {
+      "unlock_date": "2020-10-13",
+      "category": "staking_emission",
+      "tokens_unlocked": null,
+      "pct_of_supply": null,
+      "source_url": "https://docs.near.org/concepts/basics/tokens#inflation",
+      "notes": "Ongoing staking inflation at ~5% annually (net ~4.5% after 30% of fees burned); no end date, continuous emission to validators and delegators."
+    }
+  ],
+  "summary": "NEAR Protocol's major vesting events \u2014 covering investors (17.94%), core team (14%), and foundation/operations allocations \u2014 were structured around a 12-month cliff from the October 2020 genesis followed by 24-month linear vesting, meaning virtually all time-locked genesis supply was fully unlocked by October 2022. As of mid-2025, there are no significant remaining scheduled unlock cliffs from the original distribution; the only ongoing token emission is staking inflation (~5% gross annually), which continuously increases circulating supply. Unlock pressure from vesting is therefore minimal at this stage, with any supply-side pressure coming solely from staking rewards.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Exact monthly linear vesting tranches between Oct 2021\u2013Oct 2022 are not broken out here because tokenunlocks.app does not provide a free detailed NEAR schedule as of mid-2025, and Messari's precise vesting table requires a Pro subscription. 2) The investor/team token figures above are approximate based on the published percentage allocations applied to 1B genesis supply \u2014 the actual on-chain monthly release amounts may differ slightly. 3) Some secondary allocations (e.g., specific ecosystem fund sub-grants, NEAR Foundation treasury re-allocations post-2022) are not publicly documented with precise unlock dates on free-tier sources. 4) The NEAR Foundation has made discretionary treasury deployments (e.g., the 2022 USN stabilization fund) that are NOT reflected here as they were not pre-scheduled vesting events. Source: https://near.org/blog/near-token-supply-and-distribution/ and https://docs.near.org/concepts/basics/tokens"
+}

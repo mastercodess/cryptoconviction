@@ -1,0 +1,23 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": true,
+  "staking_apr_pct": 8.36,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "protocol",
+  "value_accrual_summary": "All C-Chain and X-Chain transaction fees are burned (reducing supply), while validator/delegator staking rewards are paid from a fixed inflationary emission schedule (capped at 720M AVAX total supply), meaning stakers earn newly minted tokens rather than fee revenue, and LPs/dApp users receive no direct protocol-level fee share.",
+  "sources": [
+    "https://docs.avax.network/learn/avalanche/avax-tokenomics",
+    "https://docs.avax.network/learn/avalanche/avalanche-consensus",
+    "https://docs.avax.network/nodes/validate/how-to-stake",
+    "https://www.coingecko.com/en/coins/avalanche",
+    "https://github.com/ava-labs/avalanchego/blob/master/vms/platformvm/reward/calculator.go"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn_detail": "All base transaction fees on the X-Chain and C-Chain are burned per the Avalanche whitepaper and confirmed in AvalancheGo source code. P-Chain fees are also burned as of recent upgrades.",
+    "staking_apr_source": "CoinGecko public page shows ~8.36% staking APR as of mid-2025; this figure fluctuates with network participation rate (target range ~7\u201312% per docs). The reward formula in calculator.go confirms rewards are minted from the reserved emission pool, NOT from fee revenue.",
+    "inflation_note": "Max supply is capped at 720,000,000 AVAX. As of mid-2025 circulating supply is ~410M; remaining ~310M is reserved for staking rewards (emission). Burn from fees partially offsets but does not eliminate net inflation at current fee volumes.",
+    "fee_capture_caveat": "Subnet validators may set custom fee structures for their own subnets, but those are subnet-specific and not part of the primary network value-accrual mechanism described here."
+  }
+}

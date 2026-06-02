@@ -1,0 +1,45 @@
+{
+  "annualized_revenue_usd": 62000000,
+  "tvl_usd": 385000000,
+  "p_s_ratio": 18.5,
+  "p_tvl_ratio": 29.6,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": 3.8,
+  "growth_trend": "ACCELERATING",
+  "seasonality": "Growth is largely event-driven, spiking around Telegram-integrated product launches (e.g., TON Space wallet rollout Q4 2023, mini-app ecosystem expansion mid-2024) rather than consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "SOL",
+      "metric": "p_s",
+      "peer_value": 22.0
+    },
+    {
+      "peer_symbol": "AVAX",
+      "metric": "p_s",
+      "peer_value": 14.0
+    },
+    {
+      "peer_symbol": "TRX",
+      "metric": "p_s",
+      "peer_value": 8.5
+    },
+    {
+      "peer_symbol": "NEAR",
+      "metric": "p_s",
+      "peer_value": 25.0
+    }
+  ],
+  "rationale": "TON's annualized protocol revenue is estimated at ~$62M based on DefiLlama's reported trailing fees for the TON ecosystem (transaction fees + DNS + storage fees) as of mid-2025, against a fully diluted market cap of roughly $11.5B (circulating ~2.5B tokens \u00d7 ~$4.60 price), yielding a P/S of ~18.5x. TVL of ~$385M per DefiLlama places P/TVL at ~29.6x, elevated relative to peers given thin DeFi penetration versus Telegram's 900M-user distribution moat. Real yield is null because validator/nominator staking rewards (~3.8% APY) are entirely inflation-funded with no fee-burn or fee-redistribution mechanism returning protocol revenue to stakers.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/TON",
+    "https://defillama.com/protocol/ton",
+    "https://ton.org/en/whitepaper",
+    "https://docs.ton.org/learn/tvm-instructions/tvm-overview",
+    "https://tonscan.org/",
+    "https://coinmarketcap.com/currencies/toncoin/",
+    "https://coingecko.com/en/coins/toncoin",
+    "https://blog.ton.org/ton-ecosystem-report-2024",
+    "https://tokenterminal.com/terminal/projects/ton"
+  ]
+}

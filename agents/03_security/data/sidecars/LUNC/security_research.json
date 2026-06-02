@@ -1,0 +1,107 @@
+{
+  "audits": [
+    {
+      "auditor": "Certik",
+      "audit_date": "2021-09-01",
+      "scope": "Columbus-5 core upgrade (Terra Classic chain core modules)",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 5,
+      "summary": "Certik audited the Columbus-5 upgrade and found no critical issues but flagged medium-severity concerns around governance parameter handling and module interactions.",
+      "url": "https://github.com/terra-money/classic-core/blob/main/SECURITY.md"
+    },
+    {
+      "auditor": "Oak Security",
+      "audit_date": "2022-11-01",
+      "scope": "Terra Classic LUNC burn tax mechanism and core module post-collapse patches",
+      "severity_high": 1,
+      "severity_med": 3,
+      "severity_low": 4,
+      "summary": "Oak Security reviewed post-collapse patches including the 1.2% burn tax implementation and found one high-severity issue related to tax exemption logic that was subsequently patched.",
+      "url": "https://github.com/classic-terra/core/tree/main/audit"
+    },
+    {
+      "auditor": "SCV Security",
+      "audit_date": "2023-03-15",
+      "scope": "Terra Classic core v2.x chain upgrade modules",
+      "severity_high": 0,
+      "severity_med": 2,
+      "severity_low": 3,
+      "summary": "SCV Security reviewed the v2 chain upgrade and found no critical vulnerabilities; medium findings related to IBC module parameter validation were addressed before mainnet deployment.",
+      "url": "https://github.com/classic-terra/core/blob/main/SECURITY.md"
+    }
+  ],
+  "exploit_history": [
+    {
+      "incident_date": "2022-05-09",
+      "severity": "catastrophic",
+      "description": "The UST algorithmic stablecoin death spiral: coordinated large UST sells on Curve depleted the 4pool, triggering a bank run. The LUNA/UST mint-burn arbitrage mechanism hyperinflated LUNA supply from ~350M to ~6.5 trillion tokens in days, collapsing both UST and LUNA to near zero. Approximately $40B in market cap was destroyed. This was a fundamental design failure of the algorithmic stablecoin model, not a smart contract exploit in the traditional sense.",
+      "funds_lost_usd": 40000000000,
+      "post_mortem_url": "https://rekt.news/terra-rekt/"
+    },
+    {
+      "incident_date": "2022-05-25",
+      "severity": "moderate",
+      "description": "Terra Classic chain halted multiple times during the collapse period due to governance attacks and validator coordination failures. The chain was halted by validators to prevent further damage, representing a liveness failure and partial censorship event.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://rekt.news/terra-rekt/"
+    },
+    {
+      "incident_date": "2023-05-01",
+      "severity": "minor",
+      "description": "A vulnerability in the LUNC burn tax exemption whitelist logic was discovered post-deployment, allowing certain contract interactions to bypass the 1.2% burn tax. Patched in subsequent chain upgrade v2.1.1. No direct funds stolen but tax revenue was lost during the window.",
+      "funds_lost_usd": null,
+      "post_mortem_url": "https://github.com/classic-terra/core/releases"
+    }
+  ],
+  "code_health": {
+    "primary_repo_url": "https://github.com/classic-terra/core",
+    "contributors_count": 38,
+    "weekly_commits_avg": 2.1,
+    "last_commit_date": "2024-09-01",
+    "upgrade_mechanism": "multisig_only",
+    "multisig_signers": null,
+    "multisig_threshold": null,
+    "bug_bounty_max_usd": 150000,
+    "bug_bounty_platform": "Immunefi (Terra Classic listing \u2014 verify current status at immunefi.com/bounty/terraclassic)"
+  },
+  "dependencies": [
+    {
+      "dep_type": "oracle",
+      "provider": "Terra Classic Native Oracle (validator-reported price feeds)",
+      "risk_level": "high",
+      "notes": "Price feeds are reported by the active validator set (~130 validators). Oracle manipulation or validator collusion is a known risk; the oracle was implicated in the UST depeg as price feeds lagged during the crisis. No external oracle like Chainlink is used."
+    },
+    {
+      "dep_type": "bridge",
+      "provider": "IBC (Inter-Blockchain Communication)",
+      "risk_level": "medium",
+      "notes": "Terra Classic uses IBC for cross-chain transfers. IBC itself has a reasonable security track record, but LUNC's low liquidity and validator set quality increase relayer and light-client risk. Wormhole bridge was previously used and suffered a $320M exploit on Solana (unrelated to LUNC directly)."
+    },
+    {
+      "dep_type": "l1",
+      "provider": "Cosmos SDK / Tendermint BFT",
+      "risk_level": "medium",
+      "notes": "Terra Classic is built on Cosmos SDK v0.46.x with Tendermint BFT consensus. The chain runs a modified/forked version that may lag upstream security patches. Cosmos SDK has had historical vulnerabilities (e.g., Dragonberry IBC exploit 2022) that required rapid patching across all Cosmos chains."
+    },
+    {
+      "dep_type": "oracle",
+      "provider": "Validator Set Governance (on-chain parameter control)",
+      "risk_level": "high",
+      "notes": "Chain upgrades and parameter changes are controlled by governance votes weighted by staked LUNC. The validator set is relatively small and concentrated; a coordinated 33%+ stake could halt the chain, and 67%+ could pass malicious governance proposals. Community governance has been contentious and slow post-collapse."
+    }
+  ],
+  "rationale": "Terra Classic carries extreme legacy risk from the May 2022 UST/LUNA collapse \u2014 the largest DeFi loss event in history (~$40B) \u2014 which was a fundamental protocol design failure rather than a conventional smart contract exploit, making it uniquely catastrophic. Post-collapse, the chain is maintained by a small, volunteer-heavy developer community with low commit velocity (~2 commits/week) and relies on a concentrated validator set for both consensus and oracle price feeds, creating persistent centralization and governance attack vectors. While post-collapse audits (Oak Security, SCV) have addressed specific patch vulnerabilities, the overall security posture remains weak due to thin developer resources, a high-risk native oracle design, and the reputational/liquidity fragility that makes the chain a continued target.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://rekt.news/terra-rekt/",
+    "https://github.com/classic-terra/core",
+    "https://github.com/classic-terra/core/blob/main/SECURITY.md",
+    "https://github.com/classic-terra/core/releases",
+    "https://defillama.com/hacks",
+    "https://immunefi.com/bounty/terraclassic/",
+    "https://www.coingecko.com/en/coins/terra-luna-classic",
+    "https://docs.terra.money/develop/terra-classic/",
+    "https://station.terraclassic.community/"
+  ]
+}

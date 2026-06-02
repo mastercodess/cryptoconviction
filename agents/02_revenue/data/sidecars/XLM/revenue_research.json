@@ -1,0 +1,36 @@
+{
+  "annualized_revenue_usd": null,
+  "tvl_usd": 66000000,
+  "p_s_ratio": null,
+  "p_tvl_ratio": null,
+  "real_yield_apr_pct": null,
+  "inflationary_yield_apr_pct": null,
+  "growth_trend": "STEADY",
+  "seasonality": "Stellar activity is event-driven, spiking around CBDC pilot announcements, MoneyGram/USDC corridor expansions, and SDF grant disbursements rather than following consistent seasonal patterns.",
+  "peer_comparisons": [
+    {
+      "peer_symbol": "XRP",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "ALGO",
+      "metric": "p_s",
+      "peer_value": null
+    },
+    {
+      "peer_symbol": "HBAR",
+      "metric": "p_s",
+      "peer_value": null
+    }
+  ],
+  "rationale": "Stellar is a Layer-1 payment network, not a fee-accruing DeFi protocol in the traditional sense. Base transaction fees are burned/negligible (0.00001 XLM per operation, ~$0.000003 at current prices), meaning annualized protocol revenue in USD terms is not tracked by DefiLlama or Token Terminal on their free tiers \u2014 DefiLlama lists Stellar TVL at approximately $66M as of mid-2025 but does not report a revenue or fees figure. XLM has no staking yield mechanism (SDF discontinued the inflation pool in 2019), so both real and inflationary yield APR are null. P/S and P/TVL ratios cannot be computed without a reliable revenue numerator.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://defillama.com/chain/Stellar",
+    "https://stellar.org/blog/developers/stellar-inflation-is-being-discontinued",
+    "https://developers.stellar.org/docs/learn/fundamentals/fees-resource-limits-metering",
+    "https://dashboard.stellar.org/",
+    "https://tokenterminal.com/terminal/projects/stellar"
+  ]
+}

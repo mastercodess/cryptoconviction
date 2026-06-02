@@ -1,0 +1,17 @@
+{
+  "has_burn": false,
+  "burn_source": "NA",
+  "has_staking": false,
+  "staking_apr_pct": null,
+  "staking_emission_inflationary": false,
+  "fee_capture_target": "none",
+  "value_accrual_summary": "As of mid-2025, ONDO token holders capture no direct economic value from protocol fees or burns; the token functions primarily as a governance instrument with value accrual dependent entirely on speculative demand and future governance decisions, as no fee-sharing, staking rewards, or burn mechanism has been implemented or formally ratified in public governance.",
+  "sources": [
+    "https://docs.ondo.finance/ondo-token/overview",
+    "https://docs.ondo.finance/ondo-token/tokenomics",
+    "https://forum.ondo.finance/",
+    "https://etherscan.io/token/0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3#readContract",
+    "https://github.com/ondoprotocol"
+  ],
+  "data_quality": "PARTIAL"
+}

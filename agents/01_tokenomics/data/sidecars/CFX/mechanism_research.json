@@ -1,0 +1,23 @@
+{
+  "has_burn": true,
+  "burn_source": "fees",
+  "has_staking": true,
+  "staking_apr_pct": 4.0,
+  "staking_emission_inflationary": true,
+  "fee_capture_target": "split",
+  "value_accrual_summary": "CFX accrues value primarily through inflationary PoS staking rewards (~4% APY funded by protocol emission, not real fees) and a partial fee-burn mechanism where 50% of base transaction fees are burned and 50% go to miners/validators, meaning stakers capture diluted emission while fee burn provides modest deflationary pressure only when network usage is high.",
+  "sources": [
+    "https://doc.confluxnetwork.org/docs/general/conflux-basics/economics",
+    "https://doc.confluxnetwork.org/docs/general/mine-stake/stake/staking-faq",
+    "https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md",
+    "https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-43.md",
+    "https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf"
+  ],
+  "data_quality": "PARTIAL",
+  "_notes": {
+    "burn_detail": "CIP-107 introduced a storage-point mechanism and fee burn: 50% of base transaction fees are burned. Prior to CIP-107, fees went entirely to miners. The burn is fee-volume-dependent and not guaranteed to be deflationary against emission.",
+    "staking_detail": "PoS staking rewards are funded by protocol-level token issuance (inflation), not by captured transaction fees. The ~4% figure is the target APY stated in official docs; actual rate fluctuates with total staked CFX. CIP-43 introduced the PoS chain and staking reward structure.",
+    "staking_apr_source": "Official docs cite ~4% as the designed staking interest rate; live rate is NOT_AVAILABLE_FREE_TIER from CoinGecko free tier without a direct staking APR endpoint for CFX.",
+    "why_partial": "Exact real-time staking APR and precise fee-burn volumes require on-chain data queries or ConfluxScan API; the ~4% figure is the protocol-design target, not a live observed rate."
+  }
+}

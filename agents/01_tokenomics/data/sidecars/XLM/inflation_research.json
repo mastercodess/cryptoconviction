@@ -1,0 +1,13 @@
+{
+  "current_annualized_rate": 0.0,
+  "method": "disclosed_target",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "flat",
+  "rationale": "Stellar eliminated its protocol-level inflation mechanism in October 2019 via a network vote (SCP vote on inflation removal), and the Stellar Development Foundation subsequently burned 55 billion XLM from its own holdings in November 2019, reducing total supply to ~50 billion XLM with no further programmatic issuance. The fixed maximum supply is 50,001,806,812 XLM; no new XLM is minted by the protocol, so the annualized inflation rate is effectively 0%.",
+  "sources": [
+    "https://stellar.org/blog/foundation-news/sdfs-next-chapter",
+    "https://stellar.org/blog/developers/our-proposal-to-disable-inflation",
+    "https://www.coingecko.com/en/coins/stellar",
+    "https://developers.stellar.org/docs/learn/fundamentals/lumens"
+  ]
+}

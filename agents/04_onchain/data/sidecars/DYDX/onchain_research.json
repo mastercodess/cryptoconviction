@@ -1,0 +1,35 @@
+{
+  "activity": {
+    "dau": null,
+    "wau": null,
+    "mau": null,
+    "dau_mau_ratio": null,
+    "daily_tx_count": null,
+    "new_addresses_7d": null,
+    "as_of": "2025-07-14"
+  },
+  "exchange_flows": [
+    {
+      "date": "2025-07-14",
+      "inflow_usd": null,
+      "outflow_usd": null,
+      "net_usd": null
+    }
+  ],
+  "holder_cohort": {
+    "lth_supply_pct": null,
+    "sth_supply_pct": null,
+    "smart_money_stance": "UNKNOWN"
+  },
+  "wash_trade_concerns": "dYdX v4 (dYdX Chain) operates as an off-chain order book with on-chain settlement on its own Cosmos-based appchain, making CEX-style wash-trade detection difficult; reported 24h volume of ~$180M\u2013$400M on CoinGecko as of mid-July 2025 appears broadly consistent with open interest levels visible on Coinglass (~$60M\u2013$90M OI), suggesting volume is not grossly inflated, though off-chain matching limits full verification.",
+  "rationale": "dYdX migrated from Ethereum (v3, StarkEx) to its own Cosmos appchain (dYdX Chain, v4) in late 2023; as of Q1 2025 the protocol reported cumulative trading volume exceeding $1.5 trillion since inception per dYdX Foundation blog posts. DefiLlama lists dYdX Chain TVL at approximately $130M\u2013$160M as of July 2025, down significantly from its 2022 peak but stable since the v4 migration. Granular DAU/WAU/MAU figures and precise exchange-flow USD values for the DYDX token are not publicly available on free tiers of Glassnode or Nansen without a paid subscription; Coinglass does not carry DYDX-specific token flow data. Holder cohort (LTH/STH split) is similarly unavailable on free Glassnode tiers for DYDX.",
+  "data_quality": "PARTIAL",
+  "sources": [
+    "https://www.coingecko.com/en/coins/dydx-chain",
+    "https://defillama.com/protocol/dydx",
+    "https://coinglass.com/en/futures/DYDX",
+    "https://dydx.foundation/blog",
+    "https://glassnode.com/",
+    "https://dydx.exchange/"
+  ]
+}

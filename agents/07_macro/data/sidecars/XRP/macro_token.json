@@ -1,0 +1,20 @@
+{
+  "funding_rate_8h": "NOT_AVAILABLE_FREE_TIER",
+  "open_interest_usd": "NOT_AVAILABLE_FREE_TIER",
+  "btc_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "eth_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "nasdaq_correlation_30d": "NOT_AVAILABLE_FREE_TIER",
+  "rationale": "Precise real-time derivatives metrics (funding rate, OI) and computed 30-day correlations require authenticated API access or paid tiers on Coinglass/CoinGecko Pro/Bloomberg; none of the specified free-tier sources expose these as ready-to-read public values without login or payment.",
+  "sources": [
+    "https://www.coinglass.com/pro/futures/FundingRate \u2014 funding rate table visible in UI but machine-readable bulk export requires account/API key",
+    "https://www.coinglass.com/pro/futures/OpenInterest \u2014 OI chart visible but structured free API endpoint not publicly documented",
+    "https://www.coingecko.com/en/coins/ripple \u2014 price history downloadable (CSV, 365d) for manual correlation calc, but pre-computed correlation figures NOT provided",
+    "https://alternative.me/crypto/fear-and-greed-index/ \u2014 sentiment only, no correlation or derivatives data",
+    "https://fred.stlouisfed.org/ \u2014 NASDAQ/macro data available but cross-asset correlation computation must be done manually; not pre-computed for XRP"
+  ],
+  "notes": {
+    "funding_rate_8h": "Coinglass public page (coinglass.com/en/currencies/XRP) displays a funding rate chart but the current numeric value is rendered dynamically and gated; no free unauthenticated JSON endpoint confirmed.",
+    "open_interest_usd": "Same Coinglass page shows OI chart; aggregate USD figure across exchanges is not available in a freely accessible static endpoint.",
+    "correlations": "Could be manually computed using CoinGecko's free /coins/{id}/market_chart API (daily closes, 30 days) for XRP vs BTC and ETH, and FRED NASDAQCOM series for NASDAQ \u2014 but this requires computation, not a direct pull, and NASDAQ correlation would need careful date alignment. Pre-computed values are NOT_AVAILABLE_FREE_TIER from any listed source."
+  }
+}

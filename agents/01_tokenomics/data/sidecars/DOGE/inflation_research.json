@@ -1,0 +1,12 @@
+{
+  "current_annualized_rate": 0.0366,
+  "method": "projected_from_schedule",
+  "as_of_date": "2025-07-14",
+  "trend_next_24m": "declining",
+  "rationale": "Dogecoin has no supply cap and emits a fixed 10,000 DOGE per block (one block ~1 minute), yielding ~5.256 billion new DOGE per year. Dividing that fixed annual emission by the current circulating supply of ~147.6 billion DOGE (per CoinGecko as of mid-July 2025) gives an annualized inflation rate of approximately 3.66%; because the numerator is fixed while the denominator (circulating supply) grows each year, the percentage rate declines monotonically over time.",
+  "sources": [
+    "https://www.coingecko.com/en/coins/dogecoin",
+    "https://github.com/dogecoin/dogecoin/blob/master/doc/release-notes/release-notes-1.8.md",
+    "https://dogecoin.com/dogepedia/articles/dogecoin-inflation/"
+  ]
+}

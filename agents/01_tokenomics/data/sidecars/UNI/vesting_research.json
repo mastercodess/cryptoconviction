@@ -1,0 +1,111 @@
+{
+  "events": [
+    {
+      "unlock_date": "2020-09-17",
+      "category": "airdrop",
+      "tokens_unlocked": 150000000,
+      "pct_of_supply": 0.15,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Immediate community airdrop of 150M UNI to historical users, LPs, and SOCKS holders at genesis."
+    },
+    {
+      "unlock_date": "2020-09-17",
+      "category": "public_emission",
+      "tokens_unlocked": 43000000,
+      "pct_of_supply": 0.043,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "43M UNI allocated to liquidity mining programs beginning at launch (4 initial pools over ~2 months)."
+    },
+    {
+      "unlock_date": "2021-09-17",
+      "category": "team_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Team & future employee allocation (21.51% = 215.1M UNI) begins vesting; cliff ends 1 year after Sep 2020 genesis, then 4-year linear vest."
+    },
+    {
+      "unlock_date": "2021-09-17",
+      "category": "investor_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Investor allocation (17.80% = 178M UNI) cliff ends 1 year after genesis; 4-year linear vest begins releasing tokens."
+    },
+    {
+      "unlock_date": "2021-09-17",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 0,
+      "pct_of_supply": null,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Uniswap Labs advisors (0.69% = 6.9M UNI) 1-year cliff ends; 4-year linear vest begins."
+    },
+    {
+      "unlock_date": "2021-09-17",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 172000000,
+      "pct_of_supply": 0.172,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Governance treasury (43% = 430M UNI total) begins 4-year linear vest to community governance; ~172M released in year 1 tranche per schedule."
+    },
+    {
+      "unlock_date": "2022-09-17",
+      "category": "team_unlock",
+      "tokens_unlocked": 53775000,
+      "pct_of_supply": 0.05378,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Approximate annual linear release of team tokens (215.1M over 4 years = ~53.8M/yr) continuing through Sep 2024."
+    },
+    {
+      "unlock_date": "2022-09-17",
+      "category": "investor_unlock",
+      "tokens_unlocked": 44500000,
+      "pct_of_supply": 0.0445,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Approximate annual linear release of investor tokens (178M over 4 years = ~44.5M/yr) continuing through Sep 2024."
+    },
+    {
+      "unlock_date": "2023-09-17",
+      "category": "team_unlock",
+      "tokens_unlocked": 53775000,
+      "pct_of_supply": 0.05378,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Third year of team linear vest; cumulative ~161M of 215.1M team tokens released by this date."
+    },
+    {
+      "unlock_date": "2023-09-17",
+      "category": "investor_unlock",
+      "tokens_unlocked": 44500000,
+      "pct_of_supply": 0.0445,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Third year of investor linear vest; cumulative ~133.5M of 178M investor tokens released by this date."
+    },
+    {
+      "unlock_date": "2024-09-17",
+      "category": "team_unlock",
+      "tokens_unlocked": 53775000,
+      "pct_of_supply": 0.05378,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Final year of team 4-year linear vest; all 215.1M team tokens fully unlocked by this date."
+    },
+    {
+      "unlock_date": "2024-09-17",
+      "category": "investor_unlock",
+      "tokens_unlocked": 44500000,
+      "pct_of_supply": 0.0445,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Final year of investor 4-year linear vest; all 178M investor tokens fully unlocked by this date."
+    },
+    {
+      "unlock_date": "2024-09-17",
+      "category": "foundation_unlock",
+      "tokens_unlocked": 430000000,
+      "pct_of_supply": 0.43,
+      "source_url": "https://uniswap.org/blog/uni",
+      "notes": "Governance/community treasury 4-year vest fully completes; all 430M governance treasury tokens fully vested (released per governance votes)."
+    }
+  ],
+  "summary": "UNI launched in September 2020 with a total supply of 1,000,000,000 tokens allocated as follows: 60% to community (including 15% immediate airdrop and 43% governance treasury on 4-year vest), 21.51% to team on 4-year vest with 1-year cliff, 17.80% to investors on 4-year vest with 1-year cliff, and 0.69% to advisors on 4-year vest with 1-year cliff. The largest unlock pressure came from the 1-year cliff expiry in September 2021, when team and investor linear vesting began simultaneously. As of September 2024, all scheduled vesting periods have fully concluded, meaning UNI is now fully unlocked with no further programmatic vesting pressure \u2014 though the governance treasury (430M tokens) is still controlled by UNI holders and can be deployed via governance proposals.",
+  "data_quality": "PARTIAL",
+  "caveats": "1) Exact per-day linear vest amounts for team/investor tranches are approximated as annual figures (true release is continuous/daily linear, not annual lump sums \u2014 daily team release \u2248147,329 UNI/day, daily investor release \u2248122,192 UNI/day during vest period). 2) tokenunlocks.app granular schedule could not be verified as freely accessible at time of research. 3) Some liquidity mining emission details (exact pool allocations beyond the initial 4 pools) required governance proposals not fully enumerated here. 4) The governance treasury 430M figure represents the maximum vested amount; actual deployment depends entirely on governance votes and may not all be in circulation. 5) Advisor allocation (6.9M UNI) vest details are grouped under foundation_unlock but exact cliff/vest terms mirror team schedule per the launch post."
+}
