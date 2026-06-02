@@ -1,0 +1,15 @@
+title = "Crypto Conviction System — gitleaks config"
+
+# Inherit default rules.
+[extend]
+useDefault = true
+
+# The CoinGecko `platforms` map in coingecko_snapshot.json lists the token's
+# deployed contract addresses across every chain it exists on. These are
+# 40-char hex strings (0x...) — public, on-chain, and look enough like
+# generic-api-key entropy to trip gitleaks. Exclude that path pattern.
+[allowlist]
+description = "CoinGecko snapshot platforms[] holds public on-chain contract addresses, not secrets"
+paths = [
+  '''agents/01_tokenomics/data/sidecars/.*/coingecko_snapshot\.json'''
+]
