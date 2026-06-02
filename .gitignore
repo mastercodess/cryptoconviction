@@ -1,20 +1,67 @@
+# ─── Secrets ────────────────────────────────────────────────────────────
 .env
+.env.local
+*.pem
+*.key
+
+# ─── System / IDE ───────────────────────────────────────────────────────
+.DS_Store
+.~lock.*
+.idea/
+.vscode/
+
+# ─── Python ─────────────────────────────────────────────────────────────
 __pycache__/
 *.pyc
 *.pyo
-*.db
-*.db-journal
-.DS_Store
-agents/*/data/*.db
-agents/*/data/raw/
-reports/*.json
-reports/*.md
-!reports/.gitkeep
+*.egg-info/
+.pytest_cache/
 .venv/
 venv/
-*.egg-info/
+env/
 
-# MAA pipeline run artifacts (large + per-run)
-data/maa/
+# ─── Generated databases ────────────────────────────────────────────────
+*.db
+*.db-journal
+agents/*/data/*.db
+agents/*/data/raw/
+
+# ─── Per-run outputs (regenerable; not portable across users) ──────────
+# Token-level conviction reports — these reflect the operator's own
+# analysis. Use `samples/` for illustrative outputs.
+reports/*/
+reports/*.json
+reports/*.md
+reports/*.csv
+!reports/.gitkeep
+
+# Manual-research worksheet state (per-operator analysis scaffolding)
+data/manual_research/*.json
+data/manual_research/*.md
+!data/manual_research/.gitkeep
+
+# Pipeline pre-run artifacts and backups
+reports/_replay_logs/
 reports/_maa_top20_*/
-.pytest_cache/
+reports/_factcheck_*.md
+reports/_pre_*
+comparison_tests/
+
+# Batch runner artifacts
+data/maa/
+
+# ─── Personal source documents and trading state ────────────────────────
+# Third-party PDFs / spreadsheets stay out
+*.pdf
+*.xlsx
+*.docx
+
+# Operator's own watchlists, rankings, theses
+upside_*
+*_watchlist.*
+MasterAnanda*
+*_event_and_detection_playbook.md
+
+# ─── Local development scaffolding (AI tooling, scratch plans) ──────────
+docs/superpowers/
+.claude/scheduled_tasks.lock
