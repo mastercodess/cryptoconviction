@@ -1,0 +1,19 @@
+{
+  "_disclaimer": "SYNTHETIC SAMPLE — fabricated numbers for output-format illustration only. DEMO is not a real token.",
+  "token_symbol": "DEMO",
+  "security_tier": 4,
+  "audit_coverage_score": 8,
+  "single_points_of_failure": [
+    "Validator set bootstrapped via single foundation multisig at genesis; rotation procedure exists but has not been exercised on mainnet",
+    "Cross-chain bridge to Ethereum depends on third-party message-passing protocol with 13-of-19 guardian threshold"
+  ],
+  "centralization_risks": [
+    "Top-5 validators control 41% of active stake (Nakamoto coefficient = 8)",
+    "Protocol-level upgrade gated by 7-of-12 council signatures with no on-chain timelock"
+  ],
+  "incident_history_severity": "MINOR",
+  "upgrade_mechanism": "council_multisig_no_timelock (7-of-12)",
+  "data_as_of": "2026-04-15",
+  "rationale": "DEMO has accumulated 6 independent audits across core protocol contracts (3 from tier-1 firms, 3 from mid-tier), with zero high-severity findings unaddressed. One minor incident in Q3 2024 caused a 12-hour chain halt due to a deterministic finality bug; user funds were not affected and a hot-fix shipped within 36 hours. Bug bounty program is active at $500K maximum payout via Immunefi. The two material residual risks are the un-exercised validator rotation procedure and the bridge dependency; both are common to this L1 cohort and don't disqualify the tier-4 rating, but they prevent a tier-5 'battle-tested' assessment. Recommend monitoring any cross-chain bridge incidents and watching for the first live validator rotation event.",
+  "composite_score": 78
+}
