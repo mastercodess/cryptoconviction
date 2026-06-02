@@ -1,0 +1,51 @@
+{
+  "_disclaimer": "SYNTHETIC SAMPLE — fabricated numbers, no real position. Stand-in ticker DEMO represents a generic Layer-1 chain for output-format illustration only.",
+  "token_symbol": "DEMO",
+  "weighted_conviction": 67,
+  "final_verdict": "CONDITIONAL",
+  "bull_case": [
+    "DEMO commands 24% of its Layer-1 category TVL with $4.2B locked, 1.8x nearest competitor — durable liquidity moat.",
+    "Annualized protocol revenue of $96M at P/S of 12.4x trades 30% below peer median; real yield to stakers 5.1% net of inflation.",
+    "Smart-money cohort accumulating: top-100 wallet share rose from 47% to 53% over 60 days; CEX reserves fell 8%."
+  ],
+  "bear_case": [
+    "Top-10 holder concentration at 28% (validator + 2 ecosystem pools) creates governance and dump-risk single points of failure.",
+    "~14% of circulating supply unlocks across investor tranches over the next 12 months (3.2% in next 90d) — meaningful sell pressure.",
+    "BTC dominance at 56% with funding rates elevated; alt-cycle risk premium is unfavorable for fresh entries above current price."
+  ],
+  "invalidation_conditions": [
+    "Sell if DEMO chain TVL drops below $2.8B (>33% decline) within any rolling 30-day window — structural liquidity loss.",
+    "Sell if a protocol exploit confirms >$25M of user losses or triggers an emergency halt within 90 days of entry.",
+    "Sell if the 90-day unlock pressure exceeds 4% of circulating supply with no offsetting buyback program announced."
+  ],
+  "recommended_position_pct": 1.7,
+  "monitoring_checklist": [
+    "Weekly TVL and category-share trend via DefiLlama; alert on 7-day declines exceeding 8% or category share falling below 20%.",
+    "Top-100 wallet concentration and net CEX inflow trend — sustained CEX inflows above 1.5% of supply/30d signal distribution.",
+    "Validator-set decentralization metrics (Nakamoto coefficient floor of 12) and any governance proposal touching multisig signers."
+  ],
+  "category_scorecard": {
+    "tokenomics": 64,
+    "revenue": 71,
+    "security": 78,
+    "onchain": 69,
+    "team": 62,
+    "moat": 70,
+    "macro": 58
+  },
+  "auto_reject_triggered": false,
+  "auto_reject_reason": null,
+  "missing_agents": [],
+  "fallback_agents": [],
+  "coverage_pct": 1.0,
+  "data_as_of_per_agent": {
+    "tokenomics": "2026-05-30",
+    "revenue": "2026-05-29",
+    "security": "2026-04-15",
+    "onchain": "2026-05-30",
+    "team": "2026-05-25",
+    "moat": "2026-05-29",
+    "macro": "2026-06-01"
+  },
+  "stale_agents": []
+}
